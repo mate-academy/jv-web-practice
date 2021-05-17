@@ -22,11 +22,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>all</servlet-name>
+        <servlet-name>getAllDrivers</servlet-name>
         <servlet-class>mate.controller.DisplayAllDrivers</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>all</servlet-name>
+        <servlet-name>getAllDrivers</servlet-name>
         <url-pattern>/drivers/all</url-pattern>
     </servlet-mapping>
 
@@ -55,5 +55,23 @@
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
         <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/manufacturers/all</url-pattern>
+    </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 </web-app>
