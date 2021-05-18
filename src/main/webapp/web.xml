@@ -65,52 +65,52 @@
 
     <servlet-mapping>
         <servlet-name>DriverCreatingController</servlet-name>
-        <url-pattern>/driver/create</url-pattern>
+        <url-pattern>/drivers/create</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DeleteDriverController</servlet-name>
-        <url-pattern>/driver/delete</url-pattern>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DriverDisplayController</servlet-name>
-        <url-pattern>/driver/display</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DriverAddingToCarController</servlet-name>
-        <url-pattern>/car/driver/add</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>ManufacturerCreatingController</servlet-name>
-        <url-pattern>/manufacturer/create</url-pattern>
+        <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>CarDefaultCreatingController</servlet-name>
-        <url-pattern>/car/create</url-pattern>
+        <url-pattern>/cars/create</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DisplayCarsController</servlet-name>
-        <url-pattern>/car/display</url-pattern>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DeleteCarsController</servlet-name>
-        <url-pattern>/car/delete</url-pattern>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DisplayManufacturersController</servlet-name>
-        <url-pattern>/manufacturer/display</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
         <servlet-name>DeleteManufacturerController</servlet-name>
-        <url-pattern>/manufacturer/delete</url-pattern>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -5,9 +5,9 @@
 </head>
 <body>
     <h1>Create driver</h1>
-    <form method="post" action="${pageContext.request.contextPath}/driver/create">
-        Name <input type="text" name="name"><br>
-        License <input type="text" name="license_number"><br>
+    <form method="post" action="${pageContext.request.contextPath}/drivers/create">
+        Name <input type="text" name="name" required><br>
+        License <input type="text" name="license_number" required><br>
         <button type="submit">Submit</button>
     </form>
 </body>
