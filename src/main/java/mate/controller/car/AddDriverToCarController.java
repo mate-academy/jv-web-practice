@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -9,8 +9,8 @@ import mate.lib.Injector;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-public class DriverAddingController extends HttpServlet {
-    private final Injector injector = Injector.getInstance("mate");
+public class AddDriverToCarController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
     private final CarService carService =
