@@ -26,5 +26,6 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturerService.create(new Manufacturer(
                 req.getParameter("name"), req.getParameter("country")
         ));
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/create.jsp").forward(req, resp);
     }
 }

@@ -31,5 +31,6 @@ public class CreateCarDefaultController extends HttpServlet {
                         Long.parseLong(req.getParameter("manufacturer_id")))
                 )
         );
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 }
