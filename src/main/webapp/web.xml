@@ -19,6 +19,11 @@
     </servlet>
 
     <servlet>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <servlet-class>mate.controller.driver.DeleteDriverController</servlet-class>
+    </servlet>
+
+    <servlet>
         <servlet-name>DriverAddingToCarController</servlet-name>
         <servlet-class>mate.controller.car.AddDriverToCarController</servlet-class>
     </servlet>
@@ -26,6 +31,16 @@
     <servlet>
         <servlet-name>CarDefaultCreatingController</servlet-name>
         <servlet-class>mate.controller.car.CreateCarDefaultController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DisplayCarsController</servlet-name>
+        <servlet-class>mate.controller.car.DisplayCarsController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DeleteCarsController</servlet-name>
+        <servlet-class>mate.controller.car.DeleteCarsController</servlet-class>
     </servlet>
 
     <servlet>
@@ -54,6 +69,11 @@
     </servlet-mapping>
 
     <servlet-mapping>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
         <servlet-name>DriverDisplayController</servlet-name>
         <url-pattern>/driver/display</url-pattern>
     </servlet-mapping>
@@ -71,6 +91,16 @@
     <servlet-mapping>
         <servlet-name>CarDefaultCreatingController</servlet-name>
         <url-pattern>/car/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DisplayCarsController</servlet-name>
+        <url-pattern>/car/display</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DeleteCarsController</servlet-name>
+        <url-pattern>/car/delete</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
