@@ -14,6 +14,7 @@ import mate.service.ManufacturerService;
 public class CreateManufacturerController extends HttpServlet {
     private static final String CREATE_MANUFACTURER_VIEW_PATH =
             "/WEB-INF/views/manufacturer/createManufacturer.jsp";
+    private static final String ALL_MANUFACTURERS_PATH = "/manufacturers";
     private static final String NAME_PARAMETER = "name";
     private static final String COUNTRY_PARAMETER = "country";
     private static final Injector injector = Injector.getInstance("mate");
@@ -30,8 +31,8 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name = req.getParameter(NAME_PARAMETER);
-        String country = req.getParameter(COUNTRY_PARAMETER);
-        manufacturerService.create(new Manufacturer(name, country));
+        manufacturerService.create(new Manufacturer(req.getParameter(NAME_PARAMETER),
+                req.getParameter(COUNTRY_PARAMETER)));
+        resp.sendRedirect(req.getContextPath() + ALL_MANUFACTURERS_PATH);
     }
 }

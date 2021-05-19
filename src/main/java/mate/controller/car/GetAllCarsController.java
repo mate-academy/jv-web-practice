@@ -1,14 +1,12 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars")
@@ -23,8 +21,7 @@ public class GetAllCarsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> cars = carService.getAll();
-        req.setAttribute(CARS_ATTRIBUTE_NAME, cars);
+        req.setAttribute(CARS_ATTRIBUTE_NAME, carService.getAll());
         req.getRequestDispatcher(ALL_CARS_VIEW_PATH).forward(req, resp);
     }
 }

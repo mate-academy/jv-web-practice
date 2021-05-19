@@ -15,6 +15,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
+    private static final String ALL_CARS_PATH = "/cars";
     private static final String ADD_DRIVER_TO_CAR_VIEW_PATH
             = "/WEB-INF/views/car/driver/addDriverToCar.jsp";
     private static final String CARS_ATTRIBUTE_NAME = "cars";
@@ -42,8 +43,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.parseLong(req.getParameter(CAR_ID_PARAMETER_NAME));
         Long driverId = Long.parseLong(req.getParameter(DRIVER_ID_PARAMETER_NAME));
-        Driver driver = driverService.get(driverId);
-        Car car = carService.get(carId);
-        carService.addDriverToCar(driver, car);
+        carService.addDriverToCar(driverService.get(driverId), carService.get(carId));
+        resp.sendRedirect(req.getContextPath() + ALL_CARS_PATH);
     }
 }

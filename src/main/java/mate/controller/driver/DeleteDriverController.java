@@ -11,6 +11,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/delete")
 public class DeleteDriverController extends HttpServlet {
+    private static final String ALL_DRIVERS_PATH = "/drivers";
     private static final String DRIVER_ID_PARAMETER_NAME = "id";
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -19,7 +20,7 @@ public class DeleteDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        long id = Long.parseLong(req.getParameter(DRIVER_ID_PARAMETER_NAME));
-        driverService.delete(id);
+        driverService.delete(Long.parseLong(req.getParameter(DRIVER_ID_PARAMETER_NAME)));
+        resp.sendRedirect(req.getContextPath() + ALL_DRIVERS_PATH);
     }
 }

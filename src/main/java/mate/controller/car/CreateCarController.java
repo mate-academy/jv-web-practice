@@ -1,7 +1,6 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,6 +14,7 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
+    private static final String ALL_CARS_PATH = "/cars";
     private static final String CREATE_CAR_VIEW_PATH
             = "/WEB-INF/views/car/createCar.jsp";
     private static final String MANUFACTURERS_ATTRIBUTE_NAME = "manufacturers";
@@ -29,8 +29,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
-        req.setAttribute(MANUFACTURERS_ATTRIBUTE_NAME, manufacturers);
+        req.setAttribute(MANUFACTURERS_ATTRIBUTE_NAME, manufacturerService.getAll());
         req.getRequestDispatcher(CREATE_CAR_VIEW_PATH)
                 .forward(req, resp);
     }
@@ -38,9 +37,9 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String model = req.getParameter(MODEL_PARAMETER_NAME);
         Manufacturer manufacturer = manufacturerService
                 .get(Long.parseLong(req.getParameter(MANUFACTURER_ID_PARAMETER_NAME)));
-        carService.create(new Car(model, manufacturer));
+        carService.create(new Car(req.getParameter(MODEL_PARAMETER_NAME), manufacturer));
+        resp.sendRedirect(req.getContextPath() + ALL_CARS_PATH);
     }
 }

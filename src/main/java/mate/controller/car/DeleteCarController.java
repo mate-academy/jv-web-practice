@@ -11,6 +11,7 @@ import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
+    private static final String ALL_CARS_PATH = "/cars";
     private static final String CAR_ID_PARAMETER_NAME = "id";
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
@@ -19,7 +20,7 @@ public class DeleteCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long id = Long.parseLong(req.getParameter(CAR_ID_PARAMETER_NAME));
-        carService.delete(id);
+        carService.delete(Long.parseLong(req.getParameter(CAR_ID_PARAMETER_NAME)));
+        resp.sendRedirect(req.getContextPath() + ALL_CARS_PATH);
     }
 }

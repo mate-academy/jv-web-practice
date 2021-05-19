@@ -12,6 +12,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
+    private static final String ALL_DRIVERS_PATH = "/drivers";
     private static final String CREATE_DRIVER_VIEW_PATH
             = "/WEB-INF/views/driver/createDriver.jsp";
     private static final String DRIVER_NAME_PARAMETER_NAME = "name";
@@ -30,8 +31,8 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name = req.getParameter(DRIVER_NAME_PARAMETER_NAME);
-        String licenseNumber = req.getParameter(LICENSE_NUMBER_PARAMETER_NAME);
-        driverService.create(new Driver(name, licenseNumber));
+        driverService.create(new Driver(req.getParameter(DRIVER_NAME_PARAMETER_NAME),
+                req.getParameter(LICENSE_NUMBER_PARAMETER_NAME)));
+        resp.sendRedirect(req.getContextPath() + ALL_DRIVERS_PATH);
     }
 }

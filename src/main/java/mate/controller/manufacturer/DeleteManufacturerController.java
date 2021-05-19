@@ -11,6 +11,7 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/delete")
 public class DeleteManufacturerController extends HttpServlet {
+    private static final String ALL_MANUFACTURERS_PATH = "/manufacturers";
     private static final String MANUFACTURER_ID_PARAMETER_NAME = "id";
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -19,7 +20,8 @@ public class DeleteManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        long id = Long.parseLong(req.getParameter(MANUFACTURER_ID_PARAMETER_NAME));
-        manufacturerService.delete(id);
+        manufacturerService
+                .delete(Long.parseLong(req.getParameter(MANUFACTURER_ID_PARAMETER_NAME)));
+        resp.sendRedirect(req.getContextPath() + ALL_MANUFACTURERS_PATH);
     }
 }
