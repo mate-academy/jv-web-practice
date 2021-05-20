@@ -12,26 +12,19 @@
         <td>ID</td>
         <td>Model</td>
         <td>Manufacturer</td>
+        <td>Drivers</td>
     </tr>
     <c:forEach items="${carsList}" var="car">
         <tr>
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><c:out value="${car.drivers}" /></td>
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">Add driver</a></td>
+            <td style="padding-left: 20px"><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a></td>
         </tr>
     </c:forEach>
 </table>
-<h2>Add car to DB:</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars/add">
-    <label for="model">Model: </label><br>
-    <input type="text" id="model" name="model" required><br><br>
-    <label for="manufacturer">Choose a manufacturer:</label><br>
-    <select id="manufacturer" name="manufacturerID" required>
-        <c:forEach items="${manufacturersList}" var="manufacturer">
-            <option value="${manufacturer.id}">${manufacturer.name}</option>
-        </c:forEach>
-    </select><br><br>
-    <button type="submit">Add</button>
-</form>
+<a href="${pageContext.request.contextPath}/cars/add">Add new car</a>
 </body>
 </html>
