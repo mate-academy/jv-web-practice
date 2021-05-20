@@ -33,6 +33,6 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         manufacturerService.create(new Manufacturer(req.getParameter(NAME_PARAMETER),
                 req.getParameter(COUNTRY_PARAMETER)));
-        resp.sendRedirect(req.getContextPath() + ALL_MANUFACTURERS_PATH);
+        resp.sendRedirect(ALL_MANUFACTURERS_PATH);
     }
 }

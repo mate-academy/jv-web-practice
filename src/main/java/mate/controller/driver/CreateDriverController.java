@@ -33,6 +33,6 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         driverService.create(new Driver(req.getParameter(DRIVER_NAME_PARAMETER_NAME),
                 req.getParameter(LICENSE_NUMBER_PARAMETER_NAME)));
-        resp.sendRedirect(req.getContextPath() + ALL_DRIVERS_PATH);
+        resp.sendRedirect(ALL_DRIVERS_PATH);
     }
 }

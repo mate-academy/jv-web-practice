@@ -21,6 +21,6 @@ public class DeleteDriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         driverService.delete(Long.parseLong(req.getParameter(DRIVER_ID_PARAMETER_NAME)));
-        resp.sendRedirect(req.getContextPath() + ALL_DRIVERS_PATH);
+        resp.sendRedirect(ALL_DRIVERS_PATH);
     }
 }
