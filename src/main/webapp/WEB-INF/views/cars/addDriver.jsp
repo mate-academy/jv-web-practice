@@ -7,9 +7,9 @@
 <body>
 <a href="${pageContext.request.contextPath}/index">Home</a>
 <h2>Add driver to <c:out value="${car.manufacturer.name}" /> <c:out value="${car.model}" />:</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?carId=${car.id}">
   <label for="driver">Choose driver to add:</label><br>
-  <select id="driver" name="driverID" required>
+  <select id="driver" name="driverId" required>
     <c:forEach items="${driversList}" var="driver">
       <option value="${driver.id}">${driver.name}</option>
     </c:forEach>

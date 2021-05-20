@@ -20,8 +20,8 @@
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
             <td><c:out value="${car.drivers}" /></td>
-            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">Add driver</a></td>
-            <td style="padding-left: 20px"><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?carId=${car.id}">Add driver</a></td>
+            <td style="padding-left: 20px"><a href="${pageContext.request.contextPath}/cars/delete?carId=${car.id}">Delete car</a></td>
         </tr>
     </c:forEach>
 </table>

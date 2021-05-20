@@ -11,7 +11,7 @@
     <label for="model">Model: </label><br>
     <input type="text" id="model" name="model" required><br><br>
     <label for="manufacturer">Choose a manufacturer:</label><br>
-    <select id="manufacturer" name="manufacturerID" required>
+    <select id="manufacturer" name="manufacturerId" required>
         <c:forEach items="${manufacturersList}" var="manufacturer">
             <option value="${manufacturer.id}">${manufacturer.name}</option>
         </c:forEach>
