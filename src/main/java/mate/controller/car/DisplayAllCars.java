@@ -13,9 +13,9 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars")
 public class DisplayAllCars extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService =
+    private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
-    private static final ManufacturerService manufacturerService = (ManufacturerService) injector
+    private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
 
     @Override
