@@ -1,4 +1,4 @@
-package mate.controller.driver;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,16 +6,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.DriverService;
+import mate.service.CarService;
 
-public class DeleteDriverController extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService = (DriverService) injector
-            .getInstance(DriverService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        driverService.delete(Long.valueOf(req.getParameter("id")));
+        carService.delete(Long.valueOf(req.getParameter("id")));
     }
 }

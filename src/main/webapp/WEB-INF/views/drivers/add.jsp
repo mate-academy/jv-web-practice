@@ -4,7 +4,7 @@
     <title>Adding a driver</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>Enter information about the driver:</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name <input type="text" name="driverName"><br>

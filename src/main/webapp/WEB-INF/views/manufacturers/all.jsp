@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Adding a manufacturer</title>
+    <title>Manufacturers</title>
 </head>
 <body>
 <h1>List of drivers:</h1>
