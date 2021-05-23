@@ -14,10 +14,10 @@
         <td>Driver name</td>
         <c:forEach items="${cars}" var="car">
             <tr>
-                <td><c:out value="${car.id}" /> </td>
-                <td><c:out value="${car.model}" /> </td>
-                <td><c:out value="${car.getManufacturer().name}" /> </td>
-                <td><c:out value="${car.getManufacturer().country}" /> </td>
+                <td><c:out value="${car.id}"></c:out></td>
+                <td><c:out value="${car.model}"></c:out></td>
+                <td><c:out value="${car.getManufacturer().name}"></c:out></td>
+                <td><c:out value="${car.getManufacturer().country}"></c:out></td>
                 <td>
                     <c:forEach items="${car.drivers}" var="driver">
                         <c:out value="${driver.name}" />

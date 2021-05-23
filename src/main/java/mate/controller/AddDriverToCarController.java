@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
+import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
@@ -26,8 +28,9 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        carService.addDriverToCar(driverService.get(Long.parseLong(req.getParameter("driver_id"))),
-                carService.get(Long.parseLong(req.getParameter("car_id"))));
+        Driver driverId = driverService.get(Long.parseLong(req.getParameter("driver_id")));
+        Car carId = carService.get(Long.valueOf(req.getParameter("car_id")));
+        carService.addDriverToCar(driverId, carId);
         resp.sendRedirect("/cars/all");
     }
 }
