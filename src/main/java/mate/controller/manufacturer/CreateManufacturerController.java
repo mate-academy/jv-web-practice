@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -28,7 +28,7 @@ public class CreateManufacturerController extends HttpServlet {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name,country);
-        Manufacturer manufacturer1 = manufacturerService.create(manufacturer);
-        System.out.println(manufacturer1);
+        manufacturerService.create(manufacturer);
+        resp.sendRedirect("/manufacturers");
     }
 }

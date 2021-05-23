@@ -5,14 +5,14 @@
     <title>Get all drivers</title>
 </head>
 <body>
-<h>All drivers in table:</h>
+<h1>All drivers in table:</h1>
 <table>
     <tr>
         <td>ID</td>
         <td>NAME</td>
         <td>LICENSE NUMBER</td>
     </tr>
-    <c:forEach items="${allDrivers}" var="driver">
+    <c:forEach items="${drivers}" var="driver">
         <tr>
             <td><c:out value="${driver.getId()}" /></td>
             <td><c:out value="${driver.getName()}" /></td>
