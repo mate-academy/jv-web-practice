@@ -5,6 +5,7 @@
     <title>Show all cars</title>
 </head>
 <body>
+
 <table>
     <tr>
         <td>ID</td>
@@ -23,5 +24,6 @@
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>

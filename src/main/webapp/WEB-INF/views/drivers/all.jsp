@@ -5,6 +5,7 @@
     <title>Show all drivers</title>
 </head>
 <body>
+
 <table>
     <tr>
         <td>ID</td>
@@ -19,5 +20,6 @@
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>

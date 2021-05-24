@@ -11,5 +11,6 @@
     Car ID <input type="number" name="car_id" required><br>
     <button type="submit">Confirm</button>
 </form>
+
 </body>
 </html>
