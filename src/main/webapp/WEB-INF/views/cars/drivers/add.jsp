@@ -12,12 +12,12 @@
                 <option value="${car.id}"> ${car.model} </option>
             </c:forEach>
         </select><br/>
-    Driver <select name="driver"
-        <c:forEach items="${drivers}" var="manufacturer">
-            <option value="${manufacturer.id}"> ${manufacturer.name} </option>
-        </c:forEach>
-    <select/><br/>
-    <button type="submit">Confirm</button>
-</form>
+        Driver <select name="driver"
+            <c:forEach items="${drivers}" var="manufacturer">
+                <option value="${manufacturer.id}"> ${manufacturer.name} </option>
+            </c:forEach>
+        <select/><br/>
+        <button type="submit">Confirm</button>
+    </form>
 </body>
 </html>
