@@ -19,6 +19,6 @@ public class DeleteManufacturerController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         manufacturerService.delete(Long.parseLong(req.getParameter("id").trim()));
-        resp.sendRedirect("/manufacturers/all");
+        resp.sendRedirect("/manufacturers");
     }
 }
