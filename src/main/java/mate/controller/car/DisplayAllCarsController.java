@@ -22,6 +22,6 @@ public class DisplayAllCarsController extends HttpServlet {
             throws ServletException, IOException {
         List<Car> carsList = carService.getAll();
         req.setAttribute("cars", carsList);
-        req.getRequestDispatcher("/WEB-INF/views/cars/getAllCars.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/getAllCars.jsp").forward(req, resp);
     }
 }
