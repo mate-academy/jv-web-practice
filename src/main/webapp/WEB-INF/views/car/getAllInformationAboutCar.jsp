@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add driver to car</title>
+    <title>Report about cars</title>
 </head>
 <body>
 <style>
@@ -12,7 +12,7 @@
         vertical-align: middle;
     }
 </style>
-<h1>Table of drivers!</h1>
+<h1>Table of cars!(Admin version)</h1>
 <table BORDER="4" CELLPADDING="2" CELLSPACING="2" WIDTH="100%">
     <tr>
         <td rowspan="2">Car Id</td>

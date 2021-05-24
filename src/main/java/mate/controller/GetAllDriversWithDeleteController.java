@@ -12,7 +12,7 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/get/admin")
 public class GetAllDriversWithDeleteController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService =
+    private static final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
