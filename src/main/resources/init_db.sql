@@ -1,4 +1,4 @@
-SET NAMES utf8mb4;
+CREATE DATABASE `vehicle_fleet_db` /*!40100 DEFAULT CHARACTER SET utf8 */ /*!80016 DEFAULT ENCRYPTION='N' */;
 SET FOREIGN_KEY_CHECKS = 0;
 
 -- ----------------------------
