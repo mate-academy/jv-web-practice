@@ -11,7 +11,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet("/cars/manufacturers/all")
+@WebServlet("/manufacturers/all")
 public class ListAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -22,7 +22,7 @@ public class ListAllManufacturersController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/cars/manufacturers/all.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/manufacturers/all.jsp").forward(req, resp);
         
     }
 }

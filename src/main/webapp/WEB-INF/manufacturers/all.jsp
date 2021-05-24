@@ -18,7 +18,7 @@
             <td><c:out value="${manufacturer.name}"/></td>
             <td><c:out value="${manufacturer.country}"/></td>
             <td>
-                <a href="${pageContext.request.contextPath}/cars/manufacturers/delete?id=${manufacturer.id}">
+                <a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">
                     <button type="submit">delete</button>
                 </a>
             </td>
