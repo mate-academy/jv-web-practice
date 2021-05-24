@@ -17,6 +17,6 @@
     </a>
 </p>
 <br>
-<%@include file="manufacturersAll.jsp"%>
+<%@include file="../manufacturer/manufacturersAll.jsp"%>
 </body>
 </html>

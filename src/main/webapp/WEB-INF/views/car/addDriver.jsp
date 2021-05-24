@@ -20,6 +20,6 @@
 <br>
 <%@include file="carsAll.jsp" %>
 <br>
-<%@include file="driversAll.jsp" %>
+<%@include file="../driver/driversAll.jsp" %>
 </body>
 </html>
