@@ -5,7 +5,7 @@
          version="4.0">
     <servlet>
         <servlet-name>index</servlet-name>
-        <servlet-class>mate.controller.indexController.IndexController</servlet-class>
+        <servlet-class>mate.controller.indexcontroller.IndexController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -14,7 +14,7 @@
 
     <servlet>
         <servlet-name>createDriver</servlet-name>
-        <servlet-class>mate.controller.createDriverController.CreateDriverController</servlet-class>
+        <servlet-class>mate.controller.createdrivercontroller.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createDriver</servlet-name>
@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>getAllDrivers</servlet-name>
-        <servlet-class>mate.controller.displayAllDriversController.DisplayAllDriversController</servlet-class>
+        <servlet-class>mate.controller.displayalldriverscontroller.DisplayAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>
@@ -32,7 +32,7 @@
 
     <servlet>
         <servlet-name>createManufacturer</servlet-name>
-        <servlet-class>mate.controller.createManufacturerController.CreateManufacturerController</servlet-class>
+        <servlet-class>mate.controller.createmanufacturercontroller.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturer</servlet-name>
@@ -41,7 +41,7 @@
 
     <servlet>
         <servlet-name>createCar</servlet-name>
-        <servlet-class>mate.controller.createCarController.CreateCarController</servlet-class>
+        <servlet-class>mate.controller.createcarcontroller.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createCar</servlet-name>
@@ -50,7 +50,7 @@
 
     <servlet>
         <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>mate.controller.addDriverToCarController.AddDriverToCarController</servlet-class>
+        <servlet-class>mate.controller.adddrivercontroller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>

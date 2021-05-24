@@ -1,4 +1,4 @@
-package mate.controller.createManufacturerController;
+package mate.controller.createmanufacturercontroller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

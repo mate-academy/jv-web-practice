@@ -1,4 +1,4 @@
-package mate.controller.addDriverToCarController;
+package mate.controller.adddrivercontroller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
