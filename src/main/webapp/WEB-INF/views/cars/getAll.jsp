@@ -33,7 +33,7 @@
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.request.contextPath}/cars/addCar">Add car</a>
+<a href="${pageContext.request.contextPath}/cars/create">Add car</a>
 <a href="${pageContext.request.contextPath}/">To main page</a>
 </body>
 </html>

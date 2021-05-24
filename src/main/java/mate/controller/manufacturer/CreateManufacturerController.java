@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturers/addManufacturer")
+@WebServlet(urlPatterns = "/manufacturers/create")
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final ManufacturerService manufacturerService =
@@ -24,11 +24,10 @@ public class CreateManufacturerController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String manufacturerName = req.getParameter("manufacturer_name");
         String manufacturerCountry = req.getParameter("manufacturer_country");
-        Manufacturer manufacturer = new Manufacturer(manufacturerName, manufacturerCountry);
-        manufacturerService.create(manufacturer);
-        resp.sendRedirect("/manufacturers/addManufacturer");
+        manufacturerService.create(new Manufacturer(manufacturerName, manufacturerCountry));
+        resp.sendRedirect("/manufacturers/create");
     }
 }

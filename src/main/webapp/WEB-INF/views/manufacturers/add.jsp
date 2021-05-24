@@ -5,7 +5,7 @@
 </head>
     <body>
         <h1>Please fill in the form</h1>
-        <form method="post" action="${pageContext.request.contextPath}/manufacturers/addManufacturer">
+        <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
             Manufacturer name <input type="text" name="manufacturer_name" required><br>
             Manufacturer country<input type="text" name="manufacturer_country" required><br>
             <button type="submit">Confirm</button>

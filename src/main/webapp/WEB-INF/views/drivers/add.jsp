@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Please fill in the form</h1>
-    <form method="post" action="${pageContext.request.contextPath}/drivers/addDriver">
+    <form method="post" action="${pageContext.request.contextPath}/drivers/create">
         Driver name <input type="text" name="driver_name" required><br>
         License number<input type="text" name="license_number" required><br>
         <button type="submit">Confirm</button>

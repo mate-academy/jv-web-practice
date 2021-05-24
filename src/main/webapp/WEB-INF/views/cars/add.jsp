@@ -5,13 +5,13 @@
 </head>
     <body>
         <h1>Please fill in the form</h1>
-        <form method="post" action="${pageContext.request.contextPath}/cars/addCar">
+        <form method="post" action="${pageContext.request.contextPath}/cars/create">
             Car model <input type="text" name="car_model" required><br>
             Manufacturer's id<input type="number" name="manufacturer_id" required><br>
             <button type="submit">Confirm</button>
         </form>
         <a href="${pageContext.request.contextPath}/cars">See all cars</a>
-        <a href="${pageContext.request.contextPath}/cars/addDriver">Add driver to car</a>
+        <a href="${pageContext.request.contextPath}/cars/add">Add driver to car</a>
         <a href="${pageContext.request.contextPath}/">To main page</a>
     </body>
 </html>

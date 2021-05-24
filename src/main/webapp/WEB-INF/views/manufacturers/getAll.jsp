@@ -21,7 +21,7 @@
             </tr>
         </c:forEach>
     </table>
-    <a href="${pageContext.request.contextPath}/manufacturers/addManufacturer">Add manufacturer</a>
+    <a href="${pageContext.request.contextPath}/manufacturers/create">Add manufacturer</a>
     <a href="${pageContext.request.contextPath}/">To main page</a>
 </body>
 </html>
