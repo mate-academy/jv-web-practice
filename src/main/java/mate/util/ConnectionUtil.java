@@ -26,8 +26,4 @@ public class ConnectionUtil {
         dbProperties.setProperty("password", PASSWORD);
         return DriverManager.getConnection(URL, dbProperties);
     }
-
-    public static void main(String[] args) throws SQLException {
-        Connection connection = ConnectionUtil.getConnection();
-    }
 }
