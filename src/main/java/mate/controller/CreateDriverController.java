@@ -27,5 +27,6 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         driverService.create(new Driver(req.getParameter("name"),
                 req.getParameter("licenseNumber")));
+        resp.sendRedirect("/drivers");
     }
 }
