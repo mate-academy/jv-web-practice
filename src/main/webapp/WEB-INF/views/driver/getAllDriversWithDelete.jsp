@@ -17,13 +17,14 @@
         <td>Id</td>
         <td>Name</td>
         <td>License number</td>
+        <td>Delete</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
             <td><c:out value="${driver.id}"/></td>
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
-            <td><a href="${pageContext.request.contextPath}/drivers/get/admin/delete?driver_id=${driver.id}">
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?driver_id=${driver.id}">
                 delete this driver</a></td>
         </tr>
     </c:forEach>
