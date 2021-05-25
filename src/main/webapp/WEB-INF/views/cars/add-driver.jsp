@@ -6,8 +6,8 @@
 <body>
 <h1>Please enter IDs of car and driver to connect</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car id <input name="car_id" required><br>
-    Driver id <input name="driver_id" required><br>
+    Car id <input name="carId" required><br>
+    Driver id <input name="driverId" required><br>
     <button type="submit">Confirm</button>
 </form>
 </body>
