@@ -13,15 +13,15 @@
     <div class="row">
         <div class="col-sm-4">
             <h4>View all cars:</h4>
-            <a href="cars/all"><button class="btn btn-primary">View all cars</button></a>
+            <a href="cars"><button class="btn btn-primary">View all cars</button></a>
         </div>
         <div class="col-sm-4">
             <h4>View all manufacturers:</h4>
-            <a href="manufacturers/all"><button class="btn btn-primary">View all manufacturers</button></a>
+            <a href="manufacturers"><button class="btn btn-primary">View all manufacturers</button></a>
         </div>
         <div class="col-sm-4">
             <h4>View all drivers:</h4>
-            <a href="drivers/all"><button class="btn btn-primary">View all drivers</button></a>
+            <a href="drivers"><button class="btn btn-primary">View all drivers</button></a>
         </div>
     </div>
     <div class="row">
