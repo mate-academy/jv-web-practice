@@ -37,14 +37,14 @@
         <td><c:out value="${car.drivers.get(0).id}"/></td>
         <td><c:out value="${car.drivers.get(0).name}"/></td>
         <td><c:out value="${car.drivers.get(0).licenseNumber}"/></td>
-        <td><a href="${pageContext.request.contextPath}/cars/get/admin/delete?carId=${car.drivers.get(0).id}">delete this cars</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/drivers/get/admin/delete?car_id=${car.drivers.get(0).id}">delete this cars</a></td>
     </tr>
         <c:forEach begin="1" end="${fn:length(car.drivers)}" items="${car.drivers}" var="driver" varStatus="loop">
             <tr>
                 <td><c:out value="${driver.id}"/></td>
                 <td><c:out value="${driver.name}"/></td>
                 <td><c:out value="${driver.licenseNumber}"/></td>
-                <td><a href="${pageContext.request.contextPath}/cars/get/admin/delete?carId=${driver.id}">delete this cars</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/drivers/get/admin/delete?car_id=${driver.id}">delete this cars</a></td>
             </tr>
         </c:forEach>
     </c:forEach>
