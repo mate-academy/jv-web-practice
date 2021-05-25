@@ -18,7 +18,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -54,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriversToCar</servlet-name>
-        <url-pattern>/drivers/add</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 
 </web-app>

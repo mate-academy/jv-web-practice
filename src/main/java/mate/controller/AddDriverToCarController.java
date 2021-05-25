@@ -27,10 +27,10 @@ public class AddDriverToCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        String carsId = req.getParameter("carsId");
-        String driversId = req.getParameter("driversId");
-        Car car = carService.get(Long.parseLong(carsId));
-        Driver driver = driverService.get(Long.parseLong(driversId));
+        String carId = req.getParameter("carId");
+        String driverId = req.getParameter("driverId");
+        Car car = carService.get(Long.parseLong(carId));
+        Driver driver = driverService.get(Long.parseLong(driverId));
         carService.addDriverToCar(driver, car);
     }
 }
