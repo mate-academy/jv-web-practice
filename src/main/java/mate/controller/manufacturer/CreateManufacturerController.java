@@ -28,6 +28,6 @@ public class CreateManufacturerController extends HttpServlet {
             throws IOException {
         manufacturerService.create(new Manufacturer(req.getParameter("name"),
                 req.getParameter("country")));
-        resp.sendRedirect("/web_practice_war/manufacturers/all");
+        resp.sendRedirect("/manufacturers/all");
     }
 }
