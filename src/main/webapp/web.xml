@@ -23,7 +23,7 @@
 
     <servlet>
         <servlet-name>CreateCarDefaultController</servlet-name>
-        <servlet-class>mate.controller.car.CreateCarDefaultController</servlet-class>
+        <servlet-class>mate.controller.car.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCarDefaultController</servlet-name>
@@ -54,7 +54,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateDriverController</servlet-name>
-        <url-pattern>/driver/create</url-pattern>
+        <url-pattern>/drivers/create</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -63,16 +63,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteDriverController</servlet-name>
-        <url-pattern>/driver/delete</url-pattern>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
         <servlet-name>GetAllDriverController</servlet-name>
-        <servlet-class>mate.controller.driver.GetAllDriverController</servlet-class>
+        <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAllDriverController</servlet-name>
-        <url-pattern>/driver</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -81,7 +81,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateManufacturerController</servlet-name>
-        <url-pattern>/manufacturer/create</url-pattern>
+        <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -90,7 +90,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>DeleteManufacturerController</servlet-name>
-        <url-pattern>/manufacturer/delete</url-pattern>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -99,6 +99,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>GetAllManufacturerController</servlet-name>
-        <url-pattern>/manufacturer</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
 </web-app>
