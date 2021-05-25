@@ -10,7 +10,7 @@
         <h3>To add a new driver, please fill out the form: </h3>
     </div>
     <div class="row">
-        <form method="post" action="${pageContext.request.contextPath}/drivers/add">
+        <form method="post" action="${pageContext.request.contextPath}/driver/add">
             <div class="form-group row">
                 <label for="driverName" class="col-sm-6 col-form-label">Name</label>
                 <div class="col-sm-10">

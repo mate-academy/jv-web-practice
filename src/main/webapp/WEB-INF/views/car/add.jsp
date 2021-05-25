@@ -11,7 +11,7 @@
     <h3>To add a new car, please fill out the form: </h3>
   </div>
   <div class="row">
-    <form method="post" action="${pageContext.request.contextPath}/cars/add">
+    <form method="post" action="${pageContext.request.contextPath}/car/add">
       <div class="form-group row">
         <label for="carModel" class="col-sm-6 col-form-label">Model</label>
         <div class="col-sm-10">

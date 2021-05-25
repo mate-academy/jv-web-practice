@@ -10,7 +10,7 @@
         <h3>To add a new manufacturer, please fill out the form: </h3>
     </div>
     <div class="row">
-        <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
+        <form method="post" action="${pageContext.request.contextPath}/manufacturer/add">
             <div class="form-group row">
                 <label for="manufacturerName" class="col-sm-6 col-form-label">Name</label>
                 <div class="col-sm-10">
@@ -29,4 +29,3 @@
 </div>
 </body>
 </html>
-

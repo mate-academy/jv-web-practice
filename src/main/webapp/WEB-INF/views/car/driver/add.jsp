@@ -11,7 +11,7 @@
         <h3>To add a driver to car, please fill out the form: </h3>
     </div>
     <div class="row">
-        <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+        <form method="post" action="${pageContext.request.contextPath}/car/driver/add">
             <div class="form-group row">
                 <label for="driverId" class="col-sm-6 col-form-label">Manufacturer Id</label>
                 <div class="col-sm-10">
