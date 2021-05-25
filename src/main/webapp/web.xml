@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>allDrivers</servlet-name>
-        <url-pattern>/cars/drivers/</url-pattern>
+        <url-pattern>/drivers/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>index</servlet-name>
