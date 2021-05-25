@@ -7,9 +7,9 @@
 <body>
 <table>
     <tr>
-        <td>id</td>
-        <td>name</td>
-        <td>license number</td>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>LICENCE NUMBER</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
