@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/delete")
-public class DeleteManufacturersController extends HttpServlet {
+public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -20,7 +20,7 @@ public class DeleteManufacturersController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("manufacturer_id"));
         manufacturerService.delete(id);
-        req.getRequestDispatcher("/WEB-INF/views/driver/getAllManufacturersWithDelete.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/driver/getAllManufacturers.jsp")
                 .forward(req, resp);
     }
 }

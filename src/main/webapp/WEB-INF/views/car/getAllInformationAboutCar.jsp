@@ -17,7 +17,8 @@
     <tr>
         <td rowspan="2">Car Id</td>
         <td colspan="3">Manufacturer</td>
-        <td colspan="4">List of drivers</td>
+        <td colspan="3">List of drivers</td>
+        <td rowspan="2">Delete</td>
     </tr>
     <tr>
         <td>Manufacturer Id</td>
@@ -26,7 +27,6 @@
         <td>Driver Id</td>
         <td>Name</td>
         <td>License number</td>
-        <td>Delete</td>
     </tr>
         <c:forEach items="${cars}" var="car">
     <tr>
@@ -37,14 +37,13 @@
         <td><c:out value="${car.drivers.get(0).id}"/></td>
         <td><c:out value="${car.drivers.get(0).name}"/></td>
         <td><c:out value="${car.drivers.get(0).licenseNumber}"/></td>
-        <td><a href="${pageContext.request.contextPath}/cars/drivers/get/admin/delete?car_id=${car.drivers.get(0).id}">delete this cars</a></td>
+        <td rowspan="${fn:length(car.drivers)}"><a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.id}">delete this cars</a></td>
     </tr>
         <c:forEach begin="1" end="${fn:length(car.drivers)}" items="${car.drivers}" var="driver" varStatus="loop">
             <tr>
                 <td><c:out value="${driver.id}"/></td>
                 <td><c:out value="${driver.name}"/></td>
                 <td><c:out value="${driver.licenseNumber}"/></td>
-                <td><a href="${pageContext.request.contextPath}/cars/drivers/get/admin/delete?car_id=${driver.id}">delete this cars</a></td>
             </tr>
         </c:forEach>
     </c:forEach>
