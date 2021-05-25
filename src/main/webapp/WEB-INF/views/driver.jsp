@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add Drivers</title>
+    <title>Add Driver</title>
 </head>
 <body>
 <h1>Create Driver page</h1>
