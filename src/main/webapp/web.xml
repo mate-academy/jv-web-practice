@@ -12,13 +12,4 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-    
-    <servlet>
-        <servlet-name>GetAllDriver</servlet-name>
-        <servlet-class>mate.controller.driver.GetAllDriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>GetAllDriver</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
-    </servlet-mapping>
 </web-app>
