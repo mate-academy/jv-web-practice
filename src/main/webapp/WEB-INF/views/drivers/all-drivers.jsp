@@ -27,6 +27,6 @@
 <h1></h1>
 <a type="button" href="/cars/add"> Add a car </a>
 <h1></h1>
-<a type="button" href="/cars/add-driver"> Add a driver to car </a>
+<a type="button" href="/cars/drivers/add"> Add a driver to car </a>
 </body>
 </html>

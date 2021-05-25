@@ -9,7 +9,7 @@
     License Number <input type="number" name="license_number"><br>
     <button type="submit">Add</button>
     <h1></h1>
-    <a type="button" href = "/drivers/show-all-drivers"> Show all drivers </a>
+    <a type="button" href = "/drivers"> Show all drivers </a>
 </form>
 </body>
 </html>

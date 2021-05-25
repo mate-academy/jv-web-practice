@@ -12,7 +12,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars/add-driver")
+@WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
@@ -23,19 +23,18 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/add-driver-to-car.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add-driver-to-car.jsp")
                 .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        int carId = Integer.parseInt(req.getParameter("car_id"));
-        int driverId = Integer.parseInt(req.getParameter("driver_id"));
-        Car car = carService.get((long) carId);
-        Driver driver = driverService.get((long) driverId);
+        long carId = Long.parseLong(req.getParameter("car_id"));
+        long driverId = Long.parseLong(req.getParameter("driver_id"));
+        Car car = carService.get(carId);
+        Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        req.getRequestDispatcher("/WEB-INF/views/add-driver-to-car.jsp")
-                .forward(req,resp);
+        resp.sendRedirect("/cars/drivers/add");
     }
 }

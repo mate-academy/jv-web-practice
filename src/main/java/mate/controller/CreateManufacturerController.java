@@ -19,7 +19,8 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create-manufacturer.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/create-manufacturer.jsp")
+                .forward(req, resp);
     }
 
     @Override
@@ -29,7 +30,6 @@ public class CreateManufacturerController extends HttpServlet {
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/create-manufacturer.jsp")
-                .forward(req,resp);
+        resp.sendRedirect("/manufacturers/add");
     }
 }
