@@ -9,6 +9,6 @@
     <a href="/manufacturers/add">Create Manufacturer</a><br>
     <a href="/cars/add">Create Car</a><br>
     <a href="/cars/add-driver">Add Driver to Car</a><br>
-    <a href="/drivers/all">All Drivers</a><br>
+    <a href="/cars/drivers/">All Drivers</a><br>
 </body>
 </html>
