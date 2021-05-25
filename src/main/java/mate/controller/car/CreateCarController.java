@@ -29,5 +29,6 @@ public class CreateCarController extends HttpServlet {
         String model = req.getParameter("model");
         Long id = Long.parseLong(req.getParameter("manufacturer_id"));
         carService.create(new Car(model, manufacturerService.get(id)));
+        resp.sendRedirect("/cars/create");
     }
 }
