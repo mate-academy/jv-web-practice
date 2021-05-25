@@ -26,7 +26,7 @@
                     <td><c:out value="${driver.id}"/></td>
                     <td><c:out value="${driver.name}"/></td>
                     <td><c:out value="${driver.licenseNumber}"/></td>
-                    <td><a href="${pageContext.request.contextPath}/driver/delete?id=${driver.id}">delete this driver</a></td>
+                    <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">delete this driver</a></td>
                 </tr>
             </c:forEach>
             </tbody>

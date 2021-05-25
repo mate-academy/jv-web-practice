@@ -13,15 +13,15 @@
     <div class="row">
         <div class="col-sm-4">
             <h4>View all cars:</h4>
-            <a href="car/all"><button class="btn btn-primary">View all cars</button></a>
+            <a href="cars/all"><button class="btn btn-primary">View all cars</button></a>
         </div>
         <div class="col-sm-4">
             <h4>View all manufacturers:</h4>
-            <a href="manufacturer/all"><button class="btn btn-primary">View all manufacturers</button></a>
+            <a href="manufacturers/all"><button class="btn btn-primary">View all manufacturers</button></a>
         </div>
         <div class="col-sm-4">
             <h4>View all drivers:</h4>
-            <a href="driver/all"><button class="btn btn-primary">View all drivers</button></a>
+            <a href="drivers/all"><button class="btn btn-primary">View all drivers</button></a>
         </div>
     </div>
     <div class="row">
@@ -29,21 +29,21 @@
     <div class="row">
         <div class="col-sm-4">
             <h4>Add new car:</h4>
-            <a href="car/add"><button class="btn btn-primary">Add new car</button></a>
+            <a href="cars/add"><button class="btn btn-primary">Add new car</button></a>
         </div>
         <div class="col-sm-4">
             <h4>Add new manufacturer:</h4>
-            <a href="manufacturer/add"><button class="btn btn-primary">Add new manufacturer</button></a>
+            <a href="manufacturers/add"><button class="btn btn-primary">Add new manufacturer</button></a>
         </div>
         <div class="col-sm-4">
             <h4>Add new driver:</h4>
-            <a href="driver/add"><button class="btn btn-primary">Add new driver</button></a>
+            <a href="drivers/add"><button class="btn btn-primary">Add new driver</button></a>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-4">
             <h4>Add driver to car:</h4>
-            <a href="car/driver/add"><button class="btn btn-primary">Add driver to car</button></a>
+            <a href="cars/drivers/add"><button class="btn btn-primary">Add driver to car</button></a>
         </div>
     </div>
 </div>

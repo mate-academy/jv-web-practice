@@ -11,7 +11,7 @@
     <h3>To add a new car, please fill out the form: </h3>
   </div>
   <div class="row">
-    <form method="post" action="${pageContext.request.contextPath}/car/add">
+    <form method="post" action="${pageContext.request.contextPath}/cars/add">
       <div class="form-group row">
         <label for="carModel" class="col-sm-6 col-form-label">Model</label>
         <div class="col-sm-10">
@@ -21,7 +21,7 @@
       <div class="form-group row">
         <label for="carManufacturerId" class="col-sm-6 col-form-label">Manufacturer Id</label>
         <div class="col-sm-10">
-          <select name="manufacturer_id" class="form-control" id="carManufacturerId" required>
+          <select name="manufacturerId" class="form-control" id="carManufacturerId" required>
             <c:forEach items="${manufacturers}" var="manufacturer">
               <option value="${manufacturer.id}">${manufacturer.name}</option>
             </c:forEach>

@@ -11,11 +11,11 @@
         <h3>To add a driver to car, please fill out the form: </h3>
     </div>
     <div class="row">
-        <form method="post" action="${pageContext.request.contextPath}/car/driver/add">
+        <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
             <div class="form-group row">
-                <label for="driverId" class="col-sm-6 col-form-label">Manufacturer Id</label>
-                <div class="col-sm-10">
-                    <select name="driver_id" class="form-control" id="driverId" required>
+                <label for="driverId" class="col-sm-8 col-form-label">Driver name</label>
+                <div class="col-sm-12">
+                    <select name="driverId" class="form-control" id="driverId" required>
                         <c:forEach items="${drivers}" var="driver">
                             <option value="${driver.id}">${driver.name}</option>
                         </c:forEach>
@@ -23,9 +23,9 @@
                 </div>
             </div>
             <div class="form-group row">
-                <label for="carId" class="col-sm-6 col-form-label">Manufacturer Id</label>
-                <div class="col-sm-10">
-                    <select name="car_id" class="form-control" id="carId" required>
+                <label for="carId" class="col-sm-8 col-form-label">Car model</label>
+                <div class="col-sm-12">
+                    <select name="carId" class="form-control" id="carId" required>
                         <c:forEach items="${cars}" var="car">
                             <option value="${car.id}">${car.model}</option>
                         </c:forEach>
