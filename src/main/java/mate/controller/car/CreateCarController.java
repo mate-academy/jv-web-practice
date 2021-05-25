@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -6,30 +6,31 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
+import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.DriverService;
+import mate.service.ManufacturerService;
 
-public class AddDriverToCarController extends HttpServlet {
+public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private CarService carService =
             (CarService) injector.getInstance(CarService.class);
-    private DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
+    private ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/car/add-driver.jsp")
-                .forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/car/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(req.getParameter("driverId"));
-        Long carId = Long.valueOf(req.getParameter("carId"));
-        carService.addDriverToCar(
-                driverService.get(driverId), carService.get(carId));
+        String model = req.getParameter("model");
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        carService.create(new Car(model, manufacturer));
         resp.sendRedirect("/cars/");
     }
 }
