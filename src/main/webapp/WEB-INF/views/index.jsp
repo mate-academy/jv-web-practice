@@ -8,7 +8,7 @@
     <a href="/drivers/add">Create Driver</a><br>
     <a href="/manufacturers/add">Create Manufacturer</a><br>
     <a href="/cars/add">Create Car</a><br>
-    <a href="/cars/add-driver">Add Driver to Car</a><br>
+    <a href="/cars/drivers/add">Add Driver to Car</a><br>
     <a href="/cars/drivers/">All Drivers</a><br>
 </body>
 </html>
