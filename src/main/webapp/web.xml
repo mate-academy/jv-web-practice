@@ -11,4 +11,94 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>AddDriversToCarController</servlet-name>
+        <servlet-class>mate.controller.car.AddDriversToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddDriversToCarController</servlet-name>
+        <url-pattern>/car/addDriver</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateCarDefaultController</servlet-name>
+        <servlet-class>mate.controller.car.CreateCarDefaultController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateCarDefaultController</servlet-name>
+        <url-pattern>/car/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCarsController</servlet-name>
+        <servlet-class>mate.controller.car.DeleteCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCarsController</servlet-name>
+        <url-pattern>/car/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllCarController</servlet-name>
+        <servlet-class>mate.controller.car.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllCarController</servlet-name>
+        <url-pattern>/car</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateDriverController</servlet-name>
+        <servlet-class>mate.controller.driver.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateDriverController</servlet-name>
+        <url-pattern>/driver/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <servlet-class>mate.controller.driver.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllDriverController</servlet-name>
+        <servlet-class>mate.controller.driver.GetAllDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllDriverController</servlet-name>
+        <url-pattern>/driver</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>CreateManufacturerController</servlet-name>
+        <servlet-class>mate.controller.manufacturer.CreateManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CreateManufacturerController</servlet-name>
+        <url-pattern>/manufacturer/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteManufacturerController</servlet-name>
+        <servlet-class>mate.controller.manufacturer.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteManufacturerController</servlet-name>
+        <url-pattern>/manufacturer/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllManufacturerController</servlet-name>
+        <servlet-class>mate.controller.manufacturer.GetAllManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllManufacturerController</servlet-name>
+        <url-pattern>/manufacturer</url-pattern>
+    </servlet-mapping>
 </web-app>
