@@ -34,6 +34,7 @@
               <c:out value="${driver.name}"/>
             </c:forEach>
           </td>
+          <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">Delete this car</a></td>
         </tr>
       </c:forEach>
       </tbody>
