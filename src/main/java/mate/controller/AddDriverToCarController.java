@@ -28,6 +28,6 @@ public class AddDriverToCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         carService.addDriverToCar(driverService.get(Long.valueOf(req.getParameter("driver_id"))),
                 carService.get(Long.valueOf(req.getParameter("car_id"))));
-        resp.sendRedirect("/cars/all");
+        resp.sendRedirect("/cars");
     }
 }
