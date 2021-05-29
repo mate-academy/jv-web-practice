@@ -1,6 +1,7 @@
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
+create schema mate_hw_db collate utf8_general_ci;
 -- ----------------------------
 -- Table structure for drivers
 -- ----------------------------
