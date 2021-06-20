@@ -3,12 +3,65 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>AddDriverToCarController</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CreateCarController</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CreateDriverController</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>CreateManufacturerController</servlet-name>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+    </servlet>
+
+    <servlet>
+        <servlet-name>DisplayAllDrivers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllDrivers</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>AddDriverToCarController</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateCarController</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateDriverController</servlet-name>
+        <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>CreateManufacturerController</servlet-name>
+        <url-pattern>/manufacturers/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>DisplayAllDrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+
 </web-app>
