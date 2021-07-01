@@ -16,7 +16,7 @@
         <servlet-class>mate.controller.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>create_driver</servlet-name>
+        <servlet-name>create_car</servlet-name>
         <url-pattern>/cars_create</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -42,5 +42,45 @@
     <servlet-mapping>
         <servlet-name>add_driver_to_car</servlet-name>
         <url-pattern>/add_driver_to_car</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delete_driver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_driver</servlet-name>
+        <url-pattern>/delete_driver</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>show_all_cars</servlet-name>
+        <servlet-class>mate.controller.DisplayAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>show_all_cars</servlet-name>
+        <url-pattern>/show_all_cars</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delete_car</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_car</servlet-name>
+        <url-pattern>/delete_car</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>show_all_manufacturers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>show_all_manufacturers</servlet-name>
+        <url-pattern>/show_all_manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delete_manufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delete_manufacturer</servlet-name>
+        <url-pattern>/delete_manufacturer</url-pattern>
     </servlet-mapping>
 </web-app>
