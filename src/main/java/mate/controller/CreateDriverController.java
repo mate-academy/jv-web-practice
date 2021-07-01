@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class CreateDriverController extends HttpServlet {
-    private static final Injector injector = Injector.getInstance("mate"); // be careful with copy-paste
+    private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
@@ -21,12 +21,14 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp
+    )
             throws ServletException, IOException {
-        String name = request.getParameter("name");
-        String licenseNumber = request.getParameter("license_number");
+        String name = req.getParameter("name");
+        String licenseNumber = req.getParameter("license_number");
         Driver newDriver = new Driver(name, licenseNumber);
-        driverService.create(newDriver);
-
+        newDriver = driverService.create(newDriver);
+        req.setAttribute("id", newDriver.getId());
+        req.getRequestDispatcher("WEB-INF/views/creating_of_driver_is_done.jsp").forward(req, resp);
     }
 }

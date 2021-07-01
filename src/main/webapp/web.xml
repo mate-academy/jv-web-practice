@@ -19,4 +19,12 @@
         <servlet-name>create_driver</servlet-name>
         <url-pattern>/drivers_create</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>create_car</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_driver</servlet-name>
+        <url-pattern>/cars_create</url-pattern>
+    </servlet-mapping>
 </web-app>
