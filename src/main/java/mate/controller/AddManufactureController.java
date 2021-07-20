@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturer/add")
+@WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufactureController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/manufacturers/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
