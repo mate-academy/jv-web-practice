@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1 align = "center">Input information about new manufacturer :</h1>
-<form align = "center" method= "post" action = "${pageContext.request.contextPath}/manufacturer/add">
+<form align = "center" method= "post" action = "${pageContext.request.contextPath}/manufacturers/add">
     Name : <input type = "text" name = "name"><br>
     <br>
     Country : <input type = "text" name = "country"><br>
