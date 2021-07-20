@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufactureController extends HttpServlet {
-    private static final String PAGE_PATH = "/WEB-INF/views/manufacturers/add.jsp";
+    private static final String PAGE_PATH = "/WEB-INF/views/manufacturer/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService;
 

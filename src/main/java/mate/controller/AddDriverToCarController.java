@@ -14,7 +14,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
-    private static final String PAGE_PATH = "/WEB-INF/views/cars/drivers/add.jsp";
+    private static final String PAGE_PATH = "/WEB-INF/views/car/driver/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private CarService carService;
     private DriverService driverService;
