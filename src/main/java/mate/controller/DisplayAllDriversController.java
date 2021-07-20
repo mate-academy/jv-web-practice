@@ -15,8 +15,7 @@ import mate.service.DriverService;
 public class DisplayAllDriversController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/drivers/all.jsp";
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
+    private DriverService driverService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,5 +23,10 @@ public class DisplayAllDriversController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher(PAGE_PATH).forward(req, resp);
+    }
+
+    @Override
+    public void init() throws ServletException {
+        driverService = (DriverService) injector.getInstance(DriverService.class);
     }
 }

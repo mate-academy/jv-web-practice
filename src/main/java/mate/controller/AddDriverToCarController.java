@@ -16,9 +16,8 @@ import mate.service.DriverService;
 public class AddDriverToCarController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/cars/drivers/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
+    private CarService carService;
+    private DriverService driverService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -34,5 +33,11 @@ public class AddDriverToCarController extends HttpServlet {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
+    }
+
+    @Override
+    public void init() throws ServletException {
+        carService = (CarService) injector.getInstance(CarService.class);
+        driverService = (DriverService) injector.getInstance(DriverService.class);
     }
 }
