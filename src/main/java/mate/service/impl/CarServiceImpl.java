@@ -1,11 +1,13 @@
-package mate.service;
+package mate.service.impl;
 
 import java.util.List;
 import mate.dao.CarDao;
 import mate.lib.Inject;
+import mate.lib.Injector;
 import mate.lib.Service;
 import mate.model.Car;
 import mate.model.Driver;
+import mate.service.CarService;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -37,6 +39,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public Car get(Long id) {
         return carDao.get(id).get();
+    }
+
+    public boolean get(String model) {
+        return carDao.get(model);
     }
 
     @Override

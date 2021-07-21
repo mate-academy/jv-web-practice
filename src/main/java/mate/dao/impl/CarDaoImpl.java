@@ -1,4 +1,4 @@
-package mate.dao;
+package mate.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import mate.dao.CarDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Car;
@@ -156,6 +157,18 @@ public class CarDaoImpl implements CarDao {
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
         return cars;
+    }
+
+    public boolean get(String model) {
+        String selectQuery = "SELECT * FROM cars WHERE model = ? AND deleted = FALSE";
+        try (Connection connection = ConnectionUtil.getConnection();
+                PreparedStatement preparedStatement =
+                        connection.prepareStatement(selectQuery)) {
+            preparedStatement.setString(1, model);
+            return preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't get all cars", e);
+        }
     }
 
     private void insertAllDrivers(Car car) {
