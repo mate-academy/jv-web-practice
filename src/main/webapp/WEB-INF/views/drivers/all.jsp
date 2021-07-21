@@ -5,6 +5,7 @@
     <title>Get all drivers</title>
 </head>
 <body>
+<a href="/drivers/add">Add driver</a>
 <h1>List of drivers</h1>
 <table>
     <tr>

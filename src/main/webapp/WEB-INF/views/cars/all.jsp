@@ -5,6 +5,8 @@
     <title>Get all cars</title>
 </head>
 <body>
+<a href="/cars/drivers/add">Add driver to car</a><br/><br/>
+<a href="/cars/add">Add car</a><br/>
 <h1>List of cars</h1>
 <table>
     <tr>

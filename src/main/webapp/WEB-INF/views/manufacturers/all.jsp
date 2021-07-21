@@ -5,6 +5,7 @@
     <title>Get all drivers</title>
 </head>
 <body>
+<a href="/manufacturers/add">Add manufacturer</a>
 <h1>List of manufacturers</h1>
 <table>
     <tr>
