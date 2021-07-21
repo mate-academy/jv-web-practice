@@ -13,6 +13,7 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/driver/add.jsp";
+    private static final String PAGE_REDIRECT_PATH = "/WEB-INF/views/index.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private DriverService driverService;
 
@@ -29,6 +30,7 @@ public class AddDriverController extends HttpServlet {
         String licenseNumber = req.getParameter("license_number");
         Driver driver = new Driver(name,licenseNumber);
         driverService.create(driver);
+        req.getRequestDispatcher(PAGE_REDIRECT_PATH).forward(req, resp);
     }
 
     @Override

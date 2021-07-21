@@ -13,6 +13,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufactureController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/manufacturer/add.jsp";
+    private static final String PAGE_REDIRECT_PATH = "/WEB-INF/views/index.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService;
 
@@ -29,6 +30,7 @@ public class AddManufactureController extends HttpServlet {
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name,country);
         manufacturerService.create(manufacturer);
+        req.getRequestDispatcher(PAGE_REDIRECT_PATH).forward(req, resp);
     }
 
     @Override
