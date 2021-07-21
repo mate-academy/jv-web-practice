@@ -5,8 +5,8 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
-<a style="font-size:40px;" href="/cars/all">Cars</a><br/><br/>
-<a style="font-size:40px;" href="/drivers/all">Drivers</a><br/><br/>
-<a style="font-size:40px;" href="/manufacturers/all">Manufacturers</a><br/><br/>
+<a style="font-size:40px;" href="/cars">Cars</a><br/><br/>
+<a style="font-size:40px;" href="/drivers">Drivers</a><br/><br/>
+<a style="font-size:40px;" href="/manufacturers">Manufacturers</a><br/><br/>
 </body>
 </html>

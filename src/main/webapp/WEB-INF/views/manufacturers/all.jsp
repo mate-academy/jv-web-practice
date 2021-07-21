@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Get all drivers</title>
+    <title>Get all manufacturers</title>
 </head>
 <body>
 <a href="/manufacturers/add">Add manufacturer</a>
@@ -18,7 +18,7 @@
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
-            <td><button type="submit" href="${pageContext.request.contextPath}/manufacturers/delete?&id=${manufacturer.getId()}">delete</button></td>
+            <td><button type="submit" href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.getId()}">delete</button></td>
     </c:forEach>
 </table>
 </body>

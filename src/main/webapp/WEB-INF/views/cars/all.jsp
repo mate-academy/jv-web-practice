@@ -23,7 +23,7 @@
             <td><c:forEach items="${car.getDrivers()}" var="driver">
                 <c:out value="${driver.getName()}" />
             </c:forEach></td>
-            <td><button type="submit" href="${pageContext.request.contextPath}/cars/delete?&id=${car.getId()}">delete</button></td>
+            <td><button type="submit" href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">delete</button></td>
         </tr>
     </c:forEach>
 </table>
