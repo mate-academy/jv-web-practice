@@ -4,9 +4,9 @@
     <title>Create car page</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/car/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     Car's model: <input type="text" name="model"><br>
-    Car's manufacturer id: <input type="text" name="manufacturerId"><br>
+    Car's manufacturer id: <input type="text" name="manufacturer_id"><br>
     <button type="submit">Create new car</button>
 </form>
 </body>

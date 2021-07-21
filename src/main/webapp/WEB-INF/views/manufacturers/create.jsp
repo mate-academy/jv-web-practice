@@ -4,7 +4,7 @@
     <title>Create manufacturer page</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
     Manufacturer's name: <input type="text" name="name"><br>
     Manufacturer's country: <input type="text" name="country"><br>
     <button type="submit">Create new manufacturer</button>
