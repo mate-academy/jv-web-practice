@@ -25,10 +25,10 @@
     <tr>
       <td><c:out value="${car.id}" /></td>
       <td><c:out value="${car.model}" /></td>
-      <td><c:out value="${car.getManufacturer().getId()}" /></td>
+      <td><c:out value="${car.manufacturer.id}" /></td>
       <td>
-        <c:forEach items="${car.getDrivers()}" var="driver">
-          <c:out value="${driver.getName()} |" />
+        <c:forEach items="${car.drivers}" var="driver">
+          <c:out value="${driver.name} |" />
         </c:forEach>
       </td>
       <td><a href="/cars/drivers/add">ADD DRIVER</a></td>
