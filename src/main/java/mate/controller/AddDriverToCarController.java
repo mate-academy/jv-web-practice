@@ -15,7 +15,6 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/car/driver/add.jsp";
-    private static final String REDIRECT_PAGE_PATH = "/WEB-INF/views/index.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private CarService carService;
     private DriverService driverService;
@@ -34,7 +33,7 @@ public class AddDriverToCarController extends HttpServlet {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
-        req.getRequestDispatcher(REDIRECT_PAGE_PATH).forward(req, resp);
+        resp.sendRedirect("/index");
     }
 
     @Override

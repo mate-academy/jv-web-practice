@@ -15,7 +15,6 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/car/add.jsp";
-    private static final String REDIRECT_PAGE_PATH = "/WEB-INF/views/index.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private CarService carService;
     private ManufacturerService manufacturerService;
@@ -34,7 +33,7 @@ public class AddCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(id);
         Car car = new Car(model, manufacturer);
         carService.create(car);
-        req.getRequestDispatcher(REDIRECT_PAGE_PATH).forward(req, resp);
+        resp.sendRedirect("/index");
     }
 
     @Override
