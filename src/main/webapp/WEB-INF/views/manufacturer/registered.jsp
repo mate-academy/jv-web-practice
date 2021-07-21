@@ -4,9 +4,9 @@
   <title>Success!</title>
 </head>
 <body>
-<h2><a href="http://localhost:8080/index">Main page</a></h2>
+<h2><a href="/index">Main page</a></h2>
 <h1>Manufacturer was successfully registered!</h1>
-<h2><a href="http://localhost:8080/manufacturers/register">Register new manufacturer</a></h2>
-<h2><a href="http://localhost:8080/manufacturers">List all manufacturers</a></h2>
+<h2><a href="/register">Register new manufacturer</a></h2>
+<h2><a href="/manufacturers">List all manufacturers</a></h2>
 </body>
 </html>

@@ -4,7 +4,7 @@
     <title>Driver registration</title>
 </head>
 <body>
-<h2><a href="http://localhost:8080/index">Main page</a></h2>
+<h2><a href="/index">Main page</a></h2>
 <h1>Please fill the form below</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/drivers/register">

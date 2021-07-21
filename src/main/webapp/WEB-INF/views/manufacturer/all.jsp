@@ -5,7 +5,7 @@
     <title>All manufacturers</title>
 </head>
 <body>
-<h2><a href="http://localhost:8080/index">Main page</a></h2>
+<h2><a href="/index">Main page</a></h2>
 <h1>List of all manufacturers:</h1>
 <table>
     <tr>
@@ -23,6 +23,6 @@
         </tr>
     </c:forEach>
 </table>
-<h2><a href="http://localhost:8080/manufacturers/register">Register new manufacturer</a></h2>
+<h2><a href="manufacturers/register">Register new manufacturer</a></h2>
 </body>
 </html>

@@ -5,7 +5,7 @@
     <title>All drivers</title>
 </head>
 <body>
-<h2><a href="http://localhost:8080/index">Main page</a></h2>
+<h2><a href="/index">Main page</a></h2>
 <h1>List of all drivers:</h1>
 <table>
     <tr>
@@ -23,7 +23,7 @@
         </tr>
     </c:forEach>
 </table>
-<h2><a href="http://localhost:8080/drivers/register">Register new driver</a></h2>
-<h2><a href="http://localhost:8080/cars/drivers/add">Add driver to car</a></h2>
+<h2><a href="/drivers/register">Register new driver</a></h2>
+<h2><a href="/cars/drivers/add">Add driver to car</a></h2>
 </body>
 </html>
