@@ -18,13 +18,13 @@
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
-            <td><c:out value="${car.id}"></c:out></td>
-            <td><c:out value="${car.model}"></c:out></td>
-            <td><c:out value="${car.get_manufacturer().name}"></c:out></td>
-            <td><c:out value="${car.get_manufacturer().country}"></c:out></td>
+            <td><c:out value="${car.id}"/></td>
+            <td><c:out value="${car.model}"/></td>
+            <td><c:out value="${car.get_manufacturer().name}"/></td>
+            <td><c:out value="${car.get_manufacturer().country}"/></td>
             <c:forEach items="${car.getDrivers()}" var="driver">
-                <td><c:out value="${driver.name}"></c:out></td>
-                <td><c:out value="${driver.licenseNumber}"></c:out></td>
+                <td><c:out value="${driver.name}"/></td>
+                <td><c:out value="${driver.licenseNumber}"/></td>
             </c:forEach>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}"></a></td>
         </tr>

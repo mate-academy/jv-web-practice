@@ -15,9 +15,9 @@
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
-            <td><c:out value="${manufacturer.id}"></c:out></td>
-            <td><c:out value="${manufacturer.name}"></c:out></td>
-            <td><c:out value="${manufacturer.country}"></c:out></td
+            <td><c:out value="${manufacturer.id}"/></td>
+            <td><c:out value="${manufacturer.name}"/></td>
+            <td><c:out value="${manufacturer.country}"/></td
             <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}"></a></td>
         </tr>
     </c:forEach>

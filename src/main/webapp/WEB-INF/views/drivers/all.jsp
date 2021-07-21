@@ -5,6 +5,7 @@
     <title>List of drivers</title>
 </head>
 <body>
+<h1> List of drivers</h1>
 <table>
     <tr>
         <td>id</td>
@@ -14,9 +15,9 @@
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-            <td><c:out value="${driver.id}"></c:out></td>
-            <td><c:out value="${driver.name}"></c:out></td>
-            <td><c:out value="${driver.licenseNumber}"></c:out></td>
+            <td><c:out value="${driver.id}"/></td>
+            <td><c:out value="${driver.name}"/></td>
+            <td><c:out value="${driver.licenseNumber}"/></td>
             <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}"></a></td>
         </tr>
     </c:forEach>
