@@ -7,7 +7,7 @@
 <body>
 <a href="/drivers/add">Add driver</a>
 <h1>List of drivers</h1>
-<table>
+<table style="border:solid;">
     <tr>
         <td>ID</td>
         <td>NAME</td>
@@ -18,7 +18,7 @@
             <td><c:out value="${driver.id}" /></td>
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
-            <td><a href="${pageContext.request.contextPath}/drivers/delete?&id=${driver.getId()}">delete</a></td>
+            <td><button type="submit" href="${pageContext.request.contextPath}/drivers/delete?&id=${driver.getId()}">delete</button></td>
         </tr>
     </c:forEach>
 </table>

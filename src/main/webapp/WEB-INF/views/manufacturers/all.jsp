@@ -7,7 +7,7 @@
 <body>
 <a href="/manufacturers/add">Add manufacturer</a>
 <h1>List of manufacturers</h1>
-<table>
+<table style="border:solid;">
     <tr>
         <td>ID</td>
         <td>NAME</td>
@@ -18,8 +18,7 @@
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?&id=${manufacturer.getId()}">delete</a></td>
-        </tr>
+            <td><button type="submit" href="${pageContext.request.contextPath}/manufacturers/delete?&id=${manufacturer.getId()}">delete</button></td>
     </c:forEach>
 </table>
 </body>

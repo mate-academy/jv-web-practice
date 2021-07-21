@@ -8,12 +8,12 @@
 <a href="/cars/drivers/add">Add driver to car</a><br/><br/>
 <a href="/cars/add">Add car</a><br/>
 <h1>List of cars</h1>
-<table>
+<table style="border:solid;">
     <tr>
         <td>ID</td>
         <td>MODEL</td>
         <td>MANUFACTURER</td>
-        <td>DRIVER</td>
+        <td>DRIVERS</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
@@ -23,7 +23,7 @@
             <td><c:forEach items="${car.getDrivers()}" var="driver">
                 <c:out value="${driver.getName()}" />
             </c:forEach></td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?&id=${car.getId()}">delete</a></td>
+            <td><button type="submit" href="${pageContext.request.contextPath}/cars/delete?&id=${car.getId()}">delete</button></td>
         </tr>
     </c:forEach>
 </table>
