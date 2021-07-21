@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
     <style>
@@ -32,6 +32,6 @@
         </tr>
     </c:forEach>
 </table>
-<h2><a href="http://localhost:8080/index">Back to main menu</a></h2>
+<h2><a href="${pageContext.request.contextPath}/index">Back to main menu</a></h2>
 </body>
 </html>
