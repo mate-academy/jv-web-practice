@@ -18,7 +18,7 @@
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${manufacturer.getId()}"><button type="submit" class="btn btn-primary">delete</button></a></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.getId()}"><button type="submit" class="btn btn-primary">delete</button></a></td>
     </c:forEach>
 </table>
 </body>
