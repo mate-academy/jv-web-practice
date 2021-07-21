@@ -12,7 +12,7 @@
         <td>ID</td>
         <td>MODEL</td>
         <td>MANUFACTURER'S ID</td>
-        <td>DRIVER'S IDs</td>
+        <td>DRIVERS' IDs</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
