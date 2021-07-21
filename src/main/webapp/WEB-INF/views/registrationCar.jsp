@@ -5,9 +5,9 @@
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/cars/registration">
-  Model <input type="text" name="model"><br>
-  Manufacturer ID<input type="text" name="manufacturerId"><br>
-  <button type="submit">Confirm</button>
+    Model <input type="text" name="model"><br>
+    Manufacturer ID<input type="text" name="manufacturerId"><br>
+    <button type="submit">Confirm</button>
 </form>
 </body>
 </html>

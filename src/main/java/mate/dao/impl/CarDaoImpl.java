@@ -29,7 +29,7 @@ public class CarDaoImpl implements CarDao {
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement =
                         connection.prepareStatement(
-                             insertQuery, Statement.RETURN_GENERATED_KEYS)) {
+                                insertQuery, Statement.RETURN_GENERATED_KEYS)) {
             preparedStatement.setString(1, car.getModel());
             preparedStatement.setLong(2, car.getManufacturer().getId());
             preparedStatement.executeUpdate();
@@ -42,6 +42,19 @@ public class CarDaoImpl implements CarDao {
         }
         insertAllDrivers(car);
         return car;
+    }
+
+    @Override
+    public boolean get(String model) {
+        String selectQuery = "SELECT * FROM cars WHERE model = ? AND deleted = FALSE";
+        try (Connection connection = ConnectionUtil.getConnection();
+                PreparedStatement preparedStatement =
+                        connection.prepareStatement(selectQuery)) {
+            preparedStatement.setString(1, model);
+            return preparedStatement.execute();
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't get all cars", e);
+        }
     }
 
     @Override
@@ -121,8 +134,8 @@ public class CarDaoImpl implements CarDao {
         String selectQuery = "UPDATE cars SET deleted = true WHERE id = ?"
                 + " and deleted = false";
         try (Connection connection = ConnectionUtil.getConnection();
-                 PreparedStatement preparedStatement =
-                         connection.prepareStatement(selectQuery)) {
+                PreparedStatement preparedStatement =
+                        connection.prepareStatement(selectQuery)) {
             preparedStatement.setLong(1, id);
             return preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -157,18 +170,6 @@ public class CarDaoImpl implements CarDao {
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
         return cars;
-    }
-
-    public boolean get(String model) {
-        String selectQuery = "SELECT * FROM cars WHERE model = ? AND deleted = FALSE";
-        try (Connection connection = ConnectionUtil.getConnection();
-                PreparedStatement preparedStatement =
-                        connection.prepareStatement(selectQuery)) {
-            preparedStatement.setString(1, model);
-            return preparedStatement.execute();
-        } catch (SQLException e) {
-            throw new DataProcessingException("Can't get all cars", e);
-        }
     }
 
     private void insertAllDrivers(Car car) {
