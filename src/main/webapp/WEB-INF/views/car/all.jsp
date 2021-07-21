@@ -11,13 +11,17 @@
     <tr>
         <td>ID</td>
         <td>MODEL</td>
-        <td>MANUFACTURER</td>
+        <td>MANUFACTURER'S ID</td>
+        <td>DRIVER'S IDs</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.id}" /></td>
+            <c:forEach items="${car.drivers}" var="driver" varStatus="status">
+                <td>${driver.id}<c:if test="${!status.last}">,</c:if></td>
+            </c:forEach>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>
