@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>All cars</title>
@@ -7,6 +7,7 @@
 <body>
 <h2>All cars are here:</h2>
 <table>
+    <tr>
     <td>id</td>
     <td>model</td>
     <td>manufacturers name</td>
@@ -14,6 +15,7 @@
     <td>Drivers name</td>
     <td>Drivers license number</td>
     <td>delete</td>
+    </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${car.id}"></c:out></td>
@@ -24,7 +26,7 @@
                 <td><c:out value="${driver.name}"></c:out></td>
                 <td><c:out value="${driver.licenseNumber}"></c:out></td>
             </c:forEach>
-            <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}"></a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}"></a></td>
         </tr>
     </c:forEach>
 </table>
