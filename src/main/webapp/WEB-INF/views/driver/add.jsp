@@ -8,7 +8,7 @@
 <form align = "center" method = "post" action = "${pageContext.request.contextPath}/drivers/add">
     Name : <input type = "text" required name = "name"><br>
     <br>
-    License Number : <input type = "text" required name = "licenseNumber"><br>
+    License Number : <input type = "text" required name = "license_number"><br>
     <br>
     <button type = "submit">Confirm</button>
 </form>

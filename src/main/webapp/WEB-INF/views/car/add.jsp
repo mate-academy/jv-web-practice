@@ -8,7 +8,7 @@
 <form align = "center" method = "post" action = "${pageContext.request.contextPath}/cars/add">
     Model : <input type = "text" required name = "model"><br>
     <br>
-    Manufacturer ID : <input type = "number" required name = "id"><br>
+    Manufacturer ID : <input type = "number" required name = "manufacturer_id"><br>
     <br>
     <button type = "submit">Confirm</button>
 </form>
