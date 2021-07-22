@@ -17,7 +17,7 @@
         <br>
         <a href="${pageContext.request.contextPath}/manufacturers/add" >Create a manufacturer</a>
         <br>
-        <a href="${pageContext.request.contextPath}/drivers/all" >Show all drivers</a>
+        <a href="${pageContext.request.contextPath}/drivers" >Show all drivers</a>
     </table>
 </div>
 </body>
