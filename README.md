@@ -1,16 +1,18 @@
 # Web practice. Implement JSP pages and their corresponding controllers
 
-
-- To get the actual parameters of the database tables, run script from the resources/init_db.sql file in the Workbench. 
+- To get the actual parameters of the database tables, run script from the resources/init_db.sql
+  file in the Workbench.
 - Create a new controller: Implement creating a driver
 - Create a new controller: Display all drivers
 - Create a new controller: Implement creating a manufacturer
 - Create a new controller: Implement creating a car (with no drivers by default)
 - Create a new controller: Implement adding driver to car.
 
-HINT: while implementing the last requirement, create just two fields on JSP where you will pass corresponding id values.
+HINT: while implementing the last requirement, create just two fields on JSP where you will pass
+corresponding id values.
 
 ### Example how to implement adding driver to car:
+
 ```java
 public class AddDriverToCarController extends HttpServlet {    
     private static final Injector injector = Injector.getInstance("mate.academy"); // be careful with copy-paste
@@ -30,12 +32,16 @@ public class AddDriverToCarController extends HttpServlet {
 ```
 
 ### Typical mistakes:
+
 - Do not forget to import additional maven library for jstl
 - Do not forget to declare `taglib` prefix where applicable
 
 ### Advanced:
+
 - Create a new controller: Display all manufacturers with ability to delete a certain manufacturer
 - Display all drivers with ability to delete a certain driver
-- Create a new controller: Display all cars (with manufacturer and drivers) with ability to delete a certain car
+- Create a new controller: Display all cars (with manufacturer and drivers) with ability to delete a
+  certain car
 
-__Before submitting solution make sure you checked it first with__ [checklist](https://mate-academy.github.io/jv-program-fulltime/03_web/checklist/02_servlets_practice_checklist.html)
+__Before submitting solution make sure you checked it first
+with__ [checklist](https://mate-academy.github.io/jv-program-fulltime/03_web/checklist/02_servlets_practice_checklist.html)

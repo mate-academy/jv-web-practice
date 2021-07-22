@@ -1,4 +1,4 @@
-package mate.dao;
+package mate.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import mate.dao.ManufacturerDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Manufacturer;
@@ -104,7 +105,7 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     }
 
     private PreparedStatement setUpdate(PreparedStatement statement,
-                                        Manufacturer manufacturer) throws SQLException {
+            Manufacturer manufacturer) throws SQLException {
         statement.setString(1, manufacturer.getName());
         statement.setString(2, manufacturer.getCountry());
         return statement;

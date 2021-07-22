@@ -3,6 +3,7 @@ package mate.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 public class Car {
     private Long id;
@@ -46,6 +47,10 @@ public class Car {
 
     public void setDrivers(List<Driver> drivers) {
         this.drivers = drivers;
+    }
+
+    public String getDriversString() {
+        return drivers.stream().map(Object::toString).collect(Collectors.joining("|"));
     }
 
     @Override
