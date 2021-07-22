@@ -5,9 +5,20 @@
     <title>Get all drivers</title>
 </head>
     <body>
+    <h1>List of drivers</h1>
+    <table>
+        <tr>
+            <td>ID</td>
+            <td>NAME</td>
+            <td>LICENSE NUMBER</td>
+        </tr>
     <c:forEach var="driver" items="${drivers}">
-        <option value="${driver.name}">${driver.name}</option>
-        <option value="${driver.licenseNumber}">${driver.licenseNumber}</option>
+        <tr>
+            <td><c:out value="${driver.id}" /></td>
+            <td><c:out value="${driver.name}" /></td>
+            <td><c:out value="${driver.licenseNumber}" /></td>
+        </tr>
     </c:forEach>
+    </table>
 </body>
 </html>
