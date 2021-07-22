@@ -6,8 +6,8 @@
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-    Name :<input type="text" name="nameManufacturer"><br>
-    Country :<input type="text" name="countryManufacturer"><br>
+    Name :<input type="text" name="nameManufacturer" required><br>
+    Country :<input type="text" name="countryManufacturer" required><br>
     <button type="submit">Create</button>
 </form>
 </body>
