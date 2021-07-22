@@ -5,9 +5,9 @@
     <title>Create driver</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/drivers/add">
-    Name driver :<input type="text" name="name_driver"><br>
-    License number :<input type="text" name="license_number"><br>
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
+    Model :<input type="text" name="model"><br>
+    Manufacturer id:<input type="number" name="manufacturer_id"><br>
     <button type="submit">Create</button>
 </form>
 </body>
