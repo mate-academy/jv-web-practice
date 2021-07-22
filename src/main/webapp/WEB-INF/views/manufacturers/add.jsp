@@ -10,6 +10,5 @@
   Country <input type="text" name="manufacturer_country"><br>
   <button type="submit">ENTER</button>
 </form>
-
 </body>
 </html>
