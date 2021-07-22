@@ -9,7 +9,7 @@
 <form method = "post" action="${pageContext.request.contextPath}/drivers/create">
     Name : <input type = "text" required name = "name"><br>
     <br>
-    License number : <input type = "text" required name = "license number"><br>
+    License number : <input type = "text" required name = "license_number"><br>
     <br>
     <button type="submit">Create</button>
 </form>

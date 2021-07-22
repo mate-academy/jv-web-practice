@@ -7,7 +7,7 @@
 <body>
 <h1>Hello, mates!</h1>
     <br><a href="/drivers/create">Create Driver</a>
-    <br><a href="/cars/drivers">All Drivers</a>
+    <br><a href="/drivers">All Drivers</a>
     <br><a href="/manufacturers/create">Create Manufacturer</a>
     <br><a href="/cars/create">Create Car</a>
     <br><a href="/cars/drivers/add">Add driver to car</a>
