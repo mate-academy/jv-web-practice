@@ -3,7 +3,7 @@
 <head>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath} manufacturers/add">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     name: <input type="text" name="name"><br>
     country: <input type="text" name="country"><br>
     <button type="submit">Create new manufacturer</button>
