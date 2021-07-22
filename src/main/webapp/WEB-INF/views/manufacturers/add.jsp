@@ -10,6 +10,7 @@
     <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
         <p>Name</p> <input type="text" name="name">
         <p>Country</p> <input type="text" name="country">
+        <br>
         <button type="submit">Create</button>
     </form>
 </div>
