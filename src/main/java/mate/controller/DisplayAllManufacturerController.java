@@ -8,21 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
-import mate.service.CarService;
+import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars")
-public class DisplayAllCarsController extends HttpServlet {
+@WebServlet(urlPatterns = "/manufacturers")
+public class DisplayAllManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService = (CarService) injector
-            .getInstance(CarService.class);
+    private static final ManufacturerService manufacturerService = (ManufacturerService) injector
+            .getInstance(ManufacturerService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> carList = carService.getAll();
-        req.setAttribute("cars", carList);
+        List<Manufacturer> manufacturerList = manufacturerService.getAll();
+        req.setAttribute("manufacturers", manufacturerList);
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").include(req, resp);
-        req.getRequestDispatcher("/WEB-INF/views/allCars.jsp").include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/allManufacturers.jsp").include(req, resp);
     }
 }

@@ -40,10 +40,6 @@ public class CarServiceImpl implements CarService {
         return carDao.get(id).get();
     }
 
-    public boolean get(String model) {
-        return carDao.get(model);
-    }
-
     @Override
     public List<Car> getAll() {
         return carDao.getAll();

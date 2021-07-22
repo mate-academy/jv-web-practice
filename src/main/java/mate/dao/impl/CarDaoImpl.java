@@ -45,19 +45,6 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public boolean get(String model) {
-        String selectQuery = "SELECT * FROM cars WHERE model = ? AND deleted = FALSE";
-        try (Connection connection = ConnectionUtil.getConnection();
-                PreparedStatement preparedStatement =
-                        connection.prepareStatement(selectQuery)) {
-            preparedStatement.setString(1, model);
-            return preparedStatement.execute();
-        } catch (SQLException e) {
-            throw new DataProcessingException("Can't get all cars", e);
-        }
-    }
-
-    @Override
     public Optional<Car> get(Long id) {
         String selectQuery = "SELECT c.id as id, "
                 + "model, "

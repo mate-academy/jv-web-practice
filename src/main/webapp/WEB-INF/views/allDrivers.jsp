@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Get all drivers</title>
+    <title>All drivers</title>
 </head>
 <body>
 <h1>List of drivers</h1>
@@ -12,7 +12,6 @@
         <td>name</td>
         <td>License Number</td>
         <td>Car(-s) ID</td>
-        >
     </tr>
     <c:forEach items="${drivers}" var="entry">
         <tr>

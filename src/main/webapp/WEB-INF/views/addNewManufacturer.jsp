@@ -4,9 +4,9 @@
     <title>Title</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car ID <input type="text" name="carId"><br>
-    Driver ID <input type="text" name="driverId"><br>
+<form method="post" action="${pageContext.request.contextPath}/manufacturer/registration">
+    Name <input type="text" name="name"><br>
+    Country<input type="text" name="country"><br>
     <button type="submit">Confirm</button>
 </form>
 </body>

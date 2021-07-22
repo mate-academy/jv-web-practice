@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,9 +29,8 @@ public class CreateNewCarController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Map<String, String[]> parameterMap = req.getParameterMap();
-        String model = parameterMap.get("model")[0];
-        Long manufacturerId = Long.valueOf(parameterMap.get("manufacturerId")[0]);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        String model = req.getParameter("model");
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car(model, manufacturer);
         carService.create(car);

@@ -5,6 +5,4 @@ import mate.model.Car;
 
 public interface CarDao extends GenericDao<Car> {
     List<Car> getAllByDriver(Long driverId);
-
-    boolean get(String name);
 }
