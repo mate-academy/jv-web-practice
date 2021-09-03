@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,8 +38,8 @@ public class CreateCarController extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/views/createCar.jsp").forward(req, resp);
             return;
         }
-        Manufacturer manufacturer = (manufacturerId != 0) ?
-                manufacturerService.get(manufacturerId) :
+        Manufacturer manufacturer = (manufacturerId != 0)
+                ? manufacturerService.get(manufacturerId) :
                 manufacturerService.create(new Manufacturer(manufacturerName, country));
 
         carService.create(new Car(model, manufacturer));
