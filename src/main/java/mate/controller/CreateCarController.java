@@ -31,23 +31,18 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        Manufacturer manufacturer = null;
-        try {
-            String stringId = req.getParameter("manufacturerId");
-            if (!stringId.isEmpty()) {
-                Long manufacturerId = Long.valueOf(stringId);
-                manufacturer = manufacturerService.get(manufacturerId);
-            }
-        } catch (NoSuchElementException e) {
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        String manufacturerName = req.getParameter("manufacturerName");
+        String country = req.getParameter("country");
+
+        if ((manufacturerId == 0) && (manufacturerName.isEmpty() || country.isEmpty())) {
             req.getRequestDispatcher("/WEB-INF/views/createCar.jsp").forward(req, resp);
             return;
         }
+        Manufacturer manufacturer = (manufacturerId != 0) ?
+                manufacturerService.get(manufacturerId) :
+                manufacturerService.create(new Manufacturer(manufacturerName, country));
 
-        if (manufacturer == null) {
-            String manufacturerName = req.getParameter("manufacturerName");
-            String country = req.getParameter("country");
-            manufacturer = manufacturerService.create(new Manufacturer(manufacturerName, country));
-        }
         carService.create(new Car(model, manufacturer));
         resp.sendRedirect("/cars");
     }

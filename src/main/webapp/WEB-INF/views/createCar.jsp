@@ -10,7 +10,7 @@
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
     <br>
-    Manufacturer ID# <input type="text" name="manufacturerId"><br>
+    Manufacturer ID# <input type="number" name="manufacturerId" value="0"><br>
     <br>or<br>
     Manufacturer name <input type="text" name="manufacturerName"><br>
     Country <input type="text" name="country"><br><br>
