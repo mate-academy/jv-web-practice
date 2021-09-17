@@ -4,6 +4,8 @@
     <title>My team</title>
 </head>
 <body>
+<p style="color:blue">${message}</p>
 <h1>Hello, mates!</h1>
+
 </body>
 </html>
