@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = {"/manufacturers_add"})
+@WebServlet(urlPatterns = {"/manufacturers/add"})
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -31,6 +31,6 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturerService.create(manufacturer);
         String message = "Manufacturer is created, id: " + manufacturer.getId();
         request.setAttribute("message", message);
-        request.getRequestDispatcher("WEB-INF/views/index.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
 }
