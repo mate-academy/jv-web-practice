@@ -14,12 +14,13 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers")
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        driverService = (DriverService) injector.getInstance(DriverService.class);
+
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/drivers/drivers.jsp").forward(req, resp);

@@ -16,13 +16,12 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private ManufacturerService manufacturerService;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        carService = (CarService) injector.getInstance(CarService.class);
         manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);

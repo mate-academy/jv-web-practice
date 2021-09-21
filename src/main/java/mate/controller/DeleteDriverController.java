@@ -11,11 +11,11 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/delete")
 public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        driverService = (DriverService) injector.getInstance(DriverService.class);
         Long driverId = Long.parseLong(req.getParameter("id"));
         driverService.delete(driverId);
         resp.sendRedirect("/drivers");

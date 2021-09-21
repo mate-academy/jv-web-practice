@@ -13,12 +13,12 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        driverService = (DriverService) injector.getInstance(DriverService.class);
         req.getRequestDispatcher("/WEB-INF/views/drivers/addDriver.jsp").forward(req, resp);
     }
 

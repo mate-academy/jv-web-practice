@@ -11,11 +11,10 @@ import mate.service.CarService;
 @WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        carService = (CarService) injector.getInstance(CarService.class);
         Long carId = Long.parseLong(req.getParameter("id"));
         carService.delete(carId);
         resp.sendRedirect("/cars");
