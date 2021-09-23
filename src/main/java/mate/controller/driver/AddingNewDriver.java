@@ -1,4 +1,4 @@
-package mate.controller.driverControllers;
+package mate.controller.driver;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
