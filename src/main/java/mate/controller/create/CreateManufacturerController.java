@@ -32,4 +32,3 @@ public class CreateManufacturerController extends HttpServlet {
         resp.sendRedirect("/manufacturers");
     }
 }
-

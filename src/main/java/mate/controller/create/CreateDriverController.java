@@ -30,4 +30,3 @@ public class CreateDriverController extends HttpServlet {
         resp.sendRedirect("/drivers");
     }
 }
-
