@@ -17,12 +17,12 @@ import mate.service.ManufacturerService;
 public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private ManufacturerService manufacturerService;
+    private final ManufacturerService manufacturerService = (ManufacturerService) injector
+            .getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
         req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
