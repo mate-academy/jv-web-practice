@@ -11,7 +11,7 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
-public class AddingNewManufacturer extends HttpServlet {
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
