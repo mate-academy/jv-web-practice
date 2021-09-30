@@ -2,6 +2,8 @@ package mate.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+
 import mate.dao.CarDao;
 import mate.dao.DriverDao;
 import mate.lib.Inject;
@@ -62,12 +64,8 @@ public class CarServiceImpl implements CarService {
     @Override
     public List<Driver> getAllDriversNotOfCar(Long carId) {
         List<Driver> carDrivers = get(carId).getDrivers();
-        List<Driver> driversNotFromCar = new ArrayList<>();
-        for (Driver driver : driverDao.getAll()) {
-            if (!carDrivers.contains(driver)) {
-                driversNotFromCar.add(driver);
-            }
-        }
-        return driversNotFromCar;
+        return carDrivers.stream()
+                .filter(driver -> !carDrivers.contains(driver))
+                .collect(Collectors.toList());
     }
 }

@@ -151,7 +151,7 @@ public class Injector {
     private static List<Class<?>> findClasses(File directory, String packageName)
             throws ClassNotFoundException {
         List<Class<?>> classes = new ArrayList<>();
-        if (!directory.exists() || directory.getName().equals("controller")) {
+        if (!directory.exists()) {
             return classes;
         }
         File[] files = directory.listFiles();
