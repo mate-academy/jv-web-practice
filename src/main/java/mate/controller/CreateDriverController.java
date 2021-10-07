@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/create-driver"})
+@WebServlet(urlPatterns = {"/drivers/create"})
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -25,15 +25,15 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/create-driver-delete.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/drivers/create.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/create-driver-delete.jsp").forward(request, response);
         String name = request.getParameter("name");
         String number = request.getParameter("number");
         Driver driver = new Driver(name, number);
         driverService.create(driver);
+        response.sendRedirect("/drivers/all");
     }
 }

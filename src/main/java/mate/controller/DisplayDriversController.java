@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/display-drivers"})
+@WebServlet(urlPatterns = {"/drivers/all"})
 public class DisplayDriversController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public final DriverService driverService
@@ -22,6 +22,6 @@ public class DisplayDriversController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
         request.setAttribute("drivers", drivers);
-        request.getRequestDispatcher("WEB-INF/views/display-drivers.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(request, response);
     }
 }

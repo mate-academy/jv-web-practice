@@ -8,7 +8,7 @@
 <h1>
   Please fill the form in:
 </h1>
-<form method="post" action="${pageContext.request.contextPath}/create-driver">
+<form method="post" action="${pageContext.request.contextPath}/drivers/create">
   Driver's name  <input type="text" name="name"><br>
   Driver's license number <input type="text" name="number"><br>
   <button type="submit">Submit</button>

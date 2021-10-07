@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/create-manufacturer"})
+@WebServlet(urlPatterns = {"/manufacturers/create"})
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
@@ -23,15 +23,15 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/create-manufacturer.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/manufacturers/create.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/create-manufacturer.jsp").forward(request, response);
         String name = request.getParameter("name");
         String country = request.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
+        response.sendRedirect("manufacturers/all");
     }
 }

@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/display-manufacturers"})
+@WebServlet(urlPatterns = {"/manufacturers/all"})
 public class DisplayManufacturersController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public final ManufacturerService manufacturerService
@@ -24,6 +24,6 @@ public class DisplayManufacturersController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         request.setAttribute("manufacturers", manufacturers);
-        request.getRequestDispatcher("WEB-INF/views/display-manufacturers.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(request, response);
     }
 }

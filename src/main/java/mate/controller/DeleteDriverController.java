@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 
-@WebServlet(urlPatterns = {"/driver-delete"})
+@WebServlet(urlPatterns = {"/drivers/delete"})
 public class DeleteDriverController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public final DriverService driverService
@@ -23,7 +23,7 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
         driverService.delete(id);
-        request.getRequestDispatcher("WEB-INF/views/driver-delete.jsp").forward(request, response);
+        response.sendRedirect("/drivers/all");
     }
 }
 

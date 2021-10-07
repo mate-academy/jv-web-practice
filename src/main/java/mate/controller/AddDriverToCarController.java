@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/add-drivertocar"})
+@WebServlet(urlPatterns = {"/cars/adddriver"})
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -22,7 +22,7 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("WEB-INF/views/add-drivertocar.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/cars/adddriver.jsp").forward(request, response);
     }
     
     @Override
@@ -33,6 +33,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        response.sendRedirect("/add-drivertocar");
+        response.sendRedirect("/cars/all");
     }
 }

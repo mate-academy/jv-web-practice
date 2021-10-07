@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>You deleted a manufacturer, ${id}</h1>
-<a href="/display-manufacturers">All manufacturers list!</a>
+<a href="/manufacturers/all">All manufacturers list!</a>
 </body>
 </html>

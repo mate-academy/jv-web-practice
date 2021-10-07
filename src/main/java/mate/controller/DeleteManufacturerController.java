@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = {"/manufacturer-delete"})
+@WebServlet(urlPatterns = {"/manufacturers/delete"})
 public class DeleteManufacturerController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public final ManufacturerService manufacturerService
@@ -22,6 +22,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
         manufacturerService.delete(id);
-        request.getRequestDispatcher("WEB-INF/views/manufacturer-delete.jsp").forward(request, response);
+        response.sendRedirect("/manufacturers/all");
     }
 }
