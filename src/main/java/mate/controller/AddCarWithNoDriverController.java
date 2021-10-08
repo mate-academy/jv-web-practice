@@ -32,8 +32,8 @@ public class AddCarWithNoDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String carModel = req.getParameter("carmodel");
-        long carManufacturerId = Long.parseLong(req.getParameter("carmanufacturerid"));
+        String carModel = req.getParameter("car_model");
+        long carManufacturerId = Long.parseLong(req.getParameter("car_manufacturer_id"));
         carService.create(new Car(carModel, manufacturerService.get(carManufacturerId)));
         resp.sendRedirect("/cars");
     }

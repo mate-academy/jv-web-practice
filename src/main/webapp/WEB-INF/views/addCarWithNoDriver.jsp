@@ -7,8 +7,8 @@
 <body>
 <h1>Create new Car!</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-    CarModel <input type="text" name="carmodel">
-    CarManufacturerID <input type="number" name="carmanufacturerid">
+    Car Model <input type="text" name="car_model">
+    Car ManufacturerID <input type="number" name="car_manufacturer_id">
     <button type="submit">Confirm</button>
 </form>
 <jsp:include page="manufacturers.jsp"/>
