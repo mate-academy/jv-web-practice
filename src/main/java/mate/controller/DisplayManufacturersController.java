@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(urlPatterns = {"/manufacturers/all"})
+@WebServlet(urlPatterns = {"/manufacturers/"})
 public class DisplayManufacturersController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public final ManufacturerService manufacturerService
