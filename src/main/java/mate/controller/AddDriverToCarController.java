@@ -37,8 +37,6 @@ public class AddDriverToCarController extends HttpServlet {
         long carId = Long.parseLong(req.getParameter("carid"));
         long driverId = Long.parseLong(req.getParameter("driverid"));
         carService.addDriverToCar(driverService.get(driverId), carService.get(carId));
-        List<Car> cars = carService.getAll();
-        req.setAttribute("cars", cars);
-        req.getRequestDispatcher("/WEB-INF/views/cars.jsp").forward(req, resp);
+        resp.sendRedirect("/cars");
     }
 }

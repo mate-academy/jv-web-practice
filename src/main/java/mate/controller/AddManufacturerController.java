@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -29,8 +28,6 @@ public class AddManufacturerController extends HttpServlet {
         String manufacturerName = req.getParameter("manufacturername");
         String manufacturerCountry = req.getParameter("country");
         manufacturerService.create(new Manufacturer(manufacturerName, manufacturerCountry));
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
+        resp.sendRedirect("/manufacturers");
     }
 }

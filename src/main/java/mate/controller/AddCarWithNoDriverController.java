@@ -35,8 +35,6 @@ public class AddCarWithNoDriverController extends HttpServlet {
         String carModel = req.getParameter("carmodel");
         long carManufacturerId = Long.parseLong(req.getParameter("carmanufacturerid"));
         carService.create(new Car(carModel, manufacturerService.get(carManufacturerId)));
-        List<Car> cars = carService.getAll();
-        req.setAttribute("cars", cars);
-        req.getRequestDispatcher("/WEB-INF/views/cars.jsp").forward(req, resp);
+        resp.sendRedirect("/cars");
     }
 }
