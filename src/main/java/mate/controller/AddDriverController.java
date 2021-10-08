@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -28,5 +29,8 @@ public class AddDriverController extends HttpServlet {
         String driverName = request.getParameter("drivername");
         String licenseNumber = request.getParameter("licensenumber");
         driverService.create(new Driver(driverName, licenseNumber));
+        List<Driver> drivers = driverService.getAll();
+        request.setAttribute("drivers", drivers);
+        request.getRequestDispatcher("/WEB-INF/views/drivers.jsp").forward(request, response);
     }
 }
