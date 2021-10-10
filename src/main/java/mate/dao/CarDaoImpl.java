@@ -23,7 +23,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car create(Car car) {
-        String insertQuery = "INSERT INTO cars (model, manufacturer_id)"
+        String insertQuery = "INSERT INTO cars (model, manufactures_id)"
                 + "VALUES (?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement =
@@ -47,11 +47,11 @@ public class CarDaoImpl implements CarDao {
     public Optional<Car> get(Long id) {
         String selectQuery = "SELECT c.id as id, "
                 + "model, "
-                + "manufacturer_id, "
+                + "manufactures_id, "
                 + "m.name as manufacturer_name, "
                 + "m.country as manufacturer_country "
                 + "FROM cars c"
-                + " JOIN manufacturers m on c.manufacturer_id = m.id"
+                + " JOIN manufacturers m on c.manufactures_id = m.id"
                 + " where c.id = ? AND c.is_deleted = false";
         Car car = null;
         try (Connection connection = ConnectionUtil.getConnection();
@@ -75,11 +75,11 @@ public class CarDaoImpl implements CarDao {
     public List<Car> getAll() {
         String selectQuery = "SELECT c.id as id, "
                 + "model, "
-                + "manufacturer_id, "
+                + "manufactures_id, "
                 + "m.name as manufacturer_name, "
                 + "m.country as manufacturer_country "
                 + "FROM cars c"
-                + " JOIN manufacturers m on c.manufacturer_id = m.id"
+                + " JOIN manufacturers m on c.manufactures_id = m.id"
                 + " where c.is_deleted = false";
         List<Car> cars = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection();
@@ -98,7 +98,7 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public Car update(Car car) {
-        String selectQuery = "UPDATE cars SET model = ?, manufacturer_id = ? WHERE id = ?"
+        String selectQuery = "UPDATE cars SET model = ?, manufactures_id = ? WHERE id = ?"
                 + " and is_deleted = false";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement preparedStatement =
@@ -133,11 +133,11 @@ public class CarDaoImpl implements CarDao {
     public List<Car> getAllByDriver(Long driverId) {
         String selectQuery = "SELECT c.id as id, "
                 + "model, "
-                + "manufacturer_id, "
+                + "manufactures_id, "
                 + "m.name as manufacturer_name, "
                 + "m.country as manufacturer_country "
                 + "FROM cars c"
-                + " JOIN manufacturers m on c.manufacturer_id = m.id"
+                + " JOIN manufacturers m on c.manufactures_id = m.id"
                 + " JOIN cars_drivers cd on c.id = cd.car_id"
                 + " JOIN drivers d on cd.driver_id = d.id"
                 + " where c.is_deleted = false and driver_id = ?"
@@ -204,7 +204,7 @@ public class CarDaoImpl implements CarDao {
     }
 
     private List<Driver> getAllDriversByCarId(Long carId) {
-        String selectQuery = "SELECT id, name, license_number FROM cars_drivers cd "
+        String selectQuery = "SELECT id, name, licenseNumber FROM cars_drivers cd "
                 + "JOIN drivers d on cd.driver_id = d.id "
                 + "where car_id = ? AND is_deleted = false";
         try (Connection connection = ConnectionUtil.getConnection();
@@ -225,14 +225,14 @@ public class CarDaoImpl implements CarDao {
     private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
         long driverId = resultSet.getLong("id");
         String name = resultSet.getNString("name");
-        String licenseNumber = resultSet.getNString("license_number");
+        String licenseNumber = resultSet.getNString("licenseNumber");
         Driver driver = new Driver(name, licenseNumber);
         driver.setId(driverId);
         return driver;
     }
 
     private Car parseCarFromResultSet(ResultSet resultSet) throws SQLException {
-        long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
+        long manufacturerId = resultSet.getObject("manufactures_id", Long.class);
         String manufacturerName = resultSet.getNString("manufacturer_name");
         String manufacturerCountry = resultSet.getNString("manufacturer_country");
         Manufacturer manufacturer = new Manufacturer(manufacturerName, manufacturerCountry);
