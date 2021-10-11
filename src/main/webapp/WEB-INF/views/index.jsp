@@ -3,9 +3,18 @@
 
 <html>
 <head>
-    <title>My team</title>
+    <title>Main</title>
 </head>
 <body>
-<h3><</h3>
+    <h2>WHAT DO YOU WANT TO DO?</h2>
+    <a href="${pageContext.request.contextPath}/drivers/create_driver">
+        <button>CREATE A DRIVER</button>
+    </a>
+    <a href="${pageContext.request.contextPath}/drivers/display_all_drivers">
+        <button>DISPLAY ALL DRIVERS</button>
+    </a>
+    <a href="${pageContext.request.contextPath}/manufacturers/create_manufacturer">
+        <button>CREATE A MANUFACTURER</button>
+    </a>
 </body>
 </html>
