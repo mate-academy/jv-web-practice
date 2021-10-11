@@ -11,7 +11,7 @@
     DriverID <input type="number" name="driverid">
     <button type="submit">Confirm</button>
 </form>
-<jsp:include page="cars.jsp" />
-<jsp:include page="drivers.jsp" />
+<jsp:include page="../../cars.jsp" />
+<jsp:include page="../../drivers.jsp" />
 </body>
 </html>

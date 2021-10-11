@@ -11,6 +11,6 @@
     Car ManufacturerID <input type="number" name="car_manufacturer_id">
     <button type="submit">Confirm</button>
 </form>
-<jsp:include page="manufacturers.jsp"/>
+<jsp:include page="../manufacturers.jsp"/>
 </body>
 </html>
