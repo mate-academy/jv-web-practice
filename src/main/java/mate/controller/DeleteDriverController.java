@@ -26,4 +26,3 @@ public class DeleteDriverController extends HttpServlet {
         response.sendRedirect("/drivers/all");
     }
 }
-
