@@ -17,13 +17,13 @@ public class CreateManufacturerController extends HttpServlet {
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String manufacturerName = req.getParameter("name");
         String country = req.getParameter("country");
