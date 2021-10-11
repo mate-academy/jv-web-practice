@@ -21,5 +21,8 @@
         </p>
         <button type="submit">CONFIRM</button>
     </form>
+    <a href="${pageContext.request.contextPath}/">
+        <button>BACK TO THE FUTURE</button>
+    </a>
 </body>
 </html>

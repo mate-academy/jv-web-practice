@@ -16,5 +16,11 @@
     <a href="${pageContext.request.contextPath}/manufacturers/create_manufacturer">
         <button>CREATE A MANUFACTURER</button>
     </a>
+    <a href="${pageContext.request.contextPath}/cars/create_car">
+        <button>CREATE A CAR</button>
+    </a>
+    <a href="${pageContext.request.contextPath}/cars/driver_car">
+        <button>ADD A DRIVER TO A CAR</button>
+    </a>
 </body>
 </html>

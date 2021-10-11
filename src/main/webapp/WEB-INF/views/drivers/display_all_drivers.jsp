@@ -19,5 +19,8 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="${pageContext.request.contextPath}/">
+        <button>BACK TO THE FUTURE</button>
+    </a>
     </body>
 </html>
