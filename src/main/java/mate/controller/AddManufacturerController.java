@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,8 +10,8 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet("/manufacturers/all")
-public class DisplayAllManufacturersController extends HttpServlet {
+@WebServlet("/manufacturers/add")
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
@@ -20,9 +19,16 @@ public class DisplayAllManufacturersController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Manufacturer> allManufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", allManufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/pages/displayAllManufacturers.jsp")
-                .forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
+    }
+
+    @Override
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String manufacturerName = req.getParameter("manufacturer_name");
+        String country = req.getParameter("country");
+        Manufacturer manufacturer = new Manufacturer(manufacturerName, country);
+        manufacturerService.create(manufacturer);
+        resp.sendRedirect("/manufacturers");
     }
 }
