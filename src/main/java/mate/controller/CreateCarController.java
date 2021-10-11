@@ -2,11 +2,8 @@ package mate.controller;
 
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
 import mate.service.CarService;
-import mate.service.DriverService;
 import mate.service.ManufacturerService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,7 +21,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/cars/create.jsp").forward(request, response);
     }
 
 
@@ -35,6 +32,6 @@ public class CreateCarController extends HttpServlet {
         manufacturerService.get(manufacturerId);
         Car car = new Car(carModel, manufacturerService.get(manufacturerId));
         carService.create(car);
-        response.sendRedirect("/cars/all");
+        response.sendRedirect("/cars");
     }
 }

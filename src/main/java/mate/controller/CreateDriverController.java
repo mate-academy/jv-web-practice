@@ -34,6 +34,6 @@ public class CreateDriverController extends HttpServlet {
         String number = request.getParameter("number");
         Driver driver = new Driver(name, number);
         driverService.create(driver);
-        response.sendRedirect("/drivers/all");
+        response.sendRedirect("/drivers");
     }
 }

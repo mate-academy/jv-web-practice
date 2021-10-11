@@ -2,9 +2,7 @@ package mate.controller;
 
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.ManufacturerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
