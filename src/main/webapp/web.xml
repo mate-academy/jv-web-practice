@@ -13,11 +13,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>driver</servlet-name>
+        <servlet-name>all-driver</servlet-name>
         <servlet-class>mate.controller.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>driver</servlet-name>
+        <servlet-name>all-driver</servlet-name>
         <url-pattern>/driver</url-pattern>
     </servlet-mapping>
 
@@ -37,5 +37,32 @@
     <servlet-mapping>
         <servlet-name>driver-delete</servlet-name>
         <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>all-manufacturer</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>all-manufacturer</servlet-name>
+        <url-pattern>/manufacturer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufacturer-add</servlet-name>
+        <servlet-class>mate.controller.AddNewManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturer-add</servlet-name>
+        <url-pattern>/manufacturer/add</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufacturer-delete</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturer-delete</servlet-name>
+        <url-pattern>/manufacturer/delete</url-pattern>
     </servlet-mapping>
 </web-app>
