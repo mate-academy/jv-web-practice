@@ -6,7 +6,7 @@
 <body>
 <h1>Please fill required information below:</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
-    Driver's name: <input type="text" name="username"><br>
+    Driver's name: <input type="text" name="driverName"><br>
     License Number: <input type="text" name="licenseNumber"><br>
     <button type="submit">Submit</button>
 </form>
