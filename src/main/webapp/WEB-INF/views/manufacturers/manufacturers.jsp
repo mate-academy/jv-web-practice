@@ -4,12 +4,11 @@
 <head>
     <title>All manufacturers</title>
     <style type="text/css">
-
         button {
             border: blueviolet;
             border-radius: 7px;
             padding: 10px 25px;
-            background: #BBAAAA;
+            background: #999999;
             cursor: pointer;
             text-transform: uppercase;
             font-weight: bold;
@@ -46,33 +45,33 @@
             word-break: normal;
             border-color: #ccc;
             color: #333;
-            background-color: #555aaa;
+            background-color: #ff9977;
         }
 
     </style>
 </head>
 <body>
 <p style="text-align: left">
-<form action=create_driver>
-    <button>create new driver</button>
+<form action=manufacturers/add>
+    <button>create new manufacturer</button>
 </form>
 <form action=index>
     <button>go to main menu</button>
 </form>
-<h1> Table of drivers</h1>
+<h1> Table of manufacturers</h1>
 <table class="tg">
     <tr>
         <td>ID</td>
         <td>name</td>
-        <td>license_number</td>
+        <td>country</td>
         <td></td>
     </tr>
-    <c:forEach items="${drivers}" var="driver">
+    <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>
-        <td><c:out value="${driver.id}" /></td>
-        <td><c:out value="${driver.name}" /></td>
-        <td><c:out value="${driver.licenseNumber}"/></td>
-        <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.getId()}">delete</a></td>
+        <td><c:out value="${manufacturer.id}" /></td>
+        <td><c:out value="${manufacturer.name}" /></td>
+        <td><c:out value="${manufacturer.country}"/></td>
+        <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.getId()}">delete</a></td>
         </c:forEach>
     </tr>
 </table>

@@ -21,7 +21,7 @@
     <button>go to main menu</button>
 </form>
 <h1>Enter manufacturer's info below</h1>
-<form method="post" action="${pageContext.request.contextPath}/create_manufacturer">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     Manufacturer name <label>
     <input type="text" name="name" required="required">
 </label>

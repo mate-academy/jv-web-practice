@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>All manufacturers</title>
+    <title>All cars</title>
     <style type="text/css">
         button {
             border: blueviolet;
@@ -14,7 +14,6 @@
             font-weight: bold;
             color: white;
         }
-
         .tg {
             border-collapse: collapse;
             border-spacing: 3px;
@@ -31,7 +30,7 @@
             word-break: normal;
             border-color: #ccc;
             color: #333;
-            background-color: #ff9977;
+            background-color: #bbb;
         }
 
         .tg th {
@@ -47,33 +46,52 @@
             color: #333;
             background-color: #ff9977;
         }
-
     </style>
 </head>
 <body>
 <p style="text-align: left">
-<form action=create_manufacturer>
-    <button>create new manufacturer</button>
+    <form action=cars/add>
+    <button>create new car</button>
+</form>
+<form action=cars/drivers/add>
+    <button>add driver to car</button>
 </form>
 <form action=index>
     <button>go to main menu</button>
 </form>
-<h1> Table of manufacturers</h1>
+<h1>choose workspace</h1>
 <table class="tg">
     <tr>
         <td>ID</td>
-        <td>name</td>
-        <td>country</td>
+        <td>Model</td>
+        <td>Manufacturer name</td>
+        <td>Manufacturer country</td>
+        <td>Drivers</td>
         <td></td>
     </tr>
-    <c:forEach items="${manufacturers}" var="manufacturer">
-    <tr>
-        <td><c:out value="${manufacturer.id}" /></td>
-        <td><c:out value="${manufacturer.name}" /></td>
-        <td><c:out value="${manufacturer.country}"/></td>
-        <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.getId()}">delete</a></td>
-        </c:forEach>
-    </tr>
+    <c:forEach items="${cars}" var="car">
+        <tr>
+        <td><c:out value="${car.id}" /></td>
+        <td><c:out value="${car.model}" /></td>
+        <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><c:out value="${car.manufacturer.country}"/></td>
+            <td>
+                <table class="tg">
+                    <tr>
+                        <td>name</td>
+                        <td>license_number</td>
+                    </tr>
+                    <c:forEach items="${car.getDrivers()}" var="driver">
+                    <tr>
+                        <td><c:out value="${driver.getName()}"/></td>
+                        <td><c:out value="${driver.getLicenseNumber()}"/></td>
+                        </c:forEach>
+                    </tr>
+                </table>
+            </td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">delete</a></td>
+            </c:forEach>
+        </tr>
 </table>
 </body>
 </html>

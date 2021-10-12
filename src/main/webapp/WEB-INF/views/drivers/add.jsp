@@ -22,7 +22,7 @@
     <button>go to main menu</button>
 </form>
 <h1>Enter driver's info below</h1>
-<form method="post" action="${pageContext.request.contextPath}/create_driver">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Driver name <label>
     <input type="text" name="name" required="required">
 </label>

@@ -21,7 +21,7 @@
     <button>go to main menu</button>
 </form>
 <h1>Chose driver and  car</h1>
-<form method="post" action="${pageContext.request.contextPath}/add_driver_to_car">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     Driver <select name="driver">
     <c:forEach items="${drivers}" var="driver">
         <option value="${driver.getId()}">${driver.getName()}</option>

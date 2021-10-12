@@ -22,7 +22,7 @@
     <button>go to main menu</button>
 </form>
 <h1>Enter car's info below</h1>
-<form method="post" action="${pageContext.request.contextPath}/create_car">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model" required="required">
     Manufacturer <select name="manufacturer">
     <c:forEach items="${manufacturers}" var="manufacturer">

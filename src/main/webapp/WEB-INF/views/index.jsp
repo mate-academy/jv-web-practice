@@ -20,8 +20,8 @@
 </head>
 <body>
 <h1>Work with taxi service</h1>
-<form action="get_cars"><button>WORK WITH CARS</button></form>
-<form action="get_drivers"><button>WORK WITH DRIVERS</button></form>
-<form action="get_manufacturers"><button>WORK WITH MANUFACTURERS</button></form>
+<form action="cars"><button>WORK WITH CARS</button></form>
+<form action="drivers"><button>WORK WITH DRIVERS</button></form>
+<form action="manufacturers"><button>WORK WITH MANUFACTURERS</button></form>
 </body>
 </html>

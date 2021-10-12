@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = {"/add_driver_to_car"})
+@WebServlet("/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -27,19 +27,19 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("cars", cars);
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add_driver_to_car.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp")
                     .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-                throws ServletException, IOException {
+                throws IOException {
         Long driverId = Long.parseLong(req.getParameter("driver"));
         Long carId = Long.parseLong(req.getParameter("car"));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        resp.sendRedirect("/get_cars");
+        resp.sendRedirect("/cars");
     }
 }
 
