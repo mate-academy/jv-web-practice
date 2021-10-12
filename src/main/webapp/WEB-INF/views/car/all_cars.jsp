@@ -46,8 +46,8 @@
         </c:forEach>
         <br>
     </c:forEach>
-    <a href="${pageContext.request.contextPath}/car/add">Add new car without drivers</a><br>
-    <a href="${pageContext.request.contextPath}/car/add/driver">Add new driver to car</a><br>
+    <a href="${pageContext.request.contextPath}/cars/add">Add new car without drivers</a><br>
+    <a href="${pageContext.request.contextPath}/cars/add/driver">Add new driver to car</a><br>
     <a href="${pageContext.request.contextPath}/">Go to main page</a><br>
 </body>
 </html>

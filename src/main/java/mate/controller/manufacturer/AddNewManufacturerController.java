@@ -30,6 +30,6 @@ public class AddNewManufacturerController extends HttpServlet {
         if (manufacturer.getName().length() != 0 && manufacturer.getCountry().length() != 0) {
             manufacturerService.create(manufacturer);
         }
-        resp.sendRedirect("/manufacturer");
+        resp.sendRedirect("/manufacturers");
     }
 }

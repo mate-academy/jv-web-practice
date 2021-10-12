@@ -35,6 +35,6 @@ public class AddNewCarController extends HttpServlet {
         if (car.getModel().length() != 0) {
             carService.create(car);
         }
-        resp.sendRedirect("/car");
+        resp.sendRedirect("/cars");
     }
 }

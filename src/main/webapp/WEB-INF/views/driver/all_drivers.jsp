@@ -17,13 +17,13 @@
                 <td><c:out value="${driver.id}"/></td>
                 <td><c:out value="${driver.name}"/></td>
                 <td><c:out value="${driver.licenseNumber}"/></td>
-                <td><a href="${pageContext.request.contextPath}/driver/delete?id=${driver.id}">
+                <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
                     delete this Driver
                 </a></td>
             </tr>
         </c:forEach>
     </table>
-    <a href="${pageContext.request.contextPath}/driver/add">Add new driver</a><br>
+    <a href="${pageContext.request.contextPath}/drivers/add">Add new driver</a><br>
     <a href="${pageContext.request.contextPath}/">Go to main page</a><br>
 </body>
 </html>

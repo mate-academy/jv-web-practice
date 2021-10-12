@@ -29,6 +29,6 @@ public class AddNewDriverController extends HttpServlet {
         if (driver.getName().length() != 0 && driver.getLicenseNumber().length() != 0) {
             driverService.create(driver);
         }
-        resp.sendRedirect("/driver");
+        resp.sendRedirect("/drivers");
     }
 }
