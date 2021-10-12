@@ -28,12 +28,12 @@
         <url-pattern>/drivers/displayAll</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>manufacturerCreation</servlet-name>
-        <servlet-class>mate.controller.CreateNewManufacturerController</servlet-class>
+        <servlet-name>deleteDriver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>manufacturerCreation</servlet-name>
-        <url-pattern>/manufacturers/create</url-pattern>
+        <servlet-name>deleteDriver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>carCreation</servlet-name>
@@ -50,5 +50,29 @@
     <servlet-mapping>
         <servlet-name>driverAddition</servlet-name>
         <url-pattern>/drivers/addDriverToCar</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturerCreation</servlet-name>
+        <servlet-class>mate.controller.CreateNewManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturerCreation</servlet-name>
+        <url-pattern>/manufacturers/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/manufacturers/displayAll</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 </web-app>

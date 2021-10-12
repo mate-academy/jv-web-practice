@@ -4,6 +4,6 @@
     <title>Success!</title>
 </head>
 <body>
-<h1>Successfully added new information to Database. Thank You!</h1>
+<h1>Request successfully complete. Thank You!</h1>
 </body>
 </html>
