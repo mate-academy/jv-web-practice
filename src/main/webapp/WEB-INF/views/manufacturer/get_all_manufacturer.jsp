@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Manufacturers</title>
 </head>
 <body>
     <H1>ALL MANUFACTURERS</H1>
@@ -23,5 +23,7 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="${pageContext.request.contextPath}/manufacturer/add">Add new manufacturer</a><br>
+    <a href="${pageContext.request.contextPath}/">Go to main page</a><br>
 </body>
 </html>

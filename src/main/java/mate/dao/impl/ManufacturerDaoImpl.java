@@ -54,7 +54,7 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
             throw new DataProcessingException("Can't get manufacturers "
                     + manufacturer + "  to DB", e);
         }
-        return Optional.ofNullable(manufacturer);
+        return manufacturer == null ? Optional.of(new Manufacturer()) : Optional.of(manufacturer);
     }
 
     @Override

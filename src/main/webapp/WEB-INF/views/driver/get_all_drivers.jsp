@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Drivers</title>
 </head>
 <body>
     <H1>ALL DRIVERS</H1>
@@ -23,5 +23,7 @@
             </tr>
         </c:forEach>
     </table>
+    <a href="${pageContext.request.contextPath}/driver/add">Add new driver</a><br>
+    <a href="${pageContext.request.contextPath}/">Go to main page</a><br>
 </body>
 </html>
