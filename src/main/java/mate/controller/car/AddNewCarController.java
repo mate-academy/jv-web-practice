@@ -32,7 +32,7 @@ public class AddNewCarController extends HttpServlet {
         long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         car.setManufacturer(manufacturer);
-        if (car.getModel().length() != 0 && car.getManufacturer().getId() != null) {
+        if (car.getModel().length() != 0) {
             carService.create(car);
         }
         resp.sendRedirect("/car");
