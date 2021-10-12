@@ -18,6 +18,11 @@
             <td><c:out value="${car.getId()}" /></td>
             <td><c:out value="${car.getModel()}" /></td>
             <td><c:out value="${car.getManufacturer().getName()}" /></td>
+            <td>
+                <c:forEach items="${car.getDrivers()}" var="driver">
+                    <c:out value="${driver.getName()}" />
+            </c:forEach>
+            </td>
         </tr>
     </c:forEach>
 </table>

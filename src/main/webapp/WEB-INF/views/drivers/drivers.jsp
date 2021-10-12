@@ -10,13 +10,13 @@
     <tr>
         <td>ID</td>\
         <td>NAME</td>
-        <td>LICENCE NUMBER</td>
+        <td>LICENSE NUMBER</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
             <td><c:out value="${driver.getId()}" /></td>
             <td><c:out value="${driver.getName()}" /></td>
-            <td><c:out value="${driver.getLicenceNumber()}" /></td>
+            <td><c:out value="${driver.getLicenseNumber()}" /></td>
         </tr>
     </c:forEach>
 </table>
