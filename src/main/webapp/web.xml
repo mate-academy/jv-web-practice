@@ -36,6 +36,14 @@
         <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>driverAddition</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverAddition</servlet-name>
+        <url-pattern>/drivers/addDriverToCar</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>carCreation</servlet-name>
         <servlet-class>mate.controller.CreateNewCarController</servlet-class>
     </servlet>
@@ -44,12 +52,20 @@
         <url-pattern>/cars/create</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>driverAddition</servlet-name>
-        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+        <servlet-name>getAllCars</servlet-name>
+        <servlet-class>mate.controller.DisplayAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>driverAddition</servlet-name>
-        <url-pattern>/drivers/addDriverToCar</url-pattern>
+        <servlet-name>getAllCars</servlet-name>
+        <url-pattern>/cars/displayAll</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteCar</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteCar</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>manufacturerCreation</servlet-name>

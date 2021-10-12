@@ -1,17 +1,14 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.model.Manufacturer;
-import mate.service.DriverService;
-import mate.service.ManufacturerService;
-
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+import mate.lib.Injector;
+import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
 public class DisplayAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
