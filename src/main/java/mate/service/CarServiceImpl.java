@@ -1,7 +1,9 @@
 package mate.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import mate.dao.CarDao;
+import mate.dao.DriverDao;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
@@ -11,6 +13,9 @@ import mate.model.Driver;
 public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
+
+    @Inject
+    private DriverDao driverDao;
 
     @Override
     public void addDriverToCar(Driver driver, Car car) {
@@ -52,5 +57,13 @@ public class CarServiceImpl implements CarService {
     @Override
     public boolean delete(Long id) {
         return carDao.delete(id);
+    }
+
+    @Override
+    public List<Driver> getAllDriversNotOfCar(Long carId) {
+        List<Driver> carDrivers = get(carId).getDrivers();
+        return carDrivers.stream()
+                .filter(driver -> !carDrivers.contains(driver))
+                .collect(Collectors.toList());
     }
 }
