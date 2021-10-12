@@ -21,7 +21,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>create_driver</servlet-name>
-        <url-pattern>/drivers/create_driver</url-pattern>
+        <url-pattern>/drivers/create</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>display_all_drivers</servlet-name>
@@ -29,7 +29,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>display_all_drivers</servlet-name>
-        <url-pattern>/drivers/display_all_drivers</url-pattern>
+        <url-pattern>/drivers/display_all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>create_manufacturer</servlet-name>
@@ -37,7 +37,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>create_manufacturer</servlet-name>
-        <url-pattern>/manufacturers/create_manufacturer</url-pattern>
+        <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>create_car</servlet-name>
@@ -45,7 +45,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>create_car</servlet-name>
-        <url-pattern>/cars/create_car</url-pattern>
+        <url-pattern>/cars/create</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>driver_car</servlet-name>

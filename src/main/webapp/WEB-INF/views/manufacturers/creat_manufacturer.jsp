@@ -10,7 +10,7 @@
             The manufacturer ${name} from ${country} was created!"
         </c:if>
     </p>
-    <form method="post" action="${pageContext.request.contextPath}/manufacturers/create_manufacturer">
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
         <p>
             <label for="name">Manufacturer's name:</label>
             <input type="text" id="name" name="name">

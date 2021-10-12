@@ -26,7 +26,7 @@
             </table>
         </c:if>
     </p>
-    <form method="post" action="${pageContext.request.contextPath}/cars/create_car">
+    <form method="post" action="${pageContext.request.contextPath}/cars/create">
         <p>
             <label for="model">Car's name:</label>
             <input type="text" id="model" name="model">

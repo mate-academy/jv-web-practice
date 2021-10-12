@@ -7,16 +7,16 @@
 </head>
 <body>
     <h2>WHAT DO YOU WANT TO DO?</h2>
-    <a href="${pageContext.request.contextPath}/drivers/create_driver">
+    <a href="${pageContext.request.contextPath}/drivers/create">
         <button>CREATE A DRIVER</button>
     </a>
-    <a href="${pageContext.request.contextPath}/drivers/display_all_drivers">
+    <a href="${pageContext.request.contextPath}/drivers/display_all">
         <button>DISPLAY ALL DRIVERS</button>
     </a>
-    <a href="${pageContext.request.contextPath}/manufacturers/create_manufacturer">
+    <a href="${pageContext.request.contextPath}/manufacturers/create">
         <button>CREATE A MANUFACTURER</button>
     </a>
-    <a href="${pageContext.request.contextPath}/cars/create_car">
+    <a href="${pageContext.request.contextPath}/cars/create">
         <button>CREATE A CAR</button>
     </a>
     <a href="${pageContext.request.contextPath}/cars/driver_car">

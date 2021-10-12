@@ -10,7 +10,7 @@
             Driver ${name} was created!
         </c:if>
     </p>
-    <form method="post" action="${pageContext.request.contextPath}/drivers/create_driver">
+    <form method="post" action="${pageContext.request.contextPath}/drivers/create">
         <p>
             <label for="name">Driver's name:</label>
             <input type="text" id="name" name="name">
