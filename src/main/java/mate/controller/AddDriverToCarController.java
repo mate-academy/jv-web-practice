@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,20 +24,19 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
         try {
-            Long driverId = Long.valueOf(req.getParameter("driver_id"));
-            Long carId = Long.valueOf(req.getParameter("car_id"));
             Car car = carService.get(carId);
             Driver driver = driverService.get(driverId);
             req.setAttribute("driver", driver.getName());
             req.setAttribute("car", car.getModel());
             carService.addDriverToCar(driver, car);
-            req.getRequestDispatcher("/WEB-INF/views/drivers/cars/driver_added.jsp")
-                    .forward(req, resp);
-        } catch (RuntimeException e) {
+        } catch (NoSuchElementException e) {
             req.getRequestDispatcher("/WEB-INF/views/incorrect/input_error.jsp").forward(req, resp);
         }
-
+        req.getRequestDispatcher("/WEB-INF/views/drivers/cars/driver_added.jsp").forward(req, resp);
     }
 
     @Override

@@ -14,9 +14,10 @@
 </head>
 <body>
 <h3><a href="${pageContext.request.contextPath}/index">Back to main menu</a></h3>
+
 <form name="createCarForm" method="post" action="${pageContext.request.contextPath}/cars/create">
-  Model car: < input type="text" name="model"/> <br/>
-  Manufacturer ID: < input type="number" name="manufacturer_id"/> <br/>
+  Model: <input type="text" name="model"/> <br/>
+  Manufacturer ID: <input type="number" name="manufacturer_id"/> <br/>
   <input type="submit" value="Create Car"/>
 </form>
 
