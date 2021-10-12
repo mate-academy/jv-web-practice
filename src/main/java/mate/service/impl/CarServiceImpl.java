@@ -1,7 +1,10 @@
 package mate.service.impl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 import mate.dao.CarDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
@@ -27,7 +30,11 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car get(Long id) {
-        return carDao.get(id).get();
+        try {
+            return carDao.get(id).orElseThrow();
+        } catch (NoSuchElementException e) {
+            throw new DataProcessingException("Don't exist Car dy id " + id, e);
+        }
     }
 
     @Override

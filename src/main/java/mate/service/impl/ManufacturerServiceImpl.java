@@ -1,7 +1,9 @@
 package mate.service.impl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import mate.dao.ManufacturerDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Manufacturer;
@@ -26,10 +28,11 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer get(Long id) {
-        if (id == null) {
-            return new Manufacturer();
+        try {
+            return manufacturerDao.get(id).orElseThrow();
+        } catch (NoSuchElementException e) {
+            throw new DataProcessingException("Don't exist Manufacturer dy id " + id, e);
         }
-        return manufacturerDao.get(id).orElse(new Manufacturer());
     }
 
     @Override

@@ -1,7 +1,9 @@
 package mate.service.impl;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import mate.dao.DriverDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Driver;
@@ -26,10 +28,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver get(Long id) {
-        if (id == null) {
-            return new Driver();
+        try {
+            return driverDao.get(id).orElseThrow();
+        } catch (NoSuchElementException e) {
+            throw new DataProcessingException("Don't exist Driver dy id " + id, e);
         }
-        return driverDao.get(id).orElse(new Driver());
     }
 
     @Override
