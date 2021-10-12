@@ -7,8 +7,8 @@
 <body>
 <h2>Please, fill the form below</h2>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
-    Name<input type = "text" name = "name"> <br>
-    Country<input type="text" name="country"><br>
+    Name<input type = "text" name = "name" required> <br>
+    Country<input type="text" name="country" required><br>
     <button type="submit"> Submit </button>
 </form>
 </body>

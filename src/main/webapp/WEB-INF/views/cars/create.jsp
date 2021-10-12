@@ -7,7 +7,7 @@
 <body>
 <h1>Please, fill the fields below</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
-    Model<input type = "text" name = "model"><br>
+    Model<input type = "text" name = "model" required><br>
     <h4> Please, choose the manufacturer Id from the list below</h4>
     <table border="1">
         <tr>
@@ -28,8 +28,8 @@
     ManufacturersId<input type="number" name="manufacturerId"><br>
     <button type="submit">Submit</button>
     <h2>You can add a new manufacturers here</h2>
-    Name<input type="text" name="name"><br>
-    Country<input type="text" name="country"><br>
+    Name<input type="text" name="name" required><br>
+    Country<input type="text" name="country" required><br>
     <button type="submit">Submit</button>
 </form>
 </body>
