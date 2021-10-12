@@ -11,4 +11,20 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>driverCreation</servlet-name>
+        <servlet-class>mate.controller.CreateNewDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driverCreation</servlet-name>
+        <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllDrivers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllDrivers</servlet-name>
+        <url-pattern>/drivers/displayAll</url-pattern>
+    </servlet-mapping>
 </web-app>
