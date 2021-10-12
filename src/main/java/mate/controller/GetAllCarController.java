@@ -22,7 +22,7 @@ public class GetAllCarController extends HttpServlet {
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         req.setAttribute("allCars", cars);
-        req.getRequestDispatcher("/WEB-INF/car/getAllCars.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/car/allCars.jsp").forward(req, resp);
     }
 
     @Override
