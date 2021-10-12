@@ -7,17 +7,7 @@
 <body>
 <h1>List of manufacturers:</h1>
 <style>
-    table, td {
-        border: 1px solid black;
-        border-collapse: collapse;
-        text-align: center;
-    }
-    td {
-        padding: 5px;
-    }
-    tr:nth-child(even) {
-        background-color: #DDDDDD;
-    }
+    <%@include file="/WEB-INF/tablesStyle.css"%>
 </style>
 <table>
     <tr>

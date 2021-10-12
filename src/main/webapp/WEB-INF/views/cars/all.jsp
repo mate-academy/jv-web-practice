@@ -7,34 +7,27 @@
 <body>
 <h1>List of cars:</h1>
 <style>
-table, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-    text-align: center;
-}
-td {
-    padding: 5px;
-}
-tr:nth-child(even) {
-    background-color: #DDDDDD;
-}
+    <%@include file="/WEB-INF/tablesStyle.css"%>
 </style>
 <table>
     <tr>
         <td>ID</td>
         <td>MODEL</td>
-        <td>MANUFACTURER ID</td>
-        <td>DRIVERS IDS</td>
+        <td>MANUFACTURER</td>
+        <td>COUNTRY</td>
+        <td>DRIVERS</td>
         <td>DELETE</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
-            <td><c:out value="${car.manufacturer.id}" /></td>
+            <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><c:out value="${car.manufacturer.country}" /></td>
             <td>
                 <c:forEach items="${car.drivers}" var="driver">
-                    <c:out value="${driver.id} " />
+                    <c:out value="${driver.name} " />
+                    <c:out value="${driver.licenseNumber} " /><br>
                 </c:forEach>
             </td>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}"
