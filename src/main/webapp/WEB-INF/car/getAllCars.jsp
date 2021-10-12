@@ -13,7 +13,6 @@
         <td>Model</td>
         <td>Manufacturer</td>
         <td>Delete</td>
-        <td>Pass driver id</td>
         <td>Add</td>
     </tr>
     <c:forEach items="${allCars}" var="car">
