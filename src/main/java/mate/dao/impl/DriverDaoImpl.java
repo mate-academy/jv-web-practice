@@ -54,7 +54,7 @@ public class DriverDaoImpl implements DriverDao {
             throw new DataProcessingException("Can't get drivers "
                     + driver + "  to DB", e);
         }
-        return driver == null ? Optional.of(new Driver()) : Optional.of(driver);
+        return Optional.ofNullable(driver);
     }
 
     @Override
