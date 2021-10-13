@@ -16,13 +16,6 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        List<Manufacturer> manufacturers;
-        manufacturers = manufacturerDao.getAll();
-        for (Manufacturer manufacturerItem : manufacturers) {
-            if (manufacturer.getName().equals(manufacturerItem.getName())) {
-                return manufacturerItem;
-            }
-        }
         return manufacturerDao.create(manufacturer);
     }
 
@@ -42,14 +35,6 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        List<Manufacturer> manufacturers;
-        manufacturers = manufacturerDao.getAll();
-        for (Manufacturer manufacturerItem : manufacturers) {
-            if (manufacturer.getName().equals(manufacturerItem.getName())
-                    && !manufacturerItem.getId().equals(manufacturer.getId())) {
-                return manufacturerItem;
-            }
-        }
         return manufacturerDao.update(manufacturer);
     }
 

@@ -16,13 +16,6 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver create(Driver driver) {
-        List<Driver> drivers;
-        drivers = driverDao.getAll();
-        for (Driver driverItem : drivers) {
-            if (driver.getLicenseNumber().equals(driverItem.getLicenseNumber())) {
-                return driverItem;
-            }
-        }
         return driverDao.create(driver);
     }
 
@@ -42,14 +35,6 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver update(Driver driver) {
-        List<Driver> drivers;
-        drivers = driverDao.getAll();
-        for (Driver driverItem : drivers) {
-            if (driver.getLicenseNumber().equals(driverItem.getLicenseNumber())
-                    && !driverItem.getId().equals(driver.getId())) {
-                return driverItem;
-            }
-        }
         return driverDao.update(driver);
     }
 
