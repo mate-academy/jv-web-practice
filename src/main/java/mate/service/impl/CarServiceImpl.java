@@ -36,15 +36,7 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car update(Car car) {
-        List<Car> cars;
-        cars = carDao.getAll();
-        for (Car carItem : cars) {
-            if (car.getModel().equals(carItem.getModel())
-                    && !carItem.getId().equals(car.getId())) {
-                return carItem;
-            }
-        }
-        return carDao.update(car);
+         return carDao.update(car);
     }
 
     @Override
