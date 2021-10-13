@@ -6,8 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Optional;
+import java.util.Set;
 import mate.dao.CarDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
@@ -133,14 +135,25 @@ public class CarDaoImpl implements CarDao {
 
     @Override
     public List<Car> getAllByDriver(Long driverId) {
-        List<Car> allCars = getAll();
-        List<Car> cars = new ArrayList<>();
-        for (Car car : allCars) {
-            for (Driver driver : car.getDrivers()) {
-                if (driver.getId().equals(driverId)) {
-                    cars.add(car);
-                }
+        String getAllByDriverRequest = "SELECT car_id "
+                + "FROM cars_drivers "
+                + "WHERE driver_id = ?;";
+        Set<Long> carIdSet = new HashSet<>();
+        try (Connection connection = ConnectionUtil.getConnect();
+                  PreparedStatement getAllByDriverStatement =
+                          connection.prepareStatement(getAllByDriverRequest)) {
+            getAllByDriverStatement.setLong(1, driverId);
+            ResultSet resultSet = getAllByDriverStatement.executeQuery();
+            while (resultSet.next()) {
+                carIdSet.add(resultSet.getObject("car_id", Long.class));
             }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't get car by driver id "
+                    + driverId + " from DB", e);
+        }
+        List<Car> cars = getAll();
+        for (Long carId : carIdSet) {
+            cars.add(get(carId).get());
         }
         return cars;
     }
