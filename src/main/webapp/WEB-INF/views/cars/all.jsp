@@ -3,18 +3,9 @@
 <html>
 <head>
     <title>All cars</title>
-    <style type="text/css">
-        TABLE {
-            width: 300px;
-            border-collapse: collapse;
-        }
-
-        TD,TR {
-            padding: 3px;
-            border: 1px solid black;
-        }
-    </style>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/WEB-INF/views/style.css" />
 </head>
+
 <body>
 <h1>All cars</h1>
 <table>
