@@ -22,6 +22,8 @@
         </tr>
     </c:forEach>
 </table>
-</form>
+<h2>Navigation:</h2>
+<a href="${pageContext.request.contextPath}/manufacturers/add">Add new manufacturer</a><br>
+<a href="${pageContext.request.contextPath}/index">Back to index</a>
 </body>
 </html>

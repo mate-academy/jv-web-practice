@@ -5,5 +5,6 @@
 </head>
 <body>
 <h1>Request successfully complete. Thank You!</h1>
+<a href="${pageContext.request.contextPath}/index">Back to index</a>
 </body>
 </html>

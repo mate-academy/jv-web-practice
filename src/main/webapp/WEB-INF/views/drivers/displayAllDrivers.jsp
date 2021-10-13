@@ -22,6 +22,8 @@
         </tr>
     </c:forEach>
 </table>
-</form>
+<h2>Navigation:</h2>
+<a href="${pageContext.request.contextPath}/drivers/add">Add new driver</a><br>
+<a href="${pageContext.request.contextPath}/index">Back to index</a>
 </body>
 </html>

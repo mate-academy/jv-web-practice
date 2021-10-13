@@ -29,5 +29,9 @@
         </tr>
     </c:forEach>
 </table>
+<h2>Navigation:</h2>
+<a href="${pageContext.request.contextPath}/cars/add">Add new car</a><br>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add new driver to a car</a><br>
+<a href="${pageContext.request.contextPath}/index">Back to index</a>
 </body>
 </html>
