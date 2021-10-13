@@ -1,4 +1,4 @@
-package mate.controllers.manufacturer;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import java.util.List;

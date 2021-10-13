@@ -1,4 +1,4 @@
-package mate.controllers.car;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,33 +7,28 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.model.Manufacturer;
-import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/add")
-public class AddNewCarController extends HttpServlet {
+@WebServlet(urlPatterns = {"/manufacturers/add"})
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService
-            = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        String model = request.getParameter("car_model");
-        Long manufacturerId = Long.parseLong(request.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        Car car = new Car(model, manufacturer);
-        carService.create(car);
-        response.sendRedirect("/cars/add");
+        String name = request.getParameter("manufacturer_name");
+        String country = request.getParameter("manufacturer_country");
+        Manufacturer manufacturer = new Manufacturer(name, country);
+        manufacturerService.create(manufacturer);
+        response.sendRedirect("/manufacturers/add");
     }
 }
