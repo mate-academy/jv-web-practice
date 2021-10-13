@@ -37,7 +37,7 @@ public class CarDaoImpl implements CarDao {
                     + car + "  to DB", e);
         }
         if (car.getDrivers() != null && car.getDrivers().size() > 0) {
-            setDriversForCar(car.getId(), car.getDrivers());
+            setDriversForCar(car);
         }
         return car;
     }
@@ -112,7 +112,7 @@ public class CarDaoImpl implements CarDao {
             deleteDriversForCar(oldCar.getId());
         }
         if (car.getDrivers() != null && car.getDrivers().size() > 0) {
-            setDriversForCar(car.getId(), car.getDrivers());
+            setDriversForCar(car);
         }
         return oldCar;
     }
@@ -186,15 +186,14 @@ public class CarDaoImpl implements CarDao {
         return driver;
     }
 
-    private void setDriversForCar(Long carId, List<Driver> drivers) {
+    private void setDriversForCar(Car car) {
         String insertDriversForCarRequest = "INSERT "
                 + "INTO cars_drivers(car_id, driver_id) VALUES(?, ?);";
         try (Connection connection = ConnectionUtil.getConnect();
                  PreparedStatement insertDriversForCarStatement =
                          connection.prepareStatement(insertDriversForCarRequest)) {
-            insertDriversForCarStatement.setLong(1, carId);
-
-            for (Driver driver : drivers) {
+            insertDriversForCarStatement.setLong(1, car.getId());
+            for (Driver driver : car.getDrivers()) {
                 insertDriversForCarStatement.setLong(2, driver.getId());
                 insertDriversForCarStatement.executeUpdate();
             }
