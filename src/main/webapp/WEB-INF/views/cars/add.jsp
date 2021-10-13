@@ -5,7 +5,6 @@
 </head>
 <body>
 <h1>Please fill in form below to create new car:</h1>
-
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Car name <input type="text" name="model"><br>
     Car manufacturer`s id <input type="text" name="manufacturer_id"><br>
