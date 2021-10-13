@@ -10,7 +10,5 @@ public class IndexController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("message", "FUCK");
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }
