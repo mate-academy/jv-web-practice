@@ -27,7 +27,6 @@ public class CreateNewDriverController extends HttpServlet {
         String licenseNumber = req.getParameter("licenseNumber");
         Driver driver = new Driver(username, licenseNumber);
         driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/status/success.jsp")
-                .forward(req, resp);
+        resp.sendRedirect("/drivers");
     }
 }

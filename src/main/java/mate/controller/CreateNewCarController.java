@@ -29,7 +29,6 @@ public class CreateNewCarController extends HttpServlet {
         Long manufacturerId = Long.parseLong(req.getParameter("manufacturer"));
         Car car = new Car(model, manufacturerService.get(manufacturerId));
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/status/success.jsp")
-                .forward(req, resp);
+        resp.sendRedirect("/cars");
     }
 }
