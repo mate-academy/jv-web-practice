@@ -6,6 +6,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Manufacturer;
 import mate.service.CarService;
@@ -13,16 +14,15 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
-    private final CarService carService = (CarService) AddDriverController
-            .injector.getInstance(CarService.class);
+    public static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
-            = (ManufacturerService) AddDriverController
-            .injector.getInstance(ManufacturerService.class);
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
     }
 
     @Override
@@ -33,6 +33,6 @@ public class AddCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
         Car car = new Car(name, manufacturer);
         carService.create(car);
-        resp.getWriter().println("Car was added");
+        resp.sendRedirect("/cars/all");
     }
 }
