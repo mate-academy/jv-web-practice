@@ -2,6 +2,7 @@ package mate.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import mate.dao.DriverDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Inject;
@@ -16,6 +17,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver create(Driver driver) {
+        Optional<Driver> optionalDriver =
+                driverDao.getDriverByLicenseNumber(driver.getLicenseNumber());
+        if (optionalDriver.isPresent()) {
+            throw new RuntimeException("Driver with same License Number already exist");
+        }
         return driverDao.create(driver);
     }
 
@@ -35,6 +41,11 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver update(Driver driver) {
+        Optional<Driver> optionalDriver =
+                driverDao.getDriverByLicenseNumber(driver.getLicenseNumber());
+        if (optionalDriver.isPresent() && !optionalDriver.get().getId().equals(driver.getId())) {
+            throw new RuntimeException("Driver with same License Number already exist");
+        }
         return driverDao.update(driver);
     }
 

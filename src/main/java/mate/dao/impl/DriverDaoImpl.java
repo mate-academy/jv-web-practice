@@ -18,10 +18,6 @@ import mate.util.ConnectionUtil;
 public class DriverDaoImpl implements DriverDao {
     @Override
     public Driver create(Driver driver) {
-        Driver checkDriver = getDriverByLicenseNumber(driver);
-        if (!checkDriver.equals(driver)) {
-            return checkDriver;
-        }
         String insertDriverRequest = "INSERT INTO drivers(name, license_number) VALUES(?, ?);";
         try (Connection connection = ConnectionUtil.getConnect();
                  PreparedStatement insertDriverStatement =
@@ -80,10 +76,6 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public Driver update(Driver driver) {
-        Driver checkDriver = getDriverByLicenseNumber(driver);
-        if (!checkDriver.equals(driver) && !checkDriver.getId().equals(driver.getId())) {
-            return checkDriver;
-        }
         String updateDriverRequest = "UPDATE drivers SET name = ?, license_number = ? "
                 + "WHERE is_deleted = false AND id  = ?;";
         String getDriverByIdRequest = "SELECT * FROM drivers "
@@ -124,6 +116,25 @@ public class DriverDaoImpl implements DriverDao {
         }
     }
 
+    public Optional<Driver> getDriverByLicenseNumber(String licenseNumber) {
+        String existByLicenseNumberRequest = "SELECT * FROM drivers "
+                + "WHERE is_deleted = false AND license_number = ?;";
+        Driver driver = null;
+        try (Connection connection = ConnectionUtil.getConnect();
+                 PreparedStatement existByLicenseNumberStatement =
+                         connection.prepareStatement(existByLicenseNumberRequest)) {
+            existByLicenseNumberStatement.setString(1, licenseNumber);
+            ResultSet resultSet = existByLicenseNumberStatement.executeQuery();
+            if (resultSet.next()) {
+                driver = parseResultSet(resultSet);
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't find driver by license number"
+                    + driver + " from DB", e);
+        }
+        return Optional.ofNullable(driver);
+    }
+
     private Driver parseResultSet(ResultSet resultSet) throws SQLException {
         Driver driver = new Driver();
         Long id = resultSet.getObject("id", Long.class);
@@ -132,24 +143,6 @@ public class DriverDaoImpl implements DriverDao {
         driver.setId(id);
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
-        return driver;
-    }
-
-    private Driver getDriverByLicenseNumber(Driver driver) {
-        String existByLicenseNumberRequest = "SELECT * FROM drivers "
-                + "WHERE is_deleted = false AND license_number = ?;";
-        try (Connection connection = ConnectionUtil.getConnect();
-                 PreparedStatement existByLicenseNumberStatement =
-                         connection.prepareStatement(existByLicenseNumberRequest)) {
-            existByLicenseNumberStatement.setString(1, driver.getLicenseNumber());
-            ResultSet resultSet = existByLicenseNumberStatement.executeQuery();
-            if (resultSet.next()) {
-                return parseResultSet(resultSet);
-            }
-        } catch (SQLException e) {
-            throw new DataProcessingException("Can't find driver by license number"
-                    + driver + " from DB", e);
-        }
         return driver;
     }
 }

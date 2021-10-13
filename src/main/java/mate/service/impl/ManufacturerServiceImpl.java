@@ -2,6 +2,7 @@ package mate.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 import mate.dao.ManufacturerDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Inject;
@@ -16,6 +17,11 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
+        Optional<Manufacturer> optionalManufacturer =
+                manufacturerDao.getManufacturerByName(manufacturer.getName());
+        if (optionalManufacturer.isPresent()) {
+            throw new RuntimeException("Manufacturer with same Name already exist");
+        }
         return manufacturerDao.create(manufacturer);
     }
 
@@ -35,6 +41,13 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
+
+        Optional<Manufacturer> optionalManufacturer =
+                manufacturerDao.getManufacturerByName(manufacturer.getName());
+        if (optionalManufacturer.isPresent()
+                && !optionalManufacturer.get().getId().equals(manufacturer.getId())) {
+            throw new RuntimeException("Manufacturer with same Name already exist");
+        }
         return manufacturerDao.update(manufacturer);
     }
 

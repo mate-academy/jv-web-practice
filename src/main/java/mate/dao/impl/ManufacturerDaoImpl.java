@@ -18,10 +18,6 @@ import mate.util.ConnectionUtil;
 public class ManufacturerDaoImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        Manufacturer checkManufacturer = getManufacturerByName(manufacturer);
-        if (!checkManufacturer.equals(manufacturer)) {
-            return checkManufacturer;
-        }
         String insertManufacturerRequest = "INSERT INTO manufacturers(name, country) VALUES(?, ?);";
         try (Connection connection = ConnectionUtil.getConnect();
                  PreparedStatement insertManufacturerStatement =
@@ -80,11 +76,6 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
 
     @Override
     public Manufacturer update(Manufacturer manufacturer) {
-        Manufacturer checkManufacturer = getManufacturerByName(manufacturer);
-        if (!checkManufacturer.equals(manufacturer)
-                && !checkManufacturer.getId().equals(manufacturer.getId())) {
-            return checkManufacturer;
-        }
         String updateManufactureRequest = "UPDATE manufacturers SET name = ?, country = ? "
                 + "WHERE is_deleted = false AND id  = ?;";
         String getManufacturerByIdRequest = "SELECT * FROM manufacturers "
@@ -125,6 +116,25 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
         }
     }
 
+    public Optional<Manufacturer> getManufacturerByName(String name) {
+        String existByNameRequest = "SELECT * FROM manufacturers "
+                + "WHERE is_deleted = false AND name = ?;";
+        Manufacturer manufacturer = null;
+        try (Connection connection = ConnectionUtil.getConnect();
+                 PreparedStatement existByNameStatement =
+                         connection.prepareStatement(existByNameRequest)) {
+            existByNameStatement.setString(1, name);
+            ResultSet resultSet = existByNameStatement.executeQuery();
+            if (resultSet.next()) {
+                manufacturer = parseResultSet(resultSet);
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't find manufacturer by license number"
+                    + manufacturer + " from DB", e);
+        }
+        return Optional.ofNullable(manufacturer);
+    }
+
     private Manufacturer parseResultSet(ResultSet resultSet) throws SQLException {
         Manufacturer manufacturer = new Manufacturer();
         Long id = resultSet.getObject("id", Long.class);
@@ -133,24 +143,6 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
         manufacturer.setId(id);
         manufacturer.setName(name);
         manufacturer.setCountry(country);
-        return manufacturer;
-    }
-
-    private Manufacturer getManufacturerByName(Manufacturer manufacturer) {
-        String existByNameRequest = "SELECT * FROM manufacturers "
-                + "WHERE is_deleted = false AND name = ?;";
-        try (Connection connection = ConnectionUtil.getConnect();
-                 PreparedStatement existByNameStatement =
-                         connection.prepareStatement(existByNameRequest)) {
-            existByNameStatement.setString(1, manufacturer.getName());
-            ResultSet resultSet = existByNameStatement.executeQuery();
-            if (resultSet.next()) {
-                return parseResultSet(resultSet);
-            }
-        } catch (SQLException e) {
-            throw new DataProcessingException("Can't find manufacturer by license number"
-                    + manufacturer + " from DB", e);
-        }
         return manufacturer;
     }
 }
