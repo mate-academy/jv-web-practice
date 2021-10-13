@@ -9,7 +9,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>displayAllDriversController</servlet-name>
-        <url-pattern>/drivers</url-pattern>
+        <url-pattern>/drivers/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createDriverController</servlet-name>
@@ -49,7 +49,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>displayAllManufacturersController</servlet-name>
-        <url-pattern>/manufacturers</url-pattern>
+        <url-pattern>/manufacturers/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturerController</servlet-name>
@@ -73,7 +73,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>displayAllCarsController</servlet-name>
-        <url-pattern>/cars</url-pattern>
+        <url-pattern>/cars/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteCarController</servlet-name>
