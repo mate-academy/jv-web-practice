@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Please fill the fields below</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/cars/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     Driver <label>
     <select name="driver">
     <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
