@@ -20,7 +20,7 @@
                 <td><c:out value="${driver.name}" /></td>
                 <td><c:out value="${driver.licenseNumber}" /></td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
+                    <a href="${pageContext.request.contextPath}/cars/drivers/delete?id=${driver.id}">
                         <button>Delete driver</button>
                     </a>
                 </td>
