@@ -9,7 +9,7 @@ public class ConnectionUtil {
     public static final String URL = "jdbc:mysql://localhost:3306/taxi?useUnicode"
             + "=true&serverTimezone=UTC&useSSL=true&verifyServerCertificate=false";
     public static final String USERNAME = "root";
-    public static final String PASSWORD = "12345678";
+    public static final String PASSWORD = "Andriiprogrammer3399";
     public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     static {

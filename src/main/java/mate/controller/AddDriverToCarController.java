@@ -35,5 +35,6 @@ public class AddDriverToCarController extends HttpServlet {
         Driver driver = driverService.get(driverId);
         car.getDrivers().add(driver);
         carService.update(car);
+        response.sendRedirect("/");
     }
 }
