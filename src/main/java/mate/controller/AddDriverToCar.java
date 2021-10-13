@@ -11,7 +11,6 @@ import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
-import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = {"/car/driver/add"})
 public class AddDriverToCar extends HttpServlet {
@@ -20,8 +19,6 @@ public class AddDriverToCar extends HttpServlet {
             = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
-    private final ManufacturerService manufacturerService
-            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
