@@ -11,7 +11,7 @@
     <input type="text" name="driver_name">
 </label><br>
     Driver license Number <label>
-    <input type="number" name="driver_license_number">
+    <input type="text" name="driver_license_number">
 </label><br>
     <button type="submit">Add</button>
 </form>
