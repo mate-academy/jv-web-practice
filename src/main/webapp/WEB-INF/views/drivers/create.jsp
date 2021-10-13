@@ -3,11 +3,11 @@
 <html>
 <head>Create driver</head>
 <body>
-<h1>Input driver information</h1>
+<h1>Enter driver information</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
    Name <input type="text" name="name"><br>
    License number <input type="number" name="license_number"><br>
-    <button type="submit">Create new driver</button>
+   <button type="submit">Create new driver</button>
 </form>
 </body>
 </html>

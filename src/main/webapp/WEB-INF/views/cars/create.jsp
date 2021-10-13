@@ -3,7 +3,7 @@
 <html>
 <head>Create car</head>
 <body>
-<h1>Input car information</h1>
+<h1>Enter car information</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model <input type="text" name="model"><br>
     Manufacturer id<input type="number" name="manufacturer_id"><br>
