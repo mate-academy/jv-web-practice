@@ -23,7 +23,7 @@ public class AddNewCarController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
-        resp.sendRedirect("/index");
+        resp.sendRedirect("/cars/add");
     }
 
     @Override
