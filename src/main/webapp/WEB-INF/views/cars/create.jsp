@@ -25,11 +25,7 @@
         <tr>
         </tr>
     </table>
-    ManufacturersId<input type="number" name="manufacturerId"><br>
-    <button type="submit">Submit</button>
-    <h2>You can add a new manufacturers here</h2>
-    Name<input type="text" name="name" required><br>
-    Country<input type="text" name="country" required><br>
+    ManufacturersId<input type="number" name="manufacturerId" required><br>
     <button type="submit">Submit</button>
 </form>
 </body>
