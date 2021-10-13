@@ -15,7 +15,7 @@ import mate.service.ManufacturerService;
 @WebServlet(name = "createCarServlet", value = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -33,6 +33,6 @@ public class CreateCarController extends HttpServlet {
         Car car = new Car(model, manufacturer);
         CarService carService = (CarService) injector.getInstance(CarService.class);
         carService.create(car);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect("/cars");
     }
 }

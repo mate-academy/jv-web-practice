@@ -15,9 +15,9 @@ import mate.service.DriverService;
 @WebServlet(name = "addDriverToCarServlet", value = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final DriverService driverService =
+    private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
-    private static final CarService carService =
+    private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
 
     @Override
@@ -34,6 +34,6 @@ public class AddDriverToCarController extends HttpServlet {
         Long carId = Long.parseLong(req.getParameter("car_id"));
         Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect("/cars");
     }
 }
