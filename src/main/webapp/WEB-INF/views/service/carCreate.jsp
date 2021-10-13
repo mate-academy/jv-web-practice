@@ -7,13 +7,14 @@
 <body>
 <h1>Enter the model and select the manufacturer from the list</h1>
 <br>
-<form method="post" action="${pageContext.request.contextPath}/car/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="carModel"/><br>
-    Manufacturer ID<input type="text" name="manufacturerId"/><br>
+    Manufacturer <select name="manufacturer">
+    <c:forEach items="${manufacturers}" var="manufacturer">
+        <option value="${manufacturer.getId()}">${manufacturer.getName()}</option>
+    </c:forEach>
+</select>
     <button type="submit">add car</button>
-</form>
-<form method="get" action="${pageContext.request.contextPath}/car/include/manufacturer">
-    <button type="submit">Show Manufacturers</button>
 </form>
 <br>
 </body>

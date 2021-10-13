@@ -7,24 +7,24 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.DriverService;
+import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/driver/delete")
-public class DeleteDriverController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/delete")
+public class CarsDeleteController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
+    private CarService carService;
 
     @Override
     public void init() throws ServletException {
-        driverService = (DriverService) injector
-                .getInstance(DriverService.class);
+        carService = (CarService) injector
+                .getInstance(CarService.class);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(req.getParameter("id"));
-        driverService.delete(driverId);
-        resp.sendRedirect("/index");
+        Long carId = Long.valueOf(req.getParameter("id"));
+        carService.delete(carId);
+        resp.sendRedirect("/cars");
     }
 }

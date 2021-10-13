@@ -11,8 +11,8 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/car/include/manufacturer")
-public class GetAllManufacturerIncludeCreateCarController extends HttpServlet {
+@WebServlet(urlPatterns = "/manufacturers")
+public class ManufacturersGetAllController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService;
 
@@ -25,11 +25,9 @@ public class GetAllManufacturerIncludeCreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-
-        req.getRequestDispatcher("/WEB-INF/views/service/createCar.jsp").include(req, resp);
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/service/getAllManufacturers.jsp")
-                .include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/service/manufacturersGetAll.jsp")
+                .forward(req, resp);
     }
 }

@@ -7,21 +7,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.model.Manufacturer;
-import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/car/add")
-public class CreateCarController extends HttpServlet {
+@WebServlet(urlPatterns = "/manufacturers/add")
+public class ManufacturersCreateController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
     private ManufacturerService manufacturerService;
 
     @Override
     public void init() throws ServletException {
-        carService = (CarService) injector
-                .getInstance(CarService.class);
         manufacturerService = (ManufacturerService) injector
                 .getInstance(ManufacturerService.class);
     }
@@ -29,16 +24,16 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/service/createCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/service/manufacturerCreate.jsp")
+                .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String carModel = req.getParameter("carModel");
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        carService.create(new Car(carModel,manufacturer));
-        resp.sendRedirect("/index");
+        String name = req.getParameter("nameManufacturer");
+        String country = req.getParameter("countryManufacturer");
+        manufacturerService.create(new Manufacturer(name, country));
+        resp.sendRedirect("/manufacturers");
     }
 }

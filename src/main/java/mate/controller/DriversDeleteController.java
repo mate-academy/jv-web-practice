@@ -7,11 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/add")
-public class CreateDriverController extends HttpServlet {
+@WebServlet(urlPatterns = "/drivers/delete")
+public class DriversDeleteController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private DriverService driverService;
 
@@ -24,15 +23,8 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/service/createDriver.jsp").forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        String driverName = req.getParameter("driverName");
-        String licenseNumber = req.getParameter("licenseNumber");
-        driverService.create(new Driver(driverName, licenseNumber));
-        resp.sendRedirect("/index");
+        Long driverId = Long.valueOf(req.getParameter("id"));
+        driverService.delete(driverId);
+        resp.sendRedirect("/drivers");
     }
 }

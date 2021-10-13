@@ -34,7 +34,7 @@
                 <td><c:out value="${driver.getName()}"/></td>
                 <td><c:out value="${driver.getLicenseNumber()}"/></td>
             </c:forEach>
-            <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.getId()}">delete this car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">delete this car</a></td>
         </tr>
     </c:forEach>
 </table>

@@ -1,22 +1,28 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
 import mate.model.Manufacturer;
+import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturer/add")
-public class CreateManufacturerController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/add")
+public class CarsCreateController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private CarService carService;
     private ManufacturerService manufacturerService;
 
     @Override
     public void init() throws ServletException {
+        carService = (CarService) injector
+                .getInstance(CarService.class);
         manufacturerService = (ManufacturerService) injector
                 .getInstance(ManufacturerService.class);
     }
@@ -24,16 +30,18 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/service/createManufacturer.jsp")
-                .forward(req, resp);
+        List<Manufacturer> manufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", manufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/service/carCreate.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String name = req.getParameter("nameManufacturer");
-        String country = req.getParameter("countryManufacturer");
-        manufacturerService.create(new Manufacturer(name, country));
-        resp.sendRedirect("/index");
+        String carModel = req.getParameter("carModel");
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        carService.create(new Car(carModel,manufacturer));
+        resp.sendRedirect("/cars");
     }
 }
