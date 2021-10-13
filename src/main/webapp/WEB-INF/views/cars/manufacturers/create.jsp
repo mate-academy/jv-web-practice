@@ -5,7 +5,7 @@
 </head>
 <body>
     <h1>Create manufacturer</h1>
-    <form method="post" action="/manufacturer/create">
+    <form method="post" action="/cars/manufacturers/create">
         Manufacturer name: <input type="text" name="name">
         Manufacturer country: <input type="text" name="country">
         <button type="submit">Confirm</button>

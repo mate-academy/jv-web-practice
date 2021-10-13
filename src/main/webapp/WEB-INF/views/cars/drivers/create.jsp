@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create driver:</h1>
-<form method="post" action="/driver/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/create">
     Driver name:<input type="text" name="name">
     Driver licence:<input type="text" name="licence">
     <button type="submit">Confirm</button>
