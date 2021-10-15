@@ -1,28 +1,26 @@
-package mate.controller.car;
+package mate.controller.driver;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
-import mate.service.CarService;
+import mate.service.DriverService;
 
-@WebServlet(name = "allCars", urlPatterns = "/cars")
-public class GetAllCarsController extends HttpServlet {
+@WebServlet(name = "deleteDriver", urlPatterns = "/drivers/delete")
+public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector
             .getInstance("mate");
-    private final CarService carService = (CarService) injector
-            .getInstance(CarService.class);
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> allCars = carService.getAll();
-        req.setAttribute("cars", allCars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/allCars.jsp").forward(req, resp);
+        Long driverId = Long.parseLong(req.getParameter("id"));
+        driverService.delete(driverId);
+        req.getRequestDispatcher("/WEB-INF/views/result.jsp").include(req, resp);
     }
 }
