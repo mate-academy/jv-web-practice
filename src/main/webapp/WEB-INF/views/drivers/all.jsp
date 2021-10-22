@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>all drivers</title>
     <style><%@include file="/WEB-INF/views/css/styles.css"%></style>
 </head>
 <body>
