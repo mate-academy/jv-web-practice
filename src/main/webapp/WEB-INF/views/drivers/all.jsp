@@ -3,17 +3,7 @@
 <html>
 <head>
     <title>My team</title>
-    <style>
-        table {
-            width: 260px;
-            border-collapse: collapse;
-        }
-        td, tr {
-            padding: 4px;
-            border: 1px solid black;
-            text-align: center;
-        }
-    </style>
+    <style><%@include file="/WEB-INF/views/css/styles.css"%></style>
 </head>
 <body>
 <h2>List drivers!</h2>
