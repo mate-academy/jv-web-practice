@@ -12,11 +12,12 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class GetAllManufacturerController extends HttpServlet {
+    private ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(
+            ManufacturerService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(
-                ManufacturerService.class);
         List<Manufacturer> allManufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", allManufacturers);
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req, resp);

@@ -5,7 +5,7 @@
     <title>All drivers</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"></jsp:include>
+<jsp:include page="../menu.jsp"></jsp:include>
 <H1>All drivers</H1>
 <table>
     <tr>

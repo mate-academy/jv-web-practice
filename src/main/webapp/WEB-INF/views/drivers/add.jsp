@@ -1,12 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>New Driver</title>
+    <title>Add Driver</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"></jsp:include>
+<jsp:include page="../menu.jsp"></jsp:include>
 <H1>Add new driver</H1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/new">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <table>
         <tr>
             <td>Name</td>

@@ -13,11 +13,11 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>newDriver</servlet-name>
-        <servlet-class>mate.controller.NewDriverController</servlet-class>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newDriver</servlet-name>
-        <url-pattern>/drivers/new</url-pattern>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>allDrivers</servlet-name>
@@ -29,11 +29,11 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>newManufacturer</servlet-name>
-        <servlet-class>mate.controller.NewManufacturerController</servlet-class>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newManufacturer</servlet-name>
-        <url-pattern>/manufacturers/new</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>allManufacturer</servlet-name>
@@ -45,11 +45,11 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>newCar</servlet-name>
-        <servlet-class>mate.controller.NewCarController</servlet-class>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>newCar</servlet-name>
-        <url-pattern>/cars/new</url-pattern>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>allCars</servlet-name>
@@ -61,11 +61,11 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>mate.controller.AddDriverToCar</servlet-class>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/add-driver-to-car</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturer</servlet-name>
@@ -90,5 +90,13 @@
     <servlet-mapping>
         <servlet-name>deleteCarOrDriverFromCar</servlet-name>
         <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>removeDriverFromCar</servlet-name>
+        <servlet-class>mate.controller.RemoveDriverFromCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeDriverFromCar</servlet-name>
+        <url-pattern>/cars/drivers/delete</url-pattern>
     </servlet-mapping>
 </web-app>

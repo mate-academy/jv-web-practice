@@ -5,9 +5,9 @@
     <title>New car</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"/>
+<jsp:include page="../menu.jsp"/>
 <H1>Add new car</H1>
-<form method="post" action="${pageContext.request.contextPath}/cars/new">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     <table>
         <tr>
             <td>Model</td>
@@ -15,9 +15,11 @@
         </tr>
         <tr>
             <td>Manufacturer</td>
-            <td><select name="manufacturerFromList" >
+            <td><select name="manufacturerFromList">
                 <c:forEach items="${manufacturers}" var="manufacturer">
-                    <option>${manufacturer.id}.${manufacturer.name} ${manufacturer.country}</option>
+                    <option nam e="id" value="${manufacturer.id}">${manufacturer.id}.
+                            ${manufacturer.name}
+                            ${manufacturer.country}</option>
                 </c:forEach>
             </select></td>
         </tr>

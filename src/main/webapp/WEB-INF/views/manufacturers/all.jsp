@@ -5,7 +5,7 @@
     <title>All manufacturers</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"></jsp:include>
+<jsp:include page="../menu.jsp"></jsp:include>
 <H1>All manufacturers</H1>
 <table>
     <tr>

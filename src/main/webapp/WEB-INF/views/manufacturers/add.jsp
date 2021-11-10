@@ -4,9 +4,9 @@
     <title>New manufacturer</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"></jsp:include>
+<jsp:include page="../menu.jsp"></jsp:include>
 <H1>Add new manufacturer</H1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/new">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <table>
         <tr>
             <td>Name</td>

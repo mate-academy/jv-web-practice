@@ -1,4 +1,4 @@
-<h4>MENU</h4>
+ <h4>MENU</h4>
 <table>
     <tr>
         <td>CARS</td>
@@ -7,17 +7,17 @@
     </tr>
     <tr>
         <td>
-            <form action="/cars/new">
+            <form action="/cars/add">
                 <button type="submit">Add car</button>
             </form>
         </td>
         <td>
-            <form action="/manufacturers/new">
+            <form action="/manufacturers/add">
                 <button type="submit">Add manufacturer</button>
             </form>
         </td>
         <td>
-            <form action="/drivers/new">
+            <form action="/drivers/add">
                 <button type="submit">Add driver</button>
             </form>
         </td>
@@ -41,7 +41,7 @@
     </tr>
     <tr>
         <td>
-            <form action="/cars/add-driver-to-car">
+            <form action="/cars/drivers/add">
                 <button type="submit">Add driver to car</button>
             </form>
         </td>

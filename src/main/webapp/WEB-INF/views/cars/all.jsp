@@ -5,7 +5,7 @@
     <title>All cars</title>
 </head>
 <body>
-<jsp:include page="menu.jsp"/>
+<jsp:include page="../menu.jsp"/>
 <H1>All cars</H1>
 <table border="1">
     <tr>
@@ -22,7 +22,8 @@
             <td>
                 <c:forEach items="${car.drivers}" var="driver">
                     <c:out value="${driver.id}.${driver.name}"/>
-                    <a href="/cars/delete?carId=${car.id}&driverId=${driver.id}">Delete driver from
+                    <a href="/cars/drivers/delete?carId=${car.id}&driverId=${driver.id}">Delete
+                        driver from
                         car</a><br>
                 </c:forEach>
             </td>
