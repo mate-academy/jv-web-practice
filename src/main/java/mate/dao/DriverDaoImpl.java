@@ -101,12 +101,43 @@ public class DriverDaoImpl implements DriverDao {
         }
     }
 
+    @Override
+    public List<Driver> getAllDriversByCar(Long carId) {
+        String selectQuery = "select d.id, name, license_number "
+                + "from drivers as d "
+                + "join cars_drivers cd on d.id = cd.driver_id "
+                + "join cars c on c.id = cd.car_id "
+                + "where d.is_deleted = false and c.is_deleted = false and car_id = ?";
+        List<Driver> drivers = new ArrayList<>();
+        try (Connection connection = ConnectionUtil.getConnection();
+                 PreparedStatement getAllDriversByCarStatement =
+                         connection.prepareStatement(selectQuery)) {
+            getAllDriversByCarStatement.setLong(1, carId);
+            ResultSet resultSet = getAllDriversByCarStatement.executeQuery();
+            while (resultSet.next()) {
+                drivers.add(parseDriverFromResultSet(resultSet));
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't get all drivers by car id " + carId, e);
+        }
+        return drivers;
+    }
+
     private Driver getDriver(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getObject("id", Long.class);
         String name = resultSet.getString("name");
         String licenseNumber = resultSet.getString("license_number");
         Driver driver = new Driver(name, licenseNumber);
         driver.setId(id);
+        return driver;
+    }
+
+    private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
+        long driverId = resultSet.getObject("id", Long.class);
+        String driverName = resultSet.getNString("name");
+        String licenseNumber = resultSet.getNString("license_number");
+        Driver driver = new Driver(driverName, licenseNumber);
+        driver.setId(driverId);
         return driver;
     }
 }

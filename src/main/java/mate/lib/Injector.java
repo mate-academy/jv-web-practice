@@ -164,6 +164,13 @@ public class Injector {
                     classes.addAll(findClasses(file, packageName + "."
                             + file.getName()));
                 } else if (file.getName().endsWith(".class")) {
+
+                    /*String controller = packageName + '.'
+                            + file.getName().substring(0, file.getName().length() - 6);
+                    if (controller.contains("Controller")) {
+                        continue;
+                    }*/
+
                     classes.add(Class.forName(packageName + '.'
                             + file.getName().substring(0, file.getName().length() - 6)));
                 }
