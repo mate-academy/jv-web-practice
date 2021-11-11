@@ -23,14 +23,9 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String carModel = req.getParameter("model");
-        String makerName = req.getParameter("maker");
-        String makerCountry = req.getParameter("maker_country");
-        Manufacturer maker = manufacturerService.getAll().stream()
-                .filter(m -> m.getName().equals(makerName)
-                && m.getCountry().equals(makerCountry))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Can't get maker "
-                        + makerName + " from DB"));
+        String makerId = req.getParameter("maker_id");
+        long manufacturerId = Long.parseLong(req.getParameter("maker_id"));
+        Manufacturer maker = manufacturerService.get(manufacturerId);
         Car car = new Car(carModel,maker);
         carService.create(car);
         resp.sendRedirect("/index");

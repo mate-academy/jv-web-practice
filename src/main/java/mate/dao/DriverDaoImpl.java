@@ -115,7 +115,7 @@ public class DriverDaoImpl implements DriverDao {
             getAllDriversByCarStatement.setLong(1, carId);
             ResultSet resultSet = getAllDriversByCarStatement.executeQuery();
             while (resultSet.next()) {
-                drivers.add(parseDriverFromResultSet(resultSet));
+                drivers.add(getDriver(resultSet));
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Can't get all drivers by car id " + carId, e);
@@ -129,15 +129,6 @@ public class DriverDaoImpl implements DriverDao {
         String licenseNumber = resultSet.getString("license_number");
         Driver driver = new Driver(name, licenseNumber);
         driver.setId(id);
-        return driver;
-    }
-
-    private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
-        long driverId = resultSet.getObject("id", Long.class);
-        String driverName = resultSet.getNString("name");
-        String licenseNumber = resultSet.getNString("license_number");
-        Driver driver = new Driver(driverName, licenseNumber);
-        driver.setId(driverId);
         return driver;
     }
 }

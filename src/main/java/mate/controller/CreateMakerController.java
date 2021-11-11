@@ -11,7 +11,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/makers/create")
+@WebServlet(urlPatterns = "/manufacturers/create")
 public class CreateMakerController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
     private static ManufacturerService manufacturerService =
@@ -24,14 +24,6 @@ public class CreateMakerController extends HttpServlet {
         String country = req.getParameter("country");
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         Manufacturer maker = new Manufacturer(makerName,country);
-        for (Manufacturer tempMaker : manufacturers) {
-            if (tempMaker.getName().equals(maker.getName())
-                    && tempMaker.getCountry().equals(maker.getCountry())) {
-                throw new RuntimeException("Maker " + maker.getName()
-                        + " from " + maker.getCountry()
-                        + " is already exist");
-            }
-        }
         manufacturerService.create(maker);
         resp.sendRedirect("/index");
     }

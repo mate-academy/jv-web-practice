@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,17 +21,7 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         String driverName = req.getParameter("driver_name");
         String licenseNumber = req.getParameter("licenseNumber");
-        List<Driver> drivers = driverService.getAll();
         Driver driver = new Driver(driverName,licenseNumber);
-        for (Driver tempDriver : drivers) {
-            if (tempDriver.getName().equals(driver.getName())
-                    && tempDriver.getLicenseNumber()
-                    .equals(driver.getLicenseNumber())) {
-                throw new RuntimeException("Driver " + driver.getName()
-                        + " with licenseNumber " + driver.getLicenseNumber()
-                        + " is already exist");
-            }
-        }
         driverService.create(driver);
         resp.sendRedirect("/index");
     }
