@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +21,6 @@ public class CreateMakerController extends HttpServlet {
             throws ServletException, IOException {
         String makerName = req.getParameter("maker_name");
         String country = req.getParameter("country");
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
         Manufacturer maker = new Manufacturer(makerName,country);
         manufacturerService.create(maker);
         resp.sendRedirect("/index");
