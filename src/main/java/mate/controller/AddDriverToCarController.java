@@ -23,14 +23,6 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> allDriversList = driverService.getAll();
         List<Car> allCarsList = carService.getAll();
-        req.setAttribute("maxDriverId", allDriversList.stream()
-                .mapToLong(Driver::getId)
-                .max()
-                .orElse(1L));
-        req.setAttribute("maxCarId", allCarsList.stream()
-                .mapToLong(Car::getId)
-                .max()
-                .orElse(1L));
         req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req, resp);
     }
 

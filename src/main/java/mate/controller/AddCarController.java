@@ -22,10 +22,6 @@ public class AddCarController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Manufacturer> allManufacturersList = manufacturerService.getAll();
-        req.setAttribute("maxId", allManufacturersList.stream()
-                .mapToLong(Manufacturer::getId)
-                .max()
-                .orElse(1L));
         req.getRequestDispatcher("/WEB-INF/views/cars/add_car.jsp").forward(req, resp);
     }
 

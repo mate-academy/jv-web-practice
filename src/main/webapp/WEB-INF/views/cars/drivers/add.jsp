@@ -7,10 +7,8 @@
 <h1>Please fill the form:</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    DRIVER ID (from 1 to ${maxDriverId})
-    <input type="number" required name="driver_id" min="1" max="${maxDriverId}">  <br>
-    CAR ID (from 1 to ${maxCarId})
-    <input type="number" required name="car_id" min="1" max="${maxCarId}"> <br>
+    DRIVER ID <input type="number" required name="driver_id" min="1">  <br>
+    CAR ID <input type="number" required name="car_id" min="1"> <br>
     <button type="submit">Save</button>
 </form>
 <br>

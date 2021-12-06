@@ -8,8 +8,7 @@
 
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Name <input type="text" required name="model"><br>
-    Manufacturer id (from 1 to ${maxId})
-    <input type="number" required name="id" min="1" max="${maxId}"> <br>
+    Manufacturer id <input type="number" required name="id" min="1"> <br>
     <button type="submit">Save</button>
 </form>
 <br>
