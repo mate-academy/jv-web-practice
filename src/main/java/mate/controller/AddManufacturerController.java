@@ -7,12 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/index")
-public class IndexController extends HttpServlet {
+@WebServlet(urlPatterns = "/driver/add")
+public class AddManufacturerController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("IndexController");
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        System.out.println("AddManufacturerController");
+        resp.sendRedirect("/index");
     }
 }
