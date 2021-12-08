@@ -11,12 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class CreateDriverController extends HttpServlet {
-    Injector injector = Injector.getInstance("mate");
-    DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private static final Injector injector = Injector.getInstance("mate");
+    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/create_driver.jsp").forward(req, resp);
     }
 
     @Override
@@ -25,6 +25,6 @@ public class CreateDriverController extends HttpServlet {
         String licenceNumber = req.getParameter("licenceNumber");
         Driver driver = new Driver(name, licenceNumber);
         driverService.create(driver);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect("/drivers/add");
     }
 }
