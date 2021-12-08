@@ -7,8 +7,24 @@
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cars</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>drivers</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>drivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 </web-app>
