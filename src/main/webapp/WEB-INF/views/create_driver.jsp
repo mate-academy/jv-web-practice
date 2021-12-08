@@ -10,11 +10,11 @@
         <table>
             <tr>
                 <td>Name :</td>
-                <td><input type="text" name="name"></td>
+                <td><input type="text" name="name" required></td>
             </tr>
             <tr>
                 <td>License number :</td>
-                <td><input type="text" name="licenceNumber"></td>
+                <td><input type="text" name="licenceNumber" required></td>
             </tr>
             <tr>
                 <td><button type="submit">Register new driver</button></td>

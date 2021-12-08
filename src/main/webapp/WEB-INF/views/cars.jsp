@@ -2,31 +2,32 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Cars</title>
 </head>
 <body>
-    <h1>Cars page</h1>
-    <form method="post">
-        <table>
+<h1>Cars page</h1>
+<form method="post">
+    <table>
+        <tr>
+            <td>Car model</td>
+            <td>Car manufacturer</td>
+            <td>Car drivers</td>
+        </tr>
+        <c:forEach items="${cars}" var="car">
             <tr>
-                <td>Model :</td>
-                <td><input type="text" name="model"></td>
-            </tr>
-            <tr>
-                <td>Manufacturer :</td>
-                <td><select name="manufacturer">
-                        <c:forEach items="${manufacturers}" var="manufacturer">
-                            <option value="${manufacturer.id}">
-                              ${manufacturer.name}
-                            </option>
-                        </c:forEach>
-                    </select>
+                <td><c:out value="${car.model}"/></td>
+                <td><c:out value="${car.manufacturer.name}"/></td>
+                <td>
+                    <c:forEach items="${car.drivers}" var="driver">
+                        <c:out value="${driver.name}"/><br>
+                        <c:out value="${driver.licenseNumber}"/><br>
+                    </c:forEach><br>
+                    <a href="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">Add driver to car</a>
                 </td>
+                <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a> </td>
             </tr>
-            <tr>
-                <td><button type="submit">Create new car</button></td>
-            </tr>
-        </table>
-    </form>
+        </c:forEach>
+    </table>
+</form>
 </body>
 </html>

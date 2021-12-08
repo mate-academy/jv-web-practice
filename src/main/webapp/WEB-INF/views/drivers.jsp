@@ -16,8 +16,10 @@
             <tr>
                 <td><c:out value="${driver.name}"/></td>
                 <td><c:out value="${driver.licenseNumber}"/></td>
+                <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete driver</a> </td>
             </tr>
         </c:forEach>
+        <tr></tr>
         <tr>
             <td><button type="button" onclick="window.location.href='/drivers/add';">Add new driver</button></td>
         </tr>
