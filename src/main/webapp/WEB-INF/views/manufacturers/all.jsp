@@ -7,7 +7,7 @@
 <body>
 <h1>List of manufacturers:</h1><br>
 <c:if test = "${empty manufacturers}">
-    <h3>We have no manufacturers yet. <a href="${pageContext.request.contextPath}/manufacturers/create">Create one</a> first.</h3><br>
+    <h3>We have no manufacturers yet. <a href="${pageContext.request.contextPath}/manufacturers/add">Create one</a> first.</h3><br>
 </c:if>
 <c:if test = "${!empty manufacturers}">
     <table>

@@ -7,10 +7,10 @@
 <body>
 <h1>Create new car</h1>
 <c:if test = "${empty manufacturers}">
-    <h3>We have no manufacturers yet. <a href="${pageContext.request.contextPath}/manufacturers/create">Create one</a> first.</h3><br>
+    <h3>We have no manufacturers yet. <a href="${pageContext.request.contextPath}/manufacturers/add">Create one</a> first.</h3><br>
 </c:if>
 <c:if test = "${!empty manufacturers}">
-    <form method="post" action="${pageContext.request.contextPath}/cars/create">
+    <form method="post" action="${pageContext.request.contextPath}/cars/add">
         <label for="manufacturers">Manufacturer:</label><br>
         <select id="manufacturers" name=manufacturer_id>
             <c:forEach items = "${manufacturers}" var = "manufacturer">

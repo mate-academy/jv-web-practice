@@ -7,7 +7,7 @@
 <body>
 <h1>List of drivers:</h1><br>
 <c:if test = "${empty drivers}">
-    <h3>We have no drivers yet. <a href="${pageContext.request.contextPath}/drivers/create">Create one</a> first.</h3><br>
+    <h3>We have no drivers yet. <a href="${pageContext.request.contextPath}/drivers/add">Create one</a> first.</h3><br>
 </c:if>
 <c:if test = "${!empty drivers}">
     <table>
