@@ -7,12 +7,12 @@
 <body>
 <h1>Please choose car and driver</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/cars/add">
-    Driver: <select name="driver">
+    Driver: <select name="driver_id">
     <c:forEach items="${drivers}" var="driver">
         <option value="${driver.getId()}">${driver.getName()}</option>
     </c:forEach>
 </select>
-    Car: <select name="car">
+    Car: <select name="car_id">
     <c:forEach items="${cars}" var="car">
         <option value="${car.getId()}">${car.getModel()}</option>
     </c:forEach>
