@@ -30,7 +30,7 @@
                 <td><h3><c:out value="${driver.id}"/></h3></td>
                 <td><h3><c:out value="${driver.name}"/></h3></td>
                 <td><h3><c:out value="${driver.licenseNumber}"/></h3></td>
-                <td><h3><a href="/cars/drivers/delete?car_id=${car.id}&driver_id=${driver.id}">Remove</a></h3></td>
+                <td><h3><a href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.id}&driver_id=${driver.id}">Remove</a></h3></td>
             </tr>
         </c:forEach>
     </table>

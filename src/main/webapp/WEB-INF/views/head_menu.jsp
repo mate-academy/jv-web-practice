@@ -6,10 +6,10 @@
 <body>
     <table>
         <tr>
-            <td><a href="/index">Main page</a></td>
-            <td><a href="/cars">Cars</a></td>
-            <td><a href="/drivers">Drivers</a></td>
-            <td><a href="/manufacturers">Manufacturers</a></td>
+            <td><a href="${pageContext.request.contextPath}/index">Main page</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars">Cars</a></td>
+            <td><a href="${pageContext.request.contextPath}/drivers">Drivers</a></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers">Manufacturers</a></td>
         </tr>
     </table>
 </body>

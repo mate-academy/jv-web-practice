@@ -27,8 +27,8 @@
                 <td><h2><c:out value="${car.id}"/></h2></td>
                 <td><h2><c:out value="${car.manufacturer.name}"/></h2></td>
                 <td><h2><c:out value="${car.model}"/></h2></td>
-                <td><a href="/cars/drivers?id=${car.id}">Drivers</a></td>
-                <td><a href="/cars/delete?id=${car.id}">Delete</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/drivers?id=${car.id}">Drivers</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete</a></td>
             </tr>
         </c:forEach>
     </table>
