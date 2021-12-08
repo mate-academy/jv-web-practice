@@ -1,11 +1,12 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ include file="../header.jsp"%>
 <html>
 <head>
     <title>All drivers</title>
 </head>
 <body>
-<table>
+<table border="1">
     <tr>
         <td>Id</td>
         <td>Name</td>
