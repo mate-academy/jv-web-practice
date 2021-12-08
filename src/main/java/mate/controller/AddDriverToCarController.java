@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -22,6 +23,10 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        List<Car> carList = carService.getAll();
+        List<Driver> driverList = driverService.getAll();
+        req.setAttribute("cars", carList);
+        req.setAttribute("drivers", driverList);
         req.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
     }
 

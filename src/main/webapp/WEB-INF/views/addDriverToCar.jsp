@@ -5,10 +5,18 @@
     <title>Add new car</title>
 </head>
 <body>
-<h3>CREATE CAR</h3>
+<h3>ADD DRIVER TO CAR</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/add-driver">
-    Car Id: <input type="number" name="carId"><br><br>
-    Driver Id: <input type="number" name="driverId"><br><br>
+    Car: <select name="carId">
+    <c:forEach items="${cars}" var="car">
+        <option value="${car.getId()}">${car.getModel()}</option>
+    </c:forEach>
+    </select>
+    Driver: <select name="driverId">
+    <c:forEach items="${drivers}" var="driver">
+        <option value="${driver.getId()}">${driver.getName()}</option>
+    </c:forEach>
+    </select><br><br>
     <button type="submit">Add driver to car</button>
 </form>
 </body>
