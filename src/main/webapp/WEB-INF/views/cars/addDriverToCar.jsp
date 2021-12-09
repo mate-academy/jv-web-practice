@@ -7,7 +7,7 @@
 </head>
 <body>
 <h3>ADD DRIVER TO CAR</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/add-driver">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     Car: <select name="carId">
     <c:forEach items="${cars}" var="car">
         <option value="${car.getId()}">${car.getModel()}</option>

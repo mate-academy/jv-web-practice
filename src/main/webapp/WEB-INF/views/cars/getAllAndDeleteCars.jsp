@@ -29,6 +29,7 @@
                     <td><td><c:out value="${driver.getId()}"/></td>
                     <td><c:out value="${driver.getName()}"/></td>
                     <td><c:out value="${driver.getLicenseNumber()}"/></td>
+                    <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?carId=${car.getId()}&driverId=${driver.getId()}">Delete</a></td>
                 </tr>
             </c:forEach>
         </tr>

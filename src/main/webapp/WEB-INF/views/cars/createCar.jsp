@@ -7,7 +7,7 @@
 </head>
 <body>
 <h3>CREATE CAR</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model: <input type="text" name="model"><br><br>
     Manufacturer: <select name="manufacturerId">
     <c:forEach items="${manufacturers}" var="manufacture">

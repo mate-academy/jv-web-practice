@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet("/drivers/create")
+@WebServlet("/drivers/add")
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService)
@@ -28,6 +28,6 @@ public class CreateDriverController extends HttpServlet {
         String driverName = req.getParameter("driverName");
         String licenseNumber = req.getParameter("licenseNumber");
         driverService.create(new Driver(driverName, licenseNumber));
-        resp.sendRedirect("/drivers/create");
+        resp.sendRedirect("/drivers/add");
     }
 }
