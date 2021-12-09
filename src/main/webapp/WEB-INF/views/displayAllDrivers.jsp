@@ -14,9 +14,9 @@
     </tr>
     <c:forEach items="${drivers}" var = "driver">
         <tr>
-            <td><c:out value="${driver.getId()}"></c:out></td>
-            <td><c:out value="${driver.getName()}"></c:out></td>
-            <td><c:out value="${driver.getLicenseNumber()}"></c:out></td>
+            <td><c:out value="${driver.id}"></c:out></td>
+            <td><c:out value="${driver.name}"></c:out></td>
+            <td><c:out value="${driver.licenseNumber}"></c:out></td>
         </tr>
     </c:forEach>
 </table>

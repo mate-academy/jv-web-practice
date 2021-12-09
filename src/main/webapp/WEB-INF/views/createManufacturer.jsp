@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Manufacturer</title>
+    <title>Create manufacturer</title>
 </head>
 <body>
 <h1>Write manufacturer info</h1>
