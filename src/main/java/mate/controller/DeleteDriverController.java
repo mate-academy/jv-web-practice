@@ -18,7 +18,7 @@ public class DeleteDriverController extends HttpServlet {
             .getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
@@ -26,7 +26,7 @@ public class DeleteDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         driverService.delete(driverId);

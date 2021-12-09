@@ -18,7 +18,7 @@ public class DeleteManufacturerController extends HttpServlet {
             .getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
@@ -27,7 +27,7 @@ public class DeleteManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         Long manufacturerID = Long.valueOf(req.getParameter("manufacturer_id"));
         manufacturerService.delete(manufacturerID);

@@ -18,7 +18,7 @@ public class DeleteCarController extends HttpServlet {
             .getInstance(CarService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         req.setAttribute("cars", cars);
@@ -26,7 +26,7 @@ public class DeleteCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         carService.delete(carId);
