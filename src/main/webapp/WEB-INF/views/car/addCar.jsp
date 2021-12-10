@@ -12,7 +12,7 @@
                         <option value="${manufacturer.id}">${manufacturer.name}</option>
                     </c:forEach>
 </select><br>
-    Model <input type="text" name="model"><br>
+    Model <input type="text" name="model" required><br>
     <button type="submit">Submit</button>
 </form>
 </body>
