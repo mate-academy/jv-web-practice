@@ -30,9 +30,9 @@ public class CreateCarController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String model = req.getParameter("model");
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         carService.create(new Car(model, manufacturerService.get(manufacturerId)));
         resp.sendRedirect("/cars/add");
     }

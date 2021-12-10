@@ -8,12 +8,12 @@
 <body>
 <h3>ADD DRIVER TO CAR</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car: <select name="carId">
+    Car: <select name="car_id">
     <c:forEach items="${cars}" var="car">
         <option value="${car.getId()}">${car.getModel()}</option>
     </c:forEach>
     </select>
-    Driver: <select name="driverId">
+    Driver: <select name="driver_id">
     <c:forEach items="${drivers}" var="driver">
         <option value="${driver.getId()}">${driver.getName()}</option>
     </c:forEach>

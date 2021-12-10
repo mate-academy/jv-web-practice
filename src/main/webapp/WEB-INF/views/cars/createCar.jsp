@@ -9,7 +9,7 @@
 <h3>CREATE CAR</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model: <input type="text" name="model"><br><br>
-    Manufacturer: <select name="manufacturerId">
+    Manufacturer: <select name="manufacturer_id">
     <c:forEach items="${manufacturers}" var="manufacture">
         <option value="${manufacture.getId()}">${manufacture.getName()}</option>
     </c:forEach>

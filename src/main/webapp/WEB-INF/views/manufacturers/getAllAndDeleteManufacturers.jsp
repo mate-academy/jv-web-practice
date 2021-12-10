@@ -12,6 +12,7 @@
         <td>Id</td>
         <td>Name</td>
         <td>Country</td>
+        <td>Delete</td>
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
