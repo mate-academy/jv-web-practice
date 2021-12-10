@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars/delete")
@@ -20,15 +19,7 @@ public class DeleteCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> cars = carService.getAll();
-        req.setAttribute("cars", cars);
-        req.getRequestDispatcher("/WEB-INF/views/car/getAllCars.jsp").forward(req, resp);
-    }
-
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Long carId = Long.valueOf(req.getParameter("id"));
         carService.delete(carId);
         resp.sendRedirect("/cars");
     }
