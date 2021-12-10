@@ -5,12 +5,12 @@
     <title>Add car</title>
 </head>
 <body>
-<h1>Please form below and choose manufacturer</h1>
+<h1>Please, complete the form below and choose manufacturer</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model" required="required">
     Manufacturer: <select name="manufacturer_id">
     <c:forEach items="${manufacturers}" var="manufacturer">
-        <option value="${manufacturer.getId()}">${manufacturer.getName()}</option>
+        <option value="${manufacturer.id}">${manufacturer.name}</option>
     </c:forEach>
 </select>
     <button type="submit">Add car</button>

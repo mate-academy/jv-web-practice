@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/cars/add")
+@WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -27,7 +27,7 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
         req.setAttribute("cars", cars);
-        req.getRequestDispatcher("/WEB-INF/drivers/addDriverToCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/cars/addDriverToCar.jsp").forward(req, resp);
     }
 
     @Override
