@@ -24,9 +24,11 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest request, HttpServletResponse response) {
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         String name = request.getParameter("name");
-        String licenseNumber = request.getParameter("licenseNumber");
+        String licenseNumber = request.getParameter("license_number");
         driverService.create(new Driver(name,licenseNumber));
+        response.sendRedirect("/drivers");
     }
 }
