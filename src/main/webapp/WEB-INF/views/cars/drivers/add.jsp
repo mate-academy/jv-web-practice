@@ -10,7 +10,7 @@
     <label for="cars">Car:</label><br>
     <select id="cars" name=car_id>
         <c:forEach items = "${cars}" var = "car">
-            <option value="${car.id}">${car.id}${car.manufacturer.name} ${car.model}</option>
+            <option value="${car.id}">${car.id} ${car.manufacturer.name} ${car.model}</option>
         </c:forEach>
     </select>
     <br>
