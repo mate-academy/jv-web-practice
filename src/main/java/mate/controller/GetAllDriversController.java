@@ -22,6 +22,7 @@ public class GetAllDriversController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> allDrivers = driverService.getAll();
         request.setAttribute("drivers", allDrivers);
-        request.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/views/drivers/allDrivers.jsp")
+                .forward(request,response);
     }
 }

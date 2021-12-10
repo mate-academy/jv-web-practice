@@ -17,13 +17,14 @@ public class CreateDriverController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/drivers/addDriver.jsp")
+                .forward(request, response);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    public void doPost(HttpServletRequest request, HttpServletResponse response) {
         String name = request.getParameter("name");
         String licenseNumber = request.getParameter("licenseNumber");
         driverService.create(new Driver(name,licenseNumber));
