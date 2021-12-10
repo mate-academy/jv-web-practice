@@ -2,11 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add new car</title>
 </head>
 <body>
     <h1>Cars page</h1>
-    <form method="post">
+    <form method="post" action="${pageContext.request.contextPath}/cars/add">
         <table>
             <tr>
                 <td>Model :</td>
@@ -14,7 +14,7 @@
             </tr>
             <tr>
                 <td>Manufacturer :</td>
-                <td><select name="manufacturer" required>
+                <td><select name="manufacturerId" required>
                         <c:forEach items="${manufacturers}" var="manufacturer">
                             <option value="${manufacturer.id}">
                               ${manufacturer.name}

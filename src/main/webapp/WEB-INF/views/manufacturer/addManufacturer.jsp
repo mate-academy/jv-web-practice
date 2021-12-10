@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Add new manufacturer</h1>
-<form method="post">
+<form method="post"  action="${pageContext.request.contextPath}/manufacturers/add">
     <table>
         <tr>
             <td>Name :</td>

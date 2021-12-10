@@ -2,11 +2,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add new driver</title>
 </head>
 <body>
-    <h1>Drivers page</h1>
-    <form method="post">
+    <h1>Add new driver</h1>
+    <form method="post" action="${pageContext.request.contextPath}/drivers/add">
         <table>
             <tr>
                 <td>Name :</td>

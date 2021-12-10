@@ -22,6 +22,7 @@ public class DisplayManufacturersListController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views//manufacturer/manufacturers.jsp")
+                .forward(req, resp);
     }
 }

@@ -6,7 +6,6 @@
 </head>
 <body>
 <h1>Cars page</h1>
-<form method="post">
     <table>
         <tr>
             <td>Car model</td>
@@ -22,12 +21,11 @@
                         <c:out value="${driver.name}"/><br>
                         <c:out value="${driver.licenseNumber}"/><br>
                     </c:forEach><br>
-                    <a href="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">Add driver to car</a>
+                    <a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a>
                 </td>
                 <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a> </td>
             </tr>
         </c:forEach>
     </table>
-</form>
 </body>
 </html>
