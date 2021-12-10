@@ -6,7 +6,6 @@
 </head>
 <body>
 <h1>Manufacturers page</h1>
-<form method="get" action="${pageContext.request.contextPath}/manufacturers/add">
     <table>
         <tr>
             <td>Manufacturer name</td>
@@ -21,9 +20,8 @@
         </c:forEach>
         <tr></tr>
         <tr>
-            <td><button type="submit">Add new manufacturer</button></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers/add"><button>Add new manufacturers</button></a></td>
         </tr>
     </table>
-</form>
 </body>
 </html>

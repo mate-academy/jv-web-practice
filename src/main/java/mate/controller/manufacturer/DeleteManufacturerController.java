@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 @WebServlet("/manufacturers/delete")
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static ManufacturerService manufacturerService
+    private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override

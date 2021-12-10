@@ -6,7 +6,6 @@
 </head>
 <body>
 <h1>Drivers page</h1>
-<form method="get" action="${pageContext.request.contextPath}/drivers/add">
     <table>
         <tr>
             <td>Driver name</td>
@@ -21,9 +20,8 @@
         </c:forEach>
         <tr></tr>
         <tr>
-            <td><button type="submit">Add new driver</button></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/add"><button>Add new driver</button></a></td>
         </tr>
     </table>
-</form>
 </body>
 </html>
