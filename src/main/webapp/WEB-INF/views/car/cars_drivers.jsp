@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Driver cars</title>
+    <title>Car`s divers</title>
 </head>
 <body>
     <jsp:include page="/WEB-INF/views/head_menu.jsp"></jsp:include>
@@ -10,7 +10,7 @@
     <h2>Car model: ${car.model}</h2>
     <h2>Car manufacturer: ${car.manufacturer.name}</h2>
     <hr>
-    <h2> Please the form below, to add driver to car</h2>
+    <h2> Please, complete the form below, to add driver to car</h2>
     <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
         <input type="hidden" name="car_id" value="${car.id}" />
         Driver id: <input type="number" name="driver_id">

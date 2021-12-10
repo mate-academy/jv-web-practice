@@ -190,7 +190,7 @@ public class CarDaoImpl implements CarDao {
                 + ZERO_PLACEHOLDER + ", ?".repeat(size)
                 + ");";
         try (Connection connection = ConnectionUtil.getConnection();
-                 PreparedStatement statement =
+                PreparedStatement statement =
                         connection.prepareStatement(insertQuery)) {
             statement.setLong(1, carId);
             for (int i = 0; i < size; i++) {
