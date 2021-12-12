@@ -19,12 +19,12 @@ import mate.service.ManufacturerService;
 @WebServlet("/inject")
 public class InjectDataController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private static final Random random = new Random();
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
-    private static final Random random = new Random();
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
