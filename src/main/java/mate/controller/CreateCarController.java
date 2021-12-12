@@ -38,5 +38,6 @@ public class CreateCarController extends HttpServlet {
         String model = req.getParameter("model");
         Car car = new Car(model, manufacturer);
         carService.create((car));
+        resp.sendRedirect("/index");
     }
 }
