@@ -32,7 +32,7 @@ public class CreateManufacturerController extends HttpServlet {
                 return;
             }
         }
-            manufacturerService.create(new Manufacturer(name, country));
+        manufacturerService.create(new Manufacturer(name, country));
         response.sendRedirect("/index");
     }
 }

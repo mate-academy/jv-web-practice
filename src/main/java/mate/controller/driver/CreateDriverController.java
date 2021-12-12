@@ -32,7 +32,7 @@ public class CreateDriverController extends HttpServlet {
                 return;
             }
         }
-            driverService.create(new Driver(driverName, licenseNumber));
+        driverService.create(new Driver(driverName, licenseNumber));
         response.sendRedirect("/index");
     }
 }

@@ -32,15 +32,15 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String model = request.getParameter("model");
-        long manufacturer_id = Long.parseLong(request.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturer_id);
+        long manufacturerId = Long.parseLong(request.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car(model, manufacturer);
         for (Car carInDb : carService.getAll()) {
             if (carInDb.getModel().equals(car.getModel())) {
                 return;
             }
         }
-            carService.create(car);
+        carService.create(car);
         response.sendRedirect("/index");
     }
 }

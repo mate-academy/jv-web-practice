@@ -1,7 +1,7 @@
 package mate.controller.car;
 
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +14,10 @@ import mate.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private static final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -24,7 +26,8 @@ public class AddDriverToCarController extends HttpServlet {
         List<Car> cars = carService.getAll();
         request.setAttribute("drivers", drivers);
         request.setAttribute("cars", cars);
-        request.getRequestDispatcher("/WEB-INF/views/car/addDriverToCar.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/car/addDriverToCar.jsp")
+                .forward(request, response);
     }
 
     @Override
