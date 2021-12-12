@@ -9,7 +9,7 @@
     Car model<input name="model" required><br>
     Car manufacturer <select name="manufacturer_id">
       <c:forEach items="${manufacturers}" var="manufacturer">
-          <option value="${manufacturer.getId()}">${manufacturer.getName()}</option>
+          <option value="${manufacturer.id}">${manufacturer.name}</option>
       </c:forEach>
     </select>
     <button type="submit">confirm</button>

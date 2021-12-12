@@ -10,7 +10,9 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class AddManufacturerController extends HttpServlet {
-    private static final Injector injector = Injector.getInstance("mate");
+    private final static Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService = (ManufacturerService)
+            injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -21,8 +23,6 @@ public class AddManufacturerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService = (ManufacturerService)
-                injector.getInstance(ManufacturerService.class);
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);

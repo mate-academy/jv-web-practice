@@ -11,6 +11,8 @@ import mate.service.DriverService;
 
 public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private final DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -21,8 +23,6 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        DriverService driverService = (DriverService)
-                injector.getInstance(DriverService.class);
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("licenseNumber");
         Driver driver = new Driver(name, licenseNumber);

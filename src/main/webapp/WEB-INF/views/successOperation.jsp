@@ -4,6 +4,6 @@
     <title>success</title>
 </head>
 <body>
-    <h1>Success operation !</h1>
+    <h1>Operation successful !</h1>
 </body>
 </html>

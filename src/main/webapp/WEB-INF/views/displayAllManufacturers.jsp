@@ -15,11 +15,11 @@
       </tr>
       <c:forEach items="${manufacturers}" var="manufacturer">
           <tr>
-              <td><c:out value="${manufacturer.getId()}" /></td>
-              <td><c:out value="${manufacturer.getName()}" /></td>
-              <td><c:out value="${manufacturer.getCountry()}" /></td>
+              <td><c:out value="${manufacturer.id}" /></td>
+              <td><c:out value="${manufacturer.name}" /></td>
+              <td><c:out value="${manufacturer.country}" /></td>
               <td>
-                  <a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete this driver</a>
+                  <a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete this manufacturer</a>
               </td>
           </tr>
       </c:forEach>
