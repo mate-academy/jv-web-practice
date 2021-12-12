@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.Random;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,6 +24,7 @@ public class InjectDataController extends HttpServlet {
             injector.getInstance(DriverService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
+    private static final Random random = new Random();
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -68,6 +70,9 @@ public class InjectDataController extends HttpServlet {
                 new Car("Chiron", manufacturers.get(4)),
                 new Car("Sorento", manufacturers.get(5)));
         cars.forEach(carService::create);
+
+        drivers.forEach(driver -> carService
+                .addDriverToCar(driver, cars.get(random.nextInt(cars.size()))));
         resp.sendRedirect("/");
     }
 }

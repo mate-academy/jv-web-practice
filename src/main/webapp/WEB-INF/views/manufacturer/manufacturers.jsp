@@ -23,7 +23,7 @@
                     <td><c:out value="${manufacturer.country}"/></td>
                     <td>
                         <button  style="color: aliceblue; font-size: 20px; background-color: dimgray; border: none">
-                            <a style="text-decoration: none; color: whitesmoke" href="${pageContext.request.contextPath}/cars/add">
+                            <a style="text-decoration: none; color: whitesmoke" href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">
                                 Delete manufacturer
                             </a>
                         </button>
@@ -33,7 +33,7 @@
             <tr>
                 <td>
                     <button  style="color: aliceblue; font-size: 20px; background-color: dimgray; border: none">
-                        <a style="text-decoration: none; color: whitesmoke" href="${pageContext.request.contextPath}/cars/add">
+                        <a style="text-decoration: none; color: whitesmoke" href="${pageContext.request.contextPath}/manufacturers/add">
                            Add new manufacturers
                         </a>
                     </button>
