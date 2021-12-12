@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
+import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
@@ -26,6 +27,9 @@ public class CreateCarController extends HttpServlet {
         List<Car> allCars = carService.getAll();
         req.setAttribute("cars", allCars);
         req.getRequestDispatcher("/WEB-INF/views/cars/getAll.jsp").include(req, resp);
+        List<Manufacturer> allManufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", allManufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/getAll.jsp").include(req, resp);
     }
 
     @Override
