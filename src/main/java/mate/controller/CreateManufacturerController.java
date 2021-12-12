@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,7 +21,10 @@ public class CreateManufacturerController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/createManufacturer.jsp")
-                .forward(req, resp);
+                .include(req, resp);
+        List<Manufacturer> allManufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", allManufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/getAll.jsp").include(req, resp);
     }
 
     @Override

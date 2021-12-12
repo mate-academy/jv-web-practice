@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -19,7 +20,10 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/createDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/createDriver.jsp").include(req, resp);
+        List<Driver> allDrivers = driverService.getAll();
+        req.setAttribute("drivers", allDrivers);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/getAll.jsp").include(req, resp);
     }
 
     @Override
