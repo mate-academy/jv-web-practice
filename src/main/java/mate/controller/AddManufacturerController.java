@@ -10,7 +10,7 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class AddManufacturerController extends HttpServlet {
-    private final static Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
 
