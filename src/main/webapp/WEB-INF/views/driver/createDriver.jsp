@@ -1,0 +1,14 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <title>Crate Driver</title>
+</head>
+<body>
+    <h1>Create driver for DB</h1>
+    <form method="post" action="${pageContext.request.contextPath}/create/driver">
+        Driver_name <input type="text" name="name"><br>
+        License_number <input type="password" name="license_number"><br>
+        <button type="submit">Confirm</button>
+    </form>
+</body>
+</html>
