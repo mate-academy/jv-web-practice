@@ -20,7 +20,7 @@ public class ConnectionUtil {
         }
     }
 
-    public static Connection getConnection() throws SQLException {
+    public static Connection getConnection() {
         Properties dbProperties = new Properties();
         dbProperties.setProperty("user", USERNAME);
         dbProperties.setProperty("password", PASSWORD);
