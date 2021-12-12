@@ -11,7 +11,7 @@ import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final DriverService driverService =
+    private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
@@ -26,12 +26,6 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         String driverName = request.getParameter("name");
         String licenseNumber = request.getParameter("licenseNumber");
-        Driver driver = new Driver(driverName, licenseNumber);
-        for (Driver driverInDb : driverService.getAll()) {
-            if (driverInDb.getLicenseNumber().equals(driver.getLicenseNumber())) {
-                return;
-            }
-        }
         driverService.create(new Driver(driverName, licenseNumber));
         response.sendRedirect("/index");
     }
