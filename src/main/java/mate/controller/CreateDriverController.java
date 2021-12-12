@@ -11,7 +11,7 @@ import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService = (DriverService)
+    private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);
 
     @Override
@@ -27,5 +27,6 @@ public class CreateDriverController extends HttpServlet {
         String driverLicenseNumber = req.getParameter("driver_license_number");
         Driver driver = new Driver(driverName, driverLicenseNumber);
         driverService.create(driver);
+        resp.sendRedirect("/index");
     }
 }

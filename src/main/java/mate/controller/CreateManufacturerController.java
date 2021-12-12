@@ -11,7 +11,7 @@ import mate.service.ManufacturerService;
 
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService = (ManufacturerService)
+    private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -25,8 +25,9 @@ public class CreateManufacturerController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String manufacturerName = req.getParameter("manufacturer_name");
-        String manufacturerCountry = req.getParameter("manufacture_country");
+        String manufacturerCountry = req.getParameter("manufacturer_country");
         Manufacturer manufacturer = new Manufacturer(manufacturerName, manufacturerCountry);
         manufacturerService.create(manufacturer);
+        resp.sendRedirect("/index");
     }
 }

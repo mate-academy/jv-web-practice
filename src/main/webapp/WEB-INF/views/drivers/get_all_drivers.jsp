@@ -20,6 +20,8 @@
             <td><c:out value="${driver.licenseNumber}" /></td>
         </tr>
     </c:forEach>
+    <br>
+    <a href="${pageContext.request.contextPath}/index">go to the main page</a><br>
 </table>
 </body>
 </html>
