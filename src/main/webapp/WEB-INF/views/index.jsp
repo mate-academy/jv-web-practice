@@ -4,6 +4,7 @@
     <title>My team</title>
 </head>
 <body>
+<jsp:include page="menu.jsp"></jsp:include>
 <h1>Hello, mates!</h1>
 </body>
 </html>
