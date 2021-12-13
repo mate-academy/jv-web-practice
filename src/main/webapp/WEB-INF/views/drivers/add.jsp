@@ -9,8 +9,8 @@
     <form method="post" action="${pageContext.request.contextPath}/drivers/add">
         <label for="name">Name:</label><br>
         <input type="text" id="name" name="name"><br>
-        <label for="licenseNumber">License Number:</label><br>
-        <input type="text" id="licenseNumber" name="licenseNumber"><br>
+        <label for="license_number">License Number:</label><br>
+        <input type="text" id="license_number" name="license_number"><br>
         <button type="submit">SUBMIT</button>
         <button type="reset">RESET</button>
     </form>
