@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/add/car")
+@WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -36,7 +36,9 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
-        carService.addDriverToCar(driverService.get(driverId), carService.get(carId));
+        Driver driver = driverService.get(driverId);
+        Car car = carService.get(carId);
+        carService.addDriverToCar(driver, car);
         resp.sendRedirect("/");
     }
 }
