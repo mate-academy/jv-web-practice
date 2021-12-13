@@ -28,6 +28,6 @@ public class CreateManufacturerController extends HttpServlet {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         driverService.create(new Manufacturer(name, country));
+        resp.sendRedirect("/index");
     }
-
 }
