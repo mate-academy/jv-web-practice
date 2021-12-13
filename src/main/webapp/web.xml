@@ -29,7 +29,7 @@
     </servlet>
     <servlet>
         <servlet-name>addDriverToCar</servlet-name>
-        <servlet-class>mate.controller.cars.AddDriverToCar</servlet-class>
+        <servlet-class>mate.controller.cars.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getManufacturers</servlet-name>
