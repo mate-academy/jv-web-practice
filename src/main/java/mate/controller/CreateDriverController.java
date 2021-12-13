@@ -26,6 +26,7 @@ public class CreateDriverController extends HttpServlet {
         response.sendRedirect("/drivers");
     }
 
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/addDriver.jsp").forward(req, resp);

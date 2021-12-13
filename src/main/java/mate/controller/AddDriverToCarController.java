@@ -31,6 +31,7 @@ public class AddDriverToCarController extends HttpServlet {
         response.sendRedirect("/index");
     }
 
+    @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
