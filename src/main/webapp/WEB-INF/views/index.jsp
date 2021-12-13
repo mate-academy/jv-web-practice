@@ -9,6 +9,6 @@
 <h3><a href="${pageContext.request.contextPath}/cars/add"> Create new car</a></h3>
 <h3><a href="${pageContext.request.contextPath}/drivers/add"> Create new driver</a></h3>
 <h3><a href="${pageContext.request.contextPath}/manufacturers/add"> Create new manufacturer</a></h3>
-<h3><a href="${pageContext.request.contextPath}/drivers/display"> Display all drivers</a></h3>
+<h3><a href="${pageContext.request.contextPath}/drivers"> Display all drivers</a></h3>
 </body>
 </html>
