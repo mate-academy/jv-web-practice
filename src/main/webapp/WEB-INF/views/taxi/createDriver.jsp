@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Fill fields to create Driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/taxi/drivers/create">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name: <input type="text" name="name"><br>
     License Number: <input type="text" name="licenseNumber"><br>
     <button type="submit">Confirm</button>

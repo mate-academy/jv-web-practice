@@ -6,10 +6,10 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-    public static final String URL = "jdbc:mysql://localhost:3306/taxi";
-    public static final String USERNAME = "root";
-    public static final String PASSWORD = "29081996";
-    public static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String URL = "jdbc:mysql://localhost:3306/taxi";
+    private static final String USERNAME = "root";
+    private static final String PASSWORD = "29081996";
+    private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
 
     static {
         try {
