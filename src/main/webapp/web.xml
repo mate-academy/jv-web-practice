@@ -9,19 +9,19 @@
     </context-param>
     <servlet>
         <servlet-name>getManufacturers</servlet-name>
-        <servlet-class>mate.controller.manufacturers.DisplayAllController</servlet-class>
+        <servlet-class>mate.controller.manufacturers.DisplayAllManufacturersController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addDrivers</servlet-name>
-        <servlet-class>mate.controller.drivers.CreateController</servlet-class>
+        <servlet-class>mate.controller.drivers.CreateDriverController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addManufacturers</servlet-name>
-        <servlet-class>mate.controller.manufacturers.CreateController</servlet-class>
+        <servlet-class>mate.controller.manufacturers.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>getCars</servlet-name>
-        <servlet-class>mate.controller.cars.DisplayAllController</servlet-class>
+        <servlet-class>mate.controller.cars.DisplayAllCarsController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>addCars</servlet-name>
@@ -49,7 +49,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>getDrivers</servlet-name>
-        <servlet-class>mate.controller.drivers.DisplayAllController</servlet-class>
+        <servlet-class>mate.controller.drivers.DisplayAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getDrivers</servlet-name>
