@@ -14,10 +14,10 @@
     </tr>
     <tr>
         <td>
-            <input type="number" name="name" form="driver" required>
+            <input type="text" name="name" form="driver" required>
         </td>
         <td>
-            <input type="number" name="license_number" form="driver" required>
+            <input type="text" name="license_number" form="driver" required>
         </td>
         <td>
             <input type="submit" name="add" form="driver">
