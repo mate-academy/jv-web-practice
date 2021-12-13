@@ -24,8 +24,8 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Manufacturer> manufacturerList = manufacturerService.getAll();
-        req.setAttribute("manufacturers", manufacturerList);
+        List<Manufacturer> manufacturer = manufacturerService.getAll();
+        req.setAttribute("manufacturers", manufacturer);
         req.getRequestDispatcher("/WEB-INF/views/car/createCar.jsp")
                 .forward(req, resp);
     }
