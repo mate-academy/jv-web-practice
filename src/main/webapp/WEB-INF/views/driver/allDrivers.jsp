@@ -19,6 +19,7 @@
             <td><c:out value="${driver.licenseNumber}" /></td>
         </tr>
     </c:forEach>
-</table>
+</table><br>
+<a href="${pageContext.request.contextPath}/index">Go to main</a>
 </body>
 </html>
