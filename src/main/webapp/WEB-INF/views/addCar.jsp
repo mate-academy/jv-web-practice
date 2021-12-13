@@ -6,7 +6,7 @@
 </head>
 <body>
   <form method="post" action="${pageContext.request.contextPath}/cars/add">
-    Car model<input name="model" required><br>
+    Car model<input name="model" type="text" required><br>
     Car manufacturer <select name="manufacturer_id">
       <c:forEach items="${manufacturers}" var="manufacturer">
           <option value="${manufacturer.id}">${manufacturer.name}</option>

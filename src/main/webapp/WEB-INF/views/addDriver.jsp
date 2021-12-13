@@ -5,8 +5,8 @@
 </head>
 <body>
     <form method="post" action="${pageContext.request.contextPath}/drivers/add">
-    Driver name<input name="name" required><br>
-    Driver license number<input name="licenseNumber" required><br>
+    Driver name<input name="name" type="text" required><br>
+    Driver license number<input name="licenseNumber" type="text" required><br>
     <button type="submit">Confirm</button>
     </form>
 </body>
