@@ -18,7 +18,8 @@ public class DeleteDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        driverService.delete(Long.valueOf(req.getParameter("id")));
+        Long driverId = Long.valueOf(req.getParameter("id"));
+        driverService.delete(driverId);
         req.getRequestDispatcher("/WEB-INF/views/getAllDrivers.jsp").forward(req, resp);
     }
 }

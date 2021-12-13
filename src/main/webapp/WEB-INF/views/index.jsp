@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Welcome to taxi service</h1>
-<header>PLEASE CHOOSE YOUR DECISION</header>
+<header>PLEASE MAKE YOUR DECISION</header>
 
 <td><a href="${pageContext.request.contextPath}/cars/add">
     <button type="submit">Click here to add a new car</button></a></td><br>
@@ -19,13 +19,13 @@
 <td><a href="${pageContext.request.contextPath}/cars/drivers/add">
     <button type="submit">Click here to add driver to car</button></a></td><br>
 
-<td><a href="${pageContext.request.contextPath}/cars/get/all">
+<td><a href="${pageContext.request.contextPath}/cars">
     <button type="submit">Click here to get all cars</button></a></td><br>
 
-<td><a href="${pageContext.request.contextPath}/drivers/get/all">
+<td><a href="${pageContext.request.contextPath}/drivers">
     <button type="submit">Click here to get all drivers</button></a></td><br>
 
-<td><a href="${pageContext.request.contextPath}/manufacturers/get/all">
+<td><a href="${pageContext.request.contextPath}/manufacturers">
     <button type="submit">Click here to get all manufacturers</button></a></td><br>
 </body>
 </html>
