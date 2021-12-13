@@ -17,17 +17,17 @@ public class AddDriverController extends HttpServlet {
     private DriverService driverService;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(PAGE_PATH).forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
-        Driver driver = new Driver(name,licenseNumber);
+        Driver driver = new Driver(name, licenseNumber);
         driverService.create(driver);
         resp.sendRedirect("/index");
     }
