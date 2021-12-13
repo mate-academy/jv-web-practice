@@ -18,7 +18,7 @@
 <td><a href="${pageContext.request.contextPath}/cars/drivers/add">
     <button type="submit">Add driver to car</button></a></td><br>
 
-<td><a href="${pageContext.request.contextPath}/drivers/get/all">
+<td><a href="${pageContext.request.contextPath}/drivers">
     <button type="submit">Get all drivers</button></a></td><br>
 </body>
 </html>

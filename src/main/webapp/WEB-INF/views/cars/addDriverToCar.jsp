@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>add driver to car</title>
+    <title>Add driver to car</title>
 </head>
 <body>
 <h1>Select car and driver for add</h1>
