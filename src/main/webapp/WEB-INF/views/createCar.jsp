@@ -7,7 +7,7 @@
         <h1>Enter car statements below:</h1>
         <form method="post" action="${pageContext.request.contextPath}/cars/create">
             Model<label>
-            <input type="text" name="model">
+            <input type="text" name="model" required>
         </label><br>
             Manufacturer id<label>
             <input type="number" name = "manufacturer_id">
