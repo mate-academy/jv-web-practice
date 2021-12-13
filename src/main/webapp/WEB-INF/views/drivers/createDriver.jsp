@@ -6,8 +6,8 @@
 <body>
     <h1>Please fill the form below.</h1>
     <form method="post" action="${pageContext.request.contextPath}/drivers/add">
-        Name<input type="text" name="Driver's name" required><br>
-        License number<input type="text" name="Driver's license number" required><br>
+        Name<input type="text" name="name" required><br>
+        License number<input type="text" name="license_number" required><br>
         <button type="submit">Create driver</button>
     </form>
 </body>
