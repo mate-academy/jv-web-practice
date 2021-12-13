@@ -2,14 +2,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add new manufacturer</title>
+    <title>Add new driver</title>
 </head>
 <body>
-<h1>Enter the data to add a new manufacturer</h1>
+<h1>Enter the data to add a new driver</h1>
 <form method="post" action="${pageContext.request.contextPath}/driver/create">
     Name  <input type="text" name = "name"><br>
-    LicenseNumber <input type="text" name = "licenseNumber"><br>
-    <button type="submit">Add new manufacturer</button>
+    License Number <input type="text" name = "license_number"><br>
+    <button type="submit">Add new driver</button>
 </form>
 <br/>
 </body>
