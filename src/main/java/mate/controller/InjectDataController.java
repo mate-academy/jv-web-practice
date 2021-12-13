@@ -31,7 +31,7 @@ public class InjectDataController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-         drivers = List.of(
+        drivers = List.of(
                 new Driver("Aleksandr Moskovchuk", "BAH000-111"),
                 new Driver("Anatolii Huryk", "BAH000-222"),
                 new Driver("Andrew Dzundza", "BAH000-333"),
