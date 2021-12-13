@@ -13,11 +13,6 @@
       </button>
     <table>
       <tr>
-        <td>
-
-        </td>
-      </tr>
-      <tr>
         <td>Driver name</td>
         <td>License number</td>
       </tr>

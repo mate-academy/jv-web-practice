@@ -6,6 +6,9 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for drivers
 -- ----------------------------
+DROP TABLE IF EXISTS `cars_drivers`;
+DROP TABLE IF EXISTS `cars`;
+DROP TABLE IF EXISTS `manufacturers`;
 DROP TABLE IF EXISTS `drivers`;
 CREATE TABLE `drivers`  (
                             `id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -18,7 +21,6 @@ CREATE TABLE `drivers`  (
 -- ----------------------------
 -- Table structure for manufacturers
 -- ----------------------------
-DROP TABLE IF EXISTS `manufacturers`;
 CREATE TABLE `manufacturers`  (
                                   `id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT,
                                   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -30,7 +32,6 @@ CREATE TABLE `manufacturers`  (
 -- ----------------------------
 -- Table structure for cars
 -- ----------------------------
-DROP TABLE IF EXISTS `cars`;
 CREATE TABLE `cars`  (
                          `id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT,
                          `model` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -44,7 +45,6 @@ CREATE TABLE `cars`  (
 -- ----------------------------
 -- Table structure for cars_drivers
 -- ----------------------------
-DROP TABLE IF EXISTS `cars_drivers`;
 CREATE TABLE `cars_drivers`  (
                                  `car_id` bigint(0) UNSIGNED NOT NULL,
                                  `driver_id` bigint(0) UNSIGNED NOT NULL,

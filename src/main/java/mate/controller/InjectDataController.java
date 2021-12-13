@@ -25,11 +25,13 @@ public class InjectDataController extends HttpServlet {
             injector.getInstance(DriverService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
+    private List<Driver> drivers;
+    private List<Car> cars;
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Driver> drivers = List.of(
+         drivers = List.of(
                 new Driver("Aleksandr Moskovchuk", "BAH000-111"),
                 new Driver("Anatolii Huryk", "BAH000-222"),
                 new Driver("Andrew Dzundza", "BAH000-333"),
@@ -62,7 +64,7 @@ public class InjectDataController extends HttpServlet {
                 new Manufacturer("KIA", "China"));
         manufacturers.forEach(manufacturerService::create);
 
-        List<Car> cars = List.of(
+        cars = List.of(
                 new Car("Zaporozhets", manufacturers.get(0)),
                 new Car("Touran", manufacturers.get(1)),
                 new Car("Astra", manufacturers.get(2)),
@@ -75,4 +77,5 @@ public class InjectDataController extends HttpServlet {
                 .addDriverToCar(driver, cars.get(random.nextInt(cars.size()))));
         resp.sendRedirect("/");
     }
+
 }
