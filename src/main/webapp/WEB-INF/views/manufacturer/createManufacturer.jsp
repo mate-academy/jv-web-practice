@@ -7,8 +7,8 @@
 <body>
 <h1>Enter the data to add a new manufacturer</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
-    Name  <input type="text" name = "name"><br>
-    Country <input type="text" name = "country"><br>
+    Name  <input type="text" name = "name" required><br>
+    Country <input type="text" name = "country" required><br>
     <button type="submit">Add new manufacturer</button>
 </form>
 <br/>
