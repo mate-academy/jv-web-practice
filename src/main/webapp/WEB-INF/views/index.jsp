@@ -8,13 +8,13 @@
 <body>
 <ul>
     <li>
-        <a href="/manufacturers">Manufacturers</a>
+        <a href="${pageContext.request.contextPath}/manufacturers">Manufacturers</a>
     </li>
     <li>
-        <a href="/cars">Cars</a>
+        <a href="${pageContext.request.contextPath}/cars">Cars</a>
     </li>
     <li>
-        <a href="/drivers">Drivers</a>
+        <a href="${pageContext.request.contextPath}/drivers">Drivers</a>
     </li>
 </ul>
 </body>

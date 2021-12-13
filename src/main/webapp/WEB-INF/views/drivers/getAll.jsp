@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/">Main page</a>
-<a href="/drivers/add">Create drivers</a>
+<a href="${pageContext.request.contextPath}/">Main page</a>
+<a href="${pageContext.request.contextPath}/drivers/add">Create drivers</a>
 <h1>List of drivers:</h1>
 <table>
     <tr>
@@ -16,9 +16,9 @@
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-            <td><c:out value="${driver.id}"/></td>
-            <td><c:out value="${driver.name}"/></td>
-            <td><c:out value="${driver.licenseNumber}"/></td>
+            <td><c:out value="${driver.id}"${pageContext.request.contextPath}/></td>
+            <td><c:out value="${driver.name}"${pageContext.request.contextPath}/></td>
+            <td><c:out value="${driver.licenseNumber}"${pageContext.request.contextPath}/></td>
         </tr>
     </c:forEach>
 </table>

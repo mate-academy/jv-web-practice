@@ -5,8 +5,8 @@
     <title>Title</title>
 </head>
 <body>
-<a href="/">Main page</a>
-<a href="/manufacturers/add">Create new manufacturers</a>
+<a href="${pageContext.request.contextPath}/">Main page</a>
+<a href="${pageContext.request.contextPath}/manufacturers/add">Create new manufacturers</a>
 <br>
 <h1>List of manufacturers:</h1>
 <table>

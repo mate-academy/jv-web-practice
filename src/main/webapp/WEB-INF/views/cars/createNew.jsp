@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Please the form below</h1>
-<form method="post" action="/cars/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Manufacturer <select name="manufacturer_id">
     <c:forEach items="${manufacturers}" var="manufacturer">
         <option value="${manufacturer.id}">${manufacturer.name}</option>

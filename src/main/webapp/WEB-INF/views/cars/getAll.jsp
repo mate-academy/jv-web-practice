@@ -5,9 +5,9 @@
     <title>Get all cars</title>
 </head>
 <body>
-<a href="/">Main page</a>
-<a href="/cars/add">Create New Cars</a>
-<a href="/cars/drivers/add">Add drivers to cars</a>
+<a href="${pageContext.request.contextPath}/">Main page</a>
+<a href="${pageContext.request.contextPath}/cars/add">Create New Cars</a>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add drivers to cars</a>
 <h1>List of cars:</h1>
 <table>
     <tr>

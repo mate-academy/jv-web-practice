@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Please the form below</h1>
-<form method="post" action="/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name driver <input type="text" name="name" required><br>
     License Number<input type="text" name="license_number" required><br>
     <input type="submit">
