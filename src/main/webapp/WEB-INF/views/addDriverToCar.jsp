@@ -19,8 +19,8 @@
         </c:forEach><br>
         Add driver to car:
         <form method="post" action="${pageContext.request.contextPath}/cars/drivers">
-            Car ID <input type="text" name="car_id"><br>
-            Driver ID <input type="text" name="driver_id"><br>
+            Car ID <input type="number" name="car_id"><br>
+            Driver ID <input type="number" name="driver_id"><br>
             <button type="submit">Add</button><br>
         </form>
     </body>

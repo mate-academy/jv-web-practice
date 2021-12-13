@@ -14,7 +14,7 @@
         Add a new car:
         <form method="post" action="${pageContext.request.contextPath}/cars/new">
             Model <input type="text" name="model"><br>
-            Manufacturer ID <input type="text" name="manufacturer_id"><br>
+            Manufacturer ID <input type="number" name="manufacturer_id"><br>
             <button type="submit">Add</button><br>
         </form>
     </body>
