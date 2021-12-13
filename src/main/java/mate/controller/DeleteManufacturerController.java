@@ -16,7 +16,7 @@ public class DeleteManufacturerController extends HttpServlet {
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         manufacturerService.delete(Long.valueOf(req.getParameter("id")));
         resp.sendRedirect("/manufacturers/all");
