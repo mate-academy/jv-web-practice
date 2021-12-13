@@ -14,7 +14,8 @@ import mate.service.ManufacturerService;
 public class AddManufactureController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/manufacturer/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService;
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -30,10 +31,5 @@ public class AddManufactureController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer(name,country);
         manufacturerService.create(manufacturer);
         resp.sendRedirect("/index");
-    }
-
-    @Override
-    public void init() {
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }
 }

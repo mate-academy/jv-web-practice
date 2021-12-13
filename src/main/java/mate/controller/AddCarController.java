@@ -16,8 +16,10 @@ import mate.service.ManufacturerService;
 public class AddCarController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/car/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
-    private ManufacturerService manufacturerService;
+    private final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -29,16 +31,10 @@ public class AddCarController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         String model = req.getParameter("model");
-        Long id = Long.valueOf(req.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = manufacturerService.get(id);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car(model, manufacturer);
         carService.create(car);
         resp.sendRedirect("/index");
-    }
-
-    @Override
-    public void init() {
-        carService = (CarService) injector.getInstance(CarService.class);
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }
 }

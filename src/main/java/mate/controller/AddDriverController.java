@@ -14,7 +14,8 @@ import mate.service.DriverService;
 public class AddDriverController extends HttpServlet {
     private static final String PAGE_PATH = "/WEB-INF/views/driver/add.jsp";
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -30,10 +31,5 @@ public class AddDriverController extends HttpServlet {
         Driver driver = new Driver(name, licenseNumber);
         driverService.create(driver);
         resp.sendRedirect("/index");
-    }
-
-    @Override
-    public void init() {
-        driverService = (DriverService) injector.getInstance(DriverService.class);
     }
 }
