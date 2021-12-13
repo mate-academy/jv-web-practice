@@ -7,10 +7,10 @@
 <h1>Welcome!</h1>
 <ul>
     <li>
-        <a href="${pageContext.request.contextPath}/drivers">all drivers</a><br>
+        <a href="${pageContext.request.contextPath}/drivers">All drivers</a><br>
     </li>
     <li>
-        <a href="${pageContext.request.contextPath}/manufacturers/add">create a manufacturer</a>
+        <a href="${pageContext.request.contextPath}/manufacturers/add">Create a manufacturer</a>
     </li>
     <li>
         <a href="${pageContext.request.contextPath}/drivers/add">Create a driver</a>
