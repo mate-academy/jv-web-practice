@@ -28,6 +28,6 @@ public class CreateManufacturerController extends HttpServlet {
         Manufacturer manufacturer
                 = new Manufacturer(req.getParameter("name"), req.getParameter("country"));
         manufacturerDao.create(manufacturer);
-        resp.sendRedirect("/index");
+        resp.sendRedirect("/manufacturers");
     }
 }

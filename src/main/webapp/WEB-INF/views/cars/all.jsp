@@ -5,7 +5,7 @@
     <title>Car list</title>
 </head>
 <body>
-<h1>List of cars    :</h1>
+<h1>List of cars:</h1>
 <table>
     <tr>
         <td>ID</td>
