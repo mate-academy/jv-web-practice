@@ -6,7 +6,8 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-    private static final String URL = "jdbc:mysql://127.0.0.1:3306/taxi?useUnicode=true&serverTimezone=UTC";
+    private static final String URL
+            = "jdbc:mysql://127.0.0.1:3306/taxi?useUnicode=true&serverTimezone=UTC";
     private static final String USERNAME = "root";
     private static final String PASSWORD = "admin";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";

@@ -16,7 +16,7 @@ import mate.service.ManufacturerService;
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = (Injector) Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    ManufacturerService manufacturerService = (ManufacturerService)
+    private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
 
     @Override
