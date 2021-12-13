@@ -19,7 +19,6 @@ public class DisplayAllController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
-
         req.setAttribute("drivers", drivers);
         String pathToJsp = getServletContext().getInitParameter("viewsPath")
                 + "drivers/getAll.jsp";
