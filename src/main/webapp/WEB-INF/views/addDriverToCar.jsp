@@ -18,7 +18,7 @@
             <c:out value="license number: ${driver.licenseNumber}"/><br>
         </c:forEach><br>
         Add driver to car:
-        <form method="post" action="${pageContext.request.contextPath}/cars/drivers">
+        <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
             Car ID <input type="number" name="car_id"><br>
             Driver ID <input type="number" name="driver_id"><br>
             <button type="submit">Add</button><br>
