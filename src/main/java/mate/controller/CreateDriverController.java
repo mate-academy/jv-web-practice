@@ -1,14 +1,14 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
@@ -25,10 +25,10 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-       String name = req.getParameter("name");
-       String licenseNumber = req.getParameter("license_number");
-       Driver driver = new Driver(name, licenseNumber);
-       driverService.create(driver);
-       resp.sendRedirect("/");
+        String name = req.getParameter("name");
+        String licenseNumber = req.getParameter("license_number");
+        Driver driver = new Driver(name, licenseNumber);
+        driverService.create(driver);
+        resp.sendRedirect("/");
     }
 }

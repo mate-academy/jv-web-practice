@@ -1,15 +1,15 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Manufacturer;
-import mate.service.ManufacturerService;
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+import mate.lib.Injector;
+import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
 @WebServlet (urlPatterns = "/manufacturers")
 public class GetAllManufacturers extends HttpServlet {
@@ -22,6 +22,7 @@ public class GetAllManufacturers extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/getAllManufacturers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/getAllManufacturers.jsp")
+                .forward(req, resp);
     }
 }
