@@ -16,10 +16,10 @@
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
-            <td><c:out value="${car.getId()}"/></td>
-            <td><c:out value="${car.getModel()}"/></td>
-            <td><c:out value="${car.getManufacturer().getName()}"/></td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">Delete car</a></td>
+            <td><c:out value="${car.id}"/></td>
+            <td><c:out value="${car.model}"/></td>
+            <td><c:out value="${car.getManufacturer().name}"/></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a></td>
             <tr>
                 <td><td>Driver Id</td>
                 <td>Driver Name</td>
@@ -28,10 +28,10 @@
             </tr>
             <c:forEach items="${car.getDrivers()}" var="driver">
                 <tr>
-                    <td><td><c:out value="${driver.getId()}"/></td>
-                    <td><c:out value="${driver.getName()}"/></td>
-                    <td><c:out value="${driver.getLicenseNumber()}"/></td>
-                    <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.getId()}&driver_id=${driver.getId()}">Delete driver from car</a></td>
+                    <td><td><c:out value="${driver.id}"/></td>
+                    <td><c:out value="${driver.name}"/></td>
+                    <td><c:out value="${driver.licenseNumber}"/></td>
+                    <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.id}&driver_id=${driver.id}">Delete driver from car</a></td>
                 </tr>
             </c:forEach>
         </tr>

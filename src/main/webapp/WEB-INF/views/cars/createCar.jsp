@@ -11,7 +11,7 @@
     Model: <input type="text" name="model"><br><br>
     Manufacturer: <select name="manufacturer_id">
     <c:forEach items="${manufacturers}" var="manufacture">
-        <option value="${manufacture.getId()}">${manufacture.getName()}</option>
+        <option value="${manufacture.id}">${manufacture.name}</option>
     </c:forEach>
     </select><br><br>
     <button type="submit">Create car</button>
