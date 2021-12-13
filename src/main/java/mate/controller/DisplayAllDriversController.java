@@ -26,7 +26,7 @@ public class DisplayAllDriversController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         driverService = (DriverService) injector.getInstance(DriverService.class);
     }
 }

@@ -27,7 +27,7 @@ public class AddCarController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String model = req.getParameter("model");
         Long id = Long.valueOf(req.getParameter("manufacturer_id"));
         Manufacturer manufacturer = manufacturerService.get(id);
@@ -37,7 +37,7 @@ public class AddCarController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         carService = (CarService) injector.getInstance(CarService.class);
         manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }

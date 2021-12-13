@@ -24,7 +24,7 @@ public class AddManufactureController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name,country);
@@ -33,7 +33,7 @@ public class AddManufactureController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }
 }

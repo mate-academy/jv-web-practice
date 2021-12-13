@@ -24,7 +24,7 @@ public class AddDriverController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
         Driver driver = new Driver(name, licenseNumber);
@@ -33,7 +33,7 @@ public class AddDriverController extends HttpServlet {
     }
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         driverService = (DriverService) injector.getInstance(DriverService.class);
     }
 }
