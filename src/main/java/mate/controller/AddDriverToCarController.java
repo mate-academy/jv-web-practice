@@ -7,11 +7,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/car/add")
+@WebServlet(urlPatterns = "/driver/cars/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final DriverService driverService =
@@ -30,8 +29,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long driverID = Long.parseLong(req.getParameter("driver_id"));
         Long carId = Long.parseLong(req.getParameter("car_id"));
-        Car car = carService.get(carId);
-        carService.addDriverToCar(driverService.get(driverID), car);
+        carService.addDriverToCar(driverService.get(driverID), carService.get(carId));
         resp.sendRedirect("/");
     }
 }
