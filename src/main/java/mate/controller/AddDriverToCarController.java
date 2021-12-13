@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/cars/add")
+@WebServlet(urlPatterns = "/drivers/cars/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final DriverService driverService =
@@ -27,9 +27,9 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverID = Long.parseLong(req.getParameter("driver_id"));
+        Long driverId = Long.parseLong(req.getParameter("driver_id"));
         Long carId = Long.parseLong(req.getParameter("car_id"));
-        carService.addDriverToCar(driverService.get(driverID), carService.get(carId));
+        carService.addDriverToCar(driverService.get(driverId), carService.get(carId));
         resp.sendRedirect("/");
     }
 }
