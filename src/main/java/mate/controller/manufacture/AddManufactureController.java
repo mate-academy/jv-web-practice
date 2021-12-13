@@ -10,7 +10,7 @@ import mate.dao.ManufacturerDao;
 import mate.lib.Injector;
 import mate.model.Manufacturer;
 
-@WebServlet(urlPatterns = "/manufacturer/add")
+@WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufactureController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final ManufacturerDao manufacturerDao =
@@ -19,7 +19,7 @@ public class AddManufactureController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
     }
 
     @Override

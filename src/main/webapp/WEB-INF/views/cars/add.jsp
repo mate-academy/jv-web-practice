@@ -20,9 +20,9 @@
     </c:forEach>
 </table>
 
-<form method="post" action="${pageContext.request.contextPath}/car/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
-    ManufacturerId <input type="text" name="manufacturerId"><br>
+    ManufacturerId <input type="number" name="manufacturerId"><br>
     <button type="submit">Create</button>
 </form>
 </body>

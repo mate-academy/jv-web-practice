@@ -31,9 +31,9 @@
         </tr>
     </c:forEach>
 </table>
-<form method="post" action="${pageContext.request.contextPath}/car/driver/add">
-    Driver ID <input type="text" name="driverId"><br>
-    Car ID <input type="text" name="carId"><br>
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+    Driver ID <input type="number" name="driverId"><br>
+    Car ID <input type="number" name="carId"><br>
     <button type="submit">Create</button>
 </form>
 </body>
