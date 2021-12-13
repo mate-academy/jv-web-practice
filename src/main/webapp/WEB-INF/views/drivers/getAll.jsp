@@ -16,9 +16,9 @@
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-            <td><c:out value="${driver.id}"${pageContext.request.contextPath}/></td>
-            <td><c:out value="${driver.name}"${pageContext.request.contextPath}/></td>
-            <td><c:out value="${driver.licenseNumber}"${pageContext.request.contextPath}/></td>
+            <td><c:out value="${driver.id}"/></td>
+            <td><c:out value="${driver.name}"/></td>
+            <td><c:out value="${driver.licenseNumber}"/></td>
         </tr>
     </c:forEach>
 </table>
