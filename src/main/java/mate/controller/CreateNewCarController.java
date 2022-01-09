@@ -30,7 +30,8 @@ public class CreateNewCarController extends HttpServlet {
         String model = req.getParameter("model");
         Long id = Long.valueOf(req.getParameter("manufacturer_id"));
         Manufacturer manufacturer = manufacturerService.get(id);
-        carService.create(new Car(model, manufacturer));
+        Car car = new Car(model, manufacturer);
+        carService.create(car);
         resp.sendRedirect("/success");
     }
 }
