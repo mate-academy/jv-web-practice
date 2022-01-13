@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Input new Car`s data:</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/newcar">
+<form method="post" action="${pageContext.request.contextPath}/cars/addcar">
     Car model : <input type="text" name="carmodel" placeholder="Car model"><br>
     Car manufacturer ID: <input type="text" name="carmanufacturerid" placeholder="Car manufacturer ID"><br>
     Car driver ID: <input type="text" name="cardriverid" placeholder="Car driver ID"><br>

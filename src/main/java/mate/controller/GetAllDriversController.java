@@ -11,7 +11,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/alldrivers")
+@WebServlet(urlPatterns = "/drivers/all")
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =

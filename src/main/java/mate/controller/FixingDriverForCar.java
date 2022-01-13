@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet("/cars/fixingdriverforcar")
+@WebServlet("/cars/add-driver")
 public class FixingDriverForCar extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =

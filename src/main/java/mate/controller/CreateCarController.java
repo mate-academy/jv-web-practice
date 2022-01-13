@@ -16,7 +16,7 @@ import mate.service.CarService;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
-@WebServlet("/cars/newcar")
+@WebServlet("/cars/addcar")
 public class CreateCarController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =

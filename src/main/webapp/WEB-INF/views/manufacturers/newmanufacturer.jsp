@@ -13,7 +13,7 @@
     </c:forEach>
 </form>
 <h2>Input new Manufacturer`s data:</h2>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/newmanufacturer">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/new">
     Manufacturer name : <input type="text" name="manufacturername" placeholder="Manufacturer name"><br>
     Manufacturer country: <input type="text" name="manufacturercountry" placeholder="Manufacturer country"><br>
     <button type="submit"> Input</button>
