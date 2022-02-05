@@ -13,8 +13,16 @@
 <h2><a href="/drivers/add">Add driver</a> </h2>
 <h2><a href="/manufacturers/add">Add manufacturer</a> </h2>
 <h2><a href="/cars/add">Add car</a> </h2>
+<h2><a href="/cars/drivers/add">Add driver to the car</a> </h2>
+
 <br>
 <br>
-<h2><a href="/test">TEST</a></h2>
+<h3>Premium account section only</h3>
+<h3><a href="/manufacturers/all/edit">Delete manufacturer from database</a> </h3>
+<h3><a href="/drivers/all/edit">Delete driver from database</a> </h3>
+<h3><a href="/cars/all/edit">Delete car from database</a> </h3>
+<br>
+<br>
+<h2><a href="/test">TEST DB</a></h2>
 </body>
 </html>
