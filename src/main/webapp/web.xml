@@ -34,4 +34,13 @@
         <servlet-name>addManufacturer</servlet-name>
         <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addDriver</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
 </web-app>
