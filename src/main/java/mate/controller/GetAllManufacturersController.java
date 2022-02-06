@@ -31,8 +31,4 @@ public class GetAllManufacturersController extends HttpServlet {
         req.getRequestDispatcher(MANUFACTURERS_PAGE).forward(req, resp);
     }
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
 }
