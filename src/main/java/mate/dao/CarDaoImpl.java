@@ -226,7 +226,7 @@ public class CarDaoImpl implements CarDao {
         long driverId = resultSet.getLong("id");
         String name = resultSet.getNString("name");
         String licenseNumber = resultSet.getNString("license_number");
-        Driver driver = new Driver();
+        Driver driver = new Driver(null,null);
         driver.setId(driverId);
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
@@ -237,13 +237,13 @@ public class CarDaoImpl implements CarDao {
         long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
         String manufacturerName = resultSet.getNString("manufacturer_name");
         String manufacturerCountry = resultSet.getNString("manufacturer_country");
-        Manufacturer manufacturer = new Manufacturer();
+        Manufacturer manufacturer = new Manufacturer(null,null);
         manufacturer.setId(manufacturerId);
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
         long carId = resultSet.getLong("id");
         String model = resultSet.getNString("model");
-        Car car = new Car();
+        Car car = new Car(null,null);
         car.setId(carId);
         car.setModel(model);
         car.setManufacturer(manufacturer);
