@@ -6,7 +6,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddCarController extends HttpServlet {
+public class CreateCarController extends HttpServlet {
     private static final String CAR_CREATE_FORM = "/WEB-INF/views/carCreateForm.jsp";
 
     @Override
