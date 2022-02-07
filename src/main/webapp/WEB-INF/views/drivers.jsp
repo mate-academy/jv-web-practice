@@ -3,6 +3,11 @@
 <html>
 <head>
     <title>Drivers</title>
+    <script type="text/javascript">
+        function deleteDriver(id) {
+            alert("Driver #" + id + " was deleted")
+        }
+    </script>
 </head>
 <body>
 <h1>List of drivers</h1>
@@ -17,6 +22,9 @@
             <td><c:out value="${driver.getId()}" /></td>
             <td><c:out value="${driver.getName()}" /></td>
             <td><c:out value="${driver.getLicenseNumber()}" /></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?driver_id=${driver.getId()}">
+                <button onclick="deleteDriver(${driver.getId()})">Delete</button>
+            </a></td>
         </tr>
     </c:forEach>
 </table>
