@@ -22,7 +22,7 @@
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/delete?manufacturer_id=${manufacturer.getId()}">
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?manufacturer_id=${manufacturer.getId()}">
                 <button onclick="deleteManufacturer(${manufacturer.getId()})">Delete</button>
             </a></td>
         </tr>
