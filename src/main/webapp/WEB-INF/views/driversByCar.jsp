@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Drivers by Car"</title>
+    <title>Drivers by Car # ${param.car_id}</title>
     <script type="text/javascript">
         function deleteDriver(id) {
             alert("Driver #" + id + " was deleted from car")
@@ -27,7 +27,7 @@
             <td><c:out value="${driver.getId()}" /></td>
             <td><c:out value="${driver.getName()}" /></td>
             <td><c:out value="${driver.getLicenseNumber()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?driver_id=${driver.getId()}">
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?driver_id=${driver.getId()}&car_id=${param.car_id}">
                 <button onclick="deleteDriver(${driver.getId()})">Delete from car</button>
             </a></td>
         </tr>
@@ -45,7 +45,7 @@
             <td><c:out value="${driver.getId()}" /></td>
             <td><c:out value="${driver.getName()}" /></td>
             <td><c:out value="${driver.getLicenseNumber()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?driver_id=${driver.getId()}">
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?driver_id=${driver.getId()}&car_id=${param.car_id}">
                 <button onclick="addDriver(${driver.getId()})">Add to car</button>
             </a></td>
         </tr>
