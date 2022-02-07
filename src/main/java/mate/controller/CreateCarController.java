@@ -1,6 +1,7 @@
 package mate.controller;
 
 import mate.lib.Injector;
+import mate.model.Car;
 import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
@@ -9,12 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class CreateCarController extends HttpServlet {
     private static final String CAR_CREATE_FORM = "/WEB-INF/views/carCreateForm.jsp";
     private static final String ROOT_PACKAGE = "mate";
     private static final String MANUFACTURERS_ATTRIBUTE = "manufacturers";
+    private static final String MANUFACTURER_ID_ATTRIBUTE = "manufacturer_id";
+    private static final String CAR_MODEL_ATTRIBUTE = "model";
     private CarService carService;
     private ManufacturerService manufacturerService;
 
@@ -28,14 +32,23 @@ public class CreateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute(MANUFACTURERS_ATTRIBUTE, manufacturers);
         req.getRequestDispatcher(CAR_CREATE_FORM).forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        String carModel = req.getParameter(CAR_MODEL_ATTRIBUTE);
+        long manufacturerId = Long.parseLong(req.getParameter(MANUFACTURER_ID_ATTRIBUTE));
+        Car car = new Car();
+        car.setModel(carModel);
+        car.setManufacturer(manufacturerService.get(manufacturerId));
+        car.setDrivers(new ArrayList<>());
+        carService.create(car);
+        resp.sendRedirect(getServletContext().getContextPath() + "/cars/add");
     }
 }
