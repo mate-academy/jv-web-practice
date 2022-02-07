@@ -3,6 +3,11 @@
 <html>
 <head>
     <title>Manufacturers</title>
+    <script type="text/javascript">
+        function deleteManufacturer(id) {
+            alert("Manufacturer #" + id + " was deleted")
+        }
+    </script>
 </head>
 <body>
 <h1>List of manufacturers</h1>
@@ -17,6 +22,9 @@
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
+            <td><a href="${pageContext.request.contextPath}/delete?manufacturer_id=${manufacturer.getId()}">
+                <button onclick="deleteManufacturer(${manufacturer.getId()})">Delete</button>
+            </a></td>
         </tr>
     </c:forEach>
 </table>
