@@ -88,4 +88,13 @@
         <servlet-name>getAllCars</servlet-name>
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getDriversByCar</servlet-name>
+        <servlet-class>mate.controller.GetDriversByCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getDriversByCar</servlet-name>
+        <url-pattern>/cars/drivers</url-pattern>
+    </servlet-mapping>
 </web-app>
