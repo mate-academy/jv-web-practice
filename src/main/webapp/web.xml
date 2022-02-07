@@ -79,4 +79,13 @@
         <servlet-name>deleteDriver</servlet-name>
         <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getAllCars</servlet-name>
+        <servlet-class>mate.controller.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllCars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
 </web-app>
