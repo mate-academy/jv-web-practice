@@ -19,6 +19,7 @@ public class CreateCarController extends HttpServlet {
     private static final String MANUFACTURERS_ATTRIBUTE = "manufacturers";
     private static final String MANUFACTURER_ID_ATTRIBUTE = "manufacturer_id";
     private static final String CAR_MODEL_ATTRIBUTE = "model";
+    private static final String ADD_CAR_REQUEST = "/cars/add";
     private CarService carService;
     private ManufacturerService manufacturerService;
 
@@ -32,7 +33,7 @@ public class CreateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute(MANUFACTURERS_ATTRIBUTE, manufacturers);
@@ -40,7 +41,7 @@ public class CreateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         String carModel = req.getParameter(CAR_MODEL_ATTRIBUTE);
         long manufacturerId = Long.parseLong(req.getParameter(MANUFACTURER_ID_ATTRIBUTE));
@@ -49,6 +50,6 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        resp.sendRedirect(getServletContext().getContextPath() + "/cars/add");
+        resp.sendRedirect(getServletContext().getContextPath() + ADD_CAR_REQUEST);
     }
 }

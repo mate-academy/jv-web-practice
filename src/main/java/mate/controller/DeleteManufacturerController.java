@@ -23,7 +23,7 @@ public class DeleteManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         long manufacturerId = Long.parseLong(req.getParameter(MANUFACTURER_ID_ATTRIBUTE));
         manufacturerService.delete(manufacturerId);

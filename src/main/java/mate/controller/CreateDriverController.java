@@ -14,6 +14,7 @@ public class CreateDriverController extends HttpServlet {
     private static final String NAME_ATTRIBUTE = "name";
     private static final String LICENCE_NUMBER_ATTRIBUTE = "licence_number";
     private static final String ROOT_PACKAGE = "mate";
+    private static final String ADD_DRIVER_REQUEST = "/drivers/add";
     private DriverService driverService;
 
     @Override
@@ -25,13 +26,13 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(CREATE_DRIVER_FORM).forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         String driversName = req.getParameter(NAME_ATTRIBUTE);
         String driverLicenceNumber = req.getParameter(LICENCE_NUMBER_ATTRIBUTE);
@@ -40,6 +41,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setLicenseNumber(driverLicenceNumber);
         driverService.create(driver);
         resp.sendRedirect(getServletContext().getContextPath()
-                + "/drivers/add");
+                + ADD_DRIVER_REQUEST);
     }
 }

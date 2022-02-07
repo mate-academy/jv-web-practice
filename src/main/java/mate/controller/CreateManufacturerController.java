@@ -14,6 +14,7 @@ public class CreateManufacturerController extends HttpServlet {
     private static final String ROOT_PACKAGE = "mate";
     private static final String NAME_ATTRIBUTE = "name";
     private static final String COUNTRY_ATTRIBUTE = "country";
+    private static final String CREATE_MANUFACTURER_REQUEST = "/manufacturers/add";
     private ManufacturerService manufacturerService;
 
     @Override
@@ -24,13 +25,13 @@ public class CreateManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(MANUFACTURER_CREATE_FORM).forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         String manufacturerName = req.getParameter(NAME_ATTRIBUTE);
         String manufacturerCountry = req.getParameter(COUNTRY_ATTRIBUTE);
@@ -39,7 +40,7 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setCountry(manufacturerCountry);
         manufacturerService.create(manufacturer);
         resp.sendRedirect(getServletContext().getContextPath()
-                + "/manufacturers/add");
+                + CREATE_MANUFACTURER_REQUEST);
 
     }
 }

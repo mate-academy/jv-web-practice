@@ -21,7 +21,7 @@ public class DeleteDriverFromCarController extends HttpServlet {
     private CarService carService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         Injector injector = Injector.getInstance(ROOT_PACKAGE);
         driverService = (DriverService) injector
                 .getInstance(DriverService.class);
@@ -30,8 +30,8 @@ public class DeleteDriverFromCarController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
         long driverId = Long.parseLong(req.getParameter(DRIVER_ID_ATTRIBUTE));
         long carId = Long.parseLong(req.getParameter(CAR_ID_ATTRIBUTE));
         Car car = carService.get(carId);

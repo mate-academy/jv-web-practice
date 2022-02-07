@@ -15,15 +15,15 @@ public class DeleteCarController extends HttpServlet {
     private CarService carService;
 
     @Override
-    public void init() throws ServletException {
+    public void init() {
         Injector injector = Injector.getInstance(ROOT_PACKAGE);
         carService = (CarService) injector
                 .getInstance(CarService.class);
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
         long carId = Long.parseLong(req.getParameter(CAR_ID_ATTRIBUTE));
         carService.delete(carId);
         resp.sendRedirect(getServletContext().getContextPath()

@@ -3,7 +3,6 @@ package mate.controller;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.service.CarService;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -25,7 +24,7 @@ public class GetAllCarsController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         req.setAttribute(CARS_ATTRIBUTE, cars);
