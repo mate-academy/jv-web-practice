@@ -19,8 +19,8 @@
         <td><c:out value="${driver.getLicenseNumber()}"/></td>
     </tr>
 </c:forEach>
-
 </table>
-
+<br>
+<a href="${pageContext.request.contextPath}/drivers/add">new driver</a>
 </body>
 </html>

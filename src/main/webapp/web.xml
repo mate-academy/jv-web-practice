@@ -19,4 +19,12 @@
         <servlet-name>drivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>addDriver</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
 </web-app>

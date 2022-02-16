@@ -14,7 +14,8 @@ import java.util.List;
 
 public class GetAllDriversController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
-    private static DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
