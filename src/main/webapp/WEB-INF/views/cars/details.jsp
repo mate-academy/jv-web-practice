@@ -9,7 +9,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <br/>
-<h2>Car details</h2> <br/>
+Car details
 <table>
     <tr>
         <td>Id:</td>
@@ -24,8 +24,7 @@
         <td><c:out value="${car.getManufacturer().getName()}"/></td>
     </tr>
 </table>
-<br/>
-<h3>Drivers added to car</h3> <br/>
+Drivers added to car
 <table>
 <c:forEach items="${car.getDrivers()}" var="driver">
     <tr>
@@ -39,7 +38,7 @@
 </c:forEach>
 </table>
 <br/>
-<h4>Add driver to car</h4>
+Add driver to car
 <form method="post" action="${pageContext.request.contextPath}/cars/details?id=${car.getId()}">
     <select name="driver_id">
         <c:forEach items="${drivers}" var="driver">
@@ -48,6 +47,5 @@
     </select>
     <button type="submit">apply</button>
 </form>
-
 </body>
 </html>

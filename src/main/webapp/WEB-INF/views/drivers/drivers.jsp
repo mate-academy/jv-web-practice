@@ -6,6 +6,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
+<br/>
+Drivers
 <table>
     <tr>
         <td>ID</td>
@@ -17,6 +19,7 @@
         <td><c:out value="${driver.getId()}"/></td>
         <td><c:out value="${driver.getName()}"/></td>
         <td><c:out value="${driver.getLicenseNumber()}"/></td>
+        <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.getId()}">delete</a></td>
     </tr>
 </c:forEach>
 </table>

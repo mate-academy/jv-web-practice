@@ -6,9 +6,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h1>
-    New car <br/>
-</h1>
+<br/>
+New car
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"> <br/>
     Select a Category:&nbsp;

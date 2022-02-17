@@ -5,9 +5,8 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
-<h1>
-    New driver <br>
-</h1>
+<br/>
+New driver
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name <input type="text" name="name"> <br>
     License <input type="text" name="license"> <br>
