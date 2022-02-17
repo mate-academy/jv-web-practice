@@ -1,17 +1,16 @@
 package mate.controller;
 
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
-
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
 
 public class GetCarDetailsController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
@@ -21,7 +20,8 @@ public class GetCarDetailsController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
         req.setAttribute("car", car);
         List<Driver> drivers = driverService.getAll();
@@ -30,7 +30,8 @@ public class GetCarDetailsController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
         Driver driver = driverService.get(Long.parseLong(req.getParameter("driver_id")));
         carService.addDriverToCar(driver, car);
