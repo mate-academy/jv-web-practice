@@ -1,19 +1,18 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Car;
-import mate.model.Driver;
-import mate.model.Manufacturer;
-import mate.service.CarService;
-import mate.service.ManufacturerService;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import mate.lib.Injector;
+import mate.model.Car;
+import mate.model.Manufacturer;
+import mate.service.CarService;
+import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
