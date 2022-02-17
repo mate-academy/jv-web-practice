@@ -6,6 +6,7 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
+<br/>
 <table>
     <tr>
         <td>ID</td>
@@ -25,8 +26,8 @@
                     <c:out value="${driver.getName()}"/> <br>
                 </c:forEach>
             </td>
-            <td valign="center"><a href="${pageContext.request.contextPath}/cars/drivers?car_id=${car.getId()}">details</a></td>
-            <td valign="center"><a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.getId()}">delete</a></td>
+            <td valign="center"><a href="${pageContext.request.contextPath}/cars/details?id=${car.getId()}">details</a></td>
+            <td valign="center"><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">delete</a></td>
         </tr>
     </c:forEach>
     <br>

@@ -63,4 +63,20 @@
         <servlet-name>addCar</servlet-name>
         <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getCarDetails</servlet-name>
+        <servlet-class>mate.controller.GetCarDetailsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getCarDetails</servlet-name>
+        <url-pattern>/cars/details</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>removeDriverFromCar</servlet-name>
+        <servlet-class>mate.controller.RemoveDriverFromCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeDriverFromCar</servlet-name>
+        <url-pattern>/cars/removedriver</url-pattern>
+    </servlet-mapping>
 </web-app>
