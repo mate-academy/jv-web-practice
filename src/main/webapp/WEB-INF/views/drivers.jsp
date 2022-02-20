@@ -22,15 +22,20 @@
 
 <h1>Update an existing driver:</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/update">
-    Id <input type="text" name="id">
+    Id
+    <select name="id">
+        <c:forEach items="${drivers}" var="driver">
+            <option value="${driver.id}">${driver.id}</option>
+        </c:forEach>
+    </select>
     Name <input type="text" name="name">
     License number <input type="text" name="licenseNumber">
     <button type="submit">Update driver</button>
 </form>
 
 <h1>All drivers:</h1>
-<table>
-    <tr>
+<table border="3px solid #333">
+    <tr style="font-weight: bold">
         <td>Id</td>
         <td>Name</td>
         <td>License number</td>
@@ -40,7 +45,7 @@
             <td><c:out value="${driver.id}"/></td>
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
-            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">delete</a></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>

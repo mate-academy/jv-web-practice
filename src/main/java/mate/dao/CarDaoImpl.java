@@ -8,7 +8,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import mate.exception.DataProcessingException;
@@ -122,8 +121,8 @@ public class CarDaoImpl implements CarDao {
         String selectQuery = "UPDATE cars SET is_deleted = true WHERE id = ?"
                 + " and is_deleted = false";
         try (Connection connection = ConnectionUtil.getConnection();
-                 PreparedStatement deleteCarStatement =
-                         connection.prepareStatement(selectQuery)) {
+                PreparedStatement deleteCarStatement =
+                        connection.prepareStatement(selectQuery)) {
             deleteCarStatement.setLong(1, id);
             return deleteCarStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -162,7 +161,8 @@ public class CarDaoImpl implements CarDao {
 
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
-        List<Driver> drivers = car.getDrivers() == null ? Collections.emptyList() : car.getDrivers();
+        List<Driver> drivers = car.getDrivers() == null ? Collections.emptyList()
+                : car.getDrivers();
         if (drivers.size() == 0) {
             return;
         }

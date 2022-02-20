@@ -22,15 +22,20 @@
 
 <h1>Update an existing manufacturer:</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/update">
-    Id <input type="text" name="id">
+    Id
+    <select name="id">
+        <c:forEach items="${manufacturers}" var="manufacturer">
+            <option value="${manufacturer.id}">${manufacturer.id}</option>
+        </c:forEach>
+    </select>
     Name <input type="text" name="name">
     Country <input type="text" name="country">
     <button type="submit">Update manufacturer</button>
 </form>
 
 <h1>All manufacturers:</h1>
-<table>
-    <tr>
+<table border="3px solid #333">
+    <tr style="font-weight: bold">
         <td>Id</td>
         <td>Name</td>
         <td>Country</td>
@@ -40,7 +45,7 @@
             <td><c:out value="${manufacturer.id}"/></td>
             <td><c:out value="${manufacturer.name}"/></td>
             <td><c:out value="${manufacturer.country}"/></td>
-            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete</a></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">Delete</a></td>
         </tr>
     </c:forEach>
 </table>
