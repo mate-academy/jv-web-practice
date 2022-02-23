@@ -30,12 +30,8 @@ public class CreateDriverController extends HttpServlet {
         Driver driver = new Driver();
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
-        Driver driverAdded = driverService.create(driver);
-        if (driverAdded.getId() != 0) {
-            req.setAttribute("message", "Driver " + driverAdded.getName()
-                    + " was successfully added to database");
-            req.getRequestDispatcher("/drivers/add.jsp").forward(req, resp);
-        }
+        driverService.create(driver);
+        resp.sendRedirect("/drivers");
     }
 
 }

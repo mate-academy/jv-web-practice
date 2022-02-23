@@ -30,11 +30,7 @@ public class CreateManufacturerController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(name);
         manufacturer.setCountry(country);
-        Manufacturer manufacturerAdded = manufacturerService.create(manufacturer);
-        if (manufacturerAdded.getId() != 0) {
-            req.setAttribute("message", "Manufacturer " + manufacturerAdded.getName()
-                    + " was successfully added to database");
-            req.getRequestDispatcher("/manufacturers/add.jsp").forward(req, resp);
-        }
+        manufacturerService.create(manufacturer);
+        resp.sendRedirect("/manufacturers");
     }
 }

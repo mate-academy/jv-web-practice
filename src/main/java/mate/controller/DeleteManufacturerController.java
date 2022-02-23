@@ -19,15 +19,7 @@ public class DeleteManufacturerController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
-        boolean deleted = manufacturerService.delete(id);
-        if (deleted) {
-            //req.setAttribute("message", "Manufacturer ID=" + id
-            //        + " was successfully deleted from database");
-            //req.getRequestDispatcher("manufacturers/all.jsp").forward(req, resp);
-
-            //resp.setAttribute("message", такого метода у resp нету,
-            //как же тогда передать "message" в "/manufacturers"?
-            resp.sendRedirect("/manufacturers");
-        }
+        manufacturerService.delete(id);
+        resp.sendRedirect("/manufacturers");
     }
 }
