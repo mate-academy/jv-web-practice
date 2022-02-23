@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,11 +33,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        List<Car> allByDriver = carService.getAllByDriver(driverId);
-        if (allByDriver.contains(car)) {
-            req.setAttribute("message", "Driver ID=" + driverId
-                    + " was successfully added to car ID=" + carId);
-            req.getRequestDispatcher("/cars/drivers/add.jsp").forward(req, resp);
-        }
+        resp.sendRedirect("/cars");
     }
 }
