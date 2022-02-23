@@ -36,11 +36,7 @@ public class CreateCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
-        Car carAdded = carService.create(car);
-        if (carAdded.getId() != 0) {
-            req.setAttribute("message", "Car " + carAdded.getModel()
-                    + " ID=" + carAdded.getId() + " was successfully added to database");
-            req.getRequestDispatcher("/cars/add.jsp").forward(req, resp);
-        }
+        carService.create(car);
+        resp.sendRedirect("/cars");
     }
 }
