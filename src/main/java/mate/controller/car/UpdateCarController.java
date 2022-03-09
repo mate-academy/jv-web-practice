@@ -29,6 +29,6 @@ public class UpdateCarController extends HttpServlet {
         car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(carService.get(Long.parseLong(req.getParameter("id"))).getDrivers());
         carService.update(car);
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

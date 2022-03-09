@@ -22,6 +22,6 @@ public class UpdateDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
         driverService.update(driver);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

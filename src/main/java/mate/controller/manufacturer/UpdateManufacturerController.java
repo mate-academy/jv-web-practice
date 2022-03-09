@@ -22,6 +22,6 @@ public class UpdateManufacturerController extends HttpServlet {
         manufacturer.setName(req.getParameter("name"));
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerService.update(manufacturer);
-        resp.sendRedirect("/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }
