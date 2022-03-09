@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>All drivers</title>
@@ -9,7 +10,7 @@
     <tr>
         <td>ID</td>
         <td>NAME</td>
-        <td>LICENSE NUMBER</td>
+        <td>LICENSE_NUMBER</td>
     </tr>
     <c:forEach items = "${drivers}" var = "driver">
         <tr>
