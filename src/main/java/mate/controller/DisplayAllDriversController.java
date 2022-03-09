@@ -3,15 +3,17 @@ package mate.controller;
 import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
-@WebServlet(urlPatterns = "/drivers/add")
-public class CreateDriverController extends HttpServlet {
+@WebServlet(urlPatterns = "/drivers")
+public class DisplayAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -19,19 +21,9 @@ public class CreateDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/createDriver.jsp")
+        List<Driver> drivers = driverService.getAll();
+        req.setAttribute("drivers", drivers);
+        req.getRequestDispatcher("/WEB-INF/views/displayAllDrivers.jsp")
                 .forward(req, resp);
-    }
-
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String licenseNumber = req.getParameter("license_number");
-        Driver driver = new Driver();
-        driver.setName(name);
-        driver.setLicenseNumber(licenseNumber);
-        driverService.create(driver);
-        resp.sendRedirect("/");
     }
 }
