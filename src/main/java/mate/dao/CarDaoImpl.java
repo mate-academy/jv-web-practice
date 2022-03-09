@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -28,7 +29,7 @@ public class CarDaoImpl implements CarDao {
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement createCarStatement =
                         connection.prepareStatement(
-                             insertQuery, Statement.RETURN_GENERATED_KEYS)) {
+                                insertQuery, Statement.RETURN_GENERATED_KEYS)) {
             createCarStatement.setString(1, car.getModel());
             createCarStatement.setLong(2, car.getManufacturer().getId());
             createCarStatement.executeUpdate();
@@ -120,8 +121,8 @@ public class CarDaoImpl implements CarDao {
         String selectQuery = "UPDATE cars SET is_deleted = TRUE WHERE id = ?"
                 + " AND is_deleted = FALSE";
         try (Connection connection = ConnectionUtil.getConnection();
-                 PreparedStatement deleteCarStatement =
-                         connection.prepareStatement(selectQuery)) {
+                PreparedStatement deleteCarStatement =
+                        connection.prepareStatement(selectQuery)) {
             deleteCarStatement.setLong(1, id);
             return deleteCarStatement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -160,7 +161,8 @@ public class CarDaoImpl implements CarDao {
 
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
-        List<Driver> drivers = car.getDrivers();
+        List<Driver> drivers = car.getDrivers() == null ? Collections.emptyList()
+                : car.getDrivers();
         if (drivers.size() == 0) {
             return;
         }
