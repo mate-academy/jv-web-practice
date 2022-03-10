@@ -30,4 +30,22 @@
         <url-pattern>/drivers/add</url-pattern>
         <url-pattern>/drivers/add/</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturers</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+        <url-pattern>/manufacturers/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addManufacturer</servlet-name>
+        <servlet-class>mate.controller.AddManufacturer</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addManufacturer</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
+        <url-pattern>/manufacturers/add/</url-pattern>
+    </servlet-mapping>
 </web-app>
