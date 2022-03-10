@@ -33,7 +33,7 @@ public class AddCarController extends HttpServlet {
 
     @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+                throws IOException {
         carService.create(new Car(
                 req.getParameter("model"),
                 manufacturerService.get(
