@@ -11,7 +11,6 @@
         Manufacturer's id <input type="text" name="manufacturer_id"><br>
         <button type="submit">Confirm</button>
     </form>
-    <a href="${pageContext.request.contextPath}/manufacturer/add">Create a new manufacturer</a><br>
     <a href="${pageContext.request.contextPath}/manufacturer/all">Show all manufacturers</a><br>
     <a href="${pageContext.request.contextPath}/index">return to main page</a>
 </body>

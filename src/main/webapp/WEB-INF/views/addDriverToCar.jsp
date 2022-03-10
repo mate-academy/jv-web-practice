@@ -11,6 +11,7 @@
         Driver's id <input type="text" name="driver_id"><br>
         <button type="submit">Confirm</button>
     </form>
+    <a href="${pageContext.request.contextPath}/cars/all">Show all cars</a><br>
     <a href="${pageContext.request.contextPath}/drivers/all">Show all drivers</a><br>
     <a href="${pageContext.request.contextPath}/index">return to main page</a>
 </body>
