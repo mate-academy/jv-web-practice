@@ -33,16 +33,13 @@ public class AddCarController extends HttpServlet {
 
     @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException, ServletException {
-        Car car = new Car();
-        car.setModel(req.getParameter("model"));
-        car.setManufacturer(
-                manufacturerService
-                .get(Long.valueOf(req.getParameter("manufacturer_id")))
+            throws IOException {
+        carService.create(new Car(
+                req.getParameter("model"),
+                manufacturerService.get(
+                        Long.valueOf(req.getParameter("manufacturer_id"))),
+                new ArrayList<>())
         );
-        car.setDrivers(new ArrayList<>());
-        carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/addCar.jsp")
-                .forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
