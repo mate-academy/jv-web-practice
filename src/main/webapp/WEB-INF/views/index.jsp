@@ -8,6 +8,7 @@
     <p>Please, choose your choice below: </p>
     <a href="${pageContext.request.contextPath}/drivers/add">Create a new driver</a><br>
     <a href="${pageContext.request.contextPath}/drivers/all">Show all drivers</a><br>
-    <a href="${pageContext.request.contextPath}/manufacturer/add">Create a new manufacturer</a>
+    <a href="${pageContext.request.contextPath}/manufacturer/add">Create a new manufacturer</a><br>
+    <a href="${pageContext.request.contextPath}/manufacturer/all">Show all manufacturers</a><br>
 </body>
 </html>
