@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>drivers list</title>
+    <title>Drivers list</title>
 </head>
 <body>
 <h1>List of drivers:</h1>

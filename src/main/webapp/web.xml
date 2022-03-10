@@ -10,6 +10,7 @@
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+        <url-pattern>/index/</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>drivers</servlet-name>
@@ -18,5 +19,15 @@
     <servlet-mapping>
         <servlet-name>drivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
+        <url-pattern>/drivers/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addDriver</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+        <url-pattern>/drivers/add/</url-pattern>
     </servlet-mapping>
 </web-app>
