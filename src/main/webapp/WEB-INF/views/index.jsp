@@ -6,6 +6,7 @@
 <body>
 <h1>Welcome to taxi service</h1>
 <p>Please, choose your choice below: </p>
-<a href="/drivers/add">Create a new driver</a>
+<a href="${pageContext.request.contextPath}/drivers/add">Create a new driver</a><br>
+<a href="${pageContext.request.contextPath}/drivers/all">Show all drivers</a>
 </body>
 </html>

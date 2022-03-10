@@ -11,6 +11,6 @@
         Driver's license <input type="text" name="licenseDriver"><br>
         <button type="submit">Confirm</button>
     </form>
-    <a href="/index">return to main page</a>
+    <a href="${pageContext.request.contextPath}/index">return to main page</a>
 </body>
 </html>
