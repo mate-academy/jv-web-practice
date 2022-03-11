@@ -9,9 +9,9 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-public class AddManufacturer extends HttpServlet {
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static ManufacturerService manufacturerService;
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() {

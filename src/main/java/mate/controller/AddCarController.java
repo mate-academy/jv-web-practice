@@ -13,8 +13,8 @@ import mate.service.ManufacturerService;
 
 public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static CarService carService;
-    private static ManufacturerService manufacturerService;
+    private CarService carService;
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() {
@@ -34,12 +34,11 @@ public class AddCarController extends HttpServlet {
     @Override
         protected void doPost(HttpServletRequest req, HttpServletResponse resp)
                 throws IOException {
-        carService.create(new Car(
-                req.getParameter("model"),
-                manufacturerService.get(
-                        Long.valueOf(req.getParameter("manufacturer_id"))),
-                new ArrayList<>())
-        );
+        Car car = new Car();
+        car.setModel(req.getParameter("model"));
+        car.setManufacturer(manufacturerService.get(Long.valueOf(req.getParameter("manufacturer_id"))));
+        car.setDrivers(new ArrayList<>());
+        carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

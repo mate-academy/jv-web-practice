@@ -9,7 +9,7 @@ import mate.service.ManufacturerService;
 
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static ManufacturerService manufacturerService;
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() {

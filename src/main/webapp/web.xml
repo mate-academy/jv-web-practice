@@ -41,7 +41,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>addManufacturer</servlet-name>
-        <servlet-class>mate.controller.AddManufacturer</servlet-class>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>addManufacturer</servlet-name>
