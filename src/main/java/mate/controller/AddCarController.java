@@ -36,7 +36,13 @@ public class AddCarController extends HttpServlet {
                 throws IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
-        car.setManufacturer(manufacturerService.get(Long.valueOf(req.getParameter("manufacturer_id"))));
+        car.setManufacturer(
+                manufacturerService.get(
+                        Long.valueOf(
+                                req.getParameter("manufacturer_id")
+                        )
+                )
+        );
         car.setDrivers(new ArrayList<>());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/index");
