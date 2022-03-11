@@ -5,7 +5,6 @@
 </head>
 <body>
 <h1>Please fill in all clear fields!</h1>
-
 <form method="post" action="${pageContext.request.contextPath}/drivers/createDriver">
     Name <input type="text" name="driver_name"><br>
     LicenseNumber <input type="text" name="license_number"><br>

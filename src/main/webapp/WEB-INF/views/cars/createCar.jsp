@@ -10,6 +10,5 @@
     Manufacturer_id <input type="text" name="manufacturer_id"><br>
     <button type="submit">Create</button>
 </form>
-
 </body>
 </html>

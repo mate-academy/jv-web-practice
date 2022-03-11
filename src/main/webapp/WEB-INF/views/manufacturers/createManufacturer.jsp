@@ -10,6 +10,5 @@
     Country <input type="text" name="country"><br>
     <button type="submit">Create</button>
 </form>
-
 </body>
 </html>
