@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Please fill in all clear fields!</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
     Manufacturer_id <input type="text" name="manufacturer_id"><br>
     <button type="submit">Create</button>
