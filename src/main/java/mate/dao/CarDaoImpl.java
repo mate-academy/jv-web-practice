@@ -6,6 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -160,7 +161,8 @@ public class CarDaoImpl implements CarDao {
 
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
-        List<Driver> drivers = car.getDrivers();
+        List<Driver> drivers = car.getDrivers() == null
+                ? new ArrayList<>() : car.getDrivers();
         if (drivers.size() == 0) {
             return;
         }
