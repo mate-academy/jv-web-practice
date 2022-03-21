@@ -23,7 +23,7 @@ public class UpdateManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         String name = req.getParameter("name");
         String country = req.getParameter("country");
@@ -32,5 +32,6 @@ public class UpdateManufacturerController extends HttpServlet {
         manufacturer.setName(name);
         manufacturer.setCountry(country);
         manufacturerService.update(manufacturer);
+        resp.sendRedirect(req.getContextPath() + "/manufacturers/update");
     }
 }

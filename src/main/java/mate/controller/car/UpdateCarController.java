@@ -26,7 +26,7 @@ public class UpdateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
@@ -35,5 +35,6 @@ public class UpdateCarController extends HttpServlet {
         car.setModel(model);
         car.setManufacturer(manufacturerService.get(manufacturerId));
         carService.update(car);
+        resp.sendRedirect(req.getContextPath() + "/cars/update");
     }
 }

@@ -1,5 +1,6 @@
 package mate.controller.car;
 
+import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,8 +15,9 @@ public class DeleteCarController extends HttpServlet {
             (CarService) injector.getInstance(CarService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
+        resp.sendRedirect(req.getContextPath() + "/cars/delete");
     }
 }

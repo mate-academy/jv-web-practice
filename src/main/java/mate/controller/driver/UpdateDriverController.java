@@ -23,7 +23,7 @@ public class UpdateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
@@ -32,5 +32,6 @@ public class UpdateDriverController extends HttpServlet {
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
         driverService.update(driver);
+        resp.sendRedirect(req.getContextPath() + "/drivers/update");
     }
 }
