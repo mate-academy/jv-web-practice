@@ -7,6 +7,7 @@ import mate.service.CarService;
 import mate.service.ManufacturerService;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,6 +37,7 @@ public class CreateCarController extends HttpServlet {
         Car car = new Car();
         car.setManufacturer(manufacturer);
         car.setModel(model);
+        car.setDrivers(new ArrayList<>());
         carService.create(car);
     }
 }
