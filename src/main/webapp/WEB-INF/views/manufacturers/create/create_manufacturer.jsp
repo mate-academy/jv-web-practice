@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create new manufacturer:</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
     Name:<input type="text" name="manufacturerName"><br>
     Country:<input type="text" name="country"><br>
     <button type="submit">Create</button>
