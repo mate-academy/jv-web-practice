@@ -36,8 +36,8 @@
             <td><c:out value="${car.getManufacturer().getName()}" /></td>
             <td>
                 <c:forEach items="${car.getDrivers()}" var="drivers">
-            <td><c:out value="${drivers.getName()}" /></td>
-            </c:forEach>
+                    <c:out value="${drivers.getName()}" />
+                </c:forEach>
             </td>
         </tr>
     </c:forEach>
