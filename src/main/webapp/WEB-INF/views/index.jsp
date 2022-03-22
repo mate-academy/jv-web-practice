@@ -9,7 +9,9 @@
     <p><a href="${pageContext.request.contextPath}/drivers/create">Create driver</a></p>
     <p><a href="${pageContext.request.contextPath}/drivers">Show all drivers</a></p>
     <p><a href="${pageContext.request.contextPath}/manufacturers/create">Create manufacturer</a></p>
+    <p><a href="${pageContext.request.contextPath}/manufacturers">Show all manufacturers</a></p>
     <p><a href="${pageContext.request.contextPath}/cars/create">Create car</a></p>
+    <p><a href="${pageContext.request.contextPath}/cars">Show all cars</a></p>
     <p><a href="${pageContext.request.contextPath}/cars/add/driver">Add driver to car</a></p>
 </body>
 </html>
