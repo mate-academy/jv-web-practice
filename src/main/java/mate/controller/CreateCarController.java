@@ -8,6 +8,7 @@ import mate.service.ManufacturerService;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -24,8 +25,10 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        List<Manufacturer> allManufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", allManufacturers);
         req.getRequestDispatcher("/WEB-INF/views/cars/create/create_car.jsp")
-                .forward(req, resp);
+                .include(req, resp);
     }
 
     @Override
