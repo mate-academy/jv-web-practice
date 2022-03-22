@@ -9,10 +9,12 @@ import mate.service.DriverService;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+@WebServlet(urlPatterns = "/cars/add/driver")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -25,6 +27,7 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("cars", allCars);
         req.setAttribute("drivers", allDrivers);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add/driver/add_car_driver.jsp").forward(req, resp);
     }
 
     @Override
