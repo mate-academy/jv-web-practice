@@ -160,7 +160,8 @@ public class CarDaoImpl implements CarDao {
 
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
-        List<Driver> drivers = car.getDrivers();
+        List<Driver> drivers = car.getDrivers() == null
+                ? new ArrayList<>() : car.getDrivers();
         if (drivers.size() == 0) {
             return;
         }
