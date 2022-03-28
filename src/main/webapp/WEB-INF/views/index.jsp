@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>All good!</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>Changes saved successfully!</h1>
 </body>
 </html>
