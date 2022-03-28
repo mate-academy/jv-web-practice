@@ -56,7 +56,7 @@
     </c:forEach>
 </table>
 <h2>Add Driver to Car</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+<form name="addDriverToCarForm" method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     <select name="driverId">
         <c:forEach items="${driversList}" var="driver">
             <option value="${driver.id}"><c:out value="${driver.id}"/>.<c:out value="${driver.name}"/></option>

@@ -23,14 +23,12 @@ public class AddCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Car car = new Car();
         String model = req.getParameter("carModel");
+        Car car = new Car();
         car.setModel(model);
         car.setManufacturer(manufacturerService
-                .get(Long.parseLong(req.getParameter("manufacturerId"))));
-        if (!model.isEmpty()) {
-            carService.create(car);
-        }
+                    .get(Long.parseLong(req.getParameter("manufacturerId"))));
+        carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

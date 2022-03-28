@@ -23,12 +23,8 @@ public class UpdateManufacturerController extends HttpServlet {
         String name = req.getParameter("manufacturerName");
         String manufacturerCountry = req.getParameter("manufacturerCountry");
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        if (!name.isEmpty()) {
-            manufacturer.setName(name);
-        }
-        if (!manufacturerCountry.isEmpty()) {
-            manufacturer.setCountry(manufacturerCountry);
-        }
+        manufacturer.setName(name);
+        manufacturer.setCountry(manufacturerCountry);
         manufacturerService.update(manufacturer);
         resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }

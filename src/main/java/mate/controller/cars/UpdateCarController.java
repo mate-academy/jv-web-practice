@@ -32,9 +32,7 @@ public class UpdateCarController extends HttpServlet {
         Long carId = Long.parseLong(req.getParameter("carUpdateId"));
         Car car = carService.get(carId);
         String model = req.getParameter("updateModel");
-        if (!model.isEmpty()) {
-            car.setModel(model);
-        }
+        car.setModel(model);
         car.setManufacturer(manufacturerService.get(Long
                 .parseLong(req.getParameter("manufacturerId"))));
         car.setDrivers(car.getDrivers());

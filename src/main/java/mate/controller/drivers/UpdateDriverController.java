@@ -24,12 +24,8 @@ public class UpdateDriverController extends HttpServlet {
         String name = req.getParameter("driverName");
         String licenseNumber = req.getParameter("licenseNumber");
         Driver driver = driverService.get(driverId);
-        if (!name.isEmpty()) {
-            driver.setName(name);
-        }
-        if (!licenseNumber.isEmpty()) {
-            driver.setLicenseNumber(licenseNumber);
-        }
+        driver.setName(name);
+        driver.setLicenseNumber(licenseNumber);
         driverService.update(driver);
         resp.sendRedirect(req.getContextPath() + "/drivers");
     }

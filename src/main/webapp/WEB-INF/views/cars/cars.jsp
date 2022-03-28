@@ -59,7 +59,7 @@
 </table>
 
 <h2>Add Car</h2>
-<form name="form1" method="post" action="${pageContext.request.contextPath}/cars/add">
+<form name="addCarForm" method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="carModel">
     Manufacturer <select name = "manufacturerId">
     <c:forEach items="${manufacturers}" var="manufacturer">
@@ -70,7 +70,7 @@
 </form>
 
 <h2>Update Car</h2>
-<form name="form2" method="post" action="${pageContext.request.contextPath}/cars/update">
+<form name="updateCarForm" method="post" action="${pageContext.request.contextPath}/cars/update">
     Id <select name="carUpdateId">
     <c:forEach items="${cars}" var="car">
         <option value="${car.id}"><c:out value="${car.id}"/>.<c:out value="${car.model}"/></option>
