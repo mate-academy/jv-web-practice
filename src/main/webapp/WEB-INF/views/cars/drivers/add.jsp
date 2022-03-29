@@ -5,9 +5,14 @@
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car ID <input type="number" name="car_id"><br>
-    Driver ID <input type="number" name="driver_id">
+    <label>Car ID</label><br>
+    <input type="number" name="car_id"><br>
+    <label>Driver ID</label><br>
+    <input type="number" name="driver_id">
     <button type="submit">Confirm</button>
+</form>
+<form method="get" action="${pageContext.request.contextPath}/index">
+    <button type="submit">Cancel</button>
 </form>
 </body>
 </html>

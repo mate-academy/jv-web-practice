@@ -5,9 +5,14 @@
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-    Name <input type="text" name="name"><br>
-    Country <input type="text" name="country"><br>
+    <label>Name</label><br>
+    <input type="text" name="name"><br>
+    <label>Country</label><br>
+    <input type="text" name="country"><br>
     <button type="submit">Confirm</button>
+</form>
+<form method="get" action="${pageContext.request.contextPath}/index">
+    <button type="submit">Cancel</button>
 </form>
 </body>
 </html>

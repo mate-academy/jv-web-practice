@@ -5,9 +5,14 @@
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
-    Name <input type="text" name="name"><br>
-    License number <input type="text" name="license_number"><br>
+    <label>Name</label><br>
+    <input type="text" name="name"><br>
+    <label>License number</label><br>
+    <input type="text" name="license_number"><br>
     <button type="submit">Confirm</button>
+</form>
+<form method="get" action="${pageContext.request.contextPath}/index">
+    <button type="submit">Cancel</button>
 </form>
 </body>
 </html>

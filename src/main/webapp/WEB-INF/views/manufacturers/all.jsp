@@ -25,6 +25,8 @@
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.request.contextPath}/index">Back to index page</a>
+<form method="get" action="${pageContext.request.contextPath}/index">
+    <button type="submit">Back</button>
+</form>
 </body>
 </html>
