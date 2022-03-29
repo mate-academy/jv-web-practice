@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.driver;
 
 import mate.lib.Injector;
 import mate.model.Driver;
@@ -23,7 +23,7 @@ public class GetAllDriversController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/getAllDrivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(req, resp);
 //        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
