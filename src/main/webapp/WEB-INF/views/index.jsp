@@ -5,6 +5,6 @@
 </head>
 <body>
 <h1>Hello, mate! </h1>
-<h2>You are on starting page</h2>
+<h2>You are on the index page</h2>
 </body>
 </html>
