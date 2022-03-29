@@ -8,5 +8,7 @@
 <p>Menu:</p>
 <a href="${pageContext.request.contextPath}/drivers">Show all drivers</a><br>
 <a href="${pageContext.request.contextPath}/drivers/add">Create new driver</a><br>
+<br>
+<a href="${pageContext.request.contextPath}/manufacturers/add">Create new manufacturer</a><br>
 </body>
 </html>
