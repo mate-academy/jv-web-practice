@@ -5,5 +5,7 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
+<p>Menu:</p>
+<a href="${pageContext.request.contextPath}/drivers/add">Create new driver</a>
 </body>
 </html>
