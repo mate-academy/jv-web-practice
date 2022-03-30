@@ -25,12 +25,4 @@ public class DisplayAllCarsController extends HttpServlet {
         req.setAttribute("cars", allCars);
         req.getRequestDispatcher("/WEB-INF/views/car/all.jsp").forward(req, resp);
     }
-
-    public static String driversListFromCar(Car car) {
-        String collect = car.getDrivers()
-                .stream()
-                .map(d -> d.getName())
-                .collect(Collectors.joining());
-        return collect;
-    }
 }
