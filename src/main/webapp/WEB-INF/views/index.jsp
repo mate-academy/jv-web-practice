@@ -11,6 +11,6 @@
 <td><a href="${pageContext.request.contextPath}/manufacturers/add">Create manufacturers</a></td><br><br>
 <td><a href="${pageContext.request.contextPath}/manufacturers">Get all manufacturers</a></td><br><br>
 <td><a href="${pageContext.request.contextPath}/drivers/add">Create driver</a></td><br><br>
-<td><a href="${pageContext.request.contextPath}/drivers">Create all drivers</a></td><br>
+<td><a href="${pageContext.request.contextPath}/drivers">Get all drivers</a></td><br>
 </body>
 </html>
