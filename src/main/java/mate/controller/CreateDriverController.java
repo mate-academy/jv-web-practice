@@ -1,14 +1,14 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/create")
 public class CreateDriverController extends HttpServlet {
@@ -19,7 +19,7 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/createDriver.jsp").forward(req, resp); // отправляет страничку
+        req.getRequestDispatcher("/WEB-INF/views/createDriver.jsp").forward(req, resp);
     }
 
     @Override
@@ -30,6 +30,5 @@ public class CreateDriverController extends HttpServlet {
         driver.setLicenseNumber(req.getParameter("licenseDriver"));
         driverService.create(driver);
         resp.sendRedirect(req.getContextPath() + "/drivers/create");
-        super.doPost(req, resp);
     }
 }

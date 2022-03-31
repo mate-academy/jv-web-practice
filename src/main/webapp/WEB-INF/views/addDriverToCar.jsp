@@ -10,6 +10,7 @@
     Driver's id <input type="text" name="driver_id"><br>
     <button type="submit">Confirm</button>
 </form>
+<a href="${pageContext.request.contextPath}/index">return to main page</a>
 </body>
 
 </html>
