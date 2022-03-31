@@ -5,5 +5,8 @@
 </head>
 <body>
 <h1>Changes saved successfully!</h1>
+<br>
+<a href="${pageContext.request.contextPath}/all_cars">All cars</a> <br>
+<a href="${pageContext.request.contextPath}/all_drivers">All drivers</a> <br>
 </body>
 </html>
