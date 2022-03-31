@@ -24,4 +24,3 @@
 <a href="${pageContext.request.contextPath}/index">return to main page</a>
 </body>
 </html>
-
