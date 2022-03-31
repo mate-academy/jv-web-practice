@@ -22,7 +22,7 @@
             <c:forEach items="${car.drivers}" var="driver">
                 <td><c:out value="${driver.name}, ${driver.licenseNumber}"/></td><br>
             </c:forEach>
-            <td><a href="${pageContext.request.contextPath}/delete?id=${car.id}">delete</a></td>
+            <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>
 </table>
