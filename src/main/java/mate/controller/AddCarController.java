@@ -1,8 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -29,21 +27,12 @@ public class AddCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        String manufacturerName = req.getParameter("manufacturer_name");
-        Manufacturer manufacturer = getManufacturerByName(manufacturerName).get();
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car();
         car.setModel(model);
         car.setManufacturer(manufacturer);
         carService.create(car);
-    }
-
-    private Optional<Manufacturer> getManufacturerByName(String name) {
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
-        for (Manufacturer manufacturer: manufacturers) {
-            if (manufacturer.getName().equals(name)) {
-                return Optional.ofNullable(manufacturer);
-            }
-        }
-        return Optional.empty();
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

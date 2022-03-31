@@ -1,8 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -28,30 +26,11 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String driverName = req.getParameter("driver_name");
-        String carModel = req.getParameter("car_model");
-        Car carToUpdate = getCarByModel(carModel).get();
-        Driver driverToAdd = getDriverByName(driverName).get();
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Car carToUpdate = carService.get(carId);
+        Driver driverToAdd = driverService.get(driverId);
         carService.addDriverToCar(driverToAdd, carToUpdate);
-    }
-
-    private Optional<Driver> getDriverByName(String name) {
-        List<Driver> drivers = driverService.getAll();
-        for (Driver driver: drivers) {
-            if (driver.getName().equals(name)) {
-                return Optional.ofNullable(driver);
-            }
-        }
-        return Optional.empty();
-    }
-
-    private Optional<Car> getCarByModel(String name) {
-        List<Car> cars = carService.getAll();
-        for (Car car: cars) {
-            if (car.getModel().equals(name)) {
-                return Optional.ofNullable(car);
-            }
-        }
-        return Optional.empty();
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
