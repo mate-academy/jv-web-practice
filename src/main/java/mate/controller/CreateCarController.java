@@ -18,7 +18,6 @@ public class CreateCarController extends HttpServlet {
             = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -33,6 +32,6 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturerService.get(Long
                 .valueOf(req.getParameter("manufacturer_id"))));
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 }

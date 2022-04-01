@@ -15,7 +15,6 @@ public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -29,6 +28,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setLicenseNumber(req.getParameter("license_number"));
         driver.setName(req.getParameter("driver_name"));
         driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
+        doGet(req, resp);
     }
 }

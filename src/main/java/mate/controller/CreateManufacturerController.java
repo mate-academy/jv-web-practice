@@ -15,7 +15,6 @@ public class CreateManufacturerController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
