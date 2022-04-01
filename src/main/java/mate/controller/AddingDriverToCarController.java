@@ -19,6 +19,7 @@ public class AddingDriverToCarController extends HttpServlet {
             = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
