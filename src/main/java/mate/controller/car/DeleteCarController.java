@@ -16,12 +16,10 @@ public class DeleteCarController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
         resp.sendRedirect(req.getContextPath() + "/all_cars");
-
-
     }
 
 }

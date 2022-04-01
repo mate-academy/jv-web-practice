@@ -7,18 +7,17 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/all_manufactured")
 public class GetAllManufacturersController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
-        (ManufacturerService) injector.getInstance(ManufacturerService.class);
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-        throws ServletException, IOException {
+            throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req, resp);
     }
