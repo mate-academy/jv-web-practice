@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/car/delete")
+@WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
