@@ -33,6 +33,6 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturerService.get(Long
                 .valueOf(req.getParameter("manufacturer_id"))));
         carService.create(car);
-        doGet(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(req, resp);
     }
 }
