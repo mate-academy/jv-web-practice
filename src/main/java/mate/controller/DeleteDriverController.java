@@ -20,5 +20,6 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         Long driverId = Long.valueOf(req.getParameter("id"));
         driverService.delete(driverId);
+        req.getRequestDispatcher("/drivers/all").forward(req,resp);
     }
 }

@@ -10,27 +10,27 @@
             Get all info about car <button type="submit">Get info</button>
         </form>
         <h1></h1>
-        <form method="get" action="${pageContext.request.contextPath}/cars/register">
+        <form method="get" action="${pageContext.request.contextPath}/cars/add">
             Add new car <button type="submit">Add</button>
-        </form>
-        <h1></h1>
-        <form method="get" action="${pageContext.request.contextPath}/cars/addDriverToCar">
-            Add driver to car relation <button type="submit">Add relation</button>
         </form>
         <h1>Drivers:</h1>
         <form method="get" action="${pageContext.request.contextPath}/drivers/all">
             Get all drivers <button type="submit">Get all</button>
         </form>
         <h1></h1>
-        <form method="get" action="${pageContext.request.contextPath}/drivers/register">
+        <form method="get" action="${pageContext.request.contextPath}/drivers/add">
             Add new driver <button type="submit">Add</button>
+        </form>
+        <h1></h1>
+        <form method="get" action="${pageContext.request.contextPath}/drivers/addDriverToCar">
+            Add driver to car relation <button type="submit">Add relation</button>
         </form>
         <h1>Manufacturers:</h1>
         <form method="get" action="${pageContext.request.contextPath}/manufacturers/all">
             Get all manufacturers <button type="submit">Get all</button>
         </form>
         <h1></h1>
-        <form method="get" action="${pageContext.request.contextPath}/manufacturers/register">
+        <form method="get" action="${pageContext.request.contextPath}/manufacturers/add">
             Add new manufacturer <button type="submit">Add</button>
         </form>
     </body>

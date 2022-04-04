@@ -8,9 +8,9 @@
 
         <h2>Please the form below</h2>
 
-        <form method="post" action="${pageContext.request.contextPath}/cars/register">
+        <form method="post" action="${pageContext.request.contextPath}/cars/add">
             Car model <input type="text" name="model"><br>
-            Manufacturer <input type="text" name="manufacturer"><br>
+            Manufacturer ID <input type="number" name="manufacturer_id"><br>
             <button type="submit">Confirm</button>
         </form>
         <h1></h1>

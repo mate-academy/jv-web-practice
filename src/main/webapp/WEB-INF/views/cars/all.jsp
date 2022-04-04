@@ -37,7 +37,7 @@
             </c:forEach>
         </table>
         <h1></h1>
-        <form method="get" action="${pageContext.request.contextPath}/cars/addDriverToCar">
+        <form method="get" action="${pageContext.request.contextPath}/drivers/addDriverToCar">
             Add driver to car <button type="submit">Add driver</button>
         </form>
         <h1></h1>

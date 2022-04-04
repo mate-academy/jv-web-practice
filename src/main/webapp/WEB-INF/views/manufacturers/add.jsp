@@ -8,7 +8,7 @@
 
         <h2>Please the form below</h2>
 
-        <form method="post" action="${pageContext.request.contextPath}/manufacturers/register">
+        <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
             Manufacturer name <input type="text" name="name"><br>
             Country <input type="text" name="country"><br>
             <button type="submit">Confirm</button>

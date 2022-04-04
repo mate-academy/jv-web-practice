@@ -3,22 +3,5 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-    <servlet>
-        <servlet-name>startPage</servlet-name>
-        <servlet-class>mate.controller.StartPageController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>startPage</servlet-name>
-        <url-pattern>/</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>register</servlet-name>
-        <servlet-class>mate.controller.AddDriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>register</servlet-name>
-        <url-pattern>/drivers/register</url-pattern>
-    </servlet-mapping>
 
 </web-app>
