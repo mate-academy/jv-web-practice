@@ -6,8 +6,8 @@
 <body>
     <h1>Please specify car ID and driver ID</h1>
     <form method="post" action="${pageContext.request.contextPath}/car/add/driver">
-        Car ID <input type="number" name="car.id"><br>
-        Driver ID <input type="number" name="driver.id"><br>
+        Car ID <input type="number" name="car_id"><br>
+        Driver ID <input type="number" name="driver_id"><br>
         <button type="submit">Appoint</button>
     </form>
     <form method="get" action="${ageContext.request.contextPath}/car/all">

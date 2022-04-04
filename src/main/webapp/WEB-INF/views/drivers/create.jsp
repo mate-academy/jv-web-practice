@@ -1,13 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Adding a manufacturer</title>
+    <title>Adding a driver</title>
 </head>
 <body>
-    <h1>Add manufacturer to database</h1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
-    Manufacturer name <input type="text" name="name"><br>
-    Manufacturer country <input type="text" name="country"><br>
+    <h1>Add driver to database</h1>
+<form method="post" action="${pageContext.request.contextPath}/drivers/create">
+    Driver name <input type="text" name="driver_name"><br>
+    Driver license number <input type="number" name="driver_licenseNumber"><br>
     <button type="submit">Add</button>
 </form>
     <form method="get" action="${ageContext.request.contextPath}/">
