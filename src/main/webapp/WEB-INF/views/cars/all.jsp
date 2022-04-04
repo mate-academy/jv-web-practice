@@ -15,13 +15,13 @@
         <td>|DRIVER_MANE|</td>
         <td>|DRIVER_LICENCE_NUMBER|</td>
     </tr>
-    <c:forEach items="${car}" var="car">
+    <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${car.id}"/> </td>
             <td><c:out value="${car.model}"/> </td>
             <td><c:out value="${car.manufacturer.name}"/></td>
         <td><c:out value="${car.manufacturer.country}"/></td>
-        <td><a href="${ageContext.request.contextPath}/car/delete?id=${car.id}">Delete this car</a></td>
+        <td><a href="${ageContext.request.contextPath}/cars/delete?id=${car.id}">Delete this car</a></td>
         <c:forEach items="${car.drivers}" var="driver">
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
