@@ -10,7 +10,7 @@
     <div class="w3-container w3-center w3-green">
         <h2>Create Driver</h2>
     </div>
-    <form method="post" action="/drivers/create">
+    <form method="post" action="/drivers/add">
         Name: <input type="text" name="name"/> <br/>
         License Number: <input type="text" name="license_number"/> <br/>
         <input type="submit" value="Create"/>

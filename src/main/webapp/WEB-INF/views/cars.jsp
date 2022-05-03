@@ -10,7 +10,7 @@
     <div class="w3-container w3-center w3-green">
         <h2>Create car</h2>
     </div>
-    <form method="post" action="/cars/create">
+    <form method="post" action="/cars/add">
         Model: <input type="text" name="model"/> <br/>
         Manufacturer ID: <input type="text" name="manufacturer_id"/> <br/>
         <input type="submit" value="Create"/>
@@ -47,7 +47,7 @@
                     <c:forEach items="${car.drivers}" var="driver">
                         <c:out value="${driver.id}-${driver.name}"/>
                         <button type="submit" class="w3-btn w3-green w3-round-large w3-margin-bottom"
-                                onclick="location.href='/cars/drivers/remove?car_id=${car.id}&driver_id=${driver.id}'">
+                                onclick="location.href='/cars/drivers/delete?car_id=${car.id}&driver_id=${driver.id}'">
                             Remove
                         </button>
                         <br>

@@ -10,7 +10,7 @@
     <div class="w3-container w3-center w3-green">
         <h2>Create Manufacturer</h2>
     </div>
-    <form method="post" action="/manufacturers/create">
+    <form method="post" action="/manufacturers/add">
         Name: <input type="text" name="name"/> <br/>
         Country: <input type="text" name="country"/> <br/>
         <input type="submit" value="Create"/>
