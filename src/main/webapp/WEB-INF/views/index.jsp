@@ -19,6 +19,5 @@
     <a href="${pageContext.request.contextPath}/manufacturers/add">Create Manufacturer<br></a>
     <a href="${pageContext.request.contextPath}/manufacturers">Get all Manufacturers<br></a>
 </h2>
-
 </body>
 </html>
