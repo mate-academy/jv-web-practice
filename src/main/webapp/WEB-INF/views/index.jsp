@@ -13,6 +13,7 @@
 <h2>
     <a href="${pageContext.request.contextPath}/drivers/add">Create drivers<br></a>
     <a href="${pageContext.request.contextPath}/drivers">Get all drivers<br></a>
+    <a href="${pageContext.request.contextPath}/drivers/adddrivertocar">Add driver to car<br></a>
 </h2>
 <h1>Manufacturers</h1>
 <h2>
