@@ -33,13 +33,14 @@ public class CarDaoImpl implements CarDao {
             createCarStatement.setLong(2, car.getManufacturer().getId());
             createCarStatement.executeUpdate();
             ResultSet resultSet = createCarStatement.getGeneratedKeys();
+            //"====> NEW CAR CREATED (DAO)"
             if (resultSet.next()) {
                 car.setId(resultSet.getObject(1, Long.class));
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Can't create car " + car, e);
         }
-        insertAllDrivers(car);
+        //insertAllDrivers(car);
         return car;
     }
 
@@ -68,6 +69,7 @@ public class CarDaoImpl implements CarDao {
         if (car != null) {
             car.setDrivers(getAllDriversByCarId(car.getId()));
         }
+        //"====> CAR ASKED (DAO)"
         return Optional.ofNullable(car);
     }
 
@@ -93,6 +95,7 @@ public class CarDaoImpl implements CarDao {
             throw new DataProcessingException("Can't get all cars", e);
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
+        //"====> ALL CARS ASKED (DAO)"
         return cars;
     }
 
@@ -248,5 +251,26 @@ public class CarDaoImpl implements CarDao {
         car.setModel(model);
         car.setManufacturer(manufacturer);
         return car;
+    }
+
+    public boolean addCarToDriver(Car car, Driver driver) {
+        String insertQuery = "INSERT INTO cars_drivers (car_id, driver_id)"
+                + "VALUES (?, ?)";
+        try (Connection connection = ConnectionUtil.getConnection();
+                PreparedStatement addCarToDriverStatement =
+                        connection.prepareStatement(
+                                insertQuery, Statement.RETURN_GENERATED_KEYS)) {
+            addCarToDriverStatement.setLong(1, car.getId());
+            addCarToDriverStatement.setLong(2, driver.getId());
+            addCarToDriverStatement.executeUpdate();
+            ResultSet resultSet = addCarToDriverStatement.getGeneratedKeys();
+            //"====> NEW CAR-DRIVER CREATED (DAO)"
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't create driver-car " + driver + car, e);
+        }
+        return false;
     }
 }
