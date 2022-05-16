@@ -1,5 +1,6 @@
 package mate.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -8,6 +9,10 @@ public class Car {
     private String model;
     private Manufacturer manufacturer;
     private List<Driver> drivers;
+
+    public Car() {
+        this.drivers = new ArrayList<>();
+    }
 
     public Long getId() {
         return id;
