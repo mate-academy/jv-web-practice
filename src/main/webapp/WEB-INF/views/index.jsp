@@ -15,6 +15,6 @@
 <a href="${pageContext.request.contextPath}/cars">Show all cars</a><br>
 <a href="${pageContext.request.contextPath}/cars/add">Create new car</a><br>
 <br>
-<a href="${pageContext.request.contextPath}/driver-add-car">Add driver to car</a><br>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a><br>
 </body>
 </html>

@@ -253,7 +253,7 @@ public class CarDaoImpl implements CarDao {
         return car;
     }
 
-    public boolean addCarToDriver(Car car, Driver driver) {
+    public boolean addDriverToCar(Car car, Driver driver) {
         String insertQuery = "INSERT INTO cars_drivers (car_id, driver_id)"
                 + "VALUES (?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();

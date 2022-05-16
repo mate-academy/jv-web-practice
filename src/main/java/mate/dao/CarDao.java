@@ -7,5 +7,5 @@ import mate.model.Driver;
 public interface CarDao extends GenericDao<Car> {
     List<Car> getAllByDriver(Long driverId);
 
-    boolean addCarToDriver(Car car, Driver driver);
+    boolean addDriverToCar(Car car, Driver driver);
 }
