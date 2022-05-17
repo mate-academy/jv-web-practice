@@ -39,7 +39,6 @@ public class CarDaoImpl implements CarDao {
         } catch (SQLException e) {
             throw new DataProcessingException("Can't create car " + car, e);
         }
-        insertAllDrivers(car);
         return car;
     }
 
@@ -248,5 +247,25 @@ public class CarDaoImpl implements CarDao {
         car.setModel(model);
         car.setManufacturer(manufacturer);
         return car;
+    }
+
+    public boolean addDriverToCar(Car car, Driver driver) {
+        String insertQuery = "INSERT INTO cars_drivers (car_id, driver_id)"
+                + "VALUES (?, ?)";
+        try (Connection connection = ConnectionUtil.getConnection();
+                PreparedStatement addCarToDriverStatement =
+                        connection.prepareStatement(
+                                insertQuery, Statement.RETURN_GENERATED_KEYS)) {
+            addCarToDriverStatement.setLong(1, car.getId());
+            addCarToDriverStatement.setLong(2, driver.getId());
+            addCarToDriverStatement.executeUpdate();
+            ResultSet resultSet = addCarToDriverStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                return true;
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Can't create driver-car " + driver + car, e);
+        }
+        return false;
     }
 }
