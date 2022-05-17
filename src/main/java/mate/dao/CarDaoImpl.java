@@ -33,14 +33,12 @@ public class CarDaoImpl implements CarDao {
             createCarStatement.setLong(2, car.getManufacturer().getId());
             createCarStatement.executeUpdate();
             ResultSet resultSet = createCarStatement.getGeneratedKeys();
-            //"====> NEW CAR CREATED (DAO)"
             if (resultSet.next()) {
                 car.setId(resultSet.getObject(1, Long.class));
             }
         } catch (SQLException e) {
             throw new DataProcessingException("Can't create car " + car, e);
         }
-        //insertAllDrivers(car);
         return car;
     }
 
@@ -69,7 +67,6 @@ public class CarDaoImpl implements CarDao {
         if (car != null) {
             car.setDrivers(getAllDriversByCarId(car.getId()));
         }
-        //"====> CAR ASKED (DAO)"
         return Optional.ofNullable(car);
     }
 
@@ -95,7 +92,6 @@ public class CarDaoImpl implements CarDao {
             throw new DataProcessingException("Can't get all cars", e);
         }
         cars.forEach(car -> car.setDrivers(getAllDriversByCarId(car.getId())));
-        //"====> ALL CARS ASKED (DAO)"
         return cars;
     }
 
@@ -264,7 +260,6 @@ public class CarDaoImpl implements CarDao {
             addCarToDriverStatement.setLong(2, driver.getId());
             addCarToDriverStatement.executeUpdate();
             ResultSet resultSet = addCarToDriverStatement.getGeneratedKeys();
-            //"====> NEW CAR-DRIVER CREATED (DAO)"
             if (resultSet.next()) {
                 return true;
             }
