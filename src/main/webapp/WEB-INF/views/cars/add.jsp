@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Create car</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     <table>
         <tr>
             <td>Car's model</td>
@@ -23,9 +23,13 @@
                 </select>
             </td>
         </tr>
+        <tr>
+            <td><button type="submit">Create</button></td>
+        </tr>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/index">Back to index page</a><br></td>
+        </tr>
     </table>
-    <button type="submit">Create</button>
-    <br>
 </form>
 </body>
 </html>

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create manufacturer</h1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <table>
         <tr>
             <td>Manufacturer's name</td>
@@ -15,8 +15,13 @@
             <td>Manufacturer's country</td>
             <td><input type="text" name="country"><br></td>
         </tr>
+        <tr>
+            <td><button type="submit">Create</button></td>
+        </tr>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/index">Back to index page</a><br></td>
+        </tr>
     </table>
-    <button type="submit">Create</button>
 </form>
 </body>
 </html>

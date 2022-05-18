@@ -15,25 +15,24 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/create")
+@WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService =
-                (ManufacturerService) injector.getInstance(ManufacturerService.class);
         List<Manufacturer> allManufacturers = manufacturerService.getAll();
         request.setAttribute("allManufacturers", allManufacturers);
-        request.getRequestDispatcher("/WEB-INF/views/cars/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService =
-                (ManufacturerService) injector.getInstance(ManufacturerService.class);
         Manufacturer manufacturer
                 = manufacturerService.get(Long.valueOf(request.getParameter("manufacturer_id")));
         List<Driver> drivers = new ArrayList<>();
@@ -41,8 +40,7 @@ public class CreateCarController extends HttpServlet {
         car.setModel(request.getParameter("model"));
         car.setManufacturer(manufacturer);
         car.setDrivers(drivers);
-        CarService carService = (CarService) injector.getInstance(CarService.class);
         carService.create(car);
-        response.sendRedirect("/index");
+        response.sendRedirect(request.getContextPath() + "/index");
     }
 }

@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Create driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/create">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <table>
         <tr>
             <td>Driver's name</td>
@@ -15,8 +15,13 @@
             <td>License number</td>
             <td><input type="text" name="licenseNumber"><br></td>
         </tr>
+        <tr>
+            <td><button type="submit">Create</button></td>
+        </tr>
+        <tr>
+            <td><a href="${pageContext.request.contextPath}/index">Back to index page</a><br></td>
+        </tr>
     </table>
-    <button type="submit">Create</button>
 </form>
 </body>
 </html>

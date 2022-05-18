@@ -15,11 +15,6 @@ public class IndexController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("addDriverToCar", "/services/fix");
-        request.setAttribute("createCar", "/cars/create");
-        request.setAttribute("createDriver", "/drivers/create");
-        request.setAttribute("createManufacturer", "/manufacturers/create");
-        request.setAttribute("getAllDrivers", "/drivers/all");
         request.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(request, response);
     }
 }
