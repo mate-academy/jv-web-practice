@@ -22,6 +22,9 @@
                     </c:forEach>
                 </select>
             </td>
+            <td>
+                <a href="${pageContext.request.contextPath}/manufacturers/add">Add new manufacturer</a>
+            </td>
         </tr>
         <tr>
             <td><button type="submit">Create</button></td>
