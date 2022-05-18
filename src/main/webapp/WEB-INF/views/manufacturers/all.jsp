@@ -20,6 +20,9 @@
         <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">Delete manufacturer</a></td>
         </c:forEach>
     </tr>
+    <tr>
+        <td><a href="${pageContext.request.contextPath}/index">Back to index page</a><br></td>
+    </tr>
 </table>
 </body>
 </html>

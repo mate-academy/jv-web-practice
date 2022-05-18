@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>List of drivers:</h1>
-<table border="1">
+<table>
     <tr>
         <td><h3>ID</h3></td>
         <td><h3>Name</h3></td>
@@ -20,6 +20,9 @@
             <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete driver</a></td>
         </tr>
     </c:forEach>
+    <tr>
+        <td><a href="${pageContext.request.contextPath}/index">Back to index page</a><br></td>
+    </tr>
 </table>
 </body>
 </html>
