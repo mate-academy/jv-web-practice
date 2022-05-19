@@ -7,8 +7,8 @@
 <body>
 <h1>Please provide next information:</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
-    Name <input type="text" name="name"><br>
-    Country <input type="text" name="country"><br>
+    Name: <input type="text" name="name"><br>
+    Country: <input type="text" name="country"><br>
     <button type="submit">Create a manufacturer</button>
 </form>
 </body>
