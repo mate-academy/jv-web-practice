@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Fill all of the fields below</h1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/createManufacturerForm">
+<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
     Name <input type="text" name="name"><br>
     Country <input type="text" name="country"><br>
     <button type="submit">Confirm</button>

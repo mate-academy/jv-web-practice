@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>My manufacturers</title>
 </head>
 <body>
 <h1>List of manufacturers:</h1>

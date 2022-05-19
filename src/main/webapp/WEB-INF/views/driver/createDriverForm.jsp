@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Fill all of the fields below</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/createDriverForm">
+<form method="post" action="${pageContext.request.contextPath}/driver/create">
     Name <input type="text" name="name"><br>
     License Number<input type="text" name="LN"><br>
     <button type="submit">Confirm</button>
