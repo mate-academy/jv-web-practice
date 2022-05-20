@@ -6,7 +6,7 @@
 </head>
 <body>
 <h3>Write driver and car id</h3>
-<form method="post" action="${pageContext.request.contextPath}/add">
+<form method="post" action="${pageContext.request.contextPath}/driver/add">
     <label>
         Driver id
         <input type="text" name="driverId">

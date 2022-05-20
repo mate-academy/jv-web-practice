@@ -6,7 +6,7 @@
 </head>
 <body>
 <h3>Create new driver</h3>
-<form method="post" action="${pageContext.request.contextPath}/driver">
+<form method="post" action="${pageContext.request.contextPath}/driver/createDriver">
     <label>
         Driver name
         <input type="text" name="name">

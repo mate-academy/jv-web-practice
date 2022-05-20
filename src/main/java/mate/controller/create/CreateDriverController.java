@@ -1,7 +1,8 @@
-package mate.controller;
+package mate.controller.create;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
+@WebServlet(urlPatterns = "/driver/createDriver")
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final DriverService driverService =
@@ -22,12 +24,14 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         Driver driver = new Driver();
         String name = request.getParameter("name");
         String licenseNumber = request.getParameter("licenseNumber");
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
         driverService.create(driver);
+        response.sendRedirect(request.getContextPath() + "/driver/createDriver");
     }
 }

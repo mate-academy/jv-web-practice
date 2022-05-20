@@ -1,7 +1,8 @@
-package mate.controller;
+package mate.controller.add;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -11,6 +12,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
+@WebServlet(urlPatterns = "/driver/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final CarService carService =
@@ -26,13 +28,14 @@ public class AddDriverToCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("Adding Driver to car ...");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         String driverId = request.getParameter("driverId");
         String carId = request.getParameter("carId");
         Driver driver = driverService.get(Long.valueOf(driverId));
         Car car = carService.get(Long.valueOf(carId));
         carService.addDriverToCar(driver, car);
+        response.sendRedirect(request.getContextPath() + "/driver/add");
     }
 }
 

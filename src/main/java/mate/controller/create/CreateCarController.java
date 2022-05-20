@@ -1,7 +1,8 @@
-package mate.controller;
+package mate.controller.create;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,6 +11,7 @@ import mate.model.Car;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
+@WebServlet(urlPatterns = "/car/createCar")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final CarService carService =
@@ -25,13 +27,14 @@ public class CreateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("doPost create car worked ...");
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         Car car = new Car();
         String model = request.getParameter("model");
         String manufacturerId = request.getParameter("manufacturerId");
         car.setModel(model);
         car.setManufacturer(manufacturerService.get(Long.parseLong(manufacturerId)));
         carService.create(car);
+        response.sendRedirect(request.getContextPath() + "/car/createCar");
     }
 }
