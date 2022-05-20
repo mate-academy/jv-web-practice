@@ -2,7 +2,6 @@ package mate.service.impl;
 
 import java.util.List;
 import java.util.NoSuchElementException;
-
 import mate.dao.ManufacturerDao;
 import mate.lib.Inject;
 import mate.lib.Service;
