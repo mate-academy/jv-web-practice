@@ -14,7 +14,7 @@
   </tr>
   <c:forEach items="${drivers}" var="driver">
     <tr>
-      <td><c:out value="${driver.getId()}"/> </td>
+      <td><c:out value="${driver.id}"/> </td>
       <td><c:out value="${driver.getName()}"/> </td>
       <td><c:out value="${driver.getLicenseNumber()}"/> </td>
       <td><a href="${pageContext.request.contextPath}/driver/delete?id=${driver.id}">DELETE</a></td>

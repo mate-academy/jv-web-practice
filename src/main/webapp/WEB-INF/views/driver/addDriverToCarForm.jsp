@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Fill all of the fields below</h1>
-<form method="post" action="${pageContext.request.contextPath}/driver/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     Car ID <input type="text" name="car"><br>
     Driver ID<input type="text" name="driver"><br>
     <button type="submit">Confirm</button>

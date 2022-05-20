@@ -15,7 +15,7 @@
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
-            <td><c:out value="${car.getId()}"/> </td>
+            <td><c:out value="${car.id}"/> </td>
             <td><c:out value="${car.getModel()}"/> </td>
             <td><c:out value="${car.getManufacturer().getName()}"/> </td>
             <td><c:forEach items="${car.getDrivers()}" var="driver">
@@ -28,4 +28,3 @@
 </table>
 </body>
 </html>
-<%--<c:out value="${car.getDrivers().size()} drivers"/>--%>

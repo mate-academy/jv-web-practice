@@ -15,7 +15,7 @@
     </tr>
     <c:forEach items="${manufacturers}" var="mnf">
         <tr>
-            <td><c:out value="${mnf.getId()}"/> </td>
+            <td><c:out value="${mnf.id}"/> </td>
             <td><c:out value="${mnf.getName()}"/> </td>
             <td><c:out value="${mnf.getCountry()}"/> </td>
             <td><a href="${pageContext.request.contextPath}/manufacturer/delete?id=${mnf.id}">DELETE</a></td>
