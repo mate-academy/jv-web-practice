@@ -10,6 +10,7 @@ public class ConnectionUtil {
     private static final String USERNAME = "root";
     private static final String PASSWORD = "root12341234";
     private static final String JDBC_DRIVER = "com.mysql.cj.jdbc.Driver";
+    private static final String TIME_ZONE = "?serverTimezone=UTC";
 
     static {
         try {
@@ -24,7 +25,7 @@ public class ConnectionUtil {
         dbProperties.setProperty("user", USERNAME);
         dbProperties.setProperty("password", PASSWORD);
         try {
-            return DriverManager.getConnection(URL + "?serverTimezone=UTC", dbProperties);
+            return DriverManager.getConnection(URL + TIME_ZONE, dbProperties);
         } catch (SQLException e) {
             throw new RuntimeException("Can't create connection to DB ", e);
         }
