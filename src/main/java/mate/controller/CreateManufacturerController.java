@@ -13,7 +13,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -29,6 +29,5 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerService.create(manufacturer);
         resp.sendRedirect(req.getContextPath() + "/successful");
-
     }
 }
