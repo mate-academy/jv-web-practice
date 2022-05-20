@@ -20,6 +20,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(id);
-        req.getRequestDispatcher("/manufacturers").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }
