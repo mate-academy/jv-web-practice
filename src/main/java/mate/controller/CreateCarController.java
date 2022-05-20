@@ -31,12 +31,12 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         String model = req.getParameter("model");
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Long manufacturer_id = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturer_id);
         car.setModel(model);
         car.setManufacturer(manufacturer);
         car.setDrivers(List.of());
         carService.create(car);
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
