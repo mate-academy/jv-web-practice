@@ -8,7 +8,7 @@
 
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     MODEL <input type="text" name="model"><br>
-    MANUFACTURER_id <input type="text" name="manufacturer_id"><br>
+    MANUFACTURER_id <input type="text" name="manufacturerId"><br>
     <button type="submit">Confirm</button>
 </form>
 </body>
