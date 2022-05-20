@@ -5,6 +5,7 @@
     <title>ALL Manufacturer</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/index.jsp"/>
 <table>
     <tr>
         <td>ID</td>

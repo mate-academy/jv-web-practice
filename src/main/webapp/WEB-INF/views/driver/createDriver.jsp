@@ -5,6 +5,7 @@
     <title>Create Driver</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new driver</h3>
 <form method="post" action="${pageContext.request.contextPath}/driver/createDriver">
     <label>

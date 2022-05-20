@@ -5,6 +5,7 @@
     <title>Add Driver To Car</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Write driver and car id</h3>
 <form method="post" action="${pageContext.request.contextPath}/driver/add">
     <label>

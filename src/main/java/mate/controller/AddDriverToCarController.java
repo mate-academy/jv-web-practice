@@ -1,4 +1,4 @@
-package mate.controller.create;
+package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,31 +7,35 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
 import mate.model.Driver;
+import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/driver/createDriver")
-public class CreateDriverController extends HttpServlet {
+@WebServlet(urlPatterns = "/driver/add")
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
     private static final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/driver/createDriver.jsp")
+        request.getRequestDispatcher("/WEB-INF/views/driver/add.jsp")
                 .forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Driver driver = new Driver();
-        String name = request.getParameter("name");
-        String licenseNumber = request.getParameter("licenseNumber");
-        driver.setName(name);
-        driver.setLicenseNumber(licenseNumber);
-        driverService.create(driver);
-        response.sendRedirect(request.getContextPath() + "/driver/createDriver");
+        String driverId = request.getParameter("driverId");
+        String carId = request.getParameter("carId");
+        Driver driver = driverService.get(Long.valueOf(driverId));
+        Car car = carService.get(Long.valueOf(carId));
+        carService.addDriverToCar(driver, car);
+        response.sendRedirect(request.getContextPath() + "/driver/add");
     }
 }
+

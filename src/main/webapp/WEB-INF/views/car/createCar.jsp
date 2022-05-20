@@ -5,6 +5,7 @@
     <title>Create Car</title>
 </head>
 <body>
+<jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new car</h3>
 <form method="post" action="${pageContext.request.contextPath}/car/createCar">
     <label>
