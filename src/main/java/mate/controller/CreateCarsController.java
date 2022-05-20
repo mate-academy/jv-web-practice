@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,7 +30,6 @@ public class CreateCarsController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setId(Long.valueOf(req.getParameter("manufacturer_id")));
         car.setManufacturer(manufacturer);
-        car.setDrivers(Collections.emptyList());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/index");
     }
