@@ -8,9 +8,9 @@
     <tr>
         <td><a href="${pageContext.request.contextPath}/driver/all">All drivers</a></td>
         <td><a href="${pageContext.request.contextPath}/manufacturer/all">All manufacturer</a></td>
-        <td><a href="${pageContext.request.contextPath}/car/createCar">Create car</a></td>
-        <td><a href="${pageContext.request.contextPath}/driver/createDriver">Create driver</a></td>
-        <td><a href="${pageContext.request.contextPath}/manufacturer/createManufacturer">Create manufacturer</a></td>
+        <td><a href="${pageContext.request.contextPath}/car/create">Create car</a></td>
+        <td><a href="${pageContext.request.contextPath}/driver/create">Create driver</a></td>
+        <td><a href="${pageContext.request.contextPath}/manufacturer/create">Create manufacturer</a></td>
         <td><a href="${pageContext.request.contextPath}/driver/add">add driver to car</a></td>
     </tr>
 </table>

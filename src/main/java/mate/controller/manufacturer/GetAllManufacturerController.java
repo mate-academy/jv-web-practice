@@ -11,10 +11,10 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturer/all")
+@WebServlet(urlPatterns = "/manufacturers/all")
 public class GetAllManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -22,7 +22,7 @@ public class GetAllManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         request.setAttribute("manufacturers", manufacturers);
-        request.getRequestDispatcher("/WEB-INF/views/manufacturer/all.jsp")
+        request.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp")
                 .forward(request, response);
     }
 }

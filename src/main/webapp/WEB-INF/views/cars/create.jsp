@@ -7,7 +7,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new car</h3>
-<form method="post" action="${pageContext.request.contextPath}/car/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     <label>
         Model
         <input type="text" name="model">
