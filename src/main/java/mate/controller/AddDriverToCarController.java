@@ -27,7 +27,7 @@ public class AddDriverToCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
+            throws IOException {
         Long carId = Long.valueOf(request.getParameter("car"));
         Long driverId = Long.valueOf(request.getParameter("driver"));
         Car car = carService.get(carId);
