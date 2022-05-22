@@ -5,25 +5,22 @@
 </head>
 <body>
 <h1>TAXI SERVICE</h1>
-<a href="${pageContext.request.contextPath}/get-drivers">
+<a href="${pageContext.request.contextPath}/drivers">
     Get All Drivers
 </a><br>
-<a href="${pageContext.request.contextPath}/get-manufacturers">
+<a href="${pageContext.request.contextPath}/manufacturers">
     Get All Manufacturers
 </a><br>
-<a href="${pageContext.request.contextPath}/get-cars">
-    Get All Cars
-</a><br>
-<a href="${pageContext.request.contextPath}/add-driver">
+<a href="${pageContext.request.contextPath}/drivers/add">
     Add Driver
 </a><br>
-<a href="${pageContext.request.contextPath}/add-manufacturer">
+<a href="${pageContext.request.contextPath}/manufacturer/add">
     Add Manufacturer
 </a><br>
-<a href="${pageContext.request.contextPath}/add-car">
+<a href="${pageContext.request.contextPath}/cars/add">
     Add Car
 </a><br>
-<a href="${pageContext.request.contextPath}/add-driver-to-car">
+<a href="${pageContext.request.contextPath}/cars/drivers/add">
     Add Driver to Car
 </a><br>
 </body>
