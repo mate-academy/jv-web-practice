@@ -20,6 +20,6 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
-        req.getRequestDispatcher("/cars/create/success-info").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/cars/handling/success-info");;
     }
 }
