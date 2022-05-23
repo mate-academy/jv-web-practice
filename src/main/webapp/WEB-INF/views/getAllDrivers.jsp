@@ -21,7 +21,7 @@
         </c:forEach>
 </table>
     <div>
-        <button class=".btn" onclick="location.href='/index'">INDEX</button>
+        <button onclick="location.href='/index'">INDEX</button>
     </div>
 </body>
 </html>
