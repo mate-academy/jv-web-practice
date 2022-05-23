@@ -13,7 +13,7 @@
             </div>
             <div>
                 <label>Input manufacturer id:</label>
-                <input type="text" name="manufacturer_id">
+                <input type="number" name="manufacturer_id">
             </div>
             <div>
                 <button type="submit">Add car</button>

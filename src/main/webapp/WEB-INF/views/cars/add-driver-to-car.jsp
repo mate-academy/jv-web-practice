@@ -9,11 +9,11 @@
             <h1>Choose car and driver you want to add</h1>
             <div>
                 <label>Input car id:</label>
-                <input type="text" name="car_id">
+                <input type="number" name="car_id">
             </div>
             <div>
                 <label>Input driver id:</label>
-               <input type="text" name="driver_id">
+               <input type="number" name="driver_id">
             </div>
             <div>
                 <button type="submit">Add driver to car</button>

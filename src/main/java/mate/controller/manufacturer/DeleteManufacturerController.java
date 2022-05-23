@@ -20,5 +20,4 @@ public class DeleteManufacturerController extends HttpServlet {
         manufacturerService.delete(id);
         response.sendRedirect(request.getContextPath() + "/manufacturers");
     }
-
 }
