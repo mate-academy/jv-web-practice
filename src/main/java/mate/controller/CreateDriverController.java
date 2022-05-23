@@ -12,7 +12,6 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
-
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
@@ -30,6 +29,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("license_number"));
         driverService.create(driver);
-        resp.sendRedirect(req.getContextPath());
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
