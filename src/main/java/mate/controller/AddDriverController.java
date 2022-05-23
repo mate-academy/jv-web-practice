@@ -27,11 +27,11 @@ public class AddDriverController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String driverName = request.getParameter("name");
-        String driverLicenseNumber = request.getParameter("licenseNumber");
+        String driverLicenseNumber = request.getParameter("license_number");
         Driver driver = new Driver();
         driver.setName(driverName);
         driver.setLicenseNumber(driverLicenseNumber);
         driverService.create(driver);
-        response.sendRedirect("/");
+        response.sendRedirect(request.getContextPath() + "/");
     }
 }
