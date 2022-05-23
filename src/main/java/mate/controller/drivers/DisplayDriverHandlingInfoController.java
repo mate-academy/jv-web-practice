@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(urlPatterns = "/drivers/handling/success-info")
+@WebServlet(urlPatterns = "/drivers/info")
 public class DisplayDriverHandlingInfoController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)

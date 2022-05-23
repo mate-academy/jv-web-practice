@@ -9,6 +9,6 @@
 <tr>
     <td><a href="${pageContext.request.contextPath}/index">RETURN TO THE START PAGE</a> </td>
     <td><a href="${pageContext.request.contextPath}/manufacturers">VIEW ALL MANUFACTURERS</a> </td>
-    <td><a href="${pageContext.request.contextPath}/drivers/create">CREATE A NEW MANUFACTURER</a> </td>
+    <td><a href="${pageContext.request.contextPath}/manufacturers/create">CREATE A NEW MANUFACTURER</a> </td>
 </tr>
 </html>
