@@ -14,7 +14,7 @@
 <a href="${pageContext.request.contextPath}/drivers/add">
     Add Driver
 </a><br>
-<a href="${pageContext.request.contextPath}/manufacturer/add">
+<a href="${pageContext.request.contextPath}/manufacturers/add">
     Add Manufacturer
 </a><br>
 <a href="${pageContext.request.contextPath}/cars/add">
