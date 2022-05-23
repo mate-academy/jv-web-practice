@@ -13,7 +13,7 @@
     </label><br>
     <label>
         Manufacturer id
-        <input type="text" name="manufacturerId">
+        <input type="number" name="manufacturerId">
     </label><br>
     <button type="submit">Create</button>
 </form>
