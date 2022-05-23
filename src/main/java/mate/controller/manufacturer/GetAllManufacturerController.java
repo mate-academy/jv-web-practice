@@ -22,7 +22,7 @@ public class GetAllManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         request.setAttribute("manufacturers", manufacturers);
-        request.getRequestDispatcher("/WEB-INF/views/manufacturer/all.jsp")
+        request.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp")
                 .forward(request, response);
     }
 }

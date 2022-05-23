@@ -6,7 +6,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new driver</h3>
-<form method="post" action="${pageContext.request.contextPath}/driver/create">
+<form method="post" action="${pageContext.request.contextPath}/drivers/create">
     <label>
         Driver name
         <input type="text" name="name">

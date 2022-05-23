@@ -6,7 +6,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new manufacturer</h3>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
     <label>
         Manufacturer name<input type="text" name="name">
     </label><br>

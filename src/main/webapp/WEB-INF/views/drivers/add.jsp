@@ -6,7 +6,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Write driver and car id</h3>
-<form method="post" action="${pageContext.request.contextPath}/driver/add">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <label>
         Driver id
         <input type="text" name="driverId">
