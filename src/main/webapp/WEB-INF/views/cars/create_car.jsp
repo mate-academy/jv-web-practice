@@ -5,11 +5,11 @@
     <title>Create a new car</title>
 </head>
 <body>
-<h1>Enter the car's info</h1>
+<h1>Enter the car's info:</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model <input type="text" name="model"><br>
     Manufacturer id<input type="number" name="manufacturer_id"><br>
-    <button type="submit">Create a new car</button>
+    <button type="submit">Create</button>
 </form>
 </body>
 </html>
