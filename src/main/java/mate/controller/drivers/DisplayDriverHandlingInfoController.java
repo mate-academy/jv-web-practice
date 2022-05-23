@@ -12,7 +12,6 @@ public class DisplayDriverHandlingInfoController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/success"
-                + "-info-drivers-page.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/info.jsp").forward(req, resp);
     }
 }
