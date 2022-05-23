@@ -23,15 +23,14 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/car/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/add-driver.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Car car = carService.get(Long.parseLong(String.valueOf(req.getParameter("carId"))));
-        Driver driver = driverService.get(Long.parseLong(String
-                .valueOf(req.getParameter("driverId"))));
+        Car car = carService.get(Long.parseLong(req.getParameter("carId")));
+        Driver driver = driverService.get(Long.parseLong(req.getParameter("driverId")));
         carService.addDriverToCar(driver, car);
         resp.sendRedirect(req.getContextPath() + "/index");
     }
