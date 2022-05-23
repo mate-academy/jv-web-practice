@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Drivers</title>
+    <title>All drivers</title>
 </head>
 <body>
     <h1>ALL DRIVERS</h1>
@@ -21,7 +21,7 @@
         </c:forEach>
 </table>
     <div>
-        <button class="w3-btn w3-round-large" onclick="location.href='/index'">INDEX</button>
+        <button class=".btn" onclick="location.href='/index'">INDEX</button>
     </div>
 </body>
 </html>

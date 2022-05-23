@@ -11,7 +11,4 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-    <welcome-file-list>
-        <welcome-file>/WEB-INF/views/index.jsp</welcome-file>
-    </welcome-file-list>
 </web-app>
