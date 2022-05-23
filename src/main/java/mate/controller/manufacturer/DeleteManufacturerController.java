@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturers/delete")
+@WebServlet(urlPatterns = "/manufacturer/delete")
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -19,6 +19,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws IOException {
         String id = request.getParameter("id");
         manufacturerService.delete(Long.parseLong(id));
-        response.sendRedirect(request.getContextPath() + "/manufacturers/all");
+        response.sendRedirect(request.getContextPath() + "/manufacturers");
     }
 }

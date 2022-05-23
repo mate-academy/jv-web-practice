@@ -1,4 +1,3 @@
-
 <%@ page contentType="text/html;charset=UTF-8"%>
 <html>
 <head>
@@ -7,7 +6,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/index.jsp"/>
 <h3>Create new car</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/car/create">
     <label>
         Model
         <input type="text" name="model">
