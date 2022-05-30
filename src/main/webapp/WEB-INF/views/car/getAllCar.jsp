@@ -5,7 +5,7 @@
     <title>Get all car</title>
 </head>
 <body>
-<h1>List of drivers:</h1>
+<h1>List of cars:</h1>
 <table>
   <tr>
     <td>CAR ID</td>
