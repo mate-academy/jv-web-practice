@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>Taxi service</title>
+    <style><%@include file="/WEB-INF/static/css/style.css"%></style>
 </head>
 <body>
 <h2>List of drivers: </h2>

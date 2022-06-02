@@ -9,19 +9,19 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/all_drivers_for_delete")
+@WebServlet(urlPatterns = "/drivers/delete")
 public class GetAllDriversForDeleteController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/drivers/all_drivers_for_delete.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/drivers/delete.jsp")
                 .forward(req, resp);
         driverService.delete(Long.valueOf(req.getParameter("id")));
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

@@ -2,31 +2,56 @@
 <html>
 <head>
     <title>taxi service</title>
+    <link rel="stylesheet" type="text/css" href="/WEB-INF/static/css/style.css}">
 </head>
 <body>
 <h1>Welcome to Taxi Service!</h1>
-
+<div class="topNav">
 <section>
     <div>
         <h3>Driver</h3>
-        <a href="drivers/all">get all drivers</a><br>
-        <a href="drivers/create">create driver</a><br>
-        <a href="drivers/all_drivers_for_delete">all drivers for delete</a>
+        <ul>
+            <li>
+                <a href="drivers/all">get all</a>
+            </li>
+            <li>
+                <a href="drivers/create">create</a><br>
+            </li>
+            <li>
+                <a href="drivers/delete">delete</a>
+            </li>
+        </ul>
     </div>
 </section>
 <section>
     <div>
         <h3>Manufacturer</h3>
-        <a href="manufacturers/create">create manufacturer</a><br>
-        <a href="manufacturers/all_for_delete">all manufacturers for delete</a>
+        <ul>
+            <li>
+                <a href="manufacturers/create">create</a><br>
+            </li>
+            <li>
+                <a href="manufacturers/delete">delete</a>
+            </li>
+        </ul>
     </div>
 </section>
 <section>
     <div>
         <h3>Car</h3>
-        <a href="cars/create">create car</a><br>
-        <a href="cars/add_to_car">add driver to car</a>
+        <ul>
+            <li>
+                <a href="cars/create">create</a><br>
+            </li>
+            <li>
+                <a href="cars/add">add driver to car</a><br>
+            </li>
+            <li>
+                <a href="cars/delete">delete</a>
+            </li>
+        </ul>
     </div>
 </section>
+</div>
 </body>
 </html>
