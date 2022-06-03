@@ -5,10 +5,10 @@
 </head>
 <body>
 <section>
-    <h2>Create driver: </h2>
-    <form method="post" action="/drivers/create">
+    <h2>Create manufacturer: </h2>
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
         Name: <input type="text" name="name"><br>
-        License number: <input type="text" name="license_number"><br>
+        Country: <input type="text" name="country"><br>
         <button type="submit">create</button>
     </form>
     <br>

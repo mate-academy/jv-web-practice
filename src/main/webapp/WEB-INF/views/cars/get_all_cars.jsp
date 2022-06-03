@@ -22,14 +22,14 @@
         <tbody>
         <c:forEach var="car" items="${cars}">
             <tr>
-            <td><c:out value="${car.id}"/></td>
-            <td><c:out value="${car.model}"/></td>
-            <td><c:out value="${car.getManufacturer().getName()}"/></td>
-            <td><c:out value="${car.getManufacturer().getCountry()}"/></td>
-            <td><c:out value="${car.getDrivers()}"/></td>
-            <td>
-                <a href="delete?id=${car.id}">delete car</a>
-            </td>
+                <td><c:out value="${car.id}"/></td>
+                <td><c:out value="${car.model}"/></td>
+                <td><c:out value="${car.getManufacturer().getName()}"/></td>
+                <td><c:out value="${car.getManufacturer().getCountry()}"/></td>
+                <td><c:out value="${car.getDrivers()}"/></td>
+                <td>
+                    <a href="cars/delete?id=${car.id}">delete</a>
+                </td>
             </tr>
         </c:forEach>
         </tbody>

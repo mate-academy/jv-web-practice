@@ -6,19 +6,15 @@
 </head>
 <body>
 <h1>Welcome to Taxi Service!</h1>
-<div class="topNav">
 <section>
     <div>
         <h3>Driver</h3>
         <ul>
             <li>
-                <a href="drivers/all">get all</a>
+                <a href="drivers">get all</a>
             </li>
             <li>
-                <a href="drivers/create">create</a><br>
-            </li>
-            <li>
-                <a href="drivers/delete">delete</a>
+                <a href="drivers/add">create</a><br>
             </li>
         </ul>
     </div>
@@ -28,10 +24,10 @@
         <h3>Manufacturer</h3>
         <ul>
             <li>
-                <a href="manufacturers/create">create</a><br>
+                <a href="manufacturers">get all</a>
             </li>
             <li>
-                <a href="manufacturers/delete">delete</a>
+                <a href="manufacturers/add">create</a><br>
             </li>
         </ul>
     </div>
@@ -41,17 +37,16 @@
         <h3>Car</h3>
         <ul>
             <li>
-                <a href="cars/create">create</a><br>
+                <a href="cars">get all</a><br>
             </li>
             <li>
-                <a href="cars/add">add driver to car</a><br>
+                <a href="cars/add">create</a><br>
             </li>
             <li>
-                <a href="cars/delete">delete</a>
+                <a href="cars/drivers/add">add driver to car</a><br>
             </li>
         </ul>
     </div>
 </section>
-</div>
 </body>
 </html>

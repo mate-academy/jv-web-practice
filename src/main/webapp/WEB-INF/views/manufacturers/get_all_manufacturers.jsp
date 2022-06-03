@@ -24,7 +24,7 @@
                 <td><c:out value="${manufacturer.name}"/> </td>
                 <td><c:out value="${manufacturer.country}"/> </td>
                 <td>
-                    <a href="delete?id=${manufacturer.id}">delete manufacturer</a>
+                    <a href="manufacturers/delete?id=${manufacturer.id}">delete</a>
                 </td>
             </tr>
         </c:forEach>

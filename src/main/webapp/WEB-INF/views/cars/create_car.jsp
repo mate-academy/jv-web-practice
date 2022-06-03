@@ -5,10 +5,10 @@
 </head>
 <body>
 <section>
-    <h2>Create manufacturer: </h2>
-    <form method="post" action="/manufacturers/create">
-        Name: <input type="text" name="name"><br>
-        Country: <input type="text" name="country"><br>
+    <h2>Create car: </h2>
+    <form method="post" action="${pageContext.request.contextPath}/cars/add">
+        Model: <input type="text" name="model"><br>
+        Manufacturer id: <input type="number" name="manufacturer_id"><br>
         <button type="submit">create</button>
     </form>
     <br>

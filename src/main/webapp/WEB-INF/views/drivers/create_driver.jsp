@@ -5,10 +5,10 @@
 </head>
 <body>
 <section>
-    <h2>Create car: </h2>
-    <form method="post" action="/cars/create">
-        Model: <input type="text" name="model"><br>
-        Manufacturer id: <input type="number" name="manufacturer_id"><br>
+    <h2>Create driver: </h2>
+    <form method="post" action="${pageContext.request.contextPath}/drivers/add">
+        Name: <input type="text" name="name"><br>
+        License number: <input type="text" name="license_number"><br>
         <button type="submit">create</button>
     </form>
     <br>
