@@ -26,7 +26,11 @@
                 <td><c:out value="${car.model}"/></td>
                 <td><c:out value="${car.getManufacturer().getName()}"/></td>
                 <td><c:out value="${car.getManufacturer().getCountry()}"/></td>
-                <td><c:out value="${car.getDrivers()}"/></td>
+                <td><c:forEach items="${car.getDrivers()}" var="driver">
+                        <c:out value="${driver.name}" />
+                        <c:out value="${driver.licenseNumber}" /><br>
+                    </c:forEach>
+                </td>
                 <td>
                     <a href="cars/delete?id=${car.id}">delete</a>
                 </td>
