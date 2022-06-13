@@ -29,6 +29,6 @@ public class AddManufacturerController extends HttpServlet {
         newManufacturer.setName(name);
         newManufacturer.setCountry(country);
         manufacturerService.create(newManufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
+        resp.sendRedirect("/manufacturers/add");
     }
 }

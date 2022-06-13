@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -34,8 +33,7 @@ public class AddCarController extends HttpServlet {
         Car newCar = new Car();
         newCar.setModel(model);
         newCar.setManufacturer(manufacturer);
-        newCar.setDrivers(new ArrayList<>());
         carService.create(newCar);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        resp.sendRedirect("/cars/add");
     }
 }
