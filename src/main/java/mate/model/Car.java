@@ -11,7 +11,7 @@ public class Car {
     private List<Driver> drivers;
 
     public Car() {
-        this.drivers = new ArrayList<>();
+        drivers = new ArrayList<>();
     }
 
     public Long getId() {

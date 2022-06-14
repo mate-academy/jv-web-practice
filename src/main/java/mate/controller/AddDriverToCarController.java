@@ -13,7 +13,7 @@ import mate.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector =
-            Injector.getInstance("mate"); // be careful with copy-paste
+            Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService =
@@ -33,6 +33,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        response.sendRedirect("/cars/drivers/add");
+        response.sendRedirect(request.getContextPath() + "/cars/drivers/add");
     }
 }
