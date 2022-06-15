@@ -1,9 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>Taxi DB Home Page</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+    <a href="${pageContext.request.contextPath}/manufacturers">
+        Manufacturers
+    </a>
+    <br>
 </body>
 </html>
