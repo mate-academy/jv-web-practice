@@ -8,5 +8,13 @@
         Manufacturers
     </a>
     <br>
+    <a href="${pageContext.request.contextPath}/cars">
+        Cars
+    </a>
+    <br>
+    <a href="${pageContext.request.contextPath}/drivers">
+        Drivers
+    </a>
+    <br>
 </body>
 </html>
