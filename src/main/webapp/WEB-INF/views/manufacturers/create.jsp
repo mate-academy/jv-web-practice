@@ -1,14 +1,15 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>New Manufacturer Creation</title>
+    <title>Create New Manufacturer</title>
 </head>
 <body>
-    <h1>Fill The Form Below:</h1>
-    <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
-        Name <input type="text" name="name"><br>
-        Country <input type="text" name="country"><br>
-        <button type="submit">Create</button>
-    </form>
+<a href="${pageContext.request.contextPath}/">Home</a>
+<h1>Manufacturer creation form</h1>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
+    Name <input type="text" name="name"><br>
+    Country <input type="text" name="country"><br>
+    <button type="submit">Create</button>
+</form>
 </body>
 </html>

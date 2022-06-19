@@ -5,6 +5,7 @@
     <title>Drivers</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/">Home</a>
 <h1>All Drivers List:</h1>
 <table>
     <tr>

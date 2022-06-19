@@ -5,6 +5,7 @@
     <title>Manufacturers</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/">Home</a>
 <h1>All Manufacturers List:</h1>
 <table>
     <tr>

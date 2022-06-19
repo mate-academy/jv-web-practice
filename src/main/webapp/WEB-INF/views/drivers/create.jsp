@@ -4,6 +4,7 @@
     <title>New Driver Creation</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/">Home</a>
 <h1>Fill The Form Below:</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
     Name <input type="text" name="name"><br>

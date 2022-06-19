@@ -12,18 +12,18 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class AddDriverToCarController extends HttpServlet {
+public class RemoveDriverFromCarController extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse
+            resp) throws ServletException, IOException {
+        Long carId = Long.valueOf(req.getParameter("carId"));
         Injector injector = Injector.getInstance("mate");
         CarService carService = (CarService) injector.getInstance(CarService.class);
-        DriverService driverService = (DriverService) injector.getInstance((DriverService.class));
-        Long carId = Long.valueOf(req.getParameter("carId"));
         Car car = carService.get(carId);
         Long driverId = Long.valueOf(req.getParameter("driverId"));
+        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
         Driver driver = driverService.get(driverId);
-        carService.addDriverToCar(driver, car);
+        carService.removeDriverFromCar(driver, car);
         resp.sendRedirect("/cars/car?id=" + carId);
     }
 }

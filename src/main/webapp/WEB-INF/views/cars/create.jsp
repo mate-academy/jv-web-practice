@@ -5,6 +5,7 @@
     <title>New Car Creation</title>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/">Home</a>
 <h1>Fill The Form Below:</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model <input type="text" name="model"><br>
