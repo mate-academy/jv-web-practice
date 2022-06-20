@@ -11,10 +11,11 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class GetAllManufacturersController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Injector injector = Injector.getInstance("mate");
         ManufacturerService manufacturerService =
                 (ManufacturerService) injector.getInstance(ManufacturerService.class);
         List<Manufacturer> allManufacturers = manufacturerService.getAll();

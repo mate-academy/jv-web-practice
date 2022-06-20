@@ -10,6 +10,8 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class CreateNewManufacturerController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -24,7 +26,6 @@ public class CreateNewManufacturerController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(name);
         manufacturer.setCountry(country);
-        Injector injector = Injector.getInstance("mate");
         ManufacturerService manufacturerService =
                 (ManufacturerService) injector.getInstance(ManufacturerService.class);
         manufacturerService.create(manufacturer);

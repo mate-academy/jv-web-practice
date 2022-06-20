@@ -13,10 +13,11 @@ import mate.service.CarService;
 import mate.service.DriverService;
 
 public class GetCarByIdController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Injector injector = Injector.getInstance("mate");
         CarService carService = (CarService) injector.getInstance(CarService.class);
         Long carId = Long.valueOf(req.getParameter("id"));
         Car car = carService.get(carId);
