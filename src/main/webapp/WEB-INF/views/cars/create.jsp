@@ -10,7 +10,7 @@
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model <input type="text" name="model"><br>
     Manufacturer
-    <select name="manufacturer">
+    <select name="manufacturer_id">
         <c:forEach items="${manufacturers}" var="manufacturer">
             <option value="${manufacturer.id}">${manufacturer.name}</option>
         </c:forEach>

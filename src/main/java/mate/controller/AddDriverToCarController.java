@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,17 +14,32 @@ import mate.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance((DriverService.class));
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Car car = carService.get(carId);
+        List<Driver> carDrivers = car.getDrivers();
+        List<Driver> driversToAdd = driverService.getAll();
+        driversToAdd.removeAll(carDrivers);
+        req.setAttribute("car", car);
+        req.setAttribute("driversToAdd", driversToAdd);
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req, resp);
+    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CarService carService = (CarService) injector.getInstance(CarService.class);
-        DriverService driverService = (DriverService) injector.getInstance((DriverService.class));
-        Long carId = Long.valueOf(req.getParameter("carId"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
-        Long driverId = Long.valueOf(req.getParameter("driverId"));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        resp.sendRedirect("/cars/car?id=" + carId);
+        resp.sendRedirect("/cars");
     }
 }

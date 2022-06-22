@@ -85,14 +85,6 @@
         <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>getCarByIdController</servlet-name>
-        <servlet-class>mate.controller.GetCarByIdController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>getCarByIdController</servlet-name>
-        <url-pattern>/cars/car</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>addDriverToCarController</servlet-name>
         <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>

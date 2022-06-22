@@ -13,17 +13,19 @@ import mate.service.DriverService;
 
 public class RemoveDriverFromCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse
             resp) throws ServletException, IOException {
-        Long carId = Long.valueOf(req.getParameter("carId"));
-        CarService carService = (CarService) injector.getInstance(CarService.class);
+        Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
-        Long driverId = Long.valueOf(req.getParameter("driverId"));
-        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Driver driver = driverService.get(driverId);
         carService.removeDriverFromCar(driver, car);
-        resp.sendRedirect("/cars/car?id=" + carId);
+        resp.sendRedirect("/cars");
     }
 }
