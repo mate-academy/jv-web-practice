@@ -92,12 +92,4 @@
         <servlet-name>addDriverToCarController</servlet-name>
         <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>removeDriverFromCarController</servlet-name>
-        <servlet-class>mate.controller.RemoveDriverFromCarController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>removeDriverFromCarController</servlet-name>
-        <url-pattern>/cars/drivers/remove</url-pattern>
-    </servlet-mapping>
 </web-app>

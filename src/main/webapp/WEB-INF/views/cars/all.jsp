@@ -23,8 +23,7 @@
             <td><c:out value="${car.manufacturer.name}" /></td>
             <td>
                 <c:forEach items="${car.drivers}" var="driver">
-                    <c:out value="${driver.name}" />/<c:out value="${driver.licenseNumber}" /> |
-                        <a href="${pageContext.request.contextPath}/cars/drivers/remove?car_id=${car.id}&driver_id=${driver.id}">Remove</a><br>
+                    <c:out value="${driver.name}" />/<c:out value="${driver.licenseNumber}" />
                 </c:forEach>
             </td>
             <td>
