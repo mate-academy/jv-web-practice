@@ -24,9 +24,9 @@
           <tbody>
           <c:forEach items="${manufacturers}" var="manufacture">
           <tr>
-              <th scope="row">${manufacture.getId()}</th>
-              <td>${manufacture.getName()}</td>
-              <td>${manufacture.getCountry()}</td>
+              <th scope="row"><c:out value="${manufacture.getId()}" /></th>
+              <td><c:out value="${manufacture.getName()}" /></td>
+              <td><c:out value="${manufacture.getCountry()}" /></td>
               <td><a type="button" class="btn btn-secondary" href="${pageContext.request.contextPath}/manufacturers/del?id=${manufacture.getId()}">Delete</a></td>
           </tr>
           </c:forEach>
