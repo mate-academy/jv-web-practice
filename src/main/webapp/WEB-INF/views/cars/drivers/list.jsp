@@ -3,17 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="title">
-        <%--@elvariable id="page_title" type="mate.controller.car_driver.ShowDriversForCarController"--%>
+        <%--@elvariable id="page_title" type="mate.controller.car.driver.ShowDriversForCarController"--%>
         ${page_title}
     </jsp:attribute>
 
     <jsp:attribute name="header">
-        <%--@elvariable id="page_header" type="mate.controller.car_driver.ShowDriversForCarController"--%>
+        <%--@elvariable id="page_header" type="mate.controller.car.driver.ShowDriversForCarController"--%>
         ${page_header}
     </jsp:attribute>
 
     <jsp:body>
-        <%--@elvariable id="car" type="mate.controller.car_driver.ShowDriversForCarController."--%>
+        <%--@elvariable id="car" type="mate.controller.car.driver.ShowDriversForCarController."--%>
         <div class="mb-3">
             <table class="table table-borderless">
                 <tbody>

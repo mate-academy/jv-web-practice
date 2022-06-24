@@ -1,4 +1,4 @@
-package mate.controller.car_driver;
+package mate.controller.car.driver;
 
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
@@ -22,13 +22,13 @@ public class DeleteDriverFromCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        Long driver_id = Long.valueOf(req.getParameter("driver_id"));
-        Long car_id = Long.valueOf(req.getParameter("car_id"));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
 
-        Car car = carService.get(car_id);
-        Driver driver = driverService.get(driver_id);
+        Car car = carService.get(carId);
+        Driver driver = driverService.get(driverId);
         carService.removeDriverFromCar(driver, car);
 
-        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION + "?car_id=" + car_id);
+        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION + "?car_id=" + carId);
     }
 }

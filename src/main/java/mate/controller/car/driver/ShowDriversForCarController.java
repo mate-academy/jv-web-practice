@@ -1,4 +1,4 @@
-package mate.controller.car_driver;
+package mate.controller.car.driver;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,15 +14,15 @@ import mate.service.CarService;
 public class ShowDriversForCarController extends HttpServlet {
     private static final String PAGE_TITLE = "list of drivers for the car";
     private static final String PAGE_HEADER = "Show all drivers for the car";
-    private static final String PAGE_DIRECTORY = "/WEB-INF/views/cars_drivers/list.jsp";
+    private static final String PAGE_DIRECTORY = "/WEB-INF/views/cars/drivers/list.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long car_id = Long.valueOf(req.getParameter("car_id"));
-        Car car = carService.get(car_id);
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Car car = carService.get(carId);
         req.setAttribute("page_title", PAGE_TITLE);
         req.setAttribute("page_header", PAGE_HEADER);
         req.setAttribute("car", car);

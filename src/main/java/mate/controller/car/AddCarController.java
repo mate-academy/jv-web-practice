@@ -42,9 +42,9 @@ public class AddCarController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
         String model = req.getParameter("model");
-        Long manufacturer_id = Long.valueOf(req.getParameter("manufacturer"));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer"));
 
-        Manufacturer manufacturer = manufacturerService.get(manufacturer_id);
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         List<Driver> drivers = Collections.emptyList();
         Car car = new Car();
         car.setModel(model);

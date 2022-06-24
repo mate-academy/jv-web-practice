@@ -1,4 +1,4 @@
-package mate.controller.car_driver;
+package mate.controller.car.driver;
 
 import java.io.IOException;
 import java.util.List;
@@ -17,7 +17,7 @@ import mate.service.DriverService;
 public class AddDriverToCarController extends HttpServlet {
     private static final String PAGE_TITLE = "add a drive to a car";
     private static final String PAGE_HEADER = "Add a new driver to the car";
-    private static final String PAGE_DIRECTORY = "/WEB-INF/views/cars_drivers/add.jsp";
+    private static final String PAGE_DIRECTORY = "/WEB-INF/views/cars/drivers/add.jsp";
     private static final String REDIRECT_LOCATION = "/cars/drivers";
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -28,8 +28,8 @@ public class AddDriverToCarController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
-        Long car_id = Long.valueOf(req.getParameter("car_id"));
-        Car car = carService.get(car_id);
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Car car = carService.get(carId);
         car.getDrivers().forEach(drivers::remove);
 
         req.setAttribute("page_title", PAGE_TITLE);
@@ -43,13 +43,13 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        Long driver_id = Long.valueOf(req.getParameter("driver_id"));
-        Long car_id = Long.valueOf(req.getParameter("car_id"));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
 
-        Car car = carService.get(car_id);
-        Driver driver = driverService.get(driver_id);
+        Car car = carService.get(carId);
+        Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
 
-        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION + "?car_id=" + car_id);
+        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION + "?car_id=" + carId);
     }
 }

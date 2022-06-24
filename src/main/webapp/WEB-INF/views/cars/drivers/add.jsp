@@ -3,17 +3,17 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="title">
-        <%--@elvariable id="page_title" type="mate.controller.car_driver.AddDriverToCarController"--%>
+        <%--@elvariable id="page_title" type="mate.controller.car.driver.AddDriverToCarController"--%>
         ${page_title}
     </jsp:attribute>
 
     <jsp:attribute name="header">
-        <%--@elvariable id="page_header" type="mate.controller.car_driver.AddDriverToCarController"--%>
+        <%--@elvariable id="page_header" type="mate.controller.car.driver.AddDriverToCarController"--%>
         ${page_header}
     </jsp:attribute>
 
     <jsp:body>
-        <%--@elvariable id="car" type="mate.controller.car_driver.AddDriverToCarController."--%>
+        <%--@elvariable id="car" type="mate.controller.car.driver.AddDriverToCarController."--%>
         <form method="post">
             <input type="hidden" name="car_id" value="${car.getId()}">
             <div class="mb-3">
@@ -41,7 +41,7 @@
                             <select class="form-select" aria-label="Drivers" id="driver_id"
                                     name="driver_id">
                                 <option selected>Open this select menu</option>
-                                    <%--@elvariable id="drivers" type="mate.controller.car_driver.AddDriverToCarController"--%>
+                                    <%--@elvariable id="drivers" type="mate.controller.car.driver.AddDriverToCarController"--%>
                                 <c:forEach items="${drivers}" var="driver">
                                     <option value="${driver.getId()}"><c:out
                                             value="${driver.getName()}"/></option>
