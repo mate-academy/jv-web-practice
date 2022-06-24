@@ -26,12 +26,41 @@
             <tbody>
                 <%--@elvariable id="drivers" type="mate.controller.driver.ShowDriversController"--%>
             <c:forEach items="${drivers}" var="driver">
+                <c:set var="id" value="${driver.getId()}"/>
                 <tr>
-                    <th scope="row"><c:out value="${driver.getId()}"/></th>
+                    <th scope="row"><c:out value="${id}"/></th>
                     <td><c:out value="${driver.getName()}"/></td>
                     <td><c:out value="${driver.getLicenseNumber()}"/></td>
-                    <td><a type="button" class="btn btn-secondary"
-                           href="${pageContext.request.contextPath}/drivers/delete?id=${driver.getId()}">Delete</a>
+                    <td>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#deleteRecord${id}">Delete
+                        </button>
+
+                        <div class="modal fade" id="deleteRecord${id}" tabindex="-1"
+                             aria-labelledby="deleteModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+                                        <button type="button" class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you really want to delete the record ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <a type="button" class="btn btn-primary"
+                                           href="${pageContext.request.contextPath}/drivers/delete?id=${id}">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </c:forEach>

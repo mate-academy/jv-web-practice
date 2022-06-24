@@ -48,13 +48,42 @@
             </thead>
             <tbody>
             <c:forEach items="${car.getDrivers()}" var="driver">
+                <c:set var="car_id" value="${car.getId()}"/>
+                <c:set var="driver_id" value="${driver.getId()}"/>
                 <tr>
-                    <th scope="row"><c:out value="${driver.getId()}"/></th>
+                    <th scope="row"><c:out value="${driver_id}"/></th>
                     <td><c:out value="${driver.getName()}"/></td>
                     <td><c:out value="${driver.getLicenseNumber()}"/></td>
                     <td>
-                        <a type="button" class="btn btn-secondary"
-                           href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.getId()}&driver_id=${driver.getId()}">Delete</a>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal"
+                                data-bs-target="#deleteRecord${driver_id}">Delete
+                        </button>
+
+                        <div class="modal fade" id="deleteRecord${driver_id}" tabindex="-1"
+                             aria-labelledby="deleteModalLabel"
+                             aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="deleteModalLabel">Delete</h5>
+                                        <button type="button" class="btn-close"
+                                                data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Do you really want to delete the record ?
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">
+                                            Close
+                                        </button>
+                                        <a type="button" class="btn btn-primary"
+                                           href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car_id}&driver_id=${driver_id}">Delete</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </td>
                 </tr>
             </c:forEach>
