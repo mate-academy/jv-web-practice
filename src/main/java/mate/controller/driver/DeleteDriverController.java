@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/del")
+@WebServlet(urlPatterns = "/drivers/delete")
 public class DeleteDriverController extends HttpServlet {
     private static final String REDIRECT_LOCATION = "/drivers";
     private static final Injector injector = Injector.getInstance("mate");

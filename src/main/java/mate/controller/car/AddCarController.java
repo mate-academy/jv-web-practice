@@ -13,21 +13,18 @@ import mate.model.Car;
 import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
     private static final String PAGE_TITLE = "add a car";
-    private static final String PAGE_HEADER = "Add a new car";
+    private static final String PAGE_HEADER = "Add a new car to list";
     private static final String PAGE_DIRECTORY = "/WEB-INF/views/cars/add.jsp";
     private static final String REDIRECT_LOCATION = "/cars";
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -55,6 +52,6 @@ public class AddCarController extends HttpServlet {
         car.setDrivers(drivers);
         carService.create(car);
 
-        resp.sendRedirect(REDIRECT_LOCATION);
+        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION);
     }
 }

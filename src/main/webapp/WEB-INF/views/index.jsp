@@ -2,11 +2,13 @@
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
 <t:genericpage>
     <jsp:attribute name="title">
-      ${page_title}
+        <%--@elvariable id="page_title" type="mate.controller.IndexController"--%>
+        ${page_title}
     </jsp:attribute>
 
     <jsp:attribute name="header">
-      ${page_header}
+        <%--@elvariable id="page_header" type="mate.controller.IndexController"--%>
+        ${page_header}
     </jsp:attribute>
 
     <jsp:body>

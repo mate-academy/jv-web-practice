@@ -12,7 +12,7 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers")
-public class ShowAllManufacturersController extends HttpServlet {
+public class ShowManufacturersController extends HttpServlet {
     private static final String PAGE_TITLE = "list of manufacturers";
     private static final String PAGE_HEADER = "All manufacturers of cars";
     private static final String PAGE_DIRECTORY = "/WEB-INF/views/manufacturers/list.jsp";

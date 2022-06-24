@@ -13,7 +13,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufacturerController extends HttpServlet {
     private static final String PAGE_TITLE = "add a manufacturer";
-    private static final String PAGE_HEADER = "Add a new manufacturer of a car";
+    private static final String PAGE_HEADER = "Add a new manufacturer to list";
     private static final String PAGE_DIRECTORY = "/WEB-INF/views/manufacturers/add.jsp";
     private static final String REDIRECT_LOCATION = "/manufacturers";
     private static final Injector injector = Injector.getInstance("mate");
@@ -35,6 +35,6 @@ public class AddManufacturerController extends HttpServlet {
         manufacturer.setName(req.getParameter("name"));
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(REDIRECT_LOCATION);
+        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION);
     }
 }

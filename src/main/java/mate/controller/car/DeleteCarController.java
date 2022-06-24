@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/cars/del")
+@WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
     private static final String REDIRECT_LOCATION = "/cars";
     private static final Injector injector = Injector.getInstance("mate");

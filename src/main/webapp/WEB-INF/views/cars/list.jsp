@@ -3,11 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="title">
-      ${page_title}
+        <%--@elvariable id="page_title" type="mate.controller.car.ShowCarsController"--%>
+        ${page_title}
     </jsp:attribute>
 
     <jsp:attribute name="header">
-      ${page_header}
+        <%--@elvariable id="page_header" type="mate.controller.car.ShowCarsController"--%>
+        ${page_header}
     </jsp:attribute>
 
     <jsp:body>
@@ -22,17 +24,20 @@
             </tr>
             </thead>
             <tbody>
+                <%--@elvariable id="cars" type="mate.controller.car.ShowCarsController"--%>
             <c:forEach items="${cars}" var="car">
-                <c:set var="manufacturer" scope="page" value="${car.getManufacturer()}"/>
                 <tr>
                     <th scope="row"><c:out value="${car.getId()}"/></th>
                     <td><c:out value="${car.getModel()}"/></td>
                     <td>
-                        <c:out value="${manufacturer.getName()}"/> from
-                        <c:out value="${manufacturer.getCountry()}"/>
+                        <c:out value="${car.getManufacturer().getName()}"/> from
+                        <c:out value="${car.getManufacturer().getCountry()}"/>
                     </td>
-                    <td><a type="button" class="btn btn-secondary"
-                           href="${pageContext.request.contextPath}/cars/del?id=${car.getId()}">Delete</a>
+                    <td>
+                        <a type="button" class="btn btn-secondary"
+                           href="${pageContext.request.contextPath}/cars/drivers?car_id=${car.getId()}">List of drivers</a>
+                        <a type="button" class="btn btn-secondary"
+                           href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">Delete</a>
                     </td>
                 </tr>
             </c:forEach>

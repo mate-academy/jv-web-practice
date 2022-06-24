@@ -1,6 +1,7 @@
 package mate.controller.driver;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,12 +11,11 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/add")
-public class AddDriverController extends HttpServlet {
-    private static final String PAGE_TITLE = "add a driver";
-    private static final String PAGE_HEADER = "Add a new driver to list";
-    private static final String PAGE_DIRECTORY = "/WEB-INF/views/drivers/add.jsp";
-    private static final String REDIRECT_LOCATION = "/drivers";
+@WebServlet(urlPatterns = "/drivers")
+public class ShowDriversController extends HttpServlet {
+    private static final String PAGE_TITLE = "list of drivers";
+    private static final String PAGE_HEADER = "All drivers of cars";
+    private static final String PAGE_DIRECTORY = "/WEB-INF/views/drivers/list.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -23,18 +23,10 @@ public class AddDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        List<Driver> drivers = driverService.getAll();
         req.setAttribute("page_title", PAGE_TITLE);
         req.setAttribute("page_header", PAGE_HEADER);
+        req.setAttribute("drivers", drivers);
         req.getRequestDispatcher(PAGE_DIRECTORY).forward(req, resp);
-    }
-
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        Driver driver = new Driver();
-        driver.setName(req.getParameter("name"));
-        driver.setLicenseNumber(req.getParameter("license_number"));
-        driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + REDIRECT_LOCATION);
     }
 }
