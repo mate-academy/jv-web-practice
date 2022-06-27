@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="title">
         <%--@elvariable id="page_title" type="mate.controller.car.ShowCarsController"--%>
@@ -20,6 +20,7 @@
                 <th scope="col">#</th>
                 <th scope="col">Model</th>
                 <th scope="col">Manufacturer</th>
+                <th scope="col">Drivers</th>
                 <th scope="col"></th>
             </tr>
             </thead>
@@ -33,6 +34,9 @@
                     <td>
                         <c:out value="${car.getManufacturer().getName()}"/> from
                         <c:out value="${car.getManufacturer().getCountry()}"/>
+                    </td>
+                    <td>
+                        <c:out value="${car.getDrivers().size()}"/>
                     </td>
                     <td>
                         <a type="button" class="btn btn-secondary"
@@ -54,7 +58,7 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Do you really want to delete the record ?
+                                        Do you really want to delete the record with id=${id} ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

@@ -1,6 +1,6 @@
 <%@page contentType="text/html" pageEncoding="UTF-8" %>
 <%@taglib prefix="t" tagdir="/WEB-INF/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <t:genericpage>
     <jsp:attribute name="title">
         <%--@elvariable id="page_title" type="mate.controller.manufacturer.ShowManufacturersController"--%>
@@ -48,7 +48,7 @@
                                                 aria-label="Close"></button>
                                     </div>
                                     <div class="modal-body">
-                                        Do you really want to delete the record ?
+                                        Do you really want to delete the record with id=${id} ?
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary"

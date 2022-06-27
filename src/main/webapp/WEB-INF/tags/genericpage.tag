@@ -1,4 +1,6 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8" %>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%@attribute name="title" fragment="true" %>
 <%@attribute name="header" fragment="true" %>
 <!doctype html>
@@ -20,19 +22,34 @@
 <body>
 <div class="container py-3">
     <header class="pb-3 mb-4 border-bottom">
-        <nav class="navbar justify-content-end navbar-dark">
+        <nav class="nav nav-pills nav-justified">
             <div class="nav-item">
-                <a class="nav-link active"
-                   href="${pageContext.request.contextPath}/index">Главная</a>
+                <c:set var="active" value=""/>
+                <c:if test="${pageContext.request.getServletPath() == '/WEB-INF/views/index.jsp'}">
+                    <c:set var="active" value="active"/>
+                </c:if>
+                <a class="nav-link ${active}" href="${pageContext.request.contextPath}/index">Main page</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link active" href="${pageContext.request.contextPath}/manufacturers">Производители машин</a>
+                <c:set var="active" value=""/>
+                <c:if test="${fn:startsWith(pageContext.request.getServletPath(), '/WEB-INF/views/manufacturers')}">
+                    <c:set var="active" value="active"/>
+                </c:if>
+                <a class="nav-link ${active}" href="${pageContext.request.contextPath}/manufacturers">Manufacturers</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link active" href="${pageContext.request.contextPath}/drivers">Водители</a>
+                <c:set var="active" value=""/>
+                <c:if test="${fn:startsWith(pageContext.request.getServletPath(), '/WEB-INF/views/drivers')}">
+                    <c:set var="active" value="active"/>
+                </c:if>
+                <a class="nav-link ${active}" href="${pageContext.request.contextPath}/drivers">Drivers</a>
             </div>
             <div class="nav-item">
-                <a class="nav-link active" href="${pageContext.request.contextPath}/cars">Машины</a>
+                <c:set var="active" value=""/>
+                <c:if test="${fn:startsWith(pageContext.request.getServletPath(), '/WEB-INF/views/cars')}">
+                    <c:set var="active" value="active"/>
+                </c:if>
+                <a class="nav-link ${active}" href="${pageContext.request.contextPath}/cars">Cars</a>
             </div>
         </nav>
     </header>
