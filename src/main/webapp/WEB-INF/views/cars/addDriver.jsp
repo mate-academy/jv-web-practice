@@ -9,6 +9,7 @@
     Car ID<input type="text" name="carId"><br>
     Driver ID<input type="text" name="driverId"><br>
     <button type="submit">Confirm</button>
+    <a href="${pageContext.request.contextPath}/index">go back</a>
 </form>
 </body>
 </html>

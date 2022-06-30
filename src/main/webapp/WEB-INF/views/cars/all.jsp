@@ -24,5 +24,6 @@
         </tr>
     </c:forEach>
 </table>
+<a href="${pageContext.request.contextPath}/index">go back</a>
 </body>
 </html>

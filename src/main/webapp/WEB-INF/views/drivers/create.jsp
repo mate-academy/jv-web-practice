@@ -10,5 +10,6 @@
     License number<input type="text" name="licenseNumber" required><br>
     <button type="submit">Confirm</button>
 </form>
+<a href="${pageContext.request.contextPath}/index">go back</a>
 </body>
 </html>

@@ -5,13 +5,13 @@
 </head>
 <body>
 <h1>Navigation</h1>
-<a href="localhost:8080/cars/get">All cars</a><br>
-<a href="localhost:8080/drivers/get">All drivers</a><br>
-<a href="localhost:8080/manufacturers/get">All manufacturers</a>
+<a href="${pageContext.request.contextPath}/cars/get">All cars</a><br>
+<a href="${pageContext.request.contextPath}/drivers/get">All drivers</a><br>
+<a href="${pageContext.request.contextPath}/manufacturers/get">All manufacturers</a>
 <h1>Utils</h1>
-<a href="localhost:8080/drivers/create">Add driver to DB</a><br>
-<a href="localhost:8080/cars/add/driver">Add driver to Car</a><br>
-<a href="localhost:8080/cars/create">Add new Car to DB</a><br>
-<a href="localhost:8080/manufacturers/create">Add new Manufacturer to DB</a>
+<a href="${pageContext.request.contextPath}/drivers/create">Add driver to DB</a><br>
+<a href="${pageContext.request.contextPath}/cars/add/driver">Add driver to Car</a><br>
+<a href="${pageContext.request.contextPath}/cars/create">Add new Car to DB</a><br>
+<a href="${pageContext.request.contextPath}/manufacturers/create">Add new Manufacturer to DB</a>
 </body>
 </html>
