@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
@@ -11,4 +12,32 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>creatingDriverController</servlet-name>
+        <servlet-class>mate.controller.drivercontroller.CreatingDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>creatingDriverController</servlet-name>
+        <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>GetAllDriversController</servlet-name>
+        <servlet-class>mate.controller.drivercontroller.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>GetAllDriversController</servlet-name>
+        <url-pattern>/drivers/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <servlet-class>mate.controller.drivercontroller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteDriverController</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+
 </web-app>
