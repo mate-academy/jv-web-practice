@@ -9,9 +9,10 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-public class CreatingDriverController extends HttpServlet {
+public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

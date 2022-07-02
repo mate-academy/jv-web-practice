@@ -4,7 +4,7 @@
     <title>Create new driver</title>
 </head>
 <body>
-<h1>Please fill the form below to create new driver:</h1>
+<h2>Please fill the form below to create new driver:</h2>
 
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
     <label>
