@@ -13,31 +13,4 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
 
-    <servlet>
-        <servlet-name>creatingDriverController</servlet-name>
-        <servlet-class>mate.controller.drivercontroller.CreateDriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>creatingDriverController</servlet-name>
-        <url-pattern>/drivers/create</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>GetAllDriversController</servlet-name>
-        <servlet-class>mate.controller.drivercontroller.GetAllDriversController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>GetAllDriversController</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
-    </servlet-mapping>
-
-    <servlet>
-        <servlet-name>DeleteDriverController</servlet-name>
-        <servlet-class>mate.controller.drivercontroller.DeleteDriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DeleteDriverController</servlet-name>
-        <url-pattern>/drivers/delete</url-pattern>
-    </servlet-mapping>
-
 </web-app>

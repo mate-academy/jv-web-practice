@@ -6,13 +6,13 @@
 <body>
 <h2>Please fill the form below to create new manufacturer:</h2>
 
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <label>
-        Name <input type="text" name="name">
+        Name <input type="text" name="name" required>
     </label><br>
     <label>
         Country
-        <input type="text" name="country">
+        <input type="text" name="country" checked required>
     </label><br>
     <button type="submit">Confirm</button>
 </form>
