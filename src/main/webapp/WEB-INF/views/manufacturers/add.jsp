@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-  <title>Creation driver</title>
+  <title>Creation manufacturer</title>
 </head>
 <body>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
