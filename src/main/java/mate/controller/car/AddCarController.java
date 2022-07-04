@@ -27,7 +27,6 @@ public class AddCarController extends HttpServlet {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
         req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
-
     }
 
     @Override
