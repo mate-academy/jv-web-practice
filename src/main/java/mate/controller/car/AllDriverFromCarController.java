@@ -36,8 +36,7 @@ public class AllDriverFromCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Map<String, String[]> parameterMap = req.getParameterMap();
         Long carId = Long.parseLong(parameterMap.get("id")[INDEX_OF_FIRST_PARAM]);
         Car car = carService.get(carId);
