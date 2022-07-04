@@ -6,14 +6,14 @@
 <body>
 <table border="1">
     <tr>
-        <td><a href="${pageContext.request.contextPath}/manufacturers">manufacturers</a></td>
-        <td><a href="${pageContext.request.contextPath}/drivers">drivers</a></td>
-        <td><a href="${pageContext.request.contextPath}/cars">cars</a></td>
+        <td><a href="${pageContext.request.contextPath}/manufacturers">all manufacturers</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers">all drivers</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars">all cars</a></td>
     </tr>
     <tr>
-        <td><a href="${pageContext.request.contextPath}/manufacturers/add">add manufacturers</a></td>
-        <td><a href="${pageContext.request.contextPath}/drivers/add">add drivers</a></td>
-        <td><a href="${pageContext.request.contextPath}/cars/add">add cars</a></td>
+        <td><a href="${pageContext.request.contextPath}/manufacturers/add">add manufacturer</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers/add">add driver</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/add">add car</a></td>
     </tr>
 </table>
 </body>

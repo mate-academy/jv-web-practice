@@ -23,7 +23,7 @@
                 <td><c:out value="${car.manufacturer.name}"/></td>
                 <td><c:out value="${car.manufacturer.country}"/></td>
                 <td>
-                    <c:if test="${car.drivers.size() == 0}">free</c:if>
+                    <c:if test="${car.drivers.size() == 0}">no drivers</c:if>
                     <c:if test="${car.drivers.size() != 0}">
                         <c:forEach items="${car.drivers}" var = "driver">
                             <c:out value="${driver.name}"/>: <c:out value="${driver.licenseNumber}"/><br>

@@ -18,8 +18,7 @@ import mate.service.CarService;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers")
-public class AllDriverFromCarController extends HttpServlet {
-    private static final int INDEX_OF_FIRST_PARAM = 0;
+public class AllDriversFromCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);
@@ -27,7 +26,7 @@ public class AllDriverFromCarController extends HttpServlet {
             injector.getInstance(CarService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
         req.setAttribute("car", car);
@@ -36,10 +35,11 @@ public class AllDriverFromCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Map<String, String[]> parameterMap = req.getParameterMap();
-        Long carId = Long.parseLong(parameterMap.get("id")[INDEX_OF_FIRST_PARAM]);
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Long carId = Long.parseLong(req.getParameter("id"));
         Car car = carService.get(carId);
+
+        Map<String, String[]> parameterMap = req.getParameterMap();
         Map<Long, Driver> allDriversMap = driverService.getAll()
                 .stream()
                 .collect(Collectors.toMap(Driver::getId, Function.identity()));
