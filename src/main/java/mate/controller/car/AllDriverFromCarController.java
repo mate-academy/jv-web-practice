@@ -19,6 +19,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers")
 public class AllDriverFromCarController extends HttpServlet {
+    private static final int INDEX_OF_FIRST_PARAM = 0;
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);
@@ -38,7 +39,7 @@ public class AllDriverFromCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Map<String, String[]> parameterMap = req.getParameterMap();
-        Long carId = Long.parseLong(parameterMap.get("id")[0]);
+        Long carId = Long.parseLong(parameterMap.get("id")[INDEX_OF_FIRST_PARAM]);
         Car car = carService.get(carId);
         Map<Long, Driver> allDriversMap = driverService.getAll()
                 .stream()
