@@ -15,17 +15,16 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
-    private static final Injector injector =
-            Injector.getInstance("mate");
-    private final CarService carService =
+    private static final Injector injector = Injector.getInstance("mate");
+    private static final CarService carService =
             (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/create.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
 
     @Override
