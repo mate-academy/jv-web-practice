@@ -28,6 +28,10 @@ public class AllDriversFromCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        if (req.getParameter("id") == null) {
+            resp.sendRedirect(req.getContextPath() + "/cars");
+            return;
+        }
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
         req.setAttribute("car", car);
         req.setAttribute("drivers", driverService.getAll());
@@ -36,9 +40,6 @@ public class AllDriversFromCarController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Long carId = Long.parseLong(req.getParameter("id"));
-        Car car = carService.get(carId);
-
         Map<String, String[]> parameterMap = req.getParameterMap();
         Map<Long, Driver> allDriversMap = driverService.getAll()
                 .stream()
@@ -53,6 +54,7 @@ public class AllDriversFromCarController extends HttpServlet {
             editedDrivers.add(allDriversMap.get(driverId));
         }
 
+        Car car = carService.get(Long.parseLong(req.getParameter("id")));
         car.setDrivers(editedDrivers);
         carService.update(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
