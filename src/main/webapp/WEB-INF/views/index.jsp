@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>TAXI SERVICE</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
-<p>Menu:</p>
+<h1>SELECT ANY OPTION</h1>
+<p>Options:</p>
 <a href="${pageContext.request.contextPath}/drivers">Show all drivers</a><br>
 <a href="${pageContext.request.contextPath}/drivers/add">Create new driver</a><br>
 <br>
