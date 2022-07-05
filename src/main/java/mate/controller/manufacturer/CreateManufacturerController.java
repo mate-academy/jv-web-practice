@@ -1,4 +1,4 @@
-package mate.controller.manufacturercontroller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -28,9 +28,7 @@ public class CreateManufacturerController extends HttpServlet {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         Manufacturer newManufacturer = createNewManufacturer(name, country);
-        if (newManufacturer.getId() != null) {
-            req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
-        }
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 
     private Manufacturer createNewManufacturer(String name, String country) {

@@ -1,4 +1,4 @@
-package mate.controller.drivercontroller;
+package mate.controller.driver;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,7 +13,7 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final DriverService driverService =
+    private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
@@ -28,7 +28,7 @@ public class CreateDriverController extends HttpServlet {
         String driverName = req.getParameter("drivername");
         String licenseNumber = req.getParameter("licensenumber");
         createNewDriver(driverName, licenseNumber);
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 
     private Driver createNewDriver(String driverName, String licenseNumber) {

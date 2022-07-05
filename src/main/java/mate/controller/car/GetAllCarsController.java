@@ -1,4 +1,4 @@
-package mate.controller.carcontroller;
+package mate.controller.car;
 
 import java.io.IOException;
 import java.util.List;
@@ -14,7 +14,7 @@ import mate.service.CarService;
 @WebServlet(urlPatterns = "/cars")
 public class GetAllCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService =
+    private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
 
     @Override
