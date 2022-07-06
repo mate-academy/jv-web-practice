@@ -28,10 +28,6 @@ public class AllDriversFromCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        if (req.getParameter("id") == null) {
-            resp.sendRedirect(req.getContextPath() + "/cars");
-            return;
-        }
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
         req.setAttribute("car", car);
         req.setAttribute("drivers", driverService.getAll());
@@ -47,11 +43,10 @@ public class AllDriversFromCarController extends HttpServlet {
 
         List<Driver> editedDrivers = new ArrayList<>();
         for (Map.Entry<String, String[]> entry : parameterMap.entrySet()) {
-            if (entry.getKey().equals("id")) {
-                continue;
+            if (!entry.getKey().equals("id")) {
+                Long driverId = Long.parseLong(entry.getKey());
+                editedDrivers.add(allDriversMap.get(driverId));
             }
-            Long driverId = Long.parseLong(entry.getKey());
-            editedDrivers.add(allDriversMap.get(driverId));
         }
 
         Car car = carService.get(Long.parseLong(req.getParameter("id")));
