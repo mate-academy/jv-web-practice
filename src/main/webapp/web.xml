@@ -29,4 +29,13 @@
         <servlet-name>registrationManufacturerController</servlet-name>
         <url-pattern>/interaction/registerManufacturer</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>registrationCarController</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>registrationCarController</servlet-name>
+        <url-pattern>/interaction/carRegister</url-pattern>
+    </servlet-mapping>
 </web-app>
