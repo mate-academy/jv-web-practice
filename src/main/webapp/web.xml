@@ -4,11 +4,20 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>registrationController</servlet-name>
-        <servlet-class>mate.controller.IndexController</servlet-class>
+        <servlet-name>registrationDriverController</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>registrationController</servlet-name>
+        <servlet-name>registrationDriverController</servlet-name>
         <url-pattern>/interaction/register</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getAllDriversController</servlet-name>
+        <servlet-class>mate.controller.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllDriversController</servlet-name>
+        <url-pattern>/interaction/allDrivers</url-pattern>
     </servlet-mapping>
 </web-app>

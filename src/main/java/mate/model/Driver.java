@@ -3,7 +3,6 @@ package mate.model;
 import java.util.Objects;
 
 public class Driver {
-    //<td><a href="driver/create">CREATE DRIVER</a></td>
     private Long id;
     private String name;
     private String licenseNumber;
