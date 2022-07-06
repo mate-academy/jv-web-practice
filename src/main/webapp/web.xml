@@ -38,4 +38,13 @@
         <servlet-name>registrationCarController</servlet-name>
         <url-pattern>/interaction/carRegister</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addDriverToCarController</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addDriverToCarController</servlet-name>
+        <url-pattern>/interaction/driverToCarRegister</url-pattern>
+    </servlet-mapping>
 </web-app>
