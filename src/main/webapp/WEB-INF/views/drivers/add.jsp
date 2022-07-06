@@ -5,9 +5,8 @@
     <title>INTERACTION</title>
 </head>
 <body>
-<h1>Driver operations:</h1>
-
-<form method="post" action="${pageContext.request.contextPath}/interaction/register">
+<h1>CREATE DRIVER:</h1>
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Driver name <input type="text" name="name"><br>
     Driver license <input type="text" name="licenseNumber"><br>
     <button type="submit">CONFIRM</button>

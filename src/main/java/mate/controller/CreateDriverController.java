@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,18 +10,18 @@ import mate.lib.Injector;
 import mate.model.Driver;
 
 public class CreateDriverController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private DriverDao driverDao;
 
     @Override
-    public void init(ServletConfig config) throws ServletException {
-        final Injector injector = Injector.getInstance("mate");
+    public void init() {
         driverDao = (DriverDao) injector.getInstance(DriverDao.class);
     }
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/interaction/register.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
     }
 
     @Override
@@ -32,6 +31,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
         driverDao.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/interaction/register.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }

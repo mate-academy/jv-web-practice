@@ -14,13 +14,20 @@ import mate.model.Car;
 import mate.model.Driver;
 
 public class CreateCarController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private CarDao carDao;
     private ManufacturerDao manufacturerDao;
 
     @Override
+    public void init() {
+        carDao = (CarDao) injector.getInstance(CarDao.class);
+        manufacturerDao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+    }
+
+    @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/interaction/carRegister.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp")
                 .forward(req, resp);
     }
 
@@ -34,13 +41,6 @@ public class CreateCarController extends HttpServlet {
         List<Driver> drivers = new ArrayList<>();
         car.setDrivers(drivers);
         carDao.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/interaction/carRegister.jsp").forward(req, resp);
-    }
-
-    @Override
-    public void init() throws ServletException {
-        final Injector injector = Injector.getInstance("mate");
-        carDao = (CarDao) injector.getInstance(CarDao.class);
-        manufacturerDao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }

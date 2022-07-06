@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -11,12 +10,18 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 
 public class CreateManufacturerController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerDao manufacturerDao;
+
+    @Override
+    public void init() {
+        manufacturerDao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/interaction/registerManufacturer.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp")
                 .forward(req, resp);
     }
 
@@ -27,13 +32,6 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setName(req.getParameter("name"));
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerDao.create(manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/interaction/registerManufacturer.jsp")
-                .forward(req, resp);
-    }
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        final Injector injector = Injector.getInstance("mate");
-        manufacturerDao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }

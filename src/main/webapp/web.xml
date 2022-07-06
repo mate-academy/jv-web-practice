@@ -4,12 +4,21 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
+        <servlet-name>chooseOptionController</servlet-name>
+        <servlet-class>mate.controller.IndexController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>chooseOptionController</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>registrationDriverController</servlet-name>
         <servlet-class>mate.controller.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationDriverController</servlet-name>
-        <url-pattern>/interaction/register</url-pattern>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -18,7 +27,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDriversController</servlet-name>
-        <url-pattern>/interaction/allDrivers</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -27,7 +36,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationManufacturerController</servlet-name>
-        <url-pattern>/interaction/registerManufacturer</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -36,7 +45,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>registrationCarController</servlet-name>
-        <url-pattern>/interaction/carRegister</url-pattern>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -45,6 +54,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCarController</servlet-name>
-        <url-pattern>/interaction/driverToCarRegister</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 </web-app>
