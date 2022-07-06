@@ -20,6 +20,9 @@
 <br>
 <td><a href="${pageContext.request.contextPath}/cars/drivers/add">ADDING DRIVER TO CAR</a></td>
 </br>
+<br>
+<td><a href="${pageContext.request.contextPath}/manufacturers">SHOW ALL MANUFACTURERS</a></td>
+</br>
 </from>
 </body>
 </html>
