@@ -23,6 +23,9 @@
 <br>
 <td><a href="${pageContext.request.contextPath}/manufacturers">SHOW ALL MANUFACTURERS</a></td>
 </br>
+<br>
+<td><a href="${pageContext.request.contextPath}/cars">SHOW ALL CARS</a></td>
+</br>
 </from>
 </body>
 </html>
