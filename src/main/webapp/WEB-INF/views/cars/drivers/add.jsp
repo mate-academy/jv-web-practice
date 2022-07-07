@@ -11,7 +11,7 @@
     <button type="submit">CONFIRM</button>
 </form>
 <tr>
-    <td><a href="${pageContext.request.contextPath}/index">BACK TO THE MAIN PAGE</a></td>
+    <td><a href="${pageContext.request.contextPath}/index">Main page</a></td>
 </tr>
 </body>
 </html>
