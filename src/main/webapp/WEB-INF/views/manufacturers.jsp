@@ -22,7 +22,7 @@
   </c:forEach>
 </table>
 <tr>
-  <td><a href="${pageContext.request.contextPath}/index">back to the main menu</a></td>
+  <td><a href="${pageContext.request.contextPath}/index">BACK TO THE MAIN PAGE</a></td>
 </tr>
 </body>
 </html>

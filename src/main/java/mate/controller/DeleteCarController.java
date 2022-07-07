@@ -18,7 +18,7 @@ public class DeleteCarController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long carId = Long.parseLong(req.getParameter("id"));
         carService.delete(carId);

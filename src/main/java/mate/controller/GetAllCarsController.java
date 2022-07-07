@@ -20,7 +20,7 @@ public class GetAllCarsController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         System.out.println("GetAllCarsController/doGet invoked");
         List<Car> cars = carService.getAll();
