@@ -2,14 +2,17 @@
 
 <html>
 <head>
-  <title>INTERACTION</title>
+  <title>ADDING CAR TO DB</title>
 </head>
 <body>
 <h1>CREATE CAR:</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Car model: <input type="text" name="model"><br>
-    Car manufacturer: <input type="text" name="manufacturer_id"><br>
+    Car manufacturer ID: <input type="text" name="manufacturer_id"><br>
     <button type="submit">CONFIRM</button>
 </form>
+<tr>
+    <td><a href="${pageContext.request.contextPath}/index">back to the main menu</a></td>
+</tr>
 </body>
 </html>

@@ -7,21 +7,21 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.dao.CarDao;
-import mate.dao.ManufacturerDao;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
+import mate.service.CarService;
+import mate.service.ManufacturerService;
 
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarDao carDao;
-    private ManufacturerDao manufacturerDao;
+    private CarService carService;
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() {
-        carDao = (CarDao) injector.getInstance(CarDao.class);
-        manufacturerDao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+        carService = (CarService) injector.getInstance(CarService.class);
+        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }
 
     @Override
@@ -37,10 +37,10 @@ public class CreateCarController extends HttpServlet {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        car.setManufacturer(manufacturerDao.get(manufacturerId).get());
+        car.setManufacturer(manufacturerService.get(manufacturerId));
         List<Driver> drivers = new ArrayList<>();
         car.setDrivers(drivers);
-        carDao.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        carService.create(car);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
 }

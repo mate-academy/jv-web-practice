@@ -1,8 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
 <html>
 <head>
-    <title>INTERACTION</title>
+    <title>ADDING DRIVER TO BD</title>
 </head>
 <body>
 <h1>CREATE DRIVER:</h1>
@@ -11,5 +10,8 @@
     Driver license <input type="text" name="licenseNumber"><br>
     <button type="submit">CONFIRM</button>
 </form>
+<tr>
+    <td><a href="${pageContext.request.contextPath}/index">back to the main menu</a></td>
+</tr>
 </body>
 </html>

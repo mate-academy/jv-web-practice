@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>ALL DRIVERS</title>
 </head>
 <body>
 <h1>ALL DRIVERS FROM TAXI_SERVICE DB:</h1>
@@ -21,5 +21,8 @@
         </tr>
     </c:forEach>
 </table>
+<tr>
+    <td><a href="${pageContext.request.contextPath}/index">back to the main menu</a></td>
+</tr>
 </body>
 </html>

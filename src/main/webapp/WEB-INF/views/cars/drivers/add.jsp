@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>INTERACTION</title>
+    <title>ADDING DRIVER TO CAR</title>
 </head>
 <body>
 <h1>ADDING DRIVER TO CAR OPERATION:</h1>
@@ -10,5 +10,8 @@
     Car ID <input type="text" name="carId"><br>
     <button type="submit">CONFIRM</button>
 </form>
+<tr>
+    <td><a href="${pageContext.request.contextPath}/index">back to the main menu</a></td>
+</tr>
 </body>
 </html>
