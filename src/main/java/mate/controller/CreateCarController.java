@@ -33,7 +33,7 @@ public class CreateCarController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
@@ -41,6 +41,6 @@ public class CreateCarController extends HttpServlet {
         List<Driver> drivers = new ArrayList<>();
         car.setDrivers(drivers);
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        resp.sendRedirect("/cars/add");
     }
 }

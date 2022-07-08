@@ -12,10 +12,4 @@ public class IndexController extends HttpServlet {
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
-
-    @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
 }

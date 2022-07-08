@@ -9,7 +9,7 @@
 <td><a href="${pageContext.request.contextPath}/drivers/add">CREATE DRIVER</a></td>
 </br>
 <br>
-<td><a href="${pageContext.request.contextPath}/drivers">SHOW ALL DRIVERS</a></td>
+<td><a href="${pageContext.request.contextPath}/drivers/all">SHOW ALL DRIVERS</a></td>
 </br>
 <br>
 <td><a href="${pageContext.request.contextPath}/manufacturers/add">CREATE MANUFACTURER</a></td>
@@ -21,10 +21,10 @@
 <td><a href="${pageContext.request.contextPath}/cars/drivers/add">ADDING DRIVER TO CAR</a></td>
 </br>
 <br>
-<td><a href="${pageContext.request.contextPath}/manufacturers">SHOW ALL MANUFACTURERS</a></td>
+<td><a href="${pageContext.request.contextPath}/manufacturers/all">SHOW ALL MANUFACTURERS</a></td>
 </br>
 <br>
-<td><a href="${pageContext.request.contextPath}/cars">SHOW ALL CARS</a></td>
+<td><a href="${pageContext.request.contextPath}/cars/all">SHOW ALL CARS</a></td>
 </br>
 </from>
 </body>
