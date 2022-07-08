@@ -1,9 +1,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>INTERACTION</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>PLEASE, CHOOSE THE OPTION</h1>
+<br>
+<td><a href="${pageContext.request.contextPath}/drivers/add">CREATE DRIVER</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/drivers/all">SHOW ALL DRIVERS</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/manufacturers/add">CREATE MANUFACTURER</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/cars/add">CREATE CAR</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/cars/drivers/add">ADDING DRIVER TO CAR</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/manufacturers/all">SHOW ALL MANUFACTURERS</a></td>
+</br>
+<br>
+<td><a href="${pageContext.request.contextPath}/cars/all">SHOW ALL CARS</a></td>
+</br>
+</from>
 </body>
 </html>
