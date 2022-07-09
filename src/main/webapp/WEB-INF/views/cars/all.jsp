@@ -20,7 +20,7 @@
         <td><c:out value="${car.getManufacturer().getName()}" /></td>
             <td><c:out value="${car.getModel()}" /></td>
             <td>
-                <a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.getId()}">delete this car</a></td>
+                <a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.getId()}">Delete this car</a></td>
             <td></td>
         </tr>
         <c:forEach items="${car.getDrivers()}" var="driver">
