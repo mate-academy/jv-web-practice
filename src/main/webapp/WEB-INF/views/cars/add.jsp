@@ -8,8 +8,8 @@
 <h1>Input data of car</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add" >
     Car model <input type="text" name="car_model"><br>
-    Id manufacturer <input type="number" name="manufacturer_id"><br>
-    <button type="submit">Save car</button>
+    Manufacturer id <input type="number" name="manufacturer_id"><br>
+    <button type="submit">Submit</button>
 </form>
 </body>
 </html>

@@ -15,7 +15,7 @@ public class AddManufacturerController extends HttpServlet {
             .getInstance(ManufacturerService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String manufacturerName = req.getParameter("manufacturer_name");
         String country = req.getParameter("country");
@@ -23,12 +23,12 @@ public class AddManufacturerController extends HttpServlet {
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(country);
         manufacturerService.create(manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/addmanufacturer.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addmanufacturer.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
     }
 }

@@ -19,7 +19,7 @@
         <td><c:out value="${driver.getName()}" /></td>
         <td><c:out value="${driver.getLicenseNumber()}" /></td>
             <td>
-                <a href="${pageContext.request.contextPath}/drivers/delete?driver_id=${driver.getId()}">delete driver</a></td>
+                <a href="${pageContext.request.contextPath}/drivers/delete?driver_id=${driver.getId()}">delete this driver</a></td>
         </tr>
     </c:forEach>
 </table>

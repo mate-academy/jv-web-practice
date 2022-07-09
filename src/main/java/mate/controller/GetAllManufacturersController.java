@@ -16,10 +16,10 @@ public class GetAllManufacturersController extends HttpServlet {
             .getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Manufacturer> manufacturersList = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturersList);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req, resp);
     }
 }

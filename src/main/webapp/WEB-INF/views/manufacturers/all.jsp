@@ -19,7 +19,7 @@
         <td><c:out value="${manufacturer.getName()}" /></td>
         <td><c:out value="${manufacturer.getCountry()}" /></td>
             <td>
-                <a href="${pageContext.request.contextPath}/manufacturers/delete?manufacturer_id=${manufacturer.getId()}">delete manufacturer</a></td>
+                <a href="${pageContext.request.contextPath}/manufacturers/delete?manufacturer_id=${manufacturer.getId()}">delete this manufacturer</a></td>
         </tr>
     </c:forEach>
 </table>
