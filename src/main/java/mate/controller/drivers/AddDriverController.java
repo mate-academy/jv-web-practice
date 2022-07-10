@@ -25,7 +25,6 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        req.getAttribute("name");
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
         Driver driver = new Driver();
