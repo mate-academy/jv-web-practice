@@ -164,7 +164,6 @@ public class CarDaoImpl implements CarDao {
         if (drivers.size() == 0) {
             return;
         }
-        //TODO FIX
         String insertQuery = "INSERT INTO cars_drivers (car_id, driver_id) VALUES "
                 + drivers.stream().map(driver -> "(?, ?)").collect(Collectors.joining(", "))
                 + " ON CONFLICT (driver_id, car_id) DO UPDATE "
