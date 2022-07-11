@@ -1,7 +1,8 @@
 package mate.controller.cars;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
+import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
@@ -35,9 +37,10 @@ public class AddCarController extends HttpServlet {
         String model = req.getParameter("model");
         Car car = new Car();
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        List<Driver> drivers = Collections.emptyList();
         car.setManufacturer(manufacturer);
         car.setModel(model);
-        car.setDrivers(new ArrayList<>());
+        car.setDrivers(drivers);
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
