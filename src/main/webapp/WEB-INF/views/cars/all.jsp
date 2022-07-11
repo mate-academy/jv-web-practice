@@ -12,13 +12,14 @@
         <td>Manufacturer</td>
         <td>Model</td>
         <td>Country</td>
-        <td></td>
+        <td>Action</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
         <td><c:out value="${car.getId()}" /></td>
         <td><c:out value="${car.getManufacturer().getName()}" /></td>
             <td><c:out value="${car.getModel()}" /></td>
+            <td><c:out value="${car.getManufacturer().getCountry()}" /></td>
             <td>
                 <a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.getId()}">Delete this car</a></td>
             <td></td>

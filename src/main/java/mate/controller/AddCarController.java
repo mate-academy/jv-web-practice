@@ -27,13 +27,13 @@ public class AddCarController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String carModel = req.getParameter("car_model");
-        Long idManufacturer = Long.valueOf(req.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = manufacturerService.get(idManufacturer);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car();
         car.setModel(carModel);
         car.setManufacturer(manufacturer);
-        List<Driver> driversList = Collections.emptyList();
-        car.setDrivers(driversList);
+        List<Driver> drivers = Collections.emptyList();
+        car.setDrivers(drivers);
         carService.create(car);
         req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
