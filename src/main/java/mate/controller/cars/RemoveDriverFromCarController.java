@@ -14,7 +14,7 @@ import mate.service.CarService;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/remove", name = "removeDriver")
-public class RemoveCarDriverController extends HttpServlet {
+public class RemoveDriverFromCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);

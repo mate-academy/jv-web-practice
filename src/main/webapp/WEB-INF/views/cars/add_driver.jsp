@@ -8,7 +8,7 @@
 <body>
 <jsp:include page="/WEB-INF/views/header.jsp"/>
 <h2>Add a driver to car</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">
     <h3>Car's information</h3>
     <label><span>ID</span>${car.id}</label>
     <br><br>
@@ -19,7 +19,7 @@
     <label><span>Model</span>${car.model}</label>
     <br><br>
     <label><span>Drivers</span></label>
-    <select style="width: 340px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="drivers" required>
+    <select style="width: 340px; font-family: 'Work Sans', sans-serif; margin-bottom: 15px" name="driver_id" required>
         <option selected disabled value="">Select one of driver</option>
         <c:forEach items="${drivers}" var="driver">
             <c:choose>
