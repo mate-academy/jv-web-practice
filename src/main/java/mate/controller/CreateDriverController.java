@@ -17,7 +17,7 @@ public class CreateDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/taxi/createDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/taxi/drivers/create.jsp").forward(req, resp);
     }
 
     @Override
