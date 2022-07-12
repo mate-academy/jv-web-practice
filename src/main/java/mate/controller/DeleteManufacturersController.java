@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,9 +14,9 @@ public class DeleteManufacturersController extends HttpServlet {
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers/all");
     }
 }

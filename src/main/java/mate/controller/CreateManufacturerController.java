@@ -23,11 +23,11 @@ public class CreateManufacturerController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         manufacturer = new Manufacturer();
         manufacturer.setName(req.getParameter("manufacturerName"));
         manufacturer.setCountry(req.getParameter("manufacturerCountry"));
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers/all");
     }
 }

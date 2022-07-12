@@ -13,7 +13,6 @@ public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
-    private Driver driver;
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -23,11 +22,11 @@ public class CreateDriverController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        driver = new Driver();
+            throws IOException {
+        Driver driver = new Driver();
         driver.setName(req.getParameter("driverName"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
         driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + "/drivers");
+        resp.sendRedirect(req.getContextPath() + "/drivers/all");
     }
 }
