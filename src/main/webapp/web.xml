@@ -73,7 +73,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteCar</servlet-name>
-        <url-pattern>/car/delete</url-pattern>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllManufacturers</servlet-name>
