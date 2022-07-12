@@ -1,7 +1,6 @@
 package mate.controller.driver;
 
 import java.io.IOException;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,8 +15,8 @@ public class DeleteDriverController extends HttpServlet {
             injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         driverService.delete(id);
         resp.sendRedirect(req.getContextPath() + "/drivers/all");
