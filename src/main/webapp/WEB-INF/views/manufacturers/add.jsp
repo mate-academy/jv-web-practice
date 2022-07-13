@@ -5,7 +5,7 @@
     <title>Add Manufacturer</title>
 </head>
 <body>
-<h1>To create a driver, fill in form below</h1>
+<h1>To create a manufacturer, fill in form below</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     Name <input type="text" name="name"><br>
     Country <input type="text" name="country"><br>

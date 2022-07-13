@@ -6,10 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-public class AddManufacturerController extends HttpServlet {
+public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
     private ManufacturerService manufacturerService
@@ -18,16 +17,7 @@ public class AddManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp")
-                .forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        String name = req.getParameter("name");
-        String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer(name, country);
-        manufacturerService.create(manufacturer);
+        Long id = Long.valueOf(req.getParameter("id"));
+        manufacturerService.delete(id);
     }
 }
