@@ -14,7 +14,7 @@ import mate.service.ManufacturerService;
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
-    private static ManufacturerService manufacturerService
+    private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     
     @Override

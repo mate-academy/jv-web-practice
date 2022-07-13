@@ -16,9 +16,9 @@ import mate.service.ManufacturerService;
 public class GetAllCarsController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
-    private static CarService carService
+    private final CarService carService
             = (CarService) injector.getInstance(CarService.class);
-    private static ManufacturerService manufacturerService
+    private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     
     @Override
@@ -26,7 +26,7 @@ public class GetAllCarsController extends HttpServlet {
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         req.setAttribute("cars", cars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/all_cars.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/all.jsp")
                 .forward(req, resp);
     }
 }
