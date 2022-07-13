@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
 
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final ManufacturerService manufacturerService =
-            (ManufacturerService) injector.getInstance(ManufacturerServiceImpl.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,7 +23,7 @@ public class CreateManufacturerController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName("name");
         manufacturer.setCountry("country");

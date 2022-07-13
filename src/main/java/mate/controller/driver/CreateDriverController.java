@@ -8,12 +8,11 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
-import mate.service.DriverServiceImpl;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final DriverService driverService =
-            (DriverService) injector.getInstance(DriverServiceImpl.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,7 +23,7 @@ public class CreateDriverController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("license_number"));

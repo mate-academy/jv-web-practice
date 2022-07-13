@@ -9,16 +9,14 @@ import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.CarServiceImpl;
 import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
 
 public class CreateCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService =
-            (CarService) injector.getInstance(CarServiceImpl.class);
-    private static final ManufacturerService manufacturerService =
-            (ManufacturerService) injector.getInstance(ManufacturerServiceImpl.class);
+    private final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -29,7 +27,7 @@ public class CreateCarsController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Car car = new Car();
         car.setModel("model");
         Manufacturer manufacturer = manufacturerService
@@ -37,6 +35,5 @@ public class CreateCarsController extends HttpServlet {
         car.setManufacturer(manufacturer);
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
-
     }
 }
