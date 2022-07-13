@@ -13,7 +13,6 @@ public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private Manufacturer manufacturer;
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -25,7 +24,7 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        manufacturer = new Manufacturer();
+        Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(req.getParameter("manufacturerName"));
         manufacturer.setCountry(req.getParameter("manufacturerCountry"));
         manufacturerService.create(manufacturer);
