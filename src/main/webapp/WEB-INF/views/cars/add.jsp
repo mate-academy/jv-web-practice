@@ -7,8 +7,7 @@
 <body>
 <h1>To create a car, fill in the form below</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-    Name of the manufacturer <input type="text" name="manufacturerName"><br>
-    Country of manufacture <input type="text" name="manufactureCountry"><br>
+    Manufacturer id <input type="text" name="manufacturer_id"><br>
     Model <input type="text" name="model"><br>
     <button type="submit">Confirm</button>
 </form>
