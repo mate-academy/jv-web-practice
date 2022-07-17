@@ -11,25 +11,22 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(name = "createManufacturer", urlPatterns = "/manufacturers/create")
-public class CreateManufacturerController extends HttpServlet {
+@WebServlet(name = "deleteManufacturer", urlPatterns = "/manufacturers/delete")
+public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
-    @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/create.jsp").forward(req, resp);
-    }
+//    @Override
+//    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+//            throws ServletException, IOException {
+//        req.getRequestDispatcher("/WEB-INF/views/manufacturers/delete.jsp").forward(req, resp);
+//    }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setName(req.getParameter("name"));
-        manufacturer.setCountry(req.getParameter("country"));
-        manufacturerService.create(manufacturer);
+        manufacturerService.delete(Long.valueOf(req.getParameter("idToDelete")));
         resp.sendRedirect("/manufacturers/all");
     }
 }

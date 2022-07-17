@@ -1,10 +1,10 @@
 package mate.controller;
 
 import mate.lib.Injector;
-import mate.model.Car;
 import mate.model.Driver;
-import mate.service.CarService;
+import mate.model.Manufacturer;
 import mate.service.DriverService;
+import mate.service.ManufacturerService;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -14,16 +14,17 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet(name= "getAllDrivers", urlPatterns = "/drivers/all")
-public class GetAllDriversController extends HttpServlet {
+@WebServlet(name= "getAllManufacturers", urlPatterns = "/manufacturers/all")
+public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Driver> allDrivers = driverService.getAll();
-        req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(req, resp);
+        List<Manufacturer> allManufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", allManufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req, resp);
     }
 }
