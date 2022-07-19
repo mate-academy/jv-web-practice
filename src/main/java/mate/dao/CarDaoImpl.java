@@ -161,7 +161,7 @@ public class CarDaoImpl implements CarDao {
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
         List<Driver> drivers = car.getDrivers();
-        if (drivers == null || drivers.size() == 0) {
+        if (drivers.size() == 0) {
             return;
         }
         String insertQuery = "INSERT INTO cars_drivers (car_id, driver_id) VALUES "
