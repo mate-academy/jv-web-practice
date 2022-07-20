@@ -20,7 +20,7 @@
 
 <h1>Wanna delete manufacturer?</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/delete">
-    Enter id to delete: <input type="number" name="idToDelete">
+    Enter id to delete: <input type="number" name="manufacturer_id">
     <button type="submit">Delete manufacturer!</button>
 </form>
 
