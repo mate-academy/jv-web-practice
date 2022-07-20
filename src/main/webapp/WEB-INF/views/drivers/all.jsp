@@ -22,6 +22,8 @@
     Enter id to delete: <input type="number" name="idToDelete">
     <button type="submit">Delete driver!</button>
 </form>
+
+<p><a href="${pageContext.request.contextPath}/drivers/create">Create new driver</a></p>
 <body>
 
 </body>

@@ -11,5 +11,8 @@
     Driver's license: <input type="text" name="licenseNumber">
     <button type="submit">Create driver</button>
 </form>
+
+<p><a href="${pageContext.request.contextPath}/drivers">To all drivers list</a></p>
+
 </body>
 </html>
