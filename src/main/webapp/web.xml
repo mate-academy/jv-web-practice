@@ -30,5 +30,13 @@
         <url-pattern>/display/drivers</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>AddManufacturerController</servlet-name>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddManufacturerController</servlet-name>
+        <url-pattern>/add/manufacturer</url-pattern>
+    </servlet-mapping>
 
 </web-app>
