@@ -66,4 +66,22 @@
         <url-pattern>/delete/driver</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DisplayAllManufacturersController</servlet-name>
+        <servlet-class>mate.controller.DisplayAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayAllManufacturersController</servlet-name>
+        <url-pattern>/display/manufacturers</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteManufacturerController</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteManufacturerController</servlet-name>
+        <url-pattern>/delete/manufacturer</url-pattern>
+    </servlet-mapping>
+
 </web-app>
