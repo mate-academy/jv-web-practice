@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import mate.lib.Injector;
 import mate.model.Car;

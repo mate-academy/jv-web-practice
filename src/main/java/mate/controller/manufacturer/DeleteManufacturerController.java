@@ -1,6 +1,9 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import mate.lib.Injector;
+
+import java.io.IOException;
+import java.util.List;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
@@ -8,10 +11,8 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
 
-public class GetAllManufacturerController extends HttpServlet {
+public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -19,8 +20,8 @@ public class GetAllManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req, resp);
+        Long manufacturer_id = Long.valueOf(req.getParameter("id"));
+        manufacturerService.delete(manufacturer_id);
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }
