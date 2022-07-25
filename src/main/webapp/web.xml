@@ -84,4 +84,22 @@
         <url-pattern>/delete/manufacturer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>DisplayAllCarsController</servlet-name>
+        <servlet-class>mate.controller.DisplayAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DisplayAllCarsController</servlet-name>
+        <url-pattern>/display/cars</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>DeleteCarController</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>DeleteCarController</servlet-name>
+        <url-pattern>/delete/car</url-pattern>
+    </servlet-mapping>
+
 </web-app>
