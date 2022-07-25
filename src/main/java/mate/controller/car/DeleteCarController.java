@@ -1,13 +1,12 @@
 package mate.controller.car;
 
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.ServletException;
 import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
-
 
 public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
@@ -17,8 +16,8 @@ public class DeleteCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long car_id = Long.valueOf(req.getParameter("id"));
-        carService.delete(car_id);
+        Long carId = Long.valueOf(req.getParameter("id"));
+        carService.delete(carId);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

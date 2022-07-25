@@ -1,16 +1,15 @@
 package mate.controller.car;
 
-import mate.lib.Injector;
-import mate.model.Car;
-import mate.service.CarService;
-import mate.service.ManufacturerService;
-
+import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
+import mate.lib.Injector;
+import mate.model.Car;
+import mate.service.CarService;
+import mate.service.ManufacturerService;
 
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
@@ -19,7 +18,6 @@ public class CreateCarController extends HttpServlet {
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -27,15 +25,14 @@ public class CreateCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         Long id = Long.valueOf(req.getParameter("id"));
         String model = req.getParameter("model");
-        Long manufacturer_id = Long.valueOf(req.getParameter("manufacturer_id"));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         Car car = new Car();
         car.setId(id);
         car.setModel(model);
-        car.setManufacturer(manufacturerService.get(manufacturer_id));
+        car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(new ArrayList<>());
         carService.create(car);
     }
