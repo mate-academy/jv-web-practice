@@ -27,14 +27,10 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        Long id = Long.valueOf(req.getParameter("id"));
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        Car car = new Car();
-        car.setId(id);
-        car.setModel(model);
-        car.setManufacturer(manufacturerService.get(manufacturerId));
-        car.setDrivers(new ArrayList<>());
+        Car car = new Car(model,
+                manufacturerService.get(manufacturerId), new ArrayList<>());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
