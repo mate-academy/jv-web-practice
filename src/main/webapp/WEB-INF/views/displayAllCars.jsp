@@ -10,20 +10,17 @@
   <tr>
     <td>CAR ID</td>
     <td>CAR MODEL</td>
-    <td>MANUFACTURER ID</td>
-    <td>MANUFACTURER NAME</td>
-    <td>MANUFACTURER COUNTRY</td>
-    <td>DRIVER ID</td>
+    <td>MANUFACTURER</td>
+    <td>DRIVERS</td>
+    <td>DELETE</td>
   </tr>
-  <c:forEach items="${cars}" var="car">
+  <c:forEach items="${cars.entrySet()}" var="car">
     <tr>
-      <td><c:out value="${car.id}"></c:out></td>
-      <td><c:out value="${car.model}"></c:out></td>
-      <td><c:out value="${car.getManufacturer().id}"></c:out></td>
-      <td><c:out value="${car.getManufacturer().name}"></c:out></td>
-      <td><c:out value="${car.getManufacturer().country}"></c:out></td>
-      <td><c:out value="${car.getDrivers().toString()}"></c:out></td>
-      <td><a href="${pageContext.request.contextPath}/delete/car?carId=${car.id}">Delete</a></td>
+      <td><c:out value="${car.key.id}"></c:out></td>
+      <td><c:out value="${car.key.model}"></c:out></td>
+      <td><c:out value="${car.key.manufacturer.toString()}"></c:out></td>
+      <td><c:out value="${car.value.toString()}"></c:out></td>
+      <td><a href="${pageContext.request.contextPath}/delete/car?carId=${car.key.id}">Delete</a></td>
     </tr>
   </c:forEach>
 </table>
