@@ -12,7 +12,8 @@ import mate.service.DriverServiceImpl;
 
 public class AddDriverController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService = (DriverServiceImpl) injector.getInstance(DriverService.class);
+    private final DriverService driverService = (DriverServiceImpl)
+            injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
