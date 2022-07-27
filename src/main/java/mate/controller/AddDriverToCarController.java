@@ -11,7 +11,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-public class AddDriverController extends HttpServlet {
+public class AddDriverToCarController extends HttpServlet {
     private final DriverService driverService;
     private final CarService carService;
 

@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-public class AllDriverController extends HttpServlet {
+public class GetAllDriversController extends HttpServlet {
     private final DriverService driverService;
 
     {

@@ -13,11 +13,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>allDrivers</servlet-name>
-        <servlet-class>mate.controller.AllDriverController</servlet-class>
+        <servlet-name>getAllDrivers</servlet-name>
+        <servlet-class>mate.controller.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>allDrivers</servlet-name>
+        <servlet-name>getAllDrivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
@@ -49,11 +49,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>addDriver</servlet-name>
-        <servlet-class>mate.controller.AddDriverController</servlet-class>
+        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>addDriver</servlet-name>
-        <url-pattern>/cars/add</url-pattern>
+        <servlet-name>addDriverToCar</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 </web-app>
