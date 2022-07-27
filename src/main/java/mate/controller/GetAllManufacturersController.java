@@ -1,10 +1,7 @@
 package mate.controller;
 
 import mate.lib.Injector;
-import mate.model.Driver;
 import mate.model.Manufacturer;
-import mate.service.DriverService;
-import mate.service.DriverServiceImpl;
 import mate.service.ManufacturerService;
 import mate.service.ManufacturerServiceImpl;
 
@@ -15,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-public class DisplayAllManufacturersController extends HttpServlet {
+public class GetAllManufacturersController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService = (ManufacturerServiceImpl) injector.getInstance(ManufacturerService.class);
 
