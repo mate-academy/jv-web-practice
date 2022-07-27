@@ -1,10 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>List of manufacturers</title>
 </head>
 <body>
+<h1>List of manufacturers:</h1>
 <table>
     <tr>
         <td>ID</td>
@@ -21,5 +22,7 @@
         </tr>
     </c:forEach>
 </table>
+<a href="${pageContext.request.contextPath}/manufacturers/create">Add new manufacturer</a>
+<a href="${pageContext.request.contextPath}/index">Back</a>
 </body>
 </html>

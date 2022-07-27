@@ -5,6 +5,7 @@
     <title>List of cars</title>
 </head>
 <body>
+<h1>List of cars:</h1>
 <table>
     <tr>
         <td>ID</td>
@@ -26,5 +27,7 @@
         </tr>
     </c:forEach>
 </table>
+<a href="${pageContext.request.contextPath}/cars/create">Add new car</a>
+<a href="${pageContext.request.contextPath}/index">Back</a>
 </body>
 </html>
