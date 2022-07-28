@@ -22,20 +22,20 @@
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
             <td><c:forEach items="${car.drivers}" var="driver">
-                    <td><c:out value="${driver.name}" /><br></td>
+                    <c:out value="${driver.name}" /><br>
                 </c:forEach>
             </td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete this car</a> </td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.id}">delete this car</a> </td>
             <td>
-                <form method="post" action="${pageContext.request.contextPath}/cars/adddrivertocar">
-                    <select id="driverId" name="driverId">
+                <form method="post" action="${pageContext.request.contextPath}/cars/adddrivertocar?car_id=${car.id}">
+                    <select id="driver_id" name="driver_id">
                         <c:forEach items="${drivers}" var="driver">
                             <option value="${driver.id}">${driver.name}</option>
                         </c:forEach>
                     </select>
+                    <button type="submit">Add</button>
                 </form>
             </td>
-            <td><button type="submit">Add</button></td>
         </tr>
     </c:forEach>
 </table>
