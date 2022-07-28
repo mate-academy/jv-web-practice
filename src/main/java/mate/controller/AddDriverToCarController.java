@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.List;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,10 +23,7 @@ public class AddDriverToCarController extends HttpServlet {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
-        List<Driver> drivers = car.getDrivers();
-        drivers.add(driver);
-        car.setDrivers(drivers);
-        carService.update(car);
+        carService.addDriverToCar(driver, car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
