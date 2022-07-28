@@ -9,6 +9,13 @@ public class Car {
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
+    public Car() {
+    }
+
+    public Car(List<Driver> drivers) {
+        this.drivers = drivers;
+    }
+
     public Long getId() {
         return id;
     }
