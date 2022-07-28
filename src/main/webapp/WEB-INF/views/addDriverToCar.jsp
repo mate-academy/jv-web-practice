@@ -7,8 +7,7 @@
 <h1>Hello, mates!</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-  Driver License Number <input type="text" name="driverLicenseNumber">
-  Driver Name <input type="text" name="driverName">
+  Driver ID <input type="text" name="driverId">
   Car Id <input type="text" name="carId">
   <button type="submit">Post</button>
 </form>
