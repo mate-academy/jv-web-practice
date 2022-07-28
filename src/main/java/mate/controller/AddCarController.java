@@ -34,12 +34,11 @@ public class AddCarController extends HttpServlet {
         manufacturer.setName(req.getParameter("manufacturerName"));
         manufacturer.setCountry(req.getParameter("manufacturerCountry"));
         manufacturer = manufacturerService.create(manufacturer);
-
         Car car = new Car();
         car.setManufacturer(manufacturer);
         car.setModel(req.getParameter("carModel"));
         car.setDrivers(new ArrayList<Driver>());
-
         carService.create(car);
+        req.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(req, resp);
     }
 }
