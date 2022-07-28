@@ -21,7 +21,7 @@ public class GetAllManufacturersController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> allManufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", allManufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/displayAllManufacturers.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/getAllManufacturers.jsp")
                 .forward(req, resp);
     }
 }

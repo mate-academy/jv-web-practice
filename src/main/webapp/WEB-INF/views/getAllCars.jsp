@@ -20,7 +20,7 @@
       <td><c:out value="${car.key.model}"></c:out></td>
       <td><c:out value="${car.key.manufacturer.toString()}"></c:out></td>
       <td><c:out value="${car.value.toString()}"></c:out></td>
-      <td><a href="${pageContext.request.contextPath}/delete/car?carId=${car.key.id}">Delete</a></td>
+      <td><a href="${pageContext.request.contextPath}/cars/delete?carId=${car.key.id}">Delete</a></td>
     </tr>
   </c:forEach>
 </table>

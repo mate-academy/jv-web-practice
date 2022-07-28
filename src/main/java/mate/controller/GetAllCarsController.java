@@ -29,6 +29,6 @@ public class GetAllCarsController extends HttpServlet {
         List<Car> allCars = carService.getAll();
         allCars.stream().forEach(c -> carDriverMap.put(c, c.getDrivers()));
         req.setAttribute("cars", carDriverMap);
-        req.getRequestDispatcher("/WEB-INF/views/displayAllCars.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/getAllCars.jsp").forward(req, resp);
     }
 }
