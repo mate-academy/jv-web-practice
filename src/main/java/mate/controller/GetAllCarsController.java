@@ -25,10 +25,8 @@ public class GetAllCarsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Map<Car, List<Driver>> carDriverMap = new HashMap<>();
         List<Car> allCars = carService.getAll();
-        allCars.stream().forEach(c -> carDriverMap.put(c, c.getDrivers()));
-        req.setAttribute("cars", carDriverMap);
+        req.setAttribute("cars", allCars);
         req.getRequestDispatcher("/WEB-INF/views/getAllCars.jsp").forward(req, resp);
     }
 }

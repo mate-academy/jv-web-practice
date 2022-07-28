@@ -14,13 +14,13 @@
     <td>DRIVERS</td>
     <td>DELETE</td>
   </tr>
-  <c:forEach items="${cars.entrySet()}" var="car">
+  <c:forEach items="${cars}" var="car">
     <tr>
-      <td><c:out value="${car.key.id}"></c:out></td>
-      <td><c:out value="${car.key.model}"></c:out></td>
-      <td><c:out value="${car.key.manufacturer.toString()}"></c:out></td>
-      <td><c:out value="${car.value.toString()}"></c:out></td>
-      <td><a href="${pageContext.request.contextPath}/cars/delete?carId=${car.key.id}">Delete</a></td>
+      <td><c:out value="${car.id}"></c:out></td>
+      <td><c:out value="${car.model}"></c:out></td>
+      <td><c:out value="${car.manufacturer.toString()}"></c:out></td>
+      <td><c:out value="${car.drivers.toString()}"></c:out></td>
+      <td><a href="${pageContext.request.contextPath}/cars/delete?carId=${car.id}">Delete</a></td>
     </tr>
   </c:forEach>
 </table>
