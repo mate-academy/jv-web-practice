@@ -22,7 +22,7 @@
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.request.contextPath}/manufacturers/create">Add new manufacturer</a>
+<a href="${pageContext.request.contextPath}/manufacturers/add">Add new manufacturer</a>
 <a href="${pageContext.request.contextPath}/index">Back</a>
 </body>
 </html>

@@ -4,9 +4,9 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
-    <a href="${pageContext.request.contextPath}/cars/cars">Cars</a>
-    <a href="${pageContext.request.contextPath}/drivers/drivers">Drivers</a>
-    <a href="${pageContext.request.contextPath}/manufacturers/manufacturers">Manufacturers</a>
+<h1>DataBase of taxi park</h1>
+    <a href="${pageContext.request.contextPath}/cars">Cars</a>
+    <a href="${pageContext.request.contextPath}/drivers">Drivers</a>
+    <a href="${pageContext.request.contextPath}/manufacturers">Manufacturers</a>
 </body>
 </html>

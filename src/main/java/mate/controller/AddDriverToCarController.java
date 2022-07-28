@@ -29,6 +29,6 @@ public class AddDriverToCarController extends HttpServlet {
         drivers.add(driver);
         car.setDrivers(drivers);
         carService.update(car);
-        resp.sendRedirect(req.getContextPath() + "/cars/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

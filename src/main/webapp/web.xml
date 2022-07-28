@@ -19,16 +19,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>cars</servlet-name>
-        <url-pattern>/cars/cars</url-pattern>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>createCar</servlet-name>
+        <servlet-name>addCar</servlet-name>
         <servlet-class>mate.controller.CreateCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createCar</servlet-name>
-        <url-pattern>/cars/create</url-pattern>
+        <servlet-name>addCar</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -46,7 +46,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/adddrivertocar</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 
     <!--DRIVERS-->
@@ -56,16 +56,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>drivers</servlet-name>
-        <url-pattern>/drivers/drivers</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>createDriver</servlet-name>
+        <servlet-name>addDriver</servlet-name>
         <servlet-class>mate.controller.CreateDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createDriver</servlet-name>
-        <url-pattern>/drivers/create</url-pattern>
+        <servlet-name>addDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -84,16 +84,16 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>manufacturers</servlet-name>
-        <url-pattern>/manufacturers/manufacturers</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>createManufacturer</servlet-name>
+        <servlet-name>addManufacturer</servlet-name>
         <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createManufacturer</servlet-name>
-        <url-pattern>/manufacturers/create</url-pattern>
+        <servlet-name>addManufacturer</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -104,6 +104,4 @@
         <servlet-name>deleteManufacturer</servlet-name>
         <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
-
-
 </web-app>

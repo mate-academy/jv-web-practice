@@ -27,7 +27,7 @@
             </td>
             <td><a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.id}">delete this car</a> </td>
             <td>
-                <form method="post" action="${pageContext.request.contextPath}/cars/adddrivertocar?car_id=${car.id}">
+                <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">
                     <select id="driver_id" name="driver_id">
                         <c:forEach items="${drivers}" var="driver">
                             <option value="${driver.id}">${driver.name}</option>
@@ -39,7 +39,7 @@
         </tr>
     </c:forEach>
 </table>
-<a href="${pageContext.request.contextPath}/cars/create">Add new car</a>
+<a href="${pageContext.request.contextPath}/cars/add">Add new car</a>
 <a href="${pageContext.request.contextPath}/index">Back</a>
 </body>
 </html>
