@@ -34,6 +34,6 @@ public class AddCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setModel(req.getParameter("carModel"));
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/cars/add");
     }
 }
