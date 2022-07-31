@@ -11,4 +11,75 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getalldrivers</servlet-name>
+        <servlet-class>mate.controller.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getalldrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>driver</servlet-name>
+        <servlet-class>mate.controller.DriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driver</servlet-name>
+        <url-pattern>/drivers/driver</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>allmanufacturers</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>allmanufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturer</servlet-name>
+        <servlet-class>mate.controller.ManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturer</servlet-name>
+        <url-pattern>/manufacturers/manufacturer</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getallcars</servlet-name>
+        <servlet-class>mate.controller.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getallcars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>car</servlet-name>
+        <servlet-class>mate.controller.CarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>car</servlet-name>
+        <url-pattern>/cars/car</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>carsetmanufacturer</servlet-name>
+        <servlet-class>mate.controller.SetCarManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>carsetmanufacturer</servlet-name>
+        <url-pattern>/cars/manufacturer</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>adddrivertocar</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>adddrivertocar</servlet-name>
+        <url-pattern>/cars/adddrivertocar</url-pattern>
+    </servlet-mapping>
+
+
+
+
+
 </web-app>
