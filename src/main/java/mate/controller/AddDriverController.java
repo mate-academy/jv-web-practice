@@ -9,7 +9,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-public class DriverController extends HttpServlet {
+public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -18,15 +18,7 @@ public class DriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
 
-        Driver driver;
-        try {
-            driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
-        } catch (RuntimeException e) {
-            driver = new Driver();
-        }
-        req.setAttribute("driver",driver);
-        req.setAttribute("title","editing driver");
-        req.getRequestDispatcher("/WEB-INF/views/driver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/addDriver.jsp").forward(req, resp);
     }
 
     @Override

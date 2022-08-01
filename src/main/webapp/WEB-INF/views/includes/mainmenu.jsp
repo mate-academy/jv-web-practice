@@ -7,6 +7,3 @@
         <td><a href="/cars">&nbsp;cars&nbsp;</a></td>
     </tr>
 </table>
-
-
-

@@ -4,18 +4,17 @@
 <%@include file="includes/mainmenu.jsp" %>
 <table>
     <h3>List of Drivers </h3>
-    <a href="/drivers/driver">Create Driver</a>
+    <a href="/drivers/add">Create Driver</a>
     <tr>
         <td>id</td>
         <td>name</td>
-        <td  colspan="2">licensenumber</td>
+        <td>licensenumber</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
             <td><c:out value="${driver.id}"/></td>
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
-            <td><a href="drivers/driver?driver_id=${driver.id}">edit</a></td>
         </tr>
     </c:forEach>
 </table>

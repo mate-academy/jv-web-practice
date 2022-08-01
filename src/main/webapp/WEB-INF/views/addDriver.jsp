@@ -4,19 +4,15 @@
 <%@include file="includes/header.jsp" %>
 <%@include file="includes/mainmenu.jsp" %>
 <h3>Driver card</h3>
-<form action="driver" method="post">
+<form method="post">
 <table>
     <tr>
-        <td>user id</td>
-        <td><input name="driver_id"  type="hidden" value="${driver.id}" readonly >${driver.id}</td>
-    </tr>
-    <tr>
         <td>driver name:</td>
-        <td><input name="name" value="${driver.name}" type="text" ></td>
+        <td><input name="name"  type="text" ></td>
     </tr>
     <tr>
         <td>license number:</td>
-        <td><input name="licensenumber" value="${driver.licenseNumber}" type="text" ></td>
+        <td><input name="licensenumber"  type="text" ></td>
     </tr>
     <tr>
         <td colspan="2" align="right"><input type="submit" value="Save"></td>

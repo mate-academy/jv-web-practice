@@ -3,7 +3,7 @@
 <%@include file="includes/header.jsp" %>
 <%@include file="includes/mainmenu.jsp" %><table>
   <h3>List of Cars </h3>
-  <a href="/cars/car">Create Car</a>
+  <a href="/cars/add">Create Car</a>
   <tr>
     <td>id</td>
     <td>name</td>
@@ -31,9 +31,9 @@
               <td>${driver.licenseNumber}</td>
               </tr>
             </c:forEach>
+          <tr><td colspan="3"><a href="/cars/adddrivertocar?car_id=${car.id}">Add driver</a></td></tr>
          </table>
       </td>
-      <td><a href="cars/car?car_id=${car.id}&manufacturer_id=${car.manufacturer.id}">edit</a></td>
     </tr>
   </c:forEach>
 </table>

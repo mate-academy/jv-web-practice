@@ -43,4 +43,4 @@
     </tr>
   </c:forEach>
 </table>
-  <%@include file="includes/footer.jsp" %>
+<%@include file="includes/footer.jsp" %>
