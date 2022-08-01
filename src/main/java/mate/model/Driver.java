@@ -52,9 +52,9 @@ public class Driver {
 
     @Override
     public String toString() {
-        return "Driver{" +
-                "name='" + name + '\'' +
-                ", licenseNumber='" + licenseNumber + '\'' +
-                '}';
+        return "Driver{"
+                + "name='" + name + '\''
+                + ", licenseNumber='" + licenseNumber
+                + '\'' + '}';
     }
 }
