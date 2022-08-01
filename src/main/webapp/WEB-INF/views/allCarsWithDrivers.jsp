@@ -1,3 +1,6 @@
+<%@ page import="mate.model.Car" %>
+<%@ page import="mate.model.Driver" %>
+<%@ page import="java.util.List" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -18,7 +21,7 @@
         <c:if test="${car.drivers.size() >= '1'}">
             <td><c:out value="${car.manufacturer.name}"></c:out></td>
             <td><c:out value="${car.model}"/></td>
-            <td><a href="${pageContext.request.contextPath}/car/all/drivers?id=${car.id}">driver list</a></td>
+            <td><c:out value="${car.drivers}"/></td>
         </c:if>
         </c:forEach>
     </tr>
