@@ -17,7 +17,7 @@
                 <td><c:out value="${manufacturer.name}" /></td>
                 <td><c:out value="${manufacturer.country}" /></td>
                 <td>
-                    <a href="${pageContext.request.contextPath}/manufacturers/delete?manufacturerId=${manufacturer.id}">delete</a>
+                    <a href="${pageContext.request.contextPath}/manufacturers/delete?manufacturer_id=${manufacturer.id}">delete</a>
                 </td>
             </tr>
     </c:forEach>
