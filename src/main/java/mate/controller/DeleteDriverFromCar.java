@@ -12,8 +12,8 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars/drivers/delete")
-public class DeleteDriverFromCarController extends HttpServlet {
+@WebServlet(urlPatterns = "/drivers/cars/delete")
+public class DeleteDriverFromCar extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -23,6 +23,7 @@ public class DeleteDriverFromCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/DeleteDriverFromCar.jsp").forward(req, resp);
         Car car = carService.get(Long.valueOf(req.getParameter("car_id")));
         Driver driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
         carService.removeDriverFromCar(driver, car);
