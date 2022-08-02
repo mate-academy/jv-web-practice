@@ -7,14 +7,14 @@
 <body>
     <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
         <label for="cars">Select car:</label><br/>
-        <select id = "cars" name = "cars" required>
+        <select id = "cars" name = "car_id" required>
             <c:forEach items="${cars}" var="car">
                 <option value="${car.id}"><c:out value="${car.model}" /></option>
             </c:forEach>
         </select>
         <br>
         <label for="drivers">Select driver:</label><br/>
-        <select id = "drivers" name= "drivers" required>
+        <select id = "drivers" name= "driver_id" required>
             <c:forEach items="${drivers}" var="driver">
                 <option value="${driver.id}"><c:out value="${driver.name}" /></option>
             </c:forEach>
