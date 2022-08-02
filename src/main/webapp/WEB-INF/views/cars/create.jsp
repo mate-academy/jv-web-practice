@@ -9,7 +9,7 @@
   <label for="model">Model: </label><br>
   <input id ="model" name = "model" type="text" required><br>
   <label for="manufacturer">Select manufacturer: </label><br>
-  <select id = "manufacturer" name="manufacturer" required>
+  <select id = "manufacturer" name="manufacturer_id" required>
     <c:forEach  items="${manufacturers}" var="manufacturer">
       <option value="${manufacturer.id}"><c:out value="${manufacturer.name}" /></option>
     </c:forEach>
