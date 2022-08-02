@@ -5,5 +5,3 @@ Hello here is web practice project.
 <br>
 lets start from top menu.
 <%@include file="includes/footer.jsp" %>
-
-

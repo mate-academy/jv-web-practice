@@ -12,7 +12,7 @@
     </tr>
     <tr>
         <td>license number:</td>
-        <td><input name="licensenumber"  type="text" ></td>
+        <td><input name="license_number"  type="text" ></td>
     </tr>
     <tr>
         <td colspan="2" align="right"><input type="submit" value="Save"></td>
