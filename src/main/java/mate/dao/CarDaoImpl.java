@@ -166,7 +166,8 @@ public class CarDaoImpl implements CarDao {
         }
         String query = "INSERT INTO cars_drivers (car_id, driver_id) VALUES "
                 + drivers.stream().map(driver -> "(?, ?)").collect(Collectors.joining(", "))
-                + " ON DUPLICATE KEY UPDATE car_id = car_id";
+                + " ON CONFLICT (driver_id, car_id) DO UPDATE "
+                + "SET car_id = cars_drivers.car_id, driver_id = cars_drivers.driver_id;";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
                         connection.prepareStatement(query)) {
@@ -224,8 +225,8 @@ public class CarDaoImpl implements CarDao {
 
     private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
         long driverId = resultSet.getLong("id");
-        String name = resultSet.getNString("name");
-        String licenseNumber = resultSet.getNString("license_number");
+        String name = resultSet.getString("name");
+        String licenseNumber = resultSet.getString("license_number");
         Driver driver = new Driver();
         driver.setId(driverId);
         driver.setName(name);
@@ -235,14 +236,14 @@ public class CarDaoImpl implements CarDao {
 
     private Car parseCarFromResultSet(ResultSet resultSet) throws SQLException {
         long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
-        String manufacturerName = resultSet.getNString("manufacturer_name");
-        String manufacturerCountry = resultSet.getNString("manufacturer_country");
+        String manufacturerName = resultSet.getString("manufacturer_name");
+        String manufacturerCountry = resultSet.getString("manufacturer_country");
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setId(manufacturerId);
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
         long carId = resultSet.getLong("id");
-        String model = resultSet.getNString("model");
+        String model = resultSet.getString("model");
         Car car = new Car();
         car.setId(carId);
         car.setModel(model);
