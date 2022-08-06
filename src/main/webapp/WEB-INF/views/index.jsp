@@ -4,6 +4,6 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+    <h2>Request was completed successfully</h2>
 </body>
 </html>
