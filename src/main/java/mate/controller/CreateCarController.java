@@ -37,5 +37,6 @@ public class CreateCarController extends HttpServlet {
             }
         }
         carService.create(car);
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
