@@ -1,6 +1,7 @@
 package mate.service;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 import mate.dao.DriverDao;
 import mate.lib.Inject;
 import mate.lib.Service;
@@ -18,7 +19,8 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver get(Long id) {
-        return driverDao.get(id).get();
+        return driverDao.get(id).orElseThrow(
+                () -> new NoSuchElementException("Could not get driver by id=" + id));
     }
 
     @Override
