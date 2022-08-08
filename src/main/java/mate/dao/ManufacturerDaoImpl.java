@@ -17,7 +17,8 @@ import mate.util.ConnectionUtil;
 public class ManufacturerDaoImpl implements ManufacturerDao {
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
-        String query = "INSERT INTO manufacturers (name, country) VALUES (?,?)";
+        String query = "INSERT INTO manufacturers (name, country) VALUES (?,?)"
+                + " ON DUPLICATE KEY UPDATE is_deleted = DEFAULT";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement
                         = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
