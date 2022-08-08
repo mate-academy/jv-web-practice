@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.exception.DataProcessingException;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Manufacturer;
@@ -29,11 +28,6 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        if (req.getParameter("model").isEmpty()
-                || req.getParameter("manufacturerName").isEmpty()) {
-            throw new DataProcessingException("Input parameters couldn't be empty!",
-                    new Throwable());
-        }
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         List<Manufacturer> manufacturerList = manufacturerService.getAll();
