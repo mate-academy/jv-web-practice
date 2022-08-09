@@ -40,7 +40,7 @@
                 </c:forEach>
             </table>
             </td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${driver.getId()}">
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">
                 delete this car
             </a> </td>
         </tr>
