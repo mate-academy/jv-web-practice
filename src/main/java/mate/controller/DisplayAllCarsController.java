@@ -9,8 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.service.CarService;
-import mate.service.DriverService;
-import mate.service.ManufacturerService;
 
 public class DisplayAllCarsController extends HttpServlet {
     private static final String INJECTOR_INSTANCE = "mate";
