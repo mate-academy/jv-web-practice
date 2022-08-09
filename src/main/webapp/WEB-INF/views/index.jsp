@@ -24,17 +24,17 @@
     </tr>
     <tr>
         <td>Create new car</td>
-        <td><a href="${pageContext.request.contextPath}/cars/new"
+        <td><a href="${pageContext.request.contextPath}/cars/add"
                target="_blank">---></a></td>
     </tr>
     <tr>
         <td>Create new driver</td>
-        <td><a href="${pageContext.request.contextPath}/drivers/new"
+        <td><a href="${pageContext.request.contextPath}/drivers/add"
                target="_blank">---></a></td>
     </tr>
     <tr>
         <td>Create new manufacturer</td>
-        <td><a href="${pageContext.request.contextPath}/manufacturers/new"
+        <td><a href="${pageContext.request.contextPath}/manufacturers/add"
                target="_blank">---></a></td>
     </tr>
     <tr>

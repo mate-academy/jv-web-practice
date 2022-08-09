@@ -16,9 +16,6 @@ public class DisplayAllCarsController extends HttpServlet {
     private static final String INJECTOR_INSTANCE = "mate";
     private static final Injector injector = Injector.getInstance(INJECTOR_INSTANCE);
     private CarService carService = (CarService) injector.getInstance(CarService.class);
-    private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
-    private ManufacturerService manufacturerService = (ManufacturerService) injector
-            .getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
