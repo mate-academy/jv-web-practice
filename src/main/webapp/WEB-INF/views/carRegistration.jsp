@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Please fill the form below</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/registration">
+<form method="post" action="${pageContext.request.contextPath}/cars/registrate">
     Model <input type="text" name="model"><br>
     Manufacturer id <input type="number" name="manufacturerId"><br>
     <button type="submit">Confirm</button>
