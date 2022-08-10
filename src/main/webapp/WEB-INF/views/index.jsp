@@ -4,6 +4,12 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>Taxi service</h1>
+<td><a href="${pageContext.request.contextPath}/cars">Cars service</a></td>
+<br>
+<td><a href="${pageContext.request.contextPath}/drivers">Drivers service</a></td>
+<br>
+<td><a href="${pageContext.request.contextPath}/manufacturers">Manufacturers service</a></td>
+<br>
 </body>
 </html>
