@@ -10,7 +10,6 @@ public class Car {
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
-
     public Car() {
         drivers = new ArrayList<>();
     }
