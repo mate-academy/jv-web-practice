@@ -3,7 +3,6 @@ package mate.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -33,14 +32,8 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
-        String manufacturerName = req.getParameter("manufacturer");
-        Manufacturer manufacturer = manufacturerService.getAll()
-                .stream()
-                .filter(s -> s.getName().equals(manufacturerName))
-                .findFirst()
-                .orElseThrow(
-                        () -> new NoSuchElementException("Couldn't get manufacturer by name = "
-                                + manufacturerName));
+        Manufacturer manufacturer = manufacturerService
+                .get(Long.valueOf(req.getParameter("manufacturer_id")));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);

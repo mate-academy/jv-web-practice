@@ -6,9 +6,11 @@
 </head>
 <body>
 <table>
-  <tr> <td>ID</td>
-    <td>NAME</td>
-    <td>  COUNTRY</td>
+  <tr>
+        <td>ID</td>
+        <td>NAME</td>
+        <td>COUNTRY</td>
+</tr>
   </tr>
   <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>

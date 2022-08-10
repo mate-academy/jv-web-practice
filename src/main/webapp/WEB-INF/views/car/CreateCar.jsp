@@ -13,7 +13,7 @@
 
     Choose manufacturer
       <c:forEach items="${manufacturers}" var="manufacturer">
-        <p><input type="radio" name="manufacturer" value = ${manufacturer.name} > ${manufacturer.name} </p>
+        <p><input type="radio" name="manufacturer_id" value = ${manufacturer.id} > ${manufacturer.name} </p>
     </c:forEach>
 
   <button type="submit">Confirm</button>
