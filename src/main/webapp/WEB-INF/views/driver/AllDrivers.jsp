@@ -6,9 +6,10 @@
 </head>
 <body>
 <table>
-    <tr> <td>ID</td>
+    <tr>
+        <td>ID</td>
         <td>NAME</td>
-        <td>  LICENSE</td>
+        <td>LICENSE</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
