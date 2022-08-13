@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
@@ -21,19 +20,17 @@ public class AddCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/car/addCar.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/car/add.jsp")
                 .forward(req, resp);
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String model = req.getParameter("model");
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         Car car = new Car();
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        car.setModel(model);
-        car.setManufacturer(manufacturer);
+        car.setModel(req.getParameter("model"));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(new ArrayList<>());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
