@@ -8,8 +8,8 @@
 <h1>Create Driver</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-    Car Id <input type="text" name="carId"><br>
-    Driver Id <input type="text" name="driverId"><br>
+    Car Id <input type="text" name="car_Id"><br>
+    Driver Id <input type="text" name="driver_Id"><br>
     <button type="submit">Add</button>
 </form>
 </body>

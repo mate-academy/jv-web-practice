@@ -10,12 +10,9 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
-    private final DriverService driverService;
-
-    {
-        driverService = (DriverService) Injector.getInstance("mate")
-                .getInstance(DriverService.class);
-    }
+    private static final Injector injector = Injector.getInstance("mate");
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -27,9 +24,9 @@ public class CreateDriverController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String name = req.getParameter("name");
-        String licenseNumber = req.getParameter("licenseNumber");
+        String licenseNumber = req.getParameter("license_umber");
         Driver driver = new Driver(name, licenseNumber);
         driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/done.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/allDrivers.jsp").forward(req, resp);
     }
 }

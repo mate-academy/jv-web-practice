@@ -11,12 +11,8 @@ import mate.model.Car;
 import mate.service.CarService;
 
 public class DisplayAllCarsController extends HttpServlet {
-    private final CarService carService;
-
-    {
-        Injector injector = Injector.getInstance("mate");
-        carService = (CarService) injector.getInstance(CarService.class);
-    }
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

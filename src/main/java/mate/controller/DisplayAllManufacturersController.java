@@ -11,12 +11,9 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class DisplayAllManufacturersController extends HttpServlet {
-    private final ManufacturerService manufacturerService;
-
-    {
-        Injector injector = Injector.getInstance("mate");
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    }
+    private static final Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

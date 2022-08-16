@@ -10,12 +10,9 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class CreateManufacturerController extends HttpServlet {
-    private final ManufacturerService manufacturerService;
-
-    {
-        manufacturerService = (ManufacturerService) Injector.getInstance("mate")
-                .getInstance(ManufacturerService.class);
-    }
+    private static final Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -30,6 +27,6 @@ public class CreateManufacturerController extends HttpServlet {
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/done.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/allManufacturers.jsp").forward(req, resp);
     }
 }
