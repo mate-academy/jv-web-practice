@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>All cars</h1>
-<form method="get" action="${pageContext.request.contextPath}/cars/delete" id="delete" name="form">
+<form method="get" action="${pageContext.request.contextPath}/cars/drivers/delete" id="delete" name="form">
     <select size="3" form="delete" id="select" name="id">
         <c:forEach items="${cars}" var="car">
             <option value="${car.id}"/>${car.id} ${car.model} ${car.manufacturer.id} ${car.manufacturer.name}
@@ -22,7 +22,7 @@
 <a href="${pageContext.request.contextPath}/index">Main</a>
 <a href="${pageContext.request.contextPath}/cars/create">Add car</a>
 <a href="${pageContext.request.contextPath}/manufacturers/create">Add manufacturer</a>
-<a href="${pageContext.request.contextPath}/drivers/create">Add driver</a>
-<a href="${pageContext.request.contextPath}/cars/add">Add driver to car</a>
+<a href="${pageContext.request.contextPath}/drivers/add">Add driver</a>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a>
 </body>
 </html>
