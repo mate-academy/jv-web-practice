@@ -19,7 +19,7 @@
     </label><br>
     License number:<br>
     <label>
-        <input type="text" name="license">
+        <input type="text" name="licenseNumber">
     </label><br><br>
     <input type="submit" value="Add">
     <input type="reset">
