@@ -4,6 +4,11 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>Catalog</h1>
+<ul>
+    <li><a href="drivers">Drivers</a></li>
+    <li><a href="manufacturers">Manufacturers</a></li>
+    <li><a href="cars">Cars</a></li>
+</ul>
 </body>
 </html>
