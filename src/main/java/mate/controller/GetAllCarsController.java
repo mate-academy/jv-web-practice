@@ -24,10 +24,4 @@ public class GetAllCarsController extends HttpServlet {
         req.setAttribute("cars", cars);
         req.getRequestDispatcher("/WEB-INF/views/cars/all.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) 
-            throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
 }
