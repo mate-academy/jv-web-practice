@@ -18,13 +18,13 @@ public class CreateCarController extends HttpServlet {
             injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
         Long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));

@@ -17,7 +17,7 @@ public class GetAllManufacturersController extends HttpServlet {
             injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Manufacturer> manufacturerList = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturerList);
