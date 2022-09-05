@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Надайте водію автомобіль</h1>
-<form method="post" action="${pageContext.request.contextPath}/add_driver_to_car">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
   Id водія <input type="text" name="driver_id"><br>
   Id автомобіля <input type="text" name="car_id"><br>
   <button type="submit">Додати</button>

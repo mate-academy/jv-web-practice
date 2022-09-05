@@ -13,10 +13,10 @@
 </ol>
 <h2>Додавання нової інформації</h2>
 <ol>
-    <li><a href="${pageContext.request.contextPath}/create/driver">Додати нового водія</a></li>
-    <li><a href="${pageContext.request.contextPath}/create/manufacturer">Додати нового виробника</a></li>
-    <li><a href="${pageContext.request.contextPath}/create/car">Додати новий транспорний засіб</a></li>
-    <li><a href="${pageContext.request.contextPath}/add_driver_to_car">Додати нового водія до транспортного засобу</a></li>
+    <li><a href="${pageContext.request.contextPath}/drivers/add">Додати нового водія</a></li>
+    <li><a href="${pageContext.request.contextPath}/manufacturers/add">Додати нового виробника</a></li>
+    <li><a href="${pageContext.request.contextPath}/cars/add">Додати новий транспорний засіб</a></li>
+    <li><a href="${pageContext.request.contextPath}/cars/drivers/add">Додати нового водія до транспортного засобу</a></li>
 </ol>
 </body>
 </html>
