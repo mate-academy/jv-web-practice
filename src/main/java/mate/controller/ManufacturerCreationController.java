@@ -7,32 +7,34 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
+import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/drivers/create")
-public class CreationDriverController extends HttpServlet {
-    private DriverService driverService;
+@WebServlet(urlPatterns = "/manufacturer/create")
+public class ManufacturerCreationController extends HttpServlet {
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() throws ServletException {
         Injector injector = Injector.getInstance("mate");
-        driverService = (DriverService) injector.getInstance(DriverService.class);
+        manufacturerService =
+                (ManufacturerService) injector.getInstance(ManufacturerService.class);
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/creationDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/creationManufacturer.jsp")
+                .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Driver driver = new Driver();
-        driver.setName(req.getParameter("name"));
-        driver.setLicenseNumber(req.getParameter("licenseNumber"));
-        driverService.create(driver);
+        Manufacturer manufacturer = new Manufacturer();
+        manufacturer.setName(req.getParameter("name"));
+        manufacturer.setCountry(req.getParameter("country"));
+        manufacturerService.create(manufacturer);
         resp.sendRedirect("/index");
     }
 }
