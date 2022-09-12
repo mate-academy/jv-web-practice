@@ -5,7 +5,7 @@
     <title>Create Car</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Manufacturer:
         <select name="manufacturer">
             <c:forEach items="${manufacturers}" var="manufacturer">

@@ -15,8 +15,8 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/create")
-public class CarCreationController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/add")
+public class CarAddController extends HttpServlet {
     private ManufacturerService manufacturerService;
     private CarService carService;
     private List<Manufacturer> manufacturers;
@@ -34,7 +34,7 @@ public class CarCreationController extends HttpServlet {
             throws ServletException, IOException {
         manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/cars/creationCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
     }
 
     @Override

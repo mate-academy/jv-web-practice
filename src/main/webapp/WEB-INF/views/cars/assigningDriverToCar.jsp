@@ -5,7 +5,7 @@
   <title>Add Driver</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/add_driver">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
   Driver:
   <select name="driver">
     <c:forEach items="${drivers}" var="driver">
