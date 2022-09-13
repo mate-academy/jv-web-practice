@@ -9,13 +9,13 @@
   Driver:
   <select name="driver">
     <c:forEach items="${drivers}" var="driver">
-      <option><c:out value="${driver.name}"/></option>
+      <option><c:out value="${driver.id}"/></option>
     </c:forEach>
   </select><br>
   assign to the Car:
   <select name="car">
     <c:forEach items="${cars}" var="car">
-      <option><c:out value="${car.model}"/></option>
+      <option><c:out value="${car.id}"/></option>
     </c:forEach>
   </select><br>
   <button type="submit">Assign</button>

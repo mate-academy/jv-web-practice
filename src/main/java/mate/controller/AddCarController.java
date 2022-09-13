@@ -3,7 +3,6 @@ package mate.controller;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -16,10 +15,9 @@ import mate.service.CarService;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
-public class CarAddController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private ManufacturerService manufacturerService;
     private CarService carService;
-    private List<Manufacturer> manufacturers;
 
     @Override
     public void init() throws ServletException {
@@ -32,7 +30,7 @@ public class CarAddController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        manufacturers = manufacturerService.getAll();
+        List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
         req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
     }
@@ -42,10 +40,8 @@ public class CarAddController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
-        Manufacturer manufacturer = manufacturers.stream()
-                .filter(m -> Objects.equals(m.getName(), req.getParameter("manufacturer")))
-                        .findFirst()
-                                .get();
+        Manufacturer manufacturer =
+                manufacturerService.get(Long.valueOf(req.getParameter("manufacturer")));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);

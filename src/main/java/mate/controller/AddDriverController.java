@@ -11,7 +11,7 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
-public class DriverAddController extends HttpServlet {
+public class AddDriverController extends HttpServlet {
     private DriverService driverService;
 
     @Override

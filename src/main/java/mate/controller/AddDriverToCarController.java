@@ -2,7 +2,6 @@ package mate.controller;
 
 import java.io.IOException;
 import java.util.List;
-import java.util.Objects;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -15,11 +14,9 @@ import mate.service.CarService;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
-public class AssigningDriverToCar extends HttpServlet {
+public class AddDriverToCarController extends HttpServlet {
     private DriverService driverService;
     private CarService carService;
-    private List<Car> cars;
-    private List<Driver> drivers;
 
     @Override
     public void init() throws ServletException {
@@ -31,8 +28,8 @@ public class AssigningDriverToCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        drivers = driverService.getAll();
-        cars = carService.getAll();
+        List<Driver> drivers = driverService.getAll();
+        List<Car> cars = carService.getAll();
         req.setAttribute("drivers", drivers);
         req.setAttribute("cars", cars);
         req.getRequestDispatcher("/WEB-INF/views/cars/assigningDriverToCar.jsp").forward(req, resp);
@@ -41,14 +38,8 @@ public class AssigningDriverToCar extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Car car = cars.stream()
-                .filter(c -> Objects.equals(c.getModel(), req.getParameter("car")))
-                .findFirst().get();
-
-        Driver driver = drivers.stream()
-                .filter(d -> Objects.equals(d.getName(), req.getParameter("driver")))
-                .findFirst().get();
-
+        Driver driver = driverService.get(Long.valueOf(req.getParameter("driver")));
+        Car car = carService.get(Long.valueOf(req.getParameter("car")));
         carService.addDriverToCar(driver, car);
         resp.sendRedirect("/index");
     }
