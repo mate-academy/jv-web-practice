@@ -4,11 +4,11 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>createDriver</servlet-name>
-        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+        <servlet-name>addDriver</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createDriver</servlet-name>
+        <servlet-name>addDriver</servlet-name>
         <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -28,11 +28,11 @@
         <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>createManufacturer</servlet-name>
-        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+        <servlet-name>addManufacturer</servlet-name>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createManufacturer</servlet-name>
+        <servlet-name>addManufacturer</servlet-name>
         <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -52,11 +52,11 @@
         <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>createCar</servlet-name>
-        <servlet-class>mate.controller.CreateCarController</servlet-class>
+        <servlet-name>addCar</servlet-name>
+        <servlet-class>mate.controller.AddCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createCar</servlet-name>
+        <servlet-name>addCar</servlet-name>
         <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>

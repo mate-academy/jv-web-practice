@@ -13,7 +13,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-public class CreateCarController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
@@ -27,22 +27,19 @@ public class CreateCarController extends HttpServlet {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         request.setAttribute("manufacturers", manufacturers);
         if (manufacturers.size() != 0) {
-            Long idMinValue = manufacturers.get(0).getId();
-            Long idMaxValue = manufacturers.get(manufacturers.size() - 1).getId();
-            request.setAttribute("idMinValue", idMinValue);
-            request.setAttribute("idMaxValue", idMaxValue);
+            request.setAttribute("idMinValue", manufacturers.get(0).getId());
+            request.setAttribute("idMaxValue", manufacturers.get(manufacturers.size() - 1).getId());
         }
-        request.getRequestDispatcher("/WEB-INF/views/createCar.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(request,response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String model = request.getParameter("carModel");
-        Long manufacturerId = Long.valueOf(request.getParameter("manufacturer"));
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Manufacturer manufacturer = manufacturerService
+                .get(Long.valueOf(request.getParameter("manufacturer")));
         Car car = new Car();
-        car.setModel(model);
+        car.setModel(request.getParameter("carModel"));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         car = carService.create(car);

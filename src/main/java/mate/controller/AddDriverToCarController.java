@@ -26,18 +26,14 @@ public class AddDriverToCarController extends HttpServlet {
         List<Car> cars = carService.getAll();
         request.setAttribute("cars", cars);
         if (cars.size() != 0) {
-            Long carIdMinValue = cars.get(0).getId();
-            Long carIdMaxValue = cars.get(cars.size() - 1).getId();
-            request.setAttribute("carIdMinValue", carIdMinValue);
-            request.setAttribute("carIdMaxValue", carIdMaxValue);
+            request.setAttribute("carIdMinValue", cars.get(0).getId());
+            request.setAttribute("carIdMaxValue", cars.get(cars.size() - 1).getId());
         }
         List<Driver> drivers = driverService.getAll();
         request.setAttribute("drivers", drivers);
         if (drivers.size() != 0) {
-            Long driverIdMinValue = drivers.get(0).getId();
-            Long driverIdMaxValue = drivers.get(cars.size() - 1).getId();
-            request.setAttribute("driverIdMinValue", driverIdMinValue);
-            request.setAttribute("driverIdMaxValue", driverIdMaxValue);
+            request.setAttribute("driverIdMinValue", drivers.get(0).getId());
+            request.setAttribute("driverIdMaxValue", drivers.get(cars.size() - 1).getId());
         }
         request.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp")
                 .forward(request,response);
