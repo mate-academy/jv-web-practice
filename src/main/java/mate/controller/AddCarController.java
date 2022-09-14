@@ -26,10 +26,6 @@ public class AddCarController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         request.setAttribute("manufacturers", manufacturers);
-        if (manufacturers.size() != 0) {
-            request.setAttribute("idMinValue", manufacturers.get(0).getId());
-            request.setAttribute("idMaxValue", manufacturers.get(manufacturers.size() - 1).getId());
-        }
         request.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(request,response);
     }
 
@@ -37,12 +33,12 @@ public class AddCarController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Manufacturer manufacturer = manufacturerService
-                .get(Long.valueOf(request.getParameter("manufacturer")));
+                .get(Long.valueOf(request.getParameter("manufacturerId")));
         Car car = new Car();
-        car.setModel(request.getParameter("carModel"));
+        car.setModel(request.getParameter("model"));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
-        car = carService.create(car);
+        carService.create(car);
         response.sendRedirect(request.getContextPath() + "/cars");
     }
 }

@@ -6,8 +6,8 @@
 <body>
 <h1>Please, fill the form below to create new manufacturer:</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-    Name <input type="text" name="manufacturerName" required><br>
-    Country <input type="text" name="manufacturerCountry" required><br>
+    Name <input type="text" name="name" required><br>
+    Country <input type="text" name="country" required><br>
     <button type="submit">Create manufacturer</button>
 </form>
 </body>

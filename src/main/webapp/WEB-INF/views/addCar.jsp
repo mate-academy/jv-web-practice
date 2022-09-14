@@ -22,8 +22,8 @@
 </table>
 <h2>Input Car model and choose manufacturer's ID from the table:</h2>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-    Model <input type="text" name="carModel" required><br>
-    Manufacturer <input type="number" name="manufacturer" min="${idMinValue}" max="${idMaxValue}" required><br>
+    Model <input type="text" name="model" required><br>
+    Manufacturer <input type="number" name="manufacturerId" required><br>
     <button type="submit">Create car</button>
 </form>
 </body>

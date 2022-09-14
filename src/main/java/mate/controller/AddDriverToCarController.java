@@ -25,16 +25,8 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         request.setAttribute("cars", cars);
-        if (cars.size() != 0) {
-            request.setAttribute("carIdMinValue", cars.get(0).getId());
-            request.setAttribute("carIdMaxValue", cars.get(cars.size() - 1).getId());
-        }
         List<Driver> drivers = driverService.getAll();
         request.setAttribute("drivers", drivers);
-        if (drivers.size() != 0) {
-            request.setAttribute("driverIdMinValue", drivers.get(0).getId());
-            request.setAttribute("driverIdMaxValue", drivers.get(cars.size() - 1).getId());
-        }
         request.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp")
                 .forward(request,response);
     }

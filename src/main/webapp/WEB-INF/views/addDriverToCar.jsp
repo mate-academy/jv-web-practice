@@ -38,8 +38,8 @@
 </table>
 <h2>Choose Car's ID and choose Driver's ID from the tables:</h2>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car's ID <input type="number" name="carId" min="${carIdMinValue}" max="${carIdMaxValue}" required><br>
-    Driver's ID <input type="number" name="driverId" min="${driverIdMinValue}" max="${driverIdMaxValue}" required><br>
+    Car's ID <input type="number" name="carId" required><br>
+    Driver's ID <input type="number" name="driverId" required><br>
     <button type="submit">Add driver to car</button>
 </form>
 </body>
