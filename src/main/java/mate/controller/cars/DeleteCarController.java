@@ -11,9 +11,9 @@ import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
-    private static final Injector INJECTOR = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService
-            = (CarService) INJECTOR.getInstance(CarService.class);
+            = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

@@ -14,10 +14,10 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
-    private static final Injector INJECTOR = Injector.getInstance("mate");
-    private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService
-            = (DriverService) INJECTOR.getInstance(DriverService.class);
+            = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
