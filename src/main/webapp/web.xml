@@ -11,4 +11,25 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>drivers</servlet-name>
+        <servlet-class>mate.controller.DriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>drivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+
+    <!--============================================================
+        Error page
+    =============================================================-->
+    <error-page>
+        <exception-type>java.lang.Throwable</exception-type>
+        <location>/WEB-INF/views/errorPage.jsp</location>
+    </error-page>
+
+    <error-page>
+        <error-code>404</error-code>
+        <location>/WEB-INF/views/errorPage.jsp</location>
+    </error-page>
 </web-app>
