@@ -9,8 +9,6 @@
     Name <input type="text" name="model"><br>
     Manufacturer id <input type="text"  name="id"> <br>
     <button type="submit">Confirm</button>
-
 </form>
-
 </body>
 </html>

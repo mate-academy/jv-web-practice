@@ -33,8 +33,7 @@ public class AddDriverToCarController extends HttpServlet {
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
-        car.getDrivers().add(driver);
-        carService.update(car);
+        carService.addDriverToCar(driver, car);
         String message = "Driver is added to car.";
         req.setAttribute("message", message);
         req.getRequestDispatcher("/WEB-INF/views/done.jsp").forward(req, resp);
