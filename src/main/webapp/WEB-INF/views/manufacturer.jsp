@@ -6,7 +6,7 @@
 <body>
     <jsp:include page="header.jsp"/>
 
-    <h1>ONE Manufacturer!</h1>
+    <h1>${title}</h1>
 
     <form action="/manufacturers/delete/${id}" method="get">
         <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">

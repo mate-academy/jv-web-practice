@@ -20,6 +20,7 @@ public class GetManufacturerByIdController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
         Manufacturer manufacturer = manufacturerService.get(Long.valueOf(id));
+        req.setAttribute("title", "ONE Manufacturer!");
         String name = manufacturer.getName();
         String country = manufacturer.getCountry();
         req.setAttribute("id", id);
