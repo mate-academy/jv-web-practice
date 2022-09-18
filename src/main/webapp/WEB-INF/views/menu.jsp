@@ -47,7 +47,7 @@
     <button class="dropbtn">manufacturers</button>
     <div class="dropdown-content">
         <a href="/manufacturers">get ALL</a>
-        <a href="/manufacturers/add">create/add (POST)</a>
+        <a href="/manufacturers/add">create NEW</a>
     </div>
 </div>
 
@@ -55,7 +55,7 @@
     <button class="dropbtn">cars</button>
     <div class="dropdown-content">
         <a href="/cars">get ALL</a>
-        <a href="/cars/add">create/add (POST)</a>
+        <a href="/cars/add">create NEW</a>
     </div>
 </div>
 
@@ -63,6 +63,6 @@
     <button class="dropbtn">drivers</button>
     <div class="dropdown-content">
         <a href="/drivers">get ALL</a>
-        <a href="/drivers/add">create/add (POST)</a>
+        <a href="/drivers/add">create NEW</a>
     </div>
 </div>
