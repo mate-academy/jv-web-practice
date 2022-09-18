@@ -32,7 +32,7 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("cars", cars);
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("WEB-INF/views/add_driver_to_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
     }
 
     @Override
