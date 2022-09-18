@@ -55,8 +55,6 @@ public class GetCarByIdController extends HttpServlet {
                 || model.length() < 2) {
 
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
-            req.setAttribute("model", model);
-            req.setAttribute("manufacturers", allManufacturers);
 
         } else {
 
@@ -70,10 +68,16 @@ public class GetCarByIdController extends HttpServlet {
 
             carService.update(newCar);
 
+            req.setAttribute("id", id);
+            req.setAttribute("manufacturerId", manufacturer.getId());
+            req.setAttribute("drivers", drivers);
             req.setAttribute("title", "Car ("
-                    + "<a href='/cars/" + id + "'>" + model + "</a>"
-                    + ") has been successfully created,<br> do you want to create another one?");
+                    + model
+                    + ") has been successfully updated");
         }
+
+        req.setAttribute("model", model);
+        req.setAttribute("manufacturers", allManufacturers);
 
         req.getRequestDispatcher("/WEB-INF/views/car.jsp").forward(req, resp);
     }

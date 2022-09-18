@@ -45,8 +45,6 @@ public class CreateCarController extends HttpServlet {
                 || manufacturerId.isEmpty()) {
 
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
-            req.setAttribute("model", model);
-            req.setAttribute("manufacturers", allManufacturers);
 
         } else {
 
@@ -64,6 +62,8 @@ public class CreateCarController extends HttpServlet {
                     + "<a href='/cars/" + id + "'>" + model + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
+
+        req.setAttribute("manufacturers", allManufacturers);
 
         req.getRequestDispatcher("/WEB-INF/views/carCreate.jsp").forward(req, resp);
     }
