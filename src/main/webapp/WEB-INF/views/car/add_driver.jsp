@@ -6,7 +6,7 @@
 <body>
 <div style="text-align: center;">
     <h2>Assign a driver to the car</h2>
-    <form method="post" action="${pageContext.request.contextPath}/car/add-driver">
+    <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
         Driver ID to be added to the car <label>
         <input type="text" name="driver_id">
     </label><br>

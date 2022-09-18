@@ -18,13 +18,13 @@
             <td><c:out value="${manufacturer.id}"/></td>
             <td><c:out value="${manufacturer.name}"/></td>
             <td><c:out value="${manufacturer.country}"/></td>
-            <td><a href="${pageContext.request.contextPath}/manufacturer/delete?id=${manufacturer.id}">Delete
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">Delete
                 manufacturer</a></td>
         </tr>
     </c:forEach>
 </table>
 <br>
-<form method="get" action="${pageContext.request.contextPath}/manufacturer/add">
+<form method="get" action="${pageContext.request.contextPath}/manufacturers/add">
     <button type="submit">Add manufacturer</button>
 </form>
 <a href="${pageContext.request.contextPath}/"><<< Back to the main page</a>

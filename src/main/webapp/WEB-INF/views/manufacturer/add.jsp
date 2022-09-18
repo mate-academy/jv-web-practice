@@ -6,7 +6,7 @@
 <body>
 <div style="text-align: center;">
     <h2>Fill out the new manufacturer information</h2>
-    <form method="post" action="${pageContext.request.contextPath}/manufacturer/add">
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
         Manufacturer's name <label>
         <input type="text" name="name">
     </label><br>

@@ -6,7 +6,7 @@
 <body>
 <div style="text-align: center;">
     <h2>Fill out the new driver information</h2>
-    <form method="post" action="${pageContext.request.contextPath}/driver/add">
+    <form method="post" action="${pageContext.request.contextPath}/drivers/add">
         Driver's name <label>
         <input type="text" name="name">
     </label><br>

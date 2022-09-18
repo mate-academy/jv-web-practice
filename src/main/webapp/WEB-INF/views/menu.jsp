@@ -13,10 +13,10 @@
     <li><a href="${pageContext.request.contextPath}/drivers">Show all drivers</a></li>
 
     <p>- Data operation -</p>
-    <li><a href="${pageContext.request.contextPath}/manufacturer/add">Add new manufacturer to dataBase</a></li>
-    <li><a href="${pageContext.request.contextPath}/car/add">Add new car to dataBase</a></li>
-    <li><a href="${pageContext.request.contextPath}/driver/add">Add new driver to dataBase</a></li>
-    <li><a href="${pageContext.request.contextPath}/car/add-driver">Add new driver to car</a></li>
+    <li><a href="${pageContext.request.contextPath}/manufacturers/add">Add new manufacturer to dataBase</a></li>
+    <li><a href="${pageContext.request.contextPath}/cars/add">Add new car to dataBase</a></li>
+    <li><a href="${pageContext.request.contextPath}/drivers/add">Add new driver to dataBase</a></li>
+    <li><a href="${pageContext.request.contextPath}/cars/drivers/add">Add new driver to car</a></li>
 </div>
 
 </body>

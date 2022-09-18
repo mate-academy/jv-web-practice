@@ -6,7 +6,7 @@
 <body>
 <div style="text-align: center;">
     <h2>Fill out the new car information</h2>
-    <form method="post" action="${pageContext.request.contextPath}/car/add">
+    <form method="post" action="${pageContext.request.contextPath}/cars/add">
         Car's model <label>
         <input type="text" name="model">
     </label><br>

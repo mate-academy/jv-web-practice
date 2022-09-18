@@ -5,7 +5,7 @@
     <title>Taxi Service</title>
 </head>
 <body>
-<h1>Drivers list</h1>
+<h1>Cars list</h1>
 <table>
     <tr>
         <td>ID |</td>
@@ -44,12 +44,12 @@
                     </c:forEach>
                 </table>
             </td>
-            <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">Delete car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete car</a></td>
         </tr>
     </c:forEach>
 </table>
 <br>
-<form method="get" action="${pageContext.request.contextPath}/car/add">
+<form method="get" action="${pageContext.request.contextPath}/cars/add">
     <button type="submit">Add car</button>
 </form>
 <a href="${pageContext.request.contextPath}/"><<< Back to the main page</a>
