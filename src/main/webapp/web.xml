@@ -45,4 +45,21 @@
         <servlet-name>displayAllDrivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>createManufacturer</servlet-name>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createManufacturer</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>displayAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>displayAllManufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+    </servlet-mapping>
 </web-app>
