@@ -28,4 +28,21 @@
         <servlet-name>displayAllCarsController</servlet-name>
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
+    
+    <servlet>
+        <servlet-name>createDriver</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createDriver</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>displayAllDrivers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>displayAllDrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -9,6 +9,8 @@
     <ol>
         <li><a href="${pageContext.request.contextPath}/cars">
             Show all cars</a></li>
+        <li><a href="${pageContext.request.contextPath}/drivers">
+            Show all drivers</a></li>
     </ol>
 </body>
 </html>
