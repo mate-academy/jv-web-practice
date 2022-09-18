@@ -12,7 +12,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet (urlPatterns = "/cars/drivers")
+@WebServlet (urlPatterns = "/cars/drivers/delete")
 public class DeleteDriversByCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -22,8 +22,8 @@ public class DeleteDriversByCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String carId = req.getParameter("car_id");
-        Driver driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
+        String carId = req.getParameter("car");
+        Driver driver = driverService.get(Long.valueOf(req.getParameter("driver")));
         Car car = carService.get(Long.valueOf(carId));
         carService.removeDriverFromCar(driver, car);
         resp.sendRedirect("/cars/drivers?car=" + carId);

@@ -15,9 +15,9 @@
     <h3>Car : drivers</h3>
 
     <div class="mb-3">
-        <h4>id: <c:out value="${car.id}" /></h4> <br />
-        <h4>model: <c:out value="${car.model}" /></h4> <br />
-        <h4>manufacturer name: <c:out value="${car.manufacturer.name}" /></h4> <br />
+        <h4>id: <c:out value="${car.id}" /></h4>
+        <h4>model: <c:out value="${car.model}" /></h4>
+        <h4>manufacturer name: <c:out value="${car.manufacturer.name}" /></h4>
         <h4>manufacturer country: <c:out value="${car.manufacturer.country}" /></h4>
     </div>
     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
