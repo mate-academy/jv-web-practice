@@ -1,22 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>${name} (${country})</title>
+    <title>CREATE manufacturer</title>
 </head>
 <body>
     <jsp:include page="header.jsp"/>
 
-    <h1>ONE Manufacturer!</h1>
+    <h1>${title}</h1>
 
-    <form action="/manufacturers/delete/${id}" method="get">
-        <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
-        <input type="submit" value="DELETE" style="background-color: red">
-    </form>
+    <form method="POST" action="${pageContext.request.contextPath}/manufacturers/add">
+        <label for="name">name: </label>
+        <input type="text" name="name" id="name" placeholder="Ferrari" value="${name}" pattern="[a-zA-Z0-9 ]{3,}">
 
-    <form action="/manufacturers/${id}" method="post">
-        <input type="text" name="name" value="${name}" placeholder="Ferrari" pattern=".{3,}">
-
-        <input list="countries" name="country" value="${country}" placeholder="Italy" pattern=".{3,}">
+        <label for="countries"> country: </label>
+        <input list="countries" name="country" placeholder="Italy" value="${country}" pattern=".{3,}">
         <datalist id="countries">
             <option value="Afghanistan">
             <option value="Albania">
@@ -46,7 +43,6 @@
             <option value="Bulgaria">
             <option value="Burkina Faso">
             <option value="Burundi">
-            <option value="Côte d'Ivoire">
             <option value="Cabo Verde">
             <option value="Cambodia">
             <option value="Cameroon">
@@ -74,7 +70,6 @@
             <option value="Equatorial Guinea">
             <option value="Eritrea">
             <option value="Estonia">
-            <option value="Eswatini (fmr. Swaziland)">
             <option value="Ethiopia">
             <option value="Fiji">
             <option value="Finland">
@@ -215,7 +210,7 @@
             <option value="Zimbabwe">
         </datalist>
 
-        <input type="submit" value="UPDATE" style="background-color: orange">
+        <input type="submit" value="CREATE" style="background-color: limegreen">
     </form>
 
     <jsp:include page="footer.jsp"/>
