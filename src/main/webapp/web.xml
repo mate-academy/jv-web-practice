@@ -39,4 +39,13 @@
         <url-pattern>/create_manufacturer</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>createCar</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createCar</servlet-name>
+        <url-pattern>/create_car</url-pattern>
+    </servlet-mapping>
+
 </web-app>
