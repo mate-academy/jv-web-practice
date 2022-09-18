@@ -13,6 +13,14 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>createDriver</servlet-name>
+        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createDriver</servlet-name>
+        <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>showDrivers</servlet-name>
         <servlet-class>mate.controller.ShowAllDrivers</servlet-class>
     </servlet>
@@ -21,12 +29,12 @@
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>createDriver</servlet-name>
-        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+        <servlet-name>createManufacturer</servlet-name>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createDriver</servlet-name>
-        <url-pattern>/drivers/create</url-pattern>
+        <servlet-name>createManufacturer</servlet-name>
+        <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
 
 </web-app>

@@ -6,10 +6,11 @@
 </head>
 <body>
 <table>
+  <h3>All drivers.</h3>
   <tr>
-    <td> ID </td>
-    <td> Driver name </td>
-    <td> Driver license number </td>
+    <td>ID</td>
+    <td>Name</td>
+    <td>License number</td>
   </tr>
   <c:forEach items="${drivers}" var="driver">
     <tr>
@@ -19,6 +20,5 @@
     </tr>
   </c:forEach>
 </table>
-
 </body>
 </html>
