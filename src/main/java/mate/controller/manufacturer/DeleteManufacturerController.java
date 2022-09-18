@@ -12,7 +12,8 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/delete/*")
 public class DeleteManufacturerController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
-    private final ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

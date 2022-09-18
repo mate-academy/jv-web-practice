@@ -13,7 +13,8 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/*")
 public class GetManufacturerByIdController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
-    private final ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -30,7 +31,8 @@ public class GetManufacturerByIdController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
 
         Manufacturer updatedManufacturer = new Manufacturer();

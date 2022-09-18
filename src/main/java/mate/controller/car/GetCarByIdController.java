@@ -1,7 +1,6 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 import javax.servlet.ServletException;
@@ -20,7 +19,8 @@ import mate.service.ManufacturerService;
 public class GetCarByIdController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
     private Collection<Manufacturer> allManufacturers = null;
     private List<Driver> drivers = null;
 
@@ -34,10 +34,10 @@ public class GetCarByIdController extends HttpServlet {
         Car car = carService.get(Long.valueOf(id));
         req.setAttribute("title", "ONE Car!");
         String model = car.getModel();
-        Manufacturer manufacturer = car.getManufacturer();
         drivers = car.getDrivers();
         req.setAttribute("id", id);
         req.setAttribute("model", model);
+        Manufacturer manufacturer = car.getManufacturer();
         req.setAttribute("manufacturerId", manufacturer.getId());
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/car.jsp").forward(req, resp);
@@ -49,9 +49,6 @@ public class GetCarByIdController extends HttpServlet {
         String id = req.getPathInfo().split("/")[1];
         String model = req.getParameter("model").trim();
         String manufacturerId = req.getParameter("manufacturer").trim();
-
-System.out.println(id);
-System.out.println(model);
 
         if (model.isBlank()
                 || model.isEmpty()
