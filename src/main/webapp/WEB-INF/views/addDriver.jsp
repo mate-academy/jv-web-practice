@@ -5,7 +5,6 @@
 </head>
 <body>
 <h1>Please fill the form below to add new driver</h1>
-
 <form method="post" action="${pageContext.request.contextPath}/addDriver">
     Name <input type="text" name="name"><br>
     LicenseNumber <input type="text" name="license_number"><br>

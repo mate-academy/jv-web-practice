@@ -12,6 +12,10 @@
         <td>Model</td>
         <td>Manufacturer ID</td>
         <td>Drivers</td>
+        <td>Delete car</td>
+        <form action="${pageContext.request.contextPath}/index">
+            <input type="submit" value="Return to First page">
+        </form>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
@@ -19,8 +23,12 @@
             <td><c:out value="${car.model}"/></td>
             <td><c:out value="${car.manufacturer}"/></td>
             <td><c:out value="${car.drivers}"/></td>
+            <td><a href="${pageContext.request.contextPath}/deleteCar?id=${car.id}">delete this car</a></td>
         </tr>
     </c:forEach>
+    <form action="${pageContext.request.contextPath}/addCar">
+        <input type="submit" value="Add new Car">
+    </form>
 </table>
 </body>
 </html>
