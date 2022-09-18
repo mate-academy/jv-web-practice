@@ -8,20 +8,20 @@
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateDriverController</servlet-name>
-        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+        <servlet-name>AddDriverController</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>GetAllDriversController</servlet-name>
         <servlet-class>mate.controller.GetAllDriversController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateManufacturerController</servlet-name>
-        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+        <servlet-name>AddManufacturerController</servlet-name>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>CreateCarController</servlet-name>
-        <servlet-class>mate.controller.CreateCarController</servlet-class>
+        <servlet-name>AddCarController</servlet-name>
+        <servlet-class>mate.controller.AddCarController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>AddDriverToCarController</servlet-name>
@@ -52,7 +52,7 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateDriverController</servlet-name>
+        <servlet-name>AddDriverController</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -60,11 +60,11 @@
         <url-pattern>/cars/drivers/all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateManufacturerController</servlet-name>
+        <servlet-name>AddManufacturerController</servlet-name>
         <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>CreateCarController</servlet-name>
+        <servlet-name>AddCarController</servlet-name>
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
