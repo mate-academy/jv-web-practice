@@ -49,7 +49,6 @@ public class CreateManufacturerController extends HttpServlet {
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 
-
         req.getRequestDispatcher("/WEB-INF/views/manufacturerCreate.jsp").forward(req, resp);
     }
 }
