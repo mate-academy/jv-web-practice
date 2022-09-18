@@ -34,7 +34,7 @@ public class CreateDriverController extends HttpServlet {
                 || licenseNumber.isEmpty()
                 || licenseNumber.isBlank()
                 || licenseNumber.length() < 3) {
-            req.setAttribute("title", "enter the correct data");
+            req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
             req.setAttribute("name", name);
             req.setAttribute("licenseNumber", licenseNumber);
         } else {

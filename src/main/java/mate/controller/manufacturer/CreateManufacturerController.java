@@ -27,15 +27,14 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name").trim();
         String country = req.getParameter("country").trim();
-        System.out.println("'" + name+"'" );
-        System.out.println("'" + country+"'" );
+
         if (name.isBlank()
                 || name.isEmpty()
                 || name.length() < 3
                 || country.isEmpty()
                 || country.isBlank()
                 || country.length() < 3) {
-            req.setAttribute("title", "enter the correct data");
+            req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
             req.setAttribute("name", name);
             req.setAttribute("country", country);
         } else {
