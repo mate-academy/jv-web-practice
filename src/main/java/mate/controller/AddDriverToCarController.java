@@ -26,7 +26,7 @@ public class AddDriverToCarController extends HttpServlet {
         req.setAttribute("message", "");
         req.setAttribute("drivers", driverService.getAll());
         req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/add_driver_to_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/add_driver_to_car.jsp").forward(req, resp);
     }
 
     @Override
@@ -38,6 +38,6 @@ public class AddDriverToCarController extends HttpServlet {
         req.setAttribute("message", "Driver added to car!");
         req.setAttribute("drivers", driverService.getAll());
         req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/add_driver_to_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/add_driver_to_car.jsp").forward(req, resp);
     }
 }
