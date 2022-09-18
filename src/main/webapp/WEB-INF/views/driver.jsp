@@ -1,13 +1,26 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title drivers.jsp</title>
+    <title>${name} (${licenseNumber})</title>
 </head>
 <body>
-    <jsp:include page="header.jsp" />
+    <jsp:include page="header.jsp"/>
 
-    <h1>Hello, Drivers!</h1>
+    <h1>ONE Driver!</h1>
 
-    <jsp:include page="footer.jsp" />
+    <form action="/drivers/delete/${id}" method="get">
+        <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
+        <input type="submit" value="DELETE" style="background-color: red">
+    </form>
+
+    <form action="/drivers/${id}" method="post">
+        <input type="text" name="name" value="${name}" placeholder="Bohdan" pattern=".{3,}">
+
+        <input type="text" name="licenseNumber" value="${licenseNumber}" placeholder="852753951" pattern="[0-9]{9,}">
+
+        <input type="submit" value="UPDATE" style="background-color: orange">
+    </form>
+
+    <jsp:include page="footer.jsp"/>
 </body>
 </html>
