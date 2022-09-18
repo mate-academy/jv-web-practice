@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
@@ -10,6 +11,14 @@
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>showDrivers</servlet-name>
+        <servlet-class>mate.controller.ShowAllDrivers</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>showDrivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createDriver</servlet-name>
