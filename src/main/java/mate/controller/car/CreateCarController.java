@@ -37,9 +37,6 @@ public class CreateCarController extends HttpServlet {
         String model = req.getParameter("model").trim();
         String manufacturerId = req.getParameter("manufacturer").trim();
 
-        System.out.println("model = " + model);
-        System.out.println("manufacturerId = " + manufacturerId);
-
         if (model.isBlank()
                 || model.isEmpty()
                 || model.length() < 2
@@ -62,7 +59,7 @@ public class CreateCarController extends HttpServlet {
             Car createdCar = carService.create(newCar);
             Long id = createdCar.getId();
 
-            req.setAttribute("title", "Manufacturer ("
+            req.setAttribute("title", "Car ("
                     + "<a href='/cars/" + id + "'>" + model + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
