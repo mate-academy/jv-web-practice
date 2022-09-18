@@ -21,13 +21,13 @@ public class GetDriverByIdController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
         Driver driver = driverService.get(Long.valueOf(id));
-        req.setAttribute("title", "ONE Driver!");
+//        req.setAttribute("title", "ONE Driver!");
         String name = driver.getName();
         String licenseNumber = driver.getLicenseNumber();
         req.setAttribute("id", id);
         req.setAttribute("name", name);
         req.setAttribute("licenseNumber", licenseNumber);
-        req.getRequestDispatcher("/WEB-INF/views/driver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/edit.jsp").forward(req, resp);
     }
 
     @Override
@@ -46,6 +46,9 @@ public class GetDriverByIdController extends HttpServlet {
         req.setAttribute("id", id);
         req.setAttribute("name", driver.getName());
         req.setAttribute("licenseNumber", driver.getLicenseNumber());
-        req.getRequestDispatcher("/WEB-INF/views/driver.jsp").forward(req, resp);
+        req.setAttribute("title", "Driver ("
+                + name + "/" + licenseNumber
+                + ") has been successfully updated");
+        req.getRequestDispatcher("/WEB-INF/views/driver/edit.jsp").forward(req, resp);
     }
 }

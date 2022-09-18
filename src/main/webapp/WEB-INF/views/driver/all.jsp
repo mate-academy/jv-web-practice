@@ -2,12 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ALL cars</title>
+    <title>ALL drivers</title>
 </head>
 <body>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
-    <h1>List cars.</h1>
+    <h1>List drivers.</h1>
 
     <hr>
 
@@ -15,34 +15,26 @@
         <tr>
             <td>ID</td>
             <td>|</td>
-            <td>MANUFACTURER</td>
+            <td>NAME</td>
             <td>|</td>
-            <td>MODEL</td>
-            <td>|</td>
-            <td>DRIVERS</td>
+            <td>LICENSE NUMBER</td>
             <td>|</td>
             <td>|</td>
             <td>OPERATIONS</td>
         </tr>
 
-        <c:forEach items="${cars}" var="car">
+        <c:forEach items="${drivers}" var="driver">
             <tr>
-                <td> ${car.id} </td>
+                <td> ${driver.id} </td>
                 <td>|</td>
-                <td> ${car.manufacturer.name} </td>
+                <td> ${driver.name} </td>
                 <td>|</td>
-                <td> ${car.model} </td>
-                <td>|</td>
-                <td>
-                <c:forEach items="${car.drivers}" var="driver">
-                    | ${driver.name} |
-                </c:forEach>
-                </td>
+                <td> ${driver.licenseNumber} </td>
                 <td>|</td>
                 <td>|</td>
-                <td><a href='cars/${car.id}'>
+                <td><a href='drivers/${driver.id}'>
                     <input type="button" value="EDIT" style="background-color: orange"></a></td>
-                <td><a href='cars/delete/${car.id}'>
+                <td><a href='drivers/delete/${driver.id}'>
                     <input type="button" value="DELETE" style="background-color: red"></a></td>
             </tr>
         </c:forEach>
@@ -50,6 +42,6 @@
 
     <hr>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>

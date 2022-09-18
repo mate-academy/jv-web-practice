@@ -29,7 +29,7 @@ public class CreateCarController extends HttpServlet {
         req.setAttribute("manufacturers", allManufacturers);
 
         req.setAttribute("title", "CREATE / ADD car.");
-        req.getRequestDispatcher("/WEB-INF/views/carCreate.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 
     @Override
@@ -65,6 +65,6 @@ public class CreateCarController extends HttpServlet {
 
         req.setAttribute("manufacturers", allManufacturers);
 
-        req.getRequestDispatcher("/WEB-INF/views/carCreate.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 }

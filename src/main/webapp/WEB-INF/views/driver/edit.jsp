@@ -4,9 +4,9 @@
     <title>${name} (${licenseNumber})</title>
 </head>
 <body>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
-    <h1>ONE Driver!</h1>
+    <h1>${title}</h1>
 
     <form action="/drivers/delete/${id}" method="get">
         <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
@@ -21,6 +21,6 @@
         <input type="submit" value="UPDATE" style="background-color: orange">
     </form>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>

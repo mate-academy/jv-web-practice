@@ -21,13 +21,13 @@ public class GetManufacturerByIdController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
         Manufacturer manufacturer = manufacturerService.get(Long.valueOf(id));
-        req.setAttribute("title", "ONE Manufacturer!");
+//        req.setAttribute("title", "ONE Manufacturer!");
         String name = manufacturer.getName();
         String country = manufacturer.getCountry();
         req.setAttribute("id", id);
         req.setAttribute("name", name);
         req.setAttribute("country", country);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/edit.jsp").forward(req, resp);
     }
 
     @Override
@@ -46,6 +46,9 @@ public class GetManufacturerByIdController extends HttpServlet {
         req.setAttribute("id", id);
         req.setAttribute("name", manufacturer.getName());
         req.setAttribute("country", manufacturer.getCountry());
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer.jsp").forward(req, resp);
+        req.setAttribute("title", "Manufacturer ("
+                + name + "/" + country
+                + ") has been successfully updated");
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/edit.jsp").forward(req, resp);
     }
 }

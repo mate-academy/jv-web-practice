@@ -5,7 +5,7 @@
     <title>CREATE car</title>
 </head>
 <body>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
     <h1>${title}</h1>
 
@@ -25,6 +25,6 @@
         <input type="submit" value="CREATE" style="background-color: limegreen">
     </form>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>

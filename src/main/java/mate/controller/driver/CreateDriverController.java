@@ -20,7 +20,7 @@ public class CreateDriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("title", "CREATE / ADD driver.");
-        req.getRequestDispatcher("/WEB-INF/views/driverCreate.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
     }
 
     @Override
@@ -50,6 +50,6 @@ public class CreateDriverController extends HttpServlet {
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 
-        req.getRequestDispatcher("/WEB-INF/views/driverCreate.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
     }
 }

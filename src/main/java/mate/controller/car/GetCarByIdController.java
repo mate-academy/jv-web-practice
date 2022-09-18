@@ -32,15 +32,16 @@ public class GetCarByIdController extends HttpServlet {
 
         String id = req.getPathInfo().split("/")[1];
         Car car = carService.get(Long.valueOf(id));
-        req.setAttribute("title", "ONE Car!");
+//        req.setAttribute("title", "ONE Car!");
         String model = car.getModel();
         drivers = car.getDrivers();
         req.setAttribute("id", id);
         req.setAttribute("model", model);
         Manufacturer manufacturer = car.getManufacturer();
+        req.setAttribute("manufacturer", manufacturer);
         req.setAttribute("manufacturerId", manufacturer.getId());
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("/WEB-INF/views/car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/edit.jsp").forward(req, resp);
     }
 
     @Override
@@ -69,16 +70,17 @@ public class GetCarByIdController extends HttpServlet {
             carService.update(newCar);
 
             req.setAttribute("id", id);
+            req.setAttribute("manufacturer", manufacturer);
             req.setAttribute("manufacturerId", manufacturer.getId());
             req.setAttribute("drivers", drivers);
             req.setAttribute("title", "Car ("
-                    + model
+                    + manufacturer.getName() + "/" + model
                     + ") has been successfully updated");
         }
 
         req.setAttribute("model", model);
         req.setAttribute("manufacturers", allManufacturers);
 
-        req.getRequestDispatcher("/WEB-INF/views/car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/edit.jsp").forward(req, resp);
     }
 }

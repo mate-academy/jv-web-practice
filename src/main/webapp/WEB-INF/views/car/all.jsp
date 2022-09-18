@@ -2,12 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>ALL manufacturers</title>
+    <title>ALL cars</title>
 </head>
 <body>
-    <jsp:include page="header.jsp"/>
+    <jsp:include page="../header.jsp"/>
 
-    <h1>List manufacturers.</h1>
+    <h1>List cars.</h1>
 
     <hr>
 
@@ -15,26 +15,34 @@
         <tr>
             <td>ID</td>
             <td>|</td>
-            <td>NAME</td>
+            <td>MANUFACTURER</td>
             <td>|</td>
-            <td>COUNTRY</td>
+            <td>MODEL</td>
+            <td>|</td>
+            <td>DRIVERS</td>
             <td>|</td>
             <td>|</td>
             <td>OPERATIONS</td>
         </tr>
 
-        <c:forEach items="${manufacturers}" var="manufacturer">
+        <c:forEach items="${cars}" var="car">
             <tr>
-                <td> ${manufacturer.id} </td>
+                <td> ${car.id} </td>
                 <td>|</td>
-                <td> ${manufacturer.name} </td>
+                <td> ${car.manufacturer.name} </td>
                 <td>|</td>
-                <td> ${manufacturer.country} </td>
+                <td> ${car.model} </td>
+                <td>|</td>
+                <td>
+                <c:forEach items="${car.drivers}" var="driver">
+                    | ${driver.name} |
+                </c:forEach>
+                </td>
                 <td>|</td>
                 <td>|</td>
-                <td><a href='manufacturers/${manufacturer.id}'>
+                <td><a href='cars/${car.id}'>
                     <input type="button" value="EDIT" style="background-color: orange"></a></td>
-                <td><a href='manufacturers/delete/${manufacturer.id}'>
+                <td><a href='cars/delete/${car.id}'>
                     <input type="button" value="DELETE" style="background-color: red"></a></td>
             </tr>
         </c:forEach>
@@ -42,6 +50,6 @@
 
     <hr>
 
-    <jsp:include page="footer.jsp"/>
+    <jsp:include page="../footer.jsp"/>
 </body>
 </html>
