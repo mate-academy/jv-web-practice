@@ -27,23 +27,27 @@
 
         <c:forEach items="${cars}" var="car">
             <tr>
-                <td> ${car.id} </td>
-                <td>|</td>
-                <td> ${car.manufacturer.name} </td>
-                <td>|</td>
-                <td> ${car.model} </td>
-                <td>|</td>
                 <td>
-                <c:forEach items="${car.drivers}" var="driver">
-                    | ${driver.name} |
-                </c:forEach>
+                    ${car.id}
+                </td><td>|</td><td>
+                    ${car.manufacturer.name}
+                </td><td>|</td><td>
+                    ${car.model}
+                </td><td>|</td><td>
+                    <a href='cars/drivers/${car.id}'>
+                    <input type="button" value="LIST/ADD/REMOVE" style="background-color: yellow">
+                    </a>
+                    |
+                    <c:forEach items="${car.drivers}" var="driver">
+                        ${driver.name},
+                    </c:forEach>
+                </td><td>|</td><td>|</td><td>
+                    <a href='cars/${car.id}'>
+                    <input type="button" value="EDIT" style="background-color: orange"></a>
+                </td><td>
+                    <a href='cars/delete/${car.id}'>
+                    <input type="button" value="DELETE" style="background-color: red"></a>
                 </td>
-                <td>|</td>
-                <td>|</td>
-                <td><a href='cars/${car.id}'>
-                    <input type="button" value="EDIT" style="background-color: orange"></a></td>
-                <td><a href='cars/delete/${car.id}'>
-                    <input type="button" value="DELETE" style="background-color: red"></a></td>
             </tr>
         </c:forEach>
     </table>
