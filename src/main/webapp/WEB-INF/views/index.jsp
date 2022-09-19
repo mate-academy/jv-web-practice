@@ -6,13 +6,13 @@
 <body>
     <h1>${message}</h1>
     <h3>Options:</h3>
-    <form action="${pageContext.request.contextPath}/displayAllCars">
+    <form action="${pageContext.request.contextPath}/getAllCars">
         <input type="submit" value="Display Cars List">
     </form>
-    <form action="${pageContext.request.contextPath}/displayAllDrivers">
+    <form action="${pageContext.request.contextPath}/getAllDrivers">
         <input type="submit" value="Display Drivers List">
     </form>
-    <form action="${pageContext.request.contextPath}/displayAllManufacturers">
+    <form action="${pageContext.request.contextPath}/getAllManufacturers">
         <input type="submit" value="Display Manufacturers List">
     </form>
 </body>

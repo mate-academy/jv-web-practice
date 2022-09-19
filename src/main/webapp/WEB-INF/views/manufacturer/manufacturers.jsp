@@ -24,8 +24,8 @@
             <td><a href="${pageContext.request.contextPath}/deleteManufacturer?id=${manufacturer.id}">DELETE</a></td>
           </tr>
     </c:forEach>
-    <form action="${pageContext.request.contextPath}/createManufacturer">
-        <input type="submit" value="Create New Manufacturer">
+    <form action="${pageContext.request.contextPath}/addManufacturer">
+        <input type="submit" value="Add New Manufacturer">
     </form>
 </table>
 </body>
