@@ -2,7 +2,6 @@ package mate.controller.car;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Collection;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -17,17 +16,19 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final ManufacturerService manufacturerService =
-            (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private Collection<Manufacturer> allManufacturers = null;
+    private ManufacturerService manufacturerService = null;
+    private CarService carService = null;
+
+    @Override
+    public void init() throws ServletException {
+        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+        carService = (CarService) injector.getInstance(CarService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        allManufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", allManufacturers);
-
+        req.setAttribute("manufacturers", manufacturerService.getAll());
         req.setAttribute("title", "CREATE / ADD car.");
         req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
@@ -62,7 +63,7 @@ public class CreateCarController extends HttpServlet {
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 
-        req.setAttribute("manufacturers", allManufacturers);
+        req.setAttribute("manufacturers", manufacturerService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 }
