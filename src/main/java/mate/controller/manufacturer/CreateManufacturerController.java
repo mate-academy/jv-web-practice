@@ -13,8 +13,12 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final ManufacturerService manufacturerService =
-            (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private ManufacturerService manufacturerService = null;
+
+    @Override
+    public void init() throws ServletException {
+        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
