@@ -21,10 +21,10 @@
             <td><c:out value="${driver.id}"/></td>
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
-            <td><a href="${pageContext.request.contextPath}/deleteDriver?id=${driver.id}">DELETE</a></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">DELETE</a></td>
         </tr>
     </c:forEach>
-    <form action="${pageContext.request.contextPath}/createDriver">
+    <form action="${pageContext.request.contextPath}/drivers/add">
         <input type="submit" value="Create New Driver">
     </form>
 </table>

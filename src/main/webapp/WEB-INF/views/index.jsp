@@ -6,13 +6,13 @@
 <body>
     <h1>WELCOME TO OUT TAXI SERVICE</h1>
     <h3>Options:</h3>
-    <form action="${pageContext.request.contextPath}/getAllCars">
+    <form action="${pageContext.request.contextPath}/cars">
         <input type="submit" value="Display Cars List">
     </form>
-    <form action="${pageContext.request.contextPath}/getAllDrivers">
+    <form action="${pageContext.request.contextPath}/drivers">
         <input type="submit" value="Display Drivers List">
     </form>
-    <form action="${pageContext.request.contextPath}/getAllManufacturers">
+    <form action="${pageContext.request.contextPath}/manufacturers">
         <input type="submit" value="Display Manufacturers List">
     </form>
 </body>
