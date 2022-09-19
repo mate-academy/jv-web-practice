@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@include file="../header.jsp"%>
 <h1>Add driver to car</h1>
-<form method="post" action="${pageContext.request.contextPath}/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     <select name="driver_id">
         <option value="0">Choose driver</option>
         <c:forEach items="${drivers}" var="driver">
@@ -17,5 +17,4 @@
     </select>
     <input type="submit" value="Add driver to car" />
 </form>
-${message}
 <%@include file="../footer.jsp"%>

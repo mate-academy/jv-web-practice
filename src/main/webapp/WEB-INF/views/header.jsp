@@ -9,4 +9,4 @@
 <a href="${pageContext.request.contextPath}/drivers/all" title="">Display all drivers</a> |
 <a href="${pageContext.request.contextPath}/manufacturers/create" title="">Create manufacturer</a> |
 <a href="${pageContext.request.contextPath}/cars/create" title="">Create car</a> |
-<a href="${pageContext.request.contextPath}/drivers/add" title="">Add driver to car</a>
+<a href="${pageContext.request.contextPath}/cars/drivers/add" title="">Add driver to car</a>
