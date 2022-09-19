@@ -8,12 +8,12 @@
 
     <h1>${title}</h1>
 
-    <form action="/manufacturers/delete/${id}" method="get">
+    <form action="${pageContext.request.contextPath}/manufacturers/delete/${id}" method="get">
         <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
         <input type="submit" value="DELETE" style="background-color: red">
     </form>
 
-    <form action="/manufacturers/${id}" method="post">
+    <form action="${pageContext.request.contextPath}/manufacturers/${id}" method="post">
         <label for="manufacturer"> MANUFACTURER: </label>
         <input type="text" id="manufacturer" name="name" value="${name}" placeholder="Ferrari" pattern=".{3,}">
 

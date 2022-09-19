@@ -9,12 +9,12 @@
 
     <h1>${title}</h1>
 
-    <form action="/cars/delete/${id}" method="get">
+    <form action="${pageContext.request.contextPath}/cars/delete/${id}" method="get">
         <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
         <input type="submit" value="DELETE" style="background-color: red">
     </form>
 
-    <form action="/cars/${id}" method="post">
+    <form action="${pageContext.request.contextPath}/cars/${id}" method="post">
         <label for="car"> CAR: </label>
         <select id="car" name="manufacturer" value="${manufacturer.name}">
             <c:forEach items="${manufacturers}" var="manufacturer">

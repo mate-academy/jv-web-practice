@@ -8,12 +8,12 @@
 
     <h1>${title}</h1>
 
-    <form action="/drivers/delete/${id}" method="get">
+    <form action="${pageContext.request.contextPath}/drivers/delete/${id}" method="get">
         <input type="text" name="id" readonly value="${id}" style='background:lightgrey' , size="2">
         <input type="submit" value="DELETE" style="background-color: red">
     </form>
 
-    <form action="/drivers/${id}" method="post">
+    <form action="${pageContext.request.contextPath}/drivers/${id}" method="post">
         <label for="driver"> DRIVER: </label>
         <input type="text" id="driver" name="name" value="${name}" placeholder="Bohdan" pattern=".{3,}">
 
