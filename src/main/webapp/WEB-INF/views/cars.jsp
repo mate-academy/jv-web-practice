@@ -19,7 +19,7 @@
         <tr>
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
-            <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><c:out value="${car.manufacturer.name} - ${car.manufacturer.country}" /></td>
             <td>
                 <table>
                     <d:forEach items="${car.drivers}" var="driver">
