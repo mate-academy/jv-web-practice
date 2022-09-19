@@ -5,5 +5,15 @@
 </head>
 <body>
     <h1>${message}</h1>
+    <h3>Options:</h3>
+    <form action="${pageContext.request.contextPath}/displayAllCars">
+        <input type="submit" value="Display Cars List">
+    </form>
+    <form action="${pageContext.request.contextPath}/displayAllDrivers">
+        <input type="submit" value="Display Drivers List">
+    </form>
+    <form action="${pageContext.request.contextPath}/displayAllManufacturers">
+        <input type="submit" value="Display Manufacturers List">
+    </form>
 </body>
 </html>
