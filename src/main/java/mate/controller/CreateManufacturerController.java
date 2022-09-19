@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-@WebServlet (urlPatterns = "/create_manufacturer")
+@WebServlet (urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
     private ManufacturerService manufacturerService;
 

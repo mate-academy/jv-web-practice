@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet (urlPatterns = "/blabla/add_driver") // /add_driver
+@WebServlet (urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private CarService carService;
     private DriverService driverService;

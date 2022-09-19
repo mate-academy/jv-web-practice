@@ -15,7 +15,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet (urlPatterns = "/create_car")
+@WebServlet (urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private CarService carService;
     private ManufacturerService manufacturerService;
