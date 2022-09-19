@@ -29,6 +29,9 @@
     <form action="${pageContext.request.contextPath}/cars/add">
         <input type="submit" value="Add new Car">
     </form>
+    <form action="${pageContext.request.contextPath}/cars/drivers/add">
+        <input type="submit" value="Add Driver to the Car">
+    </form>
 </table>
 </body>
 </html>
