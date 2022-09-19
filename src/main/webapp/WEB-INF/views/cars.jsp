@@ -21,7 +21,7 @@
     </c:forEach>
 </table>
 <h2>Add new car</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
     ManufacturerID <input type="text" name="manufacturerId"><br>
     <button type="submit">ADD</button>

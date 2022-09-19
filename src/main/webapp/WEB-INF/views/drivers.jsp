@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Add new driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     DriverName <input type="text" name="name"><br>
     LicenseNumber <input type="text" name="licenseNumber"><br>
     <button type="submit">ADD</button>
