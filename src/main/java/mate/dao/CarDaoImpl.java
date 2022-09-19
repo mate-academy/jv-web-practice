@@ -26,7 +26,7 @@ public class CarDaoImpl implements CarDao {
         String query = "INSERT INTO cars (model, manufacturer_id)"
                 + "VALUES (?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();
-                PreparedStatement statement =
+                 PreparedStatement statement =
                         connection.prepareStatement(
                              query, Statement.RETURN_GENERATED_KEYS)) {
             statement.setString(1, car.getModel());
