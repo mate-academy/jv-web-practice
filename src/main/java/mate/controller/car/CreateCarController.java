@@ -41,13 +41,12 @@ public class CreateCarController extends HttpServlet {
         if (model.isBlank()
                 || model.isEmpty()
                 || model.length() < 2
-                || manufacturerId.isBlank()
                 || manufacturerId.isEmpty()) {
 
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
-
+            req.setAttribute("model", model);
+            req.setAttribute("manufacturerId", manufacturerId);
         } else {
-
             Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
 
             Car newCar = new Car();
@@ -64,7 +63,6 @@ public class CreateCarController extends HttpServlet {
         }
 
         req.setAttribute("manufacturers", allManufacturers);
-
         req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 }

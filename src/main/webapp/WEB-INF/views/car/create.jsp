@@ -15,7 +15,11 @@
         <select id="manufacturers" name="manufacturer">
             <option>
             <c:forEach items="${manufacturers}" var="manufacturer">
-                <option value="${manufacturer.id}">${manufacturer.name}</option>
+                <option value="${manufacturer.id}"
+                    <c:if test="${manufacturerId == manufacturer.id}">
+                        selected
+                    </c:if>
+                >${manufacturer.name}</option>
             </c:forEach>
         </select>
 
