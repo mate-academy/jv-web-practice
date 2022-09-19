@@ -16,11 +16,11 @@
     </ol>
 <h2>Add new data</h2>
     <ol>
-        <li><a href="${pageContext.request.contextPath}/cars/add">
+        <li><a href="${pageContext.request.contextPath}/cars/create">
             Create new car</a></li>
-        <li><a href="${pageContext.request.contextPath}/drivers/add">
+        <li><a href="${pageContext.request.contextPath}/drivers/create">
             Create new driver</a></li>
-        <li><a href="${pageContext.request.contextPath}/manufacturers/add">
+        <li><a href="${pageContext.request.contextPath}/manufacturers/create">
             Create new manufacturer</a></li>
     </ol>
 </body>

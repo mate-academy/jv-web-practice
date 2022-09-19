@@ -1,15 +1,13 @@
-package mate.controller;
+package mate.controller.driver;
 
-import mate.lib.Inject;
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
-
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
@@ -17,7 +15,8 @@ public class CreateDriverController extends HttpServlet {
             injector.getInstance(DriverService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
@@ -26,7 +25,8 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
     }
 }

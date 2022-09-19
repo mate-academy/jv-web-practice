@@ -11,7 +11,7 @@
             <td>ID</td>
             <td>NAME</td>
             <td>COUNTRY</td>
-            <td>ID_DELETED</td>
+            <td>IS_DELETED</td>
         </tr>
         <c:forEach items="${manufacturers}" var="manufacturer">
             <tr>

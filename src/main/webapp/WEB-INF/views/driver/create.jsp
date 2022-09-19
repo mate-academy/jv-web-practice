@@ -6,7 +6,7 @@
 <body>
     <h1>Enter new driver data:</h1>
     <form method="post" action="${pageContext.request.contextPath}/drivers/add">
-        Driver name <input type="text" name="name"><br>
+        Driver name           <input type="text" name="name"><br>
         Driver license number <input type="text" name="licenseNumber"><br>
         <button type="submit">Create</button>
     </form>
