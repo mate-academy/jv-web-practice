@@ -47,9 +47,6 @@ public class GetAllCarDriversController extends HttpServlet {
                 .collect(Collectors.toList());
         req.setAttribute("driversRemained", driversRemained);
 
-        System.out.println(drivers);
-        System.out.println(driversRemained);
-
         req.getRequestDispatcher("/WEB-INF/views/car/drivers.jsp").forward(req, resp);
     }
 }
