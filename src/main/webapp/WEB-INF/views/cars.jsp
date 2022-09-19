@@ -17,8 +17,8 @@
   <c:forEach items="${cars}" var="car">
     <tr>
       <td><c:out value="${car.id}" /></td>
-      <td><c:out value="${car.model}" /></td>
       <td><c:out value="${car.manufacturer.name}" /></td>
+      <td><c:out value="${car.model}" /></td>
       <td><c:if test="${car.getDrivers().size() == 0}"><c:out value="no driver" /></c:if>
     <c:forEach items="${car.drivers}" var="driver">
       <table>
