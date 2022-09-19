@@ -2,6 +2,7 @@ package mate.controller.car.driver;
 
 import java.io.IOException;
 import java.util.List;
+import java.util.stream.Collectors;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,12 +13,20 @@ import mate.model.Car;
 import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.CarService;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/*")
 public class GetAllCarDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private List<Driver> drivers = null;
+    private CarService carService = null;
+    private DriverService driverService = null;
+
+    @Override
+    public void init() throws ServletException {
+        carService = (CarService) injector.getInstance(CarService.class);
+        driverService = (DriverService) injector.getInstance(DriverService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -31,6 +40,16 @@ public class GetAllCarDriversController extends HttpServlet {
         Manufacturer manufacturer = car.getManufacturer();
         req.setAttribute("manufacturer", manufacturer);
         req.setAttribute("drivers", drivers);
+
+        List<Driver> driversRemained = driverService.getAll()
+                .stream()
+                .filter(d -> !drivers.contains(d))
+                .collect(Collectors.toList());
+        req.setAttribute("driversRemained", driversRemained);
+
+        System.out.println(drivers);
+        System.out.println(driversRemained);
+
         req.getRequestDispatcher("/WEB-INF/views/car/drivers.jsp").forward(req, resp);
     }
 }
