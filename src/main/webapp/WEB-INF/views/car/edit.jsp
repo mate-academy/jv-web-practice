@@ -15,7 +15,8 @@
     </form>
 
     <form action="/cars/${id}" method="post">
-        <select id="manufacturer" name="manufacturer" value="${manufacturer.name}">
+        <label for="car"> CAR: </label>
+        <select id="car" name="manufacturer" value="${manufacturer.name}">
             <c:forEach items="${manufacturers}" var="manufacturer">
                 <option value="${manufacturer.id}"
                     <c:if test="${manufacturerId == manufacturer.id}">

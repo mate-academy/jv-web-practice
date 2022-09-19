@@ -14,7 +14,8 @@
     </form>
 
     <form action="/drivers/${id}" method="post">
-        <input type="text" name="name" value="${name}" placeholder="Bohdan" pattern=".{3,}">
+        <label for="driver"> DRIVER: </label>
+        <input type="text" id="driver" name="name" value="${name}" placeholder="Bohdan" pattern=".{3,}">
 
         <input type="text" name="licenseNumber" value="${licenseNumber}" placeholder="852753951" pattern="[0-9]{9,}">
 

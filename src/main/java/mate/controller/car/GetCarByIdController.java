@@ -32,7 +32,6 @@ public class GetCarByIdController extends HttpServlet {
 
         String id = req.getPathInfo().split("/")[1];
         Car car = carService.get(Long.valueOf(id));
-//        req.setAttribute("title", "ONE Car!");
         String model = car.getModel();
         drivers = car.getDrivers();
         req.setAttribute("id", id);

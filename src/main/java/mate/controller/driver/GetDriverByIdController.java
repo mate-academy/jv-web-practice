@@ -21,7 +21,6 @@ public class GetDriverByIdController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
         Driver driver = driverService.get(Long.valueOf(id));
-//        req.setAttribute("title", "ONE Driver!");
         String name = driver.getName();
         String licenseNumber = driver.getLicenseNumber();
         req.setAttribute("id", id);

@@ -14,7 +14,8 @@
     </form>
 
     <form action="/manufacturers/${id}" method="post">
-        <input type="text" name="name" value="${name}" placeholder="Ferrari" pattern=".{3,}">
+        <label for="manufacturer"> MANUFACTURER: </label>
+        <input type="text" id="manufacturer" name="name" value="${name}" placeholder="Ferrari" pattern=".{3,}">
 
         <input list="countries" name="country" value="${country}" placeholder="Italy" pattern=".{3,}">
         <datalist id="countries">
