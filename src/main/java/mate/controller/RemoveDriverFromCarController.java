@@ -33,7 +33,7 @@ public class RemoveDriverFromCarController extends HttpServlet {
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
         req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/addOrRemoveDriverToFromCar.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/addDriverToCarOrRemove.jsp")
                 .forward(req, resp);
     }
 }
