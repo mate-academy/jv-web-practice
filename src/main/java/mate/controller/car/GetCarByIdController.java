@@ -1,7 +1,6 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.Collection;
 import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -18,17 +17,20 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/*")
 public class GetCarByIdController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final ManufacturerService manufacturerService =
-            (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private Collection<Manufacturer> allManufacturers = null;
     private List<Driver> drivers = null;
+    private ManufacturerService manufacturerService = null;
+    private CarService carService = null;
+
+    @Override
+    public void init() throws ServletException {
+        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+        carService = (CarService) injector.getInstance(CarService.class);
+    }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        allManufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", allManufacturers);
+        req.setAttribute("manufacturers", manufacturerService.getAll());
 
         String id = req.getPathInfo().split("/")[1];
         Car car = carService.get(Long.valueOf(id));
@@ -78,7 +80,7 @@ public class GetCarByIdController extends HttpServlet {
         }
 
         req.setAttribute("model", model);
-        req.setAttribute("manufacturers", allManufacturers);
+        req.setAttribute("manufacturers", manufacturerService.getAll());
 
         req.getRequestDispatcher("/WEB-INF/views/car/edit.jsp").forward(req, resp);
     }
