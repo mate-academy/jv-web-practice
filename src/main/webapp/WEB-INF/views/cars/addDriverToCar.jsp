@@ -12,6 +12,8 @@
         <td>MODEL</td>
         <td>MANUFACTURER ID</td>
         <td>MANUFACTURER NAME</td>
+        <td>DRIVER NAME</td>
+        <td>DRIVER LICENSE NUMBER</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
@@ -19,6 +21,22 @@
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.id}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><table>
+                <c:forEach items="${car.drivers}" var="driver">
+                    <tr>
+                        <td><c:out value="${driver.name}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+            </td>
+            <td><table>
+                <c:forEach items="${car.drivers}" var="driver">
+                    <tr>
+                        <td><c:out value="${driver.licenseNumber}"/></td>
+                    </tr>
+                </c:forEach>
+        </table>
+            </td>
         </tr>
     </c:forEach>
 </table>

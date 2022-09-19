@@ -1,4 +1,4 @@
-package mate.controller.cars;
+package mate.controller.car;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -40,6 +40,6 @@ public class AddCarController extends HttpServlet {
         car.setModel(model);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getRequestURI() + "/");
     }
 }

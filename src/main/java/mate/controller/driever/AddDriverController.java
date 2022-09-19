@@ -1,4 +1,4 @@
-package mate.controller.drievers;
+package mate.controller.driever;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -31,6 +31,6 @@ public class AddDriverController extends HttpServlet {
         driver.setName(driverName);
         driver.setLicenseNumber(driverLicenceNumber);
         driverService.create(driver);
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getRequestURI() + "/");
     }
 }

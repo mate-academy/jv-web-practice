@@ -5,14 +5,14 @@
 </head>
 <body>
 <h1>Choose operation</h1>
-<td><a href="${pageContext.request.contextPath}/cars/drivers/add">add driver to car</a></td>
+<li><a href="${pageContext.request.contextPath}/cars/drivers/add">add driver to car</a></li>
 <br>
-<td><a href="${pageContext.request.contextPath}/cars/add">create a car</a></td>
+<li><a href="${pageContext.request.contextPath}/cars/add">create a car</a></li>
 <br>
-<td><a href="${pageContext.request.contextPath}/drivers">get all car</a></td>
+<li><a href="${pageContext.request.contextPath}/drivers">get all car</a></li>
 <br>
-<td><a href="${pageContext.request.contextPath}/drivers/add">create a driver</a></td>
+<li><a href="${pageContext.request.contextPath}/drivers/add">create a driver</a></li>
 <br>
-<td><a href="${pageContext.request.contextPath}/manufacturers/add">create a manufacturer</a></td>
+<li><a href="${pageContext.request.contextPath}/manufacturers/add">create a manufacturer</a></li>
 </body>
 </html>
