@@ -22,14 +22,13 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp")
                 .forward(request, response);
-
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
-        Long carId = Long.valueOf(request.getParameter("car-id"));
-        Long driverId = Long.valueOf(request.getParameter("driver-id"));
+        Long carId = Long.valueOf(request.getParameter("car_id"));
+        Long driverId = Long.valueOf(request.getParameter("driver_id"));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
