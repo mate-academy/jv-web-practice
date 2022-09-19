@@ -1,16 +1,15 @@
 package mate.controller.driver;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
 import java.io.IOException;
-import java.sql.PreparedStatement;
 import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {
