@@ -31,6 +31,9 @@
         <input type="submit" value="UPDATE" style="background-color: orange">
     </form>
 
+    <a href='drivers/${id}'>
+        <input type="button" value="(drivers) LIST/ADD/REMOVE" style="background-color: yellow"></a>
+
     <jsp:include page="../footer.jsp"/>
 </body>
 </html>
