@@ -4,9 +4,9 @@
   <title>Taxi Service</title>
 </head>
 <body>
-<a href="/index" title="">Main page</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="/drivers/create" title="">Create driver</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="/drivers/all" title="">Display all drivers</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="/manufacturers/create" title="">Create manufacturer</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="/cars/create" title="">Create car</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
-<a href="/drivers/add" title="">Add driver to car</a>
+<a href="${pageContext.request.contextPath}/index" title="">Main page</a> |
+<a href="${pageContext.request.contextPath}/drivers/create" title="">Create driver</a> |
+<a href="${pageContext.request.contextPath}/drivers/all" title="">Display all drivers</a> |
+<a href="${pageContext.request.contextPath}/manufacturers/create" title="">Create manufacturer</a> |
+<a href="${pageContext.request.contextPath}/cars/create" title="">Create car</a> |
+<a href="${pageContext.request.contextPath}/drivers/add" title="">Add driver to car</a>

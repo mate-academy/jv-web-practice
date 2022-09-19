@@ -25,7 +25,7 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         req.setAttribute("message", "");
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/car/create_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 
     @Override
@@ -34,11 +34,11 @@ public class CreateCarController extends HttpServlet {
         Car car = new Car();
         car.setModel(req.getParameter("car_model"));
         car.setManufacturer(manufacturerService
-                .get(Long.valueOf(req.getParameter("manufacturer"))));
+                .get(Long.valueOf(req.getParameter("manufacturer_id"))));
         car.setDrivers(new ArrayList<>());
         carService.create(car);
         req.setAttribute("message", "Car added!");
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/car/create_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 }
