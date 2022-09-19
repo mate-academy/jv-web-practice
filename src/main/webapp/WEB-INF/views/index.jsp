@@ -4,7 +4,7 @@
     <title>Taxi Service</title>
 </head>
 <body>
-    <h1>${message}</h1>
+    <h1>WELCOME TO OUT TAXI SERVICE</h1>
     <h3>Options:</h3>
     <form action="${pageContext.request.contextPath}/getAllCars">
         <input type="submit" value="Display Cars List">
