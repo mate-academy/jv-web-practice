@@ -58,7 +58,7 @@ public class CreateCarController extends HttpServlet {
             Long id = createdCar.getId();
 
             req.setAttribute("title", "Car ("
-                    + "<a href='/cars/" + id + "'>" + model + "</a>"
+                    + "<a href='" + id + "'>" + model + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 

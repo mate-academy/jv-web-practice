@@ -46,7 +46,7 @@ public class CreateDriverController extends HttpServlet {
             Long id = createdDriver.getId();
 
             req.setAttribute("title", "Driver ("
-                    + "<a href='/drivers/" + id + "'>" + name + "</a>"
+                    + "<a href='" + id + "'>" + name + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 

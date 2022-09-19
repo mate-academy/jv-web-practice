@@ -46,7 +46,7 @@ public class CreateManufacturerController extends HttpServlet {
             Long id = createdManufacturer.getId();
 
             req.setAttribute("title", "Manufacturer ("
-                    + "<a href='/manufacturers/" + id + "'>" + name + "</a>"
+                    + "<a href='" + id + "'>" + name + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
 
