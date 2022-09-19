@@ -14,23 +14,23 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService = (CarService) injector.getInstance(CarService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         Long id = Long.valueOf(req.getParameter("manufacturer_id"));
         car.setManufacturer(manufacturerService.get(id));
         carService.create(car);
-        resp.sendRedirect("/successful");
+        resp.sendRedirect(req.getContextPath() + "/successful");
     }
 }

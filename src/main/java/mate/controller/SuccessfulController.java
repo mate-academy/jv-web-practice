@@ -10,8 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = "/successful")
 public class SuccessfulController extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/successful.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/successful.jsp").forward(req, resp);
     }
 }
