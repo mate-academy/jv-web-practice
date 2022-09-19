@@ -12,7 +12,7 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
-    private static Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
 
