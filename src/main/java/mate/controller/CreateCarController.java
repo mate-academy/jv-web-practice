@@ -27,8 +27,8 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws IOException {
         Car car = new Car();
-        Manufacturer manufacturer = manufacturerService.get(Long.parseLong(
-                request.getParameter("car-manufacturer")));
+        Long manufacturerId = Long.valueOf(request.getParameter("car-manufacturer"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         car.setModel(request.getParameter("car-model"));
         car.setManufacturer(manufacturer);
         carService.create(car);

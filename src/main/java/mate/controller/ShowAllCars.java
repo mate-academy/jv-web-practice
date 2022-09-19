@@ -6,17 +6,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.DriverService;
+import mate.service.CarService;
 
-public class ShowAllDrivers extends HttpServlet {
+public class ShowAllCars extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService
-            = (DriverService) injector.getInstance(DriverService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     public void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.setAttribute("drivers", driverService.getAll());
-        request.getRequestDispatcher("WEB-INF/views/drivers.jsp").forward(request, response);
+        request.setAttribute("cars", carService.getAll());
+        request.getRequestDispatcher("/WEB-INF/views/cars.jsp").forward(request, response);
     }
 }
