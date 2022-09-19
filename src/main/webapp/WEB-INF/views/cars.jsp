@@ -23,10 +23,10 @@
             <td><c:out value="${car.model}"/></td>
             <td><c:out value="${car.manufacturer}"/></td>
             <td><c:out value="${car.drivers}"/></td>
-            <td><a href="${pageContext.request.contextPath}/deleteCar?id=${car.id}">delete this car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete this car</a></td>
         </tr>
     </c:forEach>
-    <form action="${pageContext.request.contextPath}/addCar">
+    <form action="${pageContext.request.contextPath}/cars/add">
         <input type="submit" value="Add new Car">
     </form>
 </table>
