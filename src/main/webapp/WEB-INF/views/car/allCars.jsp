@@ -34,7 +34,7 @@
                 </c:forEach>
             </table>
         </td>
-        <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">
+        <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
             delete
         </a></td>
         </tr>

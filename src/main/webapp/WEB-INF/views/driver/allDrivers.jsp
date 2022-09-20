@@ -19,7 +19,7 @@
                 <td><c:out value="${driver.id}"/></td>
                 <td><c:out value="${driver.name}"/></td>
                 <td><c:out value="${driver.licenseNumber}"/></td>
-                <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.getId()}">
+                <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
                     delete
                 </a></td>
             </tr>
