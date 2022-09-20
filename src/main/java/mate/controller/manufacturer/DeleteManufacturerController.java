@@ -13,6 +13,7 @@ import mate.service.ManufacturerService;
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -22,7 +23,7 @@ public class DeleteManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         manufacturerService.delete(Long.valueOf(id));
         resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }

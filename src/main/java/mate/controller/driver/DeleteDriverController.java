@@ -13,6 +13,7 @@ import mate.service.DriverService;
 public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private DriverService driverService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -22,7 +23,7 @@ public class DeleteDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         driverService.delete(Long.valueOf(id));
         resp.sendRedirect(req.getContextPath() + "/drivers");
     }

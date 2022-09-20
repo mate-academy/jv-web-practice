@@ -14,6 +14,7 @@ import mate.service.DriverService;
 public class GetDriverByIdController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private DriverService driverService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -23,7 +24,7 @@ public class GetDriverByIdController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Driver driver = driverService.get(Long.valueOf(id));
         String name = driver.getName();
         String licenseNumber = driver.getLicenseNumber();
@@ -36,7 +37,7 @@ public class GetDriverByIdController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Driver updatedDriver = new Driver();
         updatedDriver.setId(Long.valueOf(id));
         String name = req.getParameter("name");

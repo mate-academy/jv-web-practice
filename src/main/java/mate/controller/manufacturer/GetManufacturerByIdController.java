@@ -14,6 +14,7 @@ import mate.service.ManufacturerService;
 public class GetManufacturerByIdController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -23,7 +24,7 @@ public class GetManufacturerByIdController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Manufacturer manufacturer = manufacturerService.get(Long.valueOf(id));
         String name = manufacturer.getName();
         String country = manufacturer.getCountry();
@@ -36,7 +37,7 @@ public class GetManufacturerByIdController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Manufacturer updatedManufacturer = new Manufacturer();
         updatedManufacturer.setId(Long.valueOf(id));
         String name = req.getParameter("name");

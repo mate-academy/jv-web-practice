@@ -20,6 +20,7 @@ public class GetCarByIdController extends HttpServlet {
     private List<Driver> drivers;
     private ManufacturerService manufacturerService;
     private CarService carService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -31,7 +32,7 @@ public class GetCarByIdController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Car car = carService.get(Long.valueOf(id));
         String model = car.getModel();
         drivers = car.getDrivers();
@@ -47,7 +48,7 @@ public class GetCarByIdController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         String model = req.getParameter("model").trim();
         String manufacturerId = req.getParameter("manufacturer").trim();
         if (model.isBlank()

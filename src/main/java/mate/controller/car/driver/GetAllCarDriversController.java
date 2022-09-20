@@ -21,6 +21,7 @@ public class GetAllCarDriversController extends HttpServlet {
     private List<Driver> drivers;
     private CarService carService;
     private DriverService driverService;
+    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
@@ -31,7 +32,7 @@ public class GetAllCarDriversController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String id = req.getPathInfo().split("/")[1];
+        String id = req.getPathInfo().split("/")[ID_POSITION];
         Car car = carService.get(Long.valueOf(id));
         String model = car.getModel();
         drivers = car.getDrivers();
