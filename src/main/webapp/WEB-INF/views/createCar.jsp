@@ -6,7 +6,7 @@
 </head>
 <body>
 <h3>Create car</h3>
-<form method="post" action="${pageContext.request.contextPath}/create_car">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model name <input type="text" name="model"><br>
     Manufacturer id <input type="text" name="manufacturer_id"><br>
     <button type="submit">submit</button>
@@ -23,7 +23,6 @@
             <td><c:out value="${manufacturer.getId()}"/></td>
             <td><c:out value="${manufacturer.getName()}"/></td>
             <td><c:out value="${manufacturer.getCountry()}"/></td>
-            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete manufacturer</a></td>
         </tr>
     </c:forEach>
 </table>
