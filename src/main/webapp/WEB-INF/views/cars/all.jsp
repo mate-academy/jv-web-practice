@@ -26,11 +26,6 @@
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
             <tr></tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
         </c:forEach>
     </c:forEach>
 </table>
