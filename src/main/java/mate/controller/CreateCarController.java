@@ -2,7 +2,6 @@ package mate.controller;
 
 import java.io.IOException;
 import java.util.ArrayList;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,20 +14,14 @@ import mate.service.ManufacturerService;
 
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
-    private ManufacturerService manufacturerService;
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        carService = (CarService) injector.getInstance(CarService.class);
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-        super.init(config);
-    }
+    private CarService carService = (CarService) injector.getInstance(CarService.class);
+    private ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create-car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/createCar.jsp").forward(req, resp);
     }
 
     @Override

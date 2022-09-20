@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,18 +11,13 @@ import mate.service.ManufacturerService;
 
 public class CreateManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService;
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-        super.init(config);
-    }
+    private ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create-manufacturers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/createManufacturers.jsp").forward(req, resp);
     }
 
     @Override

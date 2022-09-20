@@ -61,7 +61,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>AddDriverToCar</servlet-name>
-        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+        <servlet-class>mate.controller.CreateDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>AddDriverToCar</servlet-name>

@@ -2,7 +2,6 @@ package mate.controller;
 
 import java.io.IOException;
 import java.util.List;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -13,13 +12,7 @@ import mate.service.CarService;
 
 public class GetAllCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService;
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        carService = (CarService) injector.getInstance(CarService.class);
-        super.init(config);
-    }
+    private CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

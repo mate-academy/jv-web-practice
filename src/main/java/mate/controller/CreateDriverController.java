@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,18 +11,13 @@ import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private DriverService driverService;
-
-    @Override
-    public void init(ServletConfig config) throws ServletException {
-        driverService = (DriverService) injector.getInstance(DriverService.class);
-        super.init(config);
-    }
+    private DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create-driver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/createDriver.jsp").forward(req, resp);
     }
 
     @Override
