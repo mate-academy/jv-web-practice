@@ -33,6 +33,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.valueOf(req.getParameter("carId")));
         Driver driver = driverService.get(Long.valueOf(req.getParameter("driverId")));
         carService.addDriverToCar(driver,car);
-        resp.sendRedirect( req.getContextPath() + "/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
