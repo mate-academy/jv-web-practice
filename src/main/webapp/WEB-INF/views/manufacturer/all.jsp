@@ -7,38 +7,46 @@
 <body>
     <jsp:include page="../header.jsp"/>
 
-    <h1>List manufacturers.</h1>
+    <c:if test="${manufacturers.size() == 0}">
+        <h1>There is no manufacturer, please create</h1>
+        <a href='${pageContext.request.contextPath}/manufacturers/add'>
+            <input type="button" value="CREATE" style="background-color: limegreen"></a>
+    </c:if>
 
-    <hr>
+    <c:if test="${manufacturers.size() != 0}">
+        <h1>List manufacturers.</h1>
 
-    <table>
-        <tr>
-            <td>ID</td>
-            <td>|</td>
-            <td>NAME</td>
-            <td>|</td>
-            <td>COUNTRY</td>
-            <td>|</td>
-            <td>|</td>
-            <td>OPERATIONS</td>
-        </tr>
+        <hr>
 
-        <c:forEach items="${manufacturers}" var="manufacturer">
+        <table>
             <tr>
-                <td> ${manufacturer.id} </td>
+                <td>ID</td>
                 <td>|</td>
-                <td> ${manufacturer.name} </td>
+                <td>NAME</td>
                 <td>|</td>
-                <td> ${manufacturer.country} </td>
+                <td>COUNTRY</td>
                 <td>|</td>
                 <td>|</td>
-                <td><a href='manufacturers/${manufacturer.id}'>
-                    <input type="button" value="EDIT" style="background-color: orange"></a></td>
-                <td><a href='manufacturers/delete/${manufacturer.id}'>
-                    <input type="button" value="DELETE" style="background-color: red"></a></td>
+                <td>OPERATIONS</td>
             </tr>
-        </c:forEach>
-    </table>
+
+            <c:forEach items="${manufacturers}" var="manufacturer">
+                <tr>
+                    <td> ${manufacturer.id} </td>
+                    <td>|</td>
+                    <td> ${manufacturer.name} </td>
+                    <td>|</td>
+                    <td> ${manufacturer.country} </td>
+                    <td>|</td>
+                    <td>|</td>
+                    <td><a href='manufacturers/${manufacturer.id}'>
+                        <input type="button" value="EDIT" style="background-color: orange"></a></td>
+                    <td><a href='manufacturers/delete/${manufacturer.id}'>
+                        <input type="button" value="DELETE" style="background-color: red"></a></td>
+                </tr>
+            </c:forEach>
+        </table>
+    </c:if>
 
     <hr>
 

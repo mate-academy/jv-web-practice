@@ -8,57 +8,69 @@
     <jsp:include page="../header.jsp"/>
 
     <h1>${manufacturer.name} ${model} drivers</h1>
-    <h2>${title}</h2>
+<%--    <h2>${title}</h2>--%>
 
-    <hr>
+    <c:if test="${drivers.size() == 0}">
+        <hr>
+        <h2>There are no drivers for this car</h2>
+    </c:if>
 
-    <table>
-        <tr>
-            <td>
-                ID
-            </td><td>|</td><td>
-                NAME
-            </td><td>|</td><td>
-                LICENSE NUMBER
-            </td><td>|</td><td>|</td><td>
-                OPERATIONS
-            </td>
-        </tr>
-
-        <c:forEach items="${drivers}" var="driver">
+    <c:if test="${drivers.size() != 0}">
+        <hr>
+        <table>
             <tr>
                 <td>
-                    ${driver.id}
+                    ID
                 </td><td>|</td><td>
-                    ${driver.name}
+                    NAME
                 </td><td>|</td><td>
-                    ${driver.licenseNumber}
+                    LICENSE NUMBER
                 </td><td>|</td><td>|</td><td>
-<%--                    <a href='delete/${driver.id}'>--%>
-<%--                        <input type="button" value="REMOVE (not work yet)" style="background-color: red"></a></td>--%>
+                    OPERATIONS
+                </td>
             </tr>
-        </c:forEach>
-    </table>
 
-    <hr>
-
-    <form method="POST" action="${pageContext.request.contextPath}/cars/drivers/add">
-        <label for="car"> car: </label>
-        <input type="text" id="car" name="car_id"value="${id}" readonly style="background-color: lightgrey" size="3">
-
-        <label for="driversRemained"> driver: </label>
-        <select id="driversRemained" name="driver_id">
-            <option>
-            <c:forEach items="${driversRemained}" var="driver">
-                <option value="${driver.id}">${driver.name}</option>
+            <c:forEach items="${drivers}" var="driver">
+                <tr>
+                    <td>
+                        ${driver.id}
+                    </td><td>|</td><td>
+                        ${driver.name}
+                    </td><td>|</td><td>
+                        ${driver.licenseNumber}
+                    </td><td>|</td><td>|</td><td>
+    <%--                    <a href='delete/${driver.id}'>--%>
+    <%--                        <input type="button" value="REMOVE (not work yet)" style="background-color: red"></a></td>--%>
+                </tr>
             </c:forEach>
-        </select>
+        </table>
+    </c:if>
 
-        <input type="submit" value="ADD TO ${manufacturer.name} ${model}" style="background-color: yellow">
-    </form>
+    <c:if test="${driversRemained.size() == 0}">
+        <hr>
+        <h2>The list of drivers is empty.</h2>
+        <a href='${pageContext.request.contextPath}/drivers/add'>
+            <input type="button" value="CREATE DRIVER" style="background-color: limegreen"></a>
+    </c:if>
+    <c:if test="${driversRemained.size() != 0}">
+        <hr>
+        <form method="POST" action="${pageContext.request.contextPath}/cars/drivers/add">
+            <label for="car"> car: </label>
+            <input type="text" id="car" name="car_id"value="${id}" readonly style="background-color: lightgrey" size="3">
+
+            <label for="driversRemained"> driver: </label>
+            <select id="driversRemained" name="driver_id">
+                <option>
+                <c:forEach items="${driversRemained}" var="driver">
+                    <option value="${driver.id}">${driver.name}</option>
+                </c:forEach>
+            </select>
+
+            <input type="submit" value="ADD TO ${manufacturer.name} ${model}" style="background-color: yellow">
+        </form>
+    </c:if>
 
     <hr>
-
     <jsp:include page="../footer.jsp"/>
 </body>
 </html>
