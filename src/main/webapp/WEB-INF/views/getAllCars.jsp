@@ -10,7 +10,7 @@
 <table>
   <tr>
     <td>ID</td>
-    <td>Manufacturer id</td>
+    <td>Manufacturer</td>
     <td>Model</td>
     <td>Drivers</td>
   </tr>
@@ -31,6 +31,6 @@
     </tr>
   </c:forEach>
 </table>
-<a href="add">Add new car</a>
+<a href="addCar">Add new car</a>
 </body>
 </html>
