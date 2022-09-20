@@ -14,10 +14,10 @@
   </tr>
   <c:forEach items="${cars}" var="car">
     <tr>
-      <td><c:out value="${car.getId()}" /></td>
-      <td><c:out value="${car.getModel()}" /></td>
-      <td><c:out value="${car.getManufacturer().getName()}" /></td>
-      <td><c:out value="${car.getDrivers().toString()}" /></td>
+      <td><c:out value="${car.id}" /></td>
+      <td><c:out value="${car.model}" /></td>
+      <td><c:out value="${car.manufacturer.name}" /></td>
+      <td><c:out value="${car.drivers}" /></td>
       <td>
         <a href="${pageContext.request.contextPath}/cars/delete?id=${car
                 .getId()}"><button>delete this car</button></a>
