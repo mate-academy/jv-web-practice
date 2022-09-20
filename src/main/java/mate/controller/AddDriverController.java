@@ -13,8 +13,8 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService
-            = (DriverService) injector.getInstance(DriverService.class);
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
