@@ -7,7 +7,7 @@
     <h1>Please fill in all fields</h1>
     <form method="post" action="${pageContext.request.contextPath}/cars/create">
         Car model <input type="text" name="model"><br>
-        Car manufacturer id <input type="text" name="manufacturer_id"><br>
+        Car manufacturer id <input type="text" name="manufacturerId"><br>
         <button type="submit">Add</button>
     </form>
     <a href="${pageContext.request.contextPath}/manufacturers/all">Show all manufacturers</a>
