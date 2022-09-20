@@ -22,7 +22,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>displayAllDrivers</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
