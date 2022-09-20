@@ -11,10 +11,10 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers")
 public class GetAllDriversController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
-    private static final DriverService driverService
-            = (DriverService) injector.getInstance(DriverService.class);
+    private static final Injector injector =
+            Injector.getInstance("mate");
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

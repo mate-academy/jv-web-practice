@@ -14,12 +14,12 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/driver/add")
 public class AddDriverToCarController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
-    private static final CarService carService
-            = (CarService) injector.getInstance(CarService.class);
-    private static final DriverService driverService
-            = (DriverService) injector.getInstance(DriverService.class);
+    private static final Injector injector =
+            Injector.getInstance("mate");
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -33,6 +33,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.valueOf(req.getParameter("carId")));
         Driver driver = driverService.get(Long.valueOf(req.getParameter("driverId")));
         carService.addDriverToCar(driver,car);
-        resp.sendRedirect("/cars");
+        resp.sendRedirect( req.getContextPath() + "/cars");
     }
 }
