@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>Fill in the information about the new car</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
     Manufacturer <input type="number" name="manufacturer_id"><br>
     <button type="submit">Create</button>
