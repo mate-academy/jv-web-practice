@@ -34,7 +34,7 @@ public class AddCarController extends HttpServlet {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         Manufacturer manufacturer = manufacturerService
-                .get(Long.parseLong(req.getParameter("manufacturer_id")));
+                .get(Long.parseLong(req.getParameter("manufacturerId")));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
