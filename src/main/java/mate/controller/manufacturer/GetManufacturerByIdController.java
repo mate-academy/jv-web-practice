@@ -13,7 +13,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/*")
 public class GetManufacturerByIdController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService = null;
+    private ManufacturerService manufacturerService;
 
     @Override
     public void init() throws ServletException {

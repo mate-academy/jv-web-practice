@@ -12,7 +12,7 @@ import mate.service.CarService;
 @WebServlet(urlPatterns = "/cars/delete/*")
 public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService = null;
+    private CarService carService;
 
     @Override
     public void init() throws ServletException {

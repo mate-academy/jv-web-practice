@@ -16,9 +16,9 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService = null;
-    private CarService carService = null;
-    private DriverService driverService = null;
+    private ManufacturerService manufacturerService;
+    private CarService carService;
+    private DriverService driverService;
 
     @Override
     public void init() throws ServletException {
