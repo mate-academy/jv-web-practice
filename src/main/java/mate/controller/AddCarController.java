@@ -12,7 +12,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-public class CreateCarController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
@@ -21,7 +21,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/createCar.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/addCar.jsp").forward(request, response);
     }
 
     @Override

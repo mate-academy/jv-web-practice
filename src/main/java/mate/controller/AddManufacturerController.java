@@ -9,7 +9,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-public class CreateManufacturerController extends HttpServlet {
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -17,7 +17,7 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/createManufacturer.jsp")
+        request.getRequestDispatcher("/WEB-INF/views/addManufacturer.jsp")
                 .forward(request, response);
     }
 
