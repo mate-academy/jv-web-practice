@@ -1,11 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Register a new Car</title>
+    <title>Add a new Car</title>
 </head>
 <body>
 <h2>Registration form for new Car</h2>
-<form method="post" action="${pageContext.request.contextPath}/cars/register">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     <label for="model">Model:</label><br>
     <input type="text" id="model" name="model"><br>
     <label for="manufacturer_id">Manufacturer ID:</label><br>
