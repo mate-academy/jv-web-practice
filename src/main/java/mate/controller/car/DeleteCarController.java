@@ -11,9 +11,9 @@ import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars/delete/*")
 public class DeleteCarController extends HttpServlet {
+    private static final int ID_POSITION = 1;
     private static final Injector injector = Injector.getInstance("mate");
     private CarService carService;
-    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {

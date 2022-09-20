@@ -17,11 +17,11 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/*")
 public class GetAllCarDriversController extends HttpServlet {
+    private static final int ID_POSITION = 1;
     private static final Injector injector = Injector.getInstance("mate");
     private List<Driver> drivers;
     private CarService carService;
     private DriverService driverService;
-    private static final int ID_POSITION = 1;
 
     @Override
     public void init() throws ServletException {
