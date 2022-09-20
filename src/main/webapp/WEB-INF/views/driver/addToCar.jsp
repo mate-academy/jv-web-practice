@@ -4,10 +4,10 @@
     <title>Add driver to car</title>
 </head>
 <body>
-<h1>Please fill carId and DriverID</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    CarId <input type="number" name="car_id"><br>
-    DriverId <input type="number" name="driver_id"><br>
+<h1>Fill your*s carId and DriverID below</h1>
+<form method="post" action="${pageContext.request.contextPath}/cars/add/driver">
+    CarId <input type="text" name="car_id">
+    DriverId <input type="text" name="driver_id">
     <button type="submit">Confirm</button>
 </form>
 </body>

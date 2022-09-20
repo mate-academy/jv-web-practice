@@ -12,7 +12,6 @@
         <td>Name</td>
         <td>Country</td>
         <td>delete manufacturer</td>
-
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
