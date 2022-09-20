@@ -4,7 +4,7 @@
   <title>Adding a car</title>
 </head>
 <body>
-<h1>Add a car</h1>
+<h1>Add car to DB</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
   Model: <input required type="text" name="model"><br>
   Manufacturer id: <input required type="number" name="manufacturer_id"><br>
