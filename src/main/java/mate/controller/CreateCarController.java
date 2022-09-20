@@ -13,13 +13,13 @@ import mate.service.CarService;
 import mate.service.ManufacturerService;
 
 public class CreateCarController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
-    private static final CarService carService
-            = (CarService) injector.getInstance(CarService.class);
+    private static final Injector injector =
+            Injector.getInstance("mate");
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
 
-    private static final ManufacturerService manufacturerService
-            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private static final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -32,8 +32,8 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
-        Manufacturer manufacturer
-                = manufacturerService.get(Long.valueOf(req.getParameter("manufacturerId")));
+        Manufacturer manufacturer =
+                manufacturerService.get(Long.valueOf(req.getParameter("manufacturerId")));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
