@@ -7,8 +7,8 @@
 <h1>Please input information about driver</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">
-  Name <input type="text" name="driverName"><br>
-  License number <input type="text" name="driverLicenseNumber"><br>
+  Name <input type="text" name="driver_name"><br>
+  License number <input type="text" name="driver_license_number"><br>
   <button type="submit">Confirm</button>
 </form>
 <td><a href="${pageContext.request.contextPath}/">back to menu</a></td>
