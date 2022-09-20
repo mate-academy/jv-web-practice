@@ -38,8 +38,8 @@
 </table>
 <h2>Form!</h2>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    CarID <input type="number" name="carId"><br>
-    DriverID <input type="number" name="driverId"><br>
+    CarID <input type="number" name="car_id"><br>
+    DriverID <input type="number" name="driver_id"><br>
     <button type="submit">Add driver!</button>
 </form>
 </body>
