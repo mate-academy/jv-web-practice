@@ -30,7 +30,7 @@ CREATE TABLE `cars` (
 
 DROP TABLE IF EXISTS `cars_drivers`;
 CREATE TABLE `cars_drivers` (
-                                `car_id`    bigint NOT NULL,
-                                `driver_id` bigint NOT NULL,
+                                `car_id`    BIGINT NOT NULL,
+                                `driver_id` BIGINT NOT NULL,
                                 CONSTRAINT `cars_drivers_cars_fk` FOREIGN KEY (`car_id`) REFERENCES `cars` (`id`),
                                 CONSTRAINT `cars_drivers_drivers_fk` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`));
