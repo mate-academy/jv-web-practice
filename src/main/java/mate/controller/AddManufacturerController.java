@@ -25,10 +25,12 @@ public class AddManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws IOException {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(request.getParameter("name"));
         manufacturer.setCountry(request.getParameter("country"));
         driverService.create(manufacturer);
+        response.sendRedirect(request.getContextPath() + "/index");
     }
 }
