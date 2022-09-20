@@ -13,8 +13,8 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final ManufacturerService manufacturerService
-            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -29,6 +29,6 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setName(req.getParameter("manufacturer_name"));
         manufacturer.setCountry(req.getParameter("manufacturer_country"));
         manufacturerService.create(manufacturer);
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
