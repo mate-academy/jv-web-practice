@@ -20,8 +20,8 @@
     </c:forEach>
 </table>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/createCar">Add new car</a></button>
-<button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/addDriverToCar">Add driver to car</a></button>
-<button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers/displayDrivers">Go to table of drivers</a></button>
-<button type="button" name="return" ><a href="${pageContext.request.contextPath}/manufacturer/displayManufacturers">Go to table of manufacturers</a></button>
+<button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a></button>
+<button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers">Go to table of drivers</a></button>
+<button type="button" name="return" ><a href="${pageContext.request.contextPath}/manufacturers">Go to table of manufacturers</a></button>
 </body>
 </html>

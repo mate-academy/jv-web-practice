@@ -4,12 +4,12 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>displayAllDrivers</servlet-name>
+        <servlet-name>drivers</servlet-name>
         <servlet-class>mate.controller.drivers.DisplayAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>displayAllDrivers</servlet-name>
-        <url-pattern>/drivers/displayDrivers</url-pattern>
+        <servlet-name>drivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createDriver</servlet-name>
@@ -29,12 +29,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>displayAllManufacturers</servlet-name>
+        <servlet-name>manufacturers</servlet-name>
         <servlet-class>mate.controller.manufacturer.DisplayAllManufacturersController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>displayAllManufacturers</servlet-name>
-        <url-pattern>/manufacturer/displayManufacturers</url-pattern>
+        <servlet-name>manufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createManufacturer</servlet-name>
@@ -62,12 +62,12 @@
         <url-pattern>/cars/addCar</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>displayAllCars</servlet-name>
+        <servlet-name>cars</servlet-name>
         <servlet-class>mate.controller.cars.DisplayAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>displayAllCars</servlet-name>
-        <url-pattern>/cars/displayCars</url-pattern>
+        <servlet-name>cars</servlet-name>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createCar</servlet-name>
@@ -86,11 +86,11 @@
         <url-pattern>/cars/deleteCar</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-name>add</servlet-name>
         <servlet-class>mate.controller.cars.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/addDriverToCar</url-pattern>
+        <servlet-name>add</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 </web-app>
