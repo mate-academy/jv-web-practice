@@ -1,4 +1,4 @@
-package mate.dao;
+package mate.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
+import mate.dao.CarDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Car;
@@ -187,7 +188,7 @@ public class CarDaoImpl implements CarDao {
         int size = exceptions.size();
         String query = "DELETE FROM cars_drivers WHERE car_id = ? "
                 + "AND NOT driver_id IN ("
-                + ZERO_PLACEHOLDER + ", ?".repeat(size)
+                + ZERO_PLACEHOLDER + "DELIMITER ?".repeat(size)
                 + ");";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
