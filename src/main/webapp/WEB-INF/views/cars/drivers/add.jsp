@@ -10,7 +10,7 @@
     Driver ID <input type="number" name="driver_id"><br>
     <button type="submit">Appoint</button>
 </form>
-<a href="${pageContext.request.contextPath}/cars/all">how all cars</a>
+<a href="${pageContext.request.contextPath}/cars/all">Show all cars</a>
 <a href="${pageContext.request.contextPath}/drivers/all">Show all drivers</a>
 </body>
 </html>
