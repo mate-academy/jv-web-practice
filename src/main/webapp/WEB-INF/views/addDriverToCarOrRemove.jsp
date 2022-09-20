@@ -57,7 +57,7 @@
 </form>
 
 <h1>Remove driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/remove">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/delete">
     Car ID <input type="number" name="car_id"><br>
     Driver ID <input type="number" name="driver_id"><br>
     <button type="submit">Remove driver</button>
