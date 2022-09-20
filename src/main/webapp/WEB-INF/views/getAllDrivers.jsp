@@ -6,6 +6,7 @@
 </head>
 <body>
 <h1>List of drivers:</h1>
+
 <table>
     <tr>
         <td>Id</td>
