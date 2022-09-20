@@ -16,10 +16,10 @@ import mate.service.DriverService;
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
-    private final CarService carService =
-            (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
+    private final CarService carService = (CarService) injector
+            .getInstance(CarService.class);
+    private final DriverService driverService = (DriverService) injector
+            .getInstance(DriverService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
