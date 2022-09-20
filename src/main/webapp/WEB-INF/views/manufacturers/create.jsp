@@ -10,7 +10,7 @@
     Manufacturer country <input type="text" name="manufacturer_country"><br>
     <button type="submit">Add</button>
 </form>
-    <form method="get" action="${ageContext.request.contextPath}/">
+    <form method="get" action="${pageContext.request.contextPath}/index">
         <button type="submit">Back to home</button>
     </form>
 </body>

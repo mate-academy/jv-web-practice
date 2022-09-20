@@ -10,10 +10,10 @@
         Car manufacturer id <input type="number" name="manufacturer_id"><br>
         <button type="submit">Add</button>
     </form>
-    <form method="get" action="${ageContext.request.contextPath}/manufacturers">
+    <form method="get" action="${pageContext.request.contextPath}/manufacturers">
         <button type="submit">Show all manufacturers</button>
     </form>
-    <form method="get" action="${ageContext.request.contextPath}/">
+    <form method="get" action="${pageContext.request.contextPath}/index">
         <button type="submit">Back to home</button>
     </form>
 </body>
