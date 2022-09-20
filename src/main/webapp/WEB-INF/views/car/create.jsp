@@ -22,9 +22,9 @@
     <jsp:useBean id="manufacturers" scope="request" type="java.util.List"/>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
-            <td><c:out value="${manufacturer.getId()}" /></td>
-            <td><c:out value="${manufacturer.getName()}" /></td>
-            <td><c:out value="${manufacturer.getCountry()}" /></td>
+            <td><c:out value="${manufacturer.id}" /></td>
+            <td><c:out value="${manufacturer.name}" /></td>
+            <td><c:out value="${manufacturer.country}" /></td>
         </tr>
     </c:forEach>
 </table>

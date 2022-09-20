@@ -6,8 +6,8 @@
 <body>
     <h1>Enter car id and driver id:</h1>
     <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-        Car id    <input type="text" name="car_id">
-        Driver id <input type="text" name="driver_id">
+        Car id    <input type="text" name="carId">
+        Driver id <input type="text" name="driverId">
         <button type="submit">Add driver</button>
     </form>
 </body>
@@ -21,9 +21,9 @@
         </tr>
         <c:forEach items="${drivers}" var="driver">
             <tr>
-                <td><c:out value="${driver.getId()}"/></td>
-                <td><c:out value="${driver.getName()}"/></td>
-                <td><c:out value="${driver.getLicenseNumber()}"/></td>
+                <td><c:out value="${driver.id}"/></td>
+                <td><c:out value="${driver.name}"/></td>
+                <td><c:out value="${driver.licenseNumber}"/></td>
             </tr>
         </c:forEach>
     </table>
@@ -43,6 +43,5 @@
         <td><c:out value="${car.getManufacturer().getName()}"/></td>
     </c:forEach>
 </table>
-
 </body>
 </html>
