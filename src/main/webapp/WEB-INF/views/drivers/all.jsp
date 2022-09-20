@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Mir
-  Date: 19.09.2022
-  Time: 12:50
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -29,7 +22,9 @@
     </tr>
   </c:forEach>
 </table>
+<br>
 <a href="${pageContext.request.contextPath}/drivers/add">Add new driver</a>
+<br>
 <a href="${pageContext.request.contextPath}/">Back to home</a>
 </body>
 </html>
