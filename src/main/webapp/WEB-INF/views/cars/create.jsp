@@ -10,11 +10,7 @@
         Car manufacturer id <input type="number" name="manufacturer_id"><br>
         <button type="submit">Add</button>
     </form>
-    <form method="get" action="${pageContext.request.contextPath}/manufacturers/all">
-        <button type="submit">Show all manufacturers</button>
-    </form>
-    <form method="get" action="${pageContext.request.contextPath}/index">
-        <button type="submit">Back to home</button>
-    </form>
+    <a href="${pageContext.request.contextPath}/manufacturers/all">Show all manufacturers</a>
+    <a href="${pageContext.request.contextPath}/index">Back to home</a>
 </body>
 </html>

@@ -34,8 +34,6 @@
         </c:forEach>
     </c:forEach>
 </table>
-    <form method="get" action="${pageContext.request.contextPath}/index">
-        <button type="submit">Back to home</button>
-    </form>
+    <a href="${pageContext.request.contextPath}/index">Back to home</a>
 </body>
 </html>
