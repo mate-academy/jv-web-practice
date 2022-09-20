@@ -25,7 +25,7 @@
         <td><c:out value="${car.manufacturer.country}"/></td>
         <td>
             <table>
-                <c:forEach items="${car.getDrivers()}" var="driver">
+                <c:forEach items="${car.drivers}" var="driver">
                     <tr>
                         <td><c:out value="${driver.id}"/></td>
                         <td><c:out value="${driver.name}"/></td>
