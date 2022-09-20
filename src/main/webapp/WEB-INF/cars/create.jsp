@@ -5,12 +5,12 @@
 </head>
 <body>
 <h1>Enter a new Car parameters</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model <input type="text" name="model"><br/>
     Manufacturer id <input type="text" name="manufacturer_id"><br/>
     <button type="submit">Send</button>
 </form>
 <h2>If you want creat manufacturer click here</h2>
-<button><a href="${pageContext.request.contextPath}/manufacturer/createManufacturer">Create manufacturer</a></button>
+<button><a href="${pageContext.request.contextPath}/manufacturer/create">Create manufacturer</a></button>
 </body>
 </html>
