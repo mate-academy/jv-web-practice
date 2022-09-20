@@ -33,5 +33,6 @@
     </tr>
   </c:forEach>
 </table>
+<a href="${pageContext.request.contextPath}/cars/add">create new car</a>
 </body>
 </html>
