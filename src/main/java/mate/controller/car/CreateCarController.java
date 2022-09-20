@@ -38,31 +38,25 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         String model = req.getParameter("model").trim();
         String manufacturerId = req.getParameter("manufacturer").trim();
-
         if (model.isBlank()
                 || model.isEmpty()
                 || model.length() < 2
                 || manufacturerId.isEmpty()) {
-
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
             req.setAttribute("model", model);
             req.setAttribute("manufacturerId", manufacturerId);
         } else {
             Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
-
             Car newCar = new Car();
             newCar.setModel(model);
             newCar.setManufacturer(manufacturer);
             newCar.setDrivers(new ArrayList<>());
-
             Car createdCar = carService.create(newCar);
             Long id = createdCar.getId();
-
             req.setAttribute("title", "Car ("
                     + "<a href='" + id + "'>" + model + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
-
         req.setAttribute("manufacturers", manufacturerService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }

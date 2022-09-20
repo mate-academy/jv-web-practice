@@ -32,7 +32,6 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name").trim();
         String licenseNumber = req.getParameter("licenseNumber").trim();
-
         if (name.isBlank()
                 || name.isEmpty()
                 || name.length() < 3
@@ -48,12 +47,10 @@ public class CreateDriverController extends HttpServlet {
             newDriver.setLicenseNumber(licenseNumber);
             Driver createdDriver = driverService.create(newDriver);
             Long id = createdDriver.getId();
-
             req.setAttribute("title", "Driver ("
                     + "<a href='" + id + "'>" + name + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
-
         req.getRequestDispatcher("/WEB-INF/views/driver/create.jsp").forward(req, resp);
     }
 }

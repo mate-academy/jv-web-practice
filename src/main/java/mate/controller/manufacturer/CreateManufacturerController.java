@@ -32,7 +32,6 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name").trim();
         String country = req.getParameter("country").trim();
-
         if (name.isBlank()
                 || name.isEmpty()
                 || name.length() < 3
@@ -48,12 +47,10 @@ public class CreateManufacturerController extends HttpServlet {
             newManufacturer.setCountry(country);
             Manufacturer createdManufacturer = manufacturerService.create(newManufacturer);
             Long id = createdManufacturer.getId();
-
             req.setAttribute("title", "Manufacturer ("
                     + "<a href='" + id + "'>" + name + "</a>"
                     + ") has been successfully created,<br> do you want to create another one?");
         }
-
         req.getRequestDispatcher("/WEB-INF/views/manufacturer/create.jsp").forward(req, resp);
     }
 }

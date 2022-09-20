@@ -37,14 +37,12 @@ public class GetManufacturerByIdController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
-
         Manufacturer updatedManufacturer = new Manufacturer();
         updatedManufacturer.setId(Long.valueOf(id));
         String name = req.getParameter("name");
         updatedManufacturer.setName(name);
         String country = req.getParameter("country");
         updatedManufacturer.setCountry(country);
-
         Manufacturer manufacturer = manufacturerService.update(updatedManufacturer);
         req.setAttribute("id", id);
         req.setAttribute("name", manufacturer.getName());

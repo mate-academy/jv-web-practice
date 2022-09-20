@@ -40,13 +40,11 @@ public class GetAllCarDriversController extends HttpServlet {
         Manufacturer manufacturer = car.getManufacturer();
         req.setAttribute("manufacturer", manufacturer);
         req.setAttribute("drivers", drivers);
-
         List<Driver> driversRemained = driverService.getAll()
                 .stream()
                 .filter(d -> !drivers.contains(d))
                 .collect(Collectors.toList());
         req.setAttribute("driversRemained", driversRemained);
-
         req.getRequestDispatcher("/WEB-INF/views/car/drivers.jsp").forward(req, resp);
     }
 }

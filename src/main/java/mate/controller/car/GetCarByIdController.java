@@ -31,7 +31,6 @@ public class GetCarByIdController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-
         String id = req.getPathInfo().split("/")[1];
         Car car = carService.get(Long.valueOf(id));
         String model = car.getModel();
@@ -51,25 +50,18 @@ public class GetCarByIdController extends HttpServlet {
         String id = req.getPathInfo().split("/")[1];
         String model = req.getParameter("model").trim();
         String manufacturerId = req.getParameter("manufacturer").trim();
-
         if (model.isBlank()
                 || model.isEmpty()
                 || model.length() < 2) {
-
             req.setAttribute("title", "<p style=\"color:red\">enter the correct data</p>");
-
         } else {
-
             Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
-
             Car newCar = new Car();
             newCar.setId(Long.valueOf(id));
             newCar.setModel(model);
             newCar.setDrivers(drivers);
             newCar.setManufacturer(manufacturer);
-
             carService.update(newCar);
-
             req.setAttribute("id", id);
             req.setAttribute("manufacturer", manufacturer);
             req.setAttribute("manufacturerId", manufacturer.getId());
@@ -78,10 +70,8 @@ public class GetCarByIdController extends HttpServlet {
                     + manufacturer.getName() + "/" + model
                     + ") has been successfully updated");
         }
-
         req.setAttribute("model", model);
         req.setAttribute("manufacturers", manufacturerService.getAll());
-
         req.getRequestDispatcher("/WEB-INF/views/car/edit.jsp").forward(req, resp);
     }
 }

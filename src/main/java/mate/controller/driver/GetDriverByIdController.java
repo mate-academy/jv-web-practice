@@ -37,14 +37,12 @@ public class GetDriverByIdController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String id = req.getPathInfo().split("/")[1];
-
         Driver updatedDriver = new Driver();
         updatedDriver.setId(Long.valueOf(id));
         String name = req.getParameter("name");
         updatedDriver.setName(name);
         String licenseNumber = req.getParameter("licenseNumber");
         updatedDriver.setLicenseNumber(licenseNumber);
-
         Driver driver = driverService.update(updatedDriver);
         req.setAttribute("id", id);
         req.setAttribute("name", driver.getName());
