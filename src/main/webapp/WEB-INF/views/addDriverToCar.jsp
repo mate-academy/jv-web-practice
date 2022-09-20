@@ -11,23 +11,21 @@
   Driver ID <input type="text" name="driverId"><br>
     <button type="submit">submit</button>
 </form>
-
 <h3>List of drivers:</h3>
 <table>
     <tr>
-        <td>Id</td>
-        <td>Name</td>
-        <td>License number</td>
+        <th>Id</th>
+        <th>Name</th>
+        <th>License number</th>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-            <td><c:out value="${driver.getId()}" /></td>
-            <td><c:out value="${driver.getName()}" /></td>
-            <td><c:out value="${driver.getLicenseNumber()}" /></td>
+            <td><c:out value="${driver.id}" /></td>
+            <td><c:out value="${driver.name}" /></td>
+            <td><c:out value="${driver.licenseNumber}" /></td>
         </tr>
     </c:forEach>
 </table>
-
 <h3>List of cars:</h3>
 <table>
     <tr>
@@ -37,12 +35,11 @@
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
-            <td><c:out value="${car.getId()}" /></td>
-            <td><c:out value="${car.getManufacturer().getName()}" /></td>
-            <td><c:out value="${car.getModel()}" /></td>
+            <td><c:out value="${car.id}" /></td>
+            <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><c:out value="${car.model}" /></td>
         </tr>
     </c:forEach>
 </table>
-
 </body>
 </html>
