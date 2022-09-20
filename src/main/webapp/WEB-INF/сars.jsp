@@ -19,7 +19,7 @@
         </tr>
     </c:forEach>
 </table>
-<button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/create">Add new car</a></button>
+<button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/add">Add new car</a></button>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a></button>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers">Go to table of drivers</a></button>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/manufacturers">Go to table of manufacturers</a></button>
