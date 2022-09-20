@@ -32,7 +32,7 @@ public class AddCarController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/AddCar.jsp").forward(req, resp);
     }
 
     @Override
@@ -45,6 +45,6 @@ public class AddCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
