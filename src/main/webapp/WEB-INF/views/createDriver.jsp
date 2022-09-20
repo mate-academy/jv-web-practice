@@ -6,7 +6,7 @@
 <body>
 <h3> Create Driver </h3>
 <form action="${pageContext.request.contextPath}/drivers/add" method="post">
-    <table style="width: 20%">
+    <table style="width: 40%">
         <tr>
             <td>Name</td>
             <td><input type="text" name="name" required/></td>

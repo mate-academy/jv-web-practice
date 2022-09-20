@@ -6,7 +6,7 @@
 <body>
 <h3> Create Car </h3>
 <form action="${pageContext.request.contextPath}/cars/add" method="post">
-  <table style="width: 20%">
+  <table style="width: 40%">
     <tr>
       <td>Model</td>
       <td><input type="text" name="model" required/></td>

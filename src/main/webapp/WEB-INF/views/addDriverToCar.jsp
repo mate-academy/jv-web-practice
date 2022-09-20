@@ -7,7 +7,7 @@
 <body>
 <h3> Add Driver to Car </h3>
 <form action="${pageContext.request.contextPath}/drivers/cars/add" method="post">
-    <table style="width: 20%">
+    <table style="width: 40%">
         <tr>
             <td>Driver ID</td>
             <td><input type="number" name="driverId" required/></td>
