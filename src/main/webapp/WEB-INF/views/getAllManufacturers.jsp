@@ -20,6 +20,6 @@
     </tr>
   </c:forEach>
 </table>
-<a href="addManufacturer">Add new manufacturer</a>
+<a href="manufacturers/add">Add new manufacturer</a>
 </body>
 </html>

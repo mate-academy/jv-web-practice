@@ -31,6 +31,6 @@
     </tr>
   </c:forEach>
 </table>
-<a href="addCar">Add new car</a>
+<a href="/cars/add">Add new car</a>
 </body>
 </html>

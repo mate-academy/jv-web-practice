@@ -20,6 +20,6 @@
     </tr>
   </c:forEach>
 </table>
-<a href="addDriver">Add new driver</a>
+<a href="drivers/add">Add new driver</a>
 </body>
 </html>
