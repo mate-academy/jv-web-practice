@@ -13,7 +13,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/views/addCar")
+@WebServlet(urlPatterns = "/cars/add")
 public class AddCarController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
@@ -38,6 +38,6 @@ public class AddCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        resp.sendRedirect("/views/getAllCars");
+        resp.sendRedirect("/cars");
     }
 }
