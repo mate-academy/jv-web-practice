@@ -31,6 +31,5 @@
 <form action="${pageContext.request.contextPath}/index">
     <input type="submit" value="Return to First page">
 </form>
-
 </body>
 </html>
