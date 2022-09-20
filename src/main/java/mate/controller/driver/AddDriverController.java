@@ -27,7 +27,6 @@ public class AddDriverController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Driver driver = new Driver();
-        Map<String, String[]> parametrMap = req.getParameterMap();
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
         driver.setLicenseNumber(licenseNumber);
