@@ -7,10 +7,10 @@
 <body>
 <table>
   <tr>
-    <td>Id</td>
-    <td>Name</td>
-    <td>License number</td>
-    <td>Drivers</td>
+    <td><h3>Id</h3></td>
+    <td><h3>Name</h3></td>
+    <td><h3>License number</h3></td>
+    <td><h3>Drivers</h3></td>
   </tr>
   <c:forEach items="${cars}" var="car">
     <tr>

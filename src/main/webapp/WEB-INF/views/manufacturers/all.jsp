@@ -7,9 +7,9 @@
 <body>
 <table>
   <tr>
-    <td>Id</td>
-    <td>Name</td>
-    <td>Country</td>
+    <td><h3>Id</h3></td>
+    <td><h3>Name</h3></td>
+    <td><h3>Country</h3></td>
   </tr>
   <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>
