@@ -10,11 +10,11 @@
     <table style="width: 20%">
         <tr>
             <td>Driver ID</td>
-            <td><input type="number" name="driver_id" required/></td>
+            <td><input type="number" name="driverId" required/></td>
         </tr>
         <tr>
             <td>Car ID</td>
-            <td><input type="number" name="car_id" required/></td>
+            <td><input type="number" name="carId" required/></td>
         </tr>
     </table>
     <input type="submit" value="Confirm" />
