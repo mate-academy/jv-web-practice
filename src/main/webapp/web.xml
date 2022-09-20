@@ -4,11 +4,11 @@
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
     <servlet>
-        <servlet-name>drivers</servlet-name>
+        <servlet-name>displayAllDrivers</servlet-name>
         <servlet-class>mate.controller.drivers.DisplayAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>drivers</servlet-name>
+        <servlet-name>displayAllDrivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -29,11 +29,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>manufacturers</servlet-name>
+        <servlet-name>displayAllManufacturers</servlet-name>
         <servlet-class>mate.controller.manufacturer.DisplayAllManufacturersController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>manufacturers</servlet-name>
+        <servlet-name>displayAllManufacturers</servlet-name>
         <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -54,11 +54,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>cars</servlet-name>
+        <servlet-name>displayAllCars</servlet-name>
         <servlet-class>mate.controller.cars.DisplayAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>cars</servlet-name>
+        <servlet-name>displayAllCars</servlet-name>
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet>
