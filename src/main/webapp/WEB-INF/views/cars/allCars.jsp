@@ -35,7 +35,7 @@
     </c:forEach>
 </table>
 <br>
-<form method="get" action="${pageContext.request.contextPath}/cars/create">
+<form method="get" action="${pageContext.request.contextPath}/cars/add">
     <button type="submit">Create a car</button>
 </form>
 </body>

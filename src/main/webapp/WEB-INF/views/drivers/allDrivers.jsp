@@ -23,7 +23,7 @@
     </c:forEach>
 </table>
 <br>
-<form method="get" action="${pageContext.request.contextPath}/drivers/create">
+<form method="get" action="${pageContext.request.contextPath}/drivers/add">
     <button type="submit">Create a driver</button>
 </form>
 </body>
