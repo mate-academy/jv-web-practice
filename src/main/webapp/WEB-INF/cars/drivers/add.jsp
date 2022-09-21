@@ -11,8 +11,8 @@
     <button type="submit">Add</button>
     <h2>If you want crate driver or car</h2>
 
-    <button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/createCar">Create new car</a></button>
-    <button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers/createDriver">Create new driver</a></button>
+    <button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars/add">Create new car</a></button>
+    <button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers/add">Create new driver</a></button>
 </form>
 </body>
 </html>
