@@ -15,11 +15,11 @@
         <td><c:out value="${manufacturer.id}"/></td>
         <td><c:out value="${manufacturer.name}"/></td>
         <td><c:out value="${manufacturer.country}"/></td>
-        <td><a href="${pageContext.request.contextPath}manufacturer/delete?id=${manufacturer.id}">delete</a></td>
+        <td><a href="${pageContext.request.contextPath}manufacturers/delete?id=${manufacturer.id}">delete</a></td>
         </tr>
     </c:forEach>>
 </table>
-<button type="button" name="return" ><a href="${pageContext.request.contextPath}/manufacturer/add">Add new manufacturers</a></button>
+<button type="button" name="return" ><a href="${pageContext.request.contextPath}/manufacturers/add">Add new manufacturers</a></button>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/cars">Return to table of cars</a></button>
 <button type="button" name="return" ><a href="${pageContext.request.contextPath}/drivers">Go to table of drivers</a></button>
 </body>

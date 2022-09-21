@@ -42,7 +42,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturer</servlet-name>
-        <url-pattern>/manufacturer/add</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturer</servlet-name>
@@ -50,7 +50,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteManufacturer</servlet-name>
-        <url-pattern>/manufacturer/delete</url-pattern>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -75,7 +75,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteCar</servlet-name>
-        <url-pattern>/cars/deleteCar</url-pattern>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>add</servlet-name>
