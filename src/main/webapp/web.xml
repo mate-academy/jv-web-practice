@@ -19,4 +19,20 @@
         <servlet-name>addDriverToCar</servlet-name>
         <url-pattern>/addDriverToCar</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/getAllManufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <url-pattern>/getAllManufacturers/delete</url-pattern>
+    </servlet-mapping>
 </web-app>
