@@ -1,21 +1,21 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.service.ManufacturerService;
-
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.service.CarService;
 
-public class DeleteManufacturerController extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
     Injector injector = Injector.getInstance("mate");
-    ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    CarService carService = (CarService) injector.getInstance(CarService.class);
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Long id = Long.valueOf(request.getParameter("id"));
-        manufacturerService.delete(id);
+        carService.delete(id);
     }
 }

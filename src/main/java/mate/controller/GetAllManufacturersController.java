@@ -16,9 +16,9 @@ public class GetAllManufacturersController extends HttpServlet {
     ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Manufacturer> allManufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", allManufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/getAllManufacturers.jsp").forward(req, resp);
+        request.setAttribute("manufacturers", allManufacturers);
+        request.getRequestDispatcher("/WEB-INF/views/getAllManufacturers.jsp").forward(request, response);
     }
 }

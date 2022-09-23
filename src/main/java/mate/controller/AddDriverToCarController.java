@@ -19,9 +19,9 @@ public class AddDriverToCarController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
+        request.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(request, response);
     }
 
     @Override
