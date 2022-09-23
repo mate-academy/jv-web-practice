@@ -37,4 +37,30 @@
         <servlet-name>addDriver</servlet-name>
         <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>manufacturer</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturer</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+        <url-pattern>/manufacturers/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addManufacturer</servlet-name>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addManufacturer</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
+    </servlet-mapping>
 </web-app>
