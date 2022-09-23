@@ -9,8 +9,8 @@ import mate.lib.Injector;
 import mate.service.CarService;
 
 public class DeleteCarController extends HttpServlet {
-    Injector injector = Injector.getInstance("mate");
-    CarService carService = (CarService) injector.getInstance(CarService.class);
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

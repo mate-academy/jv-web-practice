@@ -7,7 +7,7 @@
 <body>
 <style>
     TABLE {
-        width: 500px; /* Ширина таблицы */
+        width: 700px; /* Ширина таблицы */
         border: 2px outset; /* Рамка вокруг таблицы */
         background: whitesmoke; /* Цвет фона таблицы */
     }
@@ -35,11 +35,14 @@
             <th>DRIVERS</th>
             <th>DELETE</th>
         </tr>
-        <c:forEach items="cars" var="car">
+        <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${car.model}"/></td>
-            <td><c:out value="${car.manufacturer}"/></td>
-            <td><c:out value="${car.drivers}"/></td>
+            <td><c:out value="${car.manufacturer.name} ${car.manufacturer.country}"/></td>
+            <td><c:forEach items="${car.drivers}" var="driver">
+                <c:out value="${driver.name}"/>
+                <c:out value="${driver.licenseNumber}"/>
+            </c:forEach></td>
             <td><a href="${pageContext.request.contextPath}/getAllCars/delete?id=${car.id}">delete this car</a></td>
         </tr>
         </c:forEach>

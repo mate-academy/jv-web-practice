@@ -1,17 +1,17 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.service.DriverService;
-
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mate.lib.Injector;
+import mate.service.DriverService;
 
 public class DeleteDriverController extends HttpServlet {
-    Injector injector = Injector.getInstance("mate");
-    DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private static final Injector injector = Injector.getInstance("mate");
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
