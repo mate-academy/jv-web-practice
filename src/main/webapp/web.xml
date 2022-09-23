@@ -19,5 +19,14 @@
     <servlet-mapping>
         <servlet-name>driver</servlet-name>
         <url-pattern>/drivers</url-pattern>
+        <url-pattern>/drivers/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteDriver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteDriver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
 </web-app>
