@@ -7,13 +7,13 @@ you should use [a different dependency for servlets](https://mvnrepository.com/a
 - Create a new controller: Implement creating a driver
 - Create a new controller: Display all drivers
 - Create a new controller: Implement creating a manufacturer
-- Create a new controller: Implement creating a car (with no drivers by default)
-- Create a new controller: Implement adding driver to car.
+- Create a new controller: Implement creating a mate.controller.car (with no drivers by default)
+- Create a new controller: Implement adding driver to mate.controller.car.
 
 HINT: while implementing the last requirement, create just two fields on JSP where you will pass corresponding id values.
 You can redirect to `/index` page or any other page after your business login in `doPost()` method is applied.
 
-### Example how to implement adding driver to car:
+### Example how to implement adding driver to mate.controller.car:
 ```java
 public class AddDriverToCarController extends HttpServlet {    
     private static final Injector injector = Injector.getInstance("mate.academy"); // be careful with copy-paste
@@ -25,7 +25,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long driverId = Long.valueOf(request.getParameter("driver_id"));
         Long carId = Long.valueOf(request.getParameter("car_id"));
-        Car car = carService.get(carId);
+        Car mate.controller.car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         // continue your implementation 
     }
@@ -39,6 +39,6 @@ public class AddDriverToCarController extends HttpServlet {
 ### Advanced:
 - Create a new controller: Display all manufacturers with ability to delete a certain manufacturer
 - Display all drivers with ability to delete a certain driver
-- Create a new controller: Display all cars (with manufacturer and drivers) with ability to delete a certain car
+- Create a new controller: Display all cars (with manufacturer and drivers) with ability to delete a certain mate.controller.car
 
 __Before submitting solution make sure you checked it first with__ [checklist](https://mate-academy.github.io/jv-program-common-mistakes/java-web/web-practice/java-web-practice)

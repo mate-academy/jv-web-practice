@@ -37,7 +37,7 @@ public class CarDaoImpl implements CarDao {
                 car.setId(resultSet.getObject(1, Long.class));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't create car " + car, e);
+            throw new DataProcessingException("Can't create mate.controller.car " + car, e);
         }
         insertAllDrivers(car);
         return car;
@@ -63,7 +63,7 @@ public class CarDaoImpl implements CarDao {
                 car = parseCarFromResultSet(resultSet);
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't get car by id: " + id, e);
+            throw new DataProcessingException("Can't get mate.controller.car by id: " + id, e);
         }
         if (car != null) {
             car.setDrivers(getAllDriversByCarId(car.getId()));
@@ -108,7 +108,7 @@ public class CarDaoImpl implements CarDao {
             statement.setLong(3, car.getId());
             statement.executeUpdate();
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't update car " + car, e);
+            throw new DataProcessingException("Can't update mate.controller.car " + car, e);
         }
         deleteAllDriversExceptList(car);
         insertAllDrivers(car);
@@ -125,7 +125,7 @@ public class CarDaoImpl implements CarDao {
             statement.setLong(1, id);
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't delete car by id " + id, e);
+            throw new DataProcessingException("Can't delete mate.controller.car by id " + id, e);
         }
     }
 
@@ -218,7 +218,8 @@ public class CarDaoImpl implements CarDao {
             }
             return drivers;
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't get all drivers by car id" + carId, e);
+            throw new DataProcessingException("Can't get all drivers by mate.controller.car id"
+                    + carId, e);
         }
     }
 
