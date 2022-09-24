@@ -26,5 +26,6 @@ public class CreateCarController extends HttpServlet {
         car.setModel(model);
         car.setManufacturer(manufacturerService.get(manufacturerId));
         carService.create(car);
+        response.sendRedirect(request.getContextPath() + "/index");
     }
 }
