@@ -12,14 +12,20 @@
         <th style="padding: 10px">Manufacturers</th>
     </tr>
     <tr>
-        <td style="padding: 10px"><a href="/cars">Get all cars</a></td>
-        <td style="padding: 10px"><a href="/drivers">Get all drivers</a></td>
-        <td style="padding: 10px"><a href="/manufacturers">Get all manufacturers</a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/cars">Get all cars</a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/drivers">Get all drivers</a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/manufacturers">Get all manufacturers</a></td>
     </tr>
     <tr>
-        <td style="padding: 10px"><a href="/cars/add">Add a car </a></td>
-        <td style="padding: 10px"><a href="/drivers/add">Add a driver</a></td>
-        <td style="padding: 10px"><a href="/manufacturers/add">Add a manufacturer</a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/cars/add">Add a car </a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/drivers/add">Add a driver</a></td>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/manufacturers/add">Add a manufacturer</a></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to a car </a></td>
+    </tr>
+    <tr>
+        <td style="padding: 10px"><a href="${pageContext.request.contextPath}/cars/drivers/delete">Delete driver from a car </a></td>
     </tr>
 </table>
 </body>

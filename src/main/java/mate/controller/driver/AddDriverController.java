@@ -1,14 +1,13 @@
-package mate.controller;
+package mate.controller.driver;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
-
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 public class AddDriverController extends HttpServlet {
     private static final Injector injector =
@@ -24,7 +23,8 @@ public class AddDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("licenseNumber");
         if (!name.isEmpty() && !licenseNumber.isEmpty()) {
