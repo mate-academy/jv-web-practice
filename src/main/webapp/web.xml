@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/addDriverToCar</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllManufacturers</servlet-name>
@@ -25,7 +25,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllManufacturers</servlet-name>
-        <url-pattern>/getAllManufacturers</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturer</servlet-name>
@@ -33,7 +33,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteManufacturer</servlet-name>
-        <url-pattern>/getAllManufacturers/delete</url-pattern>
+        <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -42,7 +42,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>
-        <url-pattern>/getAllDrivers</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -51,7 +51,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteDriver</servlet-name>
-        <url-pattern>/getAllDrivers/delete</url-pattern>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -60,7 +60,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllCars</servlet-name>
-        <url-pattern>/getAllCars</url-pattern>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -69,6 +69,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteCar</servlet-name>
-        <url-pattern>/getAllCars/delete</url-pattern>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
 </web-app>

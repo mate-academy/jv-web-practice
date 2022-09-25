@@ -2,19 +2,19 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Manufacturers</title>
 </head>
 <body>
 <style>
     TABLE {
-        width: 500px; /* Ширина таблицы */
+        width: 600px; /* Ширина таблицы */
         border: 2px outset; /* Рамка вокруг таблицы */
         background: whitesmoke; /* Цвет фона таблицы */
     }
     TD, TH {
         text-align: center; /* Выравнивание по центру */
         padding: 3px; /* Поля вокруг содержимого ячеек */
-        width: 150px;
+        width: 250px;
     }
     TH {
         background: #4682b4; /* Цвет фона */
@@ -30,15 +30,17 @@
     <table>
         <tbody>
             <tr>
+                <th>ID</th>
                 <th>NAME</th>
                 <th>COUNTRY</th>
                 <th>DELETE</th>
             </tr>
             <c:forEach items="${manufacturers}" var="manufacturer">
                 <tr>
+                    <td><c:out value="${manufacturer.id}"/></td>
                     <td><c:out value="${manufacturer.name}"/></td>
                     <td><c:out value="${manufacturer.country}"/></td>
-                    <td><a href="${pageContext.request.contextPath}/getAllManufacturers/delete?id=${manufacturer.id}">delete this manufacturer</a></td>
+                    <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete this manufacturer</a></td>
                 </tr>
             </c:forEach>
         </tbody>
