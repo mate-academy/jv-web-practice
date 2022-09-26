@@ -2,7 +2,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>All drivers</title>
+    <title>All manufacturers</title>
     <style>
         table {
             border-collapse: collapse;
@@ -15,20 +15,20 @@
     </style>
 </head>
 <body>
-<h1>List of drivers:</h1>
+<h1>List of manufacturers:</h1>
 <table>
     <tr>
         <td>ID</td>
         <td>NAME</td>
-        <td>LICENSE NUMBER</td>
+        <td>COUNTRY</td>
         <td>DELETE</td>
     </tr>
-    <c:forEach items="${drivers}" var="driver">
+    <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
-            <td><c:out value="${driver.id}" /></td>
-            <td><c:out value="${driver.name}" /></td>
-            <td><c:out value="${driver.licenseNumber}" /></td>
-            <td><a href="${pageContext.request.contextPath}/cars/deleteDriver?id=${driver.id}">delete driver</a></td>
+            <td><c:out value="${manufacturer.id}" /></td>
+            <td><c:out value="${manufacturer.name}" /></td>
+            <td><c:out value="${manufacturer.country}" /></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete manufacturer</a></td>
         </tr>
     </c:forEach>
 </table>

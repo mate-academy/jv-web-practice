@@ -12,7 +12,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars/deleteDriver")
+@WebServlet(urlPatterns = "/cars/driver/delete")
 public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -22,7 +22,7 @@ public class DeleteDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/delete.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/driver/delete.jsp").forward(req, resp);
     }
 
     @Override
@@ -33,6 +33,6 @@ public class DeleteDriverController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.removeDriverFromCar(driver, car);
-        resp.sendRedirect(req.getContextPath() + "/cars/deleteDriver");
+        resp.sendRedirect(req.getContextPath() + "/drivers/all");
     }
 }
