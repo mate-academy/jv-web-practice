@@ -23,13 +23,13 @@
         <td><c:out value="${car.model}" /></td>
         <td>
             <form method="post" action="${pageContext.request.contextPath}/cars/drivers/delete">
-                <select type="number" name="driverId">
+                <select type="number" name="driver_id">
                     <c:forEach items="${car.drivers}" var="driver">
                         <option value="<c:out value="${driver.id}"/>"><c:out value="${driver.name}"/></option>
                     </c:forEach>
                 </select>
                 <div>
-                    <input type="hidden" name="carId" value="${car.id}">
+                    <input type="hidden" name="car_id" value="${car.id}">
                 </div>
                 <div>
                     <button type="submit">delete</button>
@@ -45,7 +45,7 @@
                         <option value="<c:out value="${driverCar.id}"/>"><c:out value="${driverCar.name}"/></option>
                     </c:forEach>
                 </select>
-                    <input type="hidden" name="carId" value="${car.id}">
+                    <input type="hidden" name="car_id" value="${car.id}">
                 </div>
                 <div>
                     <button type="submit">Add driver</button>

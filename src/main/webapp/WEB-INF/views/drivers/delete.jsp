@@ -14,7 +14,7 @@
 <body>
 <form method="post" action="${pageContext.request.contextPath}/drivers/delete">
     <div>
-        Driver: <select type="number" name="drivers_id">
+        Driver: <select type="number" name="driver_id">
         <c:forEach var="driverCar" items="${drivers}">
             <option value="<c:out value="${driverCar.id}"/>"><c:out value="${driverCar.name}"/></option>
         </c:forEach>
