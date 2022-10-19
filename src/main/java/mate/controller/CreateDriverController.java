@@ -9,7 +9,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-public class DriverCreationController extends HttpServlet {
+public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -23,7 +23,7 @@ public class DriverCreationController extends HttpServlet {
         driver.setName(driverName);
         driver.setLicenseNumber(driverLicenseNumber);
         driverService.create(driver);
-        resp.sendRedirect("/driver/create");
+        resp.sendRedirect(req.getContextPath() + "/drivers/create");
     }
 
     @Override
