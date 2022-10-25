@@ -47,8 +47,8 @@ public class Injector {
                 newInstanceOfClass = getNewInstance(clazz);
                 setValueToField(field, newInstanceOfClass, classToInject);
             } else {
-                throw new RuntimeException("Class " + field.getName() + " in class "
-                        + clazz.getName() + " hasn't annotation Inject");
+                throw new RuntimeException("Class " + field.getName()
+                        + " in class " + clazz.getName() + " hasn't annotation Inject");
             }
         }
         if (newInstanceOfClass == null) {
@@ -110,6 +110,7 @@ public class Injector {
             throw new RuntimeException("Can't set value to field ", e);
         }
     }
+
     /**
      * Scans all classes accessible from the context class loader which
      * belong to the given package and subpackages.
@@ -139,6 +140,7 @@ public class Injector {
         }
         return classes;
     }
+
     /**
      * Recursive method used to find all classes in a given directory and subdirs.
      *
@@ -161,8 +163,7 @@ public class Injector {
                     if (file.getName().contains(".")) {
                         throw new RuntimeException("File name shouldn't consist point.");
                     }
-                    classes.addAll(findClasses(file, packageName + "."
-                            + file.getName()));
+                    classes.addAll(findClasses(file, packageName + "." + file.getName()));
                 } else if (file.getName().endsWith(".class")) {
                     classes.add(Class.forName(packageName + '.'
                             + file.getName().substring(0, file.getName().length() - 6)));
