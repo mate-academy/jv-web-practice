@@ -18,7 +18,7 @@ public class GetAllManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("manufacturers",manufacturerService.getAll());
+        req.setAttribute("manufacturers", manufacturerService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req,resp);
     }
 }

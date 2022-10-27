@@ -13,10 +13,10 @@
         </tr>
         <tr>
             <td>Manufacturer</td>
-            <td><input type="text" name="manufacturerId" required/></td>
+            <td><input type="text" name="manufacturer_id" required/></td>
         </tr>
     </table>
-    <input type="submit" value="Confirm" />
+    <button type="submit">Create car </button>
 </form>
 </body>
 </html>
