@@ -23,6 +23,6 @@ public class DeleteDriverFromCarController extends HttpServlet {
         Driver driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
         Car car = carService.get(Long.valueOf(req.getParameter("car_id")));
         carService.removeDriverFromCar(driver, car);
-        resp.sendRedirect("/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
