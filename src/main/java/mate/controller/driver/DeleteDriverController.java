@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.driver;
 
 public class DeleteDriverController {
 }
