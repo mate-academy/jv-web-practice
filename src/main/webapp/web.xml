@@ -55,6 +55,15 @@
         <servlet-name>getAllManufacturers</servlet-name>
         <servlet-class>mate.controller.manufacturer.GetAllManufacturersController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>driverToCarPage</servlet-name>
+        <servlet-class>mate.controller.DriverToCarPageController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
@@ -106,5 +115,13 @@
     <servlet-mapping>
         <servlet-name>getAllManufacturers</servlet-name>
         <url-pattern>/manufacturers/all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>driverToCarPage</servlet-name>
+        <url-pattern>/cars/add_driver</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addDriverToCar</servlet-name>
+        <url-pattern>/cars/add_driver_to_car</url-pattern>
     </servlet-mapping>
 </web-app>
