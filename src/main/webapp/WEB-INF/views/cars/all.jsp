@@ -5,7 +5,7 @@
     <title>All Cars</title>
 </head>
 <body>
-<h1>All Drivers.</h1>
+<h1>All Cars.</h1>
 <table>
     <tr>
         <td>Id</td>
