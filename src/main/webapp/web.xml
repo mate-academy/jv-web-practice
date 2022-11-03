@@ -16,6 +16,10 @@
         <servlet-class>mate.controller.driver.CreateDriverController</servlet-class>
     </servlet>
     <servlet>
+        <servlet-name>deleteDriver</servlet-name>
+        <servlet-class>mate.controller.driver.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet>
         <servlet-name>getAllDrivers</servlet-name>
         <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
     </servlet>
@@ -30,6 +34,10 @@
     <servlet-mapping>
         <servlet-name>createDriver</servlet-name>
         <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteDriver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>

@@ -6,7 +6,7 @@
 <body>
 <h1>Hello, mate! Choose needed action:</h1>
 <h3>Drivers</h3>
-<a href="drivers/all">Show all drivers;</a><br>
+<a href="drivers/all">Show all drivers + delete function;</a><br>
 <a href="drivers/register">Register a driver;</a>
 </body>
 </html>

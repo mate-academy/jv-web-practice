@@ -30,7 +30,7 @@ public class CreateDriverController extends HttpServlet {
         req.setAttribute("driver_id",newDriver.getId());
         req.setAttribute("driver_name",newDriver.getName());
 
-        req.getRequestDispatcher("/WEB-INF/views/drivers/user_created_successfully.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/drivers/driver_created_successfully.jsp")
                 .forward(req,resp);
     }
 }
