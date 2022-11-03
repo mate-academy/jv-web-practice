@@ -1,7 +1,7 @@
-package mate.controller.driver;
+package mate.controller.car;
 
 import mate.lib.Injector;
-import mate.service.DriverService;
+import mate.service.CarService;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -9,16 +9,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class DeleteDriverController extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Injector injector = Injector.getInstance("mate");
-        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+        CarService carService = (CarService) injector.getInstance(CarService.class);
         Long id = Long.valueOf(req.getParameter("id"));
-        driverService.delete(id);
-        req.setAttribute("driver_id", id);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/deleted_successfully.jsp")
+        carService.delete(id);
+        req.setAttribute("car_id", id);
+        req.getRequestDispatcher("/WEB-INF/views/cars/deleted_successfully.jsp")
                 .forward(req,resp);
     }
 }

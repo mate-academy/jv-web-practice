@@ -1,4 +1,4 @@
-package mate.controller.driver;
+package mate.controller.car;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-public class DriverRegisterController extends HttpServlet {
+public class CarRegisterController extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/register.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/register.jsp").forward(req, resp);
     }
 }

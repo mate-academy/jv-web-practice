@@ -8,7 +8,7 @@
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>register</servlet-name>
+        <servlet-name>registerDriver</servlet-name>
         <servlet-class>mate.controller.driver.DriverRegisterController</servlet-class>
     </servlet>
     <servlet>
@@ -23,12 +23,29 @@
         <servlet-name>getAllDrivers</servlet-name>
         <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
     </servlet>
+
+    <servlet>
+        <servlet-name>registerCar</servlet-name>
+        <servlet-class>mate.controller.car.CarRegisterController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>createCar</servlet-name>
+        <servlet-class>mate.controller.car.CreateCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>deleteCar</servlet-name>
+        <servlet-class>mate.controller.car.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>getAllCars</servlet-name>
+        <servlet-class>mate.controller.car.GetAllCarsController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>register</servlet-name>
+        <servlet-name>registerDriver</servlet-name>
         <url-pattern>/drivers/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
@@ -42,5 +59,21 @@
     <servlet-mapping>
         <servlet-name>getAllDrivers</servlet-name>
         <url-pattern>/drivers/all</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>registerCar</servlet-name>
+        <url-pattern>/cars/register</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>createCar</servlet-name>
+        <url-pattern>/cars/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>deleteCar</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getAllCars</servlet-name>
+        <url-pattern>/cars/all</url-pattern>
     </servlet-mapping>
 </web-app>

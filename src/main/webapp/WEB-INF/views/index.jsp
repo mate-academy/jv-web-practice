@@ -8,5 +8,11 @@
 <h3>Drivers</h3>
 <a href="drivers/all">Show all drivers + delete function;</a><br>
 <a href="drivers/register">Register a driver;</a>
+<h3>Manufacturers</h3>
+<a href="manufacturers/all">Show all manufacturers + delete function;</a><br>
+<a href="manufacturers/register">Register a manufacturer;</a>
+<h3>Cars</h3>
+<a href="cars/all">Show all cars + delete function;</a><br>
+<a href="cars/register">Register a car;</a>
 </body>
 </html>
