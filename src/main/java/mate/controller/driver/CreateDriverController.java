@@ -27,7 +27,9 @@ public class CreateDriverController extends HttpServlet {
 
         Driver newDriver = driverService.create(driver);
 
-        req.setAttribute("user_name",newDriver.getName());
+        req.setAttribute("driver_id",newDriver.getId());
+        req.setAttribute("driver_name",newDriver.getName());
+
         req.getRequestDispatcher("/WEB-INF/views/drivers/user_created_successfully.jsp")
                 .forward(req,resp);
     }
