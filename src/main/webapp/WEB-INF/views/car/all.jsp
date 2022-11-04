@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Get all drivers</title>
+  <title>Get all cars</title>
 </head>
 <body>
 <h1>List of cars:</h1>

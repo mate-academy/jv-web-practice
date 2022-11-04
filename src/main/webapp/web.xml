@@ -48,6 +48,15 @@
     </servlet-mapping>
 
     <servlet>
+        <servlet-name>deletedManufacturer</servlet-name>
+        <servlet-class>mate.controller.manufacture.DeletedManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deletedManufacturer</servlet-name>
+        <url-pattern>/manufacturer/deleted</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
         <servlet-name>allCar</servlet-name>
         <servlet-class>mate.controller.car.AllCarController</servlet-class>
     </servlet>
