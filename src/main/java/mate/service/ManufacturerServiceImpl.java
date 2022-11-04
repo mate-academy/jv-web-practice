@@ -1,6 +1,8 @@
 package mate.service;
 
 import java.util.List;
+import java.util.stream.Collectors;
+
 import mate.dao.ManufacturerDao;
 import mate.lib.Inject;
 import mate.lib.Service;
