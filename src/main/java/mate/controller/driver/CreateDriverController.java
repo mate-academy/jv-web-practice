@@ -11,11 +11,10 @@ import mate.service.DriverService;
 
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-
+    public static final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("licenseNumber");
         Driver driver = new Driver();

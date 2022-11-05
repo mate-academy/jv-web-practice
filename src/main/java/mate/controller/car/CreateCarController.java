@@ -13,13 +13,12 @@ import mate.service.ManufacturerService;
 
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-
+    private static final CarService carService = (CarService) injector.getInstance(CarService.class);
+    private static final ManufacturerService manufacturerService
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CarService carService = (CarService) injector.getInstance(CarService.class);
-        ManufacturerService manufacturerService
-                = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
