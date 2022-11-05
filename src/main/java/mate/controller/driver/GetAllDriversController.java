@@ -12,7 +12,9 @@ import mate.service.DriverService;
 
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    public static final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    public static final DriverService driverService
+            = (DriverService) injector.getInstance(DriverService.class);
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

@@ -8,10 +8,6 @@
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>registerDriver</servlet-name>
-        <servlet-class>mate.controller.driver.DriverRegisterController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>createDriver</servlet-name>
         <servlet-class>mate.controller.driver.CreateDriverController</servlet-class>
     </servlet>
@@ -22,10 +18,6 @@
     <servlet>
         <servlet-name>getAllDrivers</servlet-name>
         <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>registerCar</servlet-name>
-        <servlet-class>mate.controller.car.CarRegisterController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>createCar</servlet-name>
@@ -40,10 +32,6 @@
         <servlet-class>mate.controller.car.GetAllCarsController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>registerManufacturer</servlet-name>
-        <servlet-class>mate.controller.manufacturer.ManufacturerRegisterController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>createManufacturer</servlet-name>
         <servlet-class>mate.controller.manufacturer.CreateManufacturerController</servlet-class>
     </servlet>
@@ -56,10 +44,6 @@
         <servlet-class>mate.controller.manufacturer.GetAllManufacturersController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>driverToCarPage</servlet-name>
-        <servlet-class>mate.controller.DriverToCarPageController</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>addDriverToCar</servlet-name>
         <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>
@@ -67,10 +51,6 @@
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>registerDriver</servlet-name>
-        <url-pattern>/drivers/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>createDriver</servlet-name>
@@ -85,10 +65,6 @@
         <url-pattern>/drivers/all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>registerCar</servlet-name>
-        <url-pattern>/cars/register</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>createCar</servlet-name>
         <url-pattern>/cars/create</url-pattern>
     </servlet-mapping>
@@ -99,10 +75,6 @@
     <servlet-mapping>
         <servlet-name>getAllCars</servlet-name>
         <url-pattern>/cars/all</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>registerManufacturer</servlet-name>
-        <url-pattern>/manufacturers/register</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>createManufacturer</servlet-name>
@@ -117,11 +89,7 @@
         <url-pattern>/manufacturers/all</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>driverToCarPage</servlet-name>
-        <url-pattern>/cars/add_driver</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/add_driver_to_car</url-pattern>
+        <url-pattern>/cars/add_driver</url-pattern>
     </servlet-mapping>
 </web-app>

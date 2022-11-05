@@ -11,7 +11,8 @@ import mate.service.ManufacturerService;
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     public static final ManufacturerService manufacturerService
-        = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

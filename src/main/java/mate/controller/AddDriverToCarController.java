@@ -14,7 +14,15 @@ import mate.service.DriverService;
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     public static final CarService carService = (CarService) injector.getInstance(CarService.class);
-    public static final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    public static final DriverService driverService
+            = (DriverService) injector.getInstance(DriverService.class);
+
+    @Override
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/cars/add_driver.jsp")
+                .forward(req, resp);
+    }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
