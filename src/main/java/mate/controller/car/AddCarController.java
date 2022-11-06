@@ -12,7 +12,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-public class CreatCarController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
     private final CarService carService = (CarService)
@@ -37,6 +37,6 @@ public class CreatCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        resp.sendRedirect("/car/all");
+        resp.sendRedirect(req.getContextPath() + "/car/all");
     }
 }

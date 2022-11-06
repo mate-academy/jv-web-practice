@@ -11,12 +11,14 @@
         <td>ID</td>
         <td>NAME</td>
         <td>LICENSE NUMBERS</td>
+        <td>DELETE</td>
     </tr>
-    <c:forEach items="${drivers}" var="cars">
+    <c:forEach items="${drivers}" var="drivers">
         <tr>
-            <td><c:out value="${cars.id}" /></td>
-            <td><c:out value="${cars.name}" /></td>
-            <td><c:out value="${cars.licenseNumber}" /></td>
+            <td><c:out value="${drivers.id}" /></td>
+            <td><c:out value="${drivers.name}" /></td>
+            <td><c:out value="${drivers.licenseNumber}" /></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${drivers.id}">delete driver</a></td>
         </tr>
     </c:forEach>
 </table>

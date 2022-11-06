@@ -9,7 +9,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
-public class CreatManufacturerController extends HttpServlet {
+public class AddManufacturerController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -30,6 +30,6 @@ public class CreatManufacturerController extends HttpServlet {
         manufacturer.setName(name);
         manufacturer.setCountry(country);
         manufacturerService.create(manufacturer);
-        resp.sendRedirect("/manufacturer/all");
+        resp.sendRedirect(req.getContextPath() + "/manufacturer/all");
     }
 }
