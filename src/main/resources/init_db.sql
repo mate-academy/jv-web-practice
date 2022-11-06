@@ -6,6 +6,8 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 -- Table structure for drivers
 -- ----------------------------
+
+
 DROP TABLE IF EXISTS `drivers`;
 CREATE TABLE `drivers`  (
                             `id` BIGINT(0) UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -56,3 +58,4 @@ CREATE TABLE `cars_drivers`  (
 ) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
 
 SET FOREIGN_KEY_CHECKS = 1;
+
