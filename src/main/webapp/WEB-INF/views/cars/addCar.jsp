@@ -6,7 +6,7 @@
     <title>Add car page</title>
 </head>
 <body>
-<h1>Please fill in car details</h1>
+<h1>Please select manufacturer and write model name</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Manufacturer <select name="manufacturer">
     <c:forEach items="${countryNameList}" var="countryName">

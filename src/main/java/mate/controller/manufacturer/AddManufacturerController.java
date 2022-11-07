@@ -16,12 +16,12 @@ public class AddManufacturerController extends HttpServlet {
     Injector injector = Injector.getInstance("mate");
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/addManufacturer.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         ManufacturerService manufacturerService = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         String name = req.getParameter("name");
         String country = req.getParameter("country");
