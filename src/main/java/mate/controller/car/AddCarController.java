@@ -48,13 +48,12 @@ public class AddCarController extends HttpServlet {
                 .map(Manufacturer::getCountry)
                 .distinct()
                 .collect(Collectors.toList());
-        List<Manufacturer> allManufacturers = manufacturerService.getAll();
-        Map<String, List<String>> countryName = getCountryNameHashMap(allManufacturers, countries);
+        Map<String, List<String>> countryName = getCountryNameHashMap(countries);
         req.setAttribute("countryNameList", countryName);
         req.getRequestDispatcher("/WEB-INF/views/cars/addCar.jsp").forward(req, resp);
     }
 
-    private Map<String, List<String>> getCountryNameHashMap(List<Manufacturer> manufacturers, List<String> countries) {
+    private Map<String, List<String>> getCountryNameHashMap(List<String> countries) {
         Map<String, List<String>> hashMap = new HashMap<>();
         for (String country : countries) {
             List<String> namesFromCountry = getNamesFromCountry(country);
