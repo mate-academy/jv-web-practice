@@ -5,7 +5,7 @@
     <title>Add driver to car page</title>
 </head>
 <body>
-<h1>Please select a driver and car</h1>
+<h1>Please select driver and car</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add_driver">
     Select driver:&nbsp;
     <select name="driver">
