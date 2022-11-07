@@ -33,24 +33,11 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        int driverId = Integer.parseInt(req.getParameter("driver"));
-        int carId = Integer.parseInt(req.getParameter("car"));
-        Driver driver = findDriverBiId(driverId);
-        Car car = findCarById(carId);
+        Long driverId = Long.valueOf(req.getParameter("driver"));
+        Long carId = Long.valueOf(req.getParameter("car"));
+        Driver driver = driverService.get(driverId);
+        Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
-    }
-
-    private Driver findDriverBiId(int driverId) {
-        return driverService.getAll().stream()
-                .filter(d -> d.getId() == driverId)
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Can't find driver by id " + driverId));
-    }
-
-    private Car findCarById(int carId) {
-        return carService.getAll().stream()
-                .filter(c -> c.getId() == carId)
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("Can't find car by id " + carId));
+        resp.sendRedirect("/cars/add_driver");
     }
 }

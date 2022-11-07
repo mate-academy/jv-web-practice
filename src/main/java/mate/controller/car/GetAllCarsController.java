@@ -1,9 +1,7 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
 import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars")
@@ -23,11 +20,7 @@ public class GetAllCarsController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Car> cars = carService.getAll();
-        Map<Car, List<Driver>> carDriverMap = new HashMap<>();
-        for (Car car : cars) {
-            carDriverMap.put(car, car.getDrivers());
-        }
-        req.setAttribute("carDriverList", carDriverMap);
+        req.setAttribute("cars", cars);
         req.getRequestDispatcher("/WEB-INF/views/cars/allCars.jsp").forward(req, resp);
     }
 }

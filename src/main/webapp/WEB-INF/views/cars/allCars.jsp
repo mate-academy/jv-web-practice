@@ -13,17 +13,17 @@
     <td>NAME</td>
     <td>DRIVERS</td>
   </tr>
-  <c:forEach items="${carDriverList}" var="carDriver">
+  <c:forEach items="${cars}" var="car">
     <tr>
-      <td>${carDriver.key.id}</td>
-      <td>${carDriver.key.model}</td>
-      <td>${carDriver.key.manufacturer.name}</td>
+      <td>${car.id}</td>
+      <td>${car.model}</td>
+      <td>${car.manufacturer.name}</td>
       <td>
-        <c:forEach items="${carDriver.value}" var ="driver">
+        <c:forEach items="${car.drivers}" var ="driver">
             ${driver.name}<br>
         </c:forEach>
       </td>
-      <td><a href="${pageContext.request.contextPath}/cars/delete?id=${carDriver.key.id}">delete this car</a></td>
+      <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete this car</a></td>
     </tr>
   </c:forEach>
 </table>
