@@ -12,7 +12,7 @@ public class ManufacturerCreateFormController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer-create-form")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer-create-form.jsp")
                 .forward(req, resp);
     }
 }
