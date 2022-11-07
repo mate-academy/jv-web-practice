@@ -1,4 +1,4 @@
-package mate.controller.api;
+package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;

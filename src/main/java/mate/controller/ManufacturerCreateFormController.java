@@ -1,4 +1,4 @@
-package mate.controller.presentation;
+package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
