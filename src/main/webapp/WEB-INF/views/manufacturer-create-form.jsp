@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Enter info of new manufacturer</h2>
-<form method="post" action="${pageContext.request.contextPath}/api/manufacturers/new">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/new">
     <label>
         Name:
         <input type="text" name="name"/>

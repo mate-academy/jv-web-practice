@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Enter info of new driver</h2>
-<form method="post" action="${pageContext.request.contextPath}/api/driver/new">
+<form method="post" action="${pageContext.request.contextPath}/drivers/new">
     <label>
         Name:
         <input type="text" name="name"/>
