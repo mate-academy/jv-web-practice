@@ -5,7 +5,7 @@
     <title>Driver created</title>
 </head>
 <body>
-<h2>Successfully created driver:</h2><br/>
+<h2>Successfully created driver:</h2>
 id: <c:out value="${driver.id}"/><br/>
 name: <c:out value="${driver.name}"/><br/>
 license number: <c:out value="${driver.licenseNumber}"/>
