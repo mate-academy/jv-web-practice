@@ -21,7 +21,7 @@ public class RemoveDriverFromCarController extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Car car = carService.get(carId);
