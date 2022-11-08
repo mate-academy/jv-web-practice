@@ -8,6 +8,7 @@
 <h2>Successfully created driver:</h2>
 id: <c:out value="${driver.id}"/><br/>
 name: <c:out value="${driver.name}"/><br/>
-license number: <c:out value="${driver.licenseNumber}"/>
+license number: <c:out value="${driver.licenseNumber}"/><br>
+<a href="${pageContext.request.contextPath}/drivers">To drivers list</a>
 </body>
 </html>

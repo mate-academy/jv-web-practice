@@ -10,6 +10,7 @@ id: <c:out value="${car.id}"/><br/>
 model: <c:out value="${car.model}"/><br/>
 manufacturer name: <c:out value="${car.manufacturer.name}"/><br/>
 manufacturer country: <c:out value="${car.manufacturer.country}"/><br/>
-Created without drivers!
+Created without drivers!<br>
+<a href="${pageContext.request.contextPath}/cars">To cars list</a>
 </body>
 </html>
