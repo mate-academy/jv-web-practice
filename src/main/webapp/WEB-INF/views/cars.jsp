@@ -18,7 +18,15 @@
 </head>
 <body>
 <a href="${pageContext.request.contextPath}/cars/new">Create new car</a><br>
-<a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to some car</a>
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+  <label>
+    Car id:
+    <input type="number" name="car_id">
+    Driver id:
+    <input type="number" name="driver_id">
+    <button type="submit">Add driver by id</button>
+  </label>
+</form>
 <h2>List of cars:</h2>
 <table>
   <tr>
