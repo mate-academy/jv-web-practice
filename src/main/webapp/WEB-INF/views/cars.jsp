@@ -17,6 +17,8 @@
   </style>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/cars/new">Create new car</a><br>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to some car</a>
 <h2>List of cars:</h2>
 <table>
   <tr>

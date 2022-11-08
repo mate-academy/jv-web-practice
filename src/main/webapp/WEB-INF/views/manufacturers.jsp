@@ -17,7 +17,8 @@
   </style>
 </head>
 <body>
-<h2>List of drivers:</h2>
+<a href="${pageContext.request.contextPath}/manufacturers/new">Create new manufacturer</a>
+<h2>List of manufacturers:</h2>
 <table>
   <tr>
     <td>Id</td>

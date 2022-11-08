@@ -17,6 +17,7 @@
   </style>
 </head>
 <body>
+<a href="${pageContext.request.contextPath}/drivers/new">Create new driver</a>
 <h2>List of drivers:</h2>
 <table>
   <tr>
