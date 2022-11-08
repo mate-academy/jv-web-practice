@@ -34,6 +34,6 @@ public class AddDriverToCarController extends HttpServlet {
         carService.addDriverToCar(driver, car);
         req.setAttribute("car", car);
         req.setAttribute("driver", driver);
-        req.getRequestDispatcher("/WEB-INF/views/driver-added-to-car.jsp").forward(req, resp);
+        resp.sendRedirect("/cars");
     }
 }
