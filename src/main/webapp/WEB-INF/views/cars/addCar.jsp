@@ -19,7 +19,7 @@
         </c:forEach>
     </c:forEach>
     </optgroup>
-</select><br>>
+</select><br>
     Model <input type="text" name="model"><br>
     <button type="submit">Confirm</button>
 </form>
