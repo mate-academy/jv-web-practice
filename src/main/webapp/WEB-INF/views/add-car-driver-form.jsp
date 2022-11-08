@@ -16,7 +16,7 @@
     <input type="number" name="driver_id">
   </label>
   <br/>
-  <button type="submit">Create</button>
+  <button type="submit">Add</button>
 </form>
 </body>
 </html>
