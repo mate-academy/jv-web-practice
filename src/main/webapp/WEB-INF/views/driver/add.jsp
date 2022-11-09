@@ -5,21 +5,21 @@
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     <label>
         <select name="driver_id">
-            <option value="0">Chose a driver</option>
+            <option value="0">Choose a driver</option>
             <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
-            <c:forEach items="${drivers}" var="drivers">
-                <option value="${drivers.id}">${drivers.name} / ${drivers.licenseNumber}</option>
+            <c:forEach items="${drivers}" var="driver">
+                <option value="${driver.id}">${driver.name}</option>
             </c:forEach>
         </select>
     </label>
     <label>
         <select name="car_id">
-            <option value="0">Chose a car</option>
+            <option value="0">Choose a car</option>
             <jsp:useBean id="cars" scope="request" type="java.util.List"/>
-            <c:forEach items="${cars}" var="cars">
-                <option items="${cars.id}">${cars.model}</option>
+            <c:forEach items="${cars}" var="car">
+                <option value="${car.id}">${car.model}</option>
             </c:forEach>
         </select>
     </label>
-    <input type="submit" value="Add driver to car">
+    <input type="submit" value="Add driver to car" />
 </form>
