@@ -5,5 +5,6 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
+<a href="driver.jsp">Driver operations</a>
 </body>
 </html>

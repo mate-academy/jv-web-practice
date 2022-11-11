@@ -7,6 +7,14 @@
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>driverOperations</servlet-name>
+        <servlet-class>mate.controller.driversControllers.DriverOperationsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>driverAddForm</servlet-name>
+        <servlet-class>mate.controller.driversControllers.DriverAddFormController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -15,4 +23,8 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>driverOperations</servlet-name>-->
+<!--        <url-pattern>/driver.jsp</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>
