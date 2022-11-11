@@ -13,7 +13,7 @@ public class DriverOperationsController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(
-                "WEB-INF/views/drivers/driverOperations.jsp")
+                "/WEB-INF/views/drivers/driverOperations.jsp")
                 .forward(req, resp);
     }
 }

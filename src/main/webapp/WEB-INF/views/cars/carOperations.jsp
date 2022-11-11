@@ -6,5 +6,6 @@
 <body>
 <h1>Car operations</h1>
 <a href="${pageContext.request.contextPath}/cars/add">Add car</a>
+<a href="${pageContext.request.contextPath}/cars/addDriveToCar">Add driver to car</a>
 </body>
 </html>
