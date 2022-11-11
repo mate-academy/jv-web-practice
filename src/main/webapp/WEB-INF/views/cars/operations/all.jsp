@@ -18,7 +18,7 @@
       <td><c:out value="${car.getId()}"/></td>
       <td><c:out value="${car.getModel()}"/></td>
       <td><c:out value="${car.getManufacturer().getName()}"/></td>
-      <td><a href="cars/delete">delete this car</a></td>
+      <td><a href="cars/delete?id=${car.getId()}">delete this car</a></td>
     </tr>
   </c:forEach>
 </table>
