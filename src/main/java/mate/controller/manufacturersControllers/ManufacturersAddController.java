@@ -33,9 +33,8 @@ public class ManufacturersAddController extends HttpServlet {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         manufacturerService.create(getManufacturer(name, country));
+        req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
     }
-
-    //toDo: add redirect to index after post, or to the same page
 
     private Manufacturer getManufacturer(String name, String country) {
         Manufacturer manufacturer = new Manufacturer();

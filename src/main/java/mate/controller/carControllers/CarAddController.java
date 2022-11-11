@@ -34,10 +34,10 @@ public class CarAddController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("Post");
         String model = req.getParameter("model");
         String manufacturer = req.getParameter("manufacturer");
         carService.create(getCar(model, manufacturer));
+        req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
     }
 
     private Car getCar(String model, String manufacturer) {

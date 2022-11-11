@@ -43,5 +43,6 @@ public class CarAddDriverToCarController extends HttpServlet {
             throw new RuntimeException("No car in DB with id " + carId);
         }
         carService.addDriverToCar(driver, car);
+        req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
     }
 }
