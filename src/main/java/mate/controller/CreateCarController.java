@@ -33,6 +33,7 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
+        resp.sendRedirect(req.getContextPath() + "/cars/create");
     }
 
     @Override
