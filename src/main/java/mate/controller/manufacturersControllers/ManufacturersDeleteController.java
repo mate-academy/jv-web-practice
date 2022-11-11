@@ -23,7 +23,7 @@ public class ManufacturersDeleteController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String id = req.getParameter("id");
         manufacturerService.delete(Long.valueOf(id));
-        req.getRequestDispatcher("/WEB-INF/views/success.jsc")
+        req.getRequestDispatcher("/WEB-INF/views/success.jsp")
                 .forward(req, resp);
     }
 }
