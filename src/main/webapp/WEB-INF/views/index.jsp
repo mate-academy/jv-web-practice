@@ -5,6 +5,7 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
-<a href="driver.jsp">Driver operations</a>
+<a href="${pageContext.request.contextPath}/drivers/operations">Driver operations</a>
+<a href="${pageContext.request.contextPath}/manufacturers/operations">Manufacturer operations</a>
 </body>
 </html>

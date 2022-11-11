@@ -14,7 +14,7 @@ import java.util.List;
 
 @WebServlet("/drivers")
 public class DriverAllController extends HttpServlet {
-    Injector injector = Injector.getInstance("mate");
+    static final Injector injector = Injector.getInstance("mate");
     DriverService driverService;
 
     public DriverAllController() {
