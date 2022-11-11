@@ -1,19 +1,18 @@
-package mate.controller.driversControllers;
+package mate.controller.manufacturers;
 
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
-@WebServlet("/drivers/operations")
-public class DriverOperationsController extends HttpServlet {
+@WebServlet("/manufacturers/operations")
+public class ManufacturersOperationsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher(
-                "/WEB-INF/views/drivers/driverOperations.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/manufacturersOperations.jsp")
                 .forward(req, resp);
     }
 }

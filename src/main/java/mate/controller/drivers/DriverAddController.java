@@ -1,20 +1,19 @@
-package mate.controller.driversControllers;
+package mate.controller.drivers;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
-import mate.service.GenericService;
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 @WebServlet("/drivers/add")
 public class DriverAddController extends HttpServlet {
     static final Injector injector = Injector.getInstance("mate");
-    DriverService driverService;
+    private final DriverService driverService;
 
     public DriverAddController() {
         driverService = (DriverService)
@@ -30,7 +29,8 @@ public class DriverAddController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("licenseNumber");
         driverService.create(getDriver(name, licenseNumber));

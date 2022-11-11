@@ -1,20 +1,19 @@
-package mate.controller.manufacturersControllers;
+package mate.controller.manufacturers;
 
-import mate.lib.Injector;
-import mate.model.Manufacturer;
-import mate.service.ManufacturerService;
-
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
 @WebServlet("/manufacturers/add")
 public class ManufacturersAddController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    ManufacturerService manufacturerService;
+    private final ManufacturerService manufacturerService;
 
     public ManufacturersAddController() {
         manufacturerService = (ManufacturerService)
@@ -29,7 +28,8 @@ public class ManufacturersAddController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         manufacturerService.create(getManufacturer(name, country));

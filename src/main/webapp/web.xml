@@ -9,11 +9,11 @@
     </servlet>
     <servlet>
         <servlet-name>driverOperations</servlet-name>
-        <servlet-class>mate.controller.driversControllers.DriverOperationsController</servlet-class>
+        <servlet-class>mate.controller.drivers.DriverOperationsController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>driverAddForm</servlet-name>
-        <servlet-class>mate.controller.driversControllers.DriverAddFormController</servlet-class>
+        <servlet-class>mate.controller.drivers.DriverAddFormController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>

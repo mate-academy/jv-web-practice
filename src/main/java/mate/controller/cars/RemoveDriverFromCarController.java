@@ -1,23 +1,22 @@
-package mate.controller.carControllers;
+package mate.controller.cars;
 
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-
 @WebServlet("/cars/removeDriverFromCar")
 public class RemoveDriverFromCarController extends HttpServlet {
-    Injector injector = Injector.getInstance("mate");
-    CarService carService;
-    DriverService driverService;
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService;
+    private final DriverService driverService;
 
     public RemoveDriverFromCarController() {
         carService = (CarService)
@@ -27,7 +26,8 @@ public class RemoveDriverFromCarController extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getParameter("id");
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
