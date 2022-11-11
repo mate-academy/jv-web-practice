@@ -7,5 +7,7 @@
 <h1>Hello, mates!</h1>
 <a href="${pageContext.request.contextPath}/drivers/operations">Driver operations</a>
 <a href="${pageContext.request.contextPath}/manufacturers/operations">Manufacturer operations</a>
+<a href="${pageContext.request.contextPath}/cars/operations">Car operations</a>
+<a href=""
 </body>
 </html>
