@@ -44,9 +44,9 @@ public class Car {
     public String printDrivers() {
         int place = 1;
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < drivers.size(); i++) {
-            stringBuilder.append(place + ") " + drivers.get(i).getName() + ", "
-                    + drivers.get(i).getLicenseNumber() + System.lineSeparator());
+        for (Driver driver : drivers) {
+            stringBuilder.append(place + ") " + driver.getName() + ", "
+                    + driver.getLicenseNumber() + System.lineSeparator());
             place++;
         }
         return stringBuilder.toString();
