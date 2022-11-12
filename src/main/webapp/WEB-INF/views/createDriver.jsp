@@ -11,7 +11,7 @@
 </head>
 <body>
 <h1>Create new driver</h1>
-    <form method="post" action="${pageContext.request.contextPath}/drivers/create">
+    <form method="post" action="${pageContext.request.contextPath}/cars/drivers/create">
         Name <input type="text" name="name"><br>
         LicenseNumber <input type="text" name="licenseNumber"><br>
         <button type="submit">Confirm</button>
