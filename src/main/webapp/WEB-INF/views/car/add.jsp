@@ -7,8 +7,8 @@
 <h1>Fill the form below</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-  Model <input type="text" name="model"><br>
-  Manufacturer ID <input type="number" name="manufacturerId"><br>
+  Model <input type="text" name="model" required><br>
+  Manufacturer ID <input type="number" name="manufacturerId" required><br>
   <button type="submit">Add</button>
 </form>
 </body>
