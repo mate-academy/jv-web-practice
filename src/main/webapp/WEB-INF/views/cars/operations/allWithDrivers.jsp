@@ -21,7 +21,7 @@
                 <td><c:out value="${car.getModel()}"/></td>
                 <td><c:out value="${driver.getId()}"/></td>
                 <td><c:out value="${driver.getName()}"/></td>
-                <td><a href="${pageContext.request.contextPath}/cars/removeDriverFromCar?car_id=${car.getId()}&driver_id=${driver.getId()}">remove driver from car</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/drivers/remove?car_id=${car.getId()}&driver_id=${driver.getId()}">remove driver from car</a></td>
             </tr>
         </c:forEach>
     </c:forEach>

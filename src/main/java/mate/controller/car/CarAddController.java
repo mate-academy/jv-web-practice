@@ -52,7 +52,7 @@ public class CarAddController extends HttpServlet {
 
     private Manufacturer getManufacturerFromDB(String manufacturerName) {
         return manufacturerService.getAll().stream()
-                .filter(s -> s.getName()
+                .filter(manufacture -> manufacture.getName()
                         .equalsIgnoreCase(manufacturerName))
                 .findAny().orElseThrow(() ->
                         new RuntimeException("No such manufacturer in DB"));

@@ -12,7 +12,7 @@ import mate.model.Car;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet("/cars/withDrivers")
+@WebServlet("/cars/drivers")
 public class CarWithDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService;
@@ -29,7 +29,6 @@ public class CarWithDriverController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Car> carsWithDrivers = carService.getAll();
-        System.out.println(carsWithDrivers);
         req.setAttribute("cars", carsWithDrivers);
         req.getRequestDispatcher("/WEB-INF/views/cars/operations/allWithDrivers.jsp")
                 .forward(req, resp);

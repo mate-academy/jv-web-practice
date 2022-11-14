@@ -6,8 +6,8 @@
 <body>
 <h1>Car operations</h1>
 <a href="${pageContext.request.contextPath}/cars/add">Add car</a>
-<a href="${pageContext.request.contextPath}/cars/addDriveToCar">Add driver to car</a>
-<a href="${pageContext.request.contextPath}/cars/withDrivers">Remove driver from car</a>
+<a href="${pageContext.request.contextPath}/cars/driver/add">Add driver to car</a>
+<a href="${pageContext.request.contextPath}/cars/drivers">Remove driver from car</a>
 <a href="${pageContext.request.contextPath}/cars">All cars</a>
 </body>
 </html>
