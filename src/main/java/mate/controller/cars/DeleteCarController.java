@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.cars;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -17,6 +17,6 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
-        req.getRequestDispatcher("/WEB-INF/views/mainMenu.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath() + "/mainMenu");
     }
 }

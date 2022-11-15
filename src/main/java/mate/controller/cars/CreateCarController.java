@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.cars;
 
 import java.io.IOException;
 import java.util.Objects;
@@ -39,6 +39,6 @@ public class CreateCarController extends HttpServlet {
                 .findFirst();
         car.setManufacturer(optionalManufacturer.get());
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/mainMenu.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath() + "/mainMenu");
     }
 }
