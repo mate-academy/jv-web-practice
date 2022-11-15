@@ -20,6 +20,6 @@ public class GetAllManufacturers extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> allDrivers = manufacturerService.getAll();
         req.setAttribute("manufacturers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/allManufacturers.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/allManufacturers.jsp").forward(req,resp);
     }
 }

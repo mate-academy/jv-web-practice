@@ -20,6 +20,6 @@ public class GetAllCars extends HttpServlet {
             throws ServletException, IOException {
         List<Car> allCars = carService.getAll();
         req.setAttribute("cars", allCars);
-        req.getRequestDispatcher("/WEB-INF/views/allCars.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/allCars.jsp").forward(req,resp);
     }
 }
