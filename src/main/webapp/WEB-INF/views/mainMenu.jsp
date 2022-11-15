@@ -27,10 +27,10 @@
     <h1>Main menu</h1>
 <table>
     <tr>
-        <td><a href="${pageContext.request.contextPath}/cars/drivers">All drivers</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers">All drivers</a></td>
     </tr>
     <tr>
-        <td><a href="${pageContext.request.contextPath}/cars/drivers/create">Create driver</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers/create">Create driver</a></td>
 
     </tr>
     <tr>
@@ -46,7 +46,7 @@
         <td><a href="${pageContext.request.contextPath}/cars/create">Create car</a></td>
     </tr>
     <tr>
-        <td><a href="${pageContext.request.contextPath}/cars/addDriver">Add driver to a car</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/drivers/add">Add driver to a car</a></td>
     </tr>
 </table>
 </body>
