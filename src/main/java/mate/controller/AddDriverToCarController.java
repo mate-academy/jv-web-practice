@@ -1,28 +1,28 @@
 package mate.controller;
 
-import mate.lib.Injector;
-import mate.model.Car;
-import mate.model.Driver;
-import mate.model.Manufacturer;
-import mate.service.CarService;
-import mate.service.DriverService;
-
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
+import mate.lib.Injector;
+import mate.model.Car;
+import mate.model.Driver;
+import mate.service.CarService;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         List<Car> cars = carService.getAll();
         req.setAttribute("cars", cars);
         List<Driver> drivers = driverService.getAll();
@@ -31,14 +31,15 @@ public class AddDriverToCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String driver_id = req.getParameter("driver");
-        String car_id = req.getParameter("car");
-        Driver driver = driverService.get(Long.valueOf(driver_id));
-        Car car = carService.get(Long.valueOf(car_id));
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        String driverId = req.getParameter("driver");
+        String carId = req.getParameter("car");
+        Driver driver = driverService.get(Long.valueOf(driverId));
+        Car car = carService.get(Long.valueOf(carId));
         if (!car.getDrivers().contains(driver)) {
             carService.addDriverToCar(driver, car);
         }
-        resp.sendRedirect(req.getContextPath()+"/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

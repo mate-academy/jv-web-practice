@@ -16,10 +16,11 @@ public class DeleteManufacturerController extends HttpServlet {
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String id = req.getParameter("id");
         manufacturerService.delete(Long.valueOf(id));
-        resp.sendRedirect("all");
-//        req.getRequestDispatcher("/WEB-INF/drivers/all").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "all");
+        //req.getRequestDispatcher("/WEB-INF/drivers/all").forward(req, resp); <-- don't delete
     }
 }
