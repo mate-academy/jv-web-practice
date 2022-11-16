@@ -50,9 +50,6 @@ public class AddCarController extends HttpServlet {
     }
 
     private Manufacturer getManufacturer(String manufacturer) {
-        return manufacturerService.getAll().stream()
-                 .filter(manufactur -> manufactur.getName().equalsIgnoreCase(manufacturer))
-                 .findAny().orElseThrow(()
-                         -> new RuntimeException("Cant wind this manufacturer in DB"));
+        return manufacturerService.get(Long.valueOf(manufacturer));
     }
 }
