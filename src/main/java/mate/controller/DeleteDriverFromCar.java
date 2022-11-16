@@ -32,7 +32,7 @@ public class DeleteDriverFromCar extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String driverId = req.getParameter("driver");
         String carId = req.getParameter("car");
         Driver driver = driverService.get(Long.valueOf(driverId));
