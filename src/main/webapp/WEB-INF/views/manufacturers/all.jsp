@@ -31,5 +31,8 @@
 <form action="${pageContext.request.contextPath}/manufacturers/add">
   <input type="submit" value="Add new manufacturer">
 </form>
+<form action="${pageContext.request.contextPath}/index">
+  <input type="submit" value="Home page">
+</form>
 </body>
 </html>

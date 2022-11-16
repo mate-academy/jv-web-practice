@@ -20,13 +20,10 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
-        System.out.println("do get in AddDriverController");
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        System.out.println("do post in AddDriverController");
-
         String driverName = req.getParameter("driverName");
         String licenseNumber = req.getParameter("licenseNumber");
         Driver driver = new Driver();

@@ -8,7 +8,6 @@
             display: inline-block;
         }
     </style>
-
 </head>
 <body>
 <h2>All cars</h2>
@@ -24,18 +23,15 @@
         <tr align="center">
             <td><c:out value="${car.id} "/></td>
             <td><c:out value="${car.model} "/></td>
-            <td><c:out value="${car.manufacturer} "/></td>
+            <td><c:out value="${car.manufacturer.name} "/></td>
             <td><c:out value="${car.drivers} "/></td>
-            <td><a href="/cars/delete?id=${driver.id}">delete car</a> </td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete car</a> </td>
         </tr>
     </c:forEach>
 </table>
 <br>
 <form action="/cars/add">
     <input type="submit" value="Add new car">
-</form>
-<form action="${pageContext.request.contextPath}/cars/delete">
-    <input type="submit" value="Delete a car">
 </form>
 <form action="${pageContext.request.contextPath}/index">
     <input type="submit" value="Home page">
