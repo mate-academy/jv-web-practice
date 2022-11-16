@@ -10,12 +10,16 @@
         input {
             width: 150px;
         }
+        table, th, td {
+            border: 1px solid;
+            text-align: center;
+        }
     </style>
 </head>
     <body>
         <h2>All cars</h2>
-        <table border="1">
-            <tr align="center">
+        <table>
+            <tr>
                 <th>ID</th>
                 <th>Manufacturer</th>
                 <th>Model</th>
@@ -23,14 +27,15 @@
                 <th>Action</th>
             </tr>
             <c:forEach items="${cars}" var="car">
-                <tr align="center">
+                <tr>
                     <td><c:out value="${car.id} "/></td>
                     <td><c:out value="${car.manufacturer.name} "/></td>
                     <td><c:out value="${car.model} "/></td>
                     <td><c:forEach items="${car.drivers}" var="driver">
                         <c:out value="${driver.name} "/>
                     </c:forEach> </td>
-                    <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete car</a> </td>
+                    <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
+                        delete car</a> </td>
                 </tr>
             </c:forEach>
         </table>

@@ -7,23 +7,28 @@
       form {
         display: inline-block;
       }
+      table, th, td {
+        border: 1px solid;
+        text-align: center;
+      }
     </style>
 </head>
 <body>
 <h2>Drivers</h2>
-<table border="1">
-  <tr align="center">
+<table>
+  <tr>
     <th>ID</th>
     <th>Name</th>
     <th>License No</th>
     <th>Action</th>
   </tr>
   <c:forEach items="${drivers}" var="driver">
-    <tr align="center">
+    <tr>
       <td><c:out value="${driver.id} "/></td>
       <td><c:out value="${driver.name} "/></td>
       <td><c:out value="${driver.licenseNumber} "/></td>
-      <td><a href="/drivers/delete?id=${driver.id}">delete driver</a> </td>
+      <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
+        delete driver</a></td>
     </tr>
   </c:forEach>
 </table>

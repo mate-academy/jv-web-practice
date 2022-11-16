@@ -20,7 +20,7 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getParameter("id");
         driverService.delete(Long.valueOf(id));
-        resp.sendRedirect("all");
+        resp.sendRedirect(req.getContextPath() + "all");
         //req.getRequestDispatcher("/WEB-INF/drivers/all").forward(req, resp); <-- why doesn't work?
     }
 }

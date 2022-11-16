@@ -7,7 +7,6 @@
         <h2>Add a driver</h2>
         <p>Please input the form bellow and press the Submit button</p>
         <form method="post">
-<%--        <form method="post" action="${pageContext.request.contextPath}/drivers/all">--%>
             <label for="name">Full name:</label><br>
             <input type="text" id="name" name="driverName" required><br>
             <label for="licenseNumber">License number:</label><br>
