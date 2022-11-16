@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
-import mate.service.DriverServiceImpl;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {

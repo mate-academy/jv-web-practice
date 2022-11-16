@@ -1,7 +1,6 @@
 package mate.controller;
 
 import mate.lib.Injector;
-import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
