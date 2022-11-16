@@ -5,5 +5,8 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
+<form action="${pageContext.request.contextPath}/drivers/add">
+    <input type="submit" value="Show all drivers">
+</form>
 </body>
 </html>
