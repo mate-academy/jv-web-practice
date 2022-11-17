@@ -8,6 +8,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mate.exception.DataProcessingException;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
@@ -40,7 +41,9 @@ public class CreateCarController extends HttpServlet {
                 .stream()
                 .filter(f -> f.getName().equals(manufacturerName))
                 .findFirst()
-                .orElse(new Manufacturer(manufacturerName));
+                .orElseThrow(() ->
+                        new DataProcessingException("Unsapported manufacturer "
+                                + manufacturerName));
         car.setManufacturer(manufacturer);
         CarService carService = (CarService) injector.getInstance(CarService.class);
         carService.create(car);
