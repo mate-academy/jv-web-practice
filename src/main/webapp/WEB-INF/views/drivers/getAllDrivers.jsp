@@ -5,23 +5,23 @@
     <title>All users</title>
 </head>
 <body>
-<p><strong>Write data:</strong></p>
-<table>
-    <h2>
+<h1><p><strong>all drivers in db</strong></p></h1>
+<table border="1">
+        <thead>
         <tr>
-        <h2><td>Id</td></h2>
-        <h2><td>name</td></h2>
-        <h2><td>licence number</td></h2>
-    </tr>
-    </h2>
+            <th>Id</th>
+            <th>name</th>
+            <th>licence number</th>
+        </tr>
+        </thead>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-            <h2><td><c:out value="${driver.id}" /></td></h2>
-            <h2><td><c:out value="${driver.name}" /></td></h2>
-            <h2><td><c:out value="${driver.licenseNumber}" /></td></h2>
+            <td><c:out value="${driver.id}" /></td>
+            <td><c:out value="${driver.name}" /></td>
+            <td><c:out value="${driver.licenseNumber}" /></td>
         </tr>
     </c:forEach>
 </table>
-<a href="http://localhost:8080/main">BACK</a>
+<h3><a href="http://localhost:8080/main">BACK</a></h3>
 </body>
 </html>
