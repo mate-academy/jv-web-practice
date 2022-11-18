@@ -77,7 +77,7 @@
 
     <servlet>
         <servlet-name>carDeleteController</servlet-name>
-        <servlet-class>mate.controller.car.CarDeleteController</servlet-class>
+        <servlet-class>mate.controller.car.DeleteCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>carDeleteController</servlet-name>
@@ -86,7 +86,7 @@
 
     <servlet>
         <servlet-name>driverDeleteController</servlet-name>
-        <servlet-class>mate.controller.driver.DriverDeleteController</servlet-class>
+        <servlet-class>mate.controller.driver.DeleteDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>driverDeleteController</servlet-name>
@@ -95,7 +95,7 @@
 
     <servlet>
         <servlet-name>manufacturerDeleteController</servlet-name>
-        <servlet-class>mate.controller.manufacturer.ManufacturerDeleteController</servlet-class>
+        <servlet-class>mate.controller.manufacturer.DeleteManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>manufacturerDeleteController</servlet-name>
