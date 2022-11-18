@@ -2,14 +2,12 @@ package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(value = "/cars/delete")
 public class CarDeleteController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
