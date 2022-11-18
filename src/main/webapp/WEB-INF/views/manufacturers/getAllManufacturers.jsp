@@ -19,7 +19,7 @@
             <td><c:out value="${manufacturer.name}" /></td>
             <td><c:out value="${manufacturer.country}" /></td>
             <td>
-                <a href="http://localhost:8080/manufacturers/delete/?id=${manufacturer.id}">Delete</a>
+                <a href="${pageContext.request.contextPath}/manufacturers/delete/?id=${manufacturer.id}">Delete</a>
             </td>
         </tr>
     </c:forEach>
