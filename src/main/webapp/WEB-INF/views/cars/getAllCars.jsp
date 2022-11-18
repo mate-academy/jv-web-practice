@@ -21,7 +21,7 @@
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
             <td>
-                <a href="http://localhost:8080/cars/delete/?id=${car.id}">Delete</a>
+                <a href="${pageContext.request.contextPath}/cars/delete/?id=${car.id}">Delete</a>
             </td>
     </c:forEach>
 </table>
