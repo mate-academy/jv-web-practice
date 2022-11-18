@@ -23,4 +23,3 @@ name: <c:out value="${driver.name}"/><br/>
 license number: <c:out value="${driver.licenseNumber}"/><br>
 </body>
 </html>
-
