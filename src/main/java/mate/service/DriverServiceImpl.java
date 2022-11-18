@@ -2,6 +2,7 @@ package mate.service;
 
 import java.util.List;
 import mate.dao.DriverDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Driver;
@@ -23,7 +24,13 @@ public class DriverServiceImpl implements DriverService {
 
     @Override
     public Driver getByLicenceNumber(String licenceNumber) {
-        return driverDao.getByLicenceNumber(licenceNumber);
+        return getAll()
+                .stream()
+                .filter(f -> f.getLicenseNumber().equals(licenceNumber))
+                .findFirst()
+                .orElseThrow(
+                    () -> new DataProcessingException("can not find driver by licence number"
+                        + licenceNumber));
     }
 
     @Override

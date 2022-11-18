@@ -2,6 +2,7 @@ package mate.service;
 
 import java.util.List;
 import mate.dao.ManufacturerDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Manufacturer;
@@ -23,7 +24,13 @@ public class ManufacturerServiceImpl implements ManufacturerService {
 
     @Override
     public Manufacturer getByManufacturerName(String manufacturerName) {
-        return manufacturerDao.getByManufacturerName(manufacturerName);
+        return getAll()
+                .stream()
+                .filter(f -> f.getName().equals(manufacturerName))
+                .findFirst()
+                .orElseThrow(() ->
+                        new DataProcessingException("Unsapported manufacturer "
+                                + manufacturerName));
     }
 
     @Override

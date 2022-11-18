@@ -2,6 +2,7 @@ package mate.service;
 
 import java.util.List;
 import mate.dao.CarDao;
+import mate.exception.DataProcessingException;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
@@ -41,7 +42,11 @@ public class CarServiceImpl implements CarService {
 
     @Override
     public Car getByModel(String model) {
-        return carDao.getByModel(model);
+        return getAll()
+                .stream()
+                .filter(f -> f.getModel().equals(model))
+                .findFirst()
+                .orElseThrow(() -> new DataProcessingException("can not find current car"));
     }
 
     @Override

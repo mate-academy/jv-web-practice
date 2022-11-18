@@ -12,6 +12,7 @@
         <th>Id</th>
         <th>model</th>
         <th>manufacturer</th>
+        <th>delete</th>
     </tr>
     </thead>
     <c:forEach items="${cars}" var="car">
@@ -19,10 +20,13 @@
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.name}" /></td>
-            <td><button type="submit">DELETE</button> </td>
-        </tr>
+            <td>
+                <a href="http://localhost:8080/cars/delete/?id=${car.id}">Delete</a>
+            </td>
     </c:forEach>
 </table>
-<h3><a href="http://localhost:8080/main">BACK</a></h3>
+<form action="http://localhost:8080/main">
+    <input type="submit" value="BACK">
+</form>
 </body>
 </html>

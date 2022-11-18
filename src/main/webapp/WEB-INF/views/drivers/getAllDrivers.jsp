@@ -19,9 +19,14 @@
             <td><c:out value="${driver.id}" /></td>
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
+            <td>
+                <a href="http://localhost:8080/drivers/delete/?id=${driver.id}">Delete</a>
+            </td>
         </tr>
     </c:forEach>
 </table>
-<h3><a href="http://localhost:8080/main">BACK</a></h3>
+<form action="http://localhost:8080/main">
+    <input type="submit" value="BACK">
+</form>
 </body>
 </html>

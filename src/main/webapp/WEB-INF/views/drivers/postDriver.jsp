@@ -10,6 +10,8 @@
     <h2>License Number <input type="text" name="licenseNumber" required><br></h2>
     <h3><button type="submit">Confirm</button></h3>
 </form>
-<h3><a href="http://localhost:8080/main">BACK</a></h3>
+<form action="http://localhost:8080/main">
+    <input type="submit" value="BACK">
+</form>
 </body>
 </html>

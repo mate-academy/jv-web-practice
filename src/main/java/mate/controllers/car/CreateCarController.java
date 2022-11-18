@@ -1,4 +1,4 @@
-package mate.controllers.carControllers;
+package mate.controllers.car;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -26,13 +26,13 @@ public class CreateCarController extends HttpServlet {
             = (CarService) injector.getInstance(CarService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/cars/postCar.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Car car = new Car();
         List<Driver> drivers = new ArrayList<>();
@@ -42,6 +42,6 @@ public class CreateCarController extends HttpServlet {
                 = manufacturerService.getByManufacturerName(req.getParameter("manufacturer"));
         car.setManufacturer(manufacturer);
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
+        resp.sendRedirect("http://localhost:8080/success");
     }
 }

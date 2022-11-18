@@ -5,6 +5,8 @@
 </head>
 <body>
 <h1>SUCCESS</h1>
-<h2><a href="http://localhost:8080/main">BACK</a></h2>
+<form action="http://localhost:8080/main">
+    <input type="submit" value="BACK">
+</form>
 </body>
 </html>

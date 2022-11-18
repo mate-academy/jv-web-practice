@@ -1,4 +1,4 @@
-package mate.controllers.driverControllers;
+package mate.controllers.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,12 +7,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Driver;
+import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/add")
-public class CreatDriverController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/drivers/add")
+public class AddDriverToCar extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+
+    private static final CarService carService
+            = (CarService) injector.getInstance(CarService.class);
 
     private static final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
@@ -20,16 +23,16 @@ public class CreatDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/postDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/addDriverToCar.jsp").forward(req, resp);
     }
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Driver driver = new Driver();
-        driver.setName(req.getParameter("name"));
-        driver.setLicenseNumber(req.getParameter("licenseNumber"));
-        driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
+        String carName = req.getParameter("model").toLowerCase();
+        String licenceNumber = req.getParameter("licence number");
+        carService.addDriverToCar(driverService.getByLicenceNumber(licenceNumber),
+                carService.getByModel(carName));
+        resp.sendRedirect("http://localhost:8080/success");
     }
 }
