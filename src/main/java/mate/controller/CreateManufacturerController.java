@@ -14,6 +14,9 @@ import mate.service.ManufacturerService;
 public class CreateManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
 
+    private static final ManufacturerService manufacturerService
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
@@ -27,8 +30,7 @@ public class CreateManufacturerController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(req.getParameter("name").toLowerCase());
         manufacturer.setCountry(req.getParameter("country"));
-        ManufacturerService manufacturerService
-                = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+
         manufacturerService.create(manufacturer);
         req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
     }

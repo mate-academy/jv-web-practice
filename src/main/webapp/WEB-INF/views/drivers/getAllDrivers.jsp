@@ -5,7 +5,7 @@
     <title>All users</title>
 </head>
 <body>
-<h1>List of Drivers:</h1>
+<p><strong>Write data:</strong></p>
 <table>
     <h2>
         <tr>

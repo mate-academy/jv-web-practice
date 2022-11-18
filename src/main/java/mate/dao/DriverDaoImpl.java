@@ -71,6 +71,18 @@ public class DriverDaoImpl implements DriverDao {
     }
 
     @Override
+    public Driver getByLicenceNumber(String licenceNumber) {
+        Driver driver = getAll()
+                .stream()
+                .filter(f -> f.getLicenseNumber().equals(licenceNumber))
+                .findFirst()
+                .orElseThrow(
+                        () -> new DataProcessingException("can not find driver by licence number"
+                                + licenceNumber));
+        return driver;
+    }
+
+    @Override
     public Driver update(Driver driver) {
         String query = "UPDATE drivers "
                 + "SET name = ?, license_number = ? "

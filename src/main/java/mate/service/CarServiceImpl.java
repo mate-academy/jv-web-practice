@@ -40,6 +40,11 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
+    public Car getByModel(String model) {
+        return carDao.getByModel(model);
+    }
+
+    @Override
     public List<Car> getAll() {
         return carDao.getAll();
     }

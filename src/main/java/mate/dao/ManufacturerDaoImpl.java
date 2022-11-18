@@ -50,6 +50,17 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
     }
 
     @Override
+    public Manufacturer getByManufacturerName(String manufacturerName) {
+        return getAll()
+                .stream()
+                .filter(f -> f.getName().equals(manufacturerName))
+                .findFirst()
+                .orElseThrow(() ->
+                        new DataProcessingException("Unsapported manufacturer "
+                                + manufacturerName));
+    }
+
+    @Override
     public List<Manufacturer> getAll() {
         String query = "SELECT * FROM manufacturers WHERE is_deleted = FALSE";
         try (Connection connection = ConnectionUtil.getConnection();

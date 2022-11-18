@@ -4,7 +4,7 @@
     <title>Create car</title>
 </head>
 <body>
-<h1>Please write data</h1>
+<p><strong>Write data:</strong></p>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     <h2>Car model <input type="text" name="model" required><br></h2>
     <h2>Manufacturer <input type="text" name="manufacturer" required><br></h2>

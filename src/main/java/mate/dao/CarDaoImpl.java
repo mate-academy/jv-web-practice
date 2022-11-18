@@ -154,6 +154,16 @@ public class CarDaoImpl implements CarDao {
         return cars;
     }
 
+    @Override
+    public Car getByModel(String model) {
+        Car car = getAll()
+                .stream()
+                .filter(f -> f.getModel().equals(model))
+                .findFirst()
+                .orElseThrow(() -> new DataProcessingException("can not find current car"));
+        return car;
+    }
+
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
         List<Driver> drivers = car.getDrivers();

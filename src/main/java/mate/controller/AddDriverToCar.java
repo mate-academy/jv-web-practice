@@ -6,16 +6,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.exception.DataProcessingException;
 import mate.lib.Injector;
-import mate.model.Car;
-import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCar extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+
+    private static final CarService carService
+            = (CarService) injector.getInstance(CarService.class);
+
+    private static final DriverService driverService
+            = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -28,21 +31,8 @@ public class AddDriverToCar extends HttpServlet {
             throws ServletException, IOException {
         String carName = req.getParameter("model").toLowerCase();
         String licenceNumber = req.getParameter("licence number");
-        CarService carService = (CarService) injector.getInstance(CarService.class);
-        Car car = carService.getAll()
-                .stream()
-                .filter(f -> f.getModel().equals(carName))
-                .findFirst()
-                .orElseThrow(() -> new DataProcessingException("can not find current car"));
-        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
-        Driver driver = driverService.getAll()
-                .stream()
-                .filter(f -> f.getLicenseNumber().equals(licenceNumber))
-                .findFirst()
-                .orElseThrow(
-                        () -> new DataProcessingException("can not find driver by licence number"
-                        + licenceNumber));
-        carService.addDriverToCar(driver, car);
+        carService.addDriverToCar(driverService.getByLicenceNumber(licenceNumber),
+                carService.getByModel(carName));
         req.getRequestDispatcher("/WEB-INF/views/success.jsp").forward(req, resp);
     }
 }
