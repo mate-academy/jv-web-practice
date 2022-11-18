@@ -5,7 +5,7 @@
 </head>
 <body>
 <h1>SUCCESS</h1>
-<form action="http://localhost:8080/main">
+<form action="${pageContext.request.contextPath}">
     <input type="submit" value="BACK">
 </form>
 </body>

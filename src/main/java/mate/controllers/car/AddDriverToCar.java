@@ -33,6 +33,6 @@ public class AddDriverToCar extends HttpServlet {
         String licenceNumber = req.getParameter("licence number");
         carService.addDriverToCar(driverService.getByLicenceNumber(licenceNumber),
                 carService.getByModel(carName));
-        resp.sendRedirect("http://localhost:8080/success");
+        resp.sendRedirect(req.getContextPath() + "success");
     }
 }

@@ -10,7 +10,7 @@
     <h2>driver licence number <input type="text" name="licence number" required></h2>
     <h3><button type="submit">Confirm</button></h3>
 </form>
-<form action="http://localhost:8080/main">
+<form action="${pageContext.request.contextPath}">
     <input type="submit" value="BACK">
 </form>
 </body>
