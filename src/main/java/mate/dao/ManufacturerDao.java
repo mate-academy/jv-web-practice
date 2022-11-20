@@ -1,9 +1,8 @@
 package mate.dao;
 
+import java.util.Optional;
 import mate.model.Manufacturer;
 
-import java.util.Optional;
-
 public interface ManufacturerDao extends GenericDao<Manufacturer> {
-        Optional<Manufacturer> getByName(String name);
+    Optional<Manufacturer> getByName(String name);
 }
