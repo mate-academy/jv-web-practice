@@ -41,6 +41,22 @@ public class Car {
         this.drivers = drivers;
     }
 
+    public String getAllDriverNames() {
+        StringBuilder sb = new StringBuilder();
+        for (Driver driver : drivers) {
+            sb.append(driver.getName()).append(System.lineSeparator());
+        }
+        return sb.toString().trim();
+    }
+
+    public String getAllDriverLicenses() {
+        StringBuilder sb = new StringBuilder();
+        for (Driver driver : drivers) {
+            sb.append(driver.getLicenseNumber()).append(System.lineSeparator());
+        }
+        return sb.toString().trim();
+    }
+
     @Override
     public String toString() {
         return "Car{"
