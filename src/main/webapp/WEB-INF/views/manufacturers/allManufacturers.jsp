@@ -13,12 +13,12 @@
     <td>COUNTRY</td>
     <td>DELETE</td>
   </tr>
-  <c:forEach items="${manufacturers}" var="manufac">
+  <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>
-      <td><c:out value="${manufac.id}"/></td>
-      <td><c:out value="${manufac.name}"/></td>
-      <td><c:out value="${manufac.country}"/></td>
-      <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufac.id}">Delete manufacturer</a></td>
+      <td><c:out value="${manufacturer.id}"/></td>
+      <td><c:out value="${manufacturer.name}"/></td>
+      <td><c:out value="${manufacturer.country}"/></td>
+      <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">Delete manufacturer</a></td>
     </tr>
   </c:forEach>
 </table>

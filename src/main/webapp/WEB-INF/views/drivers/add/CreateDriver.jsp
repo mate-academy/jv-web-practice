@@ -7,7 +7,7 @@
 <h1>Please add your data to work as driver</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/driver">
-  Name <input type="text" name="driverName">
+  Name <input type="text" name="driver_name">
   License <input type="text" name="license">
   <button type="submit">Save</button>
 </form>

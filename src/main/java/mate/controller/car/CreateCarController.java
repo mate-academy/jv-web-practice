@@ -18,23 +18,21 @@ import mate.service.ManufacturerService;
 @WebServlet("/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/register/carRegister.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add/CreateCar.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        long manufactureId = Long.parseLong(req.getParameter("manufacture_id"));
+        Long manufactureId = Long.parseLong(req.getParameter("manufacture_id"));
         Manufacturer manufacturer = manufacturerService.get(manufactureId);
         Car car = new Car();
         List<Driver> driverList = new ArrayList<>();
@@ -42,7 +40,7 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(driverList);
         carService.create(car);
-        req.getRequestDispatcher("/WEB-INF/views/congratulations/carRegisterSuccess.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/add/carRegisterSuccess.jsp")
                 .forward(req, resp);
     }
 }
