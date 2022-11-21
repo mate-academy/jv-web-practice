@@ -1,5 +1,7 @@
 package mate.controller;
 
+import mate.model.Driver;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -8,7 +10,9 @@ import java.io.IOException;
 
 public class CreateDriverController extends HttpServlet {
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+//        Driver driver = new Driver();
+//        driver.setName(req.getAttribute("name"));
     }
 }
