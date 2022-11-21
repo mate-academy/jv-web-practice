@@ -6,9 +6,9 @@
 <body>
 <h1>Please fill out the form</h1>
 
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
-    Car model <input type="text" name="model"><br>
-    Car manufacturer <input type="text" name="manufacturer"><br>
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
+    Car model <input type="text" name="model" required><br>
+    Car manufacturer <input type="text" name="manufacturer" required><br>
     <button type="submit">Confirm</button>
 </form>
 
