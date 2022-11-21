@@ -10,15 +10,13 @@
     <tr>
         <th>ID</th>
         <th>Name</th>
-        <th>Email</th>
-        <th>Profession</th>
+        <th>License #</th>
     </tr>
-    <c:forEach var="user" items="${drivers.rows}">
+    <c:forEach items="${drivers}" var="driver">
         <tr>
-            <td><c:out value="${user.id}" /></td>
-            <td><c:out value="${user.name}" /></td>
-            <td><c:out value="${user.email}" /></td>
-            <td><c:out value="${user.profession}" /></td>
+            <td><c:out value="${driver.id}" /></td>
+            <td><c:out value="${driver.name}" /></td>
+            <td><c:out value="${driver.licenseNumber}" /></td>
         </tr>
     </c:forEach>
 </table>
