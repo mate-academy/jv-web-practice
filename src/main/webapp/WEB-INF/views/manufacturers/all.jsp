@@ -10,7 +10,7 @@
       border-collapse: collapse;
       width: 500px;
       text-align: center;
-      font-size: 20px;
+      font-size: 19px;
     }
   </style>
 </head>
