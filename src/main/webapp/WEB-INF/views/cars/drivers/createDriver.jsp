@@ -7,8 +7,8 @@
 <h1>Please fill out the form</h1>
 
 <form method="post" action="${pageContext.request.contextPath}/cars/addDriver">
-  Car id <input type="text" name="carId" required><br>
-  Driver id <input type="text" name="driverId" required><br>
+  Car id <input type="text" name="car_id" required><br>
+  Driver id <input type="text" name="driver_id" required><br>
   <button type="submit">Confirm</button>
 </form>
 </body>
