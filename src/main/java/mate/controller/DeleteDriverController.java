@@ -20,7 +20,13 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         String id = req.getParameter("id");
         driverService.delete(Long.valueOf(id));
-        resp.sendRedirect(req.getContextPath() + "all");
-        //req.getRequestDispatcher("/WEB-INF/drivers/all").forward(req, resp); <-- why doesn't work?
+        req.getRequestDispatcher("all").forward(req, resp);
+        //mentor please skip this comment for me :)
+        //req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(req, resp);
+        //^--move to page without setting parameters--^
+        //req.getRequestDispatcher("all").forward(req, resp);
+        //^--move to controller--^
+        //resp.sendRedirect(req.getContextPath() + "all");
+        //^--redirect to controller--^
     }
 }

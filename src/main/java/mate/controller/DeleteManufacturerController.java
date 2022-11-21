@@ -21,6 +21,5 @@ public class DeleteManufacturerController extends HttpServlet {
         String id = req.getParameter("id");
         manufacturerService.delete(Long.valueOf(id));
         resp.sendRedirect(req.getContextPath() + "all");
-        //req.getRequestDispatcher("/WEB-INF/drivers/all").forward(req, resp); <-- don't delete
     }
 }

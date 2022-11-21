@@ -10,8 +10,8 @@
         <form method="post">
             <label for="model">Model:</label><br>
             <input type="text" id="model" name="model" required><br>
-            <label for="manufacturer">Manufacturer:</label><br>
-            <select id="manufacturer" name="manufacturer">
+            <label for="manufacturer_id">Manufacturer:</label><br>
+            <select id="manufacturer_id" name="manufacturer_id">
                 <c:forEach items="${manufacturers}" var="manufacturer">
                     <option value="${manufacturer.id}">${manufacturer.name}</option>
                 </c:forEach>
