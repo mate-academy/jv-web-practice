@@ -14,11 +14,11 @@
 
     <servlet>
         <servlet-name>creatingDriverController</servlet-name>
-        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>creatingDriverController</servlet-name>
-        <url-pattern>/drivers/add</url-pattern>
+        <url-pattern>/drivers/create</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -41,7 +41,7 @@
     
     <servlet>
         <servlet-name>createManufacturerController</servlet-name>
-        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturerController</servlet-name>
@@ -68,7 +68,7 @@
     
     <servlet>
         <servlet-name>createCarController</servlet-name>
-        <servlet-class>mate.controller.CreateCarController</servlet-class>
+        <servlet-class>mate.controller.AddCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>createCarController</servlet-name>
@@ -99,6 +99,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCarController</servlet-name>
-        <url-pattern>/cars/addDriver</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 </web-app>
