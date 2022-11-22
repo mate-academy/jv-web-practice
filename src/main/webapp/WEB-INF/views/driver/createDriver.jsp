@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Please fill up the fields below:</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/create">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name <input type="text" name="name"><br>
     License Number <input type="text" name="license_number"><br>
     <button type="submit">Confirm</button>
