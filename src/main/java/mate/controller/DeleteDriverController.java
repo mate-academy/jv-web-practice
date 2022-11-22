@@ -22,5 +22,6 @@ public class DeleteDriverController extends HttpServlet {
         Long id = Long.valueOf(req.getParameter("id"));
         driverService.delete(id);
         //resp.sendRedirect(req.getContextPath() + "/drivers/all"); ???
+        //java.lang.IllegalStateException: Cannot forward after response has been committed
     }
 }
