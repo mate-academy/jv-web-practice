@@ -1,9 +1,7 @@
 package mate.controller.car;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Objects;
-import java.util.Optional;
+import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -11,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
@@ -32,15 +29,10 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         Car car = new Car();
         String model = req.getParameter("model");
-        Long id = Long.valueOf(req.getParameter("manufacturer_id"));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
         car.setModel(model);
-        Optional<Manufacturer> optionalManufacturer
-                = manufacturerService.getAll()
-                .stream()
-                .filter(n -> Objects.equals(n.getId(), id))
-                .findFirst();
-        car.setManufacturer(optionalManufacturer.get());
-        car.setDrivers(new ArrayList<>());
+        car.setManufacturer(manufacturerService.get(manufacturerId));
+        car.setDrivers(Collections.emptyList());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/mainMenu");
     }
