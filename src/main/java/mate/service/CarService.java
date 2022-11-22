@@ -10,4 +10,9 @@ public interface CarService extends GenericService<Car> {
     void removeDriverFromCar(Driver driver, Car car);
 
     List<Car> getAllByDriver(Long driverId);
+
+    @Override
+    default Car create(Car element) {
+        return null;
+    }
 }
