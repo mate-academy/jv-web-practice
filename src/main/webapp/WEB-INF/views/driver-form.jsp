@@ -4,10 +4,9 @@
     <title>Driver form</title>
 </head>
 <body>
-  <form method = "GET" action = "${pageContext.request.contextPath}/drivers/register">
-    First Name: <input type = "text" name = "first_name">
-    <br />
-    Last Name: <input type = "text" name = "last_name" />
+  <form method = "POST" action = "${pageContext.request.contextPath}/driver/create">
+    Name: <input type = "text" name = "name"><br />
+    License number: <input type = "text" name = "license_number"/>
     <input type = "submit" value = "Submit" />
   </form>
 </body>

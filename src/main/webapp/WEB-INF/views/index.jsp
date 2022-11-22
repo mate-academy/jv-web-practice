@@ -7,6 +7,6 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
-<a href="">Create new driver</a>
+<a href="${pageContext.request.contextPath}/driver/create">Create new driver</a>
 </body>
 </html>

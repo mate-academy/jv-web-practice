@@ -15,6 +15,10 @@ public class CreateDriverController extends HttpServlet {
     private final DriverService driverService = (DriverService) INJECTOR.getInstance(DriverService.class);
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/driver-form.jsp").forward(req, resp);
+    }
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Driver driver = new Driver();
@@ -23,5 +27,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(name);
         driver.setLicenseNumber(licenseNumber);
         driverService.create(driver);
+        resp.sendRedirect("/drivers");
     }
 }
