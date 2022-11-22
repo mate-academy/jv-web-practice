@@ -21,8 +21,8 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long driverId = Long.valueOf(req.getParameter(MANUFACTURER_ID));
         manufacturerService.delete(driverId);
-        req.getRequestDispatcher(req.getContextPath()
-                + "/WEB-INF/views/message/delmessage.jsp").include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/message/delmessage.jsp")
+                .forward(req, resp);
     }
 
 }

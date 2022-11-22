@@ -26,8 +26,8 @@ public class AddCarsController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher(req.getContextPath()
-                        + "/WEB-INF/views/cars/addcar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/addcar.jsp")
+                .forward(req, resp);
     }
 
     @Override
@@ -42,7 +42,7 @@ public class AddCarsController extends HttpServlet {
         car.setManufacturer(manufacturerFromDB);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
-        req.getRequestDispatcher(req.getContextPath()
-                        + "/WEB-INF/views/message/addmessage.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/message/addmessage.jsp")
+                .forward(req, resp);
     }
 }
