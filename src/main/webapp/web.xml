@@ -11,6 +11,10 @@
         <servlet-name>display_drivers</servlet-name>
         <servlet-class>mate.controller.DisplayAllDriversController</servlet-class>
     </servlet>
+<!--    <servlet>-->
+<!--        <servlet-name>create_driver</servlet-name>-->
+<!--        <servlet-class>mate.controller.CreateDriverController</servlet-class>-->
+<!--    </servlet>-->
 
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -20,4 +24,8 @@
         <servlet-name>display_drivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
+<!--    <servlet-mapping>-->
+<!--        <servlet-name>create_driver</servlet-name>-->
+<!--        <url-pattern>/drivers</url-pattern>-->
+<!--    </servlet-mapping>-->
 </web-app>

@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DisplayAllDriversController extends HttpServlet {
     private static final Injector INJECTOR = Injector.getInstance("mate");
-    private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
+//    private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) INJECTOR.getInstance(DriverService.class);
 
     @Override
