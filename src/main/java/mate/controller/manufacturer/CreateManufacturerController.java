@@ -30,6 +30,6 @@ public class CreateManufacturerController extends HttpServlet {
         Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturer = manufacturerService.create(manufacturer);
         req.setAttribute("manufacturer", manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/created.jsp").forward(req, resp);
+        resp.sendRedirect("/manufacturers");
     }
 }

@@ -10,7 +10,6 @@ import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
@@ -20,8 +19,6 @@ public class CreateCarController extends HttpServlet {
             = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private final DriverService driverService
-            = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -40,6 +37,6 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car = carService.create(car);
         req.setAttribute("car", car);
-        req.getRequestDispatcher("/WEB-INF/views/car/created.jsp").forward(req, resp);
+        resp.sendRedirect("/cars");
     }
 }
