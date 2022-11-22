@@ -20,6 +20,6 @@ public class DisplayAllDriversController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers-list.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver-list.jsp").forward(req, resp);
     }
 }

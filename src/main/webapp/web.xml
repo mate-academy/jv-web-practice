@@ -8,12 +8,40 @@
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>display_drivers</servlet-name>
+        <servlet-name>display-drivers</servlet-name>
         <servlet-class>mate.controller.DisplayAllDriversController</servlet-class>
     </servlet>
     <servlet>
         <servlet-name>create-driver</servlet-name>
         <servlet-class>mate.controller.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delete-driver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>display-manufacturers</servlet-name>
+        <servlet-class>mate.controller.DisplayAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>create-manufacturer</servlet-name>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delete-manufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>display-cars</servlet-name>
+        <servlet-class>mate.controller.DisplayAllCarsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>create-car</servlet-name>
+        <servlet-class>mate.controller.CreateCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>delete-car</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
     </servlet>
 
     <servlet-mapping>
@@ -21,11 +49,39 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
-        <servlet-name>display_drivers</servlet-name>
+        <servlet-name>display-drivers</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>create-driver</servlet-name>
         <url-pattern>/driver/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete-driver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>display-manufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>create-manufacturer</servlet-name>
+        <url-pattern>/manufacturer/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete-manufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>display-cars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>create-car</servlet-name>
+        <url-pattern>/car/create</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>delete-car</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -8,5 +8,9 @@
 <body>
 <h1>Hello, mates!</h1>
 <a href="${pageContext.request.contextPath}/driver/create">Create new driver</a>
+<br>
+<a href="${pageContext.request.contextPath}/manufacturer/create">Create new manufacturer</a>
+<br>
+<a href="${pageContext.request.contextPath}/car/create">Create new car</a>
 </body>
 </html>
