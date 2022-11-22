@@ -17,6 +17,12 @@ public class CreateCarController extends HttpServlet {
     private final ManufacturerService manufacturerService = (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);
 
     @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        req.getRequestDispatcher("/WEB-INF/views/car-form.jsp").forward(req, resp);
+//        req.getRequestDispatcher("/WEB-INF/views/manufacturer-list.jsp").include(req, resp);
+    }
+
+    @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Car car = new Car();

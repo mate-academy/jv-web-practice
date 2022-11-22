@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Manufacturer form</title>
@@ -6,7 +6,7 @@
 <body>
 <form method = "POST" action = "${pageContext.request.contextPath}/manufacturer/create">
   Name: <input type = "text" name = "name"><br />
-  License number: <input type = "text" name = "license_number"/>
+  Country: <input type = "text" name = "country"/>
   <input type = "submit" value = "Submit" />
 </form>
 </body>
