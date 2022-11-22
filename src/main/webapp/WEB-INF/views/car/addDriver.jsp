@@ -21,8 +21,8 @@
 <body>
 <h3>Enter values for add driver to car:</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-  Driver id <input type="text" name="driverId"><br>
-  Car Id <input type="text" name="carId"><br>
+  Driver id <input type="number" name="driverId"><br>
+  Car Id <input type="number" name="carId"><br>
   <button type="submit">Confirm</button>
 </form>
 </body>

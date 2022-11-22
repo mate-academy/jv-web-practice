@@ -36,13 +36,10 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
-        Long driverId = Long.valueOf(req.getParameter("driverId"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        Driver driver = driverService.get(driverId);
         Car car = new Car();
         car.setModel(model);
         car.setManufacturer(manufacturer);
-        car.setDrivers(List.of(driver));
         car = carService.create(car);
         req.setAttribute("car", car);
         req.getRequestDispatcher("/WEB-INF/views/car/created.jsp").forward(req, resp);

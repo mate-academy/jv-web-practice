@@ -22,8 +22,7 @@
 <h3>Enter values for car:</h3>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     Model <input type="text" name="model"><br>
-    Manufacturer id <input type="text" name="manufacturerId"><br>
-    Driver id <input type="text" name="driverId"><br>
+    Manufacturer id <input type="number" name="manufacturerId"><br>
     <button type="submit">Confirm</button>
 </form>
 </body>
