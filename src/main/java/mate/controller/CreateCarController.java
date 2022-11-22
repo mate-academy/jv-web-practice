@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CreateCarController extends HttpServlet {
     private final static Injector INJECTOR = Injector.getInstance("mate");
@@ -19,7 +20,6 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/car-form.jsp").forward(req, resp);
-//        req.getRequestDispatcher("/WEB-INF/views/manufacturer-list.jsp").include(req, resp);
     }
 
     @Override
@@ -31,6 +31,8 @@ public class CreateCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         car.setModel(model);
         car.setManufacturer(manufacturer);
+        car.setDrivers(new ArrayList<>());
         carService.create(car);
+        resp.sendRedirect("/cars");
     }
 }
