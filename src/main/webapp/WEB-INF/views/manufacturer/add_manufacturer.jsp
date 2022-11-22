@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Add manufacturer</title>
 </head>
 <body>
 <h1>Create new manufacturer</h1>
