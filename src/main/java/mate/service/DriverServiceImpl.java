@@ -1,5 +1,6 @@
 package mate.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import mate.dao.DriverDao;
 import mate.lib.Inject;
@@ -34,5 +35,13 @@ public class DriverServiceImpl implements DriverService {
     @Override
     public boolean delete(Long id) {
         return driverDao.delete(id);
+    }
+
+    @Override
+    public List<Driver> getAllByIdIn(String[] ids) {
+        if (ids == null) {
+            return new ArrayList<>();
+        }
+        return driverDao.getAllByIdIn(List.of(ids));
     }
 }
