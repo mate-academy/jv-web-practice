@@ -1,24 +1,26 @@
 package mate.controller;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.ArrayList;
 
 public class CreateCarController extends HttpServlet {
-    private final static Injector INJECTOR = Injector.getInstance("mate");
+    private static final Injector INJECTOR = Injector.getInstance("mate");
     private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
-    private final ManufacturerService manufacturerService = (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);
+    private final ManufacturerService manufacturerService
+            = (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/car-form.jsp").forward(req, resp);
     }
 

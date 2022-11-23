@@ -8,19 +8,24 @@
 <table>
     <caption><h2>List of cars</h2></caption>
     <tr>
-        <th>ID</th>
-        <th>Name</th>
-        <th>Manufacturer</th>
-        <th>Drivers</th>
+        <td>ID</td>
+        <td>Model</td>
+        <td>Manufacturer</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
-            <td><c:out value="${car.id}" /></td>
-            <td><c:out value="${car.model}" /></td>
-            <td><c:out value="${car.manufacturer.id}" /></td>
-            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${car.id}">delete</a></td>
+            <td><c:out value="${car.id}"/></td>
+            <td><c:out value="${car.model}"/></td>
+            <td><c:out value="${car.manufacturer.name}"/></td>
+            <td><c:forEach items="${car.drivers}" var="driver">
+                <tr>
+                    <td><c:out value="${driver.name}"/></td>
+                </tr>
+            </c:forEach> </td>
+            <td><a href = "${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>
 </table>
+
 </body>
 </html>

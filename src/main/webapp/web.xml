@@ -43,6 +43,10 @@
         <servlet-name>delete-car</servlet-name>
         <servlet-class>mate.controller.DeleteCarController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>add-driver</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>index</servlet-name>
@@ -83,5 +87,9 @@
     <servlet-mapping>
         <servlet-name>delete-car</servlet-name>
         <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>add-driver</servlet-name>
+        <url-pattern>/car/add-driver</url-pattern>
     </servlet-mapping>
 </web-app>

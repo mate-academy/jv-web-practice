@@ -6,7 +6,6 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class ConnectionUtil {
-//    private static final String URL = "jdbc:mysql://localhost:3306/taxi";
     private static final String URL2
             = "jdbc:mysql://localhost:3306/taxi?useUnicode=true&useJDBCCompliantTimezoneShift=true"
             + "&useLegacyDatetimeCode=false&serverTimezone=UTC";
