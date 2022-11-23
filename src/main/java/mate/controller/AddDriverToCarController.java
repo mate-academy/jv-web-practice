@@ -15,7 +15,7 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final String PATH = "/WEB-INF/views/driver/add.jsp";
+    private static final String PATH = "/WEB-INF/views/driver/addToCar.jsp";
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
@@ -32,8 +32,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.valueOf(req.getParameter("car_id")));
         Driver driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
         carService.addDriverToCar(driver, car);
-        req.setAttribute("drivers", driverService.getAll());
-        req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher(PATH).forward(req, resp);
+        resp.sendRedirect("/");
     }
 }

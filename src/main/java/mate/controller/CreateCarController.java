@@ -1,7 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -31,12 +31,11 @@ public class CreateCarController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         car.setModel(req.getParameter("car_model"));
-        car.setDrivers(new ArrayList<>());
+        car.setDrivers(Collections.emptyList());
         car.setManufacturer(manufacturerService.get(
                 Long.valueOf(req.getParameter("manufacturer_id"))));
         carService.create(car);
-        req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher(PATH).forward(req, resp);
+        resp.sendRedirect("/");
 
     }
 }
