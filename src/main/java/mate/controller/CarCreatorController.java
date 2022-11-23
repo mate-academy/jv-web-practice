@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
