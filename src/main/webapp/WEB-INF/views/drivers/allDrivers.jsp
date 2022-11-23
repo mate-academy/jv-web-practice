@@ -5,7 +5,7 @@
         <title>All drivers</title>
     </head>
     <body>
-        <h1>All users:</h1>
+        <h1>All drivers:</h1>
             <table>
                 <tr>
                     <td>ID</td>
