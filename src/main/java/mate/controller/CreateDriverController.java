@@ -30,6 +30,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(req.getParameter("driver_name"));
         driver.setLicenseNumber(req.getParameter("license_number"));
         driverService.create(driver);
-        resp.sendRedirect("/");
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }
