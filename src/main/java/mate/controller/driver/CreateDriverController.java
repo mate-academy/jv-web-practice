@@ -1,15 +1,13 @@
 package mate.controller.driver;
 
-import mate.lib.Injector;
-import mate.model.Driver;
-import mate.service.DriverService;
-
-import javax.servlet.ServletException;
+import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.lib.Injector;
+import mate.model.Driver;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
 public class CreateDriverController extends HttpServlet {
