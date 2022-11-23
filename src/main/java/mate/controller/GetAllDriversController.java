@@ -11,7 +11,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/getAllDrivers")
+@WebServlet(urlPatterns = "/drivers/show")
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -22,6 +22,6 @@ public class GetAllDriversController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/getAllDrivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/show.jsp").forward(req, resp);
     }
 }

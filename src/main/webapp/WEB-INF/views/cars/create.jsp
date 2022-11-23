@@ -9,7 +9,7 @@
     Super form for create a Car!
   </h1>
 </div>
-<form method="post" action="${pageContext.request.contextPath}/cars/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
   Model: <input type="text" name="model"><br>
   Manufacturer id: <input type="number" name="manufacturer_id"><br>
   <button type="submit">Confirm</button>

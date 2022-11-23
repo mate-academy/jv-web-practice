@@ -16,7 +16,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/createCar")
 public class CreateCarController extends HttpServlet {
     private static final Injector INJECTOR = Injector.getInstance("mate");
-    private static final String CREATE = "/WEB-INF/views/cars/createCar.jsp";
+    private static final String CREATE = "/WEB-INF/views/cars/create.jsp";
     private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);

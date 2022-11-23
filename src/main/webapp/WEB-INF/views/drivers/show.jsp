@@ -5,7 +5,11 @@
   <title>All drivers</title>
 </head>
 <body>
-<h1>All drivers</h1>
+<div style="text-align: center; color: blue">
+  <h1>
+    Super form print all Drivers!
+  </h1>
+</div>
 <table border="1">
   <tr>
     <td>ID</td>

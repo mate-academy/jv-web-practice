@@ -10,10 +10,10 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/createDriver")
+@WebServlet(urlPatterns = "/drivers/create")
 public class CreateDriverController extends HttpServlet {
     private static final Injector INJECTOR = Injector.getInstance("mate");
-    private static final String CREATE = "/WEB-INF/views/drivers/createDriver.jsp";
+    private static final String CREATE = "/WEB-INF/views/drivers/create.jsp";
     private final DriverService driverService =
             (DriverService) INJECTOR.getInstance(DriverService.class);
 
