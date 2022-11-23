@@ -18,11 +18,11 @@
         </tr>
         <c:forEach var="car" items="${cars}">
             <tr>
-                <td>"${car.id}"</td>
-                <td>"${car.model}"</td>
-                <td>"${car.manufacturer.name}"</td>
-                <td>"${car.drivers}"</td>
-                <td><a href="${pageContext.request.contextPath}/cars/add_driver?car_id=${car.id}">Add driver</a></td>
+                <td>${car.id}</td>
+                <td>${car.model}</td>
+                <td>${car.manufacturer.name}</td>
+                <td>${car.drivers}</td>
+                <td><a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">Add driver</a></td>
                 <td><a href="${pageContext.request.contextPath}/cars/delete?car_id=${car.id}">Delete car</a></td>
             </tr>
         </c:forEach>

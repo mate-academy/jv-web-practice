@@ -1,10 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.stream.Collectors;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -41,21 +38,13 @@ public class AddCarController extends HttpServlet {
         String model = req.getParameter("model");
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        List<Driver> drivers;
         String[] driversId = req.getParameterMap().get("drivers");
-        if (driversId != null) {
-            drivers = Arrays.stream(driversId)
-                    .map(Long::valueOf)
-                    .map(driverService::get)
-                    .collect(Collectors.toList());
-        } else {
-            drivers = new ArrayList<>();
-        }
+        List<Driver> drivers = driverService.getAllByIdIn(driversId);
         Car car = new Car();
         car.setManufacturer(manufacturer);
         car.setModel(model);
         car.setDrivers(drivers);
         carService.create(car);
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

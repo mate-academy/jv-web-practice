@@ -16,9 +16,9 @@
   </tr>
   <c:forEach var="driver" items="${drivers}">
     <tr>
-      <td>"${driver.id}"</td>
-      <td>"${driver.name}"</td>
-      <td>"${driver.licenseNumber}"</td>
+      <td>${driver.id}</td>
+      <td>${driver.name}</td>
+      <td>${driver.licenseNumber}</td>
       <td><a href="${pageContext.request.contextPath}/drivers/delete?driver_id=${driver.id}">Delete driver</a></td>
     </tr>
   </c:forEach>
