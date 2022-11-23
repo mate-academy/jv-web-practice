@@ -5,6 +5,7 @@
     <title>All Manufacturers</title>
 </head>
 <body>
+<h1>List of manufacturers:</h1>
 <table>
     <tr>
         <td>ID</td>
