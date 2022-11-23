@@ -6,7 +6,7 @@
 </head>
 <body>
     <p>Form for creating a manufacturer</p>
-    <form method="post" action="${pageContext.request.contextPath}/drivers/create">
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
         Manufacturer name<input type="text" name="name">
     <br>
         Manufacturer country<input type="text" name="country">
