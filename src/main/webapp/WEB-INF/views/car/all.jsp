@@ -6,32 +6,27 @@
 </head>
 <body>
 <table>
+  <h1>Cars: </h1>
   <tr>
     <td>Id</td>
     <td>Model</td>
-    <td>Manufacturer name</td>
+    <td>Manufacturer</td>
+    <td>Country</td>
+    <td>Driver</td>
   </tr>
   <c:forEach items="${cars}" var="car">
   <tr>
     <td><c:out value="${car.id}"/></td>
     <td><c:out value="${car.model}"/></td>
-    <td><c:out value="${car.manufacturer == null ? 'NULL' : car.manufacturer.name}"/></td>
+    <td><c:out value="${car.manufacturer == null ? '-' : car.manufacturer.name}"/></td>
+    <td><c:out value="${car.manufacturer == null ? '-' : car.manufacturer.country}"/></td>
+    <td>
+      <c:forEach items="${car.drivers}" var="driver">
+        <c:out value="${driver.name}"/><br>
+      </c:forEach>
+    </td>
     <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">delete</a> </td>
   </tr>
-  <tr>
-    <td>Drivers</td>
-    <td>id</td>
-    <td>name</td>
-    <td>license number</td>
-  </tr>
-  <c:forEach items="${car.drivers}" var="driver">
-  <tr>
-    <td></td>
-    <td><c:out value="${driver.id}"/></td>
-    <td><c:out value="${driver.name}"/></td>
-    <td><c:out value="${driver.licenseNumber}"/></td>
-  </tr>
-  </c:forEach>
   </c:forEach>
 </body>
 </html>

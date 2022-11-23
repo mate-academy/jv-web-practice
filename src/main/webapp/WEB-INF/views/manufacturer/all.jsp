@@ -2,10 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Get all drivers</title>
+    <title>Get all manufacturers</title>
 </head>
 <body>
-<h1>List of Drivers:</h1>
+<h1>List of Manufacturers:</h1>
 <table>
     <tr>
         <td>ID</td>
