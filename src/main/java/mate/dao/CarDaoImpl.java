@@ -19,7 +19,7 @@ import mate.util.ConnectionUtil;
 public class CarDaoImpl implements CarDao {
     @Override
     public Car create(Car car) {
-        String query = "INSERT INTO cars (model, manufacturer_id)"
+        String query = "INSERT INTO cars (model, manufacturer_id) "
                 + "VALUES (?, ?)";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
@@ -46,9 +46,9 @@ public class CarDaoImpl implements CarDao {
                 + "manufacturer_id, "
                 + "m.name AS manufacturer_name, "
                 + "m.country AS manufacturer_country "
-                + "FROM cars c"
-                + " JOIN manufacturers m ON c.manufacturer_id = m.id"
-                + " WHERE c.id = ? AND c.is_deleted = FALSE";
+                + "FROM cars c "
+                + "JOIN manufacturers m ON c.manufacturer_id = m.id "
+                + "WHERE c.id = ? AND c.is_deleted = FALSE";
         Car car = null;
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
@@ -74,9 +74,9 @@ public class CarDaoImpl implements CarDao {
                 + "manufacturer_id, "
                 + "m.name AS manufacturer_name, "
                 + "m.country AS manufacturer_country "
-                + "FROM cars c"
-                + " JOIN manufacturers m ON c.manufacturer_id = m.id"
-                + " WHERE c.is_deleted = FALSE";
+                + "FROM cars c "
+                + "JOIN manufacturers m ON c.manufacturer_id = m.id "
+                + "WHERE c.is_deleted = FALSE ";
         List<Car> cars = new ArrayList<>();
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
