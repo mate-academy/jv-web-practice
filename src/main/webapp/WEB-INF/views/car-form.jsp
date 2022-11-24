@@ -4,10 +4,10 @@
     <title>Car form</title>
 </head>
 <body>
-    <form method = "POST" action = "${pageContext.request.contextPath}/car/create">
-        Model: <input type = "text" name = "model"><br />
-        Manufacturer id: <input type = "text" name = "manufacturer_id"/>
-        <input type = "submit" value = "Submit" />
-    </form>
+<form method="POST" action="${pageContext.request.contextPath}/cars/add">
+    Model: <input type="text" name="model"><br/>
+    Manufacturer id: <input type="text" name="manufacturer_id"/>
+    <input type="submit" value="Submit"/>
+</form>
 </body>
 </html>
