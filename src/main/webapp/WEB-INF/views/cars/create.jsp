@@ -8,9 +8,9 @@
 
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     <label>Model:</label><br>
-    <input type="text" name="manufacturer"><br>
+    <input type="text" name="model"><br>
     <label>Manufacturer id:</label><br>
-    <input type="text" name="manufacturer_id"><br>
+    <input type="number" name="manufacturer_id"><br>
     <button type="submit">Add</button><br><br><br>
 </form>
 <a href="${pageContext.request.contextPath}/manufacturers/all">Show all manufacturers</a><br>
