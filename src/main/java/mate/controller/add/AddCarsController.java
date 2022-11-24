@@ -17,8 +17,7 @@ import mate.service.ManufacturerService;
 public class AddCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final String CAR_MODEL_NAME = "carModelName";
-    private static final String CAR_MANUFACTURER_NAME = "carManufacturerName";
-    private static final String CAR_MANUFACTURER_COUNTRY = "carManufacturerCountry";
+    private static final String CAR_MANUFACTURER_ID = "carManufacturerId";
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
@@ -33,13 +32,11 @@ public class AddCarsController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setName(req.getParameter(CAR_MANUFACTURER_NAME));
-        manufacturer.setCountry(req.getParameter(CAR_MANUFACTURER_COUNTRY));
-        Manufacturer manufacturerFromDB = manufacturerService.create(manufacturer);
+        Long manufacturerId = Long.valueOf(req.getParameter(CAR_MANUFACTURER_ID));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car();
         car.setModel(req.getParameter(CAR_MODEL_NAME));
-        car.setManufacturer(manufacturerFromDB);
+        car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
         carService.create(car);
         req.getRequestDispatcher("/WEB-INF/views/message/addmessage.jsp")
