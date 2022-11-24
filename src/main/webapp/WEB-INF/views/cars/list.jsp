@@ -23,7 +23,7 @@
                     <td>
                         <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
                             <input type="hidden" name="car_id" value="${car.id}" />
-                            <input type="text" name="driver_id">
+                            <input type="number" name="driver_id">
                             <button type="submit">add driver by id</button>
                         </form>
                     </td>
@@ -33,7 +33,7 @@
                 <tr>
                     <td>#</td>
                     <td><input type="text" name="model"></td>
-                    <td>By id: <input type="text" name="manufacturer_id"></td>
+                    <td>By id: <input type="number" name="manufacturer_id"></td>
                     <td></td>
                     <td><button type="submit">add</button></td>
                 </tr>
