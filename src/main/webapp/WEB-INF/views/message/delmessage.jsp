@@ -4,6 +4,8 @@
   <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates</h1>
+<h1>Hello, your data was deleted from DataBase</h1><br>
+<a href=${pageContext.request.contextPath}"/index" >
+  <h1>Go to Main</h1></a>
 </body>
 </html>
