@@ -6,9 +6,9 @@
 <body>
     <h1>Enter manufacturers name and country</h1>
     <h1> Create car</h1>
-    <form method="post" name="${pageContext.request.contextPath}/car">
+    <form method="post" name="${pageContext.request.contextPath}/manufacturer/add">
         Model <input type="text" name="model">
-        Manufacturer id <input type="text" name="manufacture_id">
+        Manufacturer id <input type="number" name="manufacture_id">
         <button type="submit">Save</button>
     </form>
 </body>

@@ -5,9 +5,9 @@
 </head>
 <body>
     <h1>Enter name and drivers license</h1>
-    <form method="post" action="${pageContext.request.contextPath}/driver">
+    <form method="post" action="${pageContext.request.contextPath}/driver/add">
         Name <input type="text" name="name">
-        License <input type="text" name="license_id">
+        License <input type = "number" name="license_id">
         <button type="submit">Save</button>
     </form>
 </body>

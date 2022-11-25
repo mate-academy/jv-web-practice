@@ -1,8 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +9,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
@@ -25,7 +23,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/add.jsp").forward(req,resp);
     }
 
     @Override
@@ -34,10 +32,9 @@ public class CreateCarController extends HttpServlet {
         Long manufactureId = Long.valueOf(req.getParameter("manufacture_id"));
         Manufacturer manufacturer = manufacturerService.get(manufactureId);
         String model = req.getParameter("model");
-        List<Driver> driverList = new ArrayList();
         Car car = new Car();
         car.setManufacturer(manufacturer);
-        car.setDrivers(driverList);
+        car.setDrivers(Collections.emptyList());
         car.setModel(model);
         carService.create(car);
         req.getRequestDispatcher("/WEB-INF/views/car/add.jsp").forward(req,resp);
