@@ -12,6 +12,7 @@ import mate.service.DriverService;
 
 @WebServlet("/drivers/add")
 public class CreateDriverController extends HttpServlet {
+    private static final String PATH = "/WEB-INF/views/driver/createDriver.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
@@ -19,7 +20,7 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/driver/createDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher(PATH).forward(req, resp);
     }
 
     @Override

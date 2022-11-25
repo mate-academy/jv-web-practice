@@ -9,9 +9,10 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(urlPatterns = "/")
 public class IndexController extends HttpServlet {
+    private static final String PATH = "/WEB-INF/views/index.jsp";
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        req.getRequestDispatcher(PATH).forward(req, resp);
     }
 }

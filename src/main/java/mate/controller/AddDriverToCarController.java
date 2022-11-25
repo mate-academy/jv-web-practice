@@ -14,6 +14,7 @@ import mate.service.DriverService;
 
 @WebServlet("/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
+    private static final String PATH = "/WEB-INF/views/addDriverToCar.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService =
@@ -22,7 +23,7 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
+        req.getRequestDispatcher(PATH).forward(req, resp);
     }
 
     @Override
