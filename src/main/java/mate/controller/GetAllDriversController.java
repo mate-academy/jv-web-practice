@@ -12,7 +12,7 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/drivers")
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final String GET_ALL = "/WEB-INF/views/drivers/showAll.jsp";
+    private static final String GET_ALL = "/WEB-INF/views/drivers/all.jsp";
     private DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
 
     @Override

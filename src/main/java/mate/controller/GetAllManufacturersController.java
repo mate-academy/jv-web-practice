@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers")
 public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final String GET_ALL = "/WEB-INF/views/manufacturers/showAll.jsp";
+    private static final String GET_ALL = "/WEB-INF/views/manufacturers/all.jsp";
     private ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
