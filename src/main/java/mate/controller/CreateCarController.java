@@ -1,6 +1,5 @@
 package mate.controller;
 
-
 import java.io.IOException;
 import java.util.Collections;
 import javax.servlet.ServletException;
