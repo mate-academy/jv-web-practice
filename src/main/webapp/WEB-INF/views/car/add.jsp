@@ -6,7 +6,7 @@
 <body>
 <h1>Create car</h1>
 <h4 style="color: green">${message}</h4>
-<form method="post" action="${pageContext.request.contextPath}/cars/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     <label>
         <input type="text" name="car_model" placeholder="Car model">
         <input type="number" name="manufacturer_id" placeholder="Manufacturer id">

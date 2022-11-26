@@ -1,17 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Add driver to the car</title>
+    <title>Create driver</title>
 </head>
 <body>
-<h1>Add driver to the car</h1>
+<h1>Create driver</h1>
 <h4 style="color: green">${message}</h4>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <label>
-        <input type="number" name="driver_id" placeholder="Driver id">
-        <input type="number" name="car_id" placeholder="Car id">
+        <input type="text" name="driver_name" placeholder="Driver name">
+        <input type="text" name="license_number" placeholder="License number">
     </label>
-    <button type="submit">Add</button>
+    <button type="submit">Create</button>
 </form>
 </body>
 </html>
