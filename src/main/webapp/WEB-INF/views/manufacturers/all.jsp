@@ -5,12 +5,12 @@
   <title>All manufacturers</title>
 </head>
 <body>
-<h4>All manufacturers</h4>
-<table border="1">
+<table border="1" cellspacing="0" cellpadding="10">
+  <caption>All drivers</caption>
   <tr>
-    <td>Id</td>
-    <td>Name</td>
-    <td>Country</td>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Country</th>
   </tr>
   <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>

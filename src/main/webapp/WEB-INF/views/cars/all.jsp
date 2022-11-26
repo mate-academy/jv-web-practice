@@ -5,14 +5,14 @@
   <title>All cars</title>
 </head>
 <body>
-<h4>All cars</h4>
-<table border="1">
+<table border="1" cellspacing="0" cellpadding="10">
+  <caption>All cars</caption>
   <tr>
-    <td>Id</td>
-    <td>Manufacturer</td>
-    <td>Model</td>
-    <td>Country</td>
-    <td>Drivers</td>
+    <th>Id</th>
+    <th>Manufacturer</th>
+    <th>Model</th>
+    <th>Country</th>
+    <th>Drivers<th>
   </tr>
   <c:forEach items="${cars}" var="car">
     <tr>
