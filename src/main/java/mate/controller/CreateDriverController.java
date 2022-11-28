@@ -32,6 +32,7 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(name);
         driver.setLicenseNumber(license);
         driverService.create(driver);
-        resp.sendRedirect(req.getContextPath());
+        req.getRequestDispatcher("/WEB-INF/views/driver/add.jsp")
+                .forward(req, resp);
     }
 }
