@@ -26,29 +26,12 @@ public class AddDriverToCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        String carManufacturer = req.getParameter("carManufacturer");
-        String carModel = req.getParameter("carModel");
-        String driverName = req.getParameter("driverName");
-        Car car = findCar(carManufacturer, carModel);
-        Driver driver = findDriver(driverName);
+            throws IOException {
+        String carId = req.getParameter("carId");
+        String driverId = req.getParameter("driverId");
+        Car car = carService.get(Long.valueOf(carId));
+        Driver driver = driverService.get(Long.valueOf(driverId));
         carService.addDriverToCar(driver, car);
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
-    }
-
-    private Driver findDriver(String driverName) {
-        return driverService.getAll().stream()
-                .filter(driver -> driver.getName().equals(driverName))
-                .findFirst()
-                .orElseThrow(() -> new RuntimeException("No driver with such name"));
-    }
-
-    private Car findCar(String carManufacturer, String carModel) {
-        return carService.getAll().stream()
-                .filter(car -> car.getModel().equals(carModel)
-                        && car.getManufacturer().getName().equals(carManufacturer))
-                .findFirst()
-                .orElseThrow(() ->
-                        new RuntimeException("No car with such manufacturer abd  model"));
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
