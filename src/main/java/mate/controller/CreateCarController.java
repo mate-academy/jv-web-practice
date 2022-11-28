@@ -12,9 +12,10 @@ import mate.model.Car;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/create")
+@WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final String PATH = "/WEB-INF/views/car/create.jsp";
+    private static final String PATH_TO_MESSAGE = "/WEB-INF/views/message.jsp";
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
@@ -36,6 +37,6 @@ public class CreateCarController extends HttpServlet {
                     Long.valueOf(req.getParameter("manufacturer_id"))));
         carService.create(car);
         req.setAttribute("message", "Сar has been created successfully");
-        req.getRequestDispatcher("/WEB-INF/views/message.jsp").forward(req, resp);
+        req.getRequestDispatcher(PATH_TO_MESSAGE).forward(req, resp);
     }
 }
