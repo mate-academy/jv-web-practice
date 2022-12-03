@@ -103,11 +103,11 @@ public class CarDaoImpl implements CarDao {
             statement.setLong(2, car.getManufacturer().getId());
             statement.setLong(3, car.getId());
             statement.executeUpdate();
+            deleteAllDriversExceptList(car);
+            insertAllDrivers(car);
         } catch (SQLException e) {
             throw new DataProcessingException("Can't update car " + car, e);
         }
-        deleteAllDriversExceptList(car);
-        insertAllDrivers(car);
         return car;
     }
 
