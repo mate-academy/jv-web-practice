@@ -12,7 +12,8 @@ import java.io.IOException;
 
 public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
