@@ -15,11 +15,16 @@
       <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
       <c:forEach items="${drivers}" var="driver">
         <tr>
-          <td><c:out value="${driver.id}"/></td>
-          <td><c:out value="${driver.name}"/></td>
-          <td><c:out value="${driver.licenseNumber}"/></td>
+          <td> <c:out value="${driver.id}"/> </td>
+          <td> <c:out value="${driver.name}"/> </td>
+          <td> <c:out value="${driver.licenseNumber}"/> </td>
         </tr>
       </c:forEach>
     </table>
+    <h3><i>Delete driver</i></h3>
+    <form method="get" action="${pageContext.request.contextPath}/del/driver">
+      Driver ID <label> <input type="number" name="driver_id"> </label>
+      <button type="submit">Delete</button>
+    </form>
   </body>
 </html>

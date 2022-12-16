@@ -29,7 +29,7 @@ public class AddCarController extends HttpServlet {
             throws ServletException, IOException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
-        Long id = Long.parseLong(req.getParameter("manufacturer"));
+        Long id = Long.valueOf(req.getParameter("manufacturer"));
         Manufacturer manufacturer = manufacturerService.get(id);
         car.setManufacturer(manufacturer);
         carService.create(car);
