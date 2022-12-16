@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
+
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
@@ -15,6 +16,7 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/</url-pattern>
     </servlet-mapping>
+             <!--  DRIVERS  -->
     <servlet>
         <servlet-name>addDriver</servlet-name>
         <servlet-class>mate.controller.AddDriverController</servlet-class>
@@ -39,7 +41,7 @@
         <servlet-name>delDriver</servlet-name>
         <url-pattern>/del/driver</url-pattern>
     </servlet-mapping>
-
+             <!--  MANUFACTURERS  -->
     <servlet>
         <servlet-name>addManufacturer</servlet-name>
         <servlet-class>mate.controller.AddManufacturerController</servlet-class>
@@ -48,7 +50,7 @@
         <servlet-name>addManufacturer</servlet-name>
         <url-pattern>/add/manufacturer</url-pattern>
     </servlet-mapping>
-
+             <!--  CAR  -->
     <servlet>
         <servlet-name>addCar</servlet-name>
         <servlet-class>mate.controller.AddCarController</servlet-class>
@@ -57,7 +59,7 @@
         <servlet-name>addCar</servlet-name>
         <url-pattern>/add/car</url-pattern>
     </servlet-mapping>
-
+             <!--  Other -->
     <servlet>
         <servlet-name>addDriverToCar</servlet-name>
         <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
@@ -66,5 +68,4 @@
         <servlet-name>addDriverToCar</servlet-name>
         <url-pattern>/add/drivercar</url-pattern>
     </servlet-mapping>
-
 </web-app>
