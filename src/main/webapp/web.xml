@@ -16,11 +16,11 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>createDriver</servlet-name>
-        <servlet-class>mate.controller.CreateDriverController</servlet-class>
+        <servlet-name>addDriver</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>createDriver</servlet-name>
-        <url-pattern>/create/driver</url-pattern>
+        <servlet-name>addDriver</servlet-name>
+        <url-pattern>/add/driver</url-pattern>
     </servlet-mapping>
 </web-app>

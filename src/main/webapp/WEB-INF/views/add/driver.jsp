@@ -12,7 +12,7 @@
     </head>
     <body>
     <h2><i>Fill the form below</i></h2>
-    <form method="post" action="${pageContext.request.contextPath}/create/driver">
+    <form method="post" action="${pageContext.request.contextPath}/add/driver">
         Name <input type="text" name="driver_name"> <br>
         License number <input type="text" name="license_number"> <br>
         <button type="submit">Create driver</button>
