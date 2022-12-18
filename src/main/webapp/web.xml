@@ -50,6 +50,22 @@
         <servlet-name>addManufacturer</servlet-name>
         <url-pattern>/add/manufacturer</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/get/manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>delManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>delManufacturer</servlet-name>
+        <url-pattern>/del/manufacturer</url-pattern>
+    </servlet-mapping>
              <!--  CAR  -->
     <servlet>
         <servlet-name>addCar</servlet-name>
