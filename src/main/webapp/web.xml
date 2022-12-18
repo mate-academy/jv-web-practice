@@ -48,7 +48,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addManufacturer</servlet-name>
-        <url-pattern>/add/manufacturer</url-pattern>
+        <url-pattern>/manufacturer/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllManufacturers</servlet-name>
@@ -56,7 +56,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllManufacturers</servlet-name>
-        <url-pattern>/get/manufacturers</url-pattern>
+        <url-pattern>/manufacturers/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>delManufacturer</servlet-name>
@@ -64,7 +64,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>delManufacturer</servlet-name>
-        <url-pattern>/del/manufacturer</url-pattern>
+        <url-pattern>/manufacturer/del</url-pattern>
     </servlet-mapping>
              <!--  CAR  -->
     <servlet>
