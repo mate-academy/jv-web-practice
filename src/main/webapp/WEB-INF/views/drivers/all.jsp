@@ -22,7 +22,7 @@
     </c:forEach>
 </table>
 <h3><i>Delete driver by ID</i></h3>
-<form method="get" action="${pageContext.request.contextPath}/del/driver">
+<form method="get" action="${pageContext.request.contextPath}/driver/del">
     Driver ID <label> <input type="number" name="driver_id"> </label>
     <button type="submit">Delete</button>
 </form>
