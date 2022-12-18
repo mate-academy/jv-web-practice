@@ -1,6 +1,5 @@
 package mate.controller;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -28,7 +27,6 @@ public class AddDriverController extends HttpServlet {
         driver.setName(req.getParameter("driver_name"));
         driver.setLicenseNumber(req.getParameter("license_number"));
         driverService.create(driver);
-        String tmp = req.getContextPath() + File.separator;
-        resp.sendRedirect(tmp);
+        resp.sendRedirect(req.getContextPath() + "/");
     }
 }

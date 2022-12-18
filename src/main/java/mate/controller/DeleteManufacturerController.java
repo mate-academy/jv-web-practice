@@ -1,6 +1,5 @@
 package mate.controller;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -18,8 +17,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws IOException {
         Long id = Long.valueOf(req.getParameter("manufacturer_id"));
         manufacturerService.delete(id);
-        String tmp = req.getContextPath() + File.separator
-                + "get" + File.separator + "manufacturers";
-        resp.sendRedirect(tmp);
+        resp.sendRedirect(req.getContextPath() + "get/manufacturers");
     }
 }

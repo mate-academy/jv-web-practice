@@ -14,7 +14,7 @@
         <h2>Fill the form and press button</h2>
         <form method="post" action="${pageContext.request.contextPath}/add/car">
             Model <label> <input type="text" name="model"> </label> <br>
-            Manufacturer <label> <input type="number" name="manufacturer"></label> <br>
+            Manufacturer <label> <input type="number" name="manufacturer_id"></label> <br>
             <button type="submit">Add car</button>
         </form>
     </body>
