@@ -1,5 +1,6 @@
 package mate.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -27,6 +28,7 @@ public class AddManufacturerController extends HttpServlet {
         manufacturer.setName(req.getParameter("name"));
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerService.create(manufacturer);
-        resp.sendRedirect("/");
+        String tmp = req.getContextPath() + File.separator;
+        resp.sendRedirect(tmp);
     }
 }

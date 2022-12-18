@@ -1,5 +1,6 @@
 package mate.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -33,6 +34,7 @@ public class AddCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(id);
         car.setManufacturer(manufacturer);
         carService.create(car);
-        resp.sendRedirect("/");
+        String tmp = req.getContextPath() + File.separator;
+        resp.sendRedirect(tmp);
     }
 }

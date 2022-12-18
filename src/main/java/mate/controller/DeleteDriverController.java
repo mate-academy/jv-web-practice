@@ -1,5 +1,6 @@
 package mate.controller;
 
+import java.io.File;
 import java.io.IOException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +18,8 @@ public class DeleteDriverController extends HttpServlet {
             throws IOException {
         Long id = Long.valueOf(req.getParameter("driver_id"));
         driverService.delete(id);
-        resp.sendRedirect("/get/drivers");
+        String tmp = req.getContextPath() + File.separator
+                + "get" + File.separator + "drivers";
+        resp.sendRedirect(tmp);
     }
 }
