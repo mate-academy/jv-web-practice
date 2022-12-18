@@ -24,7 +24,7 @@
         </c:forEach>
         </table>
         <h3><i>Delete car by ID</i></h3>
-        <form method="get" action="${pageContext.request.contextPath}/del/car">
+        <form method="get" action="${pageContext.request.contextPath}/car/del">
             Car ID <label> <input type="number" name="car_id"/> </label>
             <button type="submit">Delete</button>
         </form>

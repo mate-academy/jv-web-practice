@@ -73,7 +73,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addCar</servlet-name>
-        <url-pattern>/add/car</url-pattern>
+        <url-pattern>/car/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllCars</servlet-name>
@@ -81,7 +81,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllCars</servlet-name>
-        <url-pattern>/get/cars</url-pattern>
+        <url-pattern>/cars/all</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>delCar</servlet-name>
@@ -89,7 +89,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>delCar</servlet-name>
-        <url-pattern>/del/car</url-pattern>
+        <url-pattern>/car/del</url-pattern>
     </servlet-mapping>
              <!--  Other -->
     <servlet>

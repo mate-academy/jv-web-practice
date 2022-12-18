@@ -1,6 +1,5 @@
 package mate.controller;
 
-import java.io.File;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -22,7 +21,7 @@ public class AddCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/add/car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/add.jsp").forward(req, resp);
     }
 
     @Override
