@@ -1,2 +1,4 @@
-package mate.controller.manufacturer;public class GetAllManufacturersController {
+package mate.controller.manufacturer;
+
+public class GetAllManufacturersController {
 }

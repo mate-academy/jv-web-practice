@@ -1,2 +1,4 @@
-package mate.controller.car;public class DeleteCarController {
+package mate.controller.car;
+
+public class DeleteCarController {
 }

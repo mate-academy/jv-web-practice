@@ -1,2 +1,4 @@
-package mate.controller.driver;public class CreateDriverController {
+package mate.controller.driver;
+
+public class CreateDriverController {
 }

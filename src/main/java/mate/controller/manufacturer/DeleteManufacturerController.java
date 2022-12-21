@@ -1,2 +1,4 @@
-package mate.controller.manufacturer;public class DeleteManufacturerController {
+package mate.controller.manufacturer;
+
+public class DeleteManufacturerController {
 }
