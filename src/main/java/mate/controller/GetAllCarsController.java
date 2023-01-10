@@ -20,12 +20,12 @@ public class GetAllCarsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> allCars = carService.getAll();
-        for (Car car : allCars) {
+        List<Car> cars = carService.getAll();
+        for (Car car : cars) {
             List<Driver> drivers = car.getDrivers();
             req.setAttribute("drivers", drivers);
         }
-        req.setAttribute("cars", allCars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/all_cars.jsp").forward(req, resp);
+        req.setAttribute("cars", cars);
+        req.getRequestDispatcher("/WEB-INF/views/cars/all.jsp").forward(req, resp);
     }
 }
