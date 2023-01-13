@@ -1,12 +1,6 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Upgrade
-  Date: 1/5/2023
-  Time: 8:58 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<<html>
+<html>
 <head>
     <title>All manufacturers</title>
 </head>
