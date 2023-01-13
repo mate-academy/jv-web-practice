@@ -10,7 +10,7 @@
     <tr>
         <td>id</td>
         <td>Name</td>
-        <td>license number</td>
+        <td>License number</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
