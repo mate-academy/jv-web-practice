@@ -11,5 +11,5 @@ public interface CarService extends GenericService<Car> {
 
     List<Car> getAllByDriver(Long driverId);
 
-    Car registerNewCar(String model, Long manufacturer_id);
+    Car registerNewCar(String model, Long manufacturerId);
 }

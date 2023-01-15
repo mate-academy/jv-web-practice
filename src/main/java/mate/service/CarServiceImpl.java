@@ -58,10 +58,10 @@ public class CarServiceImpl implements CarService {
     }
 
     @Override
-    public Car registerNewCar(String model, Long manufacturer_id) {
+    public Car registerNewCar(String model, Long manufacturerId) {
         Car car = new Car();
         car.setModel(model);
-        car.setManufacturer(manufacturerService.get(manufacturer_id));
+        car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(new ArrayList<>());
         return car;
     }
