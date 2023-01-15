@@ -1,10 +1,8 @@
 package mate.controller;
 
 import mate.lib.Injector;
-import mate.model.Driver;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -26,7 +24,8 @@ public class CreateManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
         String manufacturerName = req.getParameter("manufacturerName");
         String country = req.getParameter("country");
         Manufacturer registeredManufacturer = manufacturerService.register(manufacturerName, country);
