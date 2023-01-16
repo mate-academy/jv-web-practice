@@ -10,6 +10,4 @@ public interface CarService extends GenericService<Car> {
     void removeDriverFromCar(Driver driver, Car car);
 
     List<Car> getAllByDriver(Long driverId);
-
-    Car registerNewCar(String model, Long manufacturerId);
 }

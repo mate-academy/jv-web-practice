@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Confirmation</title>
+    <title>Taxi service</title>
 </head>
+<h1>Taxi service</h1>
 <body>
-<h1>The data was saved successfully</h1>
 </body>
 </html>

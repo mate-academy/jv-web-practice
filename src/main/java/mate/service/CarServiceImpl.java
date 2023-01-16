@@ -1,6 +1,5 @@
 package mate.service;
 
-import java.util.ArrayList;
 import java.util.List;
 import mate.dao.CarDao;
 import mate.lib.Inject;
@@ -55,14 +54,5 @@ public class CarServiceImpl implements CarService {
     @Override
     public boolean delete(Long id) {
         return carDao.delete(id);
-    }
-
-    @Override
-    public Car registerNewCar(String model, Long manufacturerId) {
-        Car car = new Car();
-        car.setModel(model);
-        car.setManufacturer(manufacturerService.get(manufacturerId));
-        car.setDrivers(new ArrayList<>());
-        return car;
     }
 }

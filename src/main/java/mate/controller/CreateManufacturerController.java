@@ -28,9 +28,10 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         String manufacturerName = req.getParameter("manufacturerName");
         String country = req.getParameter("country");
-        Manufacturer registeredManufacturer =
-                manufacturerService.register(manufacturerName, country);
-        manufacturerService.create(registeredManufacturer);
-        resp.sendRedirect("/confirmation");
+        Manufacturer manufacturer = new Manufacturer();
+        manufacturer.setName(manufacturerName);
+        manufacturer.setCountry(country);
+        manufacturerService.create(manufacturer);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
