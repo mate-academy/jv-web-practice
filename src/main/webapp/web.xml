@@ -69,15 +69,15 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getAllCarsController</servlet-name>
-        <url-pattern>/cars/all</url-pattern>
+        <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getAllDriversController</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getAllManufacturersController</servlet-name>
-        <url-pattern>/manufacturers/all</url-pattern>
+        <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>createCarController</servlet-name>
