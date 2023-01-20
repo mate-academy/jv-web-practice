@@ -35,7 +35,7 @@
                 </c:forEach>
               </table>
     <h1>Enter IDs:</h1>
-    <form method="post" action="${pageContext.request.contextPath}/car/driver/add"><br>
+    <form method="post" action="${pageContext.request.contextPath}/cars/driver/add"><br>
     Driver Id: <input type="text" name="driver_id"><br><br>
     Car Id: <input type="text" name="car_id"><br><br>
     <button type="submit">Confirm</button>

@@ -3,24 +3,24 @@
 
 <html>
     <head>
-        <title>Manufacturers</title>
+        <title>Drivers</title>
     </head>
 <body>
-    <h1>All Manufacturers:</h1>
+    <h1>All Drivers:</h1>
     <br>
     <table>
       <tr>
         <td>Id</td>
         <td>Name</td>
-        <td>Country</td>
+        <td>License Number</td>
       </tr>
-      <c:forEach items="${manufacturers}" var="manufacturer">
+      <c:forEach items="${drivers}" var="driver">
         <tr>
-          <td><c:out value="${manufacturer.id}" /></td>
-          <td><c:out value="${manufacturer.name}" /></td>
-          <td><c:out value="${manufacturer.country}" /></td>
+          <td><c:out value="${driver.id}" /></td>
+          <td><c:out value="${driver.name}" /></td>
+          <td><c:out value="${driver.licenseNumber}" /></td>
           <td>
-<a href="${pageContext.request.contextPath}/manufacturer/delete?id=${manufacturer.id}">Delete</a>
+ <a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete</a>
           </td>
         </tr>
       </c:forEach>
