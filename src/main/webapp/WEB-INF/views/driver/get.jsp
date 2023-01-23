@@ -22,7 +22,7 @@
         <td><c:out value="${driver.id}"/><</td>
         <td><c:out value="${driver.name}"/><</td>
         <td><c:out value="${driver.licenseNumber}"/><</td>
-        <td><form method="post" action="${pageContext.request.contextPath}/drivers">
+        <td><form action="${pageContext.request.contextPath}/drivers/delete">
             <button type="submit" name="delete" value="${driver.id}">Delete</button>
         </form></td>
     </tr>

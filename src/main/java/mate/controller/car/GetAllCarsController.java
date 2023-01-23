@@ -23,11 +23,4 @@ public class GetAllCarsController extends HttpServlet {
         req.setAttribute("cars", cars);
         req.getRequestDispatcher("/WEB-INF/views/car/get.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        carService.delete(Long.valueOf(req.getParameter("delete")));
-        req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
-    }
 }

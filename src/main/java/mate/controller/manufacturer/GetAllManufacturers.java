@@ -25,11 +25,4 @@ public class GetAllManufacturers extends HttpServlet {
         req.setAttribute("manufacturers", manufacturers);
         req.getRequestDispatcher("/WEB-INF/views/manufacturer/get.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        manufacturerService.delete(Long.valueOf(req.getParameter("delete")));
-        req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
-    }
 }

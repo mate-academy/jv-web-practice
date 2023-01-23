@@ -25,11 +25,4 @@ public class GetAllDriversController extends HttpServlet {
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/driver/get.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        driverService.delete(Long.valueOf(req.getParameter("delete")));
-        req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
-    }
 }
