@@ -8,6 +8,7 @@
 <form action="<c:url value="/index"/>">
     <input type="submit" value=" <- To main page " />
 </form>
+<h1>List of manufacturers:</h1>
 <table>
     <tr>
         <td>Id</td>

@@ -8,6 +8,7 @@
 <form action="<c:url value="/index"/>">
     <input type="submit" value=" <- To main page " />
 </form>
+<h1>Create a manufacturer</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     <label for="name"> Name:</label><br>
     <input type="text" id="name" name="name" required><br>

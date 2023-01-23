@@ -9,6 +9,7 @@
 <form action="<c:url value="/index"/>">
     <input type="submit" value=" <- To main page " />
 </form>
+<h1>Create a car</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
     <label for="model">Model:</label><br>
     <input type="text" id="model" name="model" required><br>

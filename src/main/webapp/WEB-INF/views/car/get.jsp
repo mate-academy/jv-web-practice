@@ -8,7 +8,7 @@
 <form action="<c:url value="/index"/>">
     <input type="submit" value=" <- To main page " />
 </form>
-<h2>List of all cars:</h2>
+<h1>List of all cars:</h1>
 <table>
     <tr>
         <td>Id</td>
