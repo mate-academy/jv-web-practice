@@ -52,5 +52,13 @@
         <servlet-name>createCarController</servlet-name>
         <url-pattern>/car/create</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllCarController</servlet-name>
+        <servlet-class>mate.controller.GetAllCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllCarController</servlet-name>
+        <url-pattern>/car/all-cars</url-pattern>
+    </servlet-mapping>
 
 </web-app>
