@@ -27,6 +27,9 @@
     <form action="<c:url value="/drivers/all"/>">
         <input type="submit" value="DISPLAY ALL DRIVERS" />
     </form>
+    <form action="<c:url value="/manufacturers/add"/>">
+        <input type="submit" value="ADD MANUFACTURER TO DATABASE" />
+    </form>
 </div>
 </body>
 </html>

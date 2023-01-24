@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Add Driver to Database</title>
+    <title>Add Manufacturer to Database</title>
     <style>
         html * {
             font-size: 16px;
@@ -16,20 +16,19 @@
 </head>
 <body bgcolor="#ffd700">
 <div align="center">
-    <h3>ADD DRIVER TO DATABASE FORM</h3>
+    <h3>ADD MANUFACTURER TO DATABASE FORM</h3>
     <form action="<c:url value="/index"/>" >
         <input type="submit" value="HOME" />
     </form>
-
-    <form method="post" action="${pageContext.request.contextPath}/drivers/add">
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
         <table style="with: 80%">
             <tr>
                 <td>Name</td>
                 <td><input type="text" id="name" name="name" required/></td>
             </tr>
             <tr>
-                <td>License Number</td>
-                <td><input type="text" id="license_number" name="license_number" required/></td>
+                <td>Country</td>
+                <td><input type="text" id="country" name="country" required/></td>
             </tr>
         </table>
         <button type="submit">SUBMIT</button><br>
