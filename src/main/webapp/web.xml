@@ -36,5 +36,13 @@
         <servlet-name>createManufacturerController</servlet-name>
         <url-pattern>/manufacturer/create</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllManufacturersController</servlet-name>
+        <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturersController</servlet-name>
+        <url-pattern>/manufacturer/all-manufacturers</url-pattern>
+    </servlet-mapping>
 
 </web-app>
