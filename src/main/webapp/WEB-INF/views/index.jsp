@@ -24,6 +24,9 @@
     <form action="<c:url value="/cars/drivers/add"/>">
         <input type="submit" value="ADD DRIVER TO CAR" />
     </form>
+    <form action="<c:url value="/drivers/all"/>">
+        <input type="submit" value="DISPLAY ALL DRIVERS" />
+    </form>
 </div>
 </body>
 </html>
