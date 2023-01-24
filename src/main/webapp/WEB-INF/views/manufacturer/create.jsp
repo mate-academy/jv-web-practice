@@ -2,12 +2,12 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Create driver</title>
+    <title>Create manufacturer</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/driver/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturer/create">
     Name<input type="text" name="name" required><br>
-    LicenseNumber<input type="text" name="licenseNumber" required><br>
+    Country<input type="text" name="country" required><br>
     <button type="submit">Create</button>
 </form>
 </body>

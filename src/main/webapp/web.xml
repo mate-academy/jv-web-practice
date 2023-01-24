@@ -28,4 +28,13 @@
         <servlet-name>getAllDriversController</servlet-name>
         <url-pattern>/driver/all-drivers</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>createManufacturerController</servlet-name>
+        <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>createManufacturerController</servlet-name>
+        <url-pattern>/manufacturer/create</url-pattern>
+    </servlet-mapping>
+
 </web-app>
