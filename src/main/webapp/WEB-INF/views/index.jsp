@@ -14,9 +14,16 @@
     </style>
 </head>
 <body bgcolor="#ffd700">
-<div align="center">
+<div align="center ">
     <h1>TAXI SERVICE APP</h1>
-
+    </form>
+    <form action="<c:url value="/drivers/add"/>">
+        <input type="submit" value="ADD DRIVER TO DATABASE" />
+    </form>
+    </form>
+    <form action="<c:url value="/cars/drivers/add"/>">
+        <input type="submit" value="ADD DRIVER TO CAR" />
+    </form>
 </div>
 </body>
 </html>
