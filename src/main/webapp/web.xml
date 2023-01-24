@@ -20,4 +20,12 @@
         <servlet-name>createDriverController</servlet-name>
         <url-pattern>/driver/create</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllDriversController</servlet-name>
+        <servlet-class>mate.controller.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllDriversController</servlet-name>
+        <url-pattern>/driver/all-drivers</url-pattern>
+    </servlet-mapping>
 </web-app>
