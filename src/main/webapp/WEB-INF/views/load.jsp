@@ -4,7 +4,7 @@
     <title>Load page</title>
 </head>
 <body>
-<textarea>Loading your command</textarea>
+<h1>Loading your command</h1>
 <p><a href="${pageContext.req.contextPath}/index">to the main page</a></p>
 </body>
 </html>
