@@ -20,6 +20,7 @@
         <servlet-name>createDriverController</servlet-name>
         <url-pattern>/driver/create</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>getAllDriversController</servlet-name>
         <servlet-class>mate.controller.GetAllDriversController</servlet-class>
@@ -28,6 +29,16 @@
         <servlet-name>getAllDriversController</servlet-name>
         <url-pattern>/driver/all-drivers</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>deleteDriverController</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteDriverController</servlet-name>
+        <url-pattern>/driver/delete</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>createManufacturerController</servlet-name>
         <servlet-class>mate.controller.CreateManufacturerController</servlet-class>
@@ -36,6 +47,7 @@
         <servlet-name>createManufacturerController</servlet-name>
         <url-pattern>/manufacturer/create</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>getAllManufacturersController</servlet-name>
         <servlet-class>mate.controller.GetAllManufacturersController</servlet-class>
@@ -44,6 +56,7 @@
         <servlet-name>getAllManufacturersController</servlet-name>
         <url-pattern>/manufacturer/all-manufacturers</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>createCarController</servlet-name>
         <servlet-class>mate.controller.CreateCarController</servlet-class>
@@ -52,6 +65,7 @@
         <servlet-name>createCarController</servlet-name>
         <url-pattern>/car/create</url-pattern>
     </servlet-mapping>
+
     <servlet>
         <servlet-name>getAllCarController</servlet-name>
         <servlet-class>mate.controller.GetAllCarController</servlet-class>
@@ -60,5 +74,4 @@
         <servlet-name>getAllCarController</servlet-name>
         <url-pattern>/car/all-cars</url-pattern>
     </servlet-mapping>
-
 </web-app>
