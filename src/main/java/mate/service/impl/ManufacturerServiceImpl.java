@@ -1,6 +1,7 @@
 package mate.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import mate.dao.ManufacturerDao;
 import mate.lib.Inject;
 import mate.lib.Service;
@@ -35,5 +36,10 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     @Override
     public boolean delete(Long id) {
         return manufacturerDao.delete(id);
+    }
+
+    @Override
+    public Optional<Manufacturer> findManufacturer(Long manufacturerId) {
+        return manufacturerDao.get(manufacturerId);
     }
 }

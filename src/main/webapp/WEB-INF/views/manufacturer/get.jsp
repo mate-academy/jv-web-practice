@@ -24,7 +24,7 @@
             <td><c:out value="${manufacturer.country}"/><</td>
             <td>
                 <form action="${pageContext.request.contextPath}/manufacturers/delete">
-                    <button type="submit" name="delete" value="${manufacturer.id}">Delete</button>
+                    <button type="submit" name="manufacturer_id" value="${manufacturer.id}">Delete</button>
                 </form>
             </td>
         </tr>

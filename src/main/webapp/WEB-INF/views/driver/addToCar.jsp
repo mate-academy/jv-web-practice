@@ -21,7 +21,6 @@
     <c:if test="${invalidInput == 'driver'}">
         Can't find driver by id ${id} in database, try again
     </c:if>
-
 </form>
 </body>
 </html>

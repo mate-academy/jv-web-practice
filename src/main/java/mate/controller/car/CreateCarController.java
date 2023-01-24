@@ -2,7 +2,6 @@ package mate.controller.car;
 
 import java.io.IOException;
 import java.util.Collections;
-import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,11 +31,10 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Manufacturer manufacturer = null;
-        try {
-            manufacturer = manufacturerService
-                    .get(Long.valueOf(req.getParameter("manufacturer_id")));
-        } catch (NoSuchElementException e) {
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer =
+                manufacturerService.findManufacturer(manufacturerId).orElse(null);
+        if (manufacturer == null) {
             req.setAttribute("id", Long.valueOf(req.getParameter("manufacturer_id")));
             req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
         }

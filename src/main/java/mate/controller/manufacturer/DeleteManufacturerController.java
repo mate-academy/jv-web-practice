@@ -18,7 +18,7 @@ public class DeleteManufacturerController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException, ServletException {
-        manufacturerService.delete(Long.valueOf(req.getParameter("delete")));
+        manufacturerService.delete(Long.valueOf(req.getParameter("manufacturer_id")));
         req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
     }
 }

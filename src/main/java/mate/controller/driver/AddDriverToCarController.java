@@ -1,7 +1,6 @@
 package mate.controller.driver;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,22 +33,19 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Car car = null;
-        Driver driver = null;
-        try {
-            car = carService.get(Long.valueOf(req.getParameter("car_id")));
-        } catch (NoSuchElementException e) {
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Car car = carService.findCar(carId).orElse(null);
+        Driver driver = driverService.findDriver(driverId).orElse(null);
+        if (car == null) {
             req.setAttribute("invalidInput", "car");
-            req.setAttribute("id", Long.valueOf(req.getParameter("car_id")));
-            req.getRequestDispatcher("/WEB-INF/views/driver/addToCar.jsp").forward(req, resp);
+            req.setAttribute("id", carId);
         }
-        try {
-            driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
-        } catch (NoSuchElementException e) {
+        if (driver == null) {
             req.setAttribute("invalidInput", "driver");
             req.setAttribute("id", Long.valueOf(req.getParameter("driver_id")));
-            req.getRequestDispatcher("/WEB-INF/views/driver/addToCar.jsp").forward(req, resp);
         }
+        req.getRequestDispatcher("/WEB-INF/views/driver/addToCar.jsp").forward(req, resp);
         carService.addDriverToCar(driver, car);
         req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
     }
