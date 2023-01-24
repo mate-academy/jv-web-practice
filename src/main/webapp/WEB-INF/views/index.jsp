@@ -30,6 +30,9 @@
     <form action="<c:url value="/manufacturers/add"/>">
         <input type="submit" value="ADD MANUFACTURER TO DATABASE" />
     </form>
+    <form action="<c:url value="/cars/add"/>">
+        <input type="submit" value="ADD CAR TO DATABASE" />
+    </form>
 </div>
 </body>
 </html>

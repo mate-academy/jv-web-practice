@@ -1,4 +1,4 @@
-package mate.controller.cars;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -12,9 +12,6 @@ import mate.service.CarService;
 import mate.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
-    static {
-        System.out.println("Load class AddDriverToCarController...");
-    }
 
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -34,7 +31,6 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        System.out.println("Load doPost AddDriverToCarController...");
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
