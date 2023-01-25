@@ -53,7 +53,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>getAllManufacturers</servlet-name>
-        <servlet-class>mate.controller.manufacturer.GetAllManufacturerController</servlet-class>
+        <servlet-class>mate.controller.manufacturer.GetAllManufacturersController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllManufacturers</servlet-name>
@@ -74,5 +74,21 @@
     <servlet-mapping>
         <servlet-name>addCar</servlet-name>
         <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>getAllCars</servlet-name>
+        <servlet-class>mate.controller.car.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllCars</servlet-name>
+        <url-pattern>/cars/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>removeCar</servlet-name>
+        <servlet-class>mate.controller.car.RemoveCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeCar</servlet-name>
+        <url-pattern>/cars/remove</url-pattern>
     </servlet-mapping>
 </web-app>
