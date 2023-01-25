@@ -15,16 +15,17 @@
     <c:forEach items="${drivers}" var="driver">
         <tr>
             <td>
-                <c:out value="${drivers.id}"/>
+                <c:out value="${driver.id}"/>
             </td>
             <td>
-                <c:out value="${drivers.name}"/>
+                <c:out value="${driver.name}"/>
             </td>
             <td>
-                <c:out value="${drivers.licenseNumber}"/>
+                <c:out value="${driver.licenseNumber}"/>
             </td>
         </tr>
     </c:forEach>
 </table>
+<p><a href="${pageContext.request.contextPath}/index">main page</a></p>
 </body>
 </html>

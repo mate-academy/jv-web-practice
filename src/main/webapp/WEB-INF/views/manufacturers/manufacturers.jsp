@@ -14,14 +14,14 @@
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
-            <td><c:out value="${manufacturers.id}"/></td>
-            <td><c:out value="${manufacturers.name}"/></td>
-            <td><c:out value="${manufacturers.country}"/></td>
-            <td><a href="${pageContext.req.contextPath}/manufacturers/delete?id=${manufacturer.id}"><- delete manufacturer</a>
+            <td><c:out value="${manufacturer.id}"/></td>
+            <td><c:out value="${manufacturer.name}"/></td>
+            <td><c:out value="${manufacturer.country}"/></td>
+            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}"><- delete manufacturer</a>
             </td>
         </tr>
     </c:forEach>
 </table>
-<p><a href="${pageContext.req.contextPath}/index">main page</a></p>
+<p><a href="${pageContext.request.contextPath}/index">main page</a></p>
 </body>
 </html>

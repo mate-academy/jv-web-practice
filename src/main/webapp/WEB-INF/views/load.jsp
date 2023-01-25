@@ -5,6 +5,6 @@
 </head>
 <body>
 <h1>Loading your command</h1>
-<p><a href="${pageContext.req.contextPath}/index">main page</a></p>
+<p><a href="${pageContext.request.contextPath}/index">main page</a></p>
 </body>
 </html>
