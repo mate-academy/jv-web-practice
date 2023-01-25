@@ -13,18 +13,17 @@
         <td>manufacturer</td>
         <td>drivers</td>
     </tr>
-    <jsp:useBean id="carList" scope="request" type="java.util.List"/>
     <c:forEach items="${carList}" var="car">
         <tr>
-            <td><c:out value="${car.id}"/></td>
-            <td><c:out value="${car.model}"/></td>
-            <td><c:out value="${car.manufacturer.name}"/></td>
+            <td><c:out value="${cars.id}"/></td>
+            <td><c:out value="${cars.model}"/></td>
+            <td><c:out value="${cars.manufacturer.name}"/></td>
             <td>
-                <c:forEach items="${car.drivers}" var="driver">
-                    <c:out value="${driver.name}"/>
+                <c:forEach items="${cars.drivers}" var="driver">
+                    <c:out value="${drivers.name}"/>
                 </c:forEach>
             <td>
-                <a href="${pageContext.request.contextPath}/car/delete?id=${car.id}"><- delete car</a>
+                <a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}"><- delete car</a>
             </td>
         </tr>
     </c:forEach>

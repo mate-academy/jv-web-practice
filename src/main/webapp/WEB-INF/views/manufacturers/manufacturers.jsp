@@ -12,13 +12,12 @@
         <td>name</td>
         <td>country</td>
     </tr>
-    <jsp:useBean id="manufacturerList" scope="request" type="java.util.List"/>
     <c:forEach items="${manufacturerList}" var="manufacturer">
         <tr>
-            <td><c:out value="${manufacturer.id}"/></td>
-            <td><c:out value="${manufacturer.name}"/></td>
-            <td><c:out value="${manufacturer.country}"/></td>
-            <td><a href="${pageContext.req.contextPath}/manufacturer/delete?id=${manufacturer.id}"><- delete manufacturer</a>
+            <td><c:out value="${manufacturers.id}"/></td>
+            <td><c:out value="${manufacturers.name}"/></td>
+            <td><c:out value="${manufacturers.country}"/></td>
+            <td><a href="${pageContext.req.contextPath}/manufacturers/delete?id=${manufacturer.id}"><- delete manufacturer</a>
             </td>
         </tr>
     </c:forEach>

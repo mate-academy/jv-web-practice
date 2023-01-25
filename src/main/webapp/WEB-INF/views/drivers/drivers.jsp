@@ -12,17 +12,16 @@
         <td>name</td>
         <td>license number</td>
     </tr>
-    <jsp:useBean id="driverList" scope="request" type="java.util.List"/>
     <c:forEach items="${driverList}" var="driver">
         <tr>
             <td>
-                <c:out value="${driver.id}"/>
+                <c:out value="${drivers.id}"/>
             </td>
             <td>
-                <c:out value="${driver.name}"/>
+                <c:out value="${drivers.name}"/>
             </td>
             <td>
-                <c:out value="${driver.licenseNumber}"/>
+                <c:out value="${drivers.licenseNumber}"/>
             </td>
         </tr>
     </c:forEach>

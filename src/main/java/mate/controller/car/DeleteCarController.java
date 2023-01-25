@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/car/delete")
+@WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
@@ -23,6 +23,6 @@ public class DeleteCarController extends HttpServlet {
     protected void doGet(HttpServletRequest req,
                          HttpServletResponse resp) throws ServletException, IOException {
         carService.delete(Long.valueOf(req.getParameter("id")));
-        resp.sendRedirect(req.getContextPath() + "/car/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars/cars");
     }
 }
