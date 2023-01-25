@@ -52,6 +52,22 @@
         <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <servlet-class>mate.controller.manufacturer.GetAllManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllManufacturers</servlet-name>
+        <url-pattern>/manufacturers/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>removeManufacturer</servlet-name>
+        <servlet-class>mate.controller.manufacturer.RemoveManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeManufacturer</servlet-name>
+        <url-pattern>/manufacturers/remove</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>addCar</servlet-name>
         <servlet-class>mate.controller.car.AddCarController</servlet-class>
     </servlet>
@@ -59,5 +75,4 @@
         <servlet-name>addCar</servlet-name>
         <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
-
 </web-app>
