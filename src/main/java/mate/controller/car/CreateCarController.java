@@ -2,6 +2,7 @@ package mate.controller.car;
 
 import java.io.IOException;
 import java.util.Collections;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -32,14 +33,15 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        Manufacturer manufacturer =
-                manufacturerService.findManufacturer(manufacturerId).orElse(null);
-        if (manufacturer == null) {
+        Optional<Manufacturer>  manufacturer =
+                manufacturerService.findManufacturer(manufacturerId);
+        if (manufacturer.isEmpty()) {
             req.setAttribute("id", Long.valueOf(req.getParameter("manufacturer_id")));
             req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
+            return;
         }
         carService.create(new Car(req.getParameter("model"),
-                manufacturer,
+                manufacturer.get(),
                 Collections.emptyList()));
         req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
     }

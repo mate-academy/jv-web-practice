@@ -26,7 +26,7 @@
                 <c:out value="${driver.licenseNumber}"/>
             </c:forEach></td>
             <td><form action="${pageContext.request.contextPath}/cars/delete">
-                <button type="submit" name="delete" value="${car.id}">Delete</button>
+                <button type="submit" name="car_id" value="${car.id}">Delete</button>
             </form></td>
         </tr>
     </c:forEach>

@@ -1,6 +1,7 @@
 package mate.controller.driver;
 
 import java.io.IOException;
+import java.util.Optional;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,18 +36,20 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
-        Car car = carService.findCar(carId).orElse(null);
-        Driver driver = driverService.findDriver(driverId).orElse(null);
-        if (car == null) {
+        Optional<Car> car = carService.findCar(carId);
+        Optional<Driver> driver = driverService.findDriver(driverId);
+        if (car.isEmpty()) {
             req.setAttribute("invalidInput", "car");
             req.setAttribute("id", carId);
+            return;
         }
-        if (driver == null) {
+        if (driver.isEmpty()) {
             req.setAttribute("invalidInput", "driver");
             req.setAttribute("id", Long.valueOf(req.getParameter("driver_id")));
+            return;
         }
         req.getRequestDispatcher("/WEB-INF/views/driver/addToCar.jsp").forward(req, resp);
-        carService.addDriverToCar(driver, car);
+        carService.addDriverToCar(driver.get(), car.get());
         req.getRequestDispatcher("/WEB-INF/views/info/saved.jsp").forward(req, resp);
     }
 }
