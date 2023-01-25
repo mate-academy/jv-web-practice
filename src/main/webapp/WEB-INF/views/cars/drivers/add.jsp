@@ -21,7 +21,7 @@
         <input type="submit" value="HOME" />
     </form>
 
-    <form method="post" action=${pageContext.request.contextPath}/drivers/cars/add" >
+    <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
         <table style="with: 80%">
             <tr>
                 <td>Car ID</td>
@@ -29,9 +29,9 @@
             </tr>
             <tr>
                 <td>Driver ID</td>
-                <td><input type="text" id="driver_id" name="driver_id" required></td>
+                <td><input type="number" id="driver_id" name="driver_id" required></td>
             </tr>
-        </table>
+    </table>
         <button type="submit">SUBMIT</button><br>
     </form>
 </div>

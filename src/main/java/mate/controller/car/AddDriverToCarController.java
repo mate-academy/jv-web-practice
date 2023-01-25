@@ -18,24 +18,20 @@ public class AddDriverToCarController extends HttpServlet {
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
 
-    public AddDriverToCarController() {
-        System.out.println("Load object AddDriverToCarController...");
-    }
-
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/addDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(req.getParameter("driver_id"));
-        Long carId = Long.valueOf(req.getParameter("car_id"));
-        Car car = carService.get(carId);
+        long driverId = Long.parseLong(req.getParameter("driver_id"));
+        long carId = Long.parseLong(req.getParameter("car_id"));
         Driver driver = driverService.get(driverId);
+        Car car = carService.get(carId);
         carService.addDriverToCar(driver, car);
-        resp.sendRedirect(req.getContextPath() + "/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars/drivers/add");
     }
 }

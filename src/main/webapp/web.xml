@@ -28,6 +28,14 @@
         <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
+        <servlet-name>removeDriver</servlet-name>
+        <servlet-class>mate.controller.driver.RemoveDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>removeDriver</servlet-name>
+        <url-pattern>/drivers/remove</url-pattern>
+    </servlet-mapping>
+    <servlet>
         <servlet-name>getAllDrivers</servlet-name>
         <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
     </servlet>

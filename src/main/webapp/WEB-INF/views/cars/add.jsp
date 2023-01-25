@@ -21,7 +21,7 @@
         <input type="submit" value="HOME" />
     </form>
 
-    <form  method="post"  id="car" action="${pageContext.request.contextPath}/cars/add">
+    <form  method="post"  action="${pageContext.request.contextPath}/cars/add">
         <table style="with: 80%">
             <tr>
                 <td>Model</td>
