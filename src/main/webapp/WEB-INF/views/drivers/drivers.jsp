@@ -12,7 +12,7 @@
         <td>name</td>
         <td>license number</td>
     </tr>
-    <c:forEach items="${driverList}" var="driver">
+    <c:forEach items="${drivers}" var="driver">
         <tr>
             <td>
                 <c:out value="${drivers.id}"/>

@@ -12,7 +12,7 @@
         <td>name</td>
         <td>country</td>
     </tr>
-    <c:forEach items="${manufacturerList}" var="manufacturer">
+    <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
             <td><c:out value="${manufacturers.id}"/></td>
             <td><c:out value="${manufacturers.name}"/></td>

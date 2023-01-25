@@ -13,7 +13,7 @@
         <td>manufacturer</td>
         <td>drivers</td>
     </tr>
-    <c:forEach items="${carList}" var="car">
+    <c:forEach items="${cars}" var="car">
         <tr>
             <td><c:out value="${cars.id}"/></td>
             <td><c:out value="${cars.model}"/></td>
