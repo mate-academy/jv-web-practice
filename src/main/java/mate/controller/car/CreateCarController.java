@@ -33,7 +33,7 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        Optional<Manufacturer>  manufacturer =
+        Optional<Manufacturer> manufacturer =
                 manufacturerService.findManufacturer(manufacturerId);
         if (manufacturer.isEmpty()) {
             req.setAttribute("id", Long.valueOf(req.getParameter("manufacturer_id")));
