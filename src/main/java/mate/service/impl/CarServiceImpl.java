@@ -1,16 +1,23 @@
-package mate.service;
+package mate.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 import mate.dao.CarDao;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
 import mate.model.Driver;
+import mate.service.CarService;
 
 @Service
 public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
+
+    @Override
+    public Optional<Car> findCar(Long carId) {
+        return carDao.get(carId);
+    }
 
     @Override
     public void addDriverToCar(Driver driver, Car car) {
