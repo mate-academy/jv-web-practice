@@ -20,7 +20,6 @@
   <form action="<c:url value="/index"/>" >
     <input type="submit" value="HOME" />
   </form>
-  <%--  <form method="post" action="${pageContext.request.contextPath}/cars/all">--%>
   <table style="with: 80%" border="1">
     <tr>
       <td>ID </td>
@@ -55,7 +54,6 @@
       </tr>
     </c:forEach>
   </table>
-  <%--  </form>--%>
 </div>
 </body>
 </html>
