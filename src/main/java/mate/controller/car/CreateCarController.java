@@ -1,33 +1,37 @@
-package mate.controller.manufacturers;
+package mate.controller.car;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
 import mate.model.Manufacturer;
+import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet("/manufacturers/create")
-public class CreateManufacturerController extends HttpServlet {
+@WebServlet("/cars/create")
+public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        String name = req.getParameter("name");
-        String country = req.getParameter("country");
-        manufacturerService.create(new Manufacturer(name, country));
-        resp.sendRedirect("/manufacturers");
+        String model = req.getParameter("model");
+        Manufacturer manufacturerId = manufacturerService
+                .get(Long.valueOf(req.getParameter("manufacturer_id")));
+        carService.create(new Car(model, manufacturerId, new ArrayList<>()));
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/addManufacturers.jsp")
-                .forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/addCars.jsp").forward(req, resp);
     }
 }

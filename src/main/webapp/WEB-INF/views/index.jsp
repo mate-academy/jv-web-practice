@@ -10,7 +10,7 @@
             <a href="/cars" style="color: green; text-decoration: none">CARS</a>
         </td>
         <td style="text-align:center; padding: 15px">
-            <a href="/cars/create" style="color: green; text-decoration: none">CREATE CAR</a>
+            <a href="/cars/create" style="color: green; text-decoration: none">CREATE A CAR</a>
         </td>
         <td style="text-align:center; padding: 15px">
             <a href="/cars/drivers/add" style="color: green; text-decoration: none">ADD DRIVER(TO CAR)</a>

@@ -39,7 +39,7 @@
             </td>
             <td style="text-align:center; padding: 15px">
                 <c:forEach items="${car.drivers}" var="driver">
-                    <c:out value="${driver.name}  "/><br>
+                    <c:out value="${driver.name} - ${driver.licenseNumber}"/><br>
                 </c:forEach>
             </td>
             <td style="text-align:center; padding: 15px">
