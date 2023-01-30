@@ -14,6 +14,7 @@ HINT: while implementing the last requirement, create just two fields on JSP whe
 You can redirect to `/index` page or any other page after your business login in `doPost()` method is applied.
 
 ### Example how to implement adding driver to car:
+Пример, как реализовать добавление водителя в машину:
 ```java
 public class AddDriverToCarController extends HttpServlet {    
     private static final Injector injector = Injector.getInstance("mate.academy"); // be careful with copy-paste
@@ -42,3 +43,22 @@ public class AddDriverToCarController extends HttpServlet {
 - Create a new controller: Display all cars (with manufacturer and drivers) with ability to delete a certain car
 
 __Before submitting solution make sure you checked it first with__ [checklist](https://mate-academy.github.io/jv-program-common-mistakes/java-web/web-practice/java-web-practice)
+
+Чтобы получить актуальные параметры таблиц базы данных, запустите скрипт из файла resources/init_db.sql в Workbench.
+Создайте новый контроллер: Реализуйте создание драйвера
+Создать новый контроллер: Показать все драйверы
+Создайте новый контроллер: Реализуйте создание производителя
+Создать новый контроллер: Реализовать создание автомобиля (по умолчанию без драйверов)
+Создайте новый контроллер: Реализуйте добавление водителя в автомобиль.
+СОВЕТ: при реализации последнего требования создайте всего два поля в JSP, 
+куда вы будете передавать соответствующие значения идентификатора.
+Вы можете перенаправить на страницу или любую другую страницу после применения метода /index входа в систему .doPost()
+
+Типичные ошибки:
+Не забудьте импортировать дополнительную библиотеку maven для jstl
+Не забудьте объявить taglib префикс, где это применимо
+Передовой:
+Создать новый контроллер: Показать всех производителей с возможностью удаления определенного производителя.
+Показать все драйверы с возможностью удаления определенного драйвера
+Создать новый контроллер: Показать все автомобили (с указанием производителя и водителей) с возможностью удаления определенного автомобиля
+Перед отправкой решения убедитесь, что вы сначала проверили его с помощью контрольного списка.
