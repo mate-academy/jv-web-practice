@@ -30,10 +30,13 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Manufacturer manufacturer
-                = manufacturerService.get(Long.valueOf(req.getParameter("manufacturer_id")));
-        carService.create(new Car(req.getParameter("model"),
-                manufacturer, Collections.emptyList()));
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Car car = new Car();
+        car.setModel(req.getParameter("model"));
+        car.setManufacturer(manufacturer);
+        car.setDrivers(Collections.emptyList());
+        carService.create(car);
         req.getRequestDispatcher("/WEB-INF/views/load.jsp").forward(req, resp);
     }
 }
