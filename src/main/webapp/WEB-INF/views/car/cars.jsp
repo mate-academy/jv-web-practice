@@ -19,7 +19,15 @@
             <td><c:out value="${car.id}" /></td>
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.getName()}" /></td>
-            <td><c:out value="${car.drivers}" /></td>
+            <td>
+                <c:forEach items="${car.drivers}" var="driver">
+                <ul>
+                    <li>
+                        <c:out value="${driver.name}" />
+                    </li>
+                </ul>
+                </c:forEach>
+                    </td>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>

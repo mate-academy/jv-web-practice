@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>createDriver</servlet-name>
-        <url-pattern>/drivers/new_driver</url-pattern>
+        <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteDriver</servlet-name>
@@ -42,7 +42,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturer</servlet-name>
-        <url-pattern>/manufacturers/new_manufacturer</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteManufacturer</servlet-name>
@@ -67,7 +67,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>createCar</servlet-name>
-        <url-pattern>/cars/new_car</url-pattern>
+        <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>deleteCar</servlet-name>
@@ -83,6 +83,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/cars/driver_to_car</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 </web-app>
