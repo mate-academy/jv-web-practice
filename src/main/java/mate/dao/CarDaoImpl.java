@@ -116,8 +116,8 @@ public class CarDaoImpl implements CarDao {
         String query = "UPDATE cars SET is_deleted = TRUE WHERE id = ?"
                 + " AND is_deleted = FALSE";
         try (Connection connection = ConnectionUtil.getConnection();
-                 PreparedStatement statement =
-                         connection.prepareStatement(query)) {
+                PreparedStatement statement =
+                        connection.prepareStatement(query)) {
             statement.setLong(1, id);
             return statement.executeUpdate() > 0;
         } catch (SQLException e) {
@@ -190,7 +190,7 @@ public class CarDaoImpl implements CarDao {
     private List<Driver> getAllDriversByCarId(Long carId) {
         String query = "SELECT id, name, license_number FROM cars_drivers cd "
                 + "JOIN drivers d on cd.driver_id = d.id "
-                + "where car_id = ? AND is_deleted = FALSE";
+                + "where car_id = ? AND d.is_deleted = FALSE";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement =
                         connection.prepareStatement(query)) {
