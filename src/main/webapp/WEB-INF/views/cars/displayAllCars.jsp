@@ -30,7 +30,7 @@
             </td>
             <td><form method="get"
                       action ="${pageContext.request.contextPath}/cars/drivers/add">
-                <button type="submit" name="id" value="${car.getId()}">
+                <button type="submit">
                     Add driver
                 </button>
             </form>
