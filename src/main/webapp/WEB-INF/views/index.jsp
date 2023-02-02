@@ -20,7 +20,7 @@
 <ul>
     <li><p><a href="${pageContext.request.contextPath}/cars">Display all cars</a></p></li>
     <li><p><a href="${pageContext.request.contextPath}/cars/create">Create a new car</a></p></li>
-    <li><p><a href="${pageContext.request.contextPath}/cars/drivers/create">Add a driver to a car</a></p></li>
+    <li><p><a href="${pageContext.request.contextPath}/cars/drivers/add">Add a driver to a car</a></p></li>
 </ul>
 </body>
 </html>

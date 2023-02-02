@@ -6,7 +6,7 @@
 <body>
 <p><a href="${pageContext.request.contextPath}/index">To main page</a></p>
 <h3>Add a driver to a car</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
     <label for="car_id">Car id:</label><br>
     <input type="number" id="car_id" name="car_id" required><br>
     <br>
