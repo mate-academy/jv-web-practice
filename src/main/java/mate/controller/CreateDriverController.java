@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/add")
+@WebServlet(urlPatterns = "/drivers")
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -26,11 +26,11 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String driverName = request.getParameter("driver_name");
-        String driverLicenseNumber = request.getParameter("driver_license_number");
+        String name = request.getParameter("name");
+        String licenseNumber = request.getParameter("license_number");
         Driver driver = new Driver();
-        driver.setName(driverName);
-        driver.setLicenseNumber(driverLicenseNumber);
+        driver.setName(name);
+        driver.setLicenseNumber(licenseNumber);
         driverService.create(driver);
         request.setAttribute("message", "A driver was created.");
         request.getRequestDispatcher("/WEB-INF/views/message.jsp").forward(request, response);
