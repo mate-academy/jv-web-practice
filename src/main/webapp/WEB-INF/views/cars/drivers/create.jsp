@@ -4,15 +4,17 @@
     <title>Taxi Service</title>
 </head>
 <body>
+<p><a href="${pageContext.request.contextPath}/index">To main page</a></p>
 <h3>Add a driver to a car</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/create">
     <label for="car_id">Car id:</label><br>
     <input type="number" id="car_id" name="car_id" required><br>
+    <br>
     <label for="driver_id">Driver id:</label><br>
     <input type="number" id="driver_id" name="driver_id" required><br>
     <br>
+    <br>
     <button type="submit">Confirm</button>
 </form>
-<p><a href="${pageContext.request.contextPath}/index">Back to main page</a></p>
 </body>
 </html>

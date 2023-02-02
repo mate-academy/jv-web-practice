@@ -5,14 +5,22 @@
     <title>Taxi Service</title>
 </head>
 <body>
-<p><a href="${pageContext.request.contextPath}/index">Back to main page</a></p>
+<p><a href="${pageContext.request.contextPath}/index">To main page</a></p>
 <h2>List of all cars:</h2>
 <table>
     <tr>
-        <td>Id</td>
-        <td>Model</td>
-        <td>Manufacturer</td>
-        <td>Drivers</td>
+        <th style="border: solid black 1px">
+            ID
+        </th>
+        <th style="border: solid black 1px">
+            MODEL
+        </th>
+        <th style="border: solid black 1px">
+            MANUFACTURER
+        </th>
+        <th style="border: solid black 1px">
+            DRIVERS
+        </th>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
