@@ -27,8 +27,6 @@
         </th>
     </tr>
     <c:forEach items="${cars}" var="car">
-
-
             <c:forEach items="${car.drivers}" var="driver">
                 <tr>
                     <td style="border: solid black 1px">
@@ -44,26 +42,34 @@
                     <c:out value="${car.manufacturer.name}"/>
                 </td>
                 <td style="border: solid black 1px">
-                    <a href="${pageContext.request.contextPath}/cars/all/delete?id=${car.id}">
+                    <a href="${pageContext.request.contextPath}/cars/all/del?id=${car.id}">
                         delete
                     </a>
                 </td>
                 </tr>
             </c:forEach>
-
-
     </c:forEach>
 </table>
 
-<%--<h3>--%>
-<%--    You can delete driver:--%>
-<%--</h3>--%>
-<%--<form method="post" action="${pageContext.request.contextPath}/drivers/all">--%>
-<%--    Driver Id <input type="text" name="driverId">--%>
-<%--    <br>--%>
-<%--    <button type="submit">Submit</button>--%>
-<%--</form>--%>
-
-
+<h2>
+    Add new car:
+</h2>
+<form method="post" action="${pageContext.request.contextPath}/cars/all/add">
+    Car model <input type="text" name="model">
+    <br>
+    Manufacturer id <input type="text" name="manufacturerId">
+    <br>
+    <button type="submit">Submit</button>
+</form>
+<h2>
+    Add driver to car:
+</h2>
+<form method="post" action="${pageContext.request.contextPath}/cars/all/driver/add">
+    Car id <input type="text" name="carId">
+    <br>
+    Driver id <input type="text" name="driverId">
+    <br>
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>

@@ -4,8 +4,6 @@
 <head>
     <title>All manufacturers</title>
 </head>
-
-
 <body>
 <h1>
     List of manufacturers:
@@ -21,6 +19,9 @@
         <th style="border: solid black 1px">
             COUNTRY
         </th>
+        <th style="border: solid black 1px">
+            DELETE
+        </th>
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
@@ -33,28 +34,23 @@
             <td style="border: solid black 1px">
                 <c:out value="${manufacturer.country}"/>
             </td>
+            <td style="border: solid black 1px">
+                <a href="${pageContext.request.contextPath}/manufacturers/all/del?id=${manufacturer.id}">
+                    delete
+                </a>
+            </td>
         </tr>
     </c:forEach>
-
 </table>
-
-    <h3>
-        You can delete manufacturer:
-    </h3>
-    <form method="post" action="${pageContext.request.contextPath}/manufacturers/all">
-        Manufacturer Id <input type="text" name="manufacturerId">
-        <br>
-        <button type="submit">Submit</button>
-    </form>
-
-
+<h2>
+    Add new manufacturer:
+</h2>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/all/add">
+    Manufacturer name <input type="text" name="manufacturerName">
+    <br>
+    Country <input type="text" name="country">
+    <br>
+    <button type="submit">Submit</button>
+</form>
 </body>
 </html>
-
-
-
-
-
-
-
-

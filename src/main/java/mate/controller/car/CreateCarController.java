@@ -13,7 +13,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/add")
+@WebServlet(urlPatterns = "/cars/all/add")
 public class CreateCarController extends HttpServlet {
     private static Injector injector = Injector
             .getInstance("mate");
@@ -25,7 +25,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/all.jsp")
                 .forward(req, resp);
     }
 
@@ -33,13 +33,13 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        Long id = Long.valueOf(req.getParameter("manufacturerId"));
-        Manufacturer manufacturer = manufacturerService.get(id);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car car = new Car();
         car.setModel(model);
         car.setManufacturer(manufacturer);
         car.setDrivers(Collections.emptyList());
         carService.create(car);
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }
