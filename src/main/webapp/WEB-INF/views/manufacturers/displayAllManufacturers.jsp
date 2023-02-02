@@ -3,6 +3,12 @@
 <html>
 <head>
     <title>All manufacturers</title>
+    <style>
+        table, td, th {
+            border: 1px solid;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
 <h1>All manufacturers</h1>
