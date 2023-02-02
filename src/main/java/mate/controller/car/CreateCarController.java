@@ -23,7 +23,7 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("/WEB-INF/views/cars/create.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(request, response);
     }
 
     @Override
@@ -36,6 +36,6 @@ public class CreateCarController extends HttpServlet {
         car.setManufacturer(manufacturer);
         car.setDrivers(Collections.emptyList());
         carService.create(car);
-        request.getRequestDispatcher("/WEB-INF/views/after.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/save.jsp").forward(request, response);
     }
 }
