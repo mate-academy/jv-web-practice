@@ -12,11 +12,11 @@
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>driverCreationController</servlet-name>
-        <servlet-class>mate.controller.DriverCreationController</servlet-class>
+        <servlet-name>addDriverController</servlet-name>
+        <servlet-class>mate.controller.AddDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>driverCreationController</servlet-name>
+        <servlet-name>addDriverController</servlet-name>
         <url-pattern>/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -25,22 +25,22 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>getAllDriversController</servlet-name>
-        <url-pattern>/drivers/all</url-pattern>
+        <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>manufacturerCreationController</servlet-name>
-        <servlet-class>mate.controller.ManufacturerCreationController</servlet-class>
+        <servlet-name>addManufacturerController</servlet-name>
+        <servlet-class>mate.controller.AddManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>manufacturerCreationController</servlet-name>
+        <servlet-name>addManufacturerController</servlet-name>
         <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>carCreationController</servlet-name>
-        <servlet-class>mate.controller.CarCreationController</servlet-class>
+        <servlet-name>addCarController</servlet-name>
+        <servlet-class>mate.controller.AddCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>carCreationController</servlet-name>
+        <servlet-name>addCarController</servlet-name>
         <url-pattern>/cars/add</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -49,6 +49,30 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addDriverToCarController</servlet-name>
-        <url-pattern>/cars/assign</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteManufacturerController</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteManufacturerController</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteDriverController</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteDriverController</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>deleteCarController</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>deleteCarController</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
 </web-app>

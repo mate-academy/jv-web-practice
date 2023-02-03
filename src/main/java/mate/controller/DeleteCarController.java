@@ -1,37 +1,41 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
+import mate.service.ManufacturerService;
 
-public class AddDriverToCarController extends HttpServlet {
+public class DeleteCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService)
             injector.getInstance(CarService.class);
+    private final ManufacturerService manufacturerService = (ManufacturerService)
+            injector.getInstance(ManufacturerService.class);
     private final DriverService driverService = (DriverService)
             injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        List<Car> cars = carService.getAll();
+        for (Car car: cars) {
+            car.getManufacturer();
+        }
+        req.setAttribute("cars", cars);
+        req.getRequestDispatcher("/WEB-INF/views/cars/delete.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(request.getParameter("driver_id"));
-        Long carId = Long.valueOf(request.getParameter("car_id"));
-        Car car = carService.get(carId);
-        Driver driver = driverService.get(driverId);
-        carService.addDriverToCar(driver, car);
-        response.sendRedirect("/index");
+        Long carId = Long.valueOf(req.getParameter("car_id"));
+        carService.delete(carId);
     }
 }

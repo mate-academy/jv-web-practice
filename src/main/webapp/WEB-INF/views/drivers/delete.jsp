@@ -20,5 +20,10 @@
         </tr>
     </c:forEach>
 </table>
+<h2>Enter driver id to delete:</h2>
+<form method="post" action="${pageContext.request.contextPath}/drivers/delete">
+    Driver Id <input type="number" name="driver_id"><br>
+    <button type="delete">Confirm</button>
+</form>
 </body>
 </html>
