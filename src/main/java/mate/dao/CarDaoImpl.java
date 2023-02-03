@@ -33,7 +33,7 @@ public class CarDaoImpl implements CarDao {
                 car.setId(resultSet.getObject(1, Long.class));
             }
         } catch (SQLException e) {
-            throw new DataProcessingException("Can't create car " + car, e);
+            throw new DataProcessingException("Can't create.jsp car " + car, e);
         }
         insertAllDrivers(car);
         return car;
@@ -157,7 +157,7 @@ public class CarDaoImpl implements CarDao {
     private void insertAllDrivers(Car car) {
         Long carId = car.getId();
         List<Driver> drivers = car.getDrivers();
-        if (drivers.size() == 0) {
+        if (drivers == null || drivers.size() == 0) {
             return;
         }
         String query = "INSERT INTO cars_drivers (car_id, driver_id) VALUES (?, ?)";
