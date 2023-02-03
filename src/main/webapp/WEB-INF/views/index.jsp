@@ -14,13 +14,14 @@
 <h3>Manufacturers:</h3>
 <ul>
     <li><p><a href="${pageContext.request.contextPath}/manufacturers">Display all manufacturers</a></p></li>
-    <li><p><a href="${pageContext.request.contextPath}/manufacturers/add">Create a new manufacturer</a></p></li>
+    <li><p><a href="${pageContext.request.contextPath}/manufacturers/create">Create a new manufacturer</a></p></li>
 </ul>
 <h3>Cars:</h3>
 <ul>
     <li><p><a href="${pageContext.request.contextPath}/cars">Display all cars</a></p></li>
-    <li><p><a href="${pageContext.request.contextPath}/cars/add">Create a new car</a></p></li>
+    <li><p><a href="${pageContext.request.contextPath}/cars/create">Create a new car</a></p></li>
     <li><p><a href="${pageContext.request.contextPath}/cars/drivers/add">Add a driver to a car</a></p></li>
 </ul>
 </body>
 </html>
+
