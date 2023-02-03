@@ -15,7 +15,7 @@
         <td> <a href ="${pageContext.request.contextPath}/cars/add">Add car</a></td>
     </tr>
     <tr>
-        <td> <a href ="${pageContext.request.contextPath}/cars/add_driver">Add driver to car</a></td>
+        <td> <a href ="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</a></td>
     </tr>
 </table>
 </body>

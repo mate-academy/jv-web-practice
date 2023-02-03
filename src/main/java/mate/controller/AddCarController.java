@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.NoSuchElementException;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +12,7 @@ import mate.service.CarService;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars/add")
-public class CreateCarController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
@@ -30,17 +29,7 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        String errorMessage;
         Long id = Long.valueOf(req.getParameter("manufacturerId"));
-        try {
-            checkManufacturerId(id);
-            carService.create(new Car(model, manufacturerService.get(id)));
-        } catch (NoSuchElementException e) {
-            req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp").forward(req, resp);
-        }
-    }
-
-    private void checkManufacturerId(Long id) {
-        manufacturerService.get(id);
+        carService.create(new Car(model, manufacturerService.get(id)));
     }
 }
