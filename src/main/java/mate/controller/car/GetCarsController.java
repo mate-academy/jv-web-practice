@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/cars/all")
-public class AllCarsController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars")
+public class GetCarsController extends HttpServlet {
     private static Injector injector = Injector
             .getInstance("mate");
     private final CarService carService = (CarService) injector

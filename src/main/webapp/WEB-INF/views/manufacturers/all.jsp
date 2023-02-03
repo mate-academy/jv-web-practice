@@ -35,7 +35,7 @@
                 <c:out value="${manufacturer.country}"/>
             </td>
             <td style="border: solid black 1px">
-                <a href="${pageContext.request.contextPath}/manufacturers/all/del?id=${manufacturer.id}">
+                <a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">
                     delete
                 </a>
             </td>

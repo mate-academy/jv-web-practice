@@ -42,7 +42,7 @@
                     <c:out value="${car.manufacturer.name}"/>
                 </td>
                 <td style="border: solid black 1px">
-                    <a href="${pageContext.request.contextPath}/cars/all/del?id=${car.id}">
+                    <a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
                         delete
                     </a>
                 </td>

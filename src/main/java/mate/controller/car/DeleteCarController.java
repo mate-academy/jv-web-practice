@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/cars/all/del")
+@WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
     private static Injector injector = Injector
             .getInstance("mate");
@@ -21,6 +21,6 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.valueOf(req.getParameter("id"));
         carService.delete(carId);
-        resp.sendRedirect(req.getContextPath() + "/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
