@@ -12,7 +12,7 @@ import mate.model.Car;
 import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars")
-public class GetCarsController extends HttpServlet {
+public class GetAllCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector
             .getInstance(CarService.class);
@@ -20,9 +20,9 @@ public class GetCarsController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> allCars = carService.getAll();
-        req.setAttribute("cars",allCars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/displayAllCars.jsp")
+        List<Car> cars = carService.getAll();
+        req.setAttribute("cars", cars);
+        req.getRequestDispatcher("/WEB-INF/views/cars/displayAll.jsp")
                 .forward(req, resp);
     }
 }

@@ -12,7 +12,7 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers")
-public class GetManufacturersController extends HttpServlet {
+public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -20,9 +20,9 @@ public class GetManufacturersController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Manufacturer> allManufacturers = manufacturerService.getAll();
-        req.setAttribute("manufacturers", allManufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAllManufacturers.jsp")
+        List<Manufacturer> manufacturers = manufacturerService.getAll();
+        req.setAttribute("manufacturers", manufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAll.jsp")
                 .forward(req, resp);
     }
 }
