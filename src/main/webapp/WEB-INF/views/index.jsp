@@ -9,7 +9,7 @@
 <h3>Drivers:</h3>
 <ul>
     <li><p><a href="${pageContext.request.contextPath}/drivers">Display all drivers</a></p></li>
-    <li><p><a href="${pageContext.request.contextPath}/drivers/add">Create a new driver</a></p></li>
+    <li><p><a href="${pageContext.request.contextPath}/drivers/create">Create a new driver</a></p></li>
 </ul>
 <h3>Manufacturers:</h3>
 <ul>
