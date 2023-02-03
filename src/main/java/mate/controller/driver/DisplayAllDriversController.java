@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.driver;
 
 import java.io.IOException;
 import java.util.List;
@@ -29,5 +29,6 @@ public class DisplayAllDriversController extends HttpServlet {
         List<Driver> manufacturerList = driverService.getAll();
         req.setAttribute("manufacturers", manufacturerList);
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAll.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

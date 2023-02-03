@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import java.util.List;
@@ -21,5 +21,6 @@ public class DisplayAllManufacturersController extends HttpServlet {
         List<Manufacturer> manufacturerList = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturerList);
         req.getRequestDispatcher("/WEB-INF/views/manufacturer/displayAll.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

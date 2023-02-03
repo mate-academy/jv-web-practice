@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
 import java.util.List;
@@ -35,5 +35,6 @@ public class DisplayAllCarsController extends HttpServlet {
         List<Car> carList = carService.getAll();
         req.setAttribute("cars", carList);
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAll.jsp").forward(req,resp);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }

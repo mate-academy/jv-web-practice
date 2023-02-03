@@ -18,6 +18,12 @@
     Car_id <input type="text" name="car_id"><br>
     Driver_id <input type="text" name="driver_id"><br>
     <button type="submit">Confirm</button>
+    <c:if test="${invalidInput == 'car'}">
+        Can't find car id ${id} in database, try again
+    </c:if>
+    <c:if test="${invalidInput == 'driver'}">
+        Can't find driver by id ${id} in database, try again
+    </c:if>
 </form>
 <h1>List of cars:</h1>
 <table>

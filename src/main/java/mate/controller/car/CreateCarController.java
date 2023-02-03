@@ -1,21 +1,19 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
+import mate.model.Manufacturer;
 import mate.service.CarService;
-import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
-public class AddDriverToCarController extends HttpServlet {
+public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService)injector.getInstance(ManufacturerService.class);
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
@@ -24,18 +22,20 @@ public class AddDriverToCarController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.setAttribute("drivers", driverService.getAll());
-        req.setAttribute("cars",carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/car/addDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long carId = Long.valueOf(req.getParameter("car_id"));
-        Long driverId = Long.valueOf(req.getParameter("driver_id"));
-        Car car = carService.get(carId);
-        Driver driver = driverService.get(driverId);
-        carService.addDriverToCar(driver,car);
+        String model = req.getParameter("model");
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Car car = new Car();
+        car.setModel(model);
+        car.setManufacturer(manufacturer);
+        car.setDrivers(new ArrayList<>());
+        carService.create(car);
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
