@@ -7,15 +7,15 @@
 <h1>Hello, mates!</h1>
 <table>
     <tr>
-        <td>Create Driver</td>
-        <td>View Driver</td>
+        <td> <a href ="${pageContext.request.contextPath}/drivers/add">Add Driver</a></td>
+        <td> <a href ="${pageContext.request.contextPath}/drivers/all">View driver</a></td>
     </tr>
     <tr>
-        <td>Create Manufacturer</td>
-        <td>Create Car</td>
+        <td> <a href ="${pageContext.request.contextPath}/manufacturers/add">Add manufacturer</a></td>
+        <td> <a href ="${pageContext.request.contextPath}/cars/add">Add car</a></td>
     </tr>
     <tr>
-        <td a href ="addDriver.jsp">Add driver to car</td>
+        <td> <a href ="${pageContext.request.contextPath}/cars/add_driver">Add driver to car</a></td>
     </tr>
 </table>
 </body>
