@@ -8,7 +8,7 @@
 <table>
     <tr>
         <td> <a href ="${pageContext.request.contextPath}/drivers/add">Add Driver</a></td>
-        <td> <a href ="${pageContext.request.contextPath}/drivers/all">View driver</a></td>
+        <td> <a href ="${pageContext.request.contextPath}/drivers">View driver</a></td>
     </tr>
     <tr>
         <td> <a href ="${pageContext.request.contextPath}/manufacturers/add">Add manufacturer</a></td>
