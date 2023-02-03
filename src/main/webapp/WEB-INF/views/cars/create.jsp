@@ -8,7 +8,7 @@
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
   <label for="model">Model:</label><br>
   <input type="text" id="model" name="model" required><br>
-  <label for="manufacturer">Manufacturer:</label><br>
+  <label for="manufacturer">Manufacturer id:</label><br>
   <input type="number" id="manufacturer" name="manufacturer_id" required><br>
   <br>
   <button type="submit">Confirm</button>
