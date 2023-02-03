@@ -7,6 +7,7 @@ public class Manufacturer {
     private String name;
     private String country;
 
+
     public Long getId() {
         return id;
     }
