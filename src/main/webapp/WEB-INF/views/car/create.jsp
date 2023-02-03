@@ -14,8 +14,8 @@
 <body>
 <h1>Please fill in the form</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
-  Model <input type="text" name="model"><br>
-  Manufacturer_id <input type="text" name="manufacturer_id"><br>
+  Model <input type="text" name="model" required><br>
+  Manufacturer_id <input type="text" name="manufacturer_id" required><br>
   <button type="submit">Confirm</button>
 </form>
 <h1>List of manufacturers:</h1>
