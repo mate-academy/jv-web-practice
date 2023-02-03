@@ -5,7 +5,7 @@
     <title>Get All Drivers</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/drivers/getAllDrivers">
+<form method="post" action="${pageContext.request.contextPath}/drivers">
     <table>
         <tr>
             <td>ID</td>

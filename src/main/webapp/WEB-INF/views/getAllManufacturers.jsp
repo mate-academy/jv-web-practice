@@ -4,7 +4,7 @@
     <title>GetAllManufacturers</title>
     <h1>Get All Manufacturers</h1>
     <body>
-    <form method="post" action="${pageContext.request.contextPath}/cars/getAllManufacturers">
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers">
         <table>
             <tr>
                 <td>ID</td>

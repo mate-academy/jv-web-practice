@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Create a car</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     <table>
         <tr>
             <td>ID</td>

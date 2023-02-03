@@ -5,7 +5,7 @@
     <title>Get all cars</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/getAllCars">
+<form method="post" action="${pageContext.request.contextPath}/cars">
     <table>
         <tr>
             <td>ID</td>
