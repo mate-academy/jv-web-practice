@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/all/add")
+@WebServlet(urlPatterns = "/drivers/add")
 public class AddNewDriverController extends HttpServlet {
     private static Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService) injector
@@ -19,7 +19,7 @@ public class AddNewDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp")
                 .forward(req, resp);
     }
 

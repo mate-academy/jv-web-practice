@@ -42,15 +42,5 @@
                 </tr>
             </c:forEach>
         </table>
-        <h2>
-            Add new driver:
-        </h2>
-        <form method="post" action="${pageContext.request.contextPath}/drivers/all/add">
-            DriverName <input type="text" name="name">
-            <br>
-            Licence number <input type="text" name="licenseNumber">
-            <br>
-            <button type="submit">Submit</button>
-        </form>
     </body>
 </html>

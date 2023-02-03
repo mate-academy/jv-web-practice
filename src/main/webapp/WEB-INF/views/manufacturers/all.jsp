@@ -42,15 +42,5 @@
         </tr>
     </c:forEach>
 </table>
-<h2>
-    Add new manufacturer:
-</h2>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/all/add">
-    Manufacturer name <input type="text" name="manufacturerName">
-    <br>
-    Country <input type="text" name="country">
-    <br>
-    <button type="submit">Submit</button>
-</form>
 </body>
 </html>
