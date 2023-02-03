@@ -23,18 +23,15 @@ public class DisplayAllCarsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.setAttribute("drivers", driverService.getAll());
         req.setAttribute("cars",carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/car/displayAll.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/all.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> carList = carService.getAll();
-        req.setAttribute("cars", carList);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAll.jsp").forward(req,resp);
-        resp.sendRedirect(req.getContextPath() + "/index");
+        List<Car> cars = carService.getAll();
+        req.setAttribute("cars", cars);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req,resp);
     }
 }

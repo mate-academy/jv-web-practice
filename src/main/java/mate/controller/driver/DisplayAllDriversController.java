@@ -18,17 +18,16 @@ public class DisplayAllDriversController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Driver> driverList = driverService.getAll();
-        req.setAttribute("drivers", driverList);
-        req.getRequestDispatcher("/WEB-INF/views/driver/displayAll.jsp").forward(req, resp);
+        List<Driver> drivers = driverService.getAll();
+        req.setAttribute("drivers", drivers);
+        req.getRequestDispatcher("/WEB-INF/views/driver/all.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Driver> manufacturerList = driverService.getAll();
-        req.setAttribute("manufacturers", manufacturerList);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/displayAll.jsp").forward(req,resp);
-        resp.sendRedirect(req.getContextPath() + "/index");
+        List<Driver> manufacturers = driverService.getAll();
+        req.setAttribute("manufacturers", manufacturers);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp").forward(req,resp);
     }
 }

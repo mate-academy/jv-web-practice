@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateDriverController</servlet-name>
-        <url-pattern>/drivers/add</url-pattern>
+        <url-pattern>/drivers/сreate</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -26,7 +26,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateCarController</servlet-name>
-        <url-pattern>/cars/add</url-pattern>
+        <url-pattern>/cars/create</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -35,7 +35,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>CreateManufacturerController</servlet-name>
-        <url-pattern>/manufacturers/add</url-pattern>
+        <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
 
     <servlet>
