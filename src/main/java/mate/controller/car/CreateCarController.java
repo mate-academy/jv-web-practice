@@ -13,7 +13,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/add")
+@WebServlet(urlPatterns = "/cars/create")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);

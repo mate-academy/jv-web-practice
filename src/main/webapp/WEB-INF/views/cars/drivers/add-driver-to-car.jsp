@@ -5,7 +5,7 @@
 </head>
 <body>
 <h3>Create a new manufacturer:</h3>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add-driver-to-car">
     <label for="car_id">Car id:</label><br>
     <input type="number" id="car_id" name="car_id" required><br>
     <label for="driver_id">Driver id:</label><br>
