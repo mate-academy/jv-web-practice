@@ -14,9 +14,6 @@ import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
-    private static final String CAR_ID = "car_id";
-    private static final String DRIVER_ID = "driver_id";
-
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
@@ -32,8 +29,8 @@ public class AddDriverToCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(req.getParameter(DRIVER_ID));
-        Long carId = Long.valueOf(req.getParameter(CAR_ID));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
+        Long carId = Long.valueOf(req.getParameter("car_id"));
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
