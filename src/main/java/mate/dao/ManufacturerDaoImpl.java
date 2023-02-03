@@ -28,7 +28,7 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
             }
             return manufacturer;
         } catch (SQLException e) {
-            throw new DataProcessingException("Couldn't create.jsp manufacturer. "
+            throw new DataProcessingException("Couldn't create manufacturer. "
                     + manufacturer, e);
         }
     }

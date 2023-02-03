@@ -97,7 +97,7 @@ public class Injector {
             Constructor<?> classConstructor = clazz.getConstructor();
             newInstance = classConstructor.newInstance();
         } catch (Exception e) {
-            throw new RuntimeException("Can't create.jsp object of the class", e);
+            throw new RuntimeException("Can't create object of the class", e);
         }
         return newInstance;
     }
