@@ -5,29 +5,46 @@
   Time: 15:42
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Get all manufacturers</title>
+    <title>All manufacturers</title>
+    <style>
+        table, td, th {
+            border: 1px solid;
+            border-collapse: initial;
+            color: darkslateblue;
+        }
+    </style>
 </head>
 <body>
-<p><a href="${pageContext.request.contextPath}/index">main page</a> </p><br>
 <h1>All manufacturers</h1>
 <table>
-  <tr>
-    <td>ID</td>
-    <td>Name</td>
-    <td>Country</td>
-    <td>Delete</td>
-  </tr>
-  <c:forEach items="${getAllManufacturers}" var = "getAllManufacturers">
     <tr>
-      <td><c:out value="${getAllManufacturers.id}" /></td>
-      <td><c:out value="${getAllManufacturers.name}" /></td>
-      <td><c:out value="${getAllManufacturers.country}" /></td>
-<%--      <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete</a></td>--%>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
     </tr>
-  </c:forEach>
+    <c:forEach items="${manufacturers}" var="manufacturer">
+        <tr>
+            <td><c:out value="${manufacturer.getId()}"/></td>
+            <td><c:out value="${manufacturer.getName()}"/></td>
+            <td><c:out value="${manufacturer.getCountry()}"/></td>
+        </tr>
+    </c:forEach>
 </table>
+<form method="get"
+      action="${pageContext.request.contextPath}/createManufacturers">
+    <button type="submit">
+        Add new manufacturer
+    </button>
+</form>
+<form method="get"
+      action="${pageContext.request.contextPath}/index">
+    <button type="submit">
+        back to service
+    </button>
+</form>
 </body>
 </html>
