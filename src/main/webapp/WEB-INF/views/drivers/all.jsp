@@ -9,16 +9,17 @@
 <table>
     <tr>
         <td>ID</td>
-        <td>NAME</td>
-        <td>LICENCE NUMBER</td>
+        <td>Name</td>
+        <td>Licence number</td>
     </tr>
-    <c:forEch items="${drivers}" var="driver">
+    <c:forEach items="${drivers}" var="driver">
         <tr>
             <td>c:out value="${driver.id}" /></td>
             <td>c:out value="${driver.name}" /></td>
             <td>c:out value="${driver.licenseNumber}" /></td>
         </tr>
-    </c:forEch>
+    </c:forEach>
 </table>
+</form>
 </body>
 </html>
