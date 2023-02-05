@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/create")
 public class CreateManufacturerController extends HttpServlet {
-    private final static Injector injector = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
