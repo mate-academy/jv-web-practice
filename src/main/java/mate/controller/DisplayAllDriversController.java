@@ -1,9 +1,9 @@
 package mate.controller;
 
+import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 import mate.service.DriverServiceImpl;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +12,9 @@ import java.io.IOException;
 import java.util.List;
 
 public class DisplayAllDriversController extends HttpServlet {
-    DriverService driverService = new DriverServiceImpl();
+    private static final Injector injector = Injector.getInstance("mate");
+    private final DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {

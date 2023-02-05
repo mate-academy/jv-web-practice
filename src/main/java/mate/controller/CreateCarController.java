@@ -6,9 +6,7 @@ import mate.service.CarService;
 import mate.service.CarServiceImpl;
 import mate.service.ManufacturerService;
 import mate.service.ManufacturerServiceImpl;
-
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -16,7 +14,6 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
-//@WebServlet(urlPatterns = "/index")
 public class CreateCarController extends HttpServlet {
     final CarService carService = new CarServiceImpl();
     final ManufacturerService manufacturerService = new ManufacturerServiceImpl();
@@ -29,9 +26,9 @@ public class CreateCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        String carModelStr = req.getParameter("carModel");
-        String carManufacturerStr = req.getParameter("carManufacturer");
-        Car newCar = convertToCar(carModelStr, carManufacturerStr);
+        String model = req.getParameter("carModel");
+        String manufacturer = req.getParameter("carManufacturer");
+        Car newCar = convertToCar(model, manufacturer);
         if (isNotExist(newCar)) {
             carService.create(newCar);
         } else {
