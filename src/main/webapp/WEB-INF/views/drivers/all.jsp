@@ -1,5 +1,5 @@
 <%@ taglib prefix="c"  uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Get all drivers</title>
@@ -20,5 +20,11 @@
         </tr>
     </c:forEach>
 </table>
+<form method="get"
+      action="${pageContext.request.contextPath}/index">
+    <button type="submit">
+        back to service
+    </button>
+</form>
 </body>
 </html>

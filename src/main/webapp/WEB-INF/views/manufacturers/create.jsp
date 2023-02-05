@@ -1,11 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: javak
-  Date: 02/02/2023
-  Time: 19:46
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Create a manufacturer</title>
@@ -18,6 +11,12 @@
     <label for="country">country</label>
     <input type="text" id="country" name="country" required>
     <button type="submit">create manufacturer</button>
+</form>
+<form method="get"
+      action="${pageContext.request.contextPath}/index">
+    <button type="submit">
+        back to service
+    </button>
 </form>
 </body>
 </html>

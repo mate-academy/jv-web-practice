@@ -29,6 +29,6 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licence_number"));
         driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/saved.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
     }
 }

@@ -1,12 +1,5 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: javak
-  Date: 02/02/2023
-  Time: 19:45
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Create a driver</title>
@@ -19,6 +12,12 @@
     <label for="licence_number">Licence number </label>
     <input type="text" id="licence_number" name="licence_number" required>
     <button type="submit">Create driver</button>
+</form>
+<form method="get"
+      action="${pageContext.request.contextPath}/index">
+    <button type="submit">
+        back to service
+    </button>
 </form>
 </body>
 </html>
