@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sirko
-  Date: 03.02.2023
-  Time: 15:33
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -35,6 +28,8 @@
     <button type="submit">
         back to service
     </button>
+    <input type="color">
+
 </form>
 </body>
 </html>

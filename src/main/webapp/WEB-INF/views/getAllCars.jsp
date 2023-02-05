@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Sirko
-  Date: 03.02.2023
-  Time: 21:29
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -12,10 +5,10 @@
     <title>All cars</title>
     <style>
         table, td, th {
-            border: 2pt solid;
+            border: 2pt black solid;
             caption-side: initial;
             border-collapse: revert;
-            color: blue;
+            color: black;
         }
     </style>
 </head>
@@ -37,8 +30,6 @@
             <td><c:out value="${car.getManufacturer().getName()}"/></td>
             <td><c:out value="${car.getManufacturer().getCountry()}"/></td>
             <td><c:out value="${car.getDrivers()}"/></td>
-            <td>
-            </td>
             <td>
                 <form method="get"
                       action="${pageContext.request.contextPath}/createDriver">

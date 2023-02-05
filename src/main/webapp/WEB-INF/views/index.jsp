@@ -1,9 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-    <title>My page</title>
-</head>
 <html>
 <head>
     <title> Taxi service </title>
@@ -16,7 +12,7 @@
             <form method="get"
                   action="${pageContext.request.contextPath}/getAllCars">
                 <button type="submit">
-                    All cars
+                     All cars
                 </button>
             </form>
         </td>
