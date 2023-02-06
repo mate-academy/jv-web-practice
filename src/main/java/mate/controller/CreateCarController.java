@@ -1,11 +1,14 @@
 package mate.controller;
 
+import mate.dao.CarDao;
+import mate.dao.CarDaoImpl;
+import mate.dao.ManufacturerDao;
+import mate.dao.ManufacturerDaoImpl;
+import mate.lib.Injector;
 import mate.model.Car;
+import mate.model.Driver;
 import mate.model.Manufacturer;
-import mate.service.CarService;
-import mate.service.CarServiceImpl;
-import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
+import mate.service.*;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -15,8 +18,9 @@ import java.util.List;
 import java.util.Optional;
 
 public class CreateCarController extends HttpServlet {
-    final CarService carService = new CarServiceImpl();
-    final ManufacturerService manufacturerService = new ManufacturerServiceImpl();
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
+    private final CarDao carDao = new CarDaoImpl();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -28,31 +32,16 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) {
         String model = req.getParameter("carModel");
         String manufacturer = req.getParameter("carManufacturer");
-        Car newCar = convertToCar(model, manufacturer);
-        if (isNotExist(newCar)) {
+        Car newCar = toCar(model, manufacturer);
+        if (carDao.isNotExist(newCar)) {
             carService.create(newCar);
         } else {
             carService.update(newCar);
         }
     }
 
-    private boolean isNotExist(Car newCar) {
-        return carService.getAll().stream()
-                .filter(car -> car.getModel().equals(newCar.getModel())
-                        && car.getManufacturer().equals(newCar.getManufacturer()))
-                .findFirst()
-                .isEmpty();
-    }
-
-    private Car convertToCar(String carModelStr, String carManufacturerStr) {
-        return new Car(carModelStr, getManufacturerByName(carManufacturerStr));
-    }
-
-    private Manufacturer getManufacturerByName(String name) {
-        List<Manufacturer> all = manufacturerService.getAll();
-        Optional<Manufacturer> manufacturer = all.stream()
-                .filter(m -> m.equals(name))
-                .findFirst();
-        return manufacturer.get();
+    private Car toCar(String carModel, String CarManufacturer) {
+        ManufacturerDao manufacturerDao = new ManufacturerDaoImpl();
+        return new Car(carModel, manufacturerDao.getManufacturerByName(CarManufacturer));
     }
 }

@@ -11,6 +11,8 @@ import java.util.Optional;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
+import mate.service.ManufacturerServiceImpl;
 import mate.util.ConnectionUtil;
 
 @Dao
@@ -112,5 +114,14 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
         statement.setString(1, manufacturer.getName());
         statement.setString(2, manufacturer.getCountry());
         return statement;
+    }
+
+    public Manufacturer getManufacturerByName(String name) {
+        ManufacturerService manufacturerService = new ManufacturerServiceImpl();
+        List<Manufacturer> all = manufacturerService.getAll();
+        Optional<Manufacturer> manufacturer = all.stream()
+                .filter(m -> m.equals(name))
+                .findFirst();
+        return manufacturer.get();
     }
 }

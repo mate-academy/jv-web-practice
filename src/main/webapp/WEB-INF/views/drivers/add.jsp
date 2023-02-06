@@ -10,6 +10,5 @@
   License ID <input type="text" name="driverLicenseId"><br>
   <button type="submit">Confirm</button>
 </form>
-
 </body>
 </html>

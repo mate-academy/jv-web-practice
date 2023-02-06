@@ -13,6 +13,8 @@ import mate.lib.Dao;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.model.Manufacturer;
+import mate.service.CarService;
+import mate.service.CarServiceImpl;
 import mate.util.ConnectionUtil;
 
 @Dao
@@ -232,5 +234,15 @@ public class CarDaoImpl implements CarDao {
         car.setModel(model);
         car.setManufacturer(manufacturer);
         return car;
+    }
+
+    @Override
+    public boolean isNotExist(Car newCar) {
+        CarService carService = new CarServiceImpl();
+        return carService.getAll().stream()
+                .filter(car -> car.getModel().equals(newCar.getModel())
+                        && car.getManufacturer().equals(newCar.getManufacturer()))
+                .findFirst()
+                .isEmpty();
     }
 }
