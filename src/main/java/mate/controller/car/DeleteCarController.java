@@ -24,4 +24,3 @@ public class DeleteCarController extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
-

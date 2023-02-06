@@ -24,4 +24,3 @@ public class GetManufacturersController extends HttpServlet {
                 .forward(req, resp);
     }
 }
-

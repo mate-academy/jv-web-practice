@@ -25,7 +25,7 @@ public class AddManufacturerController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String name = req.getParameter("manufacturerName");
         String country = req.getParameter("country");
         Manufacturer manufacturer = new Manufacturer();
@@ -35,4 +35,3 @@ public class AddManufacturerController extends HttpServlet {
         resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }
-
