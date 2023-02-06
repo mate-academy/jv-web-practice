@@ -1,6 +1,5 @@
 package mate.model;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -10,7 +9,7 @@ public class Car {
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
-    public <E> Car(String model, Manufacturer manufacturer, ArrayList<E> es) {
+    public <E> Car(String model, Manufacturer manufacturer, List<E> drivers) {
     }
 
     public Car() {

@@ -32,7 +32,7 @@
             <td><c:out value="${car.getDrivers()}"/></td>
             <td>
                 <form method="get"
-                      action="${pageContext.request.contextPath}/createDriver">
+                      action="${pageContext.request.contextPath}/drivers/add">
                     <button type="submit">
                         Add driver
                     </button>
@@ -42,12 +42,12 @@
     </c:forEach>
 </table>
 <form method="get"
-      action="${pageContext.request.contextPath}/createCars">
+      action="${pageContext.request.contextPath}/cars/create">
     <button type="submit">
         Add new car
     </button>
 </form>
-<form method="post" action="${pageContext.request.contextPath}/addDriver">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <table>
         <tr>
             <td>Car ID</td>

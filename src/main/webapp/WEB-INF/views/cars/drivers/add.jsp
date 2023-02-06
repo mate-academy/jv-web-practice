@@ -10,7 +10,7 @@
     <title>Add driver to car</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/addDriver">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     <table>
         <tr>
             <td>Car ID</td>
@@ -28,8 +28,7 @@
     <button type="submit">
         back to service
     </button>
-    <input type="color">
-
+    <input type="color =">  
 </form>
 </body>
 </html>

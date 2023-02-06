@@ -28,7 +28,7 @@
     </c:forEach>
 </table>
 <form method="get"
-      action="${pageContext.request.contextPath}/createManufacturers">
+      action="${pageContext.request.contextPath}/manufacturers/create">
     <button type="submit">
         Add new manufacturer
     </button>

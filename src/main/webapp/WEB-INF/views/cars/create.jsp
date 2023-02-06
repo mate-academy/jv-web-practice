@@ -4,7 +4,7 @@
     <title>Create new car</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/createCars">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     <table>
         <tr>
             <td>Model</td>

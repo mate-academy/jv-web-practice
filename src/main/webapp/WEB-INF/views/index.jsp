@@ -18,7 +18,7 @@
         </td>
         <td>
             <form method="get"
-                  action="${pageContext.request.contextPath}/createCars">
+                  action="${pageContext.request.contextPath}/cars/create">
                 <button type="submit">
                     Add new car
                 </button>
@@ -54,7 +54,7 @@
         </td>
         <td>
             <form method="get"
-                  action="${pageContext.request.contextPath}/createManufacturers">
+                  action="${pageContext.request.contextPath}/manufacturers/create">
                 <button type="submit">
                     Add new manufacturer
                 </button>
@@ -63,7 +63,7 @@
     </tr>
     <td>
         <form method="get"
-              action="${pageContext.request.contextPath}/addDriver">
+              action="${pageContext.request.contextPath}/drivers/add">
             <button type="submit">
                 Add driver to car
             </button>
