@@ -9,6 +9,12 @@ public class Car {
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
+    public <E> Car(String model, Manufacturer manufacturer, List<E> drivers) {
+    }
+
+    public Car() {
+    }
+
     public Long getId() {
         return id;
     }
