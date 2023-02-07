@@ -113,4 +113,21 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
         statement.setString(2, manufacturer.getCountry());
         return statement;
     }
+
+    @Override
+    public Optional<Manufacturer> getManufacturerByName(String name) {
+        String query = "SELECT * FROM manufacturers WHERE name = ? AND is_deleted = FALSE";
+        try (Connection connection = ConnectionUtil.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, name);
+            ResultSet resultSet = statement.executeQuery();
+            Manufacturer manufacturer = null;
+            if (resultSet.next()) {
+                manufacturer = parseManufacturerFromResultSet(resultSet);
+            }
+            return Optional.ofNullable(manufacturer);
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get manufacturer by name " + name, e);
+        }
+    }
 }
