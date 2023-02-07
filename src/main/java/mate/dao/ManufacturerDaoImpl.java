@@ -11,8 +11,6 @@ import java.util.Optional;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Manufacturer;
-import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
 import mate.util.ConnectionUtil;
 
 @Dao
@@ -116,12 +114,20 @@ public class ManufacturerDaoImpl implements ManufacturerDao {
         return statement;
     }
 
-    public Manufacturer getManufacturerByName(String name) {
-        ManufacturerService manufacturerService = new ManufacturerServiceImpl();
-        List<Manufacturer> all = manufacturerService.getAll();
-        Optional<Manufacturer> manufacturer = all.stream()
-                .filter(m -> m.equals(name))
-                .findFirst();
-        return manufacturer.get();
+    @Override
+    public Optional<Manufacturer> getManufacturerByName(String name) {
+        String query = "SELECT * FROM manufacturers WHERE name = ? AND is_deleted = FALSE";
+        try (Connection connection = ConnectionUtil.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, name);
+            ResultSet resultSet = statement.executeQuery();
+            Manufacturer manufacturer = null;
+            if (resultSet.next()) {
+                manufacturer = parseManufacturerFromResultSet(resultSet);
+            }
+            return Optional.ofNullable(manufacturer);
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get manufacturer by name " + name, e);
+        }
     }
 }

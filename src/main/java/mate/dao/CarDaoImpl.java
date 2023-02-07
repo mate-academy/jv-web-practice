@@ -1,5 +1,11 @@
 package mate.dao;
 
+import mate.exception.DataProcessingException;
+import mate.lib.Dao;
+import mate.model.Car;
+import mate.model.Driver;
+import mate.model.Manufacturer;
+import mate.util.ConnectionUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,14 +14,6 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import mate.exception.DataProcessingException;
-import mate.lib.Dao;
-import mate.model.Car;
-import mate.model.Driver;
-import mate.model.Manufacturer;
-import mate.service.CarService;
-import mate.service.CarServiceImpl;
-import mate.util.ConnectionUtil;
 
 @Dao
 public class CarDaoImpl implements CarDao {
@@ -221,15 +219,15 @@ public class CarDaoImpl implements CarDao {
 
     private Car parseCarFromResultSet(ResultSet resultSet) throws SQLException {
         long manufacturerId = resultSet.getObject("manufacturer_id", Long.class);
-        String manufacturerName = resultSet.getNString("manufacturer_name");
-        String manufacturerCountry = resultSet.getNString("manufacturer_country");
+        String manufacturerName = resultSet.getNString("manufacturers.name");
+        String manufacturerCountry = resultSet.getNString("manufacturers.country");
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setId(manufacturerId);
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
         long carId = resultSet.getLong("id");
         String model = resultSet.getNString("model");
-        Car car = new Car();
+        Car car = new Car(model, manufacturer);
         car.setId(carId);
         car.setModel(model);
         car.setManufacturer(manufacturer);
@@ -237,12 +235,21 @@ public class CarDaoImpl implements CarDao {
     }
 
     @Override
-    public boolean isNotExist(Car newCar) {
-        CarService carService = new CarServiceImpl();
-        return carService.getAll().stream()
-                .filter(car -> car.getModel().equals(newCar.getModel())
-                        && car.getManufacturer().equals(newCar.getManufacturer()))
-                .findFirst()
-                .isEmpty();
+    public Optional<Car> getByModelAndManufacturerId(String model, Long id) {
+        String query = "SELECT * FROM cars JOIN manufacturers ON cars.manufacturer_id = manufacturers.id "
+                + "WHERE model = ? AND manufacturer_id = ? AND cars.is_deleted = FALSE";
+        try (Connection connection = ConnectionUtil.getConnection();
+             PreparedStatement statement = connection.prepareStatement(query)) {
+            statement.setString(1, model);
+            statement.setLong(2, id);
+            ResultSet resultSet = statement.executeQuery();
+            Car car = null;
+            while (resultSet.next()) {
+                car = parseCarFromResultSet(resultSet);
+            }
+            return Optional.ofNullable(car);
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get manufacturer by model " + model, e);
+        }
     }
 }

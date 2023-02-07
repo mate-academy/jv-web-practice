@@ -14,9 +14,6 @@ public class Car {
         this.manufacturer = manufacturer;
     }
 
-    public Car() {
-    }
-
     public Long getId() {
         return id;
     }
