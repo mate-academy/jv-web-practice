@@ -5,6 +5,7 @@
     <title>Create new driver</title>
 </head>
 <body>
+<h3>Create a new driver:</h3>
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
  <table>
      <tr>
@@ -16,7 +17,6 @@
          <td><input type="text" name="license_number"></td>
      </tr>
  </table>
-
     <button type="submit">Create driver</button>
 </form>
 </body>

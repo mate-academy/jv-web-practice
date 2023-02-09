@@ -5,18 +5,20 @@
     <title>Get all drivers</title>
 </head>
 <body>
-<h1>List of drivers</h1>
+<h2>List of drivers</h2>
 <table>
   <tr>
     <td>ID</td>
     <td>NAME</td>
     <td>LICENSE NUMBER</td>
+    <td>DELETE DRIVER</td>
   </tr>
-  <c:forEach items="${drivers}" var="drivers">
+  <c:forEach items="${drivers}" var="driver">
    <tr>
-     <td><c:out value="${driver.getId()}"></c:out></td>
-     <td><c:out value="${driver.getName()}" /></td>
-     <td><c:out value="${driver.getLicenseNumber()}" /></td>
+       <td><c:out value="${driver.id}"/></td>
+       <td><c:out value="${driver.name}"/></td>
+       <td><c:out value="${driver.licenseNumber}"/></td>
+     <td><a href="${pageContext.request.contextPath}/drivers/delete?=id${driver.id}">delete this driver</a><td>
    </tr>
   </c:forEach>
 </table>
