@@ -30,6 +30,6 @@ public class DisplayAllCarsController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         carService.delete(carId);
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
