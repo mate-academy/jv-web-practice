@@ -26,8 +26,7 @@ public class AddCarController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String path = req.getContextPath() + "/cars";
         resp.sendRedirect(path);
         String model = req.getParameter("model");

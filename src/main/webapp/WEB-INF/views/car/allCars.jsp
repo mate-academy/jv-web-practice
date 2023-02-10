@@ -5,7 +5,8 @@
     <title>Get all cars</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/cars/add">Create a new car</a>
+<a href="${pageContext.request.contextPath}/cars/add">Create a new car</a><br>
+<a href="${pageContext.request.contextPath}/cars/drivers/add">Add a driver to a car</a>
 <h1>List of cars:</h1>
 <table>
     <tr>
@@ -28,8 +29,7 @@
                 <td><c:out value="NAME: ${driver.name}"/></td>
                 <td><c:out value="LICENSE_NUMBER: ${driver.licenseNumber}"/></td>
             </c:forEach>
-            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?id=${car.id}">Add a driver</a></td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete a car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete this car</a></td>
         </tr>
     </c:forEach>
 </table>

@@ -21,8 +21,7 @@ public class AddDriverController extends HttpServlet {
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         String path = req.getContextPath() + "/drivers";
         resp.sendRedirect(path);
         String name = req.getParameter("name");
