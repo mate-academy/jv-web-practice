@@ -25,7 +25,7 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        response.sendRedirect("/index");
+        response.sendRedirect(request.getContextPath() + "/index");
     }
 
     @Override

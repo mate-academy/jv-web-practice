@@ -25,7 +25,7 @@
       <td>${driver.id}</td>
       <td>${driver.name}</td>
     </c:forEach>
-      <td><a href="${pageContext.request.contextPath}/cars/all?id=${car.id}">delete this car</a></td>
+      <td><a href="${pageContext.request.contextPath}/cars?id=${car.id}">delete this car</a></td>
     </tr>
   </c:forEach>
 </table>
