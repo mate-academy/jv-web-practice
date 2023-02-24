@@ -19,10 +19,10 @@ public class AddDriverToCarController extends HttpServlet {
             injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String carId = req.getParameter("carId");
-        String driverId = req.getParameter("driverId");
+        String carId = req.getParameter("car_id");
+        String driverId = req.getParameter("driver_id");
 
         if (carId == null || carId.length() < 1) {
             throw new RuntimeException("Can not delete driver from undefined Car. carId = "

@@ -133,13 +133,13 @@
 
                             </c:when>
                             <c:otherwise>
-                                <a
-                                        class="button button--edit"
-                                        href="${pageContext.request.contextPath}/cars/drivers/add?carId=${car.id}&driverId=${driver.id}"
-                                >Add</a>
+                                <form method="post" name="form__${driver.id}" style="margin-bottom: 0" action="${pageContext.request.contextPath}/cars/drivers/add">
+                                    <input type="text" value="${car.id}" name="car_id" readonly style="display: none">
+                                    <input type="text" value="${driver.id}" name="driver_id" readonly style="display: none">
+                                    <button type="submit" class="button button--edit" style="border: none; width: 62px; cursor: pointer">Add</button>
+                                </form>
                             </c:otherwise>
                         </c:choose>
-                        <c:if test=""></c:if>
                     </div>
                 </td>
             </tr>
