@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = {"/cars/edit-drivers/delete"})
+@WebServlet(urlPatterns = {"/cars/drivers/delete"})
 public class DeleteDriverFromCarController extends HttpServlet {
     private Injector injector = Injector.getInstance("mate");
     private CarService carService = (CarService) injector.getInstance(CarService.class);

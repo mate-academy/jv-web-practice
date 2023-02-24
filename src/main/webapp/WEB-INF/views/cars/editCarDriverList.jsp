@@ -128,14 +128,14 @@
                             <c:when test="${driverSet.contains(driver.id)}">
                                 <a
                                         class="button button--delete"
-                                        href="${pageContext.request.contextPath}/cars/edit-drivers/delete?carId=${car.id}&driverId=${driver.id}"
+                                        href="${pageContext.request.contextPath}/cars/drivers/delete?carId=${car.id}&driverId=${driver.id}"
                                 >Delete</a>
 
                             </c:when>
                             <c:otherwise>
                                 <a
                                         class="button button--edit"
-                                        href="${pageContext.request.contextPath}/cars/edit-drivers/add?carId=${car.id}&driverId=${driver.id}"
+                                        href="${pageContext.request.contextPath}/cars/drivers/add?carId=${car.id}&driverId=${driver.id}"
                                 >Add</a>
                             </c:otherwise>
                         </c:choose>
