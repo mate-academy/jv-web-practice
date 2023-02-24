@@ -19,6 +19,6 @@ public class RemoveCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars/delete");
     }
 }

@@ -18,7 +18,7 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/addDriver")
+        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp")
                 .forward(req, resp);
     }
 
@@ -29,6 +29,6 @@ public class AddDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("license_number"));
         driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + "/addDriver");
+        resp.sendRedirect(req.getContextPath() + "/drivers/add");
     }
 }
