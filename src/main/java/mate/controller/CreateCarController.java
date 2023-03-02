@@ -15,6 +15,10 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/cars/add")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -26,14 +30,10 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        ManufacturerService manufacturerService =
-                (ManufacturerService) injector.getInstance(ManufacturerService.class);
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         car.setManufacturer(manufacturerService.get(manufacturerId));
         car.setDrivers(new ArrayList<>());
-        CarService carService =
-                (CarService) injector.getInstance(CarService.class);
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
