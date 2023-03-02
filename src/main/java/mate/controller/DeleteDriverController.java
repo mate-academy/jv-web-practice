@@ -20,6 +20,6 @@ public class DeleteDriverController extends HttpServlet {
         DriverService driverService =
                 (DriverService) injector.getInstance(DriverService.class);
         driverService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/drivers/all");
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

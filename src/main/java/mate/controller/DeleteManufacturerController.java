@@ -20,6 +20,6 @@ public class DeleteManufacturerController extends HttpServlet {
         ManufacturerService manufacturerService =
                 (ManufacturerService) injector.getInstance(ManufacturerService.class);
         manufacturerService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers/all");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

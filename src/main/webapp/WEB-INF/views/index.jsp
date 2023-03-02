@@ -12,8 +12,11 @@
 <a href="/cars/add">Add car</a><br>
 <h2></h2>
 <h2>Show all</h2>
-<a href="/drivers/all">Show all driver</a><br>
-<a href="/manufacturers/all">Show all manufacturer</a><br>
-<a href="/cars/all">Show all car</a><br>
+<a href="/drivers">Show all driver</a><br>
+<a href="/manufacturers">Show all manufacturer</a><br>
+<a href="/cars">Show all car</a><br>
+<h2></h2>
+<h2>Add driver to car</h2>
+<a href="/cars/drivers/add">Add driver to car</a><br>
 </body>
 </html>

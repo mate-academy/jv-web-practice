@@ -35,6 +35,6 @@ public class CreateCarController extends HttpServlet {
         CarService carService =
                 (CarService) injector.getInstance(CarService.class);
         carService.create(car);
-        resp.sendRedirect(req.getContextPath() + "/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

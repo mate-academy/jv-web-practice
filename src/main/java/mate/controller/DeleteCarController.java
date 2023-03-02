@@ -20,6 +20,6 @@ public class DeleteCarController extends HttpServlet {
         CarService carService =
                 (CarService) injector.getInstance(CarService.class);
         carService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
