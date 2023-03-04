@@ -1,5 +1,6 @@
 package mate.model;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
@@ -34,6 +35,9 @@ public class Car {
     }
 
     public List<Driver> getDrivers() {
+        if (drivers == null) {
+            return new ArrayList<>();
+        }
         return drivers;
     }
 
