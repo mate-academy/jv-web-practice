@@ -5,7 +5,7 @@
     <title>Manufacturer</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/creat">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/creat">
   Manufacturer name     <input type="text" name = "name"> <br><br>
   Country               <input type="text" name = "country"> <br><br>
 

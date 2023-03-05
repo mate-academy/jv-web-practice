@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet("/car/delete")
+@WebServlet("/cars/delete")
 public class DeleteCarController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
@@ -21,7 +21,7 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
-        req.getRequestDispatcher("/WEB-INF/views/car/delete.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/cars/delete.jsp")
                 .forward(req, resp);
     }
 
