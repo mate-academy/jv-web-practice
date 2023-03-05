@@ -5,6 +5,6 @@
 </head>
 <body>
 <h1>Record Deleted Successfully</h1>
-<a href="allManufacturers" title="MAIN">BACK</a>
+<a href="all" title="MAIN">BACK</a>
 </body>
 </html>

@@ -3,7 +3,7 @@
 <html>
 <head>
     <title>Driver</title>
-  <form method="post" action="${pageContext.request.contextPath}/Driver/creat">
+  <form method="post" action="${pageContext.request.contextPath}/driver/creat">
      Driver name    <input type="text" name = "name">  <br><br>
      license Number <input type="text" name = "licenseNumber">  <br><br>
     <button type="submit" > ADD driver </button>

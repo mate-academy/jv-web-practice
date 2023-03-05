@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
 
-@WebServlet("/Driver/delete")
+@WebServlet("/driver/delete")
 public class DeleteDriverController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
@@ -21,6 +21,7 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         driverService.delete(id);
-        req.getRequestDispatcher("/WEB-INF/views/Driver/delete.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/delete.jsp")
+                .forward(req, resp);
     }
 }
