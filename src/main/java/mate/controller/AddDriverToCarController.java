@@ -37,7 +37,7 @@ public class AddDriverToCarController extends HttpServlet {
         Driver driver = driverService.get(driverId);
         if (car != null && driver != null) {
             carService.addDriverToCar(driver,car);
-            resp.sendRedirect("/success");
+            resp.sendRedirect(req.getContextPath() + "/success");
         }
     }
 }
