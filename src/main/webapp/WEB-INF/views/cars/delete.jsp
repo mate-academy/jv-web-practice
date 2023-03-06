@@ -9,32 +9,32 @@
 
 <table>
     <tr>
-        <th>ID</th>
-        <th>Model</th>
-        <th>Manufacturer</th>
-        <th>Country</th>
-        <th>Drivers</th>
-        <th>License</th>
-        <th>Actions</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">ID</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">Model</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">Manufacturer</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">Country</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">Drivers</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">License</th>
+        <th style = "border: 2px solid #ddd; padding: 8px;">Actions</th>
     </tr>
 
     <c:forEach var="car" items="${cars}">
         <tr>
-            <td>${car.id}</td>
-            <td>${car.model}</td>
-            <td>${car.manufacturer.name}</td>
-            <td>${car.manufacturer.country}</td>
-            <td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">${car.id}</td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">${car.model}</td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">${car.manufacturer.name}</td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">${car.manufacturer.country}</td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">
                 <c:forEach var="driver" items="${car.drivers}">
                     ${driver.name}<br />
                 </c:forEach>
             </td>
-            <td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">
                 <c:forEach var="driver" items="${car.drivers}">
                     ${driver.licenseNumber}<br />
                 </c:forEach>
             </td>
-            <td>
+            <td style = "border: 1px solid #ddd; padding: 8px;">
                 <form action="${pageContext.request.contextPath}/cars/delete" method="post">
                     <input type="hidden" name="id" value="${car.id}" />
                     <button type="submit">Delete</button>
