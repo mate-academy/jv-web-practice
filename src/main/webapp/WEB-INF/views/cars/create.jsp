@@ -5,10 +5,9 @@
     <title>Car</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/creat">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     Model         <input type="text" name = "model" required>  <br><br>
-    Manufacturer name     <input type="text" name = "manufacturer" required> <br><br>
-    Country               <input type="text" name = "country" required> <br><br>
+    Manufacturer id <input type="text" name="manufacturer_id"><br>
     <br><br>
   <button type="submit" > ADD car without driver </button>
 </form>
