@@ -13,7 +13,6 @@ public class CreateManufacturerController extends HttpServlet {
     static final String REQUEST_DISPATCHER = "/WEB-INF/cars/createManufacturer.jsp";
     static final String MANUFACTURER_NAME = "name";
     static final String MANUFACTURER_COUNTRY = "country";
-
     private static final Injector injector =
             Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =

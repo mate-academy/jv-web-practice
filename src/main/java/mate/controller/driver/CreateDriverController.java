@@ -13,7 +13,6 @@ public class CreateDriverController extends HttpServlet {
     static final String REQUEST_DISPATCHER = "/WEB-INF/cars/createDriver.jsp";
     static final String DRIVER_NAME = "name";
     static final String LICENCE_NUMBER = "licenceNumber";
-
     private static final Injector injector =
             Injector.getInstance("mate");
     private final DriverService driverService =

@@ -15,7 +15,6 @@ public class AddDriverToCarController extends HttpServlet {
     static final String REQUEST_DISPATCHER = "/WEB-INF/cars/addDriverToCar.jsp";
     static final String CAR_ID = "carId";
     static final String DRIVER_ID = "carId";
-
     private static final Injector injector =
             Injector.getInstance("mate");
     private final CarService carService =
