@@ -9,7 +9,6 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 public class GetAllDriversController extends HttpServlet {
-    static final String REQUEST_DISPATCHER = "/WEB-INF/cars/getAllDrivers.jsp";
     private static final Injector injector =
             Injector.getInstance("mate");
     private final DriverService driverService =
@@ -19,6 +18,6 @@ public class GetAllDriversController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher(REQUEST_DISPATCHER);
+        req.getRequestDispatcher("/WEB-INF/cars/getAllDrivers.jsp");
     }
 }

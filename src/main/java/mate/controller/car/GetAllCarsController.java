@@ -9,7 +9,6 @@ import mate.model.Car;
 import mate.service.CarService;
 
 public class GetAllCarsController extends HttpServlet {
-    static final String REQUEST_DISPATCHER = "/WEB-INF/cars/getAllCars.jsp";
     private static final Injector injector =
             Injector.getInstance("mate");
     private final CarService carService =
@@ -19,6 +18,6 @@ public class GetAllCarsController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) {
         List<Car> allCars = carService.getAll();
         req.setAttribute("cars", allCars);
-        req.getRequestDispatcher(REQUEST_DISPATCHER);
+        req.getRequestDispatcher("/WEB-INF/cars/getAllCars.jsp");
     }
 }
