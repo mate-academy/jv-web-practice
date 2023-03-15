@@ -9,8 +9,8 @@
 		action="${pageContext.request.contextPath}/cars/drivers/add">
 		<label>Car id</label> 
 		<input type="number" min="1" name="car_id" required="required"><br> 
-		<label>Manufacturer id</label>
-		<input type="number" min="1" name="manufacturer_id" required="required"><br> 
+		<label>Driver id</label>
+		<input type="number" min="1" name="driver_id" required="required"><br> 
 		<input type="submit" value="Submit">
 	</form>
 </body>
