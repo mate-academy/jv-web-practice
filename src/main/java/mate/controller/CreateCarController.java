@@ -1,6 +1,7 @@
 package mate.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -34,7 +35,8 @@ public class CreateCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(
                 Long.valueOf(req.getParameter("manufacturer_id")));
         newCar.setManufacturer(manufacturer);
+        newCar.setDrivers(new ArrayList<>());
         carService.create(newCar);
-        resp.sendRedirect(req.getContextPath() + "/index");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
