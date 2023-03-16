@@ -35,4 +35,12 @@ public class DriverServiceImpl implements DriverService {
     public boolean delete(Long id) {
         return driverDao.delete(id);
     }
+
+    @Override
+    public Driver getInstance(String name, String licenseNumber) {
+        Driver driver = new Driver();
+        driver.setName(name);
+        driver.setLicenseNumber(licenseNumber);
+        return driver;
+    }
 }

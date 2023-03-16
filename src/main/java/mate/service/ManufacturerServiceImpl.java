@@ -35,4 +35,12 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     public boolean delete(Long id) {
         return manufacturerDao.delete(id);
     }
+
+    @Override
+    public Manufacturer getInstance(String name, String country) {
+        Manufacturer manufacturer = new Manufacturer();
+        manufacturer.setName(name);
+        manufacturer.setCountry(country);
+        return manufacturer;
+    }
 }

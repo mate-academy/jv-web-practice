@@ -15,11 +15,11 @@ You can redirect to `/index` page or any other page after your business login in
 
 ### Example how to implement adding driver to car:
 ```java
-public class AddDriverToCarController extends HttpServlet {    
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate.academy"); // be careful with copy-paste
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

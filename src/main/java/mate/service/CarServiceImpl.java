@@ -1,11 +1,13 @@
 package mate.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import mate.dao.CarDao;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
 import mate.model.Driver;
+import mate.model.Manufacturer;
 
 @Service
 public class CarServiceImpl implements CarService {
@@ -52,5 +54,14 @@ public class CarServiceImpl implements CarService {
     @Override
     public boolean delete(Long id) {
         return carDao.delete(id);
+    }
+
+    @Override
+    public Car getInstance(String model, Manufacturer manufacturer) {
+        Car car = new Car();
+        car.setModel(model);
+        car.setManufacturer(manufacturer);
+        car.setDrivers(new ArrayList<>());
+        return car;
     }
 }
