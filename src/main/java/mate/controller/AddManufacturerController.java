@@ -18,17 +18,12 @@ public class AddManufacturerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        System.out.println("AddManufacturerController doPost invoked...");
-
         String manufacturerName = request.getParameter("manufacturer_name");
         String manufacturerCountry = request.getParameter("manufacturer_country");
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
         manufacturerService.create(manufacturer);
-
-        System.out.println("AddManufacturerController created new driver");
 
         response.sendRedirect(request.getContextPath() + "/manufacturers/all");
     }

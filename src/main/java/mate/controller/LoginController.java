@@ -16,9 +16,6 @@ public class LoginController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        System.out.println("LoginController doPost invoked...");
-
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (!loginService.loginIsValid(username, password)) {
@@ -26,9 +23,6 @@ public class LoginController extends HttpServlet {
             System.out.println("LoginController login invalid");
             return;
         }
-
-        System.out.println("LoginController log in");
-
         response.sendRedirect(request.getContextPath() + "/main");
     }
 
