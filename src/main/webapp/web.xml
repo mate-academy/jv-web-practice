@@ -16,22 +16,6 @@
         <url-pattern>/</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>login</servlet-name>
-        <servlet-class>mate.controller.LoginController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>login</servlet-name>
-        <url-pattern>/users/login</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>main</servlet-name>
-        <servlet-class>mate.controller.MainController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>main</servlet-name>
-        <url-pattern>/main</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>cars_all</servlet-name>
         <servlet-class>mate.controller.GetAllCarsController</servlet-class>
     </servlet>
@@ -85,7 +69,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>driver_to_car_add</servlet-name>
-        <url-pattern>/drivers/addtocar</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>manufacturer_delete</servlet-name>
