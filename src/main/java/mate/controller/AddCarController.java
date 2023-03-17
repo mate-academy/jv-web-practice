@@ -18,16 +18,11 @@ public class AddCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
-        System.out.println("AdCarController doPost invoked...");
-
         String carModel = request.getParameter("car_model");
         Long manufacturerId = Long.valueOf(request.getParameter("car_manufacturer_id"));
 
         carService.create(carService.getInstance(carModel,
                 manufacturerService.get(manufacturerId)));
-
-        System.out.println("AddCarController created new car");
 
         response.sendRedirect(request.getContextPath() + "/cars/all");
     }

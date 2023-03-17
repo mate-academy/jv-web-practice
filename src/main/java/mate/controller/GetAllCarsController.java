@@ -17,7 +17,6 @@ public class GetAllCarsController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        System.out.println("GetAllCarsController doGet invoked...");
         List<Car> cars = carService.getAll();
         request.setAttribute("cars", cars);
         request.getRequestDispatcher("/WEB-INF/views/cars/all.jsp").forward(request, response);
