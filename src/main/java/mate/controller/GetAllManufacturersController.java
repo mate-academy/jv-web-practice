@@ -23,5 +23,4 @@ public class GetAllManufacturersController extends HttpServlet {
         request.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp")
                 .forward(request, response);
     }
-
 }

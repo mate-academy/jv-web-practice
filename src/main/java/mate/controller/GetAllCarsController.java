@@ -21,5 +21,4 @@ public class GetAllCarsController extends HttpServlet {
         request.setAttribute("cars", cars);
         request.getRequestDispatcher("/WEB-INF/views/cars/all.jsp").forward(request, response);
     }
-
 }

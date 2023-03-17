@@ -22,5 +22,4 @@ public class GetAllDriversController extends HttpServlet {
         request.setAttribute("drivers", drivers);
         request.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(request, response);
     }
-
 }
