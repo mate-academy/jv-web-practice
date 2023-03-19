@@ -1,17 +1,18 @@
 package mate.controller;
 
-import mate.dao.ManufacturerDao;
-import mate.lib.Injector;
-import mate.service.ManufacturerService;
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
+import mate.dao.ManufacturerDao;
+import mate.lib.Injector;
+import mate.service.ManufacturerService;
 
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final ManufacturerDao dao = (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
+    private final ManufacturerDao dao =
+            (ManufacturerDao) injector.getInstance(ManufacturerDao.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 

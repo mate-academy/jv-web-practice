@@ -1,5 +1,10 @@
 package mate.controller;
 
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.dao.CarDao;
 import mate.dao.DriverDao;
 import mate.lib.Injector;
@@ -7,18 +12,14 @@ import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
-import javax.servlet.ServletException;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarDao carDao = (CarDao) injector.getInstance(CarDao.class);
     private final DriverDao driverDao = (DriverDao) injector.getInstance(DriverDao.class);
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
