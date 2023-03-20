@@ -4,7 +4,7 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>Fruit Shop, actions</h1>
 <table border="1" style="font-size: 25px">
     <tr>
         <td>Drivers</td>

@@ -41,6 +41,8 @@
       <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}"> Click to delete this car </a></td>
     </tr>
   </c:forEach>
-</table>
+</table><br>
+<h2><a href="/cars/create">Create car</a></h2><br>
+<h2><a href="/cars/add-driver">Add driver to car</a></h2>
 </body>
 </html>

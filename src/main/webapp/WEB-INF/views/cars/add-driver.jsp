@@ -9,7 +9,7 @@
 <h1>Create new car</h1>
 <form method="post" style="font-size: 25px" action="${pageContext.request.contextPath}/cars/add-driver">
   driver
-  <select name="driver_id" style="font-size: 25px">
+  <select name="driver_id" >
     <c:forEach items="${drivers}" var="driver">
       <option value="${driver.id}">
         <c:out value="${driver.name}" />
@@ -17,7 +17,7 @@
     </c:forEach>
   </select><br>
   add to car
-  <select name="car_id" style="font-size: 25px">
+  <select name="car_id">
     <c:forEach items="${cars}" var="car">
       <option value="${car.id}">
         <c:out value="${car.model}" />

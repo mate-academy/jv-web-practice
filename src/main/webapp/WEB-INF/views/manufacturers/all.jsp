@@ -23,6 +23,7 @@
             <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}"> Click to delete this manufacturer </a></td>
         </tr>
     </c:forEach>
-</table>
+</table><br>
+<h2><a href="/manufacturers/create">Create manufacturer</a></h2>
 </body>
 </html>

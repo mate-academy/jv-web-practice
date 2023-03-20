@@ -23,6 +23,7 @@
         <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}"> Click to delete this driver </a></td>
     </tr>
     </c:forEach>
-</table>
+</table> <br>
+<h2><a href="/drivers/create">Create driver</a></h2>
 </body>
 </html>
