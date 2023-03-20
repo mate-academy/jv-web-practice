@@ -11,6 +11,10 @@ public class DriverServiceImpl implements DriverService {
     @Inject
     private DriverDao driverDao;
 
+    public DriverServiceImpl(DriverDao driverDao) {
+        this.driverDao = driverDao;
+    }
+
     @Override
     public Driver create(Driver driver) {
         return driverDao.create(driver);
