@@ -11,14 +11,13 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/delete")
 public class DeleteManufacturerController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
+    private static final ManufacturerService manufacturerService
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService
-                = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         Long id = Long.parseLong(req.getParameter("manufacturer_id"));
         manufacturerService.delete(id);
         resp.sendRedirect(req.getContextPath() + "/cars");

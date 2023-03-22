@@ -6,8 +6,6 @@
 </head>
 <body>
     <%@include file="components/header.jsp"%>
-
-
     <div class="content">
         <h3 style="display: flex;">
             <span>Cars</span>

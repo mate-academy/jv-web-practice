@@ -12,19 +12,16 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
+    private static final ManufacturerService manufacturerService
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        ManufacturerService manufacturerService
-                = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         String name = req.getParameter("name");
         String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setCountry(country);
-        manufacturer.setName(name);
+        Manufacturer manufacturer = new Manufacturer(null, country, name);
         manufacturerService.create(manufacturer);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }

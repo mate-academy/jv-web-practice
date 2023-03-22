@@ -18,6 +18,10 @@ import mate.service.DriverService;
 public class DisplayAllDriversByCar extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("mate");
+    private static final CarService carService
+            = (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService
+            = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -26,11 +30,9 @@ public class DisplayAllDriversByCar extends HttpServlet {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        CarService carService = (CarService) injector.getInstance(CarService.class);
         Long carId = Long.parseLong(req.getParameter("carId"));
         Car car = carService.get(carId);
         req.setAttribute("car", car);
-        DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
         List<Driver> drivers = driverService.getAll()
                 .stream().filter(x -> !car.getDrivers().contains(x))
                 .collect(Collectors.toList());

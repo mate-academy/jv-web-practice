@@ -15,15 +15,15 @@ import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/cars")
 public class DisplayAllCarsController extends HttpServlet {
-    private static final Injector injector
-            = Injector.getInstance("mate");
+    private static final Injector injector = Injector.getInstance("mate");
+    private static final CarService carService
+            = (CarService) injector.getInstance(CarService.class);
+    private static final ManufacturerService manufacturerService
+            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CarService carService = (CarService) injector.getInstance(CarService.class);
-        ManufacturerService manufacturerService
-                = (ManufacturerService) injector.getInstance(ManufacturerService.class);
         List<Car> cars = carService.getAll();
         req.setAttribute("cars", cars);
         List<Manufacturer> manufacturers = manufacturerService.getAll();
