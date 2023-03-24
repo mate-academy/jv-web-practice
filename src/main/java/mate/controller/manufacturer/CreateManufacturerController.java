@@ -1,4 +1,4 @@
-package mate.controller.manufacturers;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,10 +11,9 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 import mate.util.Injector;
 
-@WebServlet(urlPatterns = {"/manufacturers/update"})
+@WebServlet(urlPatterns = {"/manufacturers/create"})
 @Service
-public class UpdateManufacturerController extends HttpServlet {
-    private static final String MFR_ID = "manufacturer_id";
+public class CreateManufacturerController extends HttpServlet {
     private static final String MFR_NAME = "manufacturer_name";
     private static final String MFR_COUNTRY = "manufacturer_country";
     private static final Injector injector =
@@ -25,41 +24,26 @@ public class UpdateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String manufacturerId = req.getParameter(MFR_ID);
-
-        if (manufacturerId == null || manufacturerId.length() < 1) {
-            throw new RuntimeException("Can't get empty manufacturer Id: "
-                    + manufacturerId);
-        }
-
-        Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
-
-        req.setAttribute("manufacturer", manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/updateManufacturer.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/createManufacturer.jsp")
                 .forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
-        String manufacturerId = req.getParameter(MFR_ID);
+            throws ServletException, IOException {
         String manufacturerName = req.getParameter(MFR_NAME);
+        String manufacturerCountry = req.getParameter(MFR_COUNTRY);
 
         if (manufacturerName == null || manufacturerName.length() < 1) {
-            throw new RuntimeException("Can't update empty manufacturer name: "
+            throw new RuntimeException("Manufacturer name can't be empty: "
                     + manufacturerName);
         }
-        if (manufacturerId == null) {
-            throw new RuntimeException("Can't get empty manufacturer Id");
-        }
 
-        String manufacturerCountry = req.getParameter(MFR_COUNTRY);
         Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setId(Long.valueOf(manufacturerId));
         manufacturer.setName(manufacturerName);
         manufacturer.setCountry(manufacturerCountry);
 
-        manufacturerService.update(manufacturer);
+        manufacturerService.create(manufacturer);
         resp.sendRedirect("/manufacturers");
     }
 }
