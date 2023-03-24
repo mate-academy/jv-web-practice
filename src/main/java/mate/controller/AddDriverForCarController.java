@@ -15,9 +15,9 @@ import mate.service.DriverService;
 @WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverForCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService
+    private final CarService carService
             = (CarService) injector.getInstance(CarService.class);
-    private static final DriverService driverService
+    private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
