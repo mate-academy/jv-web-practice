@@ -38,7 +38,7 @@ public class UpdateCarController extends HttpServlet {
         req.setAttribute("car", carService.get(Long.valueOf(carId)));
         req.setAttribute("manufacturers", manufacturerService.getAll());
 
-        req.getRequestDispatcher("/WEB-INF/views/cars/updateCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/updateCar.jsp").forward(req, resp);
     }
 
     @Override
@@ -62,6 +62,6 @@ public class UpdateCarController extends HttpServlet {
         car.setManufacturer(manufacturerService.get(Long.valueOf(carManufacturerId)));
 
         carService.update(car);
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

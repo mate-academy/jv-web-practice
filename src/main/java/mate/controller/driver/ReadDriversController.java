@@ -20,6 +20,6 @@ public class ReadDriversController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/drivers/readDrivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/readDrivers.jsp").forward(req, resp);
     }
 }

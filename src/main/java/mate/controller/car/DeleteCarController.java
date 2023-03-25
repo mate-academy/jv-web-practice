@@ -28,6 +28,6 @@ public class DeleteCarController extends HttpServlet {
         }
 
         carService.delete(Long.valueOf(carId));
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

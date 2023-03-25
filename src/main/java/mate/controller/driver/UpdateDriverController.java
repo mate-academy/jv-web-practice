@@ -35,7 +35,7 @@ public class UpdateDriverController extends HttpServlet {
         Driver driver = driverService.get(Long.valueOf(driverId));
 
         req.setAttribute("driver", driver);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/updateDriver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/updateDriver.jsp").forward(req, resp);
     }
 
     @Override
@@ -60,6 +60,6 @@ public class UpdateDriverController extends HttpServlet {
         driver.setLicenseNumber(driverLicense);
 
         driverService.update(driver);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

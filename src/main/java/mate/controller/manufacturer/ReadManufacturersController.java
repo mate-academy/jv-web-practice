@@ -20,7 +20,7 @@ public class ReadManufacturersController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/readManufacturers.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/readManufacturers.jsp")
                 .forward(req, resp);
     }
 }

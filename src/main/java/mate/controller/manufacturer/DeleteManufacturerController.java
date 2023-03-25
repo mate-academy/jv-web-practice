@@ -28,6 +28,6 @@ public class DeleteManufacturerController extends HttpServlet {
         }
 
         manufacturerService.delete(Long.valueOf(manufacturerId));
-        resp.sendRedirect("/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

@@ -35,7 +35,7 @@ public class UpdateManufacturerController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
 
         req.setAttribute("manufacturer", manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/updateManufacturer.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/updateManufacturer.jsp")
                 .forward(req, resp);
     }
 
@@ -60,6 +60,6 @@ public class UpdateManufacturerController extends HttpServlet {
         manufacturer.setCountry(manufacturerCountry);
 
         manufacturerService.update(manufacturer);
-        resp.sendRedirect("/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

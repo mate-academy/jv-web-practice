@@ -28,6 +28,6 @@ public class DeleteDriverController extends HttpServlet {
         }
 
         driverService.delete(Long.valueOf(driverId));
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }
