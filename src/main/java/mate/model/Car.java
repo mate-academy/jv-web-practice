@@ -51,6 +51,14 @@ public class Car {
                 + '}';
     }
 
+    public String driversToString() {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Driver driver: drivers) {
+            stringBuilder.append(driver.toString()).append(" ");
+        }
+        return stringBuilder.toString();
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
