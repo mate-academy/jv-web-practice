@@ -7,6 +7,8 @@
         table, th, td {
             border: 1px solid black;
             border-collapse: collapse;
+            vertical-align: middle;
+            text-align: center;
         }
     </style>
     <title>Display all cars</title>
@@ -19,7 +21,7 @@
         <th>Model</th>
         <th>Manufacturer</th>
         <th>Drivers</th>
-        <th>Delete link</th>
+        <th>Delete button</th>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
@@ -27,7 +29,11 @@
             <td><c:out value="${car.getModel()}" /></td>
             <td><c:out value="${car.getManufacturer().getName()} "/></td>
             <td><d:out value="${car.getDrivers().toString()} "/></td>
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a> </td>
+            <td>
+                <form method="post" action="${pageContext.request.contextPath}/cars/delete">
+                    <button name="carsId" type="submit" value="${car.id}"> Delete </button>
+                </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

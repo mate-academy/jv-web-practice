@@ -6,6 +6,8 @@
     table, th, td {
       border: 1px solid black;
       border-collapse: collapse;
+      vertical-align: middle;
+      text-align: center;
     }
   </style>
   <title>Display all manufacturers</title>
@@ -17,15 +19,18 @@
     <th>Id</th>
     <th>Name</th>
     <th>Country</th>
-    <th>Delete link</th>
+    <th>Delete button</th>
   </tr>
   <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>
       <td><c:out value="${manufacturer.id}" /></td>
       <td><c:out value="${manufacturer.name}" /></td>
       <td><c:out value="${manufacturer.country} "/></td>
-      <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete</a> </td>
-
+      <td>
+        <form method="post" action="${pageContext.request.contextPath}/manufacturers/delete">
+          <button name="manufacturerId" type="submit" value="${manufacturer.id}"> Delete </button>
+        </form>
+      </td>
     </tr>
   </c:forEach>
 </table>
