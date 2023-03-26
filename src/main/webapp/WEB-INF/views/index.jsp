@@ -71,25 +71,25 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="/index" class="nav-link active" aria-current="page">
+                <a href="${pageContext.request.contextPath}/index" class="nav-link active" aria-current="page">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
                     Home
                 </a>
             </li>
             <li>
-                <a href="/drivers/all" class="nav-link link-dark">
+                <a href="${pageContext.request.contextPath}/drivers/all" class="nav-link link-dark">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
                     Drivers
                 </a>
             </li>
             <li>
-                <a href="/manufacturers/all" class="nav-link link-dark">
+                <a href="${pageContext.request.contextPath}/manufacturers/all" class="nav-link link-dark">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
                     Manufacturers
                 </a>
             </li>
             <li>
-                <a href="/cars/all" class="nav-link link-dark">
+                <a href="${pageContext.request.contextPath}/cars/all" class="nav-link link-dark">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
                     Cars
                 </a>
@@ -122,19 +122,19 @@
                         <td>Cars</td>
                     </tr>
                     <tr>
-                        <td><a href="/drivers/all">Get all drivers</a></td>
-                        <td><a href="/manufacturers/all">Get all manufacturers</a></td>
-                        <td><a href="/cars/all">Get all cars</a></td>
+                        <td><a href="${pageContext.request.contextPath}/drivers/all">Get all drivers</a></td>
+                        <td><a href="${pageContext.request.contextPath}/manufacturers/all">Get all manufacturers</a></td>
+                        <td><a href="${pageContext.request.contextPath}/cars/all">Get all cars</a></td>
                     </tr>
                     <tr>
-                        <td><a href="/drivers/create">Create driver</a></td>
-                        <td><a href="/manufacturers/create">Create manufacturer</a></td>
-                        <td><a href="/cars/create">Create car</a></td>
+                        <td><a href="${pageContext.request.contextPath}/drivers/create">Create driver</a></td>
+                        <td><a href="${pageContext.request.contextPath}/manufacturers/create">Create manufacturer</a></td>
+                        <td><a href="${pageContext.request.contextPath}/cars/create">Create car</a></td>
                     </tr>
                     <tr>
                         <td>-</td>
                         <td>-</td>
-                        <td><a href="/cars/add-driver">Add driver to car</a></td>
+                        <td><a href="${pageContext.request.contextPath}/cars/add-driver">Add driver to car</a></td>
                     </tr>
                 </table>
             </td>
