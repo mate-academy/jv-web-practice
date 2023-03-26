@@ -20,7 +20,7 @@
             <td><c:out value="${car.model}" /></td>
             <td><c:out value="${car.manufacturer.toString()}" /></td>
             <td><c:out value="${car.driversToString()}" /></td>
-            <td><a href="${pageContext.request.contextPath}/car/delete?id=${car.id}">delete this car</a></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete this car</a></td>
         </tr>
     </c:forEach>
 </table>
