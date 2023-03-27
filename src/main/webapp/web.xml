@@ -52,11 +52,11 @@
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>GetAllCarsWithDeleteButton</servlet-name>
-        <servlet-class>mate.controller.GetAllCarsWithDeleteButtonController</servlet-class>
+        <servlet-name>DeleteCar</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetAllCarsWithDeleteButton</servlet-name>
+        <servlet-name>DeleteCar</servlet-name>
         <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -68,11 +68,11 @@
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>GetAllDriversWithDeleteButton</servlet-name>
-        <servlet-class>mate.controller.GetAllDriversWithDeleteButtonController</servlet-class>
+        <servlet-name>DeleteDriver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetAllDriversWithDeleteButton</servlet-name>
+        <servlet-name>DeleteDriver</servlet-name>
         <url-pattern>/drivers/delete</url-pattern>
     </servlet-mapping>
     <servlet>
@@ -84,11 +84,11 @@
         <url-pattern>/manufacturers</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>GetAllManufacturersWithDeleteButton</servlet-name>
-        <servlet-class>mate.controller.GetAllManufacturersWithDeleteButtonController</servlet-class>
+        <servlet-name>DeleteManufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>GetAllManufacturersWithDeleteButton</servlet-name>
+        <servlet-name>DeleteManufacturer</servlet-name>
         <url-pattern>/manufacturers/delete</url-pattern>
     </servlet-mapping>
 </web-app>
