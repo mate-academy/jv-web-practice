@@ -21,7 +21,11 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer(null, country, name);
+        if (name == null || country == null) {
+            resp.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+        Manufacturer manufacturer = new Manufacturer(country, name);
         manufacturerService.create(manufacturer);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }

@@ -15,7 +15,7 @@
         </c:if>
         <c:if test="${drivers.size() != 0}">
             <form style="display: flex; gap: 20px" method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-                <select name="driverId">
+                <select name="driver_id">
                     <c:forEach items="${drivers}" var="driver">
                         <option value="${driver.id}">
                             <c:out value="${driver.name}" />
@@ -24,7 +24,7 @@
                         </option>
                     </c:forEach>
                 </select>
-                <input type="hidden" value="${car.id}" name="carId" />
+                <input type="hidden" value="${car.id}" name="car_id" />
                 <button type="submit">add driver</button>
             </form>
         </c:if>

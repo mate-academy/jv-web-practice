@@ -21,13 +21,14 @@ public class DeleteDriverFromCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        if (req.getParameter("carId") == null
-                || req.getParameter("driverId") == null) {
+        String reqCarId = req.getParameter("car_id");
+        String reqDriverId = req.getParameter("driver_id");
+        if (reqCarId == null || reqDriverId == null) {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        Long carId = Long.parseLong(req.getParameter("carId"));
-        Long driverId = Long.parseLong(req.getParameter("driverId"));
+        Long carId = Long.parseLong(reqCarId);
+        Long driverId = Long.parseLong(reqDriverId);
         carService.removeDriverFromCar(driverService.get(driverId), carService.get(carId));
         resp.sendRedirect(req.getContextPath() + "/cars/drivers?carId=" + carId);
     }

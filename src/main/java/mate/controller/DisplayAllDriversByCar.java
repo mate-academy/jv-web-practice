@@ -26,11 +26,12 @@ public class DisplayAllDriversByCar extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        if (req.getParameter("carId") == null) {
+        String reqCarId = req.getParameter("car_id");
+        if (reqCarId == null) {
             resp.sendError(HttpServletResponse.SC_NOT_FOUND);
             return;
         }
-        Long carId = Long.parseLong(req.getParameter("carId"));
+        Long carId = Long.parseLong(reqCarId);
         Car car = carService.get(carId);
         req.setAttribute("car", car);
         List<Driver> drivers = driverService.getAll()

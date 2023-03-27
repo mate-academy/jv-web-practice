@@ -6,13 +6,11 @@
 </head>
 <body>
     <%@include file="components/header.jsp"%>
-
-
     <div class="content">
         <h3><a href="${pageContext.request.contextPath}/cars"><- Cars</a> All Drivers</h3>
         <form style="display: flex; gap: 20px" method="post" action="${pageContext.request.contextPath}/drivers/add">
             <input type="text" placeholder="driver name" name="name" required/>
-            <input type="text" placeholder="driver license number" name="licenseNumber" required/>
+            <input type="text" placeholder="driver license number" name="license_number" required/>
             <button type="submit">add driver</button>
         </form>
         <ul class="driversList">
