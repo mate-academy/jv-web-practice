@@ -14,12 +14,12 @@
                 <td>Set driver</td>
             </tr>
             <tr>
-                <td><select name="carId" required="required"><c:forEach items="${cars}" var="car">
+                <td><select name="car_id" required="required"><c:forEach items="${cars}" var="car">
                     <option value="${car.id}"><c:out value="${car.manufacturer.name} ${car.model}"></c:out></option>
                 </c:forEach>
                 </select>
                 </td>
-                <td><select name="driver[]" multiple="multiple" size="5" required="required">
+                <td><select name="driver_id" multiple="multiple" size="5" required="required">
                     <c:forEach items="${drivers}" var="driver">
                         <option value="${driver.id}">
                             <c:out value="${driver.name} ${driver.licenseNumber}"></c:out>

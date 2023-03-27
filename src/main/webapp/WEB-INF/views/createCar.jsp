@@ -19,7 +19,7 @@
             <tr>
                 <td><c:out value="${manufacturer.name}"/> </td>
                 <td><c:out value="${manufacturer.country}"/> </td>
-                <td><input type="radio" name="manufacturerId" value="${manufacturer.id}" required="required"></td>
+                <td><input type="radio" name="manufacturer_id" value="${manufacturer.id}" required="required"></td>
             </tr>
         </c:forEach>
         </table>
@@ -29,7 +29,7 @@
         <table>
             <tr>
                 <td>Car model</td>
-                <td><input type="text" name="car model" required="required"></td>
+                <td><input type="text" name="car_model" required="required"></td>
             </tr>
             <tr>
                 <td></td>

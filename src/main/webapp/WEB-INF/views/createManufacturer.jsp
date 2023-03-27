@@ -10,7 +10,7 @@
         <table>
             <tr>
                 <td>Name</td>
-                <td><input type="text" name="manufacturer name" required="required"></td>
+                <td><input type="text" name="manufacturer_name" required="required"></td>
             </tr>
             <tr>
                 <td>Country</td>
