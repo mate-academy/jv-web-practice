@@ -12,8 +12,9 @@ public class DeleteDriverController extends HttpServlet {
     private static final Injector INJECTOR = Injector.getInstance("mate");
     private DriverService driverService =
             (DriverService) INJECTOR.getInstance(DriverService.class);
+
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         driverService.delete(id);
