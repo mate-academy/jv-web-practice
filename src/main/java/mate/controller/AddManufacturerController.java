@@ -5,14 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.dao.ManufacturerDaoImpl;
+import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
 
 public class AddManufacturerController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService =
-            new ManufacturerServiceImpl(new ManufacturerDaoImpl());
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -30,7 +30,6 @@ public class AddManufacturerController extends HttpServlet {
         manufacturer.setName(name);
         manufacturer.setCountry(country);
         manufacturerService.create(manufacturer);
-        req.getRequestDispatcher("/WEB-INF/views/serviceViews/manufacturerRegistration.jsp")
-                .forward(req, resp);
+        resp.sendRedirect("/index");
     }
 }

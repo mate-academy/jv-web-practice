@@ -12,10 +12,6 @@ public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
 
-    public CarServiceImpl(CarDao carDao) {
-        this.carDao = carDao;
-    }
-
     @Override
     public void addDriverToCar(Driver driver, Car car) {
         car.getDrivers().add(driver);

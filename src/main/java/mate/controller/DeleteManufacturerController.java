@@ -5,20 +5,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.dao.ManufacturerDaoImpl;
+import mate.lib.Injector;
 import mate.service.ManufacturerService;
-import mate.service.ManufacturerServiceImpl;
 
 public class DeleteManufacturerController extends HttpServlet {
+    private static final Injector injector = Injector.getInstance("mate");
     private ManufacturerService manufacturerService =
-            new ManufacturerServiceImpl(new ManufacturerDaoImpl());
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String id = req.getParameter("id");
         manufacturerService.delete(Long.parseLong(id));
-        req.getRequestDispatcher("/WEB-INF/views/serviceViews/manufacturerRegistration.jsp")
+        req.getRequestDispatcher("/manufacturer.jsp")
                 .forward(req, resp);
     }
 }

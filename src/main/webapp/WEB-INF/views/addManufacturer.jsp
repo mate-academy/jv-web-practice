@@ -4,7 +4,7 @@
 	<title>ADD MANUFACTURER</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/registration/manufacturers/add">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
 	NAME<input type="text" name="name"><br>
 	COUNTRY<input type="text" name="country"><br>
 	PASSWORD<input type="password" name="password"><br>

@@ -6,18 +6,18 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.dao.CarDaoImpl;
-import mate.dao.DriverDaoImpl;
+import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
-import mate.service.CarServiceImpl;
 import mate.service.DriverService;
-import mate.service.DriverServiceImpl;
 
 public class AddDriverToCarController extends HttpServlet {
-    private CarService carService = new CarServiceImpl(new CarDaoImpl());
-    private DriverService driverService = new DriverServiceImpl(new DriverDaoImpl());
+    private static final Injector injector = Injector.getInstance("mate");
+    private CarService carService = (CarService)
+            injector.getInstance(CarService.class);
+    private DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -38,7 +38,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.parseLong(idCar));
         Driver driver = driverService.get(Long.parseLong(idDriver));
         carService.addDriverToCar(driver, car);
-        req.getRequestDispatcher("/WEB-INF/views/serviceViews/carRegistration.jsp")
-                .forward(req, resp);
+        resp.sendRedirect("/index");
     }
 }

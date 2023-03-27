@@ -5,13 +5,14 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.dao.DriverDaoImpl;
+import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
-import mate.service.DriverServiceImpl;
 
 public class AddDriverController extends HttpServlet {
-    private DriverService driverService = new DriverServiceImpl(new DriverDaoImpl());
+    private static final Injector injector = Injector.getInstance("mate");
+    private DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -29,7 +30,6 @@ public class AddDriverController extends HttpServlet {
         driver.setName(driverName);
         driver.setLicenseNumber(licenseNumber);
         driverService.create(driver);
-        req.getRequestDispatcher("/WEB-INF/views/serviceViews/driverRegistration.jsp")
-                .forward(req, resp);
+        resp.sendRedirect("/index");
     }
 }

@@ -5,7 +5,7 @@
 	<title>DRIVER TO CAR</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/registration/cars/plus">
+<form method="post" action="${pageContext.request.contextPath}/cars/plus">
 	<h1 style="text-align: center; background-color:#125004">PLEASE ADD DRIVER TO CAR</h1>
 	<table table border="1" width="50%" cellpadding="5">
 		<tr>
