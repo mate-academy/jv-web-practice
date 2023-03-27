@@ -22,5 +22,9 @@
         </tr>
     </c:forEach>
 </table>
+<tr>
+    <td>Return to start</td>
+    <td><a href="${pageContext.request.contextPath}/index">link</a></td>
+</tr>
 </body>
 </html>

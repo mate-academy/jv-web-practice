@@ -28,22 +28,16 @@ public class AddDriverToCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long manufacturerId = Long.parseLong(req.getParameter("manufacturer_id"));
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setId(manufacturerId);
+        Manufacturer manufacturer = new Manufacturer(manufacturerId);
+
         Long driverId = Long.parseLong(req.getParameter("driver_id"));
         String driverName = req.getParameter("driver_name");
         String licenseNumber = req.getParameter("license_number");
-        Driver driver = new Driver();
-        driver.setId(driverId);
-        driver.setName(driverName);
-        driver.setLicenseNumber(licenseNumber);
+        Driver driver = new Driver(driverId, driverName, licenseNumber);
+
         Long carId = Long.parseLong(req.getParameter("car_id"));
         String carModel = req.getParameter("model");
-        Car car = new Car();
-        car.setId(carId);
-        car.setModel(carModel);
-        car.setManufacturer(manufacturer);
-        car.setDrivers(new ArrayList<>());
+        Car car = new Car(carId, carModel, manufacturer, new ArrayList<>());
         carService.addDriverToCar(driver, car);
         resp.sendRedirect(req.getContextPath() + "/cars/all");
     }

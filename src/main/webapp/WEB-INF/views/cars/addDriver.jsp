@@ -14,5 +14,9 @@
     Manufacturer ID <input type="text" name="manufacturer_id"><br>
     <button type="submit">Enter</button>
 </form>
+<tr>
+    <td>Return to start</td>
+    <td><a href="${pageContext.request.contextPath}/index">link</a></td>
+</tr>
 </body>
 </html>

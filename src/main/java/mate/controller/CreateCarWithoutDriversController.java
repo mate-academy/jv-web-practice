@@ -26,14 +26,11 @@ public class CreateCarWithoutDriversController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String carModel = req.getParameter("model");
         Long manufacturerId = Long.parseLong(req.getParameter("id"));
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setId(manufacturerId);
-        Car car = new Car();
-        car.setModel(carModel);
-        car.setManufacturer(manufacturer);
-        car.setDrivers(new ArrayList<>());
+        Manufacturer manufacturer = new Manufacturer(manufacturerId);
+
+        String carModel = req.getParameter("model");
+        Car car = new Car(carModel, manufacturer, new ArrayList<>());
         carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars/all");
     }

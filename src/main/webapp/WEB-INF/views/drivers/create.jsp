@@ -10,5 +10,9 @@
     License Number <input type="text" name="license_number"><br>
     <button type="submit">Enter</button>
 </form>
+<tr>
+    <td>Return to start</td>
+    <td><a href="${pageContext.request.contextPath}/index">link</a></td>
+</tr>
 </body>
 </html>
