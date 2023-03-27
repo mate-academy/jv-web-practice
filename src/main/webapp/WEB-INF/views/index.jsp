@@ -53,6 +53,7 @@
                 </form>
             </c:if>
         </div>
+        <p><a href="${pageContext.request.contextPath}/manufacturers">See all manufacturers</a></p>
         <ul class="carsList">
             <c:if test="${cars.size() == 0}">
                 <div>No available cars</div>

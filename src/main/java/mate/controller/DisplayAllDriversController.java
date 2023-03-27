@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers")
-public class DisplayAllDrivers extends HttpServlet {
+public class DisplayAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
