@@ -24,7 +24,7 @@
 </table>
 <tr>
     <td>Return to start</td>
-    <td><a href="${pageContext.request.contextPath}/index">link</a></td>
+    <td><a href="${pageContext.request.contextPath}/start">link</a></td>
 </tr>
 </body>
 </html>
