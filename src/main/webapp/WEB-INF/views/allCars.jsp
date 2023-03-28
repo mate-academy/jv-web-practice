@@ -35,7 +35,7 @@
                     </table>
                 </c:forEach> </td>
                 <td><form method="post" action="${pageContext.request.contextPath}/cars">
-                <button type="submit" name="deleteCar" value="${car.id}">delete</button>
+                <button type="submit" name="car_id" value="${car.id}">delete</button>
                 </form>
                 </td>
             </tr>

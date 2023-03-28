@@ -21,7 +21,7 @@
                 <td><c:out value="${manufacturer.name}"/></td>
                 <td><c:out value="${manufacturer.country}"/></td>
                 <form method="post" action="${pageContext.request.contextPath}/manufacturers">
-                <td><button type="submit" name="deleteManufacturer" value="${manufacturer.id}">delete</button> </td>
+                <td><button type="submit" name="manufacturer_id" value="${manufacturer.id}">delete</button> </td>
                 </form>
             </tr>
         </c:forEach>

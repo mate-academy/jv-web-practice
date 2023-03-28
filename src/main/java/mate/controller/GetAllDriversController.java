@@ -23,7 +23,7 @@ public class GetAllDriversController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long driverId = Long.valueOf(req.getParameter("deleteDriver"));
+        Long driverId = Long.valueOf(req.getParameter("driver_id"));
         driverService.delete(driverId);
         resp.sendRedirect(req.getContextPath() + "/drivers");
     }
