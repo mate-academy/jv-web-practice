@@ -10,10 +10,7 @@
   <meta name="generator" content="Hugo 0.84.0">
   <title>Sidebars · Bootstrap v5.0</title>
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-  <!-- Bootstrap core CSS -->
   <link href="${pageContext.request.contextPath}/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
   <style>
     .bd-placeholder-img {
       font-size: 1.125rem;
@@ -22,19 +19,15 @@
       -moz-user-select: none;
       user-select: none;
     }
-
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
     }
   </style>
-
-  <!-- Custom styles for this template -->
   <link href="${pageContext.request.contextPath}/sidebars.css" rel="stylesheet">
 </head>
 <body>
-
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>

@@ -19,18 +19,15 @@
       -moz-user-select: none;
       user-select: none;
     }
-
     @media (min-width: 768px) {
       .bd-placeholder-img-lg {
         font-size: 3.5rem;
       }
     }
   </style>
-
   <link href="${pageContext.request.contextPath}/sidebars.css" rel="stylesheet">
 </head>
 <body>
-
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   <symbol id="bootstrap" viewBox="0 0 118 94">
     <title>Bootstrap</title>

@@ -9,13 +9,8 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0">
     <title>Sidebars · Bootstrap v5.0</title>
-
     <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sidebars/">
-
-    <!-- Bootstrap core CSS -->
     <link href="${pageContext.request.contextPath}/assets/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
     <style>
         .bd-placeholder-img {
             font-size: 1.125rem;
@@ -24,20 +19,15 @@
             -moz-user-select: none;
             user-select: none;
         }
-
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;
             }
         }
     </style>
-
-
-    <!-- Custom styles for this template -->
     <link href="${pageContext.request.contextPath}/sidebars.css" rel="stylesheet">
 </head>
 <body>
-
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
     <symbol id="bootstrap" viewBox="0 0 118 94">
         <title>Bootstrap</title>
@@ -60,14 +50,10 @@
     <symbol id="grid" viewBox="0 0 16 16">
         <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
     </symbol>
-
 </svg>
-
 <main>
     <h1 class="visually-hidden">Sidebars examples</h1>
-
     <div class="b-example-divider"></div>
-
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
         <a href="${pageContext.request.contextPath}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
@@ -99,8 +85,6 @@
                     Cars
                 </a>
             </li>
-
-
         </ul>
         <hr>
         <div class="dropdown">
@@ -108,12 +92,8 @@
                 <img src="https://avatars.githubusercontent.com/u/121030403?v=4" alt="" width="32" height="32" class="rounded-circle me-2">
                 <strong>Sergiy Golubchenko</strong>
             </a>
-
         </div>
-
     </div>
-
-
     <table style="height: 100px">
         <tr>
             <td><h1>Create driver</h1></td>
@@ -140,9 +120,6 @@
             </td>
         </tr>
     </table>
-
-
 </main>
-
 </body>
 </html>
