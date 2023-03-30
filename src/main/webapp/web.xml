@@ -119,5 +119,4 @@
         <servlet-name>deleteDriver</servlet-name>
         <url-pattern>/drivers/all/delete</url-pattern>
     </servlet-mapping>
-
 </web-app>
