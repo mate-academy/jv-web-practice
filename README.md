@@ -11,7 +11,7 @@ you should use [a different dependency for servlets](https://mvnrepository.com/a
 - Create a new controller: Implement adding driver to car.
 
 HINT: while implementing the last requirement, create just two fields on JSP where you will pass corresponding id values.
-You can redirect to `/index` page or any other page after your business login in `doPost()` method is applied.
+You can redirect to `/index` page or any other page after your business logic in `doPost()` method is applied.
 
 ### Example how to implement adding driver to car:
 ```java
