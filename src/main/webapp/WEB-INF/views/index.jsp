@@ -17,24 +17,24 @@
             <a href="${pageContext.request.contextPath}cars/create">
                 <img src="images/img0001_over.png" class="hover">
                 <span>
-            <img src="images/img0001.png">
-          </span>
+                    <img src="images/img0001.png">
+                </span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}cars/add">
+            <a href="${pageContext.request.contextPath}cars/add-driver">
                 <img src="images/img0002_over.png" class="hover">
                 <span>
-            <img src="images/img0002.png">
-          </span>
+                    <img src="images/img0002.png">
+                </span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}cars/out_all">
+            <a href="${pageContext.request.contextPath}cars/all">
                 <img src="images/img0003_over.png" class="hover">
                 <span>
-            <img src="images/img0003.png">
-          </span>
+                    <img src="images/img0003.png">
+                </span>
             </a>
         </li>
     </ul>
@@ -45,16 +45,16 @@
             <a href="${pageContext.request.contextPath}drivers/create">
                 <img src="images/img0004_over.png" class="hover">
                 <span>
-            <img src="images/img0004.png">
-          </span>
+                    <img src="images/img0004.png">
+                </span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}drivers/out_all">
+            <a href="${pageContext.request.contextPath}drivers/all">
                 <img src="images/img0005_over.png" class="hover">
                 <span>
-            <img src="images/img0005.png">
-          </span>
+                    <img src="images/img0005.png">
+                </span>
             </a>
         </li>
     </ul>
@@ -65,16 +65,16 @@
             <a href="${pageContext.request.contextPath}manufacturers/create">
                 <img src="images/img0006_over.png" class="hover">
                 <span>
-            <img src="images/img0006.png">
-          </span>
+                    <img src="images/img0006.png">
+                </span>
             </a>
         </li>
         <li>
-            <a href="${pageContext.request.contextPath}manufacturers/out_all">
+            <a href="${pageContext.request.contextPath}manufacturers/all">
                 <img src="images/img0007_over.png" class="hover">
                 <span>
-            <img src="images/img0007.png">
-          </span>
+                    <img src="images/img0007.png">
+                </span>
             </a>
         </li>
     </ul>

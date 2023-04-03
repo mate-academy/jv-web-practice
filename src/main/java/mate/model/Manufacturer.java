@@ -12,6 +12,11 @@ public class Manufacturer {
         this.name = name;
     }
 
+    public Manufacturer(String name, String country) {
+        this.country = country;
+        this.name = name;
+    }
+
     public Manufacturer(Long id, String name, String country) {
         this(id, name);
         this.country = country;

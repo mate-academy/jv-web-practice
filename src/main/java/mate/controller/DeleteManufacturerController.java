@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 @WebServlet(urlPatterns = "/manufacturers/delete")
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private ManufacturerService manufacturerService
+    private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -20,6 +20,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long manufacturerId = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(manufacturerId);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers/delete_manufactures_all.jsp");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers/all.jsp");
     }
 }
