@@ -15,6 +15,7 @@
         <td>DRIVERS</td>
         <td>DELETE</td>
     </tr>
+    <jsp:useBean id="cars" scope="request" type="java.util.List"/>
     <c:forEach items="${cars}" var ="car">
         <tr>
             <td>

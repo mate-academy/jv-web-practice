@@ -13,6 +13,7 @@
         <td>LICENSE NUMBER</td>
         <td>DELETE</td>
     </tr>
+    <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
     <c:forEach items="${drivers}" var ="driver">
         <tr>
             <td><c:out value="${driver.id}" /></td>

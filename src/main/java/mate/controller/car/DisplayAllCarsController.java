@@ -13,9 +13,7 @@ import mate.service.ManufacturerService;
 
 public class DisplayAllCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private CarService carService = (CarService) injector.getInstance(CarService.class);
-    private ManufacturerService manufacturerService
-            = (ManufacturerService) injector.getInstance(ManufacturerService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

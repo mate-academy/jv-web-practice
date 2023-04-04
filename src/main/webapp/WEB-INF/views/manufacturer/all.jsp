@@ -13,6 +13,7 @@
         <td>COUNTRY</td>
         <td>DELETE</td>
     </tr>
+    <jsp:useBean id="manufacturers" scope="request" type="java.util.List"/>
     <c:forEach items="${manufacturers}" var ="manufacturer">
         <tr>
             <td><c:out value="${manufacturer.id}" /></td>

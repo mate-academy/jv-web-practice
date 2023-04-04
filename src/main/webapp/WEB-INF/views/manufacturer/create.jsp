@@ -6,8 +6,12 @@
 <body>
 <h1>Please fill out form bellow</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-    Name <input type="text" name="name"><br>
-    Country <input type="text" name="country"><br>
+    Name <label>
+    <input type="text" name="name">
+</label><br>
+    Country <label>
+    <input type="text" name="country">
+</label><br>
    <button type="submit">Confirm</button>
 </form>
 </body>
