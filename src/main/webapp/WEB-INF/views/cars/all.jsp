@@ -6,7 +6,7 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/commons/buttonHeader.jsp"%><br>
-<h3>To add a car please fill the form: </h3><br>
+<h3>To add new car please fill the form: </h3><br>
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     Car model <input type="text" name="model" required><br>
     Manufacturer <select name="manufacturer_id">
@@ -34,7 +34,8 @@
             <td><a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">
                 <input type="button" value="Assign drivers" />
             </a></td>
-            <td><input type="button" onclick="alert('DELETION NOT YET IMPLEMENTED')" value="DELETE"></td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
+                <input type="button" value="DELETE"></a></td>
         </tr>
     </c:forEach>
 </table><br>

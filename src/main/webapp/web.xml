@@ -67,4 +67,36 @@
         <servlet-name>cars/drivers/add</servlet-name>
         <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>cars/delete</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cars/delete</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>manufacturers/delete</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>manufacturers/delete</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>drivers/delete</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>drivers/delete</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>cars/drivers/delete</servlet-name>
+        <servlet-class>mate.controller.DeleteCarDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cars/drivers/delete</servlet-name>
+        <url-pattern>/cars/drivers/delete</url-pattern>
+    </servlet-mapping>
 </web-app>

@@ -32,7 +32,8 @@
             <td><c:out value="${driver.id}" /></td>
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
-            <td><input type="button" onclick="alert('DELETION NOT YET IMPLEMENTED')" value="DELETE"></td>
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.id}&driver_id=${driver.id}">
+                <input type="button" value="DELETE"></a></td>
         </tr>
     </c:forEach>
 </table><br>
