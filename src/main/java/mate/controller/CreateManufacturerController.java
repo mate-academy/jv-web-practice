@@ -10,7 +10,6 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class CreateManufacturerController extends HttpServlet {
-    private static final String MAIN_PAGE = "/index";
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -18,7 +17,7 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/createManufacturer.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/create-manufacturer.jsp").forward(req,resp);
     }
 
     @Override
@@ -30,6 +29,6 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setName(name);
         manufacturer.setCountry(country);
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(MAIN_PAGE);
+        resp.sendRedirect(PageAddress.HOME_PAGE.getPath());
     }
 }

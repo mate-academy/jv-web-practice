@@ -101,4 +101,13 @@
         <servlet-name>deleteCar</servlet-name>
         <url-pattern>/cars/deleteCar</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>wrongData</servlet-name>
+        <servlet-class>mate.controller.WrongDataController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>wrongData</servlet-name>
+        <url-pattern>/wrong_data</url-pattern>
+    </servlet-mapping>
 </web-app>

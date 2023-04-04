@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.ManufacturerService;
+import mate.service.Validator;
 
 public class DeleteManufacturerController extends HttpServlet {
-    private static final String MAIN_PAGE = "/index";
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
@@ -17,8 +17,11 @@ public class DeleteManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long id = Long.valueOf(req.getParameter("id"));
+        Long id = Validator.getId(req, resp);
+        if (id == null) {
+            return;
+        }
         manufacturerService.delete(id);
-        resp.sendRedirect(MAIN_PAGE);
+        resp.sendRedirect(PageAddress.HOME_PAGE.getPath());
     }
 }

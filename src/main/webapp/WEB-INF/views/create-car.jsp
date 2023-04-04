@@ -13,7 +13,7 @@
 </head>
 <body>
 <div style="margin: auto; width: 50%;">
-    <form method="post" action="${pageContext.request.contextPath}/displayAllCars/createCar">
+    <form method="post" action="${pageContext.request.contextPath}/displayAllCars/create-car">
         <h1>To create a new car, please fill out the form below.</h1>
         model <input type="text" name="model"><br>
         <br>

@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
+import mate.service.Validator;
 
 public class DeleteDriverController extends HttpServlet {
-    private static final String MAIN_PAGE = "/index";
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
@@ -17,8 +17,11 @@ public class DeleteDriverController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long id = Long.valueOf(req.getParameter("id"));
+        Long id = Validator.getId(req, resp);
+        if (id == null) {
+            return;
+        }
         driverService.delete(id);
-        resp.sendRedirect(MAIN_PAGE);
+        resp.sendRedirect(PageAddress.HOME_PAGE.getPath());
     }
 }
