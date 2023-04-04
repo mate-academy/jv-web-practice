@@ -5,9 +5,38 @@
     <title>ATMS-cars</title>
 </head>
 <body>
-<a href="${pageContext.request.contextPath}/index">Home</a><br>
-Implement adding cars and their list here<br>
-Also there must be manufacturers list with corresponding id-s below<br>
-<%@include file="/WEB-INF/views/manufacturers/all.jsp"%>
+<%@ include file="/WEB-INF/views/commons/buttonHeader.jsp"%><br>
+<h3>To add a car please fill the form: </h3><br>
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
+    Car model <input type="text" name="model" required><br>
+    Manufacturer <select name="manufacturer_id">
+        <c:forEach items="${manufacturers}" var="manufacturer">
+            <option value="${manufacturer.id}">
+                <c:out value="${manufacturer.id}" />.
+                <c:out value="${manufacturer.name}" />
+            </option>
+            </c:forEach>
+    </select><br>
+    <button type="submit">Add car</button>
+</form><br>
+<h3>List of cars</h3>
+<table>
+    <tr>
+        <td>ID</td>
+        <td>Model</td>
+        <td>Manufacturer</td>
+    </tr>
+    <c:forEach items="${cars}" var="car">
+        <tr>
+            <td><c:out value="${car.id}" /></td>
+            <td><c:out value="${car.model}" /></td>
+            <td><c:out value="${car.manufacturer.name}" /></td>
+            <td><a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">
+                <input type="button" value="Assign drivers" />
+            </a></td>
+            <td><input type="button" onclick="alert('DELETION NOT YET IMPLEMENTED')" value="DELETE"></td>
+        </tr>
+    </c:forEach>
+</table><br>
 </body>
 </html>
