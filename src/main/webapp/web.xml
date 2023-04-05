@@ -11,12 +11,4 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>drivers</servlet-name>
-        <servlet-class>mate.controller.AddDriverController</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>drivers</servlet-name>
-        <url-pattern>/cars/drivers</url-pattern>
-    </servlet-mapping>
 </web-app>
