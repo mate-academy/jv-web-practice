@@ -9,7 +9,7 @@
 <h3>To add new driver please fill the form:</h3><br>
 <form method="post" action="${pageContext.request.contextPath}/drivers/create">
     Driver name <input type="text" name="name" required><br>
-    License number <input type="text" name="licenseNumber" required><br>
+    License number <input type="text" name="license_number" required><br>
     <button type="submit">Add driver</button>
 </form><br>
 <h3>List of drivers</h3>

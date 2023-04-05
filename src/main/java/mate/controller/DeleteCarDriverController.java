@@ -20,8 +20,8 @@ public class DeleteCarDriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long carId = Long.parseLong(req.getParameter("car_id"));
-        Long driverID = Long.parseLong(req.getParameter("driver_id"));
-        carService.removeDriverFromCar(driverService.get(driverID), carService.get(carId));
+        Long driverId = Long.parseLong(req.getParameter("driver_id"));
+        carService.removeDriverFromCar(driverService.get(driverId), carService.get(carId));
         resp.sendRedirect(req.getContextPath() + "/cars/drivers/add?car_id=" + carId);
     }
 }
