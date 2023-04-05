@@ -29,8 +29,8 @@
         </tr>
     </c:forEach>
 </table>
-<h1 style="font-size: 24px; font-family: Calibri,serif">Add driver in car</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/add_driver_to_car">
+<h1 style="font-size: 24px; font-family: Calibri,serif">Add driver to car</h1>
+<form method="post" action="${pageContext.request.contextPath}/drivers/cars/add">
     Car <select name="car_id">
     <c:forEach items="${cars}" var="car">
         <option value="${car.id}">
