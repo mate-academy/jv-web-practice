@@ -6,8 +6,8 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/header/buttonHeader.jsp"%><br>
-<h1 style="font-size: 24px;font-family: Calibri,serif">To add new driver please fill form</h1>
-<form method="post" action="${pageContext.request.contextPath}/drivers/createDriver">
+<h1 style="font-size: 24px;font-family: Calibri,serif">Add new driver</h1>
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Driver name <input type="text" name="name"><br>
     License number <input type="text" name="licenseNumber"><br>
     <button type="submit">Create</button>

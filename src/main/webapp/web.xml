@@ -3,20 +3,4 @@
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd"
          version="4.0">
-<!--    <servlet>-->
-<!--        <servlet-name>index</servlet-name>-->
-<!--        <servlet-class>mate.controller.TaxiServiceController</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>index</servlet-name>-->
-<!--        <url-pattern>/index</url-pattern>-->
-<!--    </servlet-mapping>-->
-<!--    <servlet>-->
-<!--        <servlet-name>manufacturers</servlet-name>-->
-<!--        <servlet-class>mate.controller.ManufacturerGetAllController</servlet-class>-->
-<!--    </servlet>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>manufacturers</servlet-name>-->
-<!--        <url-pattern>/manufacturers/all</url-pattern>-->
-<!--    </servlet-mapping>-->
 </web-app>

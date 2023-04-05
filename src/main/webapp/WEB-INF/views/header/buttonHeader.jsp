@@ -5,7 +5,7 @@
 </head>
 <body>
 <h4>
-    <a href="${pageContext.request.contextPath}/taxi_service">
+    <a href="${pageContext.request.contextPath}/taxiservice">
         <input type="button" value="Home" />
     </a>
     <a href="${pageContext.request.contextPath}/manufacturers">

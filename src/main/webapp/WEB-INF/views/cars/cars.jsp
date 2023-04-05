@@ -24,7 +24,7 @@
     </c:forEach>
 </table>
 <h1 style="font-size: 24px;font-family: Calibri,serif">Create car</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/createCar">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
     Manufacturer <select name="manufacturer_id">
     <c:forEach items="${manufacturers}" var="manufacturer">
         <option value="${manufacturer.id}">
