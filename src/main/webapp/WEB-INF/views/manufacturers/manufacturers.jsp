@@ -8,7 +8,7 @@
 <%@ include file="/WEB-INF/views/header/buttonHeader.jsp"%><br>
 <h1 style="font-size: 24px;font-family: Calibri,serif;">Create manufacturer</h1>
 <form method="post"
-      action="${pageContext.request.contextPath}/manufacturers/createManufacturer">
+      action="${pageContext.request.contextPath}/manufacturers/add">
     Manufacturer name <input type="text" name="name"><br>
     Country <input type="text" name="country"><br>
     <button type="submit">Create</button>
