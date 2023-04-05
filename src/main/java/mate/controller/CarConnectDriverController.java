@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,8 @@ import mate.service.CarService;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
-public class DriverConnectController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/add-driver")
+public class CarConnectDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final String DRIVER_ID = "driverId";
     private static final String CAR_ID = "id";
@@ -25,7 +27,7 @@ public class DriverConnectController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/driverConnect.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/carConnectDriver.jsp").forward(req, resp);
         carId = Long.parseLong(req.getParameter(CAR_ID));
     }
 
@@ -34,11 +36,8 @@ public class DriverConnectController extends HttpServlet {
             throws ServletException, IOException {
         String id =
                 req.getParameter(DRIVER_ID);
-        if (id.length() < 1) {
-            throw new RuntimeException("Driver id field was empty");
-        }
         carService.addDriverToCar(driverService.get(Long.parseLong(id)),
                 carService.get(carId));
-        resp.sendRedirect(req.getContextPath() + "/cars/carList");
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

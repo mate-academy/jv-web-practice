@@ -4,14 +4,13 @@
     <title>My team</title>
 </head>
 <body>
-<form method="get" action="${pageContext.request.contextPath}/cars/carList">
+<form method="get" action="${pageContext.request.contextPath}/cars/all">
     <button type="submit"><--</button>
 </form>
 <h4>Create a Car</h4>
-<form method="post" action="${pageContext.request.contextPath}/cars/carCreate">
-    Car Model <br><input type="text" name="carModel"><br>
-    Car Manufacturer Id <br><input type="number" name="carManufacturerId"><br>
-    Car Initial Driver Id <br><input type="number" name="carInitialDriverId"><br>
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
+    Car Model <br><input type="text" name="Model"><br>
+    Car Manufacturer Id <br><input type="number" name="ManufacturerId"><br>
     <button type="submit">Confirm</button>
 </form>
 </body>

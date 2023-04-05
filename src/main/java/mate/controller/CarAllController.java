@@ -3,6 +3,7 @@ package mate.controller;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -10,7 +11,8 @@ import mate.lib.Injector;
 import mate.model.Car;
 import mate.service.CarService;
 
-public class CarListController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/all")
+public class CarAllController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
@@ -20,6 +22,6 @@ public class CarListController extends HttpServlet {
             throws ServletException, IOException {
         List<Car> allCars = carService.getAll();
         req.setAttribute("cars", allCars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/carList.jsp").include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/carAll.jsp").include(req, resp);
     }
 }

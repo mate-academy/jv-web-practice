@@ -2,6 +2,7 @@ package mate.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -9,6 +10,7 @@ import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
+@WebServlet(urlPatterns = "/manufacturers/create")
 public class ManufacturerCreateController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final String MANUFACTURER_NAME_PARAMETER = "manufacturerName";
@@ -36,6 +38,6 @@ public class ManufacturerCreateController extends HttpServlet {
         manufacturer
                 .setCountry(country.length() > 0 ? country : "-----");
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers/manufacturerList");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers/all");
     }
 }

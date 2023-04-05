@@ -3,6 +3,7 @@ package mate.controller;
 import java.io.IOException;
 import java.util.List;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -12,10 +13,10 @@ import mate.service.CarService;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
+@WebServlet(urlPatterns = "/cars/create")
 public class CarCreateController extends HttpServlet {
-    private static final String CAR_MODEL_PARAMETER = "carModel";
-    private static final String CAR_MANUFACTURER_ID_PARAMETER = "carManufacturerId";
-    private static final String CAR_INITIAL_DRIVER_ID_PARAMETER = "carInitialDriverId";
+    private static final String CAR_MODEL_PARAMETER = "Model";
+    private static final String CAR_MANUFACTURER_ID_PARAMETER = "ManufacturerId";
     private final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
@@ -38,18 +39,11 @@ public class CarCreateController extends HttpServlet {
                 req.getParameter(CAR_MODEL_PARAMETER);
         String manufacturerId =
                 req.getParameter(CAR_MANUFACTURER_ID_PARAMETER);
-        String driverId =
-                req.getParameter(CAR_INITIAL_DRIVER_ID_PARAMETER);
         car.setModel(model.length() > 0 ? model : "-----");
         car.setManufacturer(
-                manufacturerService.get(
-                        Long.parseLong(
-                                manufacturerId.length() > 0 ? manufacturerId : "-----")));
-        car.setDrivers(
-                List.of(driverService.get(
-                        Long.parseLong(
-                                driverId.length() > 0 ? driverId : "-----"))));
+                manufacturerService.get(Long.parseLong(manufacturerId)));
+        car.setDrivers(List.of());
         carService.create(car);
-        resp.sendRedirect(req.getContextPath() + "/cars/carList");
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

@@ -18,7 +18,7 @@
         </tr>
         <c:forEach items="${manufacturers}" var="manufacturer">
             <tr>
-                <td><a href="${pageContext.request.contextPath}/manufacturers/manufacturerDelete?id=${manufacturer.id}">delete</a></td>
+                <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">delete</a></td>
                 <td><c:out value="${manufacturer.id}" /></td>
                 <td><c:out value="${manufacturer.name}" /></td>
                 <td><c:out value="${manufacturer.country}" /></td>
@@ -26,7 +26,7 @@
         </c:forEach>
     </table>
     <br>
-    <form method="get" action="${pageContext.request.contextPath}/manufacturers/manufacturerCreate">
+    <form method="get" action="${pageContext.request.contextPath}/manufacturers/create">
         <button type="submit">New</button>
     </form>
 </body>

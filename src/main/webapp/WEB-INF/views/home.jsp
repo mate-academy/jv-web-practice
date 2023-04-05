@@ -6,15 +6,15 @@
 <body>
     <h4>Welcome to "My Team"</h4>
     <br>
-    <form method="get" action="${pageContext.request.contextPath}/cars/carList">
+    <form method="get" action="${pageContext.request.contextPath}/cars/all">
         <button type="submit">Show Cars</button>
     </form>
     <br>
-    <form method="get" action="${pageContext.request.contextPath}/manufacturers/manufacturerList">
+    <form method="get" action="${pageContext.request.contextPath}/manufacturers/all">
         <button type="submit">Show manufacturers</button>
     </form>
     <br>
-    <form method="get" action="${pageContext.request.contextPath}/drivers/driverList">
+    <form method="get" action="${pageContext.request.contextPath}/drivers/all">
         <button type="submit">Show Drivers</button>
     </form>
     <br>

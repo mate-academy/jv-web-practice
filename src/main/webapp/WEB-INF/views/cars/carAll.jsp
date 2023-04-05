@@ -20,18 +20,18 @@
         </tr>
         <c:forEach items="${cars}" var="car">
             <tr>
-                <td><a href="${pageContext.request.contextPath}/cars/carDelete?id=${car.id}">delete</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
                 <td><c:out value="${car.id}" /></td>
                 <td><c:out value="${car.model}" /></td>
                 <td><c:out value="${car.manufacturer.name}" /></td>
                 <td><c:out value="${car.manufacturer.country}" /></td>
                 <td><c:out value="${car.getAllDriversString()}" /></td>
-                <td><a href="${pageContext.request.contextPath}/drivers/driverConnect?id=${car.id}">add Driver</a></td>
+                <td><a href="${pageContext.request.contextPath}/cars/add-driver?id=${car.id}">add Driver</a></td>
             </tr>
         </c:forEach>
     </table>
     <br>
-    <form method="get" action="${pageContext.request.contextPath}/cars/carCreate">
+    <form method="get" action="${pageContext.request.contextPath}/cars/create">
         <button type="submit">New</button>
     </form>
 </body>
