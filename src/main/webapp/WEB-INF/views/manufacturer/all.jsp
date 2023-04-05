@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Cars</title>
+  <title>Manufacturers</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -47,25 +47,18 @@
   </style>
 </head>
 <body>
-<h1>List of cars</h1>
+<h1>Manufacturers</h1>
 <table>
   <tr>
     <th>ID</th>
-    <th>MODEL</th>
-    <th>MANUFACTURER</th>
-    <th>Action</th>
+    <th>Name</th>
+    <th>Country</th>
   </tr>
-  <c:forEach items="${cars}" var="car">
+  <c:forEach items="${manufacturers}" var="manufacturer">
     <tr>
-      <td><c:out value="${car.id}" /></td>
-      <td><c:out value="${car.model}" /></td>
-      <td><c:out value="${car.manufacturer.name} (${car.manufacturer.country})" /></td>
-      <td>
-        <form method="post" action="${pageContext.request.contextPath}/cars">
-          <input type="hidden" name="id" value="${car.id}">
-          <button type="submit">Delete</button>
-        </form>
-      </td>
+      <td><c:out value="${manufacturer.id}" /></td>
+      <td><c:out value="${manufacturer.name}" /></td>
+      <td><c:out value="${manufacturer.country}" /></td>
     </tr>
   </c:forEach>
 </table>

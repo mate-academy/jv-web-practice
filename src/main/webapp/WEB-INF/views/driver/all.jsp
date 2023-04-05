@@ -53,7 +53,6 @@
         <th>ID</th>
         <th>NAME</th>
         <th>LICENSE NUMBER</th>
-        <th>Action</th>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
@@ -61,10 +60,6 @@
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
             <td>
-                <form method="post" action="${pageContext.request.contextPath}/drivers">
-                    <input type="hidden" name="id" value="${driver.id}">
-                    <button type="submit">Delete</button>
-                </form>
             </td>
         </tr>
     </c:forEach>

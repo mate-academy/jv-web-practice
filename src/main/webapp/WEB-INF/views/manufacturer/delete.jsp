@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <title>Manufacturers</title>
+  <title>Delete manufacturers</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -47,7 +47,7 @@
   </style>
 </head>
 <body>
-<h1>Manufacturers</h1>
+<h1>Delete manufacturer</h1>
 <table>
   <tr>
     <th>ID</th>
@@ -61,7 +61,7 @@
       <td><c:out value="${manufacturer.name}" /></td>
       <td><c:out value="${manufacturer.country}" /></td>
       <td>
-        <form method="post" action="${pageContext.request.contextPath}/manufacturers">
+        <form method="post" action="${pageContext.request.contextPath}/manufacturers/delete">
           <input type="hidden" name="id" value="${manufacturer.id}">
           <button type="submit">Delete</button>
         </form>

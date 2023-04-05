@@ -1,8 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Add driver to car</title>
+  <title>Create manufacturer</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -10,6 +10,7 @@
       padding: 0;
       background-color: #D8DFF5;
     }
+
     h1 {
       padding: 20px;
       background-color: #3930f9;
@@ -22,21 +23,25 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-top: 20px;
+      margin-top: 15px;
     }
 
-    input, button {
-      margin: 5px 0;
-      width: 50%;
-      padding: 10px;
-      font-size: 16px;
+    label {
+      margin-bottom: 5px;
+    }
+
+    input {
+      margin-bottom: 15px;
     }
 
     button {
+      padding: 10px 20px;
       background-color: #201f56;
       color: white;
-      cursor: pointer;
       border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      font-weight: bold;
     }
 
     button:hover {
@@ -45,11 +50,13 @@
   </style>
 </head>
 <body>
-<h1>Add driver to car</h1>
-<form method="post" action="${pageContext.request.contextPath}/add_driver_to_car">
-  Car ID: <input type="number" name="carId" required><br>
-  Driver ID: <input type="number" name="driverId" required><br>
-  <button type="submit">Add driver to car</button>
+<h1>Create manufacturer</h1>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
+  <label>Model name</label>
+  <input type="text" name="name">
+  <label>Country</label>
+  <input type="text" name="country">
+  <button type="submit">Create manufacturer</button>
 </form>
 </body>
 </html>

@@ -19,15 +19,7 @@ public class ManufacturersController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/manufacturer/manufacturers.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturer/all.jsp")
                 .forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        Long id = Long.parseLong(req.getParameter("id"));
-        manufacturerService.delete(id);
-        resp.sendRedirect("/manufacturers/all");
     }
 }

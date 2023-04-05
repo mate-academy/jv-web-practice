@@ -51,7 +51,7 @@
 </head>
 <body>
 <h1>Create a Car</h1>
-<form method="post" action="${pageContext.request.contextPath}/create_car">
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
   Model <input type="text" name="model"><br>
   Manufacturer Name <input type="text" name="name"><br>
   Manufacturer Country <input type="text" name="country">
