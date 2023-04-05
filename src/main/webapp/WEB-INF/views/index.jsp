@@ -1,9 +1,11 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>HOME</title>
 </head>
-<body>
-<h1>Hello, mates!</h1>
-</body>
+    <body>
+        <%@include file="header/menu.jsp"%>
+        <h1>Welcome! Please use the MENU ;)</h1>
+        <img src="https://i2.paste.pics/MYJ73.png" alt="taxi_logo">
+    </body>
 </html>
