@@ -34,7 +34,7 @@ public class CarConnectDriverController extends HttpServlet {
             throws ServletException, IOException {
         String id =
                 req.getParameter(DRIVER_ID);
-       carService.addDriverToCar(driverService.get(Long.parseLong(id)),
+        carService.addDriverToCar(driverService.get(Long.parseLong(id)),
                 carService.get(Long.parseLong(req.getParameter(CAR_ID))));
         resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
