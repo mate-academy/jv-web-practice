@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/manufacturer/manufacturers")
+@WebServlet(urlPatterns = "/manufacturers/all")
 public class ManufacturersController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService =
@@ -28,6 +28,6 @@ public class ManufacturersController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         manufacturerService.delete(id);
-        resp.sendRedirect("/manufacturer/manufacturers");
+        resp.sendRedirect("/manufacturers/all");
     }
 }
