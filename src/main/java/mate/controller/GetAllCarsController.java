@@ -19,7 +19,8 @@ public class GetAllCarsController extends HttpServlet {
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService = (ManufacturerService)
             injector.getInstance(ManufacturerService.class);
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
