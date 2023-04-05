@@ -11,7 +11,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers")
+@WebServlet(urlPatterns = "/driver/drivers")
 public class DriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
@@ -22,7 +22,7 @@ public class DriversController extends HttpServlet {
             throws ServletException, IOException {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driver/drivers.jsp").forward(req, resp);
     }
 
     @Override
@@ -30,6 +30,6 @@ public class DriversController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         driverService.delete(id);
-        resp.sendRedirect("/drivers");
+        resp.sendRedirect("/driver/drivers");
     }
 }

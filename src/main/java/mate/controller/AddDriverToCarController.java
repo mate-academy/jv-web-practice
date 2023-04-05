@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars/add_driver_to_car")
+@WebServlet(urlPatterns = "/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
@@ -30,6 +30,6 @@ public class AddDriverToCarController extends HttpServlet {
         Long carId = Long.valueOf(req.getParameter("carId"));
         Long driverId = Long.valueOf(req.getParameter("driverId"));
         carService.addDriverToCar(driverService.get(driverId), carService.get(carId));
-        resp.sendRedirect("/cars");
+        resp.sendRedirect("/car/cars");
     }
 }

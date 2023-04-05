@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -13,7 +12,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/cars/create_car")
+@WebServlet(urlPatterns = "/car/create_car")
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService =
@@ -24,22 +23,22 @@ public class CreateCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create_car.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/create_car.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String model = req.getParameter("model");
+        Manufacturer manufacturer = new Manufacturer();
         String name = req.getParameter("name");
         String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer(name, country);
+        manufacturer.setName(name);
+        manufacturer.setCountry(country);
         manufacturer = manufacturerService.create(manufacturer);
-        Car car = new Car(model, manufacturer);
-        if (car.getDrivers() == null) {
-            car.setDrivers(new ArrayList<>());
-        }
+        Car car = new Car();
+        String model = req.getParameter("model");
+        car.setModel(model);
+        car.setManufacturer(manufacturer);
         carService.create(car);
-        resp.sendRedirect("/cars");
     }
 }
