@@ -4,9 +4,9 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello, driver!</h1>
+<h1>Create driver</h1>
 
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+<form method="post" action="${pageContext.request.contextPath}/drivers/add">
     Name <input type="text" name="driver_name"><br>
     License number <input type="text" name="license_number">
     <button type="submit">Confirm</button>

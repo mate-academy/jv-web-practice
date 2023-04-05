@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet(urlPatterns = "/cars/drivers/add")
+@WebServlet(urlPatterns = "/drivers/add")
 public class AddDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
@@ -18,7 +18,7 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/cars/drivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/drivers/drivers.jsp").forward(req, resp);
     }
 
     @Override
