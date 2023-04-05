@@ -5,6 +5,8 @@
     <title>All manufacturers</title>
 </head>
 <body>
+<h1>Hi. Below you can see table with all manufacturers.</h1><br>
+<h1>You can delete manufacturer using 'delete this'.</h1><br>
 <style>
   table {
     border-collapse: collapse;

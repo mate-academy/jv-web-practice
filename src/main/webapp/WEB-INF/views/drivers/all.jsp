@@ -5,6 +5,8 @@
     <title>All drivers</title>
 </head>
 <body>
+<h1>Hi. Below you can see table with all drivers.</h1><br>
+<h1>You can delete driver using 'delete this'.</h1><br>
 <style>
   table {
     border-collapse: collapse;
