@@ -36,7 +36,7 @@ public class CreateCarController extends HttpServlet {
         ));
         car.setDrivers(Collections.emptyList());
         if (carService.create(car).getId() != null) {
-            resp.sendRedirect("/message-box?referer="
+            resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Car: " + car.getModel() + ", created successfully!");
         }

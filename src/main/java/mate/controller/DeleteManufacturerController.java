@@ -20,7 +20,7 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         if (manufacturerService.delete(id)) {
-            resp.sendRedirect("/message-box?referer="
+            resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Manufacturer : " + id + ", deleted successfully!");
         }

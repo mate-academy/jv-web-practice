@@ -29,7 +29,7 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setCountry(req.getParameter("country"));
         manufacturer.setName(req.getParameter("name"));
         if (manufacturerService.create(manufacturer).getId() != null) {
-            resp.sendRedirect("/message-box?referer="
+            resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Manufacturer: " + manufacturer.getName() + ", created successfully!");
         }

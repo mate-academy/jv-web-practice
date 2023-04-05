@@ -34,7 +34,7 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.parseLong(req.getParameter("carId")));
         carService.addDriverToCar(driver,car);
         if (car.getDrivers().contains(driver)) {
-            resp.sendRedirect("/message-box?referer="
+            resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Driver: " + driver.getId()
                     + ", successfully added to car: " + car.getId() + "!");
