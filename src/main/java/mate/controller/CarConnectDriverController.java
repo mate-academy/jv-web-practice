@@ -15,20 +15,18 @@ import mate.service.ManufacturerService;
 public class CarConnectDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final String DRIVER_ID = "driverId";
-    private static final String CAR_ID = "id";
+    private static final String CAR_ID = "carId";
     private final CarService carService =
             (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
     private final DriverService driverService =
             (DriverService) injector.getInstance(DriverService.class);
-    private long carId;
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/cars/carConnectDriver.jsp").forward(req, resp);
-        carId = Long.parseLong(req.getParameter(CAR_ID));
     }
 
     @Override
@@ -36,8 +34,8 @@ public class CarConnectDriverController extends HttpServlet {
             throws ServletException, IOException {
         String id =
                 req.getParameter(DRIVER_ID);
-        carService.addDriverToCar(driverService.get(Long.parseLong(id)),
-                carService.get(carId));
+       carService.addDriverToCar(driverService.get(Long.parseLong(id)),
+                carService.get(Long.parseLong(req.getParameter(CAR_ID))));
         resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

@@ -9,6 +9,7 @@
 </form>
 <h4>Connect a Driver to a Car</h4>
 <form method="post" action="${pageContext.request.contextPath}/cars/add-driver">
+    Car Id <br><input type="number" name="carId"><br>
     Driver Id <br><input type="number" name="driverId"><br>
     <br>
     <button type="submit">Confirm</button>

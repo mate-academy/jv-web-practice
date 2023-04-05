@@ -26,13 +26,15 @@
                 <td><c:out value="${car.manufacturer.name}" /></td>
                 <td><c:out value="${car.manufacturer.country}" /></td>
                 <td><c:out value="${car.getAllDriversString()}" /></td>
-                <td><a href="${pageContext.request.contextPath}/cars/add-driver?id=${car.id}">add Driver</a></td>
             </tr>
         </c:forEach>
     </table>
     <br>
     <form method="get" action="${pageContext.request.contextPath}/cars/create">
         <button type="submit">New</button>
+    </form>
+    <form method="get" action="${pageContext.request.contextPath}/cars/add-driver">
+        <button type="submit">Connect Driver</button>
     </form>
 </body>
 </html>
