@@ -27,7 +27,7 @@ public class CreateManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String country = req.getParameter("country");
-        Manufacturer manufacturer = new Manufacturer(name,country);
+        Manufacturer manufacturer = new Manufacturer(name, country);
         manufacturerService.create(manufacturer);
     }
 }
