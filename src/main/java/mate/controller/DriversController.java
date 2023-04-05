@@ -12,7 +12,7 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers")
-public class GetAllDriversController extends HttpServlet {
+public class DriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
@@ -21,8 +21,15 @@ public class GetAllDriversController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Driver> allDrivers = driverService.getAll();
-
         req.setAttribute("drivers", allDrivers);
         req.getRequestDispatcher("/WEB-INF/views/drivers.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        Long id = Long.parseLong(req.getParameter("id"));
+        driverService.delete(id);
+        resp.sendRedirect("/drivers");
     }
 }
