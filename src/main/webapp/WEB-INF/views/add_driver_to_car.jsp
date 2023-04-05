@@ -4,7 +4,7 @@
   <title>Add Driver to Car</title>
 </head>
 <body>
-<h1>Please enter driver and car IDs</h1>
+<h1>Enter driver and car Ids</h1>
 <form method="POST" action="${pageContext.request.contextPath}/cars/add-driver">
   <label for="carId">Car ID:</label>
   <input type="number" id="carId" name="car_id" required><br><br>
