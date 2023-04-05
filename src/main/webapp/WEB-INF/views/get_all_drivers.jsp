@@ -30,6 +30,7 @@
       <td>${driver.id}</td>
       <td>${driver.name}</td>
       <td>${driver.licenseNumber}</td>
+      <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">delete</a></td>
     </tr>
   </c:forEach>
   </tbody>
