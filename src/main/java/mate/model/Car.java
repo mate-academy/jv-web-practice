@@ -41,14 +41,12 @@ public class Car {
         this.drivers = drivers;
     }
 
-    @Override
-    public String toString() {
-        return "Car{"
-                + "id=" + id
-                + ", model='" + model + '\''
-                + ", manufacturer=" + manufacturer
-                + ", drivers=" + drivers
-                + '}';
+    public String driversForTable() {
+        StringBuilder driverBuilder = new StringBuilder();
+        for (Driver driver : drivers) {
+            driverBuilder.append(driver.toString()).append(" ");
+        }
+        return driverBuilder.toString();
     }
 
     @Override
@@ -68,5 +66,15 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(id, model, manufacturer, drivers);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{"
+                + "id=" + id
+                + ", model='" + model + '\''
+                + ", manufacturer=" + manufacturer
+                + ", drivers=" + drivers
+                + '}';
     }
 }
