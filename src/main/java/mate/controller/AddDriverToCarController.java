@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -35,14 +34,10 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(Long.parseLong(req.getParameter("carId")));
         carService.addDriverToCar(driver,car);
         if (car.getDrivers().contains(driver)) {
-            resp.setContentType("text/html");
-            resp.setCharacterEncoding("UTF-8");
-            PrintWriter out = resp.getWriter();
-            out.println("<script>"
-                    + "alert('Driver: " + driver.getId()
-                    + ", successfully added to car: " + car.getId() + "!');"
-                    + "window.location.replace(document.referrer);"
-                    + "</script>");
+            resp.sendRedirect("/message-box?referer="
+                    + req.getHeader("Referer")
+                    + "&msg=Driver: " + driver.getId()
+                    + ", successfully added to car: " + car.getId() + "!");
         }
     }
 }

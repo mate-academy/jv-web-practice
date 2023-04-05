@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,13 +29,9 @@ public class CreateDriverController extends HttpServlet {
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
         if (driverService.create(driver).getId() != null) {
-            resp.setContentType("text/html");
-            resp.setCharacterEncoding("UTF-8");
-            PrintWriter out = resp.getWriter();
-            out.println("<script>"
-                    + "alert('Driver: " + driver.getName() + ", created successfully!');"
-                    + "window.location.replace(document.referrer);"
-                    + "</script>");
+            resp.sendRedirect("/message-box?referer="
+                    + req.getHeader("Referer")
+                    + "&msg=Driver: " + driver.getName() + ", created successfully!");
         }
     }
 }

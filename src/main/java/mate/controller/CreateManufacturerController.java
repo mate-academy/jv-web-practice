@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,14 +29,9 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setCountry(req.getParameter("country"));
         manufacturer.setName(req.getParameter("name"));
         if (manufacturerService.create(manufacturer).getId() != null) {
-            resp.setContentType("text/html");
-            resp.setCharacterEncoding("UTF-8");
-            PrintWriter out = resp.getWriter();
-            out.println("<script>"
-                    + "alert('Manufacturer: " + manufacturer.getName()
-                    + ", created successfully!');"
-                    + "window.location.replace(document.referrer);"
-                    + "</script>");
+            resp.sendRedirect("/message-box?referer="
+                    + req.getHeader("Referer")
+                    + "&msg=Manufacturer: " + manufacturer.getName() + ", created successfully!");
         }
     }
 }

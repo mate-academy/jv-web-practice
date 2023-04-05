@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.Collections;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -37,14 +36,9 @@ public class CreateCarController extends HttpServlet {
         ));
         car.setDrivers(Collections.emptyList());
         if (carService.create(car).getId() != null) {
-            resp.setContentType("text/html");
-            resp.setCharacterEncoding("UTF-8");
-            PrintWriter out = resp.getWriter();
-            out.println("<script>"
-                    + "alert('Car: " + car.getModel()
-                    + ", created successfully!');"
-                    + "window.location.replace(document.referrer);"
-                    + "</script>");
+            resp.sendRedirect("/message-box?referer="
+                    + req.getHeader("Referer")
+                    + "&msg=Car: " + car.getModel() + ", created successfully!");
         }
     }
 }

@@ -1,7 +1,6 @@
 package mate.controller;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,13 +20,9 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         if (manufacturerService.delete(id)) {
-            resp.setContentType("text/html");
-            resp.setCharacterEncoding("UTF-8");
-            PrintWriter out = resp.getWriter();
-            out.println("<script>"
-                    + "alert('Manufacturer : " + id + " deleted. Successfully!');"
-                    + "window.location.replace(document.referrer);"
-                    + "</script>");
+            resp.sendRedirect("/message-box?referer="
+                    + req.getHeader("Referer")
+                    + "&msg=Manufacturer : " + id + ", deleted successfully!");
         }
     }
 }
