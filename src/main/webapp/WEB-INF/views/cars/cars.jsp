@@ -12,12 +12,14 @@
         <td>ID</td>
         <td>MANUFACTURER</td>
         <td>MODEL</td>
+        <td>DRIVERS</td>
     </tr>
     <c:forEach items="${cars}" var = "car">
         <tr>
             <td><c:out value ="${car.id}"/></td>
             <td><c:out value ="${car.manufacturer.name}"/></td>
             <td><c:out value ="${car.model}"/></td>
+            <td><c:out value ="${car.getDrivers()}"/></td>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
                 <input type="button" value="DELETE"></a></td>
         </tr>
@@ -35,7 +37,26 @@
     </c:forEach>
 </select><br>
     Model <input type="text" name="model">
+    <br>
     <button type="submit">Create</button>
+</form>
+<h1 style="font-size: 24px;font-family: Calibri,serif">Remove driver from car</h1>
+<form method="get" action="${pageContext.request.contextPath}/cars/drivers/delete?car_id=
+        ${car.id}&driver_id=${driver.id}">
+    Car <select name="car_id">
+    <c:forEach items="${cars}" var="car">
+        <option value="${car.id}">
+            <c:out value="${car.id}"/>
+            .
+            <c:out value="${car.manufacturer.name}"/>
+            -
+            <c:out value="${car.model}"/>
+        </option>
+    </c:forEach>
+</select><br>
+    Driver ID: <input type="text" name="driver_id">
+    <br>
+    <button type="submit">Confirm</button>
 </form>
 </body>
 </html>
