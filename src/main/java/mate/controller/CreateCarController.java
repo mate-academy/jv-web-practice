@@ -17,7 +17,7 @@ import mate.service.ManufacturerService;
 @WebServlet(name = "createCar", urlPatterns = {"/cars/create"})
 public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService driverService = (CarService) injector.getInstance(CarService.class);
+    private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService
             = (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
@@ -38,7 +38,7 @@ public class CreateCarController extends HttpServlet {
                 .get(Long.parseLong(req.getParameter("manufacturer_id")));
         car.setManufacturer(manufacturer);
         car.setDrivers(new ArrayList<>());
-        driverService.create(car);
+        carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
