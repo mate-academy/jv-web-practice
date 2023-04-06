@@ -26,6 +26,7 @@ public class SearchDriverByCarController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
         req.setAttribute("car_id", carId);
-        req.getRequestDispatcher("/WEB-INF/views/cars/displayAllDriversToChoose.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/displayAllDriversToChoose.jsp")
+                .forward(req, resp);
     }
 }

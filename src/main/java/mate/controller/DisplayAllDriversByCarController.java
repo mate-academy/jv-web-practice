@@ -21,6 +21,7 @@ public class DisplayAllDriversByCarController extends HttpServlet {
         Car car = carService.get(Long.parseLong(req.getParameter("car_id")));
         req.setAttribute("drivers",car.getDrivers());
         req.setAttribute("id",car.getId());
-        req.getRequestDispatcher("/WEB-INF/views/cars/displayAllDriversByCar.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/displayAllDriversByCar.jsp")
+                .forward(req,resp);
     }
 }
