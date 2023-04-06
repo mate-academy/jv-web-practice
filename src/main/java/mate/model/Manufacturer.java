@@ -49,4 +49,10 @@ public class Manufacturer {
     public int hashCode() {
         return Objects.hash(id, name, country);
     }
+
+    @Override
+    public String toString() {
+        return name + ' '
+                + country;
+    }
 }
