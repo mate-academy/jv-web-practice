@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Cars edit</title>
+    <title>Cars creation</title>
 </head>
 <body>
 <%@include file="/WEB-INF/views/header.jsp"%><br>
