@@ -13,7 +13,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars/driver/delete")
+@WebServlet(urlPatterns = "/cars/drivers/delete")
 public class DeleteCarDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -38,6 +38,6 @@ public class DeleteCarDriverController extends HttpServlet {
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Long carId = Long.valueOf((req.getParameter("car_id")));
         carService.removeDriverFromCar(driverService.get(driverId), carService.get(carId));
-        resp.sendRedirect("/cars");
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

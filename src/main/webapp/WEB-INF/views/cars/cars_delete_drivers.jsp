@@ -5,7 +5,7 @@
     <title>Delete car driver</title>
 </head>
 <body>
-<form method="post" action="${pageContext.request.contextPath}/cars/driver/delete">
+<form method="post" action="${pageContext.request.contextPath}/cars/drivers/delete">
 <h1>Delete drivers from car form!</h1>
 Car<select name="car_id">
   <c:forEach items="${cars}" var="car">

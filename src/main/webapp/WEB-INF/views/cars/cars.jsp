@@ -26,13 +26,13 @@
             </tr>
         </c:forEach>
     </table>
-    <form method="get" action="${pageContext.request.contextPath}/cars/edit">
-        <button type="submit">Edit</button>
+    <form method="get" action="${pageContext.request.contextPath}/cars/create">
+        <button type="submit">Create car</button>
     </form>
     <form method="get" action="${pageContext.request.contextPath}/cars/add">
         <button type="submit">Add driver to car</button>
     </form>
-    <form method="get" action="${pageContext.request.contextPath}/cars/driver/delete">
+    <form method="get" action="${pageContext.request.contextPath}/cars/drivers/delete">
         <button type="submit">Delete driver from car</button>
     </form>
 </body>

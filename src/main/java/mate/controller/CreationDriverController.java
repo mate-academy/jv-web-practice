@@ -10,7 +10,7 @@ import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/edit")
+@WebServlet(urlPatterns = "/drivers/create")
 public class CreationDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -19,7 +19,7 @@ public class CreationDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/drivers/drivers_edit.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/drivers_create.jsp").forward(req, resp);
     }
 
     @Override

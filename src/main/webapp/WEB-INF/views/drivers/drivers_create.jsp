@@ -5,7 +5,7 @@
 </head>
 <body>
   <h1>Drivers Form Menu!</h1>
-  <form method="post" action="${pageContext.request.contextPath}/drivers/edit">
+  <form method="post" action="${pageContext.request.contextPath}/drivers/create">
     Name <input type="text" name="name"><br>
     License Number <input type="text" name="licenseNumber"><br>
     <button type="submit">Confirm</button>

@@ -23,8 +23,8 @@
             </tr>
         </c:forEach>
     </table>
-    <form method="get" action="${pageContext.request.contextPath}/drivers/edit">
-        <button type="submit">Edit</button>
+    <form method="get" action="${pageContext.request.contextPath}/drivers/create">
+        <button type="submit">Create driver</button>
     </form>
 </body>
 </html>
