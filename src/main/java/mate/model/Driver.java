@@ -60,6 +60,6 @@ public class Driver {
 
     @Override
     public String toString() {
-        return name + ':' + licenseNumber;
+        return "Driver(" + name + ':' + licenseNumber + ')';
     }
 }

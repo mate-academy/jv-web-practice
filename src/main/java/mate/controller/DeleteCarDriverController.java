@@ -6,10 +6,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Car;
+import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-public class DeleteCarsDriverController extends HttpServlet {
+public class DeleteCarDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService =
@@ -19,10 +21,9 @@ public class DeleteCarsDriverController extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String carId = req.getParameter("car_id");
-        carService.removeDriverFromCar(
-                driverService.get(Long.parseLong(req.getParameter("driver_id"))),
-                carService.get(Long.parseLong(carId))
-        );
+        Driver driver = driverService.get(Long.parseLong(req.getParameter("driver_id")));
+        Car car = carService.get(Long.parseLong(carId));
+        carService.removeDriverFromCar(driver, car);
         resp.sendRedirect("/cars/manage?id=" + carId);
     }
 }

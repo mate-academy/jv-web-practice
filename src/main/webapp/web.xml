@@ -64,19 +64,19 @@
         <url-pattern>/cars/delete</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>ManageDriversCar</servlet-name>
-        <servlet-class>mate.controller.ManageDriversCarsController</servlet-class>
+        <servlet-name>AddDriverToCar</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>ManageDriversCar</servlet-name>
+        <servlet-name>AddDriverToCar</servlet-name>
         <url-pattern>/cars/manage</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>DeleteDriversCar</servlet-name>
-        <servlet-class>mate.controller.DeleteCarsDriverController</servlet-class>
+        <servlet-name>RemoveDriverFromCurrentVehicle</servlet-name>
+        <servlet-class>mate.controller.DeleteCarDriverController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>DeleteDriversCar</servlet-name>
+        <servlet-name>RemoveDriverFromCurrentVehicle</servlet-name>
         <url-pattern>/cars/manage/delete</url-pattern>
     </servlet-mapping>
     <servlet>
