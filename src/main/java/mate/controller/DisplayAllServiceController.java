@@ -15,7 +15,7 @@ import mate.service.CarService;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
 
-@WebServlet(urlPatterns = "/service")
+@WebServlet(urlPatterns = "/home")
 public class DisplayAllServiceController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService)
@@ -34,6 +34,6 @@ public class DisplayAllServiceController extends HttpServlet {
         req.setAttribute("drivers", allDrivers);
         List<Manufacturer> allManufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", allManufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/service.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
     }
 }

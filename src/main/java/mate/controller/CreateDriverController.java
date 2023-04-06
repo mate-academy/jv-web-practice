@@ -19,16 +19,13 @@ public class CreateDriverController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Driver driver = new Driver();
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
         if (name == null || licenseNumber == null) {
             throw new RuntimeException("License number and name can't be null. name: "
                     + name + ", licenseNumber: " + licenseNumber);
         }
-        driver.setName(name);
-        driver.setLicenseNumber(licenseNumber);
-        driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + "/service");
+        driverService.create(new Driver(name, licenseNumber));
+        resp.sendRedirect(req.getContextPath() + "/home");
     }
 }

@@ -19,16 +19,13 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Manufacturer manufacturer = new Manufacturer();
         String name = req.getParameter("name");
         String country = req.getParameter("country");
         if (name == null || country == null) {
             throw new RuntimeException("Country and name can't be null. name: "
                     + name + ", country: " + country);
         }
-        manufacturer.setName(name);
-        manufacturer.setCountry(country);
-        manufacturerService.create(manufacturer);
-        resp.sendRedirect(req.getContextPath() + "/service");
+        manufacturerService.create(new Manufacturer(name, country));
+        resp.sendRedirect(req.getContextPath() + "/home");
     }
 }
