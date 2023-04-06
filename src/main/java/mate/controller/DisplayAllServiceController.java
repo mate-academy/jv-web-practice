@@ -26,7 +26,7 @@ public class DisplayAllServiceController extends HttpServlet {
             injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         List<Car> allCars = carService.getAll();
         req.setAttribute("cars", allCars);

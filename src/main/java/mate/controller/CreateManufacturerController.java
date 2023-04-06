@@ -17,7 +17,7 @@ public class CreateManufacturerController extends HttpServlet {
             injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Manufacturer manufacturer = new Manufacturer();
         String name = req.getParameter("name");

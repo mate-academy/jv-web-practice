@@ -21,7 +21,7 @@ public class DeleteDriverFromCarController extends HttpServlet {
             injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long driverId = Long.valueOf(req.getParameter("driver_id"));
         Long carId = Long.valueOf(req.getParameter("car_id"));

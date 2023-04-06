@@ -17,7 +17,7 @@ public class CreateDriverController extends HttpServlet {
             injector.getInstance(DriverService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Driver driver = new Driver();
         String name = req.getParameter("name");
