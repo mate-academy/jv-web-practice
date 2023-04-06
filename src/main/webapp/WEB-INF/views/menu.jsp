@@ -41,12 +41,12 @@
 <h1>Taxi Service</h1>
 <nav>
     <ul>
-        <li><a href="/car/create">Create new car</a></li>
-        <li><a href="/driver/create">Create new driver</a></li>
-        <li><a href="/manufacturer/create">Create new manufacturer</a></li>
-        <li><a href="/car">Display all cars</a></li>
-        <li><a href="/driver">Display all drivers</a></li>
-        <li><a href="/manufacturer">Display all manufacturers</a></li>
+        <li><a href="/cars/create">Create new car</a></li>
+        <li><a href="/drivers/create">Create new driver</a></li>
+        <li><a href="/manufacturers/create">Create new manufacturer</a></li>
+        <li><a href="/cars">Display all cars</a></li>
+        <li><a href="/drivers">Display all drivers</a></li>
+        <li><a href="/manufacturers">Display all manufacturers</a></li>
     </ul>
 </nav>
 </body>

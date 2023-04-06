@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Display all drivers</title>
+  <title>Display all cars</title>
 </head>
 <body>
 <style>
@@ -45,6 +45,7 @@
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: center;
+    clear: left;
   }
   button {
     background-color: #dc3545;
@@ -55,42 +56,42 @@
     cursor: pointer;
   }
 </style>
-<button style="background-color: #808080; color: #fff;"
-        onclick="window.location.href='${pageContext.request.contextPath}/car'">
-  Back to list of all cars
+<button style="background-color: #808080; color: #fff; display: inline-block; float: left;"
+        onclick="window.location.href='/'">
+  Back to main menu
 </button>
-<h1>List of drivers by car with id ${id}</h1>
+<h1>List of cars</h1>
 <table>
   <thead>
   <tr>
     <th>ID</th>
-    <th>NAME</th>
-    <th>DRIVER LICENSE</th>
+    <th>MODEL</th>
+    <th>MANUFACTURER</th>
+    <th>DRIVERS</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
-  <c:forEach items="${drivers}" var="driver">
+  <c:forEach items="${cars}" var="car">
     <tr>
-      <td><c:out value="${driver.id}"/></td>
-      <td><c:out value="${driver.name}"/></td>
-      <td><c:out value="${driver.licenseNumber}"/></td>
+      <td><c:out value="${car.id}"/></td>
+      <td><c:out value="${car.model}"/></td>
+      <td><c:out value="${car.manufacturer.name}"/></td>
       <td>
-        <form action="/car/drivers/remove" method="POST">
-          <input type="hidden" name="driver_id" value="${driver.id}" />
-          <input type="hidden" name="car_id" value="${id}" />
-          <button type="submit">Remove</button>
+        <form action="cars/drivers" method="POST">
+          <input type="hidden" name="car_id" value="${car.id}" />
+          <button style="background-color: #808080; color: #fff;" type="submit" class="btn">Show drivers</button>
+        </form>
+      </td>
+      <td>
+        <form action="cars/delete" method="POST">
+          <input type="hidden" name="id" value="${car.id}" />
+          <button type="submit" class="btn">Delete</button>
         </form>
       </td>
     </tr>
   </c:forEach>
   </tbody>
 </table>
-<form action="/car/drivers/search" method="POST">
-  <input type="hidden" name="car_id" value="${id}" />
-<button style="background-color: #808080; color: #fff; width: 500px;">
-  Add new driver
-</button>
-</form>
 </body>
 </html>

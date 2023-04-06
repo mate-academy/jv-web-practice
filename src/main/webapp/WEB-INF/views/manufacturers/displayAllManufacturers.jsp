@@ -57,7 +57,7 @@
     }
 </style>
 <button style="background-color: #808080; color: #fff; display: inline-block; float: left;"
-        onclick="window.location.href='../../..'">
+        onclick="window.location.href='/'">
     Back to main menu
 </button>
 <h1>List of manufacturers</h1>
@@ -77,7 +77,7 @@
             <td><c:out value="${manufacturer.name}"/></td>
             <td><c:out value="${manufacturer.country}"/></td>
             <td>
-                <form action="manufacturer/delete" method="POST">
+                <form action="manufacturers/delete" method="POST">
                     <input type="hidden" name="id" value="${manufacturer.id}" />
                     <button type="submit">Delete</button>
                 </form>

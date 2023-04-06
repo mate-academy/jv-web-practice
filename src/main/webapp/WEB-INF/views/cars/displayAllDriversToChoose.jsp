@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-  <title>Display all cars</title>
+  <title>Display all drivers</title>
 </head>
 <body>
 <style>
@@ -45,48 +45,37 @@
     font-weight: 600;
     margin-bottom: 1rem;
     text-align: center;
-    clear: left;
   }
   button {
-    background-color: #dc3545;
+    background-color: #7d7;
     border: none;
-    color: #fff;
+    color: #000;
     padding: 0.375rem 0.75rem;
     border-radius: 0.25rem;
     cursor: pointer;
   }
 </style>
-<button style="background-color: #808080; color: #fff; display: inline-block; float: left;"
-        onclick="window.location.href='../../..'">
-  Back to main menu
-</button>
-<h1>List of cars</h1>
+<h1>List of drivers</h1>
 <table>
   <thead>
   <tr>
     <th>ID</th>
-    <th>MODEL</th>
-    <th>MANUFACTURER</th>
-    <th>DRIVERS</th>
+    <th>NAME</th>
+    <th>DRIVER LICENSE</th>
     <th></th>
   </tr>
   </thead>
   <tbody>
-  <c:forEach items="${cars}" var="car">
+  <c:forEach items="${drivers}" var="driver">
     <tr>
-      <td><c:out value="${car.id}"/></td>
-      <td><c:out value="${car.model}"/></td>
-      <td><c:out value="${car.manufacturer.name}"/></td>
+      <td><c:out value="${driver.id}"/></td>
+      <td><c:out value="${driver.name}"/></td>
+      <td><c:out value="${driver.licenseNumber}"/></td>
       <td>
-        <form action="car/drivers" method="POST">
-          <input type="hidden" name="car_id" value="${car.id}" />
-          <button style="background-color: #808080; color: #fff;" type="submit" class="btn">Show drivers</button>
-        </form>
-      </td>
-      <td>
-        <form action="car/delete" method="POST">
-          <input type="hidden" name="id" value="${car.id}" />
-          <button type="submit" class="btn">Delete</button>
+        <form action="${pageContext.request.contextPath}/cars/drivers/add" method="POST">
+          <input type="hidden" name="driver_id" value="${driver.id}" />
+          <input type="hidden" name="car_id" value="${car_id}" />
+          <button type="submit">Add</button>
         </form>
       </td>
     </tr>

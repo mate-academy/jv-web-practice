@@ -2,7 +2,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Сreate car</title>
+    <title>Create car</title>
 </head>
 <style>
     body {
@@ -66,11 +66,11 @@
 </style>
 <body>
 <button style="background-color: #808080; color: #fff;"
-        onclick="window.location.href='../../..'">
+        onclick="window.location.href='/'">
     Back to main menu
 </button>
 <h1>Fill the form to create the car</h1>
-<form method="post" action="${pageContext.request.contextPath}/car/create">
+<form method="post" action="${pageContext.request.contextPath}/cars/create">
     <label for="model">Model</label>
     <input type="text" id="model" name="model">
     <label for="manufacturer_id">Manufacturer id</label>
@@ -78,7 +78,7 @@
     <button type="submit">Create</button>
 </form>
 <button style="background-color: #808080; color: #fff;"
-        onclick="window.location.href='${pageContext.request.contextPath}/car'">
+        onclick="window.location.href='${pageContext.request.contextPath}/cars'">
     List all cars</button>
 </body>
 </html>

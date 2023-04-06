@@ -57,7 +57,7 @@
   }
 </style>
 <button style="background-color: #808080; color: #fff; display: inline-block; float: left;"
-        onclick="window.location.href='../../..'">
+        onclick="window.location.href='/'">
   Back to main menu
 </button>
 <h1>List of drivers</h1>
@@ -77,7 +77,7 @@
       <td><c:out value="${driver.name}"/></td>
       <td><c:out value="${driver.licenseNumber}"/></td>
       <td>
-        <form action="driver/delete" method="POST">
+        <form action="drivers/delete" method="POST">
           <input type="hidden" name="id" value="${driver.id}" />
           <button type="submit">Delete</button>
         </form>

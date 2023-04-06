@@ -1,8 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Create manufacturer</title>
 </head>
+<body>
 <style>
     body {
         display: flex;
@@ -63,21 +64,20 @@
         text-align: center;
     }
 </style>
-<body>
 <button style="background-color: #808080; color: #fff;"
-        onclick="window.location.href='../../..'">
+        onclick="window.location.href='/'">
     Back to main menu
 </button>
-<h1>Fill the form to create the driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/driver/create">
+<h1>Fill the form to create the manufacturer</h1>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
     <label for="name">Name</label>
     <input type="text" id="name" name="name">
-    <label for="license">License number</label>
-    <input type="text" id="license" name="license">
+    <label for="country">Country</label>
+    <input type="text" id="country" name="country">
     <button type="submit">Create</button>
 </form>
 <button style="background-color: #808080; color: #fff;"
-        onclick="window.location.href='${pageContext.request.contextPath}/driver'">
-    List all drivers</button>
+        onclick="window.location.href='${pageContext.request.contextPath}/manufacturers'">
+    List all manufacturers</button>
 </body>
 </html>
