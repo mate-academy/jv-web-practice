@@ -31,4 +31,3 @@ public class CarsDriversController extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/views/cars/carsDrivers.jsp").forward(req, resp);
     }
 }
-//car
