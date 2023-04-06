@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -63,6 +63,22 @@
         font-weight: 600;
         text-align: center;
     }
+    select {
+        width: 100%;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.5;
+        border: 1px solid #ced4da;
+        border-radius: 0.25rem;
+        appearance: none;
+        background-color: #fff;
+        color: #212529;
+    }
+
+    select:focus {
+        outline: none;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+    }
 </style>
 <body>
 <button style="background-color: #808080; color: #fff;"
@@ -73,8 +89,12 @@
 <form method="post" action="${pageContext.request.contextPath}/cars/create">
     <label for="model">Model</label>
     <input type="text" id="model" name="model">
-    <label for="manufacturer_id">Manufacturer id</label>
-    <input type="text" id="manufacturer_id" name="manufacturer_id">
+    <label>Manufacturer id</label>
+     <select name="manufacturer_id">
+    <c:forEach items="${manufacturers}" var="manufacturer">
+        <option value="${manufacturer.id}"><c:out value="${manufacturer.name}"/></option>
+    </c:forEach>
+</select>
     <button type="submit">Create</button>
 </form>
 <button style="background-color: #808080; color: #fff;"
