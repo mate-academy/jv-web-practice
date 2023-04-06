@@ -19,7 +19,7 @@
     </select><br>
     <button type="submit">Confirm</button>
 </form><br>
-<%--<form method="get" action="${pageContext.request.contextPath}/cars/driver/delete">
+<form method="get" action="${pageContext.request.contextPath}/cars/driver/delete">
     Car <select name="car_id">
     <c:forEach items="${cars}" var="car">
         <option value="${car.id}">
@@ -37,6 +37,6 @@
     </c:forEach>
     </select>
     <button type="submit">Confirm</button>
-</form>--%>
+</form>
 </body>
 </html>
