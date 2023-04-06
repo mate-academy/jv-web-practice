@@ -35,7 +35,7 @@
     </c:forEach>
 </table>
 <h3>Link driver with a car by ID:</h3>
-<form method="post" action="${PageContext.request.contextPath}/cars/carsByDrivers">
+<form method="post" action="${PageContext.request.contextPath}/cars/drivers/add">
     Car ID <input type="number" name="car_id"><br>
     Driver ID <input type="number" name="driver_id"><br>
     <button type="submit">Confirm</button>
