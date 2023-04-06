@@ -13,7 +13,7 @@ import mate.service.DriverService;
 @WebServlet(name = "createDriver", urlPatterns = {"/drivers/create"})
 public class CreateDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final DriverService driverService
+    private final DriverService carService
             = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
@@ -28,7 +28,7 @@ public class CreateDriverController extends HttpServlet {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("license"));
-        driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + "/drivers/create");
+        carService.create(driver);
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

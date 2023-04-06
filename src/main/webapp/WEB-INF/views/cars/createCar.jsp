@@ -79,6 +79,9 @@
         outline: none;
         box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
     }
+    form select, form button {
+        margin-top: 10px;
+    }
 </style>
 <body>
 <button style="background-color: #808080; color: #fff;"
