@@ -11,6 +11,11 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Create Manufacturer Form</h1>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/create">
+    Name <input type="text" name="name"><br>
+    Country <input type="text" name="country"><br>
+    <button type="submit">submit</button>
+</form>
 </body>
 </html>
