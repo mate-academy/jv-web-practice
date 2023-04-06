@@ -9,12 +9,10 @@
 </head>
 <body>
 <h1>Drivers</h1>
-<form method="post">
+<form method="post" action="${pageContext.request.contextPath}/car/driver/add">
     Car ID: <input type="number" name="carId" required><br>
     Driver ID: <input type="number" name="driverId" required><br>
-    <button type="submit" action="${pageContext.request.contextPath}/cars/drivers/add">Add driver to car</button>
-    <button type="submit" action="${pageContext.request.contextPath}/cars/drivers/delete">Delete driver from car
-    </button>
+    <button type="submit">Add driver to car</button>
 </form>
 </body>
 </html>

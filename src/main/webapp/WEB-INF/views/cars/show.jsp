@@ -28,9 +28,13 @@
                 </form>
             </td>
             <td>
-                <form method="get" action="${pageContext.request.contextPath}/car/driver/action">
-                    <input type="hidden" name="id" value="${car.id}">
-                    <button type="submit">Drivers</button>
+                <form method="get" action="${pageContext.request.contextPath}/car/driver/add">
+                    <button type="submit">Add Driver</button>
+                </form>
+            </td>
+            <td>
+                <form method="get" action="${pageContext.request.contextPath}/car/driver/delete">
+                    <button type="submit">Delete Driver</button>
                 </form>
             </td>
         </tr>
