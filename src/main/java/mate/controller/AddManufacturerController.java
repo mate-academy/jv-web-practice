@@ -17,18 +17,18 @@ public class AddManufacturerController extends HttpServlet {
             injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/manufacturers/manufacturers.jsp").forward(req, resp);
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Manufacturer newManufacturer = new Manufacturer();
         newManufacturer.setName(req.getParameter("manufacturer_name"));
         newManufacturer.setCountry(req.getParameter("country"));
         manufacturerService.create(newManufacturer);
-        resp.sendRedirect("/manufacturers/add");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
