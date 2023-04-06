@@ -7,8 +7,64 @@
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>cars</servlet-name>
+        <servlet-class>mate.controller.cars.CarsController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addCar</servlet-name>
+        <servlet-class>mate.controller.cars.CreateCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>drivers</servlet-name>
+        <servlet-class>mate.controller.drivers.DriversController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addDrivers</servlet-name>
+        <servlet-class>mate.controller.drivers.AddDriverController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addDriverCarController</servlet-name>
+        <servlet-class>mate.controller.cars.AddDriverCarController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>manufacturers</servlet-name>
+        <servlet-class>mate.controller.manufacturers.ManufacturerController</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>addManufacturers</servlet-name>
+        <servlet-class>mate.controller.manufacturers.AddManufacturerController</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>cars</servlet-name>
+        <url-pattern>/cars</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addCar</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>drivers</servlet-name>
+        <url-pattern>/drivers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addDrivers</servlet-name>
+        <url-pattern>/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addDriverCarController</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>manufacturers</servlet-name>
+        <url-pattern>/manufacturers</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>addManufacturers</servlet-name>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
 </web-app>
