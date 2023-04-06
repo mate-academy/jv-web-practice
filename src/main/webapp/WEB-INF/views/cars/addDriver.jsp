@@ -1,11 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%--
-  Created by IntelliJ IDEA.
-  User: 38097
-  Date: 05.04.2023
-  Time: 22:20
-  To change this template use File | Settings | File Templates.
---%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -13,7 +6,7 @@
 </head>
 <body>
 <h1>Add Driver</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/addDriver">
+<form method="post" action="${pageContext.request.contextPath}/cars/add/driver">
     Car <select name="car_id">
     <c:forEach items="${cars}" var="car">
         <option value="${car.id}">
