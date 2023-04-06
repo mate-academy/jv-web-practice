@@ -24,7 +24,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
         req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/cars/driver-to-car.jsp").forward(req,resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/driver-to-car.jsp").forward(req,resp);
     }
 
     @Override
