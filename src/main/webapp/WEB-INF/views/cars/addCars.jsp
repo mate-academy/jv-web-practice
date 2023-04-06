@@ -7,17 +7,24 @@
 <body>
   <jsp:include page="../header.jsp"/>
   <div class="content">
-    <form action="addCars.jsp" method="post">
-      <input name="car" type="text"><br/>
-      <select name="manufacturer" id="choose__manufacturer">
-        <jsp:useBean id="manufacturers" scope="request" type="java.util.List"/>
-        <c:if test="${manufacturers.isEmpty()}">
-          <option value="1">Empty</option>
-        </c:if>
-        <c:forEach var="manufacturer" items="${manufacturers}">
-          <option value="${manufacturer.getId()}">${manufacturer.getName()}</option>
-        </c:forEach>
-      </select><br/>
+    <form action="/cars/add" method="post">
+      <div class="input__form">
+        <label for="car">Car name:</label>
+        <input name="car" id="car" type="text">
+      </div>
+      <br/>
+      <div class="input__form">
+        <label for="choose__manufacturer">Manufacturer:</label>
+        <select name="manufacturer" id="choose__manufacturer">
+          <jsp:useBean id="manufacturers" scope="request" type="java.util.List"/>
+          <c:if test="${manufacturers.isEmpty()}">
+            <option value="1">Empty</option>
+          </c:if>
+          <c:forEach var="manufacturer" items="${manufacturers}">
+            <option value="${manufacturer.getId()}">${manufacturer.getName()}</option>
+          </c:forEach>
+        </select><br/>
+      </div>
       <c:choose>
         <c:when test="${!manufacturers.isEmpty()}">
           <input type="submit" value="add">

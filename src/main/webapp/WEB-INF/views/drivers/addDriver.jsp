@@ -13,11 +13,17 @@
 <body>
   <jsp:include page="../header.jsp"/>
   <div class="content">
-    <form action="${pageContext.request.contextPath}/drivers/add" method="post">
-      <label for="input_name">Name:</label>
-      <input name="name" id="input_name" type="text"> <br/>
-      <label for="input_license_number">License number:</label>
-      <input name="license_number" id="input_license_number" type="text"><br/>
+    <form action="/drivers/add" method="post">
+      <div class="input__form">
+        <label for="input_name">Name:</label>
+        <input name="name" id="input_name" type="text">
+      </div>
+      <br/>
+      <div class="input__form">
+        <label for="input_license_number">License number:</label>
+        <input name="license_number" id="input_license_number" type="text">
+      </div>
+      <br/>
       <input type="submit" value="add">
     </form>
   </div>

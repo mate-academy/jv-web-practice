@@ -6,11 +6,17 @@
   <body>
     <jsp:include page="../header.jsp"/>
     <div class="content">
-      <form action="${pageContext.request.contextPath}/manufacturers/add" method="post">
-        <label for="name">Name:</label>
-        <input id="name" type="text">
-        <label for="country">Country:</label>
-        <input id="country" type="text">
+      <form action="/manufacturers/add" method="post">
+        <div class="input__form">
+          <label for="name">Name:</label>
+          <input name="name" id="name" type="text">
+        </div>
+        <br/>
+        <div class="input__form">
+          <label for="country">Country:</label>
+          <input name="country" id="country" type="text">
+        </div>
+        <br/>
         <input type="submit" value="add">
       </form>
     </div>

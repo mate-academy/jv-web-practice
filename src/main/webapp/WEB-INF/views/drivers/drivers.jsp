@@ -17,11 +17,11 @@
       </thead>
       <tbody>
       <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
-      <c:forEach var="driver" items="${drivers}">
+      <c:forEach var="car" items="${drivers}">
         <tr>
-          <td>${driver.getId()}</td>
-          <td>${driver.getName()}</td>
-          <td>${driver.getLicenseNumber()}</td>
+          <td>${car.getId()}</td>
+          <td>${car.getName()}</td>
+          <td>${car.getLicenseNumber()}</td>
         </tr>
       </c:forEach>
       </tbody>

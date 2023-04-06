@@ -13,7 +13,7 @@
 }
 
 :root {
-    --background-color: white;
+    --background-color: #f6f6da;
     --header-color: #93BFB7;
     --navigation-buttons-color: #2D3E40;
     --navigation-text-color: #2D3E40;
@@ -96,4 +96,7 @@ a:hover {
 }
 .content a {
     padding-right: 10px;
+}
+.input__form {
+    margin-top: 5px;
 }

@@ -30,6 +30,6 @@ public class AddDriverCarController extends HttpServlet {
                 driverService.get(Long.valueOf(req.getParameter("driver"))),
                 carService.get(Long.valueOf(req.getParameter("car")))
         );
-        resp.sendRedirect("cars");
+        resp.sendRedirect("/cars");
     }
 }
