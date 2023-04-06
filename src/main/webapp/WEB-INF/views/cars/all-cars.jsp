@@ -12,7 +12,6 @@
         <td>ID</td>
         <td>Model</td>
         <td>Manufacturer</td>
-        <td>Delete</td>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
