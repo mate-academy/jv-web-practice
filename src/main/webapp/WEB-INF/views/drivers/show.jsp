@@ -26,12 +26,6 @@
                     <button type="submit">Delete</button>
                 </form>
             </td>
-            <td>
-                <form method="put" action="${pageContext.request.contextPath}/drivers/update">
-                    <input type="hidden" name="id" value="${driver.id}">
-                    <button type="submit">Update</button>
-                </form>
-            </td>
         </tr>
     </c:forEach>
 </table>

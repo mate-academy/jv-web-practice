@@ -5,13 +5,13 @@
 </head>
 <body>
 <h4>
-    <a href="${pageContext.request.contextPath}/manufacturers/show">
+    <a href="${pageContext.request.contextPath}/manufacturers/all">
         <input type="button" value="Manufactures"/>
     </a>
-    <a href="${pageContext.request.contextPath}/drivers/show">
+    <a href="${pageContext.request.contextPath}/drivers/all">
         <input type="button" value="Drivers"/>
     </a>
-    <a href="${pageContext.request.contextPath}/car/show">
+    <a href="${pageContext.request.contextPath}/cars/all">
         <input type="button" value="Cars"/>
     </a>
 </h4>

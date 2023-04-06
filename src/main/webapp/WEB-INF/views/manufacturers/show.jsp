@@ -26,12 +26,6 @@
                     <button type="submit">Delete</button>
                 </form>
             </td>
-            <td>
-                <form method="put" action="${pageContext.request.contextPath}/manufacturers/update">
-                    <input type="hidden" name="id" value="${manufacturer.id}">
-                    <button type="submit">Update</button>
-                </form>
-            </td>
         </tr>
     </c:forEach>
 </table>

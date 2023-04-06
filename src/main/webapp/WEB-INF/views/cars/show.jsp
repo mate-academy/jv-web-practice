@@ -42,9 +42,23 @@
 </table>
 <form method="post" action="${pageContext.request.contextPath}/car/add">
     Model <input type="text" name="model"><br>
-    Manufacturer Name <input type="text" name="name"><br>
-    Manufacturer Country <input type="text" name="country">
+    Id Of Manufacturer <input type="text" name="manufacturer_id"><br>
     <button type="submit">Add car</button>
 </form>
+<h1>LIST OF MANUFACTURERS</h1><br>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Country</th>
+    </tr>
+    <c:forEach items="${manufacturers}" var="manufacturer">
+        <tr>
+            <td><c:out value="${manufacturer.id}"/></td>
+            <td><c:out value="${manufacturer.name}"/></td>
+            <td><c:out value="${manufacturer.country}"/></td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

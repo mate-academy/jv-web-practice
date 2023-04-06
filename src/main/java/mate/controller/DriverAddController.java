@@ -28,6 +28,6 @@ public class DriverAddController extends HttpServlet {
         String name = req.getParameter("name");
         String licenceNumber = req.getParameter("licenceNumber");
         driverService.create(new Driver(name, licenceNumber));
-        resp.sendRedirect("/drivers/show");
+        resp.sendRedirect("/drivers/all");
     }
 }
