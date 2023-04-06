@@ -18,8 +18,9 @@
             <td><c:out value="${driver.id}" /></td>
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
-            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
-                <input type="button" value="DELETE"></a></td>
+            <td><form action="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}" method="post">
+                <button type="submit" name="delete_button" value="delete">DELETE</button>
+            </form></td>
         </tr>
     </c:forEach>
 </table><br>
