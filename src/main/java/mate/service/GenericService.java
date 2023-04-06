@@ -3,13 +3,13 @@ package mate.service;
 import java.util.List;
 
 public interface GenericService<T> {
-    T create(T manufacturer);
+    T create(T element);
 
     T get(Long id);
 
     List<T> getAll();
 
-    T update(T manufacturer);
+    T update(T element);
 
     boolean delete(Long id);
 }
