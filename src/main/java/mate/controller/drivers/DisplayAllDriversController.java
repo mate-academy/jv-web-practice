@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/display")
+@WebServlet(urlPatterns = "/drivers")
 public class DisplayAllDriversController extends HttpServlet {
     public static final Injector injector = Injector.getInstance("mate");
     public static final DriverService driverService =
