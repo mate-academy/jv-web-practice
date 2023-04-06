@@ -41,14 +41,6 @@ public class Car {
         this.drivers = drivers;
     }
 
-    public String driversForTable() {
-        StringBuilder driverBuilder = new StringBuilder();
-        for (Driver driver : drivers) {
-            driverBuilder.append(driver.toString()).append(" ");
-        }
-        return driverBuilder.toString();
-    }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) {
