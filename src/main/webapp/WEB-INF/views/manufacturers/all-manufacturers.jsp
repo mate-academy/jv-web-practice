@@ -6,12 +6,6 @@
 </head>
 <body>
 <%@ include file="/WEB-INF/views/header.jsp"%><br>
-<h3>Fill out the form below to add the manufacturer</h3>
-<form method="post" action="${pageContext.request.contextPath}/manufacturer/add">
-    Name <input type="text" name="name"><br>
-    Country <input type="text" name="country"><br>
-    <button type="submit">Add Manufacturer</button>
-</form>
 <h3>List of manufacturers</h3>
 <table>
     <tr>
@@ -29,5 +23,8 @@
         </tr>
     </c:forEach>
 </table><br>
+<a href="${pageContext.request.contextPath}/manufacturers/add">
+    <input type="button" value="Add new manufacturer" />
+</a>
 </body>
 </html>

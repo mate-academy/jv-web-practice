@@ -5,6 +5,7 @@
     <title>cars</title>
 </head>
 <body>
+<%@ include file="/WEB-INF/views/header.jsp"%><br>
 <h1>Fill out the form to add driver to car</h1>
 <form method="post" action="${pageContext.request.contextPath}/cars/addDriver">
     Car <select name="car_id">

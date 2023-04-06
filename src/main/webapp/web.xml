@@ -17,7 +17,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>createManufacturerController</servlet-name>
-        <url-pattern>/manufacturer/add</url-pattern>
+        <url-pattern>/manufacturers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>createDriverController</servlet-name>
