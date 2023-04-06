@@ -8,23 +8,23 @@
 <table>
     <tr>
         <td>Create a car</td>
-        <td><a href="${pageContext.request.contextPath}/cars/create-a-car"> -> Press here</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/create"> -> Press here</a></td>
     </tr>
     <tr>
         <td>Add driver to car</td>
-        <td><a href="${pageContext.request.contextPath}/cars/add-drivers"> -> Press here</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/add"> -> Press here</a></td>
     </tr>
     <tr>
         <td>Create a driver</td>
-        <td><a href="${pageContext.request.contextPath}/drivers/create-a-driver"> -> Press here</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers/create"> -> Press here</a></td>
     </tr>
     <tr>
         <td>Display all drivers</td>
-        <td><a href="${pageContext.request.contextPath}/drivers/display-all-drivers"> -> Press here</a></td>
+        <td><a href="${pageContext.request.contextPath}/drivers/display"> -> Press here</a></td>
     </tr>
     <tr>
         <td>Create a manufacturer</td>
-        <td><a href="${pageContext.request.contextPath}/manufacturers/create-a-manufacturer"> -> Press here</a></td>
+        <td><a href="${pageContext.request.contextPath}/manufacturers/create"> -> Press here</a></td>
     </tr>
 </table>
 </body>
