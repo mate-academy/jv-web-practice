@@ -2,6 +2,7 @@ package mate.service;
 
 import java.util.List;
 import mate.dao.CarDao;
+import mate.dao.CarDaoImpl;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Car;
@@ -11,6 +12,10 @@ import mate.model.Driver;
 public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
+
+    public CarServiceImpl() {
+        this.carDao = new CarDaoImpl();
+    }
 
     @Override
     public void addDriverToCar(Driver driver, Car car) {

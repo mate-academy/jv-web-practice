@@ -1,0 +1,47 @@
+package mate.controller.car;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import mate.model.Car;
+import mate.model.Driver;
+import mate.service.CarService;
+import mate.service.CarServiceImpl;
+import mate.service.DriverService;
+import mate.service.DriverServiceImpl;
+
+@WebServlet("/cars/link/driver")
+public class LinkDriverCarsController extends HttpServlet {
+    //    public static final Injector injector = Injector.getInstance("mate");
+    private CarService carService; //todo fix injector
+    private DriverService driverService; //todo fix injector
+
+    @Override
+    public void init() throws ServletException {
+        carService = new CarServiceImpl();
+        driverService = new DriverServiceImpl();
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        req.setAttribute("cars", carService.getAll());
+        req.setAttribute("drivers", driverService.getAll());
+        req.getRequestDispatcher("/WEB-INF/views/car/carsLinkDriver.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws IOException {
+        final String carId = req.getParameter("carId");
+        final String driverId = req.getParameter("driverId");
+        final Car car = carService.get(Long.valueOf(carId));
+        final Driver driver = driverService.get(Long.valueOf(driverId));
+        car.getDrivers().add(driver);
+        carService.update(car);
+        resp.sendRedirect(req.getContextPath() + "/");
+    }
+}
