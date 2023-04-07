@@ -6,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
@@ -15,15 +17,12 @@ import mate.service.DriverServiceImpl;
 
 @WebServlet("/cars/link/driver")
 public class LinkDriverCarsController extends HttpServlet {
-    //    public static final Injector injector = Injector.getInstance("mate");
-    private CarService carService; //todo fix injector
-    private DriverService driverService; //todo fix injector
+    private static final Injector injector = Injector.getInstance("mate");
+    private final CarService carService
+            = (CarService) injector.getInstance(CarService.class);
 
-    @Override
-    public void init() throws ServletException {
-        carService = new CarServiceImpl();
-        driverService = new DriverServiceImpl();
-    }
+    private final DriverService driverService
+            = (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

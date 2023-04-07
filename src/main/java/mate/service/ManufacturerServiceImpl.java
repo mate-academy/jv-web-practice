@@ -12,10 +12,6 @@ public class ManufacturerServiceImpl implements ManufacturerService {
     @Inject
     private ManufacturerDao manufacturerDao;
 
-    public ManufacturerServiceImpl() {
-        this.manufacturerDao = new ManufacturerDaoImpl();
-    }
-
     @Override
     public Manufacturer create(Manufacturer manufacturer) {
         return manufacturerDao.create(manufacturer);
