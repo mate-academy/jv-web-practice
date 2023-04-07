@@ -2,7 +2,6 @@ package mate.service;
 
 import java.util.List;
 import mate.dao.ManufacturerDao;
-import mate.dao.ManufacturerDaoImpl;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Manufacturer;
