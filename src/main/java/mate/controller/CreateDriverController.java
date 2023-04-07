@@ -18,7 +18,7 @@ public class CreateDriverController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(
                         "/WEB-INF/views/drivers/create_driver.jsp")
@@ -26,7 +26,7 @@ public class CreateDriverController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));

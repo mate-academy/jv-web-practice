@@ -1,4 +1,4 @@
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -7,10 +7,24 @@
 <body>
 <h1>Here you can add driver to car</h1>
 <form method="POST" action="${pageContext.request.contextPath}/cars/add-driver">
-    <label for="carId">Car ID:</label>
-    <input type="number" id="carId" name="car_id" required><br><br>
-    <label for="driverId">Driver ID:</label>
-    <input type="number" id="driverId" name="driver_id" required><br><br>
+    Driver: <select name="driver_id">
+    <c:forEach items="${drivers}" var="driver">
+        <option value="${driver.id}">
+            <c:out value="${driver.name}" />
+        </option>
+    </c:forEach>
+</select> <br><br>
+
+    Car: <select name="car_id">
+        <c:forEach items="${cars}" var="car">
+            <option value="${car.id}">
+                <c:out value="${car.model}" />
+                -
+                <c:out value="${car.manufacturer}" />
+            </option>
+        </c:forEach>
+    </select> <br><br>
+
     <button type="submit">LET`S GO!</button>
 </form>
 </body>

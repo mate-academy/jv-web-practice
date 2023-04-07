@@ -18,7 +18,7 @@ public class CreateManufacturerController extends HttpServlet {
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(
                         "/WEB-INF/views/manufacturers/create_manufacturer.jsp")
@@ -26,7 +26,7 @@ public class CreateManufacturerController extends HttpServlet {
     }
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    public void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(req.getParameter("name"));

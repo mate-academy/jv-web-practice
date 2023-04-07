@@ -23,6 +23,22 @@
             </tr>
         </c:forEach>
     </table>
+
+    <br><br>
+    <form method="post" action="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
+        Choose driver to delete <select name="driver_id">
+        <c:forEach items="${drivers}" var="driver">
+            <option value="${driver.id}">
+                <c:out value="${driver.name}" />
+                -
+                <c:out value="${driver.licenseNumber}" />
+            </option>
+        </c:forEach>
+    </select> <br><br>
+        <button type="submit">Bye-bye</button>
+    </form>
+
+    <br><br>
 </head>
 <body>
 

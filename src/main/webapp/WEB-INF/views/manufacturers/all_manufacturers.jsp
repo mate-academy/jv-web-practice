@@ -26,6 +26,22 @@
         </tr>
     </c:forEach>
 </table>
+
+<br><br>
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}">
+    Choose manufacturer to delete <select name="manufacturer_id">
+    <c:forEach items="${manufacturers}" var="manufacturer">
+        <option value="${manufacturer.id}">
+            <c:out value="${manufacturer.name}" />
+            -
+            <c:out value="${manufacturer.country}" />
+        </option>
+    </c:forEach>
+</select> <br><br>
+    <button type="submit">Bye-bye</button>
+</form>
+
+<br><br>
 </body>
 </html>
 
