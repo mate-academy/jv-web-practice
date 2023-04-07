@@ -18,7 +18,7 @@
     </thead>
     <tbody>
         <tr>
-            <td class="tg-0lax"><a href="${pageContext.request.contextPath}/drivers/all">getAll</a></td>
+            <td class="tg-0lax"><a href="${pageContext.request.contextPath}/drivers">getAll</a></td>
             <td class="tg-0lax"></td>
             <td class="tg-0lax"></td>
         </tr>
