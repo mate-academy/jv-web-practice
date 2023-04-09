@@ -51,4 +51,44 @@
         <servlet-name>Adding driver to car</servlet-name>
         <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>Deleting a driver</servlet-name>
+        <servlet-class>mate.controller.DeleteDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Deleting a driver</servlet-name>
+        <url-pattern>/drivers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Displaying all manufacturers</servlet-name>
+        <servlet-class>mate.controller.DisplayingAllManufacturersController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Displaying all manufacturers</servlet-name>
+        <url-pattern>/manufacturers/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Deleting a manufacturer</servlet-name>
+        <servlet-class>mate.controller.DeleteManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Deleting a manufacturer</servlet-name>
+        <url-pattern>/manufacturers/delete</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Displaying all cars</servlet-name>
+        <servlet-class>mate.controller.DisplayingAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Displaying all cars</servlet-name>
+        <url-pattern>/cars/all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>Deleting a car</servlet-name>
+        <servlet-class>mate.controller.DeleteCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>Deleting a car</servlet-name>
+        <url-pattern>/cars/delete</url-pattern>
+    </servlet-mapping>
 </web-app>
