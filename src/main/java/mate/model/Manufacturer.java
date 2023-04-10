@@ -7,6 +7,14 @@ public class Manufacturer {
     private String name;
     private String country;
 
+    public Manufacturer(String name, String country) {
+        this.country = country;
+        this.name = name;
+    }
+
+    public Manufacturer() {
+    }
+
     public Long getId() {
         return id;
     }
