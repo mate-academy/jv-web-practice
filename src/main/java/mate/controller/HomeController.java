@@ -6,10 +6,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexController extends HttpServlet {
+public class HomeController extends HttpServlet {
     @Override
-    public void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/index.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/home.jsp").forward(req, resp);
     }
 }
