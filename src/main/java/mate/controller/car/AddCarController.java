@@ -14,7 +14,7 @@ import mate.service.CarService;
 import mate.service.ManufacturerService;
 
 @WebServlet("/cars/add")
-public class AddCarsController extends HttpServlet {
+public class AddCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService
             = (CarService) injector.getInstance(CarService.class);
@@ -26,7 +26,7 @@ public class AddCarsController extends HttpServlet {
             throws ServletException, IOException {
         List<Manufacturer> manufacturers = manufacturerService.getAll();
         req.setAttribute("manufacturers", manufacturers);
-        req.getRequestDispatcher("/WEB-INF/views/car/carsAdd.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/car/add.jsp").forward(req, resp);
     }
 
     @Override
