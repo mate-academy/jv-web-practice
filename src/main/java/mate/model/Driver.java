@@ -32,6 +32,11 @@ public class Driver {
     }
 
     @Override
+    public String toString() {
+        return "(id: " + id + ", Name: " + name + ", LN: " + licenseNumber + ")";
+    }
+
+    @Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;
