@@ -1,4 +1,4 @@
-package mate.lib;
+package mate.util;
 
 import java.io.File;
 import java.io.IOException;
@@ -10,6 +10,9 @@ import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import mate.lib.Dao;
+import mate.lib.Inject;
+import mate.lib.Service;
 
 public class Injector {
     private static final Map<String, Injector> injectors = new HashMap<>();
