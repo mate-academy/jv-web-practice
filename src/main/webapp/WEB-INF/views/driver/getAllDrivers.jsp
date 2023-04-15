@@ -20,7 +20,7 @@
         </tr>
     </c:forEach>
 </table>
-<form method="post" action="${pageContext.request.contextPath}/drivers">
+<form method="post" action="${pageContext.request.contextPath}/drivers/delete">
     Id <input type="number" name="driverId"> <br>
     <button type="submit">Delete</button>
 </form>
