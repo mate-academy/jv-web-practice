@@ -30,7 +30,7 @@
         </tr>
     </c:forEach>
 </table>
-<form method="post" action="${pageContext.request.contextPath}/cars">
+<form method="post" action="${pageContext.request.contextPath}/cars/delete">
     Id <input type="number" name="carId"> <br>
     <button type="submit">Delete</button>
 </form>

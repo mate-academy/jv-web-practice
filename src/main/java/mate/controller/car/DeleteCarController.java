@@ -9,15 +9,16 @@ import java.io.IOException;
 import mate.lib.Injector;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/cars")
-public class GetAllCarsController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/delete")
+public class DeleteCarController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("cars", carService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/car/allCars.jsp").forward(req, resp);
+        Long carId = Long.valueOf(req.getParameter("carId"));
+        carService.delete(carId);
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }
