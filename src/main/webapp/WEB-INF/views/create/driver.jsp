@@ -1,14 +1,17 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<style>
+    h2 {text-align: center;}
+</style>
 <head>
-    <title>Add new driver to drivers database</title>
+    <title align = "center">Add new driver to drivers database</title>
 </head>
 <body>
-<h1>Please fill the form below</h1>
-<form method="post" action="${pageContext.request.contextPath}/create/driver">
-    name <input type="text" name="name"><br>
-    license <input type="text" name="license"><br>
-    <button type="submit">Add driver</button>
+<h2>Please fill the form below</h2>
+<form align = "center" method="post" action="${pageContext.request.contextPath}/create/driver">
+    driver name <input type="text" name="name"><br>
+    license number <input type="text" name="license"><br>
+    <button align = "center" type="submit">Add driver</button>
 </form>
 </body>
 </html>
