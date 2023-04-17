@@ -4,7 +4,7 @@
     h2 {text-align: center;}
 </style>
 <head>
-    <title align = "center">Add new manufacturer to db</title>
+    <title align = "center">Create new manufacturer</title>
 </head>
 <body>
 <h2>Please fill the form below</h2>
