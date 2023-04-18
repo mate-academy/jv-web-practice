@@ -49,4 +49,10 @@ public class Driver {
     public int hashCode() {
         return Objects.hash(id, name, licenseNumber);
     }
+
+    @Override
+    public String toString() {
+        return name + " license number: " + licenseNumber
+                + " (id " + id + ")" + System.lineSeparator();
+    }
 }
