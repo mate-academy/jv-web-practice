@@ -19,8 +19,8 @@ public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    List<Driver> allDrivers = driverService.getAll();
     private List<Car> allCars = carService.getAll();
-    private List<Driver> allDrivers = driverService.getAll();
 
 
     @Override
@@ -35,9 +35,9 @@ public class AddDriverToCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String driverSelected = req.getParameter("driver");
-        Driver driver = allDrivers.get(Integer.parseInt(driverSelected) - 1);
+        Driver driver = driverService.get(Long.valueOf(driverSelected));
         String carSelected = req.getParameter("car");
-        Car car = allCars.get(Integer.parseInt(carSelected) - 1);
+        Car car = carService.get(Long.valueOf(carSelected));
         carService.addDriverToCar(driver, car);
         doGet(req, resp);
     }
