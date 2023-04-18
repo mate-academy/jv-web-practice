@@ -19,13 +19,12 @@ public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
-    List<Driver> allDrivers = driverService.getAll();
-    private List<Car> allCars = carService.getAll();
-
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
+        List<Car> allCars = carService.getAll();
+        List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("cars", allCars);
         req.setAttribute("drivers", allDrivers);
         req.getRequestDispatcher("/WEB-INF/views/drivers/tocar.jsp").forward(req, resp);
@@ -33,12 +32,12 @@ public class AddDriverToCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
+            throws IOException {
         String driverSelected = req.getParameter("driver");
         Driver driver = driverService.get(Long.valueOf(driverSelected));
         String carSelected = req.getParameter("car");
         Car car = carService.get(Long.valueOf(carSelected));
         carService.addDriverToCar(driver, car);
-        doGet(req, resp);
+        resp.sendRedirect("/drivers/tocar");
     }
 }
