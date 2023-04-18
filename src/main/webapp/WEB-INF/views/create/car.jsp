@@ -7,7 +7,7 @@
     }
 </style>
 <head>
-    <title align="center">Create new car</title>
+    <title>Create new car</title>
 </head>
 <body>
 <h2>Please fill the form below</h2>
