@@ -14,7 +14,7 @@
 <form align="center" method="post" action="${pageContext.request.contextPath}/create/car">
     car model <input type="text" name="model"><br>
     <form action="list" method="post">
-        Select manufacturer:
+        select manufacturer:
         <select name="manufacturer">
             <c:forEach items="${manufacturers}" var="manufacturer">
                 <option value="${manufacturer.id}">${manufacturer.name}</option>
