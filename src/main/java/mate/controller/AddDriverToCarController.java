@@ -1,24 +1,25 @@
 package mate.controller;
 
+import java.io.IOException;
+import java.util.List;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
-
-@WebServlet("/drivers/tocar")
+@WebServlet(value = "/cars/drivers/add", loadOnStartup = 1)
 public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService = (DriverService) injector.getInstance(DriverService.class);
+    private static final CarService carService =
+            (CarService) injector.getInstance(CarService.class);
+    private static final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -27,7 +28,7 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("cars", allCars);
         req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/drivers/tocar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req, resp);
     }
 
     @Override
@@ -38,6 +39,6 @@ public class AddDriverToCarController extends HttpServlet {
         String carSelected = req.getParameter("car");
         Car car = carService.get(Long.valueOf(carSelected));
         carService.addDriverToCar(driver, car);
-        resp.sendRedirect("/drivers/tocar");
+        resp.sendRedirect(req.getContextPath() + "/cars/drivers/add");
     }
 }
