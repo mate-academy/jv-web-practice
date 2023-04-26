@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.drivers;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -7,20 +7,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.ManufacturerService;
+import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/manufacturers/delete")
-public class DeleteManufacturerController extends HttpServlet {
+@WebServlet(urlPatterns = "/drivers/delete")
+public class DeleteDriverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
-    private final ManufacturerService manufacturerService = (ManufacturerService)
-            injector.getInstance(ManufacturerService.class);
+    private final DriverService driverService = (DriverService)
+            injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
-        manufacturerService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/manufacturers");
-
+        driverService.delete(id);
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

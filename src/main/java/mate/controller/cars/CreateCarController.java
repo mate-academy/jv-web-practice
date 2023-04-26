@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.cars;
 
 import java.io.IOException;
 import java.util.ArrayList;
