@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Link driver to car</h1>
-<form action="/cars/add/driver" method="post">
+<form action="${pageContext.request.contextPath}/cars/drivers/add" method="post">
     <label for="carId">Car:</label>
     <select name="carId" id="carId">
         <option value="">-- Select --</option>

@@ -22,13 +22,12 @@ public class AddManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp")
                 .forward(req, resp);
-        super.doGet(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        final Manufacturer manufacturer = new Manufacturer();
+        Manufacturer manufacturer = new Manufacturer();
         manufacturer.setName(req.getParameter("name"));
         manufacturer.setCountry(req.getParameter("country"));
         manufacturerService.create(manufacturer);

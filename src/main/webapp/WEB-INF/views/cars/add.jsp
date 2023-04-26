@@ -9,7 +9,7 @@
 </head>
 <body>
 <h1>Add car</h1>
-<form action="/cars/add" method="post">
+<form action="${pageContext.request.contextPath}/cars/add" method="post">
     <label for="madeBy">Manufacturer:</label>
     <select name="madeBy" id="madeBy">
         <option value="">-- Select --</option>
