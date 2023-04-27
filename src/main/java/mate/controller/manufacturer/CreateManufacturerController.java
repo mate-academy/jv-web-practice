@@ -31,5 +31,6 @@ public class CreateManufacturerController extends HttpServlet {
         ManufacturerService manufacturerService = (ManufacturerService) injector
                 .getInstance(ManufacturerService.class);
         manufacturerService.create(manufacturer);
+        resp.sendRedirect("/manufacturers/add");
     }
 }
