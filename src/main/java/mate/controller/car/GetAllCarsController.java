@@ -11,8 +11,8 @@ import mate.lib.Injector;
 import mate.model.Car;
 import mate.service.CarService;
 
-@WebServlet(urlPatterns = "/cars/all")
-public class GetAllController extends HttpServlet {
+@WebServlet(urlPatterns = "/cars")
+public class GetAllCarsController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
 
     @Override
