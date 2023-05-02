@@ -4,6 +4,6 @@
     <title>My team</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h1>путін хуйло!!!</h1>
 </body>
 </html>
