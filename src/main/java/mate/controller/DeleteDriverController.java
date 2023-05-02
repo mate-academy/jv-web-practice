@@ -23,7 +23,7 @@ public class DeleteDriverController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Driver : " + id + ", deleted successfully!");
-        }else {
+        } else {
             req.setAttribute("errorMsg", "Can't delete this driver");
             req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
         }
