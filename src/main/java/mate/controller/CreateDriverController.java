@@ -24,14 +24,17 @@ public class CreateDriverController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
-        if (driverService.create(driver).getId() != null) {
+        if (driver.getName() != null && driver.getLicenseNumber() != null) {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Driver: " + driver.getName() + ", created successfully!");
+        } else {
+            req.setAttribute("errorMsg", "Invalid data!");
+            req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
         }
     }
 }

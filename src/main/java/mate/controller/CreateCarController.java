@@ -27,16 +27,19 @@ public class CreateCarController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
         Car car = new Car();
         car.setModel(req.getParameter("model"));
         car.setManufacturer(manufacturerService.get(
                 Long.parseLong(req.getParameter("manufacturerId"))));
         car.setDrivers(Collections.emptyList());
-        if (carService.create(car).getId() != null) {
+        if (car.getManufacturer() != null && car.getModel() != null) {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Car: " + car.getModel() + ", created successfully!");
+        } else {
+            req.setAttribute("errorMsg", "Invalid data!");
+            req.getRequestDispatcher("/WEB-INF/views/cars.jsp").forward(req, resp);
         }
     }
 }

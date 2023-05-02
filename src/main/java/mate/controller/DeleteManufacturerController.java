@@ -23,6 +23,9 @@ public class DeleteManufacturerController extends HttpServlet {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Manufacturer : " + id + ", deleted successfully!");
+        } else {
+            req.setAttribute("errorMsg", "Can't delete this manufacturer!");
+            req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
         }
     }
 }

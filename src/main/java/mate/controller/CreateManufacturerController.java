@@ -25,14 +25,17 @@ public class CreateManufacturerController extends HttpServlet {
 
     @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws IOException {
+            throws IOException, ServletException {
         Manufacturer manufacturer = new Manufacturer();
         manufacturer.setCountry(req.getParameter("country"));
         manufacturer.setName(req.getParameter("name"));
-        if (manufacturerService.create(manufacturer).getId() != null) {
+        if (manufacturer.getName() != null && manufacturer.getCountry() != null) {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")
                     + "&msg=Manufacturer: " + manufacturer.getName() + ", created successfully!");
+        } else {
+            req.setAttribute("errorMsg", "Invalid data!");
+            req.getRequestDispatcher("/WEB-INF/views/manufacturers.jsp").forward(req, resp);
         }
     }
 }

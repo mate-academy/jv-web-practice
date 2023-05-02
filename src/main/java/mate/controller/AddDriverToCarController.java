@@ -30,7 +30,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws IOException {
         Driver driver = driverService.get(Long.parseLong(req.getParameter("driverId")));
         Car car = carService.get(Long.parseLong(req.getParameter("carId")));
-        carService.addDriverToCar(driver,car);
+        carService.addDriverToCar(driver, car);
         if (car.getDrivers().contains(driver)) {
             resp.sendRedirect(req.getContextPath() + "/message-box?referer="
                     + req.getHeader("Referer")

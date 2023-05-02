@@ -19,9 +19,13 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.parseLong(req.getParameter("id"));
         if (carService.delete(id)) {
-            resp.sendRedirect(req.getContextPath() + "/message-box?referer="
-                    + req.getHeader("Referer")
-                    + "&msg=Cars : " + id + ", deleted successfully!");
+            String message = "Cars : " + id + ", deleted successfully!";
+            String redirectUrl = req.getContextPath() + "/message-box?referer="
+                    + req.getHeader("Referer") + "&msg=" + message;
+            resp.sendRedirect(redirectUrl);
+        } else {
+            req.setAttribute("errorMsg", "Can't delete this car!");
+            req.getRequestDispatcher("/WEB-INF/views/cars.jsp").forward(req, resp);
         }
     }
 }
