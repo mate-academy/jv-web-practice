@@ -1,10 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>Success</title>
 </head>
-<body>
-<h1>Hello, this is taxi service</h1>
+<h1>Information successfully added to database</h1>
 <a href="${pageContext.request.contextPath}/create_new_driver">Create new driver</a>
 <a href="${pageContext.request.contextPath}/all_drivers">See All drivers</a>
 <a href="${pageContext.request.contextPath}/create_new_manufacturer">Add new manufacturer</a>
