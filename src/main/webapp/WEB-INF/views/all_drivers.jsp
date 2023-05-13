@@ -15,11 +15,13 @@
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
-
             <td><c:out value="${driver.id}" /></td>
             <td><c:out value="${driver.name}" /></td>
             <td><c:out value="${driver.licenseNumber}" /></td>
-            <td><a href ="${pageContext.request.contextPath}/delete?id=${driver.id}&class=driver">delete</a></td>
+            <td><form method="post" action="${pageContext.request.contextPath}/delete?id=${driver.id}&class=driver">
+                <button type="submit">delete</button>
+            </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

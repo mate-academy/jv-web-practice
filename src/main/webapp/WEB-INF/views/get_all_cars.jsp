@@ -22,8 +22,10 @@
             <td><c:out value="${car.manufacturer.name}" /></td>
             <td><c:out value="${car.manufacturer.country}" /></td>
             <td><c:out value="${car.drivers}" /></td>
-
-            <td><a href ="${pageContext.request.contextPath}/delete?id=${car.id}&class=car">delete</a></td>
+            <td><form method="post" action="${pageContext.request.contextPath}/delete?id=${car.id}&class=car">
+                <button type="submit">delete</button>
+            </form>
+            </td>
         </tr>
     </c:forEach>
 </table>

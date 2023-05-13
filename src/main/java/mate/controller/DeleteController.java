@@ -24,18 +24,29 @@ public class DeleteController extends HttpServlet {
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         String className = req.getParameter("class");
-        if (className.equals(MANUFACTURER_CLASS)) {
-            manufacturerService.delete(id);
+
+        switch (className) {
+
+            case MANUFACTURER_CLASS:
+                manufacturerService.delete(id);
+                break;
+
+            case CAR_CLASS:
+                carService.delete(id);
+                break;
+
+            case DRIVER_CLASS:
+                driverService.delete(id);
+                break;
+
+            default:
+                break;
+
         }
-        if (className.equals(DRIVER_CLASS)) {
-            driverService.delete(id);
-        }
-        if (className.equals(CAR_CLASS)) {
-            carService.delete(id);
-        }
+        resp.sendRedirect("/success");
     }
 }
