@@ -19,6 +19,7 @@
     <servlet-mapping>
         <servlet-name>drivers</servlet-name>
         <url-pattern>/drivers/all</url-pattern>
+        <url-pattern>/drivers/</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>create_driver</servlet-name>
@@ -35,6 +36,7 @@
     <servlet-mapping>
         <servlet-name>manufacturers</servlet-name>
         <url-pattern>/manufacturers/all</url-pattern>
+        <url-pattern>/manufacturers/</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>create_manufacturer</servlet-name>
@@ -51,6 +53,7 @@
     <servlet-mapping>
         <servlet-name>cars</servlet-name>
         <url-pattern>/cars/all</url-pattern>
+        <url-pattern>/cars/</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>create_car</servlet-name>
@@ -59,5 +62,13 @@
     <servlet-mapping>
         <servlet-name>create_car</servlet-name>
         <url-pattern>/cars/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>add_driver_to_car</servlet-name>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>add_driver_to_car</servlet-name>
+        <url-pattern>/cars_drivers/add_driver_to_car</url-pattern>
     </servlet-mapping>
 </web-app>
