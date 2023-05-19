@@ -11,5 +11,6 @@
 <a href="${pageContext.request.contextPath}/manufacturers/all">3. Look at all manufacturers list</a><br>
 <a href="${pageContext.request.contextPath}/manufacturers/create">4. Create new manufacturer</a><br>
 <a href="${pageContext.request.contextPath}/cars/all">5. Look at all cars list</a><br>
+<a href="${pageContext.request.contextPath}/cars/create">6. Create new car</a><br>
 </body>
 </html>
