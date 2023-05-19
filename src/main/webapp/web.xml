@@ -44,4 +44,12 @@
         <servlet-name>create_manufacturer</servlet-name>
         <url-pattern>/manufacturers/create</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>cars</servlet-name>
+        <servlet-class>mate.controller.GetAllCarsController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>cars</servlet-name>
+        <url-pattern>/cars/all</url-pattern>
+    </servlet-mapping>
 </web-app>
