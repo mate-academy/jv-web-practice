@@ -11,6 +11,6 @@
     <button type="submit">Create</button>
 </form>
 <a href="${pageContext.request.contextPath}/cars/all">Look at all cars list</a><br>
-<a href="${pageContext.request.contextPath}">Back to main page</a><br>
+<a href="${pageContext.request.contextPath}/">Back to main page</a><br>
 </body>
 </html>

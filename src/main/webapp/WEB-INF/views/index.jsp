@@ -13,5 +13,6 @@
 <a href="${pageContext.request.contextPath}/cars/all">5. Look at all cars list</a><br>
 <a href="${pageContext.request.contextPath}/cars/create">6. Create new car</a><br>
 <a href="${pageContext.request.contextPath}/cars_drivers/add_driver_to_car">7. Add driver to car</a><br>
+<a href="${pageContext.request.contextPath}/cars/delete">8. Delete car</a><br>
 </body>
 </html>
