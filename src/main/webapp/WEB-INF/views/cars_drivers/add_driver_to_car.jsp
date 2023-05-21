@@ -10,6 +10,6 @@
     Car id <input type="text" name="car_id"><br>
     <button type="submit">Add</button>
 </form>
-<a href="${pageContext.request.contextPath}">Back to main page</a><br>
+<a href="${pageContext.request.contextPath}/">Back to main page</a><br>
 </body>
 </html>
