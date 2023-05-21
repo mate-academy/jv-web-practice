@@ -14,5 +14,6 @@
 <a href="${pageContext.request.contextPath}/cars/create">6. Create new car</a><br>
 <a href="${pageContext.request.contextPath}/cars_drivers/add_driver_to_car">7. Add driver to car</a><br>
 <a href="${pageContext.request.contextPath}/cars/delete">8. Delete car</a><br>
+<a href="${pageContext.request.contextPath}/manufacturers/delete">9. Delete manufacturer</a><br>
 </body>
 </html>

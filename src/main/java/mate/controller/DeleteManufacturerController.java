@@ -6,14 +6,14 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.service.CarService;
+import mate.service.ManufacturerService;
 
-public class DeleteCarController extends HttpServlet {
-    private static final String PATH = "/WEB-INF/views/cars/delete.jsp";
-    private static final String REDIRECT_PATH = "/cars/all";
+public class DeleteManufacturerController extends HttpServlet {
+    private static final String PATH = "/WEB-INF/views/manufacturers/delete.jsp";
+    private static final String REDIRECT_PATH = "/manufacturers/all";
     private static final Injector injector = Injector.getInstance("mate");
-    private static final CarService carService =
-            (CarService) injector.getInstance(CarService.class);
+    private static final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
@@ -24,8 +24,9 @@ public class DeleteCarController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        Long carId = Long.valueOf(req.getParameter("car_id"));
-        carService.delete(carId);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        manufacturerService.delete(manufacturerId);
         resp.sendRedirect(REDIRECT_PATH);
+
     }
 }

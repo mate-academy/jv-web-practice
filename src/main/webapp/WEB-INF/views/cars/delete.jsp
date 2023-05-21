@@ -1,7 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Delet car</title>
+    <title>Delete car</title>
 </head>
 <body>
 <h1>Enter car id:</h1>
