@@ -11,17 +11,20 @@
         <td>ID</td>
         <td>NAME</td>
         <td>COUNTRY</td>
+        <td>DELETE</td>
     </tr>
     <c:forEach items="${manufacturers}" var="manufacturer">
         <tr>
             <td><c:out value="${manufacturer.getId()}" /></td>
             <td><c:out value="${manufacturer.getName()}" /></td>
             <td><c:out value="${manufacturer.getCountry()}" /></td>
+            <td>
+                <a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.getId()}">Delete</a>
+            </td>
         </tr>
     </c:forEach>
 </table><br>
 <a href="${pageContext.request.contextPath}/manufacturers/create">Create new manufacturer</a><br>
-<a href="${pageContext.request.contextPath}/manufacturers/delete">Delete manufacturer</a><br>
 <a href="${pageContext.request.contextPath}/">Back to main page</a><br>
 </body>
 </html>

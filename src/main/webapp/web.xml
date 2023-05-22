@@ -69,7 +69,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>add_driver_to_car</servlet-name>
-        <url-pattern>/cars_drivers/add_driver_to_car</url-pattern>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
     <servlet>
         <servlet-name>delete_car</servlet-name>

@@ -9,7 +9,6 @@ import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
 public class DeleteManufacturerController extends HttpServlet {
-    private static final String PATH = "/WEB-INF/views/manufacturers/delete.jsp";
     private static final String REDIRECT_PATH = "/manufacturers/all";
     private static final Injector injector = Injector.getInstance("mate");
     private static final ManufacturerService manufacturerService =
@@ -18,15 +17,8 @@ public class DeleteManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher(PATH).forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Long manufacturerId = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(manufacturerId);
-        resp.sendRedirect(REDIRECT_PATH);
-
+        resp.sendRedirect(req.getContextPath() + REDIRECT_PATH);
     }
 }

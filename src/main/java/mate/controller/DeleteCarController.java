@@ -9,7 +9,6 @@ import mate.lib.Injector;
 import mate.service.CarService;
 
 public class DeleteCarController extends HttpServlet {
-    private static final String PATH = "/WEB-INF/views/cars/delete.jsp";
     private static final String REDIRECT_PATH = "/cars/all";
     private static final Injector injector = Injector.getInstance("mate");
     private static final CarService carService =
@@ -18,14 +17,8 @@ public class DeleteCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher(PATH).forward(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        Long carId = Long.valueOf(req.getParameter("car_id"));
+        Long carId = Long.valueOf(req.getParameter("id"));
         carService.delete(carId);
-        resp.sendRedirect(REDIRECT_PATH);
+        resp.sendRedirect(req.getContextPath() + REDIRECT_PATH);
     }
 }
