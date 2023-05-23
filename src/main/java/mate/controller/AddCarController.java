@@ -20,20 +20,18 @@ public class AddCarController extends HttpServlet {
             (CarService) injector.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
-    private List<Manufacturer> allManufacturers = manufacturerService.getAll();
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("manufacturers", allManufacturers);
         req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String manufacturerId = req.getParameter("manufacturer");
-        Manufacturer manufacturer = allManufacturers.get(Integer.parseInt(manufacturerId) - 1);
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         String model = req.getParameter("model");
         List<Driver> drivers = Collections.emptyList();
         Car car = new Car();
