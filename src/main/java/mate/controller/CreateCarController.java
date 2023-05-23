@@ -34,14 +34,15 @@ public class CreateCarController extends HttpServlet {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("manufacturers", allManufacturers);
         req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").include(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/headers/tasks.jsp").include(req, resp);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String model = request.getParameter("model");
-        Long manufacturerId = Long.valueOf(request.getParameter("manufacturerId"));
+        Long manufacturerId = Long.valueOf(request.getParameter("manufacturer_id"));
         Car car = new Car();
         car.setModel(model);
         car.setManufacturer(manufacturerService.get(manufacturerId));

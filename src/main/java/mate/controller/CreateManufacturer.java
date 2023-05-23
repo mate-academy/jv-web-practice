@@ -21,7 +21,9 @@ public class CreateManufacturer extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         request.getRequestDispatcher("/WEB-INF/views/manufacturers/add.jsp")
-                .forward(request, response);
+                .include(request, response);
+        request.getRequestDispatcher("/WEB-INF/views/headers/tasks.jsp")
+                .include(request, response);
     }
 
     @Override
