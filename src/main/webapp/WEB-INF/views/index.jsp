@@ -1,9 +1,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>Taxi service</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+    <%@ include file="/WEB-INF/views/header.jsp"%><br>
+    <h1>Hello, happy to see you on my Taxi service!</h1>
 </body>
 </html>
