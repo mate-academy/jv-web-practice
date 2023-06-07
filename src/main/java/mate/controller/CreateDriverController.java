@@ -26,7 +26,7 @@ public class CreateDriverController extends HttpServlet {
     public void doPost(HttpServletRequest req, HttpServletResponse resp) {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
-        driver.setLicenseNumber(req.getParameter("license_number"));
+        driver.setLicenseNumber(req.getParameter("licenseNumber"));
         driverService.create(driver);
     }
 }
