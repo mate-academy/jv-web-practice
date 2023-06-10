@@ -12,6 +12,7 @@
         <th>MODEL</th>
         <th>MANUFACTURER</th>
         <th>COUNTRY</th>
+        <th>DRIVERS</th>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>
@@ -19,7 +20,10 @@
             <td><c:out value="${car.model}"/></td>
             <td><c:out value="${car.manufacturer.name}"/></td>
             <td><c:out value="${car.manufacturer.country}"/></td>
-<%--            <td><a href="${pageContext.request.contextPath}/users/delete?id=${car.id}">delete this user</a></td>--%>
+            <td><c:forEach items="${car.drivers}" var="driver">
+        <c:out value="${driver.name}"></c:out></c:forEach>
+        </td>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete this car</a></td>
         </tr>
     </c:forEach>
 </table>

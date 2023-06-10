@@ -18,6 +18,5 @@
 <a href="${pageContext.request.contextPath}/drivers">Display all drivers</a><br>
 <br>
 <a href="${pageContext.request.contextPath}/drivers/add">Add driver</a><br>
-
 </body>
 </html>
