@@ -8,9 +8,12 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "index", urlPatterns = "/index")
 public class IndexController extends GenericController {
+
+    public static final String JSP_PATH = "index.jsp";
+
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher(VIEWS_PATH + "index.jsp").forward(req, resp);
+        req.getRequestDispatcher(VIEWS_PATH + JSP_PATH).forward(req, resp);
     }
 }
