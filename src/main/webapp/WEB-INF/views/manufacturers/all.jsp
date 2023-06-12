@@ -62,7 +62,7 @@
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/index" class="nav-link active" aria-current="page">
+                <a href="${pageContext.request.contextPath}/index" class="nav-link" aria-current="page">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
                     Home
                 </a>
@@ -74,7 +74,7 @@
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/manufacturers/all" class="nav-link link-dark">
+                <a href="${pageContext.request.contextPath}/manufacturers/all" class="nav-link link-dark active">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
                     Manufacturers
                 </a>
@@ -96,32 +96,27 @@
     </div>
     <table style="height: 100px">
         <tr>
-            <td><h1>Available database operations in the taxi service</h1></td>
+            <td><h1>All manufacturers in taxi service</h1></td>
         </tr>
         <tr>
             <td>
                 <table class="table table-bordered border-primary" style="height: 100px; width: 600px">
                     <tr>
-                        <td>Drivers</td>
-                        <td>Manufacturers</td>
-                        <td>Cars</td>
+                        <td>Id</td>
+                        <td>Name</td>
+                        <td>Country</td>
+                        <td>Delete</td>
                     </tr>
-                    <tr>
-                        <td><a href="${pageContext.request.contextPath}/drivers/all">Get all drivers</a></td>
-                        <td><a href="${pageContext.request.contextPath}/manufacturers/all">Get all manufacturers</a></td>
-                        <td><a href="${pageContext.request.contextPath}/cars/all">Get all cars</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="${pageContext.request.contextPath}/drivers/create">Create driver</a></td>
-                        <td><a href="${pageContext.request.contextPath}/manufacturers/create">Create manufacturer</a></td>
-                        <td><a href="${pageContext.request.contextPath}/cars/create">Create car</a></td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td><a href="${pageContext.request.contextPath}/cars/add-driver">Add driver to car</a></td>
-                    </tr>
-                </table>
+                    <c:forEach items="${manufacturers}" var="manufacturer">
+                        <tr>
+                            <td><c:out value="${manufacturer.id}" /></td>
+                            <td><c:out value="${manufacturer.name}" /></td>
+                            <td><c:out value="${manufacturer.country}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/manufacturers/delete?id=${manufacturer.id}"> Click to delete this manufacturer </a></td>
+                        </tr>
+                    </c:forEach>
+                </table><br>
+                <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/manufacturers/create">Create manufacturer</a>
             </td>
         </tr>
     </table>

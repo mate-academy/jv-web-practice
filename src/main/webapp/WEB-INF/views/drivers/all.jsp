@@ -55,20 +55,20 @@
     <h1 class="visually-hidden">Sidebars examples</h1>
     <div class="b-example-divider"></div>
     <div class="d-flex flex-column flex-shrink-0 p-3 bg-light" style="width: 280px;">
-        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+        <a href="${pageContext.request.contextPath}" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg>
             <span class="fs-4">Taxi service</span>
         </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto">
             <li class="nav-item">
-                <a href="${pageContext.request.contextPath}/index" class="nav-link active" aria-current="page">
+                <a href="${pageContext.request.contextPath}/index" class="nav-link" aria-current="page">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg>
                     Home
                 </a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/drivers/all" class="nav-link link-dark">
+                <a href="${pageContext.request.contextPath}/drivers/all" class="nav-link link-dark  active">
                     <svg class="bi me-2" width="16" height="16"><use xlink:href="#people-circle"/></svg>
                     Drivers
                 </a>
@@ -96,32 +96,27 @@
     </div>
     <table style="height: 100px">
         <tr>
-            <td><h1>Available database operations in the taxi service</h1></td>
+            <td><h1>All drivers in taxi service</h1></td>
         </tr>
         <tr>
             <td>
                 <table class="table table-bordered border-primary" style="height: 100px; width: 600px">
                     <tr>
-                        <td>Drivers</td>
-                        <td>Manufacturers</td>
-                        <td>Cars</td>
+                        <td>Id</td>
+                        <td>Model</td>
+                        <td>License Number</td>
+                        <td>Delete</td>
                     </tr>
-                    <tr>
-                        <td><a href="${pageContext.request.contextPath}/drivers/all">Get all drivers</a></td>
-                        <td><a href="${pageContext.request.contextPath}/manufacturers/all">Get all manufacturers</a></td>
-                        <td><a href="${pageContext.request.contextPath}/cars/all">Get all cars</a></td>
-                    </tr>
-                    <tr>
-                        <td><a href="${pageContext.request.contextPath}/drivers/create">Create driver</a></td>
-                        <td><a href="${pageContext.request.contextPath}/manufacturers/create">Create manufacturer</a></td>
-                        <td><a href="${pageContext.request.contextPath}/cars/create">Create car</a></td>
-                    </tr>
-                    <tr>
-                        <td>-</td>
-                        <td>-</td>
-                        <td><a href="${pageContext.request.contextPath}/cars/add-driver">Add driver to car</a></td>
-                    </tr>
-                </table>
+                    <c:forEach items="${drivers}" var="driver">
+                        <tr>
+                            <td><c:out value="${driver.id}" /></td>
+                            <td><c:out value="${driver.name}" /></td>
+                            <td><c:out value="${driver.licenseNumber}" /></td>
+                            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}"> Click to delete this driver </a></td>
+                        </tr>
+                    </c:forEach>
+                </table><br>
+                <a class="btn btn-primary btn-lg" href="${pageContext.request.contextPath}/drivers/create">Create driver</a>
             </td>
         </tr>
     </table>
