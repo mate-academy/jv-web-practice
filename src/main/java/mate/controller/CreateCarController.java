@@ -22,17 +22,15 @@ public class CreateCarController extends HttpServlet {
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/cars/createCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/cars/create.jsp").forward(req, resp);
     }
 
     @Override
-    public void doPost(HttpServletRequest req, HttpServletResponse resp) {
-        Car car = new Car();
-        car.setModel(req.getParameter("model"));
-        car.setManufacturer(manufacturerService.get(
-                Long.valueOf(req.getParameter("manufacturerId")))
-        );
-        car.setDrivers(new ArrayList<>());
+    public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
+        Car car = new Car(req.getParameter("model"),
+                manufacturerService.get(Long.valueOf(req.getParameter("manufacturerId"))),
+                new ArrayList<>());
         carService.create(car);
+        resp.sendRedirect("/cars");
     }
 }
