@@ -23,6 +23,6 @@ public class GetAllDriversController extends HttpServlet {
         List<Driver> drivers = driverService.getAll();
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher(req.getContextPath()
-                + "/WEB-INF/views/driver/allDrivers.jsp").forward(req, resp);
+                + "/WEB-INF/views/driver/drivers.jsp").forward(req, resp);
     }
 }
