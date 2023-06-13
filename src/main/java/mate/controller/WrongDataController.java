@@ -6,8 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class IndexController extends HttpServlet {
-    private static final String PATH = "/WEB-INF/views/index.jsp";
+public class WrongDataController extends HttpServlet {
+    private static final String PATH = "/WEB-INF/views/wrong-data.jsp";
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
