@@ -13,7 +13,7 @@ import mate.service.ManufacturerService;
 
 @WebServlet(name = "addCarWithoutDrivers", urlPatterns = "/cars/add")
 public class CreateCarController extends GenericController {
-    private static final String JSP_PATH = "addCarWithoutDrivers.jsp";
+    private static final String JSP_PATH = "addCar.jsp";
     private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
             (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);
