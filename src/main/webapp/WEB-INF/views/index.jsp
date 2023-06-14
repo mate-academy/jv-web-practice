@@ -5,7 +5,7 @@
     <title>TAXI-Service</title>
 </head>
 <body>
-<h1>Chose model</h1>
+<h1>Taxi-service</h1>
 <a href="${pageContext.request.contextPath}/manufacturers">
     <input type="button" value="Manufacturers" />
 </a><br><br>
