@@ -29,9 +29,8 @@ public class CreateManufacturerController extends GenericController {
     }
 
     private Manufacturer initializeManufacturerByRequest(HttpServletRequest req) {
-        Manufacturer manufacturer = new Manufacturer();
-        manufacturer.setName(req.getParameter("name"));
-        manufacturer.setCountry(req.getParameter("country"));
-        return manufacturer;
+        String name = req.getParameter("name");
+        String country = req.getParameter("country");
+        return new Manufacturer(name, country);
     }
 }

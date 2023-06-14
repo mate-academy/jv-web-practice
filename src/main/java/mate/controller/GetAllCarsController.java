@@ -10,7 +10,6 @@ import mate.model.Car;
 import mate.service.CarService;
 
 @WebServlet(name = "displayAllCars", urlPatterns = "/cars")
-
 public class GetAllCarsController extends GenericController {
     private static final String JSP_PATH = "displayAllCars.jsp";
     private final CarService carService =

@@ -7,11 +7,12 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.model.Car;
+import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
-@WebServlet(name = "addCarWithoutDrivers", urlPatterns = "/cars/add/without/drivers")
-public class CreateCarWithoutDriversController extends GenericController {
+@WebServlet(name = "addCarWithoutDrivers", urlPatterns = "/cars/add")
+public class CreateCarController extends GenericController {
     private static final String JSP_PATH = "addCarWithoutDrivers.jsp";
     private final CarService carService = (CarService) INJECTOR.getInstance(CarService.class);
     private final ManufacturerService manufacturerService =
@@ -32,11 +33,9 @@ public class CreateCarWithoutDriversController extends GenericController {
     }
 
     private Car initializeCarByRequest(HttpServletRequest req) {
-        Car car = new Car();
-        car.setModel(req.getParameter("model"));
-        car.setManufacturer(
-                manufacturerService.get(Long.parseLong(req.getParameter("manufacturer_id"))));
-        car.setDrivers(new ArrayList<>());
-        return car;
+        String model = req.getParameter("model");
+        Manufacturer manufacturer =
+                manufacturerService.get(Long.valueOf(req.getParameter("manufacturer_id")));
+        return new Car(model, manufacturer, new ArrayList<>());
     }
 }

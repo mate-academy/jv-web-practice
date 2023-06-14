@@ -29,9 +29,8 @@ public class CreateDriverController extends GenericController {
     }
 
     private Driver initializeDriverByRequest(HttpServletRequest req) {
-        Driver driver = new Driver();
-        driver.setName(req.getParameter("name"));
-        driver.setLicenseNumber(req.getParameter("licence"));
-        return driver;
+        String name = req.getParameter("name");
+        String licence = req.getParameter("licence");
+        return new Driver(name, licence);
     }
 }

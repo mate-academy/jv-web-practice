@@ -17,6 +17,6 @@ public class DeleteManufacturerController extends GenericController {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(id);
-        resp.sendRedirect("/manufacturers");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }
