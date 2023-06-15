@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 import mate.service.DriverService;
 
 @WebServlet(name = "deleteDriver", urlPatterns = "/drivers/delete")
-
 public class DeleteDriverController extends GenericController {
     private final DriverService driverService =
             (DriverService) INJECTOR.getInstance(DriverService.class);
