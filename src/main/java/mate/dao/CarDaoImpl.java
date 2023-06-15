@@ -35,7 +35,9 @@ public class CarDaoImpl implements CarDao {
         } catch (SQLException e) {
             throw new DataProcessingException("Can't create car " + car, e);
         }
-        insertAllDrivers(car);
+        if (car.getDrivers() != null) {
+            insertAllDrivers(car);
+        }
         return car;
     }
 
