@@ -8,7 +8,6 @@ import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "index", urlPatterns = "/index")
 public class IndexController extends GenericController {
-
     private static final String JSP_PATH = "index.jsp";
 
     @Override
