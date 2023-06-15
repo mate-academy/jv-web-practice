@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "index", urlPatterns = "/index")
 public class IndexController extends GenericController {
 
-    public static final String JSP_PATH = "index.jsp";
+    private static final String JSP_PATH = "index.jsp";
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
