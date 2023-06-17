@@ -13,7 +13,7 @@
     </servlet-mapping>
     <servlet>
         <servlet-name>driver-add-to-car</servlet-name>
-        <servlet-class>mate.controller.AddingDriverToCarController</servlet-class>
+        <servlet-class>mate.controller.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>driver-add-to-car</servlet-name>

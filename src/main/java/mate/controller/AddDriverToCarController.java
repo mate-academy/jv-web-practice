@@ -13,7 +13,7 @@ import mate.service.CarServiceImpl;
 import mate.service.DriverService;
 import mate.service.DriverServiceImpl;
 
-public class AddingDriverToCarController extends HttpServlet {
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector
             = Injector.getInstance("controller");
 

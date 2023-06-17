@@ -9,10 +9,6 @@
 <from method="post" action="${pageContext.request.contextPath}/cars/creating">
     Model <input type="text" name="model"><br>
     Manufacturer_id <input type="text" name="manufacturer_id"><br>
-    Drivers_id <input type="text" name="first_drivers_id"><br>
-    Drivers_id <input type="text" name="second_driver_id"><br>
-    Drivers_id <input type="text" name="third_drivers_id"><br>
-    Drivers_id <input type="text" name="fours_drivers_id"><br>
     <button type="submit">Confirm</button>
 </from>
 
