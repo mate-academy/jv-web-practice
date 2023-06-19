@@ -13,7 +13,7 @@
         <th>Model</th>
         <th>Manufacturer</th>
         <th>Drivers</th>
-        <th>Action</th>
+        <th>delete</th>
     </tr>
     </thead>
     <tbody>
@@ -28,10 +28,8 @@
                 </c:forEach>
             </td>
             <td>
-                <form method="post" action="${pageContext.request.contextPath}/cars/delete">
-                    <input type="hidden" name="carId" value="${car.id}">
-                    <button type="submit">Delete</button>
-                </form>
+            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">
+                delete this car</a></td>
             </td>
         </tr>
     </c:forEach>

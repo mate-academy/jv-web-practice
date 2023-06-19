@@ -11,12 +11,15 @@
         <td>id</td>
         <td>name</td>
         <td>license_number</td>
+        <td>delete</td>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
             <td><c:out value="${driver.id}"/></td>
             <td><c:out value="${driver.name}"/></td>
             <td><c:out value="${driver.licenseNumber}"/></td>
+            <td><a href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">
+                delete this driver</a></td>
         </tr>
     </c:forEach>
 </table>
