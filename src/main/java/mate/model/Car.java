@@ -11,7 +11,6 @@ public class Car {
     private List<Driver> drivers;
 
     public Car() {
-
     }
 
     public Car(String model, Manufacturer manufacturer) {
