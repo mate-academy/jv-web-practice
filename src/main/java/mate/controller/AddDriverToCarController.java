@@ -13,7 +13,7 @@ import mate.service.DriverService;
 
 public class AddDriverToCarController extends HttpServlet {
     private static final String PACKAGE = "mate";
-    private static final String PATH_TO_JSP = "/WEB-INF/views/cars/drivers/addDriversToCar.jsp";
+    private static final String PATH_TO_JSP = "/WEB-INF/views/cars/drivers/add.jsp";
     private static final Injector injector = Injector.getInstance(PACKAGE);
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
     private final DriverService driverService = (DriverService) injector
