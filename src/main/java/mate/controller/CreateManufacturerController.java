@@ -10,9 +10,8 @@ import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
 
 public class CreateManufacturerController extends HttpServlet {
-    private static final String PACKAGE = "mate";
     private static final String PATH_TO_JSP = "/WEB-INF/views/manufacturers/create.jsp";
-    private static final Injector injector = Injector.getInstance(PACKAGE);
+    private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
 

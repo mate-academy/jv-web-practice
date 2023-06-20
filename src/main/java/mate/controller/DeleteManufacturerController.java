@@ -9,8 +9,7 @@ import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
 public class DeleteManufacturerController extends HttpServlet {
-    private static final String PACKAGE = "mate";
-    private static final Injector injector = Injector.getInstance(PACKAGE);
+    private static final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService = (ManufacturerService) injector
             .getInstance(ManufacturerService.class);
 
@@ -19,5 +18,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(id);
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

@@ -11,9 +11,8 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 public class GetAllDriversController extends HttpServlet {
-    private static final String PACKAGE = "mate";
     private static final String PATH_TO_JSP = "/WEB-INF/views/drivers/all.jsp";
-    private static final Injector injector = Injector.getInstance(PACKAGE);
+    private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService) injector
             .getInstance(DriverService.class);
 

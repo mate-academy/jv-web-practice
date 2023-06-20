@@ -9,8 +9,7 @@ import mate.lib.Injector;
 import mate.service.CarService;
 
 public class DeleteCarController extends HttpServlet {
-    private static final String PACKAGE = "mate";
-    private static final Injector injector = Injector.getInstance(PACKAGE);
+    private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector
             .getInstance(CarService.class);
 
@@ -19,5 +18,6 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

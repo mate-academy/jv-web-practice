@@ -11,9 +11,8 @@ import mate.model.Car;
 import mate.service.CarService;
 
 public class GetAllCarsController extends HttpServlet {
-    private static final String PACKAGE = "mate";
     private static final String PATH_TO_JSP = "/WEB-INF/views/cars/all.jsp";
-    private static final Injector injector = Injector.getInstance(PACKAGE);
+    private static final Injector injector = Injector.getInstance("mate");
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
 
     @Override
