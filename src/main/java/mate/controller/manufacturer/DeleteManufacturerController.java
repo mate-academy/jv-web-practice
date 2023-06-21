@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -13,7 +13,8 @@ public class DeleteManufacturerController extends HttpServlet {
     private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
-    @Override protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(id);

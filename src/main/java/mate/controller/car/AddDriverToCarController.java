@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -18,7 +18,6 @@ public class AddDriverToCarController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
             IOException {
         req.getRequestDispatcher("/WEB-INF/views/cars/addDriver.jsp").forward(req, resp);

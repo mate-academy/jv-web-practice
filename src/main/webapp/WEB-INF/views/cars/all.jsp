@@ -1,29 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
+<style><%@include file="/WEB-INF/views/css/style.css"%> </style>
 <head>
     <title>Cars</title>
-    <style>
-        table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        th, td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-
-        table.inner-table {
-            border-collapse: collapse;
-            width: 100%;
-        }
-
-        table.inner-table th, table.inner-table td {
-            border: 1px solid black;
-            padding: 8px;
-        }
-    </style>
 </head>
 <body>
 <h1>List of all cars</h1>
