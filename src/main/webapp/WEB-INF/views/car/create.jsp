@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>Create car using these fields</h1>
-    <form method="post" action="${pageContext.request.contextPath}/cars/add">
-        Model <input type="text" name="model"><br>
-        Manufacturer id <input type="number" name="manufacturerId"><br>
-        <button type="submit">create</button>
-    </form>
+<form method="post" action="${pageContext.request.contextPath}/cars/add">
+    Model <input type="text" name="model"><br>
+    Manufacturer id <input type="number" name="manufacturerId"><br>
+    <button type="submit">create</button>
+</form>
 </body>
 </html>

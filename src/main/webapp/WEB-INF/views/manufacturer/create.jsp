@@ -6,10 +6,10 @@
 </head>
 <body>
 <h1>Create manufacturer using these fields</h1>
-  <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
     Name <input type="text" name="name"><br>
     Country <input type="text" name="country"><br>
     <button type="submit">create</button>
-  </form>
+</form>
 </body>
 </html>
