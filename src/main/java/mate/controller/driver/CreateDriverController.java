@@ -22,11 +22,15 @@ public class CreateDriverController extends HttpServlet {
             throws ServletException, IOException {
         String name = req.getParameter("name");
         String licenseNumber = req.getParameter("license_number");
-        Driver driver = new Driver();
-        driver.setName(name);
-        driver.setLicenseNumber(licenseNumber);
-        driverService.create(driver);
-        resp.sendRedirect(req.getContextPath() + "/drivers");
+        if (!name.isEmpty() && !licenseNumber.isEmpty()) {
+            Driver driver = new Driver();
+            driver.setName(name);
+            driver.setLicenseNumber(licenseNumber);
+            driverService.create(driver);
+            resp.sendRedirect(req.getContextPath() + "/drivers");
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/drivers/add");
+        }
     }
 
     @Override

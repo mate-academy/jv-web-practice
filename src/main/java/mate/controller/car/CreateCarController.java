@@ -1,6 +1,7 @@
 package mate.controller.car;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -23,13 +24,18 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         String model = req.getParameter("model");
-        Long manufacturerId = Long.valueOf(req.getParameter("manufacturer_id"));
-        Car car = new Car();
-        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
-        car.setModel(model);
-        car.setManufacturer(manufacturer);
-        carService.create(car);
-        resp.sendRedirect(req.getContextPath() + "/cars/add");
+        String manufacturerId = req.getParameter("manufacturer_id");
+        if (!model.isEmpty() && !manufacturerId.isEmpty()) {
+            Car car = new Car();
+            Manufacturer manufacturer = manufacturerService.get(Long.valueOf(manufacturerId));
+            car.setModel(model);
+            car.setManufacturer(manufacturer);
+            car.setDrivers(new ArrayList<>());
+            carService.create(car);
+            resp.sendRedirect(req.getContextPath() + "/cars");
+        } else {
+            resp.sendRedirect(req.getContextPath() + "/cars/add");
+        }
     }
 
     @Override
