@@ -9,8 +9,8 @@
 
 <form method="post" action="${pageContext.request.contextPath}/cars/add">
   Car model <input type="text" name="model"><br>
-  Car manufacturer_id<input type="text" name="manufacturer_id"><br>
-  <button type="submit">Confirm</button>
+  Car manufacturer_id<input type="text" name="manufacturer_id"> Choose id from the list of manufacturers<br>
+  <button type="submit">Create</button>
 </form>
 <table>
   <tr>
