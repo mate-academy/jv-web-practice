@@ -1,4 +1,4 @@
-package mate.dao;
+package mate.dao.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -8,6 +8,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import mate.dao.DriverDao;
 import mate.exception.DataProcessingException;
 import mate.lib.Dao;
 import mate.model.Driver;
@@ -38,7 +39,9 @@ public class DriverDaoImpl implements DriverDao {
 
     @Override
     public Optional<Driver> get(Long id) {
-        String query = "SELECT * FROM drivers WHERE id = ? AND is_deleted = FALSE";
+        String query = "SELECT id, name, license_number "
+                + "FROM drivers "
+                + "WHERE id = ? AND is_deleted = FALSE;";
         try (Connection connection = ConnectionUtil.getConnection();
                 PreparedStatement statement = connection.prepareStatement(query)) {
             statement.setLong(1, id);
