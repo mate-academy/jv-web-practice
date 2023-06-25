@@ -7,8 +7,8 @@
 <body>
 <h1>To add a new manufacturer, please fill out the form below</h1>
 <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-  Manufacturer name <input type="text" name="name"><br>
-  Country <input type="text" name="country"><br>
+  Manufacturer name <input type="text" name="name" required><br>
+  Country <input type="text" name="country" required><br>
   <button type="submit">Add</button>
 </form>
 </body>
