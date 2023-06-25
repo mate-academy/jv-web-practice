@@ -3,7 +3,6 @@ package mate.service;
 import java.util.List;
 import mate.dao.CarDao;
 import mate.lib.Inject;
-import mate.lib.Injector;
 import mate.lib.Service;
 import mate.model.Car;
 import mate.model.Driver;
