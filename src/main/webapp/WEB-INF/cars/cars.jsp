@@ -1,10 +1,3 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: anastasiia_variichuk
-  Date: 25.06.2023
-  Time: 21:06
-  To change this template use File | Settings | File Templates.
---%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
@@ -19,7 +12,7 @@
         <td>MODEL</td>
         <td>MANUFACTURER NAME</td>
         <td>DRIVERS</td>
-    </tr>
+    </tr>¬
     <c:forEach items = "${cars}" var = "car">
         <tr>
             <td><c:out value = "${car.id}" /></td>
@@ -27,10 +20,10 @@
             <td><c:out value = "${car.manufacturer.name}" /></td>
             <td>
                 <c:forEach items="${car.drivers}" var="driver">
-            <td><c:out value="${driver.id}"/></td>
-            <td><c:out value="${driver.name}"/></td>
-            <td><c:out value="${driver.licenseNumber}"/></td>
-            </c:forEach>
+                    <td><c:out value="${driver.id}"/></td>
+                    <td><c:out value="${driver.name}"/></td>
+                     <td><c:out value="${driver.licenseNumber}"/></td>
+                </c:forEach>
             <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>
