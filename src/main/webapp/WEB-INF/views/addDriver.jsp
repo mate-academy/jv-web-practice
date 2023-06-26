@@ -8,7 +8,7 @@
     <h1>Add driver:</h1>
     <form method="post" action="${pageContext.request.contextPath}/drivers/add">
       Driver name: <input type="text" name="name"><br>
-      License number: <input type="text" name="number"><br>
+      License number: <input type="text" name="license_number"><br>
       <button type="submit">Add</button>
     </form>
   </body>
