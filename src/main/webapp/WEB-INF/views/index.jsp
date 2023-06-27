@@ -5,13 +5,13 @@
 </head>
 <body>
 <h2>List of:</h2>
-<form action="cars/cars">
+<form action="cars">
     <input type="submit" value="Cars" />
 </form>
-<form action="drivers/drivers">
+<form action="drivers">
     <input type="submit" value="Drivers" />
 </form>
-<form action="manufacturers/manufacturers">
+<form action="manufacturers">
     <input type="submit" value="Manufacturers" />
 </form>
 

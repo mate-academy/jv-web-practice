@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
-@WebServlet ("/manufacturers/manufacturers")
+@WebServlet ("/manufacturers")
 public class DisplayAllManufacturersController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService

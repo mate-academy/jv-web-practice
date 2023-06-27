@@ -28,6 +28,6 @@ public class CreateCarController extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
         carService.create(new Car(req.getParameter("model"),
                 manufacturerService.get(Long.valueOf(req.getParameter("manufacturerId")))));
-        resp.sendRedirect("/index");
+        resp.sendRedirect(req.getContextPath() + "/index");
     }
 }
