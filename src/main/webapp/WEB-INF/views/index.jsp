@@ -1,9 +1,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>Home</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+<h2>List of:</h2>
+<form action="cars/all">
+    <input type="submit" value="Cars" />
+</form>
+<form action="drivers/all">
+    <input type="submit" value="Drivers" />
+</form>
+<form action="manufacturers/all">
+    <input type="submit" value="Manufacturers" />
+</form>
+
+<h2>Create:</h2>
+<form action="cars/create">
+    <input type="submit" value="Car" />
+</form>
+<form action="drivers/create">
+    <input type="submit" value="Driver" />
+</form>
+<form action="manufacturers/create">
+    <input type="submit" value="Manufacturer" />
+</form>
+
+<h2>Bound:</h2>
+<form action="cars/drivers/add">
+    <input type="submit" value="Driver To Car" />
+</form>
+
 </body>
 </html>
