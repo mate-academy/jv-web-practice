@@ -13,6 +13,7 @@
         <th>MODEL</th>
         <th>MANUFACTURER</th>
         <th>DRIVERS</th>
+        <th>DELETE</th>
     </tr>
     <c:forEach items="${cars}" var="car">
         <tr>

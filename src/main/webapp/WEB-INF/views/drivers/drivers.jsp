@@ -12,6 +12,7 @@
         <th>ID</th>
         <th>NAME</th>
         <th>LICENSE NUMBER</th>
+        <th>DELETE</th>
     </tr>
     <c:forEach items="${drivers}" var="driver">
         <tr>
