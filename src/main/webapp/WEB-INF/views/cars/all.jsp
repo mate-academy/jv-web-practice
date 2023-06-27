@@ -3,16 +3,7 @@
 <html>
 <head>
     <title>All cars</title>
-    <style>
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-        th, td {
-            padding: 5px;
-            text-align: left;
-        }
-    </style>
+    <style><%@include file='/WEB-INF/css/style.css' %></style>
 </head>
 <body>
 <h1>Cars List</h1>
