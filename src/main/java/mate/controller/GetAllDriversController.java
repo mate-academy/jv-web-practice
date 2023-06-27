@@ -19,6 +19,6 @@ public class GetAllDriversController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
-        req.getRequestDispatcher("/WEB-INF/drivers/drivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/drivers/all.jsp").forward(req, resp);
     }
 }

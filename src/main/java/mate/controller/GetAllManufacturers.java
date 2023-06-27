@@ -19,7 +19,7 @@ public class GetAllManufacturers extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/manufacturers/manufacturers.jsp")
+        req.getRequestDispatcher("/WEB-INF/manufacturers/all.jsp")
                 .forward(req, resp);
     }
 }
