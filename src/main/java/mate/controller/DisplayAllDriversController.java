@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
 
-@WebServlet ("/drivers")
+@WebServlet ("/drivers/all")
 public class DisplayAllDriversController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService =
@@ -19,6 +19,6 @@ public class DisplayAllDriversController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("drivers", driverService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/drivers/drivers.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/all.jsp").forward(req, resp);
     }
 }

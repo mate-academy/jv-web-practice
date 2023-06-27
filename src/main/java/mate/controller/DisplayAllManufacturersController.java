@@ -9,7 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.ManufacturerService;
 
-@WebServlet ("/manufacturers")
+@WebServlet ("/manufacturers/all")
 public class DisplayAllManufacturersController extends HttpServlet {
     private final Injector injector = Injector.getInstance("mate");
     private final ManufacturerService manufacturerService
@@ -19,7 +19,7 @@ public class DisplayAllManufacturersController extends HttpServlet {
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.setAttribute("manufacturers", manufacturerService.getAll());
-        req.getRequestDispatcher("/WEB-INF/views/manufacturers/manufacturers.jsp")
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/all.jsp")
                 .forward(req, resp);
     }
 }

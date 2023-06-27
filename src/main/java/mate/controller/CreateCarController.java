@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
+import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.ManufacturerService;
 
@@ -26,8 +27,10 @@ public class CreateCarController extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        carService.create(new Car(req.getParameter("model"),
-                manufacturerService.get(Long.valueOf(req.getParameter("manufacturerId")))));
-        resp.sendRedirect(req.getContextPath() + "/index");
+        Long manufacturerId = Long.valueOf(req.getParameter("manufacturerId"));
+        Manufacturer manufacturer = manufacturerService.get(manufacturerId);
+        Car car = new Car(req.getParameter("model"), manufacturer);
+        carService.create(car);
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }

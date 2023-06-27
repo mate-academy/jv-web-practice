@@ -5,13 +5,13 @@
 </head>
 <body>
 <h2>List of:</h2>
-<form action="cars">
+<form action="cars/all">
     <input type="submit" value="Cars" />
 </form>
-<form action="drivers">
+<form action="drivers/all">
     <input type="submit" value="Drivers" />
 </form>
-<form action="manufacturers">
+<form action="manufacturers/all">
     <input type="submit" value="Manufacturers" />
 </form>
 
@@ -27,7 +27,7 @@
 </form>
 
 <h2>Bound:</h2>
-<form action="drivers/add">
+<form action="cars/drivers/add">
     <input type="submit" value="Driver To Car" />
 </form>
 

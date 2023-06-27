@@ -5,7 +5,7 @@
 </head>
 <body>
 <h2>Bound driver to the car:</h2>
-<form method = "post"  action = "${pageContext.request.contextPath}/drivers/add">
+<form method = "post"  action = "${pageContext.request.contextPath}/cars/drivers/add">
     Driver Id <input type = "number" name = "driver_id"><br>
     Car Id <input type="number" name = "car_id"><br>
     <button type="submit">Bound</button>
