@@ -23,13 +23,17 @@
             <td><c:out value="${car.manufacturer.name}"/></td>
             <td><c:out value="${car.manufacturer.country}"/></td>
             <td>
-                <c:forEach items="${car.drivers}" var="driver">
-            <td><c:out value="${driver.name}"/></td>
-            <td><c:out value="${driver.licenseNumber}"/></td>
-            </c:forEach>
+                <table>
+                    <c:forEach items="${car.drivers}" var="driver">
+                        <tr>
+                            <td><c:out value="${driver.name}"/></td>
+                            <td><c:out value="${driver.licenseNumber}"/></td>
+                        </tr>
+                    </c:forEach>
+                </table>
+            <td>
+                <a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a>
             </td>
-
-            <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">delete</a></td>
         </tr>
     </c:forEach>
 </table>
