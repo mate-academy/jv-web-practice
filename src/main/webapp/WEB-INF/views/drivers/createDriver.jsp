@@ -3,7 +3,7 @@
 <head>
     <title>Create a driver</title>
 </head>
-<%@include file="../headers/mainHeader.jsp"%>
+<%@include file="../headers/mainHeader.jsp" %>
 <body>
 <h1>Please fill the form below</h1>
 <form method="post" action="${pageContext.request.contextPath}/drivers/add">

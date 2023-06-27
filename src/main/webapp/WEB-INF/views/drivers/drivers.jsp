@@ -4,7 +4,7 @@
 <head>
     <title>Drivers</title>
 </head>
-<%@include file="../headers/mainHeader.jsp"%>
+<%@include file="../headers/mainHeader.jsp" %>
 <body>
 <h1>List of drivers:</h1>
 <table>
