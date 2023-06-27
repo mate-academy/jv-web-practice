@@ -22,3 +22,4 @@ public class GetAllManufacturesController extends HttpServlet {
         req.getRequestDispatcher("/WEB-INF/manufactures/manufactures.jsp").forward(req, resp);
     }
 }
+
