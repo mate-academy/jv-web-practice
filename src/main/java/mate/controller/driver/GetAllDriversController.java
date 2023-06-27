@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.driver;
 
 import java.io.IOException;
 import java.util.List;
@@ -8,21 +8,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
-import mate.model.Car;
-import mate.service.CarService;
+import mate.model.Driver;
+import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/cars")
-public class GetAllCarsController extends HttpServlet {
+@WebServlet(urlPatterns = "/drivers")
+public class GetAllDriversController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
-    public static final CarService carService =
-            (CarService) injector.getInstance(CarService.class);
+    private final DriverService driverService =
+            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        List<Car> allCars = carService.getAll();
-        req.setAttribute("cars", allCars);
-        req.getRequestDispatcher("/WEB-INF/views/cars/all.jsp").forward(req, resp);
+        List<Driver> allDrivers = driverService.getAll();
+        req.setAttribute("drivers", allDrivers);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/all.jsp").forward(req, resp);
     }
 }

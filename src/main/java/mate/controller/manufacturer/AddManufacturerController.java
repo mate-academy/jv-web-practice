@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -14,7 +14,7 @@ import mate.service.ManufacturerService;
 public class AddManufacturerController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
-    public static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -26,12 +26,9 @@ public class AddManufacturerController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        Manufacturer createdManufacturer = new Manufacturer();
         String manufacturerName = req.getParameter("manufacturer_name");
         String manufacturerCountry = req.getParameter("manufacturer_country");
-        createdManufacturer.setName(manufacturerName);
-        createdManufacturer.setCountry(manufacturerCountry);
-        manufacturerService.create(createdManufacturer);
-        resp.sendRedirect("/done");
+        manufacturerService.create(new Manufacturer(manufacturerName, manufacturerCountry));
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

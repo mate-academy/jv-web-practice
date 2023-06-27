@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.annotation.WebServlet;
@@ -12,7 +12,7 @@ import mate.service.ManufacturerService;
 public class DeleteManufacturerController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
-    public static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
@@ -20,6 +20,6 @@ public class DeleteManufacturerController extends HttpServlet {
             throws IOException {
         Long deleteManufacturerWithId = Long.valueOf(req.getParameter("id"));
         manufacturerService.delete(deleteManufacturerWithId);
-        resp.sendRedirect("/done");
+        resp.sendRedirect(req.getContextPath() + "/manufacturers");
     }
 }

@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import java.util.List;
@@ -15,7 +15,7 @@ import mate.service.ManufacturerService;
 public class GetAllManufacturersController extends HttpServlet {
     private static final Injector injector =
             Injector.getInstance("mate");
-    public static final ManufacturerService manufacturerService =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) injector.getInstance(ManufacturerService.class);
 
     @Override
