@@ -11,7 +11,7 @@ import mate.model.Driver;
 import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/add")
-public class CreateDiversController extends HttpServlet {
+public class CreateDiverController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService
             = (DriverService) injector.getInstance(DriverService.class);
