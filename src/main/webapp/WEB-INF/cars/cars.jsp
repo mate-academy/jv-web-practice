@@ -24,7 +24,6 @@
       <td><c:out value="${driver.name}" /></td>
       <td><c:out value="${driver.licenseNumber}" /></td>
       </c:forEach>
-      </td>
     </tr>
   </c:forEach>
 </table>
