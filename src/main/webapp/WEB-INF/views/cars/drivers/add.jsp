@@ -5,12 +5,20 @@
 </head>
 <%@include file="../../headers/mainHeader.jsp" %>
 <body>
-<h1>Please fill the form below</h1>
-<form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
-    Car ID <input type="number" name="car_id" required><br>
-    Driver ID <input type="number" name="driver_id" required><br>
-    <button type="submit">Confirm</button>
-</form>
+<div class="container mt-4 text-center">
+    <h1 class="display-5">Add driver to car</h1>
+    <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+        <div class="mb-3">
+            <label class="form-label">Car ID</label>
+            <input class="form-control" type="number" name="car_id" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Driver ID</label>
+            <input class="form-control" type="number" name="driver_id" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Confirm</button>
+    </form>
+</div>
 </body>
 </html>
 

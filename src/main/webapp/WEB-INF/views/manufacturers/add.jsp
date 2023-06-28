@@ -5,11 +5,19 @@
 </head>
 <%@include file="../headers/mainHeader.jsp" %>
 <body>
-<h1>Please fill the form below</h1>
-<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
-    Name <input type="text" name="name" required><br>
-    Country <input type="text" name="country" required><br>
-    <button type="submit">Create</button>
-</form>
+<div class="container mt-4 text-center">
+    <h1 class="display-5">Add manufacturer</h1>
+    <form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
+        <div class="mb-3">
+            <label class="form-label">Name</label>
+            <input class="form-control" type="text" name="name" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Country</label>
+            <input class="form-control" type="text" name="country" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>
 </body>
 </html>
