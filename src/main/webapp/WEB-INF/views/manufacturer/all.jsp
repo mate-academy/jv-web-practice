@@ -6,7 +6,7 @@
 </head>
 <body>
 <h1>Manufacturers</h1>
-<table>
+<table style = "border: 2px solid blue; background: linen; padding: 20px;">
     <tr>
         <td>ID</td>
         <td>NAME</td>
