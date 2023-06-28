@@ -22,10 +22,4 @@ public class DriverController extends HttpServlet {
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/drivers/index.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        super.doPost(req, resp);
-    }
 }
