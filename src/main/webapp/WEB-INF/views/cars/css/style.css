@@ -1,0 +1,17 @@
+.delete-label {
+    background-color: yellow;
+    display: none;
+}
+
+.delete-btn {
+    padding: 0.2rem;
+    margin: 0;
+}
+
+.delete-cell, .car-driver-cell {
+    border: none;
+}
+
+.delete-cell form {
+    margin: 0;
+}
