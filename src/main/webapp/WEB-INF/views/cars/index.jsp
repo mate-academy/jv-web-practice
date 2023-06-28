@@ -5,7 +5,6 @@
     <title>WEB PRACTICE</title>
     <style>
         <%@include file="/WEB-INF/css/style.css" %>
-        <%@include file="./css/style.css" %>
     </style>
 </head>
 <body>
@@ -35,38 +34,28 @@
                     <table>
                         <c:forEach items="${car.getDrivers()}" var="driver">
                             <tr>
-                                <td class="car-driver-cell">
+                                <td class="borderless">
                                     <span>${driver.getName()}</span>
                                     <span>(${driver.getLicenseNumber()})</span>
                                 </td>
-                                <td class="delete-cell">
-                                    <form
-                                            action="${pageContext.request.contextPath}
-                                            /cars/drivers/delete"
-                                            method="post">
-                                        <label class="delete-label">
-                                            <input type="text" name="driver"
-                                                   value="${driver.getId()}">
-                                        </label>
-                                        <label class="delete-label">
-                                            <input type="text" name="car" value="${car.getId()}">
-                                        </label>
-                                        <button type="submit" class="delete-btn">X</button>
-                                    </form>
+                                <td class="borderless">
+                                    <a class="delete-link"
+                                       href="${pageContext.request
+                                           .contextPath}/cars/drivers/delete?driver=${driver
+                                           .getId()}&car=${car.getId()}">
+                                        X
+                                    </a>
                                 </td>
                             </tr>
                         </c:forEach>
                     </table>
                 </td>
 
-                <td class="delete-cell">
-                    <form action="${pageContext.request.contextPath}/cars/delete"
-                          method="post">
-                        <label class="delete-label">
-                            <input type="text" name="car" value="${car.getId()}">
-                        </label>
-                        <button type="submit" class="delete-btn">Delete</button>
-                    </form>
+                <td class="borderless">
+                    <a class="delete-link"
+                       href="${pageContext.request.contextPath}/cars/delete?car=${car.getId()}">
+                        Delete
+                    </a>
                 </td>
             </tr>
         </c:forEach>

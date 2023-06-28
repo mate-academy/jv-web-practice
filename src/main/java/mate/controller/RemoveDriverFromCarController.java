@@ -19,7 +19,7 @@ public class RemoveDriverFromCarController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         long driverId = Long.parseLong(req.getParameter("driver"));
         long carId = Long.parseLong(req.getParameter("car"));

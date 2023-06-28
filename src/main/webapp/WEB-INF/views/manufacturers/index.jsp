@@ -5,7 +5,6 @@
     <title>WEB PRACTICE</title>
     <style>
         <%@include file="/WEB-INF/css/style.css" %>
-        <%@include file="./css/style.css" %>
     </style>
 </head>
 <body>
@@ -31,14 +30,10 @@
                 <td><c:out value="${manufacturer.getId()}"/></td>
                 <td><c:out value="${manufacturer.getName()}"/></td>
                 <td><c:out value="${manufacturer.getCountry()}"/></td>
-                <td class="delete-cell">
-                    <form action="${pageContext.request.contextPath}/manufacturers/delete"
-                          method="post">
-                        <label class="delete-label"><input type="text" name="manufacturer"
-                                                           value="${manufacturer.getId()}"></label>
-
-                        <button type="submit" class="delete-manufacturer-btn">Delete</button>
-                    </form>
+                <td class="borderless">
+                    <a class="delete-link" href="${pageContext.request
+                        .contextPath}/manufacturers/delete?manufacturer=${manufacturer.getId()}">
+                        Delete</a>
                 </td>
             </tr>
         </c:forEach>

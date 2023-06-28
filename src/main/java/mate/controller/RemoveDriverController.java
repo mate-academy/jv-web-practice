@@ -14,7 +14,7 @@ public class RemoveDriverController extends HttpServlet {
             (DriverService) injector.getInstance(DriverService.class);
 
     @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         Long driverId = Long.parseLong(req.getParameter("driver"));
         driverService.delete(driverId);

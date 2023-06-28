@@ -5,7 +5,6 @@
     <title>WEB PRACTICE</title>
     <style>
         <%@include file="/WEB-INF/css/style.css" %>
-        <%@include file="./css/style.css" %>
     </style>
 </head>
 <body>
@@ -16,33 +15,29 @@
     <h3>There are no manufacturers yet...</h3>
 </c:if>
 <c:if test="${drivers.size() != 0}">
-<table>
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>NAME</th>
-        <th>LICENSE NUMBER</th>
-    </tr>
-    </thead>
-    <tbody>
-    <c:forEach items="${drivers}" var="driver">
+    <table>
+        <thead>
         <tr>
-            <td><c:out value="${driver.getId()}"/></td>
-            <td><c:out value="${driver.getName()}"/></td>
-            <td><c:out value="${driver.getLicenseNumber()}"/></td>
-            <td class="delete-cell">
-                <form action="${pageContext.request.contextPath}/drivers/delete"
-                      method="post">
-                    <label class="delete-label"><input type="text" name="driver"
-                                                       value="${driver.getId()}"></label>
-
-                    <button type="submit" class="delete-driver-btn">Delete</button>
-                </form>
-            </td>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>LICENSE NUMBER</th>
         </tr>
-    </c:forEach>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <c:forEach items="${drivers}" var="driver">
+            <tr>
+                <td><c:out value="${driver.getId()}"/></td>
+                <td><c:out value="${driver.getName()}"/></td>
+                <td><c:out value="${driver.getLicenseNumber()}"/></td>
+                <td class="borderless">
+                    <a class="delete-link"
+                       href="${pageContext.request
+                       .contextPath}/drivers/delete?driver=${driver.getId()}">Delete</a>
+                </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+    </table>
 </c:if>
 </body>
 </html>

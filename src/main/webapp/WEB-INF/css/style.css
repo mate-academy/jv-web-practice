@@ -81,3 +81,20 @@ td, th {
     border: solid 1px gray;
     padding: 5px;
 }
+
+.delete-link {
+    font-weight: normal;
+    padding: 0.1rem 0.2rem;
+    background-color: rgb(239, 239, 239);
+    border: 1px solid rgb(118, 118, 118);
+    border-radius: 4px;
+}
+
+.delete-link:hover {
+    background-color: rgb(231, 231, 231);
+    border: 1px solid rgb(108, 108, 108);
+}
+
+.borderless {
+    border: none;
+}
