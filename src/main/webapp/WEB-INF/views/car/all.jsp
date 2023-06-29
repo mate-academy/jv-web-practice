@@ -28,9 +28,9 @@
           ${driver.getLicenseNumber()} <br>
         </c:forEach>
       </td>
-      <td><a href="${pageContext.request.contextPath}/cars/drivers/select_to_add?carId=${car.getId()}">Add driver</a></td>
+      <td><a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.getId()}">Add driver</a></td>
       <c:if test="${!car.getDrivers().isEmpty()}">
-        <td><a href="${pageContext.request.contextPath}/cars/drivers/select_to_delete?carId=${car.getId()}">Delete driver</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/drivers/delete?car_id=${car.getId()}">Delete driver</a></td>
       </c:if>
       <td><a href="${pageContext.request.contextPath}/cars/delete?id=${car.getId()}">Delete car</a></td>
     </tr>

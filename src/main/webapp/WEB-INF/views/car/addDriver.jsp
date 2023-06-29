@@ -16,7 +16,13 @@
     <tr>
       <td>${driver.getName()}</td>
       <td>${driver.getLicenseNumber()}</td>
-      <td><a href="${pageContext.request.contextPath}/cars/drivers/add?carId=${carId}&driverId=${driver.getId()}">Add driver</a></td>
+      <td>
+        <form method="post" action="${pageContext.request.contextPath}/cars/drivers/add">
+          <input type="hidden" name="car_id" value="${car_id}">
+          <input type="hidden" name="driver_id" value="${driver.getId()}">
+          <button type="submit">Add driver</button>
+        </form>
+      </td>
     </tr>
   </c:forEach>
 </table>
