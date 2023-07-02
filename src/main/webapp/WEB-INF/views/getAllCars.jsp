@@ -23,7 +23,7 @@
             </br>
         </c:forEach>
         </td>
-        <td><a href="${pageContext.request.contextPath}/car/deleteCar?id=${car.id}">Delete car</a></td>
+        <td><a href="${pageContext.request.contextPath}/cars/deleteCar?id=${car.id}">Delete car</a></td>
     </tr>
     </br>
 </c:forEach>
