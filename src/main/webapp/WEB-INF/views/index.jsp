@@ -5,12 +5,12 @@
 </head>
 <body>
 <h1>Hello, mates!</h1>
-<a href="${pageContext.request.contextPath}/pageManager?action_page=createDriver.jsp">Create driver</a>
+<a href="${pageContext.request.contextPath}/drivers/createDriver">Create driver</a>
 <p><a href="${pageContext.request.contextPath}/drivers">Get all drivers</a></p>
-<p><a href="${pageContext.request.contextPath}/pageManager?action_page=createManufacturer.jsp">Create manufacturer</a></p>
+<p><a href="${pageContext.request.contextPath}/manufacturers/createManufacturer">Create manufacturer</a></p>
 <p><a href="${pageContext.request.contextPath}/manufacturers">Get all manufacturers</a></p>
-<p><a href="${pageContext.request.contextPath}/pageManager?action_page=createCar.jsp">Create car</a></p>
-<p><a href="${pageContext.request.contextPath}/pageManager?action_page=addDriverToCar.jsp">Add driver to car</a></p>
+<p><a href="${pageContext.request.contextPath}/cars/createCar">Create car</a></p>
+<p><a href="${pageContext.request.contextPath}/cars/addDriverToCar">Add driver to car</a></p>
 <p><a href="${pageContext.request.contextPath}/cars">Get all cars</a></p>
 </body>
 </html>
