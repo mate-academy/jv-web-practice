@@ -8,12 +8,12 @@
 <h1>All drivers</h1>
 <p><a href="${pageContext.request.contextPath}/index">Home</a></p>
 <p><a href="${pageContext.request.contextPath}/drivers/new">Create a driver</a></p>
-<table>
+<table style="text-align: center">
     <tr>
         <th>ID</th>
         <th>Name</th>
         <th>License number</th>
-        <th>Action</th>
+        <th>Actions</th>
     </tr>
     <c:forEach var="driver" items="${drivers}">
         <tr>
@@ -21,9 +21,10 @@
             <td>${driver.name}</td>
             <td>${driver.licenseNumber}</td>
             <td>
-                <form action="${pageContext.request.contextPath}/drivers/delete" method="post">
+                <form action="${pageContext.request.contextPath}/drivers/delete" method="post"
+                      style="margin: 0">
                     <input type="hidden" name="id" value="${driver.id}">
-                    <button type="submit">X</button>
+                    <button type="submit" style="cursor: pointer">Delete</button>
                 </form>
             </td>
         </tr>

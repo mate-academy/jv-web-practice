@@ -6,16 +6,23 @@
 </head>
 <body>
 <h1>Add a driver to a car</h1>
-<p><a href="${pageContext.request.contextPath}/cars">Return to all</a></p>
+<p><a href="${pageContext.request.contextPath}/cars">Back</a></p>
 <form action="${pageContext.request.contextPath}/cars/drivers/add" method="post">
     <input type="hidden" name="car_id" value="${car_id}">
-    <label for="all_drivers">All drivers</label>
-    <select id="all_drivers" name="driver_id">
-        <c:forEach var="driver" items="${drivers}">
-            <option value="${driver.id}">${driver.name} (${driver.licenseNumber})</option>
-        </c:forEach>
-    </select><br/>
-    <button type="submit">Add</button>
+    <c:choose>
+        <c:when test="${drivers.isEmpty()}">
+            <h2>No available drivers</h2>
+        </c:when>
+        <c:otherwise>
+            <label for="all_drivers">Driver</label>
+            <select id="all_drivers" name="driver_id">
+                <c:forEach var="driver" items="${drivers}">
+                    <option value="${driver.id}">${driver.name} (${driver.licenseNumber})</option>
+                </c:forEach>
+            </select><br/>
+            <button type="submit" style="cursor: pointer">Add</button>
+        </c:otherwise>
+    </c:choose>
 </form>
 </body>
 </html>

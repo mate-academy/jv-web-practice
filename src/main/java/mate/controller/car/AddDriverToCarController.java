@@ -27,6 +27,7 @@ public class AddDriverToCarController extends HttpServlet {
             throws ServletException, IOException {
         Long carId = Long.valueOf(req.getParameter("car_id"));
         List<Driver> drivers = driverService.getAll();
+        drivers.removeAll(carService.get(carId).getDrivers()); // to show only available drivers
         req.setAttribute("car_id", carId);
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/cars/addDriver.jsp").forward(req, resp);

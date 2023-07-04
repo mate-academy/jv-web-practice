@@ -8,13 +8,13 @@
 <h1>All cars</h1>
 <p><a href="${pageContext.request.contextPath}/index">Home</a></p>
 <p><a href="${pageContext.request.contextPath}/cars/new">Create a car</a></p>
-<table>
+<table style="text-align: center">
     <tr>
         <th>ID</th>
         <th>Model</th>
-        <th>Manufacturer</th>
-        <th>Drivers</th>
-        <th>Action</th>
+        <th>Manufacturer (Country)</th>
+        <th>Drivers (License numbers)</th>
+        <th>Actions</th>
     </tr>
     <c:forEach var="car" items="${cars}">
         <tr>
@@ -23,15 +23,23 @@
             <td>${car.manufacturer.name} (${car.manufacturer.country})</td>
             <td>
                 <c:forEach var="driver" items="${car.drivers}">
-                    <p>${driver.name} (${driver.licenseNumber})</p>
+                    <span>${driver.name} (${driver.licenseNumber})</span><br/>
                 </c:forEach>
             </td>
             <td>
-                <form action="${pageContext.request.contextPath}/cars/delete" method="post">
-                    <input type="hidden" name="id" value="${car.id}">
-                    <button type="submit">X</button>
-                </form>
-                <a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}">Add a driver</a>
+                <div style="display: flex; align-items: center">
+                    <form action="${pageContext.request.contextPath}/cars/delete" method="post"
+                          style="margin: 0 5px 0 0">
+                        <input type="hidden" name="id" value="${car.id}">
+                        <button type="submit" style="cursor: pointer">Delete</button>
+                    </form>
+                    <button>
+                        <a href="${pageContext.request.contextPath}/cars/drivers/add?car_id=${car.id}"
+                           style="text-decoration: none; color: black">
+                            Add a driver
+                        </a>
+                    </button>
+                </div>
             </td>
         </tr>
     </c:forEach>
