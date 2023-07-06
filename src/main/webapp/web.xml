@@ -23,11 +23,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>driverController</servlet-name>
-        <servlet-class>mate.controller.DriverController</servlet-class>
+        <servlet-name>getAllDriversController</servlet-name>
+        <servlet-class>mate.controller.GetAllDriversController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>driverController</servlet-name>
+        <servlet-name>getAllDriversController</servlet-name>
         <url-pattern>/drivers</url-pattern>
     </servlet-mapping>
 
@@ -68,11 +68,11 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>carController</servlet-name>
-        <servlet-class>mate.controller.CarController</servlet-class>
+        <servlet-name>getAllCarsController</servlet-name>
+        <servlet-class>mate.controller.GetAllCarsController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>carController</servlet-name>
+        <servlet-name>getAllCarsController</servlet-name>
         <url-pattern>/cars</url-pattern>
     </servlet-mapping>
 
