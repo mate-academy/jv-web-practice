@@ -12,8 +12,8 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-@WebServlet(urlPatterns = "/drivers/addDriverToCar/add")
-public class AddDriverToCar extends HttpServlet {
+@WebServlet(urlPatterns = "/cars/drivers/add")
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private final DriverService driverService = (DriverService) injector
             .getInstance(DriverService.class);
@@ -24,7 +24,7 @@ public class AddDriverToCar extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
         req.getRequestDispatcher(req.getContextPath()
-                        + "/WEB-INF/views/drivers/addDriverToCar/add.jsp")
+                        + "/WEB-INF/views/cars/drivers/add.jsp")
                 .forward(req,resp);
     }
 
