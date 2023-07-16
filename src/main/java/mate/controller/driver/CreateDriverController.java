@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.driver;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -23,9 +23,7 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        String driverName = req.getParameter("name");
-        String licenseNumber = req.getParameter("number");
-        driverService.create(new Driver(driverName, licenseNumber));
-        req.getRequestDispatcher("/WEB-INF/views/drivers/add.jsp").forward(req, resp);
+        driverService.create(new Driver(req.getParameter("name"), req.getParameter("number")));
+        resp.sendRedirect(req.getContextPath() + "/drivers");
     }
 }

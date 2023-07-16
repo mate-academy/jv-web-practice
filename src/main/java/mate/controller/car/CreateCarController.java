@@ -1,8 +1,6 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -37,25 +35,19 @@ public class CreateCarController extends HttpServlet {
         Long manufacturerId = Long.parseLong(req.getParameter("manufacturer"));
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         String model = req.getParameter("model");
-        Car car = new Car();
-        car.setManufacturer(manufacturer);
-        car.setModel(model);
-        car.setDrivers(new ArrayList<Driver>());
+        Car car = new Car(manufacturer, model);
         Car newCar = carService.create(car);
         String driverIdInput = req.getParameter("driver");
         if (!driverIdInput.isEmpty()) {
-            Long driverId = Long.parseLong(driverIdInput);
-            Driver driver = driverService.get(driverId);
+            Driver driver = driverService.get(Long.parseLong(driverIdInput));
             carService.addDriverToCar(driver, newCar);
         }
         setAttributes(req);
-        req.getRequestDispatcher("/WEB-INF/views/cars/add.jsp").forward(req, resp);
+        resp.sendRedirect(req.getContextPath() + "/cars");
     }
 
     private void setAttributes(HttpServletRequest req) {
-        List<Manufacturer> manufacturers = manufacturerService.getAll();
-        List<Driver> drivers = driverService.getAll();
-        req.setAttribute("manufacturers", manufacturers);
-        req.setAttribute("drivers", drivers);
+        req.setAttribute("manufacturers", manufacturerService.getAll());
+        req.setAttribute("drivers", driverService.getAll());
     }
 }

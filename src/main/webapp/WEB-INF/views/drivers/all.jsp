@@ -12,7 +12,7 @@
 <h1>DRIVERS</h1>
 <jsp:useBean id="drivers" scope="request" type="java.util.List"/>
 <c:if test="${drivers.size() == 0}">
-    <h3>There are no manufacturers yet...</h3>
+    <h3>There are no drivers yet...</h3>
 </c:if>
 <c:if test="${drivers.size() != 0}">
     <table>

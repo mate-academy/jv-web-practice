@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -11,7 +11,7 @@ import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
 
-public class RemoveDriverFromCarController extends HttpServlet {
+public class AddDriverToCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
     private static final CarService carService =
             (CarService) injector.getInstance(CarService.class);
@@ -21,11 +21,22 @@ public class RemoveDriverFromCarController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        long driverId = Long.parseLong(req.getParameter("driver"));
-        long carId = Long.parseLong(req.getParameter("car"));
-        Car car = carService.get(carId);
-        Driver driver = driverService.get(driverId);
-        carService.removeDriverFromCar(driver, car);
+        setAttributes(req);
+        req.getRequestDispatcher("/WEB-INF/views/cars/drivers/add.jsp").forward(req, resp);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        Car car = carService.get(Long.parseLong(req.getParameter("car")));
+        Driver driver = driverService.get(Long.parseLong(req.getParameter("driver")));
+        carService.addDriverToCar(driver, car);
+        setAttributes(req);
         resp.sendRedirect(req.getContextPath() + "/cars");
+    }
+
+    private void setAttributes(HttpServletRequest req) {
+        req.setAttribute("cars", carService.getAll());
+        req.setAttribute("drivers", driverService.getAll());
     }
 }
