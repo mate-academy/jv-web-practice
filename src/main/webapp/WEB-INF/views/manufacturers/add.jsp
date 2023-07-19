@@ -12,7 +12,7 @@
 </head>
 <body>
 <h1>Create manufacturer using these fields</h1>
-<form method="post" action="${pageContext.request.contextPath}/create">
+<form method="post" action="${pageContext.request.contextPath}/manufacturers/add">
   Name <input type="text" name="Name"><br>
   Country <input type="text" name="Country"><br>
   <button type="submit">create</button>

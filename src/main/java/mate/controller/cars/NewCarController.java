@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.cars;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -34,7 +34,7 @@ public class NewCarController extends HttpServlet {
         Long manufacturer = Long.valueOf(req.getParameter("ManufacturerID"));
         Manufacturer manufacture = manufacturerService.get(manufacturer);
         carService.create(new Car(model, manufacture));
-        resp.sendRedirect(req.getContextPath() + "/cars/all");
+        resp.sendRedirect(req.getContextPath() + "/cars");
 
     }
 }
