@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.controller.manufacturer;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -19,7 +19,7 @@ public class CreateManufacturerController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/manufacturerCreation.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/manufacturers/manufacturerCreation.jsp").forward(req, resp);
     }
 
     @Override

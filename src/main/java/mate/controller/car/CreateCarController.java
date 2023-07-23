@@ -1,6 +1,7 @@
-package mate.controller;
+package mate.controller.car;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,27 +9,30 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Car;
-import mate.model.Driver;
 import mate.service.CarService;
-import mate.service.DriverService;
+import mate.service.ManufacturerService;
 
-@WebServlet("/cars/drivers/add")
-public class AddDriverToCarController extends HttpServlet {
+@WebServlet("/cars/add")
+public class CreateCarController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
+    private final ManufacturerService manufacturerService =
+            (ManufacturerService) injector.getInstance(ManufacturerService.class);
     private final CarService carService = (CarService) injector.getInstance(CarService.class);
-    private final DriverService driverService =
-            (DriverService) injector.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/addingDriverToCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/cars/carCreation.jsp").forward(req, resp);
     }
 
+    @Override
     public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException {
-        Car car = carService.get(Long.valueOf(req.getParameter("carId")));
-        Driver driver = driverService.get(Long.valueOf(req.getParameter("driverId")));
-        carService.addDriverToCar(driver, car);
+        Car car = new Car();
+        car.setModel(req.getParameter("model"));
+        car.setManufacturer(manufacturerService.get(
+                Long.valueOf(req.getParameter("manufacturerId"))));
+        car.setDrivers(new ArrayList<>());
+        carService.create(car);
         resp.sendRedirect(req.getContextPath() + "/cars");
     }
 }

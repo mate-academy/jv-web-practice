@@ -6,7 +6,7 @@
 </head>
 <body>
 <h2>Cars list</h2>
-<table>
+<table border="1" class="table_dark">
     <tr>
         <td>ID</td>
         <td>Model</td>
