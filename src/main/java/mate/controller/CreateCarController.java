@@ -15,6 +15,7 @@ import mate.model.Manufacturer;
 import mate.service.CarService;
 import mate.service.DriverService;
 import mate.service.ManufacturerService;
+import mate.util.Properties;
 
 @WebServlet("/cars/add")
 public class CreateCarController extends HttpServlet {
@@ -40,13 +41,8 @@ public class CreateCarController extends HttpServlet {
         Manufacturer manufacturer = manufacturerService.get(manufacturerId);
         Car newCar = new Car();
         newCar.setModel(model);
-
-//        List<Driver> driverList = new ArrayList<>();
-//        Driver driver = driverService.get(1L);
-//        driverList.add(driver);
-//        newCar.setDrivers(driverList);
         newCar.setManufacturer(manufacturer);
         carService.create(newCar);
-        resp.sendRedirect(req.getContextPath()+"/index");
+        resp.sendRedirect(req.getContextPath()+ Properties.INDEX_PAGE);
     }
 }

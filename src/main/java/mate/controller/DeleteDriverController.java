@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.service.DriverService;
+import mate.util.Properties;
 
 @WebServlet("/drivers/delete")
 public class DeleteDriverController extends HttpServlet {
@@ -20,6 +21,6 @@ public class DeleteDriverController extends HttpServlet {
             HttpServletResponse resp) throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         driverService.delete(id);
-        resp.sendRedirect(req.getContextPath() + "/index");
+        resp.sendRedirect(req.getContextPath() + Properties.INDEX_PAGE);
     }
 }

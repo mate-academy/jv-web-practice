@@ -11,6 +11,7 @@ import mate.model.Car;
 import mate.model.Driver;
 import mate.service.CarService;
 import mate.service.DriverService;
+import mate.util.Properties;
 
 @WebServlet("/cars/drivers/add")
 public class AddDriverToCarController extends HttpServlet {
@@ -33,6 +34,6 @@ public class AddDriverToCarController extends HttpServlet {
         Car car = carService.get(carId);
         Driver driver = driverService.get(driverId);
         carService.addDriverToCar(driver, car);
-        response.sendRedirect(request.getContextPath()+"/index");
+        response.sendRedirect(request.getContextPath()+ Properties.INDEX_PAGE);
     }
 }

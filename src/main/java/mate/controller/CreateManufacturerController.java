@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Manufacturer;
 import mate.service.ManufacturerService;
+import mate.util.Properties;
 
 @WebServlet("/manufacturers/add")
 public class CreateManufacturerController extends HttpServlet {
@@ -31,7 +32,7 @@ public class CreateManufacturerController extends HttpServlet {
         manufacturer.setName(name);
         manufacturer.setCountry(country);
         manufacturerService.create(manufacturer);
-        resp.sendRedirect(req.getContextPath()+"/index");
+        resp.sendRedirect(req.getContextPath() + Properties.INDEX_PAGE);
     }
 }
 

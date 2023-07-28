@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
 import mate.model.Driver;
 import mate.service.DriverService;
+import mate.util.Properties;
 
 @WebServlet("/drivers/add")
 public class CreateDriverController extends HttpServlet {
@@ -32,6 +33,6 @@ public class CreateDriverController extends HttpServlet {
         newDriver.setName(name);
         newDriver.setLicenseNumber(licenseNumber);
         driverService.create(newDriver);
-        resp.sendRedirect(req.getContextPath() + "/index");
+        resp.sendRedirect(req.getContextPath() + Properties.INDEX_PAGE);
     }
 }
