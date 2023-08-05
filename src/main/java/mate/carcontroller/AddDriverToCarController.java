@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.carcontroller;
 
 import java.io.IOException;
 import java.util.List;
@@ -26,7 +26,7 @@ public class AddDriverToCarController extends HttpServlet {
         List<Driver> allDrivers = driverService.getAll();
         req.setAttribute("cars", allCars);
         req.setAttribute("drivers", allDrivers);
-        req.getRequestDispatcher("/WEB-INF/views/addDriverToCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/carsJsp/addDriverToCar.jsp").forward(req, resp);
     }
 
     @Override

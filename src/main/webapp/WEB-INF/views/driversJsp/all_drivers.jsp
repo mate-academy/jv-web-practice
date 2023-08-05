@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>List of Cars</title>
+    <title>List of drivers</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -34,7 +34,6 @@
             background-color: #f2f2f2;
         }
 
-        /* Custom styles for the delete link */
         .delete-link {
             display: inline-block;
             padding: 6px 12px;
@@ -43,34 +42,26 @@
             text-decoration: none;
             border-radius: 5px;
         }
-
         .delete-link:hover {
             background-color: #c82333;
         }
     </style>
 </head>
 <body>
-<h1>List of Cars</h1>
+<h1>List of drivers</h1>
 <table>
     <tr>
-        <th>ID</th>
-        <th>Model</th>
-        <th>Manufacturer</th>
-        <th>Drivers</th>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Licence Number</th>
         <th></th>
     </tr>
-    <c:forEach items="${cars}" var="car">
+    <c:forEach items="${drivers}" var="driver" varStatus="status">
         <tr>
-            <td><c:out value="${car.id}"></c:out></td>
-            <td><c:out value="${car.model}"></c:out></td>
-            <td><c:out value="${car.manufacturer.name}"></c:out></td>
-            <td>
-                <c:forEach items="${car.drivers}" var="driver" varStatus="status">
-                    <c:out value="${driver.name}"></c:out><c:if test="${not status.last}">, </c:if>
-                </c:forEach>
-            </td>
-            <td><a class="delete-link" href="${pageContext.request.contextPath}/cars/delete?id=${car.id}">Delete Car</a>
-            </td>
+            <td><c:out value="${driver.id}"></c:out></td>
+            <td><c:out value="${driver.name}"></c:out></td>
+            <td><c:out value="${driver.licenseNumber}"></c:out></td>
+            <td><a class="delete-link" href="${pageContext.request.contextPath}/drivers/delete?id=${driver.id}">Delete Driver</a></td>
         </tr>
     </c:forEach>
 </table>

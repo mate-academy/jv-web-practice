@@ -1,4 +1,4 @@
-package mate.controller;
+package mate.drivercontroller;
 
 import java.io.IOException;
 import java.util.NoSuchElementException;
@@ -18,7 +18,7 @@ public class CreateDriverController extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.getRequestDispatcher("/WEB-INF/views/create_driver.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/views/driversJsp/create_driver.jsp").forward(req, resp);
     }
 
     @Override
