@@ -52,8 +52,8 @@ public class Manufacturer {
 
     @Override
     public String toString() {
-        return "id=" + id +
-                ", name='" + name + '\'' +
-                ", country='" + country ;
+        return "id=" + id
+                + ", name='" + name + '\''
+                + ", country='" + country;
     }
 }
