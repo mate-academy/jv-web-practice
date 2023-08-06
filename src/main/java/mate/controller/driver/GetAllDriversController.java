@@ -22,4 +22,10 @@ public class GetAllDriversController extends HttpServlet {
         req.setAttribute("drivers", drivers);
         req.getRequestDispatcher("/WEB-INF/views/drivers/getAll.jsp").forward(req, resp);
     }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+        resp.sendRedirect(req.getContextPath() + "/drivers/all");
+    }
 }

@@ -1,11 +1,13 @@
 package mate.controller.driver;
 
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import mate.lib.Injector;
+import mate.model.Driver;
 import mate.service.DriverService;
 
 public class DeleteDriverController extends HttpServlet {
@@ -18,6 +20,8 @@ public class DeleteDriverController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         driverService.delete(id);
-        resp.sendRedirect("/index");
+        List<Driver> allDrivers = driverService.getAll();
+        req.setAttribute("drivers", allDrivers);
+        req.getRequestDispatcher("/WEB-INF/views/drivers/getAll.jsp").forward(req, resp);
     }
 }
