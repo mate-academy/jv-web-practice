@@ -1,14 +1,14 @@
 package mate.controller.driver;
 
-import java.util.List;
 import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import mate.model.Driver;
 import mate.service.DriverService;
 import mate.lib.Injector;
-import mate.model.Driver;
 
 public class GetAllDriversController extends HttpServlet {
     private static final Injector injector = Injector.getInstance("mate");
