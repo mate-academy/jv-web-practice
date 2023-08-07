@@ -22,10 +22,4 @@ public class GetAllManufacturersController extends HttpServlet {
         req.setAttribute("manufacturers", manufacturers);
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/getALL.jsp").forward(req, resp);
     }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp)
-            throws ServletException, IOException {
-        resp.sendRedirect(req.getContextPath() + "/manufacturers/all");
-    }
 }
