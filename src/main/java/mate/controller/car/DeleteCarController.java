@@ -1,13 +1,13 @@
 package mate.controller.car;
 
-import mate.lib.Injector;
+import java.io.IOException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import mate.service.CarService;
+import mate.lib.Injector;
 import javax.servlet.annotation.WebServlet;
+import mate.service.CarService;
 
 @WebServlet(urlPatterns = "/cars/delete")
 public class DeleteCarController extends HttpServlet {
@@ -20,5 +20,6 @@ public class DeleteCarController extends HttpServlet {
             throws ServletException, IOException {
         Long id = Long.valueOf(req.getParameter("id"));
         carService.delete(id);
+        resp.sendRedirect(req.getContextPath() + "/cars/all");
     }
 }
