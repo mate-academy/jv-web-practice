@@ -1,15 +1,15 @@
 package mate.controller.manufacturer;
 
-import mate.lib.Injector;
-import mate.model.Manufacturer;
+import java.io.IOException;
+import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.IOException;
-import java.util.List;
 import mate.service.ManufacturerService;
+import mate.lib.Injector;
+import mate.model.Manufacturer;
 
 @WebServlet(urlPatterns = "/manufacturers/all")
 public class GetAllManufacturersController extends HttpServlet {

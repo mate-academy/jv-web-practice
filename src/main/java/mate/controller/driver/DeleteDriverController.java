@@ -6,8 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.service.DriverService;
 import mate.lib.Injector;
+import mate.service.DriverService;
 
 @WebServlet(urlPatterns = "/drivers/delete")
 public class DeleteDriverController extends HttpServlet {
