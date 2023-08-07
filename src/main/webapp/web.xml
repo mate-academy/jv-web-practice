@@ -57,12 +57,12 @@
     </servlet-mapping>
 
     <servlet>
-        <servlet-name>addDriverToCar</servlet-name>
+        <servlet-name>/cars/drivers/add</servlet-name>
         <servlet-class>mate.controller.car.AddDriverToCarController</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>addDriverToCar</servlet-name>
-        <url-pattern>/driverToCar</url-pattern>
+        <servlet-name>/cars/drivers/add</servlet-name>
+        <url-pattern>/cars/drivers/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -80,7 +80,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>allManufacturers</servlet-name>
-        <url-pattern>/manufacturers</url-pattern>
+        <url-pattern>/manufacturer</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -89,7 +89,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>addManufacturer</servlet-name>
-        <url-pattern>/manufacturers/add</url-pattern>
+        <url-pattern>/manufacturer/add</url-pattern>
     </servlet-mapping>
 
     <servlet>
@@ -98,6 +98,6 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>deleteManufacturer</servlet-name>
-        <url-pattern>/manufacturers/delete</url-pattern>
+        <url-pattern>/manufacturer/delete</url-pattern>
     </servlet-mapping>
 </web-app>
