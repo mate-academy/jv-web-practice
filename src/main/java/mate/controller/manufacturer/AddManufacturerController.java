@@ -6,9 +6,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import mate.service.ManufacturerService;
 import mate.lib.Injector;
 import mate.model.Manufacturer;
+import mate.service.ManufacturerService;
 
 @WebServlet(urlPatterns = "/manufacturers/add")
 public class AddManufacturerController extends HttpServlet {
