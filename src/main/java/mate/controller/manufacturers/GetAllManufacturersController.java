@@ -13,13 +13,13 @@ import mate.service.ManufacturerService;
 public class GetAllManufacturersController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final ManufacturerService MANUFACTURER_SERVICE =
+    private final ManufacturerService manufacturerService =
             (ManufacturerService) INJECTOR.getInstance(ManufacturerService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("manufacturers", MANUFACTURER_SERVICE.getAll());
+        req.setAttribute("manufacturers", manufacturerService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/manufacturers/getAllManufacturers.jsp")
                 .forward(req, resp);
     }

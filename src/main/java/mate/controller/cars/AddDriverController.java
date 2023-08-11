@@ -16,10 +16,10 @@ import mate.service.DriverService;
 public class AddDriverController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final DriverService DRIVER_SERVICE =
+    private final DriverService driverService =
             (DriverService) INJECTOR.getInstance(DriverService.class);
 
-    private static final CarService CAR_SERVICE =
+    private final CarService carService =
             (CarService) INJECTOR.getInstance(CarService.class);
 
     @Override
@@ -32,9 +32,9 @@ public class AddDriverController extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        Driver driver = DRIVER_SERVICE.get(Long.valueOf(req.getParameter("driver_id")));
-        Car car = CAR_SERVICE.get(Long.valueOf(req.getParameter("car_id")));
-        CAR_SERVICE.addDriverToCar(driver, car);
+        Driver driver = driverService.get(Long.valueOf(req.getParameter("driver_id")));
+        Car car = carService.get(Long.valueOf(req.getParameter("car_id")));
+        carService.addDriverToCar(driver, car);
         resp.sendRedirect(req.getContextPath() + "/cars/get");
     }
 }

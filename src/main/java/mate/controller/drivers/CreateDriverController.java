@@ -14,7 +14,7 @@ import mate.service.DriverService;
 public class CreateDriverController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final DriverService DRIVER_SERVICE = (DriverService)
+    private final DriverService driverService = (DriverService)
             INJECTOR.getInstance(DriverService.class);
 
     @Override
@@ -30,7 +30,7 @@ public class CreateDriverController extends HttpServlet {
         Driver driver = new Driver();
         driver.setName(req.getParameter("name"));
         driver.setLicenseNumber(req.getParameter("licenseNumber"));
-        DRIVER_SERVICE.create(driver);
+        driverService.create(driver);
         resp.sendRedirect(req.getContextPath() + "/drivers/get");
     }
 }

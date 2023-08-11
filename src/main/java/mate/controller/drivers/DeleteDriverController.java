@@ -12,13 +12,13 @@ import mate.service.DriverService;
 public class DeleteDriverController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final DriverService DRIVER_SERVICE = (DriverService)
+    private final DriverService driverService = (DriverService)
             INJECTOR.getInstance(DriverService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws IOException {
-        DRIVER_SERVICE.delete(Long.valueOf(req.getParameter("id")));
+        driverService.delete(Long.valueOf(req.getParameter("id")));
         resp.sendRedirect(req.getContextPath() + "/drivers/get");
     }
 }

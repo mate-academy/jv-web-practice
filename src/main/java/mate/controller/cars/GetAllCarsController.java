@@ -13,13 +13,13 @@ import mate.service.CarService;
 public class GetAllCarsController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final CarService CAR_SERVICE =
+    private final CarService carService =
             (CarService) INJECTOR.getInstance(CarService.class);
 
     @Override
     public void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        req.setAttribute("cars", CAR_SERVICE.getAll());
+        req.setAttribute("cars", carService.getAll());
         req.getRequestDispatcher("/WEB-INF/views/cars/getAllCars.jsp")
                 .forward(req, resp);
     }

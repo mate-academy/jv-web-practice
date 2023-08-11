@@ -13,13 +13,13 @@ import mate.service.CarService;
 public class DeleteCarController extends HttpServlet {
     private static final Injector INJECTOR =
             Injector.getInstance("mate");
-    private static final CarService CAR_SERVICE =
+    private final CarService carService =
             (CarService) INJECTOR.getInstance(CarService.class);
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)
             throws ServletException, IOException {
-        CAR_SERVICE.delete(Long.valueOf(req.getParameter("id")));
+        carService.delete(Long.valueOf(req.getParameter("id")));
         resp.sendRedirect(req.getContextPath() + "/cars/get");
     }
 }
