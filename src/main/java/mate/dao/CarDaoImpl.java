@@ -174,6 +174,10 @@ public class CarDaoImpl implements CarDao {
         }
     }
 
+    public String getManufacturerAsString(Car car) {
+        return car.getManufacturer().getName();
+    }
+
     private void deleteAllDriversExceptList(Car car) {
         Long carId = car.getId();
         String query = "DELETE FROM cars_drivers WHERE car_id = ?";
