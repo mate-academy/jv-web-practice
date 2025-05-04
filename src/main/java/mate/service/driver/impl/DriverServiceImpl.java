@@ -1,10 +1,11 @@
-package mate.service;
+package mate.service.driver.impl;
 
 import java.util.List;
-import mate.dao.DriverDao;
+import mate.dao.driver.DriverDao;
 import mate.lib.Inject;
 import mate.lib.Service;
 import mate.model.Driver;
+import mate.service.driver.DriverService;
 
 @Service
 public class DriverServiceImpl implements DriverService {

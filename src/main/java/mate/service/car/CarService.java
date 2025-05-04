@@ -1,8 +1,9 @@
-package mate.service;
+package mate.service.car;
 
 import java.util.List;
 import mate.model.Car;
 import mate.model.Driver;
+import mate.service.GenericService;
 
 public interface CarService extends GenericService<Car> {
     void addDriverToCar(Driver driver, Car car);
