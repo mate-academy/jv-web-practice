@@ -6,9 +6,29 @@
     <servlet>
         <servlet-name>index</servlet-name>
         <servlet-class>mate.controller.IndexController</servlet-class>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+
+    <servlet>
+        <servlet-name>getAllDriversController</servlet-name>
+        <servlet-class>mate.controller.driver.GetAllDriversController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getAllDriversController</servlet-name>
+        <url-pattern>/drivers/all</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>addCarController</servlet-name>
+        <servlet-class>mate.controller.car.AddCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addCarController</servlet-name>
+        <url-pattern>/cars/add</url-pattern>
+    </servlet-mapping>
+
 </web-app>
