@@ -41,6 +41,17 @@ public class Car {
         this.drivers = drivers;
     }
 
+    public String printDrivers() {
+        int place = 1;
+        StringBuilder stringBuilder = new StringBuilder();
+        for (Driver driver : drivers) {
+            stringBuilder.append(place + ") " + driver.getName() + ", "
+                    + driver.getLicenseNumber() + System.lineSeparator());
+            place++;
+        }
+        return stringBuilder.toString();
+    }
+
     @Override
     public String toString() {
         return "Car{"
