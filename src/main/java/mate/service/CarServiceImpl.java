@@ -1,6 +1,7 @@
 package mate.service;
 
 import java.util.List;
+import java.util.Optional;
 import mate.dao.CarDao;
 import mate.lib.Inject;
 import mate.lib.Service;
@@ -52,5 +53,10 @@ public class CarServiceImpl implements CarService {
     @Override
     public boolean delete(Long id) {
         return carDao.delete(id);
+    }
+
+    @Override
+    public Optional<Car> getByModelAndManufacturerId(String model, Long id) {
+        return carDao.getByModelAndManufacturerId(model, id);
     }
 }
