@@ -11,4 +11,49 @@
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>index</servlet-name>
+        <url-pattern>/</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>create_driver</servlet-name>
+        <servlet-class>mate.controller.drivers.CreateDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_driver</servlet-name>
+        <url-pattern>/drivers/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>display_all_drivers</servlet-name>
+        <servlet-class>mate.controller.drivers.DisplayAllDriverController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>display_all_drivers</servlet-name>
+        <url-pattern>/drivers/display_all</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>create_manufacturer</servlet-name>
+        <servlet-class>mate.controller.manufacturers.CreatManufacturerController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_manufacturer</servlet-name>
+        <url-pattern>/manufacturers/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>create_car</servlet-name>
+        <servlet-class>mate.controller.cars.CreateCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>create_car</servlet-name>
+        <url-pattern>/cars/create</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>driver_car</servlet-name>
+        <servlet-class>mate.controller.cars.AddDriverCarController</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>driver_car</servlet-name>
+        <url-pattern>/cars/driver_car</url-pattern>
+    </servlet-mapping>
 </web-app>
+
