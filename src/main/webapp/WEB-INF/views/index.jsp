@@ -1,9 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>My team</title>
+    <title>Request is handled</title>
 </head>
 <body>
-<h1>Hello, mates!</h1>
+    <span style="font-family: monospace; color: #000000; "><h1>Added new entity to DB!</h1></span>
 </body>
 </html>
