@@ -7,6 +7,14 @@ public class Manufacturer {
     private String name;
     private String country;
 
+    public Manufacturer() {
+    }
+
+    public Manufacturer(String name, String country) {
+        this.name = name;
+        this.country = country;
+    }
+
     public Long getId() {
         return id;
     }
@@ -43,6 +51,15 @@ public class Manufacturer {
         return Objects.equals(id, that.id)
                 && Objects.equals(name, that.name)
                 && Objects.equals(country, that.country);
+    }
+
+    @Override
+    public String toString() {
+        return "Manufacturer{"
+                + "id=" + id
+                + ", name='" + name + '\''
+                + ", country='" + country + '\''
+                + '}';
     }
 
     @Override
