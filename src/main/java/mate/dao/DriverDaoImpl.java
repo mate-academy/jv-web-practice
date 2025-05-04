@@ -101,6 +101,33 @@ public class DriverDaoImpl implements DriverDao {
         }
     }
 
+    @Override
+    public List<Driver> getAllByIdIn(List<String> ids) {
+        String questionMarks = "?,".repeat(ids.size());
+        questionMarks = questionMarks.substring(0, questionMarks.length() - 1);
+        String query = "SELECT * "
+                + "FROM drivers "
+                + "WHERE id IN (" + questionMarks
+                + ") AND is_deleted = FALSE;";
+        List<Driver> drivers = new ArrayList<>();
+        try (Connection connection = ConnectionUtil.getConnection();
+                PreparedStatement getAlByIdIn = connection.prepareStatement(query)) {
+            int counter = 1;
+            for (String str : ids) {
+                getAlByIdIn.setString(counter, str);
+                counter++;
+            }
+            ResultSet resultSet = getAlByIdIn.executeQuery();
+            while (resultSet.next()) {
+                drivers.add(parseDriverFromResultSet(resultSet));
+            }
+        } catch (SQLException e) {
+            throw new DataProcessingException("Couldn't get drivers "
+                    + "from driversDB with ids: " + ids, e);
+        }
+        return drivers;
+    }
+
     private Driver parseDriverFromResultSet(ResultSet resultSet) throws SQLException {
         Long id = resultSet.getObject("id", Long.class);
         String name = resultSet.getString("name");
