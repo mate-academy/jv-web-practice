@@ -9,6 +9,27 @@ public class Car {
     private Manufacturer manufacturer;
     private List<Driver> drivers;
 
+    public Car() {
+    }
+
+    public Car(Long id, String model, Manufacturer manufacturer, List<Driver> drivers) {
+        this.id = id;
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.drivers = drivers;
+    }
+
+    public Car(String model, Manufacturer manufacturer, List<Driver> drivers) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+        this.drivers = drivers;
+    }
+
+    public Car(String model, Manufacturer manufacturer) {
+        this.model = model;
+        this.manufacturer = manufacturer;
+    }
+
     public Long getId() {
         return id;
     }
@@ -42,25 +63,16 @@ public class Car {
     }
 
     @Override
-    public String toString() {
-        return "Car{"
-                + "id=" + id
-                + ", model='" + model + '\''
-                + ", manufacturer=" + manufacturer
-                + ", drivers=" + drivers
-                + '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
+    public boolean equals(Object object) {
+        if (this == object) {
             return true;
         }
-        if (o == null || getClass() != o.getClass()) {
+        if (object == null || getClass() != object.getClass()) {
             return false;
         }
-        Car car = (Car) o;
-        return Objects.equals(id, car.id) && Objects.equals(model, car.model)
+        Car car = (Car) object;
+        return Objects.equals(id, car.id)
+                && Objects.equals(model, car.model)
                 && Objects.equals(manufacturer, car.manufacturer)
                 && Objects.equals(drivers, car.drivers);
     }
@@ -68,5 +80,14 @@ public class Car {
     @Override
     public int hashCode() {
         return Objects.hash(id, model, manufacturer, drivers);
+    }
+
+    @Override
+    public String toString() {
+        return "Car{"
+                + "id=" + id
+                + ", model='" + model + '\''
+                + ", manufacturer=" + manufacturer
+                + ", drivers=" + drivers + '}';
     }
 }
