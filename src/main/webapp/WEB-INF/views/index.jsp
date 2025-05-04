@@ -1,9 +1,5 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<%@include file="header.jsp" %>
 <html>
-<head>
-    <title>My team</title>
-</head>
-<body>
-<h1>Hello, mates!</h1>
-</body>
+<h1>Taxi service!</h1>
 </html>
