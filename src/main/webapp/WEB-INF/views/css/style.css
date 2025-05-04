@@ -1,0 +1,19 @@
+.mytable table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.mytable th, td {
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.mytable table.inner-table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.mytable table.inner-table th, table.inner-table td {
+    border: 1px solid black;
+    padding: 8px;
+}
