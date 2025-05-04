@@ -11,6 +11,8 @@ import mate.model.Driver;
 public class CarServiceImpl implements CarService {
     @Inject
     private CarDao carDao;
+    @Inject
+    private ManufacturerService manufacturerService;
 
     @Override
     public void addDriverToCar(Driver driver, Car car) {
